@@ -1,0 +1,11 @@
+.t-button {
+    @apply border-0 uppercase text-sm rounded-xl flex justify-center items-center px-4 py-3 text-white font-semibold disabled:text-neutral-400 disabled:bg-neutral-200
+}
+
+.t-button--solid-blue {
+    @apply bg-brand-blue hover:bg-brand-dark-blue;
+}
+
+.t-button--liquid-blue {
+    @apply bg-white border border-brand-blue text-brand-blue hover:bg-neutral-100
+}
