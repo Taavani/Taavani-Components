@@ -1,0 +1,112 @@
+.flight-offer {
+    @apply mb-4 hover:cursor-pointer;
+}
+
+.flight-offer .small {
+    @apply w-full flex flex-col md:hidden;
+}
+
+.flight-offer .large {
+    @apply w-full hidden md:flex;
+}
+
+.flight-offer .large .itinerary {
+    @apply w-4/6 py-2 px-4 flex flex-col rounded-l-xl bg-white shadow-[0_20px_10px_-15px_rgba(0,110,184,0.08)];
+}
+
+.flight-offer .large .itinerary .first-row {
+    @apply w-full flex justify-between items-center ;
+}
+
+.flight-offer .large .itinerary .first-row .departure { }
+
+.flight-offer .large .itinerary .first-row .airport {
+    @apply text-sm font-light;
+}
+
+.flight-offer .large .itinerary .first-row .time {
+    @apply text-xl font-bold;
+}
+
+.flight-offer .large .itinerary .first-row .date {
+    @apply text-xs font-light;
+}
+
+.flight-offer .large .itinerary .first-row .travel-time-holder {
+    @apply flex flex-col text-center;
+}
+
+.flight-offer .large .itinerary .first-row .travel-time-holder .icon {
+    @apply stroke-neutral-400 m-auto;
+}
+
+.flight-offer .large .itinerary .first-row .travel-time-holder .text {
+    @apply text-xs;
+}
+
+.flight-offer .large .itinerary .first-row .arrival {
+    @apply text-right;
+}
+
+.flight-offer .large .itinerary .second-row {
+    @apply w-full text-xs font-light leading-loose;
+}
+
+.flight-offer .large .divider {
+    @apply grid grid-cols-2 w-[20px];
+}
+
+.flight-offer .large .divider .left-upper-corner {
+    --mask: radial-gradient(10px at 100% 0, #0000 98%, #000);
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    background-color: white;
+    z-index: 1;
+}
+
+.flight-offer .large .divider .right-upper-corner {
+    @apply border-l-2 border-r-0 border-b-0 border-neutral-300 border-dashed;
+    --mask: radial-gradient(10px at 0 0, #0000 98%, #000);
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    background-color: white;
+    z-index: 1;
+}
+
+.flight-offer .large .divider .left-lower-corner {
+    @apply border-l-2 border-r-0 border-b-0 border-t-0 border-neutral-300 border-dashed;
+    --mask: radial-gradient(10px at 0 100%, #0000 98%, #000);
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    background-color: white;
+    z-index: 1;
+}
+
+.flight-offer .large .divider .right-lower-corner {
+
+    --mask: radial-gradient(10px at 100% 100%, #0000 98%, #000);
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    background-color: white;
+    z-index: 1;
+}
+
+.flight-offer .large .pricing {
+    @apply w-2/6 py-2 px-4 items-end rounded-r-xl bg-white shadow-[0_20px_10px_-15px_rgba(0,110,184,0.08)] flex flex-col;
+}
+
+.flight-offer .large .pricing .holder {
+    @apply text-right w-full mt-auto;
+}
+
+.flight-offer .large .pricing .holder .warning {
+    @apply font-semibold text-red-600 text-xs;
+}
+
+.flight-offer .large .pricing .holder .text {
+    @apply text-xs;
+}
+
+.flight-offer .large .pricing .holder .price {
+    @apply text-xl text-brand-dark-blue font-bold;
+}

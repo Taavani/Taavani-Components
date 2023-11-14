@@ -22,9 +22,15 @@
     "@storybook/testing-library": "^0.2.2",
     "@storybook/vue3": "^7.5.3",
     "@storybook/vue3-vite": "^7.5.3",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.16",
+    "postcss-import": "^15.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "storybook": "^7.5.3",
-    "tailwindcss": "^3.3.5"
+    "tailwindcss": "^3.3.5",
+    "tinyduration": "^3.3.0",
+    "vue-i18n": "^9.6.5"
   }
 }

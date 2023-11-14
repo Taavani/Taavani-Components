@@ -1,4 +1,45 @@
-import "./main.css"
+/**
+ * Style
+ */
+import "../src/css/main.css"
+
+/**
+ *
+ */
+import { createI18n } from 'vue-i18n';
+import { setup } from "@storybook/vue3";
+
+const messages = {
+  en: {
+    journey: {
+      flightOffers: {
+        stopover: "stopover",
+        seats: "There is only {count} seat left | There are only {count} seats left",
+        change: "or change",
+        priceFrom: "Price from",
+        totalPrice: "Total price",
+        sameDay: "Same day",
+        notSameDay: "+ 1 day",
+        noOffers: "Unable to find any offers",
+        selectOutbound: "Select departure flight",
+        selectHomebound: "Select return flight",
+        noOffersDescription: "We were unable to find any offers matching your search criteria."
+      },
+    }
+  },
+};
+
+setup((app) => {
+
+  const i18n = createI18n({
+    locale: 'en',
+    fallbackLocale: 'en',
+    messages
+  });
+
+  app.use(i18n);
+});
+
 /** @type { import('@storybook/vue3').Preview } */
 const preview = {
   parameters: {

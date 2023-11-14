@@ -1,10 +1,12 @@
 @import "tailwindcss/base.css";
-
-@import "../components/T-Button/T-Button.css";
-
 @import "tailwindcss/components.css";
 
+@import "../components/T-Button/T-Button.css";
+@import "../components/T-Flight-Offer-List/T-Flight-Offer-List.css";
+@import "../components/T-Flight-Offer/T-Flight-Offer.css";
+
 @import "tailwindcss/utilities.css";
+
 
 
 
