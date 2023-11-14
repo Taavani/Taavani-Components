@@ -1,5 +1,6 @@
 <script setup>
 import {computed} from "vue"
+import "./T-Button.css"
 
 const props = defineProps({
   title: {

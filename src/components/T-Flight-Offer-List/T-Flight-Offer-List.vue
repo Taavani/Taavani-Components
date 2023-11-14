@@ -1,5 +1,5 @@
 <script setup>
-
+  import "./T-Flight-Offer-List.css"
 </script>
 
 <template>

@@ -1,6 +1,7 @@
 <script setup>
 import {parse} from "tinyduration"
 import DepartureAirplane from "../icons/svg/Departure-Airplane.vue";
+import "./T-Flight-Offer.css"
 
 const props = defineProps({
   offer: Object
