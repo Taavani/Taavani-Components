@@ -11,5 +11,5 @@
 }
 
 .t-button--liquid-blue-small {
-    @apply px-3 py-1 border border-brand-blue text-brand-blue uppercase rounded-xl focus:bg-neutral-100 focus:border-brand-dark-blue focus-visible:outline-none hover:bg-neutral-100;
+    @apply px-3 py-1 border border-brand-blue text-brand-blue uppercase rounded-xl focus:bg-neutral-100 focus:border-brand-dark-blue focus-visible:outline-none hover:bg-neutral-100 disabled:text-neutral-200 disabled:bg-white disabled:border-neutral-200;
 }
