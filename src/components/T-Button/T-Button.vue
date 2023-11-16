@@ -10,7 +10,7 @@ const props = defineProps({
   coat: {
     type: String,
     validator(value) {
-      return [ 'liquid-blue', 'small-gray' ].indexOf(value) !== -1;
+      return [ 'liquid-blue', 'liquid-blue-small' ].indexOf(value) !== -1;
     }
   }
 })
