@@ -43,6 +43,6 @@
 }
 
 .t-name-input .valid {
-    @apply  border-success-900;
+    /* @apply  border-success-900; */
 }
 
