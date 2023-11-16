@@ -17,6 +17,9 @@ const messages = {
           firstNameLabel: 'First name',
           lastNameLabel: 'Last name',
         },
+        gender: {
+          label: 'Specify gender'
+        },
         errors: {
             firstName: {
               required: 'First name is required',

@@ -53,7 +53,9 @@ const isLastNameValid = computed(() => {
 
 <template>
   <div class="t-name-input">
-    <h2 :class="{ 'title': true, 'valid': v$.$dirty && isLastNameValid && isFirstNameValid }">{{ $t('passengers.name.title')}}</h2>
+    <h2 :class="{ 'title': true, 'valid': v$.$dirty && isLastNameValid && isFirstNameValid }">
+      {{ $t('passengers.name.title')}}
+    </h2>
     <div class="holder">
       <div :class="{ 'first-name': true, 'error': !isFirstNameValid, 'valid': v$.firstName.$dirty && isFirstNameValid }">
         <label for="firstName" class="label">

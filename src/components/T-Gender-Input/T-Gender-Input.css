@@ -1,0 +1,26 @@
+.t-gender-input {
+
+}
+.t-gender-input .label {
+    @apply px-3 text-sm text-neutral-500;
+}
+
+.t-gender-input .holder {
+    @apply relative mb-3;
+}
+
+.t-gender-input .button {
+    @apply relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left text-gray-500 ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-blue text-sm;
+}
+
+.t-gender-input .button .text {
+    @apply inline-flex w-full truncate;
+}
+
+.t-gender-input .button .icon {
+    @apply pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2;
+}
+
+.t-gender-input .options {
+    @apply absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm;
+}
