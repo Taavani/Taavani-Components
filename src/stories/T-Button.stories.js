@@ -7,11 +7,11 @@ export default {
   tags: ['autodocs'],
   argTypes: {
     onClick: {},
-    style: {
+    coat: {
       control: {
         type: 'select',
       },
-      options: ['solid-blue', 'liquid-blue' ],
+      options: ['solid-blue', 'liquid-blue', 'liquid-blue-small' ],
     },
   },
 };

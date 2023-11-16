@@ -7,17 +7,17 @@ const props = defineProps({
     default: 'Title',
     type: String
   },
-  style: {
+  coat: {
     type: String,
     validator(value) {
-      return [ 'liquid-blue' ].indexOf(value) !== -1;
+      return [ 'liquid-blue', 'small-gray' ].indexOf(value) !== -1;
     }
   }
 })
 
 const classes = computed(() => ({
   't-button': true,
-  [`t-button--${props.style || 'solid-blue'}`]: true,
+  [`t-button--${props.coat || 'solid-blue'}`]: true,
 }))
 </script>
 
