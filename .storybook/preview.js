@@ -11,6 +11,23 @@ import { setup } from "@storybook/vue3";
 
 const messages = {
   en: {
+    passengers: {
+        name: {
+          title: 'Names',
+          firstNameLabel: 'First name',
+          lastNameLabel: 'Last name',
+        },
+        errors: {
+            firstName: {
+              required: 'First name is required',
+              minLength: 'First name must be at least 2 characters',
+            },
+            lastName: {
+              required: 'Last name is required',
+              minLength: 'Last name must be at least 2 characters',
+            }
+        }
+    },
     journey: {
       flightOffers: {
         stopover: "stopover",
