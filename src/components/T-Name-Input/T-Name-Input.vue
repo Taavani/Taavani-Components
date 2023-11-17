@@ -35,11 +35,6 @@ const v$ = useVuelidate({
   }
 },props)
 
-function click(value) {
-  v$.value.firstName.$dirty = true;
-  emit('update:first-name', value)
-}
-
 const isFirstNameValid = computed(() => {
   return v$.value.firstName.$dirty ? !v$.value.firstName.$invalid : true
 })
@@ -69,7 +64,7 @@ const isLastNameValid = computed(() => {
                required
                @blur="v$.firstName.$touch()"
                :value="firstName"
-               @input="($event) => click($event.target.value)"
+               @input="($event) => $emit('update:first-name', $event.target.value)"
         />
       </div>
       <div :class="{ 'last-name': true, 'error': !isLastNameValid, 'valid': v$.lastName.$dirty && isLastNameValid }">
