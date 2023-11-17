@@ -28,7 +28,7 @@ const messages = {
             },
             email: {
                 label: 'Email address',
-                placeholder: 'your-email@example.com',
+                placeholder: 'youremail',
             },
             errors: {
                 firstName: {
@@ -69,7 +69,8 @@ setup((app) => {
     const i18n = createI18n({
         locale: 'en',
         fallbackLocale: 'en',
-        messages
+        messages,
+        runtimeOnly: false
     });
 
     app.use(i18n);
