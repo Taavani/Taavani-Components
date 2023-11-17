@@ -18,7 +18,13 @@ const messages = {
           lastNameLabel: 'Last name',
         },
         gender: {
-          label: 'Specify gender'
+          label: 'Specify gender',
+          options: {
+            undisclosed: 'Undisclosed',
+            male: 'Male',
+            female: 'Female',
+            unspecified: 'Unspecified',
+          }
         },
         errors: {
             firstName: {
