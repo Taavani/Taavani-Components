@@ -28,7 +28,11 @@ const messages = {
             },
             email: {
                 label: 'Email address',
-                placeholder: 'youremail',
+                placeholder: 'your mail',
+            },
+            phone: {
+                label: 'Phone number',
+                placeholder: 'Enter a phone number',
             },
             errors: {
                 firstName: {
@@ -42,7 +46,10 @@ const messages = {
                 email: {
                     required: 'Email address is required',
                     emailValidator: 'Email address is invalid',
-
+                },
+                phone: {
+                    required: 'Phone number is required',
+                    minLength: 'Your phone number is too short',
                 }
             }
         },

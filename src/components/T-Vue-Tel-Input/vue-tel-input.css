@@ -1341,7 +1341,6 @@
     border-color: rgb(212 212 212);
     border-width: 1px;
     border-radius: 0.5rem;
-    margin-bottom: 0.75rem;
     display: flex;
     text-align: left
 }
@@ -1476,4 +1475,16 @@
     width: 94%;
     padding: 7px;
     margin: 2px
+}
+
+.v-vue-tel-input {
+    @apply mb-3;
+}
+
+.v-vue-tel-input .label {
+    @apply px-3 text-sm text-neutral-500;
+}
+
+.v-vue-tel-input .error  {
+    @apply border-red-500;
 }

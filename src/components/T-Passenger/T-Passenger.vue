@@ -1,15 +1,12 @@
 <script setup>
 import {reactive, ref } from "vue"
-import {VueTelInput} from 'vue-tel-input'
 
-import './vue-tel-input.css'
 import './T-Passenger.css'
 
 import TButton from "../T-Button/T-Button.vue"
 import TNameInput from "../T-Name-Input/T-Name-Input.vue"
 import TEmailInput from "../T-Email-Input/T-Email-Input.vue"
-import TGenderInput from "../T-Gender-Input/T-Gender-Input.vue"
-import TBirthdayInput from "../T-Birthday-Input/T-Birthday-Input.vue"
+import TVueTelInput from "../T-Vue-Tel-Input/T-Vue-Tel-Input.vue";
 
 const INPUT = 'input'
 const SELECT = 'select'
@@ -23,6 +20,11 @@ const passenger = reactive({
   },
   gender: null,
   email: '',
+  phone: {
+    countryCallingCode: '',
+    formattedNumber: '',
+    number: ''
+  }
 })
 
 </script>
@@ -61,10 +63,10 @@ const passenger = reactive({
           v-model:last-name="passenger.name.lastName"
       >
       </t-name-input>
-      <!--<t-gender-input v-model:gender="passenger.gender"></t-gender-input>
-      <t-birthday-input></t-birthday-input>-->
       <t-email-input v-model:email="passenger.email"></t-email-input>
-      <vue-tel-input mode="international"></vue-tel-input>
+      <t-vue-tel-input v-bind:phone="passenger.phone.formattedNumber"
+                       v-on:update:phone="(value) => passenger.phone = value">
+      </t-vue-tel-input>
     </div>
     <div v-if="SELECT === mode" class="content-select-passenger">
 
