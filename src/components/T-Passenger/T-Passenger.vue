@@ -1,6 +1,6 @@
 <script setup>
-import {reactive, ref } from "vue"
-
+import {reactive, ref} from "vue"
+import Traveler from './Passenger.js'
 import './T-Passenger.css'
 
 import TButton from "../T-Button/T-Button.vue"
@@ -8,25 +8,29 @@ import TNameInput from "../T-Name-Input/T-Name-Input.vue"
 import TEmailInput from "../T-Email-Input/T-Email-Input.vue"
 import TVueTelInput from "../T-Vue-Tel-Input/T-Vue-Tel-Input.vue";
 
+const props = defineProps({
+  traveler: {
+    type: Object,
+    default: () => {
+      return {
+        'travelerID': 0,
+        'type': 'Adult',
+        'firstName': '',
+        'lastName': '',
+        'dateOfBirth': null,
+        'gender': null,
+        'email': '',
+        'phone': null
+      }
+    }
+  },
+})
+
 const INPUT = 'input'
 const SELECT = 'select'
 
 const mode = ref(INPUT)
-const passenger = reactive({
-  id: 0,
-  name: {
-    firstName: '',
-    lastName: ''
-  },
-  gender: null,
-  email: '',
-  phone: {
-    countryCallingCode: '',
-    formattedNumber: '',
-    number: ''
-  }
-})
-
+const passenger = reactive(new Traveler(props.traveler.travelerID, props.traveler.type))
 </script>
 
 <template>
@@ -34,12 +38,12 @@ const passenger = reactive({
     <div class="header">
       <div class="grow flex items-center">
         <img class="h-8 w-8 rounded-full mr-3"
-             :src="'https://ui-avatars.com/api/?name=' + (passenger.name.firstName.length > 0 ? passenger.name.firstName[0] : 'p') + '&color=000000&background=D3F8F0'"
+             :src="'https://ui-avatars.com/api/?name=' + (passenger.firstName.length > 0 ? passenger.firstName[0] : 'p') + '&color=000000&background=D3F8F0'"
              alt=""
         />
         <h1>
-          {{ passenger.name.firstName.length !== 0 ? passenger.name.firstName : 'Passenger ' + (passenger.id + 1)  }}
-          {{ passenger.name.lastName.length !== 0 ? passenger.name.lastName : '' }}
+          {{ passenger.firstName.length !== 0 ? passenger.firstName : 'Passenger ' + (passenger.id + 1) }}
+          {{ passenger.lastName.length !== 0 ? passenger.lastName : '' }}
         </h1>
 
       </div>
@@ -59,13 +63,13 @@ const passenger = reactive({
     </div>
     <div v-if="INPUT === mode" class="content-input">
       <t-name-input
-          v-model:first-name="passenger.name.firstName"
-          v-model:last-name="passenger.name.lastName"
+          v-model:first-name="passenger.firstName"
+          v-model:last-name="passenger.lastName"
       >
       </t-name-input>
       <t-email-input v-model:email="passenger.email"></t-email-input>
-      <t-vue-tel-input v-bind:phone="passenger.phone.formattedNumber"
-                       v-on:update:phone="(value) => passenger.phone = value">
+      <t-vue-tel-input v-bind:phone="passenger.phone"
+                       v-on:update:phone="(value) => passenger.phone = value.formattedNumber">
       </t-vue-tel-input>
     </div>
     <div v-if="SELECT === mode" class="content-select-passenger">

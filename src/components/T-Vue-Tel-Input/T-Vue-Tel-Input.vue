@@ -32,8 +32,6 @@ const v$ = useVuelidate({
 function onValidate(validation) {
   if (validation.valid) {
     emit('update:phone', {
-      countryCallingCode: validation.countryCallingCode,
-      number: validation.nationalNumber,
       formattedNumber: validation.formatted
     })
   }

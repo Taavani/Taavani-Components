@@ -8,7 +8,7 @@ import TPassenger from "../T-Passenger/T-Passenger.vue";
  *
  * @type {Prettify<Readonly<ExtractPropTypes<{passengers: {type: ArrayConstructor, required: boolean}, requirements: {type: ObjectConstructor, required: boolean}}>>>}
  */
-const props = defineProps({
+defineProps({
   passengers: {
     type: Array,
     required: true
@@ -24,6 +24,10 @@ const props = defineProps({
 
 <template>
   <div class="t-passengers-list">
-    <t-passenger :key="index" v-for="(passenger, index) in passengers"></t-passenger>
+    <t-passenger :key="index"
+                 :traveler="passenger"
+                 v-for="(passenger, index) in passengers">
+
+    </t-passenger>
   </div>
 </template>

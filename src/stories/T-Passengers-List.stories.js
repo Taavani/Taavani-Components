@@ -1,4 +1,6 @@
 import TPassengersList from "../components/T-Passengers-List/T-Passengers-List.vue";
+import PASSENGERS from '../../data/passengers.json';
+import REQUIREMENTS from '../../data/requirements.json';
 export default {
     components: {TPassengersList},
     title: 'Taavani/T-Passengers-List',
@@ -19,11 +21,8 @@ export default {
         },
     },
     args: {
-        passengers: [
-            { },
-        ],
-        requirements: {
-        }
+        passengers: PASSENGERS,
+        requirements: REQUIREMENTS,
     },
 };
 
