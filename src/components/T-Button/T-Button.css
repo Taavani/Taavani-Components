@@ -3,7 +3,7 @@
 }
 
 .t-button--solid-blue {
-    @apply bg-brand-blue hover:bg-brand-dark-blue;
+    @apply bg-brand-blue hover:bg-brand-dark-blue disabled:bg-neutral-200;
 }
 
 .t-button--liquid-blue {

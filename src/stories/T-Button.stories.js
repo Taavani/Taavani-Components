@@ -23,5 +23,12 @@ export const Example = {
   },
 };
 
+export const SolidBlueDisabled = {
+    args: {
+        title: 'Button',
+        disabled: true,
+        coat: 'solid-blue',
+    },
+};
 
 
