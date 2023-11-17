@@ -18,6 +18,17 @@ export default [
                 },
             }),
             vue()
+        ],
+        external: [
+            'vue',
+            'vue-i18n',
+            'tinyduration',
+            '@heroicons/vue',
+            '@headlessui/vue',
+            '@vuelidate/core',
+            '@heroicons/vue/20/solid',
+            '@vuelidate/validators',
+            'vue-tel-input'
         ]
     },
 ]
