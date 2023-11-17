@@ -1,3 +1,6 @@
+import {useVuelidate} from '@vuelidate/core'
+import {required, minLength } from '@vuelidate/validators'
+
 export default class Traveler {
 
     constructor(id, type) {
@@ -8,24 +11,7 @@ export default class Traveler {
         this.dateOfBirth = null
         this.gender = null
         this.email = ''
-        this.phone = null
-    }
-
-    isTravelerValid() {
-        // Adults
-        if (this.type === 'ADULT'
-            && this.firstName.length > 2
-            && this.lastName.length > 2
-            && this.email.match(
-                /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-            )
-        ) {
-            return true
-        }
-        // Infants and seated_infants
-        // FirstName and LastName are alw
-
-        return false
+        this.phone = ''
     }
 
     toJson() {

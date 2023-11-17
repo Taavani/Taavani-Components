@@ -26,6 +26,7 @@ defineProps({
   <div class="t-passengers-list">
     <t-passenger :key="index"
                  :traveler="passenger"
+                 @update="(value) => console.log(value)"
                  v-for="(passenger, index) in passengers">
 
     </t-passenger>
