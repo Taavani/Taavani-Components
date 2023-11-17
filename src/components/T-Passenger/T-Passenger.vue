@@ -4,7 +4,6 @@ import CheckCircle from '@heroicons/vue/20/solid/CheckCircleIcon'
 import Traveler from './Passenger.js'
 import './T-Passenger.css'
 
-import TButton from "../T-Button/T-Button.vue"
 import TNameInput from "../T-Name-Input/T-Name-Input.vue"
 import TEmailInput from "../T-Email-Input/T-Email-Input.vue"
 import TVueTelInput from "../T-Vue-Tel-Input/T-Vue-Tel-Input.vue";
@@ -37,7 +36,7 @@ const INPUT = 'input'
 const SELECT = 'select'
 
 const mode = ref(INPUT)
-const passenger = reactive(new Traveler(props.traveler.travelerID, props.traveler.type))
+const passenger = reactive(new Traveler(props.traveler.travelerId, props.traveler.type))
 
 let v$ = useVuelidate({
   firstName: {
