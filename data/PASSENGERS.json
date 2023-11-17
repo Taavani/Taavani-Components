@@ -1,14 +1,14 @@
 [
   {
-    "travelerId": 0,
+    "travelerId": "0",
     "type": "ADULT"
   },
   {
-    "travelerId": 1,
+    "travelerId": "1",
     "type": "ADULT"
   },
   {
-    "travelerId": 2,
+    "travelerId": "2",
     "type": "ADULT"
   }
 ]

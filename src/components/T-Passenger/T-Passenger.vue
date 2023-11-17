@@ -80,7 +80,7 @@ watch(passenger, (value) => {
              alt=""
         />
         <h1 class="grow">
-          {{ passenger.firstName.length !== 0 ? passenger.firstName : 'Passenger ' + (passenger.id + 1) }}
+          {{ passenger.firstName.length !== 0 ? passenger.firstName : 'Passenger ' + (Number(passenger.id) + 1) }}
           {{ passenger.lastName.length !== 0 ? passenger.lastName : '' }}
 
         </h1>
