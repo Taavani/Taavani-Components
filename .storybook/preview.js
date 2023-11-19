@@ -67,6 +67,20 @@ const messages = {
                 selectHomebound: "Select return flight",
                 noOffersDescription: "We were unable to find any offers matching your search criteria."
             },
+        },
+        additionalServices: {
+            seats: {
+                title: "Select seats",
+                attentionText: "Coming soon",
+                description: "Do you want a window or an aisle seat?",
+                buttonText: "Select seats",
+            },
+            baggage: {
+                title: "Select baggage",
+                attentionText: "Coming soon",
+                description: "Do you want to purchase baggage?",
+                buttonText: "Purchase baggage",
+            },
         }
     },
 };

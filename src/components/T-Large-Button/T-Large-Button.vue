@@ -6,6 +6,10 @@ defineProps({
     type: String,
     required: true,
   },
+  attentionText: {
+    type: String,
+    required: false,
+  },
   description: {
     type: String,
     required: true,
@@ -18,15 +22,15 @@ defineProps({
 </script>
 
 <template>
-  <button disabled class="t-large-button group relative overflow-hidden">
+  <button class="t-large-button relative overflow-hidden">
     <span class="coming-soon">
-      Coming soon
+      {{ attentionText }}
     </span>
 
-    <span class="title group-disabled:text-neutral-400">{{ title }}</span>
-    <span class="description group-disabled:text-neutral-400">{{ description}}</span>
+    <span class="title ">{{ title }}</span>
+    <span class="description ">{{ description}}</span>
 
-    <span class="fake-button group-disabled:bg-neutral-400 group-disabled:pointer-events-none">
+    <span class="fake-button ">
       {{ buttonText }}
     </span>
   </button>
