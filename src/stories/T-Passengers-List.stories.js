@@ -1,6 +1,8 @@
 import TPassengersList from "../components/T-Passengers-List/T-Passengers-List.vue";
 import PASSENGERS from '../../data/passengers.json';
 import REQUIREMENTS from '../../data/requirements.json';
+import EMPLOYEES from '../../data/employees.json';
+
 export default {
     components: {TPassengersList},
     title: 'Taavani/T-Passengers-List',
@@ -22,6 +24,7 @@ export default {
     },
     args: {
         passengers: PASSENGERS,
+        employees: EMPLOYEES,
         requirements: REQUIREMENTS,
     },
 };
@@ -32,7 +35,7 @@ export const PassengersList = {
         setup() {
             return { args }
         },
-        template: '<t-passengers-list :passengers="args.passengers" :requirements="args.requirements"></t-passengers-list>'
+        template: '<t-passengers-list :passengers="args.passengers" :employees="args.employees" :requirements="args.requirements"></t-passengers-list>'
     }),
     args: {
     }

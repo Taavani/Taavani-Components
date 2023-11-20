@@ -4,5 +4,5 @@
 }
 
 .t-passenger .header {
-    @apply flex items-center pb-4;
+    @apply flex items-center;
 }

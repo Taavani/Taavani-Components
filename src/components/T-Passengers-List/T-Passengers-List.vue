@@ -13,6 +13,10 @@ defineProps({
     type: Array,
     required: true
   },
+  employees:{
+    type: Array,
+    required: true
+  },
   requirements: {
     type: Object,
     required: true
@@ -26,9 +30,9 @@ defineProps({
   <div class="t-passengers-list">
     <t-passenger :key="index"
                  :traveler="passenger"
+                 :employees="employees"
                  @update="(value) => console.log(value)"
                  v-for="(passenger, index) in passengers">
-
     </t-passenger>
   </div>
 </template>
