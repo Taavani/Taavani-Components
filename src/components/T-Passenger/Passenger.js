@@ -3,14 +3,17 @@ import {required, minLength } from '@vuelidate/validators'
 
 export default class Traveler {
 
-    constructor(id, type) {
+    constructor(id) {
         this.id = id
-        this.type = type
-        this.firstName = ''
-        this.lastName = ''
+        this.name = {
+            firstName: '',
+            lastName: ''
+        }
         this.dateOfBirth = null
         this.gender = null
-        this.email = ''
+        this.contact = {
+            emailAddress: ''
+        }
         this.phone = ''
     }
 
@@ -27,8 +30,8 @@ export default class Traveler {
             'id': this.id,
             'dateOfBirth': this.dateOfBirth,
             'name': {
-                'firstName': this.firstName,
-                'lastName': this.lastName
+                'firstName': this.name.firstName,
+                'lastName': this.name.lastName
             },
             'gender': this.gender,
             'contact': {
@@ -42,7 +45,13 @@ export default class Traveler {
                 ]
             },
             'documents': []
-
         }
+    }
+
+    static fromTraveler(traveler) {
+        let newTraveler = new Traveler(traveler.travelerId)
+        newTraveler.dateOfBirth = traveler.dateOfBirth
+        newTraveler.gender = traveler.gender
+        return newTraveler
     }
 }

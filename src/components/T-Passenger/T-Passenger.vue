@@ -20,13 +20,26 @@ const props = defineProps({
     default: () => {
       return {
         'travelerID': 0,
-        'type': 'Adult',
-        'firstName': '',
-        'lastName': '',
+        'name': {
+          'firstName': '',
+          'lastName': '',
+          'middleName': '',
+          'secondLastName': ''
+        },
         'dateOfBirth': null,
         'gender': null,
         'email': '',
-        'phone': ''
+        'phone': '',
+        'contact': {
+          'addresseeName': '',
+          'address': '',
+          'language': '',
+          'purpose': '',
+          'phones': '',
+          'companyName': '',
+          'emailAddress': ''
+        },
+        'profilePhoto':''
       }
     }
   },
@@ -58,27 +71,27 @@ const SELECT = 'select'
  */
 const mode = ref(INPUT)
 const extended = ref(true)
-const passenger = reactive(new Traveler(props.traveler.travelerId, props.traveler.type))
+const passenger = reactive(Traveler.fromTraveler(props.traveler))
 
 /**
  * Validation logic
  */
 let v$ = useVuelidate({
-  firstName: {
-    required,
-    minLength: minLength(2)
+  name: {
+    firstName: {
+      required,
+      minLength: minLength(2)
+    },
+    lastName: {
+      required,
+      minLength: minLength(2)
+    },
   },
-  lastName: {
-    required,
-    minLength: minLength(2)
-  },
-  email: {
-    required,
-    email
-  },
-  phone: {
-    required,
-    minLength: minLength(2)
+  contact: {
+    emailAddress: {
+      required,
+      email
+    }
   }
 }, passenger)
 
@@ -89,6 +102,16 @@ let v$ = useVuelidate({
 function isTravelerValid() {
   return v$.value.$anyDirty === true && v$.value.$invalid === false
 }
+
+function selectTraveler(employee) {
+  passenger.name.firstName = employee.name.firstName
+  passenger.name.lastName = employee.name.lastName
+  passenger.contact.emailAddress = employee.contact.emailAddress
+  passenger.contact.phones = employee.contact.phones
+  extended.value = false
+  v$.value.$touch()
+}
+
 
 function toggleMode(nextMode) {
   mode.value = nextMode
@@ -111,13 +134,12 @@ watch(passenger, (value) => {
     <div :class="{ header: true, 'pb-4': extended }">
       <div class="grow flex items-center pr-4">
         <img class="h-8 w-8 rounded-full mr-3"
-             :src="'https://ui-avatars.com/api/?name=' + (passenger.firstName.length > 0 ? passenger.firstName[0] : 'p') + '&color=828282&background=D3F8F0'"
+             :src="'https://ui-avatars.com/api/?name=' + (passenger.name.firstName.length > 0 ? passenger.name.firstName[0] : 'p') + '&color=828282&background=D3F8F0'"
              alt=""
         />
         <h1 class="grow text-neutral-600">
-          {{ passenger.firstName.length !== 0 ? passenger.firstName : 'Passenger ' + (Number(passenger.id) + 1) }}
-          {{ passenger.lastName.length !== 0 ? passenger.lastName : '' }}
-
+          {{ passenger.name.firstName.length !== 0 ? passenger.name.firstName : 'Passenger ' + (Number(passenger.id) + 1) }}
+          {{ passenger.name.lastName.length !== 0 ? passenger.name.lastName : '' }}
         </h1>
         <div v-if="isTravelerValid()" class="w-8">
           <check-circle class="text-success-900"></check-circle>
@@ -126,13 +148,13 @@ watch(passenger, (value) => {
 
      <div class="flex gap-2">
         <t-button v-if="SELECT === mode"
-                  :title="$t('Provide passenger details')"
+                  :title="$t('passengers.passengerDetails')"
                   coat="liquid-blue-small"
                   @click="toggleMode(INPUT)"
         >
         </t-button>
         <t-button v-if="INPUT === mode"
-                  :title="$t('Select employee')"
+                  :title="$t('passengers.selectPassenger')"
                   coat="liquid-blue-small"
                   @click="toggleMode(SELECT)"
         >
@@ -147,8 +169,8 @@ watch(passenger, (value) => {
     </div>
     <div v-if="INPUT === mode && extended" class="content-input">
       <t-name-input
-          v-model:first-name="passenger.firstName"
-          v-model:last-name="passenger.lastName"
+          v-model:first-name="passenger.name.firstName"
+          v-model:last-name="passenger.name.lastName"
       >
       </t-name-input>
       <t-email-input v-model:email="passenger.email"></t-email-input>
@@ -156,10 +178,20 @@ watch(passenger, (value) => {
                        v-on:update:phone="(value) => passenger.phone = value.formattedNumber">
       </t-vue-tel-input>
     </div>
-    <div v-if="SELECT === mode && extended" class="content-select-passenger">
-      <div v-for="employee in employees">
-        {{ employee }}
-      </div>
+    <div v-if="SELECT === mode && extended" class="content-select-passenger grid grid-cols-1 gap-3">
+      <button :key="index" v-for="(employee, index) in employees"
+              class="border border-neutral-300 rounded-xl px-4 py-3 flex outline-none items-center"
+              @click='() => selectTraveler(employee)'
+      >
+        <img class="h-8 w-8 rounded-full mr-3"
+             :src="employee.profilePhoto ? employee.profilePhoto : 'https://ui-avatars.com/api/?name=' + (employee.name.firstName.length > 0 ? employee.name.firstName[0] : 'p') + '&color=828282&background=D3F8F0'"
+             alt=""
+        />
+        <span class="grow text-neutral-600">
+          {{ employee.name.firstName.length !== 0 ? employee.name.firstName : 'Passenger ' + (Number(employee.id) + 1) }}
+          {{ employee.name.lastName && employee.name.lastName.length !== 0 ? employee.name.lastName : '' }}
+        </span>
+      </button>
     </div>
   </div>
 </template>

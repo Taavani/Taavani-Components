@@ -3,30 +3,41 @@
     "id": "6",
     "gender": null,
     "name": {
-      "firstName": "Freda Prohaska",
-      "lastName": null,
+      "firstName": "Freda",
+      "lastName": "Prohaska",
       "middleName": null,
       "secondMiddleName": null
     },
     "documents": [],
     "contact": {
-      "addresseeName": null,
+      "addresseeName": {
+        "firstName": "Freda",
+        "lastName": "Prohaska",
+        "middleName": null,
+        "secondMiddleName": null
+      },
       "address": null,
       "language": null,
       "purpose": null,
-      "phones": null,
+      "phones": [
+        {
+          "deviceType": "MOBILE",
+          "countryCallingCode": "299",
+          "number": "445231"
+        }
+      ],
       "companyName": null,
-      "emailAddress": null
+      "emailAddress": "t@test.com"
     },
     "dateOfBirth": null,
     "profilePhoto": "https:\/\/ui-avatars.com\/api\/?name=FP&color=000000&background=D3F8F0"
   },
   {
-    "id": "6",
+    "id": "7",
     "gender": null,
     "name": {
-      "firstName": "Freda Prohaska",
-      "lastName": null,
+      "firstName": "Fred",
+      "lastName": "Jackson",
       "middleName": null,
       "secondMiddleName": null
     },
@@ -36,9 +47,15 @@
       "address": null,
       "language": null,
       "purpose": null,
-      "phones": null,
+      "phones": [
+        {
+          "deviceType": "MOBILE",
+          "countryCallingCode": "299",
+          "number": "445231"
+        }
+      ],
       "companyName": null,
-      "emailAddress": null
+      "emailAddress": "test@test.com"
     },
     "dateOfBirth": null,
     "profilePhoto": "https:\/\/ui-avatars.com\/api\/?name=FP&color=000000&background=D3F8F0"

@@ -12,6 +12,8 @@ import {setup} from "@storybook/vue3";
 const messages = {
     en: {
         passengers: {
+            passengerDetails: 'Provide passenger details',
+            selectPassenger: 'Select passenger',
             name: {
                 title: 'Names',
                 firstNameLabel: 'First name',
