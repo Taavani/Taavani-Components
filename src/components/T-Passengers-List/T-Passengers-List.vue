@@ -31,7 +31,7 @@ defineProps({
     <t-passenger :key="index"
                  :traveler="passenger"
                  :employees="employees"
-                 @update="(value) => console.log(value.toJson())"
+                 @update="(value) => console.log(value)"
                  v-for="(passenger, index) in passengers">
     </t-passenger>
   </div>

@@ -31,9 +31,7 @@ const v$ = useVuelidate({
 
 function onValidate(validation) {
   if (validation.valid) {
-    emit('update:phone', {
-      formattedNumber: validation.formatted
-    })
+    emit('update:phone', validation)
   }
 }
 </script>

@@ -28,8 +28,6 @@ const props = defineProps({
         },
         'dateOfBirth': null,
         'gender': null,
-        'email': '',
-        'phone': '',
         'contact': {
           'addresseeName': '',
           'address': '',
@@ -120,11 +118,20 @@ function toggleMode(nextMode) {
   }
 }
 
+function onUpdatedPhone(phone) {
+  passenger.contact.phones = [{
+    deviceType: 'MOBILE',
+    countryCallingCode: phone.countryCallingCode,
+    number: phone.nationalNumber
+  }]
+  v$.value.$touch()
+}
+
 /**
  * Watcher for the passenger object. Emits the update event
  */
 watch(passenger, (value) => {
-  isTravelerValid() ? emits('update', passenger) : emits('update', null)
+  isTravelerValid() ? emits('update', passenger) : ''
 })
 
 </script>
@@ -173,9 +180,9 @@ watch(passenger, (value) => {
           v-model:last-name="passenger.name.lastName"
       >
       </t-name-input>
-      <t-email-input v-model:email="passenger.email"></t-email-input>
-      <t-vue-tel-input v-bind:phone="passenger.phone"
-                       v-on:update:phone="(value) => passenger.phone = value.formattedNumber">
+      <t-email-input v-model:email="passenger.contact.emailAddress"></t-email-input>
+      <t-vue-tel-input v-bind:phone="passenger.contact.phones[0]"
+                       v-on:update:phone="(value) => onUpdatedPhone(value)">
       </t-vue-tel-input>
     </div>
     <div v-if="SELECT === mode && extended" class="content-select-passenger grid grid-cols-1 gap-3">
