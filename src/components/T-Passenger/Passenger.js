@@ -12,20 +12,12 @@ export default class Traveler {
         this.dateOfBirth = null
         this.gender = null
         this.contact = {
-            emailAddress: ''
+            emailAddress: '',
+            phones: []
         }
-        this.phone = ''
     }
 
     toJson() {
-        // Split country code
-        let phoneNumberArray = this.phone.split(' ')
-        let countryCode = phoneNumberArray[0].replace('+','')
-        phoneNumberArray.shift()
-
-        // Merge phone number
-        let phoneNumber = phoneNumberArray.join('')
-
         return {
             'id': this.id,
             'dateOfBirth': this.dateOfBirth,
@@ -35,14 +27,14 @@ export default class Traveler {
             },
             'gender': this.gender,
             'contact': {
-                'emailAddress': this.email,
-                'phones': [
-                    {
-                        "deviceType": "MOBILE",
-                        "countryCallingCode": countryCode,
-                        "number": phoneNumber
+                'emailAddress': this.contact.emailAddress,
+                'phones': this.contact.phones.map(phone => {
+                    return {
+                        'deviceType': phone.deviceType,
+                        'countryCallingCode': phone.countryCallingCode,
+                        'number': phone.number
                     }
-                ]
+                })
             },
             'documents': []
         }
