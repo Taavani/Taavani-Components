@@ -5,7 +5,7 @@ import EMPLOYEES from '../../data/employees.json';
 
 export default {
     components: {TPassengersList},
-    title: 'Taavani/T-Passengers-List',
+    title: 'Taavani/Design System/T-Passengers-List',
     component: TPassengersList,
     tags: ['autodocs'],
     argTypes: {

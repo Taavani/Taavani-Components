@@ -2,7 +2,7 @@ import TButton from '../components/T-Button/T-Button.vue';
 
 
 export default {
-  title: 'Taavani/T-Button',
+  title: 'Taavani/Components/T-Button',
   component: TButton,
   tags: ['autodocs'],
   argTypes: {

@@ -1,7 +1,7 @@
 import TLargeButton from "../components/T-Large-Button/T-Large-Button.vue";
 
 export default {
-    title: 'Taavani/T-Large-Button',
+    title: 'Taavani/Components/T-Large-Button',
     component: TLargeButton,
     tags: ['autodocs'],
     argTypes: {

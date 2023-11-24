@@ -4,7 +4,7 @@ import Offers from "../../data/FLIGHT-OFFERS-CPH-LHR-SINGLE-28-10.json"
 
 export default {
     components: {TFlightOffer},
-    title: 'Taavani/T-Flight-Offer-List',
+    title: 'Taavani/Design System/T-Flight-Offer-List',
     component: TFlightOfferList,
     tags: ['autodocs'],
     argTypes: {

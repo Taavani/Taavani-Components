@@ -2,7 +2,7 @@ import TFlightOffer from "../components/T-Flight-Offer/T-Flight-Offer.vue";
 import data from "../../data/FLIGHT-OFFERS-CPH-LHR-SINGLE-28-10.json"
 
 export default {
-    title: 'Taavani/T-Flight-Offer',
+    title: 'Taavani/Components/T-Flight-Offer',
     component: TFlightOffer,
     tags: ['autodocs'],
     argTypes: {
