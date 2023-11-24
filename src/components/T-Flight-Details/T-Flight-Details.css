@@ -18,6 +18,13 @@
     @apply w-[90%] flex flex-col;
 }
 
+.t-flight-details .right .journey .details {
+    @apply flex justify-between text-sm font-semibold;
+}
+.t-flight-details .right .journey .flight-info {
+    @apply flex text-sm text-neutral-400;
+}
+
 .t-flight-details .right .padding {
     @apply w-[10%];
 }

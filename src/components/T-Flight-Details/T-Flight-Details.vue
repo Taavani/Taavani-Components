@@ -112,16 +112,16 @@ function travelTime(segment) {
       <div class="left"></div>
       <div class="right">
         <div class="journey">
-          <div class="flex  items-center h-full py-1.5 w-full">
+          <div class="flex items-center h-full py-1.5 w-full">
             <div class="mx-auto rounded-full border-neutral-200 border-4 h-5 w-5"></div>
             <hr class="mx-auto h-0 w-full border border-neutral-200 border-dashed" />
             <div class="mx-auto rounded-full border-black border-4 h-5 w-5"></div>
           </div>
-          <div class="flex justify-between text-sm font-semibold">
+          <div class="details">
             <p>{{ dictionary.locations[flight.segments[0].departure.iataCode][$i18n.locale].name }}</p>
             <p>{{ dictionary.locations[flight.segments[flight.segments.length - 1].arrival.iataCode][$i18n.locale].name}}</p>
           </div>
-          <div class="flex text-sm text-neutral-400">
+          <div class="flight-info">
             <p>{{ dictionary.carriers[flight.segments[0].carrierCode] }}</p>
             <div class="px-1">|</div>
             <p>{{ dictionary.aircraft[flight.segments[0].aircraft.code] }}</p>
