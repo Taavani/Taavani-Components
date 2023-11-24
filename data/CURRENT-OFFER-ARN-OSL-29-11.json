@@ -1,0 +1,348 @@
+{
+  "type": "flight-offer",
+  "id": "1",
+  "source": "GDS",
+  "instantTicketingRequired": false,
+  "nonHomogeneous": false,
+  "oneWay": false,
+  "lastTicketingDate": "2023-11-24",
+  "numberOfBookableSeats": 9,
+  "itineraries": [
+    {
+      "duration": "PT1H",
+      "segments": [
+        {
+          "departure": {
+            "iataCode": "ARN",
+            "terminal": "5",
+            "at": "2023-11-29T18:30:00"
+          },
+          "arrival": {
+            "iataCode": "OSL",
+            "at": "2023-11-29T19:30:00"
+          },
+          "carrierCode": "DY",
+          "number": "821",
+          "aircraft": {
+            "code": "73H"
+          },
+          "operating": {
+            "carrierCode": "DY"
+          },
+          "duration": "PT1H",
+          "id": "11",
+          "numberOfStops": 0,
+          "blacklistedInEU": false
+        }
+      ]
+    }
+  ],
+  "price": {
+    "currency": "DKK",
+    "total": "584.00",
+    "base": "274.00",
+    "fees": [
+      {
+        "amount": "0.00",
+        "type": "SUPPLIER"
+      },
+      {
+        "amount": "0.00",
+        "type": "TICKETING"
+      }
+    ],
+    "grandTotal": "584.00",
+    "additionalServices": [
+      {
+        "amount": "110",
+        "type": "CHECKED_BAGS"
+      }
+    ]
+  },
+  "pricingOptions": {
+    "fareType": [
+      "PUBLISHED"
+    ],
+    "includedCheckedBagsOnly": false
+  },
+  "validatingAirlineCodes": [
+    "DY"
+  ],
+  "travelerPricings": [
+    {
+      "travelerId": "0",
+      "fareOption": "STANDARD",
+      "travelerType": "ADULT",
+      "price": {
+        "currency": "DKK",
+        "total": "292.00",
+        "base": "137.00"
+      },
+      "fareDetailsBySegment": [
+        {
+          "segmentId": "11",
+          "cabin": "ECONOMY",
+          "fareBasis": "QCALF",
+          "brandedFare": "LOWFARE",
+          "class": "Q",
+          "includedCheckedBags": {
+            "quantity": 0
+          }
+        }
+      ]
+    },
+    {
+      "travelerId": "1",
+      "fareOption": "STANDARD",
+      "travelerType": "ADULT",
+      "price": {
+        "currency": "DKK",
+        "total": "292.00",
+        "base": "137.00"
+      },
+      "fareDetailsBySegment": [
+        {
+          "segmentId": "11",
+          "cabin": "ECONOMY",
+          "fareBasis": "QCALF",
+          "brandedFare": "LOWFARE",
+          "class": "Q",
+          "includedCheckedBags": {
+            "quantity": 0
+          }
+        }
+      ]
+    }
+  ],
+  "lastTicketingDateTime": "2023-11-24",
+  "dictionary": {
+    "locations": {
+      "CDG": {
+        "en": {
+          "name": "Charles De Gaulle",
+          "city": "Paris",
+          "country": "France"
+        },
+        "_geoloc": {
+          "lat": 49.012779,
+          "lng": 2.55
+        },
+        "links_count": 1041
+      },
+      "FRA": {
+        "en": {
+          "name": "Frankfurt Main",
+          "city": "Frankfurt",
+          "country": "Germany"
+        },
+        "_geoloc": {
+          "lat": 50.026421,
+          "lng": 8.543125
+        },
+        "links_count": 990
+      },
+      "AMS": {
+        "en": {
+          "name": "Schiphol",
+          "city": "Amsterdam",
+          "country": "Netherlands"
+        },
+        "_geoloc": {
+          "lat": 52.308613,
+          "lng": 4.763889
+        },
+        "links_count": 903
+      },
+      "IST": {
+        "en": {
+          "name": "Ataturk",
+          "city": "Istanbul",
+          "country": "Turkey"
+        },
+        "_geoloc": {
+          "lat": 40.976922,
+          "lng": 28.814606
+        },
+        "links_count": 719
+      },
+      "LGW": {
+        "en": {
+          "name": "Gatwick",
+          "city": "London",
+          "country": "United Kingdom"
+        },
+        "_geoloc": {
+          "lat": 51.148056,
+          "lng": -0.190278
+        },
+        "links_count": 708
+      },
+      "VIE": {
+        "en": {
+          "name": "Schwechat",
+          "city": "Vienna",
+          "country": "Austria"
+        },
+        "_geoloc": {
+          "lat": 48.110278,
+          "lng": 16.569722
+        },
+        "links_count": 616
+      },
+      "ZRH": {
+        "en": {
+          "name": "Zurich",
+          "city": "Zurich",
+          "country": "Switzerland"
+        },
+        "_geoloc": {
+          "lat": 47.464722,
+          "lng": 8.549167
+        },
+        "links_count": 494
+      },
+      "CPH": {
+        "en": {
+          "name": "Kastrup",
+          "city": "Copenhagen",
+          "country": "Denmark"
+        },
+        "_geoloc": {
+          "lat": 55.617917,
+          "lng": 12.655972
+        },
+        "links_count": 457
+      },
+      "ARN": {
+        "en": {
+          "name": "Arlanda",
+          "city": "Stockholm",
+          "country": "Sweden"
+        },
+        "_geoloc": {
+          "lat": 59.651944,
+          "lng": 17.918611
+        },
+        "links_count": 439
+      },
+      "OSL": {
+        "en": {
+          "name": "Gardermoen",
+          "city": "Oslo",
+          "country": "Norway"
+        },
+        "_geoloc": {
+          "lat": 60.193917,
+          "lng": 11.100361
+        },
+        "links_count": 363
+      },
+      "HEL": {
+        "en": {
+          "name": "Helsinki Vantaa",
+          "city": "Helsinki",
+          "country": "Finland"
+        },
+        "_geoloc": {
+          "lat": 60.317222,
+          "lng": 24.963333
+        },
+        "links_count": 320
+      },
+      "WAW": {
+        "en": {
+          "name": "Okecie",
+          "city": "Warsaw",
+          "country": "Poland"
+        },
+        "_geoloc": {
+          "lat": 52.16575,
+          "lng": 20.967122
+        },
+        "links_count": 240
+      },
+      "RIX": {
+        "en": {
+          "name": "Riga Intl",
+          "city": "Riga",
+          "country": "Latvia"
+        },
+        "_geoloc": {
+          "lat": 56.923611,
+          "lng": 23.971111
+        },
+        "links_count": 202
+      },
+      "BGO": {
+        "en": {
+          "name": "Flesland",
+          "city": "Bergen",
+          "country": "Norway"
+        },
+        "_geoloc": {
+          "lat": 60.293386,
+          "lng": 5.218142
+        },
+        "links_count": 137
+      },
+      "TRD": {
+        "en": {
+          "name": "Vaernes",
+          "city": "Trondheim",
+          "country": "Norway"
+        },
+        "_geoloc": {
+          "lat": 63.457556,
+          "lng": 10.92425
+        },
+        "links_count": 86
+      },
+      "TRF": {
+        "en": {
+          "name": "Torp",
+          "city": "Sandefjord",
+          "country": "Norway"
+        },
+        "_geoloc": {
+          "lat": 59.186703,
+          "lng": 10.258628
+        },
+        "links_count": 74
+      }
+    },
+    "aircraft": {
+      "223": "AIRBUS  A220-300",
+      "295": "EMBRAER 195 E2",
+      "319": "AIRBUS A319",
+      "320": "AIRBUS A320",
+      "321": "AIRBUS A321",
+      "343": "AIRBUS A340-300",
+      "789": "BOEING 787-9",
+      "E95": "EMBRAER 195",
+      "7M8": "BOEING 737 MAX 8",
+      "E75": "EMBRAER 175",
+      "32B": "AIRBUS A321 (SHARKLETS)",
+      "73H": "BOEING 737-800 (WINGLETS)",
+      "73J": "BOEING 737-900",
+      "32N": "AIRBUS A320NEO",
+      "E90": "EMBRAER 190"
+    },
+    "currencies": {
+      "DKK": "DANISH KRONE"
+    },
+    "carriers": {
+      "KL": "KLM ROYAL DUTCH AIRLINES",
+      "BT": "AIR BALTIC",
+      "LO": "LOT POLISH AIRLINES",
+      "D8": "Norwegian Air Sweden AOC AB",
+      "OS": "AUSTRIAN AIRLINES",
+      "DY": "Norwegian Air Shuttle AOC AS",
+      "AF": "AIR FRANCE",
+      "TK": "TURKISH AIRLINES",
+      "SK": "SCANDINAVIAN AIRLINES",
+      "LH": "LUFTHANSA",
+      "LX": "SWISS INTERNATIONAL AIR LINES",
+      "ET": "ETHIOPIAN AIRLINES"
+    }
+  }
+}

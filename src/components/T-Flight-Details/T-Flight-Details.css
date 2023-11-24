@@ -1,0 +1,47 @@
+.t-flight-details {
+    @apply border border-taa-gray-400 rounded-xl px-3;
+}
+
+.t-flight-details .header {
+    @apply py-2 items-center;
+}
+
+.t-flight-details .departure {
+    @apply pr-3 flex-1 flex flex-col;
+}
+
+.t-flight-details .journey {
+    @apply flex-1 grow items-center flex flex-col text-xs;
+}
+
+.t-flight-details .icon {
+    @apply w-8 h-8;
+}
+
+.t-flight-details .stroke {
+    @apply stroke-neutral-400;
+}
+
+.t-flight-details .arrival {
+    @apply flex-1 px-3 flex flex-col text-right;
+}
+
+.t-flight-details .buttons {
+    @apply text-right flex px-4;
+}
+
+.t-flight-details .description {
+    @apply font-light text-sm;
+}
+
+.t-flight-details .airport {
+    @apply font-light text-sm;
+}
+
+.t-flight-details .time {
+    @apply font-semibold text-xl;
+}
+
+.t-flight-details .date {
+    @apply font-semibold text-xl;
+}
