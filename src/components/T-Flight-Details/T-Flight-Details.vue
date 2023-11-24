@@ -51,8 +51,8 @@ function travelTime(segment) {
 
 <template>
   <div class="t-flight-details">
-    <div class="header grid grid-cols-6 grid-flow-col-dense">
-      <div class="pr-4 col-span-1">
+    <div class="header grid grid-cols-6">
+      <div class="left">
         <p class="description">
           Departure date
         </p>
@@ -66,7 +66,7 @@ function travelTime(segment) {
           }}
         </div>
       </div>
-      <div class="flex col-span-5">
+      <div class="right">
         <div class="departure ">
           <div class="description">
             {{ dictionary.locations[flight.segments[0].departure.iataCode][$i18n.locale].city }}
@@ -109,8 +109,8 @@ function travelTime(segment) {
       </div>
     </div>
     <div v-if="extended" class="body grid grid-cols-6">
-      <div class="col-span-1"></div>
-      <div class="flex col-span-5">
+      <div class="left"></div>
+      <div class="right">
         <div class="w-[90%] flex  flex-col">
           <div class="flex  items-center h-full py-1.5 w-full">
             <div class="mx-auto rounded-full border-neutral-200 border-4 h-5 w-5"></div>
