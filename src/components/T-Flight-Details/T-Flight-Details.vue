@@ -111,7 +111,7 @@ function travelTime(segment) {
     <div v-if="extended" class="body grid grid-cols-6">
       <div class="left"></div>
       <div class="right">
-        <div class="w-[90%] flex  flex-col">
+        <div class="journey">
           <div class="flex  items-center h-full py-1.5 w-full">
             <div class="mx-auto rounded-full border-neutral-200 border-4 h-5 w-5"></div>
             <hr class="mx-auto h-0 w-full border border-neutral-200 border-dashed" />
@@ -127,7 +127,7 @@ function travelTime(segment) {
             <p>{{ dictionary.aircraft[flight.segments[0].aircraft.code] }}</p>
           </div>
         </div>
-        <div class="w-[10%]"></div>
+        <div class="padding"></div>
       </div>
     </div>
   </div>

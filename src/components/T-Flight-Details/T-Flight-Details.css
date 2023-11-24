@@ -11,7 +11,15 @@
 }
 
 .t-flight-details .right {
-    @apply flex col-span-5;
+    @apply flex items-center col-span-5;
+}
+
+.t-flight-details .right .journey {
+    @apply w-[90%] flex flex-col;
+}
+
+.t-flight-details .right .padding {
+    @apply w-[10%];
 }
 
 
