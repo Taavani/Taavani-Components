@@ -55,6 +55,25 @@ const messages = {
                 }
             }
         },
+        flightOffers: {
+            filters: "Filter by",
+            filterCabin: "Choose cabin type",
+            filterStopovers: "Choose number of stopovers",
+            direct: "Direct",
+            oneStop: "1 stop",
+            twoStops: "2 stops",
+            stopover: "stopover",
+            seats: "There is only {count} seat left | There are only {count} seats left",
+            change: "or change",
+            priceFrom: "Price from",
+            totalPrice: "Total price",
+            sameDay: "Same day",
+            notSameDay: "+ 1 day",
+            noOffers: "Unable to find any offers",
+            selectOutbound: "Select departure flight",
+            selectHomebound: "Select return flight",
+            noOffersDescription: "We were unable to find any offers matching your search criteria."
+        },
         journey: {
             flightOffers: {
                 stopover: "stopover",
@@ -67,7 +86,8 @@ const messages = {
                 noOffers: "Unable to find any offers",
                 selectOutbound: "Select departure flight",
                 selectHomebound: "Select return flight",
-                noOffersDescription: "We were unable to find any offers matching your search criteria."
+                noOffersDescription: "We were unable to find any offers matching your search criteria.",
+                layover: "{hours}h {minutes}m layover",
             },
         },
         additionalServices: {
@@ -90,6 +110,7 @@ const messages = {
 setup((app) => {
 
     const i18n = createI18n({
+        legacy: false,
         locale: 'en',
         fallbackLocale: 'en',
         messages,

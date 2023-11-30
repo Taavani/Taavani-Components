@@ -192,7 +192,7 @@ function formatMonth(date) {
             <p v-if="offer.itineraries[0].segments.length > 1"
                class="text">
               {{ offer.itineraries[0].segments.length - 1 }}
-              {{ $tc('journey.flightOffers.stopover', (offer.itineraries[0].segments.length - 1)) }}
+              {{ $t('journey.flightOffers.stopover', (offer.itineraries[0].segments.length - 1)) }}
             </p>
           </div>
 
@@ -234,7 +234,7 @@ function formatMonth(date) {
         <div class="holder">
           <p v-if="offer.numberOfBookableSeats < 9"
                class="warning">
-           {{ $tc('journey.flightOffers.seats', offer.numberOfBookableSeats) }}
+           {{ $t('journey.flightOffers.seats', offer.numberOfBookableSeats) }}
           </p>
           <p class="text">
            {{ $t('journey.flightOffers.priceFrom') }}

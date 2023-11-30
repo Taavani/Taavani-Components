@@ -1,0 +1,312 @@
+{
+  "type": "flight-offer",
+  "id": "11",
+  "source": "GDS",
+  "instantTicketingRequired": false,
+  "nonHomogeneous": false,
+  "oneWay": false,
+  "lastTicketingDate": "2023-11-30",
+  "numberOfBookableSeats": 9,
+  "itineraries": [
+    {
+      "duration": "PT11H25M",
+      "segments": [
+        {
+          "departure": {
+            "iataCode": "CPH",
+            "terminal": "3",
+            "at": "2023-12-06T08:15:00"
+          },
+          "arrival": {
+            "iataCode": "RIX",
+            "at": "2023-12-06T10:40:00"
+          },
+          "carrierCode": "BT",
+          "number": "132",
+          "aircraft": {
+            "code": "223"
+          },
+          "operating": {
+            "carrierCode": "BT"
+          },
+          "duration": "PT1H25M",
+          "id": "101",
+          "numberOfStops": 0,
+          "blacklistedInEU": false
+        },
+        {
+          "departure": {
+            "iataCode": "RIX",
+            "at": "2023-12-06T19:40:00"
+          },
+          "arrival": {
+            "iataCode": "HEL",
+            "at": "2023-12-06T20:40:00"
+          },
+          "carrierCode": "BT",
+          "number": "307",
+          "aircraft": {
+            "code": "223"
+          },
+          "operating": {
+            "carrierCode": "BT"
+          },
+          "duration": "PT1H",
+          "id": "102",
+          "numberOfStops": 0,
+          "blacklistedInEU": false
+        }
+      ]
+    }
+  ],
+  "price": {
+    "currency": "DKK",
+    "total": "700.00",
+    "base": "252.00",
+    "fees": [
+      {
+        "amount": "0.00",
+        "type": "SUPPLIER"
+      },
+      {
+        "amount": "0.00",
+        "type": "TICKETING"
+      }
+    ],
+    "grandTotal": "700.00",
+    "additionalServices": [
+      {
+        "amount": "186",
+        "type": "CHECKED_BAGS"
+      }
+    ]
+  },
+  "pricingOptions": {
+    "fareType": [
+      "PUBLISHED"
+    ],
+    "includedCheckedBagsOnly": false
+  },
+  "validatingAirlineCodes": [
+    "BT"
+  ],
+  "travelerPricings": [
+    {
+      "travelerId": "0",
+      "fareOption": "STANDARD",
+      "travelerType": "ADULT",
+      "price": {
+        "currency": "DKK",
+        "total": "700.00",
+        "base": "252.00"
+      },
+      "fareDetailsBySegment": [
+        {
+          "segmentId": "101",
+          "cabin": "ECONOMY",
+          "fareBasis": "KDK1GRN",
+          "brandedFare": "GREEN",
+          "class": "K",
+          "includedCheckedBags": {
+            "quantity": 0
+          }
+        },
+        {
+          "segmentId": "102",
+          "cabin": "ECONOMY",
+          "fareBasis": "KDK1GRN",
+          "brandedFare": "GREEN",
+          "class": "K",
+          "includedCheckedBags": {
+            "quantity": 0
+          }
+        }
+      ]
+    }
+  ],
+  "lastTicketingDateTime": "2023-11-30",
+  "dictionary": {
+    "locations": {
+      "LHR": {
+        "en": {
+          "name": "Heathrow",
+          "city": "London",
+          "country": "United Kingdom"
+        },
+        "_geoloc": {
+          "lat": 51.4775,
+          "lng": -0.461389
+        },
+        "links_count": 1051
+      },
+      "CDG": {
+        "en": {
+          "name": "Charles De Gaulle",
+          "city": "Paris",
+          "country": "France"
+        },
+        "_geoloc": {
+          "lat": 49.012779,
+          "lng": 2.55
+        },
+        "links_count": 1041
+      },
+      "FRA": {
+        "en": {
+          "name": "Frankfurt Main",
+          "city": "Frankfurt",
+          "country": "Germany"
+        },
+        "_geoloc": {
+          "lat": 50.026421,
+          "lng": 8.543125
+        },
+        "links_count": 990
+      },
+      "AMS": {
+        "en": {
+          "name": "Schiphol",
+          "city": "Amsterdam",
+          "country": "Netherlands"
+        },
+        "_geoloc": {
+          "lat": 52.308613,
+          "lng": 4.763889
+        },
+        "links_count": 903
+      },
+      "MUC": {
+        "en": {
+          "name": "Franz Josef Strauss",
+          "city": "Munich",
+          "country": "Germany"
+        },
+        "_geoloc": {
+          "lat": 48.353783,
+          "lng": 11.786086
+        },
+        "links_count": 728
+      },
+      "LGW": {
+        "en": {
+          "name": "Gatwick",
+          "city": "London",
+          "country": "United Kingdom"
+        },
+        "_geoloc": {
+          "lat": 51.148056,
+          "lng": -0.190278
+        },
+        "links_count": 708
+      },
+      "CPH": {
+        "en": {
+          "name": "Kastrup",
+          "city": "Copenhagen",
+          "country": "Denmark"
+        },
+        "_geoloc": {
+          "lat": 55.617917,
+          "lng": 12.655972
+        },
+        "links_count": 457
+      },
+      "ARN": {
+        "en": {
+          "name": "Arlanda",
+          "city": "Stockholm",
+          "country": "Sweden"
+        },
+        "_geoloc": {
+          "lat": 59.651944,
+          "lng": 17.918611
+        },
+        "links_count": 439
+      },
+      "DOH": {
+        "en": {
+          "name": "Doha Intl",
+          "city": "Doha",
+          "country": "Qatar"
+        },
+        "_geoloc": {
+          "lat": 25.261125,
+          "lng": 51.565056
+        },
+        "links_count": 377
+      },
+      "OSL": {
+        "en": {
+          "name": "Gardermoen",
+          "city": "Oslo",
+          "country": "Norway"
+        },
+        "_geoloc": {
+          "lat": 60.193917,
+          "lng": 11.100361
+        },
+        "links_count": 363
+      },
+      "HEL": {
+        "en": {
+          "name": "Helsinki Vantaa",
+          "city": "Helsinki",
+          "country": "Finland"
+        },
+        "_geoloc": {
+          "lat": 60.317222,
+          "lng": 24.963333
+        },
+        "links_count": 320
+      },
+      "RIX": {
+        "en": {
+          "name": "Riga Intl",
+          "city": "Riga",
+          "country": "Latvia"
+        },
+        "_geoloc": {
+          "lat": 56.923611,
+          "lng": 23.971111
+        },
+        "links_count": 202
+      }
+    },
+    "aircraft": {
+      "223": "AIRBUS  A220-300",
+      "319": "AIRBUS A319",
+      "320": "AIRBUS A320",
+      "321": "AIRBUS A321",
+      "333": "AIRBUS A330-300",
+      "359": "AIRBUS A350-900",
+      "388": "AIRBUS A380-800",
+      "788": "BOEING 787-8",
+      "7M8": "BOEING 737 MAX 8",
+      "32B": "AIRBUS A321 (SHARKLETS)",
+      "CR9": "CANADAIR REGIONAL JET 900",
+      "73H": "BOEING 737-800 (WINGLETS)",
+      "73J": "BOEING 737-900",
+      "32N": "AIRBUS A320NEO",
+      "32Q": "AIRBUS A321NEO",
+      "73W": "BOEING 737-700 (WINGLETS)",
+      "E90": "EMBRAER 190"
+    },
+    "currencies": {
+      "DKK": "DANISH KRONE"
+    },
+    "carriers": {
+      "EE": "XFLY",
+      "KL": "KLM ROYAL DUTCH AIRLINES",
+      "QR": "QATAR AIRWAYS",
+      "BT": "AIR BALTIC",
+      "D8": "Norwegian Air Sweden AOC AB",
+      "DY": "Norwegian Air Shuttle AOC AS",
+      "AF": "AIR FRANCE",
+      "SK": "SCANDINAVIAN AIRLINES",
+      "AY": "FINNAIR",
+      "CL": "LUFTHANSA CITYLINE",
+      "LH": "LUFTHANSA",
+      "BA": "BRITISH AIRWAYS"
+    }
+  }
+}

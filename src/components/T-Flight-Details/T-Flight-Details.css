@@ -21,7 +21,7 @@
 .t-flight-details .right .journey .details {
     @apply flex justify-between text-sm font-semibold w-full;
 }
-.t-flight-details .right .journey .flight-info {
+.t-flight-details .right .flight-info {
     @apply flex text-sm text-neutral-400 w-full;
 }
 

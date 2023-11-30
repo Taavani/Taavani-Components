@@ -1,12 +1,14 @@
 <script setup>
 import dayjs from 'dayjs'
 import {parse} from "tinyduration"
+import {ref} from "vue";
 import {ChevronUpIcon} from "@heroicons/vue/20/solid/index.js"
 import {ChevronDownIcon} from "@heroicons/vue/20/solid/index.js"
+import { useI18n } from "vue-i18n";
+const { t } = useI18n({ useScope: "global" });
 
 import './T-Flight-Details.css'
 import DepartureAirplane from "../icons/svg/Departure-Airplane.vue"
-import {ref} from "vue";
 
 defineProps({
   flight: {
@@ -47,6 +49,17 @@ function travelTime(segment) {
   return timeText
 }
 
+function calculateLayover( arrivalTime, departureTime) {
+
+  let arrivalDate = new Date(arrivalTime)
+    let departureDate = new Date(departureTime)
+    let diff = Math.ceil(departureDate - arrivalDate)
+    let hours = Math.floor((diff % 86400000) / 3600000)
+    let minutes = Math.round(((diff % 86400000) % 3600000) / 60000)
+
+    return t('journey.flightOffers.layover', { hours: hours, minutes: minutes})
+}
+
 </script>
 
 <template>
@@ -85,7 +98,7 @@ function travelTime(segment) {
           <p>{{ travelTime(flight) }}</p>
           <p v-if="flight.segments.length > 1">
             {{ flight.segments.length - 1 }}
-            {{ $tc('flightOffers.stopover', (flight.segments.length - 1)) }}
+            {{ $t('flightOffers.stopover', (flight.segments.length - 1)) }}
           </p>
         </div>
         <div class="arrival">
@@ -111,15 +124,55 @@ function travelTime(segment) {
     <div v-if="extended" class="body grid grid-cols-6">
       <div class="left"></div>
       <div class="right">
-        <div class="journey">
-          <div class="flex items-center h-full py-1.5 w-full">
-            <div class="mx-auto rounded-full border-neutral-200 border-4 h-5 w-5"></div>
-            <hr class="mx-auto h-0 w-full border border-neutral-200 border-dashed" />
-            <div class="mx-auto rounded-full border-black border-4 h-5 w-5"></div>
-          </div>
-          <div class="details">
-            <p>{{ dictionary.locations[flight.segments[0].departure.iataCode][$i18n.locale].name }}</p>
-            <p>{{ dictionary.locations[flight.segments[flight.segments.length - 1].arrival.iataCode][$i18n.locale].name}}</p>
+        <div class="flex flex-col w-full">
+          <div class="flex w-full">
+            <div class="journey">
+              <div class="flex items-center h-full py-1.5 w-full">
+                <div class="mx-auto rounded-full border-neutral-200 border-4 h-5 w-5"></div>
+                <hr class="mx-auto h-0 w-full border border-neutral-200 border-dashed"/>
+                <div class="mx-auto rounded-full border-black border-4 h-5 w-5"></div>
+              </div>
+              <div class="details">
+                <p>{{ dictionary.locations[flight.segments[0].departure.iataCode][$i18n.locale].name }}</p>
+                <p v-if="flight.segments.length === 1">
+                  {{ dictionary.locations[flight.segments[flight.segments.length - 1].arrival.iataCode][$i18n.locale].name }}
+                </p>
+                <p v-if="flight.segments.length > 1">
+                  {{ dictionary.locations[flight.segments[0].arrival.iataCode][$i18n.locale].name }}
+                  <span class="font-medium">
+                  ({{
+                    ("0" + dayjs(flight.segments[0].arrival.at).hour()).slice(-2)
+                    + ':'
+                    + ("0" + dayjs(flight.segments[0].arrival.at).minute()).slice(-2)
+                  }})
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div v-if="flight.segments.length > 1" class="px-4 pt-1">
+              {{ calculateLayover( flight.segments[0].arrival.at, flight.segments[1].departure.at) }}
+            </div>
+            <div v-if="flight.segments.length > 1" class="journey">
+              <div class="flex items-center h-full py-1.5 w-full">
+                <div class="mx-auto rounded-full border-neutral-200 border-4 h-5 w-5"></div>
+                <hr class="mx-auto h-0 w-full border border-neutral-200 border-dashed"/>
+                <div class="mx-auto rounded-full border-black border-4 h-5 w-5"></div>
+              </div>
+              <div class="details">
+                <p>
+                  {{ dictionary.locations[flight.segments[1].departure.iataCode][$i18n.locale].name }}
+                  <span class="font-medium">
+                    ({{
+                      ("0" + dayjs(flight.segments[1].departure.at).hour()).slice(-2)
+                      + ':'
+                      + ("0" + dayjs(flight.segments[1].departure.at).minute()).slice(-2)
+                    }})
+                  </span>
+                </p>
+                <p>
+                  {{ dictionary.locations[flight.segments[flight.segments.length - 1].arrival.iataCode][$i18n.locale].name }}</p>
+              </div>
+            </div>
           </div>
           <div class="flight-info">
             <p>{{ dictionary.carriers[flight.segments[0].carrierCode] }}</p>
