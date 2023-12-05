@@ -1,0 +1,14 @@
+{
+  "emailAddressRequired": true,
+  "mobilePhoneNumberRequired": true,
+  "travelerRequirements": [
+    {
+      "travelerId": "0",
+      "genderRequired": true,
+      "documentRequired": true,
+      "dateOfBirthRequired": true,
+      "redressRequiredIfAny": true,
+      "residenceRequired": true
+    }
+  ]
+}

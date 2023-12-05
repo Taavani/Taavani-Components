@@ -13,6 +13,7 @@ import TNameInput from "../T-Name-Input/T-Name-Input.vue"
 import TEmailInput from "../T-Email-Input/T-Email-Input.vue"
 import TVueTelInput from "../T-Vue-Tel-Input/T-Vue-Tel-Input.vue";
 import TButton from "../T-Button/T-Button.vue";
+import TGenderInput from "../T-Gender-Input/T-Gender-Input.vue";
 
 const props = defineProps({
   traveler: {
@@ -46,6 +47,15 @@ const props = defineProps({
     default: () => {
       return []
     }
+  },
+  requirements: {
+    type: Object,
+    default: () => {
+      return {
+        'emailAddressRequired': false,
+        'mobilePhoneNumberRequired': false
+      }
+    }
   }
 })
 
@@ -71,10 +81,7 @@ const mode = ref(INPUT)
 const extended = ref(true)
 const passenger = reactive(Traveler.fromTraveler(props.traveler))
 
-/**
- * Validation logic
- */
-let v$ = useVuelidate({
+let rules = {
   name: {
     firstName: {
       required,
@@ -91,7 +98,26 @@ let v$ = useVuelidate({
       email
     }
   }
-}, passenger)
+}
+
+if (props.requirements.dateOfBirthRequired) {
+  rules.dateOfBirth = {
+    required
+  }
+}
+
+if (props.requirements.genderRequired) {
+  rules.gender = {
+    required
+  }
+}
+
+/**
+ * Validation logic
+ */
+let v$ = useVuelidate(rules, passenger)
+
+console.log(v$.value.$silentErrors)
 
 /**
  * Validation helper. Checks if the traveler is valid
@@ -101,6 +127,10 @@ function isTravelerValid() {
   return v$.value.$anyDirty === true && v$.value.$invalid === false
 }
 
+/**
+ * Selects a traveler from the list of employees
+ * @param employee
+ */
 function selectTraveler(employee) {
   passenger.name.firstName = employee.name.firstName
   passenger.name.lastName = employee.name.lastName
@@ -110,7 +140,10 @@ function selectTraveler(employee) {
   v$.value.$touch()
 }
 
-
+/**
+ * Toggles the mode between input and select
+ * @param nextMode
+ */
 function toggleMode(nextMode) {
   mode.value = nextMode
   if (!extended.value) {
@@ -118,12 +151,21 @@ function toggleMode(nextMode) {
   }
 }
 
+/**
+ * Updates the phone number
+ * @param phone
+ */
 function onUpdatedPhone(phone) {
   passenger.contact.phones = [{
     deviceType: 'MOBILE',
     countryCallingCode: phone.countryCallingCode,
     number: phone.nationalNumber
   }]
+  v$.value.$touch()
+}
+
+function onUpdateGender(value) {
+  passenger.gender = value
   v$.value.$touch()
 }
 
@@ -180,10 +222,40 @@ watch(passenger, (value) => {
           v-model:last-name="passenger.name.lastName"
       >
       </t-name-input>
+
+      <t-gender-input v-if="requirements.genderRequired"
+                      v-bind:gender="passenger.gender"
+                      v-on:update:gender="(value) => onUpdateGender(value)"
+      >
+      </t-gender-input>
+
       <t-email-input v-model:email="passenger.contact.emailAddress"></t-email-input>
-      <t-vue-tel-input v-bind:phone="passenger.contact.phones[0]"
-                       v-on:update:phone="(value) => onUpdatedPhone(value)">
+      <t-vue-tel-input v-bind:phone="passenger.contact.phones[0] ? passenger.contact.phones[0].number : passenger.contact.phones[0]"
+                       v-on:update:phone="(value) => onUpdatedPhone(value)"
+      >
       </t-vue-tel-input>
+
+
+
+      <div v-if="requirements.dateOfBirthRequired">
+        Date of birth must be selected
+      </div>
+
+      <div v-if="requirements.documentRequired">
+        A document is required for the concerned traveler for the creation of the flight-order
+      </div>
+
+      <div v-if="requirements.documentIssuanceCityRequired">
+        The issuance city of the document is required for the concerned traveler for the creation of the flight-order
+      </div>
+
+      <div v-if="requirements.redressRequiredIfAny">
+        The redress is required if any for the concerned traveler for the creation of the flight-order
+      </div>
+
+      <div v-if="requirements.residenceRequired">
+        The address is required for the concerned traveler for the creation of the flight-order
+      </div>
     </div>
     <div v-if="SELECT === mode && extended" class="content-select-passenger grid grid-cols-1 gap-3">
       <button :key="index" v-for="(employee, index) in employees"

@@ -1,5 +1,5 @@
 <script setup>
-import {ref} from "vue"
+import {ref, watch} from "vue"
 import {Listbox, ListboxButton, ListboxLabel, ListboxOption, ListboxOptions} from '@headlessui/vue'
 import {CheckIcon, ChevronUpDownIcon} from '@heroicons/vue/20/solid'
 
@@ -12,26 +12,30 @@ const props = defineProps({
   }
 })
 
-defineEmits([
+const emits = defineEmits([
   'update:gender'
 ])
 
-
 const options = [
-  {value: 'undisclosed' },
-  {value: 'male' },
+  {value: 'undisclosed'},
+  {value: 'male'},
   {value: 'female'},
-  {value: 'unspecified' }
+  {value: 'unspecified'}
 ]
 let optionIndex = options.findIndex((option) => {
   return option.value === props.gender;
 });
-const selected = ref(options[optionIndex + 1])
+const selected = ref(options[optionIndex ?? 0])
+
+watch(selected, (value) => {
+  emits('update:gender', value.value)
+})
 
 </script>
 
 <template>
-  <Listbox as="div" v-model="selected" v-on:selected="() => $emit('update:gender', selected.value)" class="t-gender-input">
+  <Listbox as="div" v-model="selected" v-on:selected="() => $emit('update:gender', selected.value)"
+           class="t-gender-input">
     <ListboxLabel class="label">
       {{ $t('passengers.gender.label') }}
     </ListboxLabel>
@@ -54,9 +58,10 @@ const selected = ref(options[optionIndex + 1])
                          v-slot="{ active, selected }">
             <li :class="[active ? 'bg-brand-blue text-white' : 'text-gray-900', 'relative cursor-default select-none py-2 pl-3 pr-9']">
               <div class="flex">
-                <span :class="[selected ? 'font-semibold' : 'font-normal', 'truncate']">{{ $t('passengers.gender.options.' + option.value) }}</span>
+                <span :class="[selected ? 'font-semibold' : 'font-normal', 'truncate']">{{
+                    $t('passengers.gender.options.' + option.value)
+                  }}</span>
               </div>
-
               <span v-if="selected"
                     :class="[active ? 'text-white' : 'text-brand-blue', 'absolute inset-y-0 right-0 flex items-center pr-4']">
                 <CheckIcon class="h-5 w-5" aria-hidden="true"/>
