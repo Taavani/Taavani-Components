@@ -1,5 +1,4 @@
 <script setup>
-import {defineProps} from 'vue'
 import './T-Passengers-List.css'
 import TPassenger from "../T-Passenger/T-Passenger.vue";
 
