@@ -34,7 +34,7 @@ for (let i = 0; i < props.passengers.length; i++) {
   if (props.requirements.travelerRequirements && props.requirements.travelerRequirements.length > 0) {
     let requirementsForTraveler = props.requirements.travelerRequirements.find(travelerRequirement => travelerRequirement.travelerId === passenger.travelerId);
     if (requirementsForTraveler) {
-      //requirements.dateOfBirthRequired = requirementsForTraveler.dateOfBirthRequired ?? false;
+      requirements.dateOfBirthRequired = requirementsForTraveler.dateOfBirthRequired ?? false;
       requirements.documentRequired = requirementsForTraveler.documentRequired ?? false;
       requirements.genderRequired = requirementsForTraveler.genderRequired ?? false;
       requirements.redressRequiredIfAny = requirementsForTraveler.redressRequiredIfAny ?? false;

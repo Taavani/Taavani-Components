@@ -14,6 +14,7 @@ import TEmailInput from "../T-Email-Input/T-Email-Input.vue"
 import TVueTelInput from "../T-Vue-Tel-Input/T-Vue-Tel-Input.vue";
 import TButton from "../T-Button/T-Button.vue";
 import TGenderInput from "../T-Gender-Input/T-Gender-Input.vue";
+import TBirthdayInput from "../T-Birthday-Input/T-Birthday-Input.vue";
 
 const props = defineProps({
   traveler: {
@@ -223,23 +224,24 @@ watch(passenger, (value) => {
       >
       </t-name-input>
 
+      <t-birthday-input v-if="requirements.dateOfBirthRequired">
+
+      </t-birthday-input>
+
       <t-gender-input v-if="requirements.genderRequired"
                       v-bind:gender="passenger.gender"
                       v-on:update:gender="(value) => onUpdateGender(value)"
       >
       </t-gender-input>
 
-      <t-email-input v-model:email="passenger.contact.emailAddress"></t-email-input>
-      <t-vue-tel-input v-bind:phone="passenger.contact.phones[0] ? passenger.contact.phones[0].number : passenger.contact.phones[0]"
+      <t-email-input v-if="requirements.emailAddressRequired" v-model:email="passenger.contact.emailAddress"></t-email-input>
+      <t-vue-tel-input v-if="requirements.mobilePhoneNumberRequired"
+                       v-bind:phone="passenger.contact.phones[0] ? passenger.contact.phones[0].number : passenger.contact.phones[0]"
                        v-on:update:phone="(value) => onUpdatedPhone(value)"
       >
       </t-vue-tel-input>
 
 
-
-      <div v-if="requirements.dateOfBirthRequired">
-        Date of birth must be selected
-      </div>
 
       <div v-if="requirements.documentRequired">
         A document is required for the concerned traveler for the creation of the flight-order

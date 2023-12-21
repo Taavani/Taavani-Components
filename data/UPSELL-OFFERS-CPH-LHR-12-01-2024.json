@@ -1,0 +1,1878 @@
+[
+  {
+    "type": "flight-offer",
+    "id": "2",
+    "source": "GDS",
+    "instantTicketingRequired": false,
+    "paymentCardRequired": false,
+    "lastTicketingDate": "2023-12-21",
+    "itineraries": [
+      {
+        "segments": [
+          {
+            "departure": {
+              "iataCode": "CPH",
+              "terminal": "3",
+              "at": "2024-01-08T16:35:00"
+            },
+            "arrival": {
+              "iataCode": "LHR",
+              "at": "2024-01-08T17:40:00"
+            },
+            "carrierCode": "SK",
+            "number": "1517",
+            "aircraft": {
+              "code": "32N"
+            },
+            "operating": {
+              "carrierCode": "SK"
+            },
+            "duration": "PT2H5M",
+            "id": "6",
+            "numberOfStops": 0,
+            "blacklistedInEU": false
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "departure": {
+              "iataCode": "LHR",
+              "terminal": "2",
+              "at": "2024-01-12T06:40:00"
+            },
+            "arrival": {
+              "iataCode": "CPH",
+              "at": "2024-01-12T09:30:00"
+            },
+            "carrierCode": "SK",
+            "number": "500",
+            "aircraft": {
+              "code": "32N"
+            },
+            "operating": {
+              "carrierCode": "SK"
+            },
+            "duration": "PT1H50M",
+            "id": "129",
+            "numberOfStops": 0,
+            "blacklistedInEU": false
+          }
+        ]
+      }
+    ],
+    "price": {
+      "currency": "DKK",
+      "total": "1066.00",
+      "base": "50.00",
+      "fees": [
+        {
+          "amount": "0.00",
+          "type": "TICKETING"
+        }
+      ],
+      "grandTotal": "1066.00"
+    },
+    "pricingOptions": {
+      "fareType": [
+        "PUBLISHED"
+      ],
+      "includedCheckedBagsOnly": false,
+      "refundableFare": false,
+      "noRestrictionFare": false,
+      "noPenaltyFare": false
+    },
+    "validatingAirlineCodes": [
+      "SK"
+    ],
+    "travelerPricings": [
+      {
+        "travelerId": "0",
+        "fareOption": "STANDARD",
+        "travelerType": "ADULT",
+        "price": {
+          "currency": "DKK",
+          "total": "1066",
+          "base": "50",
+          "taxes": [
+            {
+              "amount": "223.00",
+              "code": "ZO"
+            },
+            {
+              "amount": "422.00",
+              "code": "YQ"
+            },
+            {
+              "amount": "68.00",
+              "code": "YR"
+            },
+            {
+              "amount": "113.00",
+              "code": "GB"
+            },
+            {
+              "amount": "190.00",
+              "code": "UB"
+            }
+          ]
+        },
+        "fareDetailsBySegment": [
+          {
+            "segmentId": "6",
+            "cabin": "ECONOMY",
+            "fareBasis": "OLDRGHT",
+            "brandedFare": "GOLIGHT",
+            "class": "O",
+            "includedCheckedBags": {
+              "quantity": 0
+            },
+            "amenities": [
+              {
+                "code": "CBU",
+                "description": "UNDERSEAT BAG 40X30X15",
+                "isChargeable": false,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "0CM",
+                "description": "BONUS MILES",
+                "isChargeable": false,
+                "amenityType": "FREQUENT_FLYER"
+              },
+              {
+                "code": "0M1",
+                "description": "CARRY ON BAG 55X40X23 8 KG",
+                "isChargeable": true,
+                "amenityType": "BAGGAGE"
+              },
+              {
+                "code": "0C4",
+                "description": "1 CHECKED BAG UP TO 23KG",
+                "isChargeable": true,
+                "amenityType": "BAGGAGE"
+              },
+              {
+                "code": "PSA",
+                "description": "PRE RESERVED SEAT ASSIGNMENT",
+                "isChargeable": true,
+                "amenityType": "PRE_RESERVED_SEAT"
+              },
+              {
+                "code": "0BX",
+                "description": "LOUNGE",
+                "isChargeable": true,
+                "amenityType": "LOUNGE"
+              },
+              {
+                "code": "02M",
+                "description": "FOOD AND BEVERAGE",
+                "isChargeable": true,
+                "amenityType": "MEAL"
+              },
+              {
+                "code": "059",
+                "description": "CHANGEABLE TICKET",
+                "isChargeable": true,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "0BJ",
+                "description": "UPGRADE",
+                "isChargeable": true,
+                "amenityType": "UPGRADES"
+              },
+              {
+                "code": "SAF",
+                "description": "APPR 50 PERCENT BIOFUEL",
+                "isChargeable": true,
+                "amenityType": "BRANDED_FARES"
+              }
+            ]
+          },
+          {
+            "segmentId": "129",
+            "cabin": "ECONOMY",
+            "fareBasis": "OLDRGHT",
+            "brandedFare": "GOLIGHT",
+            "class": "O",
+            "includedCheckedBags": {
+              "quantity": 0
+            },
+            "amenities": [
+              {
+                "code": "CBU",
+                "description": "UNDERSEAT BAG 40X30X15",
+                "isChargeable": false,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "0CM",
+                "description": "BONUS MILES",
+                "isChargeable": false,
+                "amenityType": "FREQUENT_FLYER"
+              },
+              {
+                "code": "0M1",
+                "description": "CARRY ON BAG 55X40X23 8 KG",
+                "isChargeable": true,
+                "amenityType": "BAGGAGE"
+              },
+              {
+                "code": "0C4",
+                "description": "1 CHECKED BAG UP TO 23KG",
+                "isChargeable": true,
+                "amenityType": "BAGGAGE"
+              },
+              {
+                "code": "PSA",
+                "description": "PRE RESERVED SEAT ASSIGNMENT",
+                "isChargeable": true,
+                "amenityType": "PRE_RESERVED_SEAT"
+              },
+              {
+                "code": "0BX",
+                "description": "LOUNGE",
+                "isChargeable": true,
+                "amenityType": "LOUNGE"
+              },
+              {
+                "code": "02M",
+                "description": "FOOD AND BEVERAGE",
+                "isChargeable": true,
+                "amenityType": "MEAL"
+              },
+              {
+                "code": "059",
+                "description": "CHANGEABLE TICKET",
+                "isChargeable": true,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "0BJ",
+                "description": "UPGRADE",
+                "isChargeable": true,
+                "amenityType": "UPGRADES"
+              },
+              {
+                "code": "SAF",
+                "description": "APPR 50 PERCENT BIOFUEL",
+                "isChargeable": true,
+                "amenityType": "BRANDED_FARES"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "flight-offer",
+    "id": "3",
+    "source": "GDS",
+    "instantTicketingRequired": false,
+    "paymentCardRequired": false,
+    "lastTicketingDate": "2023-12-21",
+    "itineraries": [
+      {
+        "segments": [
+          {
+            "departure": {
+              "iataCode": "CPH",
+              "terminal": "3",
+              "at": "2024-01-08T16:35:00"
+            },
+            "arrival": {
+              "iataCode": "LHR",
+              "at": "2024-01-08T17:40:00"
+            },
+            "carrierCode": "SK",
+            "number": "1517",
+            "aircraft": {
+              "code": "32N"
+            },
+            "operating": {
+              "carrierCode": "SK"
+            },
+            "duration": "PT2H5M",
+            "id": "6",
+            "numberOfStops": 0,
+            "blacklistedInEU": false
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "departure": {
+              "iataCode": "LHR",
+              "terminal": "2",
+              "at": "2024-01-12T06:40:00"
+            },
+            "arrival": {
+              "iataCode": "CPH",
+              "at": "2024-01-12T09:30:00"
+            },
+            "carrierCode": "SK",
+            "number": "500",
+            "aircraft": {
+              "code": "32N"
+            },
+            "operating": {
+              "carrierCode": "SK"
+            },
+            "duration": "PT1H50M",
+            "id": "129",
+            "numberOfStops": 0,
+            "blacklistedInEU": false
+          }
+        ]
+      }
+    ],
+    "price": {
+      "currency": "DKK",
+      "total": "1186.00",
+      "base": "170.00",
+      "fees": [
+        {
+          "amount": "0.00",
+          "type": "TICKETING"
+        }
+      ],
+      "grandTotal": "1186.00"
+    },
+    "pricingOptions": {
+      "fareType": [
+        "PUBLISHED"
+      ],
+      "includedCheckedBagsOnly": false,
+      "refundableFare": false,
+      "noRestrictionFare": false,
+      "noPenaltyFare": false
+    },
+    "validatingAirlineCodes": [
+      "SK"
+    ],
+    "travelerPricings": [
+      {
+        "travelerId": "0",
+        "fareOption": "STANDARD",
+        "travelerType": "ADULT",
+        "price": {
+          "currency": "DKK",
+          "total": "1186",
+          "base": "170",
+          "taxes": [
+            {
+              "amount": "223.00",
+              "code": "ZO"
+            },
+            {
+              "amount": "422.00",
+              "code": "YQ"
+            },
+            {
+              "amount": "68.00",
+              "code": "YR"
+            },
+            {
+              "amount": "113.00",
+              "code": "GB"
+            },
+            {
+              "amount": "190.00",
+              "code": "UB"
+            }
+          ]
+        },
+        "fareDetailsBySegment": [
+          {
+            "segmentId": "6",
+            "cabin": "ECONOMY",
+            "fareBasis": "OLDKRSM",
+            "brandedFare": "GOSMART",
+            "class": "O",
+            "includedCheckedBags": {
+              "quantity": 1
+            },
+            "amenities": [
+              {
+                "code": "0M1",
+                "description": "CARRY ON BAG 55X40X23 8 KG",
+                "isChargeable": false,
+                "amenityType": "BAGGAGE"
+              },
+              {
+                "code": "CBU",
+                "description": "UNDERSEAT BAG 40X30X15",
+                "isChargeable": false,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "0C4",
+                "description": "1 CHECKED BAG UP TO 23KG",
+                "isChargeable": false,
+                "amenityType": "BAGGAGE"
+              },
+              {
+                "code": "0CM",
+                "description": "BONUS MILES",
+                "isChargeable": false,
+                "amenityType": "FREQUENT_FLYER"
+              },
+              {
+                "code": "PSA",
+                "description": "PRE RESERVED SEAT ASSIGNMENT",
+                "isChargeable": true,
+                "amenityType": "PRE_RESERVED_SEAT"
+              },
+              {
+                "code": "0BX",
+                "description": "LOUNGE",
+                "isChargeable": true,
+                "amenityType": "LOUNGE"
+              },
+              {
+                "code": "02M",
+                "description": "FOOD AND BEVERAGE",
+                "isChargeable": true,
+                "amenityType": "MEAL"
+              },
+              {
+                "code": "059",
+                "description": "CHANGEABLE TICKET",
+                "isChargeable": true,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "0BJ",
+                "description": "UPGRADE",
+                "isChargeable": true,
+                "amenityType": "UPGRADES"
+              },
+              {
+                "code": "SAF",
+                "description": "APPR 50 PERCENT BIOFUEL",
+                "isChargeable": true,
+                "amenityType": "BRANDED_FARES"
+              }
+            ]
+          },
+          {
+            "segmentId": "129",
+            "cabin": "ECONOMY",
+            "fareBasis": "OLDRGHT",
+            "brandedFare": "GOLIGHT",
+            "class": "O",
+            "includedCheckedBags": {
+              "quantity": 0
+            },
+            "amenities": [
+              {
+                "code": "CBU",
+                "description": "UNDERSEAT BAG 40X30X15",
+                "isChargeable": false,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "0CM",
+                "description": "BONUS MILES",
+                "isChargeable": false,
+                "amenityType": "FREQUENT_FLYER"
+              },
+              {
+                "code": "0M1",
+                "description": "CARRY ON BAG 55X40X23 8 KG",
+                "isChargeable": true,
+                "amenityType": "BAGGAGE"
+              },
+              {
+                "code": "0C4",
+                "description": "1 CHECKED BAG UP TO 23KG",
+                "isChargeable": true,
+                "amenityType": "BAGGAGE"
+              },
+              {
+                "code": "PSA",
+                "description": "PRE RESERVED SEAT ASSIGNMENT",
+                "isChargeable": true,
+                "amenityType": "PRE_RESERVED_SEAT"
+              },
+              {
+                "code": "0BX",
+                "description": "LOUNGE",
+                "isChargeable": true,
+                "amenityType": "LOUNGE"
+              },
+              {
+                "code": "02M",
+                "description": "FOOD AND BEVERAGE",
+                "isChargeable": true,
+                "amenityType": "MEAL"
+              },
+              {
+                "code": "059",
+                "description": "CHANGEABLE TICKET",
+                "isChargeable": true,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "0BJ",
+                "description": "UPGRADE",
+                "isChargeable": true,
+                "amenityType": "UPGRADES"
+              },
+              {
+                "code": "SAF",
+                "description": "APPR 50 PERCENT BIOFUEL",
+                "isChargeable": true,
+                "amenityType": "BRANDED_FARES"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "flight-offer",
+    "id": "4",
+    "source": "GDS",
+    "instantTicketingRequired": false,
+    "paymentCardRequired": false,
+    "lastTicketingDate": "2023-12-21",
+    "itineraries": [
+      {
+        "segments": [
+          {
+            "departure": {
+              "iataCode": "CPH",
+              "terminal": "3",
+              "at": "2024-01-08T16:35:00"
+            },
+            "arrival": {
+              "iataCode": "LHR",
+              "at": "2024-01-08T17:40:00"
+            },
+            "carrierCode": "SK",
+            "number": "1517",
+            "aircraft": {
+              "code": "32N"
+            },
+            "operating": {
+              "carrierCode": "SK"
+            },
+            "duration": "PT2H5M",
+            "id": "6",
+            "numberOfStops": 0,
+            "blacklistedInEU": false
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "departure": {
+              "iataCode": "LHR",
+              "terminal": "2",
+              "at": "2024-01-12T06:40:00"
+            },
+            "arrival": {
+              "iataCode": "CPH",
+              "at": "2024-01-12T09:30:00"
+            },
+            "carrierCode": "SK",
+            "number": "500",
+            "aircraft": {
+              "code": "32N"
+            },
+            "operating": {
+              "carrierCode": "SK"
+            },
+            "duration": "PT1H50M",
+            "id": "129",
+            "numberOfStops": 0,
+            "blacklistedInEU": false
+          }
+        ]
+      }
+    ],
+    "price": {
+      "currency": "DKK",
+      "total": "1186.00",
+      "base": "170.00",
+      "fees": [
+        {
+          "amount": "0.00",
+          "type": "TICKETING"
+        }
+      ],
+      "grandTotal": "1186.00"
+    },
+    "pricingOptions": {
+      "fareType": [
+        "PUBLISHED"
+      ],
+      "includedCheckedBagsOnly": false,
+      "refundableFare": false,
+      "noRestrictionFare": false,
+      "noPenaltyFare": false
+    },
+    "validatingAirlineCodes": [
+      "SK"
+    ],
+    "travelerPricings": [
+      {
+        "travelerId": "0",
+        "fareOption": "STANDARD",
+        "travelerType": "ADULT",
+        "price": {
+          "currency": "DKK",
+          "total": "1186",
+          "base": "170",
+          "taxes": [
+            {
+              "amount": "223.00",
+              "code": "ZO"
+            },
+            {
+              "amount": "422.00",
+              "code": "YQ"
+            },
+            {
+              "amount": "68.00",
+              "code": "YR"
+            },
+            {
+              "amount": "113.00",
+              "code": "GB"
+            },
+            {
+              "amount": "190.00",
+              "code": "UB"
+            }
+          ]
+        },
+        "fareDetailsBySegment": [
+          {
+            "segmentId": "6",
+            "cabin": "ECONOMY",
+            "fareBasis": "OLDRGHT",
+            "brandedFare": "GOLIGHT",
+            "class": "O",
+            "includedCheckedBags": {
+              "quantity": 0
+            },
+            "amenities": [
+              {
+                "code": "CBU",
+                "description": "UNDERSEAT BAG 40X30X15",
+                "isChargeable": false,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "0CM",
+                "description": "BONUS MILES",
+                "isChargeable": false,
+                "amenityType": "FREQUENT_FLYER"
+              },
+              {
+                "code": "0M1",
+                "description": "CARRY ON BAG 55X40X23 8 KG",
+                "isChargeable": true,
+                "amenityType": "BAGGAGE"
+              },
+              {
+                "code": "0C4",
+                "description": "1 CHECKED BAG UP TO 23KG",
+                "isChargeable": true,
+                "amenityType": "BAGGAGE"
+              },
+              {
+                "code": "PSA",
+                "description": "PRE RESERVED SEAT ASSIGNMENT",
+                "isChargeable": true,
+                "amenityType": "PRE_RESERVED_SEAT"
+              },
+              {
+                "code": "0BX",
+                "description": "LOUNGE",
+                "isChargeable": true,
+                "amenityType": "LOUNGE"
+              },
+              {
+                "code": "02M",
+                "description": "FOOD AND BEVERAGE",
+                "isChargeable": true,
+                "amenityType": "MEAL"
+              },
+              {
+                "code": "059",
+                "description": "CHANGEABLE TICKET",
+                "isChargeable": true,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "0BJ",
+                "description": "UPGRADE",
+                "isChargeable": true,
+                "amenityType": "UPGRADES"
+              },
+              {
+                "code": "SAF",
+                "description": "APPR 50 PERCENT BIOFUEL",
+                "isChargeable": true,
+                "amenityType": "BRANDED_FARES"
+              }
+            ]
+          },
+          {
+            "segmentId": "129",
+            "cabin": "ECONOMY",
+            "fareBasis": "OLDKRSM",
+            "brandedFare": "GOSMART",
+            "class": "O",
+            "includedCheckedBags": {
+              "quantity": 1
+            },
+            "amenities": [
+              {
+                "code": "0M1",
+                "description": "CARRY ON BAG 55X40X23 8 KG",
+                "isChargeable": false,
+                "amenityType": "BAGGAGE"
+              },
+              {
+                "code": "CBU",
+                "description": "UNDERSEAT BAG 40X30X15",
+                "isChargeable": false,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "0C4",
+                "description": "1 CHECKED BAG UP TO 23KG",
+                "isChargeable": false,
+                "amenityType": "BAGGAGE"
+              },
+              {
+                "code": "0CM",
+                "description": "BONUS MILES",
+                "isChargeable": false,
+                "amenityType": "FREQUENT_FLYER"
+              },
+              {
+                "code": "PSA",
+                "description": "PRE RESERVED SEAT ASSIGNMENT",
+                "isChargeable": true,
+                "amenityType": "PRE_RESERVED_SEAT"
+              },
+              {
+                "code": "0BX",
+                "description": "LOUNGE",
+                "isChargeable": true,
+                "amenityType": "LOUNGE"
+              },
+              {
+                "code": "02M",
+                "description": "FOOD AND BEVERAGE",
+                "isChargeable": true,
+                "amenityType": "MEAL"
+              },
+              {
+                "code": "059",
+                "description": "CHANGEABLE TICKET",
+                "isChargeable": true,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "0BJ",
+                "description": "UPGRADE",
+                "isChargeable": true,
+                "amenityType": "UPGRADES"
+              },
+              {
+                "code": "SAF",
+                "description": "APPR 50 PERCENT BIOFUEL",
+                "isChargeable": true,
+                "amenityType": "BRANDED_FARES"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "flight-offer",
+    "id": "5",
+    "source": "GDS",
+    "instantTicketingRequired": false,
+    "paymentCardRequired": false,
+    "lastTicketingDate": "2023-12-21",
+    "itineraries": [
+      {
+        "segments": [
+          {
+            "departure": {
+              "iataCode": "CPH",
+              "terminal": "3",
+              "at": "2024-01-08T16:35:00"
+            },
+            "arrival": {
+              "iataCode": "LHR",
+              "at": "2024-01-08T17:40:00"
+            },
+            "carrierCode": "SK",
+            "number": "1517",
+            "aircraft": {
+              "code": "32N"
+            },
+            "operating": {
+              "carrierCode": "SK"
+            },
+            "duration": "PT2H5M",
+            "id": "6",
+            "numberOfStops": 0,
+            "blacklistedInEU": false
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "departure": {
+              "iataCode": "LHR",
+              "terminal": "2",
+              "at": "2024-01-12T06:40:00"
+            },
+            "arrival": {
+              "iataCode": "CPH",
+              "at": "2024-01-12T09:30:00"
+            },
+            "carrierCode": "SK",
+            "number": "500",
+            "aircraft": {
+              "code": "32N"
+            },
+            "operating": {
+              "carrierCode": "SK"
+            },
+            "duration": "PT1H50M",
+            "id": "129",
+            "numberOfStops": 0,
+            "blacklistedInEU": false
+          }
+        ]
+      }
+    ],
+    "price": {
+      "currency": "DKK",
+      "total": "1306.00",
+      "base": "290.00",
+      "fees": [
+        {
+          "amount": "0.00",
+          "type": "TICKETING"
+        }
+      ],
+      "grandTotal": "1306.00"
+    },
+    "pricingOptions": {
+      "fareType": [
+        "PUBLISHED"
+      ],
+      "includedCheckedBagsOnly": false,
+      "refundableFare": false,
+      "noRestrictionFare": false,
+      "noPenaltyFare": false
+    },
+    "validatingAirlineCodes": [
+      "SK"
+    ],
+    "travelerPricings": [
+      {
+        "travelerId": "0",
+        "fareOption": "STANDARD",
+        "travelerType": "ADULT",
+        "price": {
+          "currency": "DKK",
+          "total": "1306",
+          "base": "290",
+          "taxes": [
+            {
+              "amount": "223.00",
+              "code": "ZO"
+            },
+            {
+              "amount": "422.00",
+              "code": "YQ"
+            },
+            {
+              "amount": "68.00",
+              "code": "YR"
+            },
+            {
+              "amount": "113.00",
+              "code": "GB"
+            },
+            {
+              "amount": "190.00",
+              "code": "UB"
+            }
+          ]
+        },
+        "fareDetailsBySegment": [
+          {
+            "segmentId": "6",
+            "cabin": "ECONOMY",
+            "fareBasis": "OLDKRSM",
+            "brandedFare": "GOSMART",
+            "class": "O",
+            "includedCheckedBags": {
+              "quantity": 1
+            },
+            "amenities": [
+              {
+                "code": "0M1",
+                "description": "CARRY ON BAG 55X40X23 8 KG",
+                "isChargeable": false,
+                "amenityType": "BAGGAGE"
+              },
+              {
+                "code": "CBU",
+                "description": "UNDERSEAT BAG 40X30X15",
+                "isChargeable": false,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "0C4",
+                "description": "1 CHECKED BAG UP TO 23KG",
+                "isChargeable": false,
+                "amenityType": "BAGGAGE"
+              },
+              {
+                "code": "0CM",
+                "description": "BONUS MILES",
+                "isChargeable": false,
+                "amenityType": "FREQUENT_FLYER"
+              },
+              {
+                "code": "PSA",
+                "description": "PRE RESERVED SEAT ASSIGNMENT",
+                "isChargeable": true,
+                "amenityType": "PRE_RESERVED_SEAT"
+              },
+              {
+                "code": "0BX",
+                "description": "LOUNGE",
+                "isChargeable": true,
+                "amenityType": "LOUNGE"
+              },
+              {
+                "code": "02M",
+                "description": "FOOD AND BEVERAGE",
+                "isChargeable": true,
+                "amenityType": "MEAL"
+              },
+              {
+                "code": "059",
+                "description": "CHANGEABLE TICKET",
+                "isChargeable": true,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "0BJ",
+                "description": "UPGRADE",
+                "isChargeable": true,
+                "amenityType": "UPGRADES"
+              },
+              {
+                "code": "SAF",
+                "description": "APPR 50 PERCENT BIOFUEL",
+                "isChargeable": true,
+                "amenityType": "BRANDED_FARES"
+              }
+            ]
+          },
+          {
+            "segmentId": "129",
+            "cabin": "ECONOMY",
+            "fareBasis": "OLDKRSM",
+            "brandedFare": "GOSMART",
+            "class": "O",
+            "includedCheckedBags": {
+              "quantity": 1
+            },
+            "amenities": [
+              {
+                "code": "0M1",
+                "description": "CARRY ON BAG 55X40X23 8 KG",
+                "isChargeable": false,
+                "amenityType": "BAGGAGE"
+              },
+              {
+                "code": "CBU",
+                "description": "UNDERSEAT BAG 40X30X15",
+                "isChargeable": false,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "0C4",
+                "description": "1 CHECKED BAG UP TO 23KG",
+                "isChargeable": false,
+                "amenityType": "BAGGAGE"
+              },
+              {
+                "code": "0CM",
+                "description": "BONUS MILES",
+                "isChargeable": false,
+                "amenityType": "FREQUENT_FLYER"
+              },
+              {
+                "code": "PSA",
+                "description": "PRE RESERVED SEAT ASSIGNMENT",
+                "isChargeable": true,
+                "amenityType": "PRE_RESERVED_SEAT"
+              },
+              {
+                "code": "0BX",
+                "description": "LOUNGE",
+                "isChargeable": true,
+                "amenityType": "LOUNGE"
+              },
+              {
+                "code": "02M",
+                "description": "FOOD AND BEVERAGE",
+                "isChargeable": true,
+                "amenityType": "MEAL"
+              },
+              {
+                "code": "059",
+                "description": "CHANGEABLE TICKET",
+                "isChargeable": true,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "0BJ",
+                "description": "UPGRADE",
+                "isChargeable": true,
+                "amenityType": "UPGRADES"
+              },
+              {
+                "code": "SAF",
+                "description": "APPR 50 PERCENT BIOFUEL",
+                "isChargeable": true,
+                "amenityType": "BRANDED_FARES"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "flight-offer",
+    "id": "6",
+    "source": "GDS",
+    "instantTicketingRequired": false,
+    "paymentCardRequired": false,
+    "lastTicketingDate": "2023-12-21",
+    "itineraries": [
+      {
+        "segments": [
+          {
+            "departure": {
+              "iataCode": "CPH",
+              "terminal": "3",
+              "at": "2024-01-08T16:35:00"
+            },
+            "arrival": {
+              "iataCode": "LHR",
+              "at": "2024-01-08T17:40:00"
+            },
+            "carrierCode": "SK",
+            "number": "1517",
+            "aircraft": {
+              "code": "32N"
+            },
+            "operating": {
+              "carrierCode": "SK"
+            },
+            "duration": "PT2H5M",
+            "id": "6",
+            "numberOfStops": 0,
+            "blacklistedInEU": false
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "departure": {
+              "iataCode": "LHR",
+              "terminal": "2",
+              "at": "2024-01-12T06:40:00"
+            },
+            "arrival": {
+              "iataCode": "CPH",
+              "at": "2024-01-12T09:30:00"
+            },
+            "carrierCode": "SK",
+            "number": "500",
+            "aircraft": {
+              "code": "32N"
+            },
+            "operating": {
+              "carrierCode": "SK"
+            },
+            "duration": "PT1H50M",
+            "id": "129",
+            "numberOfStops": 0,
+            "blacklistedInEU": false
+          }
+        ]
+      }
+    ],
+    "price": {
+      "currency": "DKK",
+      "total": "1546.00",
+      "base": "290.00",
+      "fees": [
+        {
+          "amount": "0.00",
+          "type": "TICKETING"
+        }
+      ],
+      "grandTotal": "1546.00"
+    },
+    "pricingOptions": {
+      "fareType": [
+        "PUBLISHED"
+      ],
+      "includedCheckedBagsOnly": false,
+      "refundableFare": false,
+      "noRestrictionFare": false,
+      "noPenaltyFare": false
+    },
+    "validatingAirlineCodes": [
+      "SK"
+    ],
+    "travelerPricings": [
+      {
+        "travelerId": "0",
+        "fareOption": "STANDARD",
+        "travelerType": "ADULT",
+        "price": {
+          "currency": "DKK",
+          "total": "1546",
+          "base": "290",
+          "taxes": [
+            {
+              "amount": "223.00",
+              "code": "ZO"
+            },
+            {
+              "amount": "662.00",
+              "code": "YQ"
+            },
+            {
+              "amount": "68.00",
+              "code": "YR"
+            },
+            {
+              "amount": "113.00",
+              "code": "GB"
+            },
+            {
+              "amount": "190.00",
+              "code": "UB"
+            }
+          ]
+        },
+        "fareDetailsBySegment": [
+          {
+            "segmentId": "6",
+            "cabin": "ECONOMY",
+            "fareBasis": "OLDRBSM",
+            "brandedFare": "GOSMARTBIO",
+            "class": "O",
+            "includedCheckedBags": {
+              "quantity": 1
+            },
+            "amenities": [
+              {
+                "code": "0M1",
+                "description": "CARRY ON BAG 55X40X23 8 KG",
+                "isChargeable": false,
+                "amenityType": "BAGGAGE"
+              },
+              {
+                "code": "CBU",
+                "description": "UNDERSEAT BAG 40X30X15",
+                "isChargeable": false,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "0C4",
+                "description": "1 CHECKED BAG UP TO 23KG",
+                "isChargeable": false,
+                "amenityType": "BAGGAGE"
+              },
+              {
+                "code": "0CM",
+                "description": "BONUS MILES",
+                "isChargeable": false,
+                "amenityType": "FREQUENT_FLYER"
+              },
+              {
+                "code": "SAF",
+                "description": "APPR 50 PERCENT BIOFUEL",
+                "isChargeable": false,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "PSA",
+                "description": "PRE RESERVED SEAT ASSIGNMENT",
+                "isChargeable": true,
+                "amenityType": "PRE_RESERVED_SEAT"
+              },
+              {
+                "code": "0BX",
+                "description": "LOUNGE",
+                "isChargeable": true,
+                "amenityType": "LOUNGE"
+              },
+              {
+                "code": "02M",
+                "description": "FOOD AND BEVERAGE",
+                "isChargeable": true,
+                "amenityType": "MEAL"
+              },
+              {
+                "code": "059",
+                "description": "CHANGEABLE TICKET",
+                "isChargeable": true,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "0BJ",
+                "description": "UPGRADE",
+                "isChargeable": true,
+                "amenityType": "UPGRADES"
+              }
+            ]
+          },
+          {
+            "segmentId": "129",
+            "cabin": "ECONOMY",
+            "fareBasis": "OLDKRSM",
+            "brandedFare": "GOSMART",
+            "class": "O",
+            "includedCheckedBags": {
+              "quantity": 1
+            },
+            "amenities": [
+              {
+                "code": "0M1",
+                "description": "CARRY ON BAG 55X40X23 8 KG",
+                "isChargeable": false,
+                "amenityType": "BAGGAGE"
+              },
+              {
+                "code": "CBU",
+                "description": "UNDERSEAT BAG 40X30X15",
+                "isChargeable": false,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "0C4",
+                "description": "1 CHECKED BAG UP TO 23KG",
+                "isChargeable": false,
+                "amenityType": "BAGGAGE"
+              },
+              {
+                "code": "0CM",
+                "description": "BONUS MILES",
+                "isChargeable": false,
+                "amenityType": "FREQUENT_FLYER"
+              },
+              {
+                "code": "PSA",
+                "description": "PRE RESERVED SEAT ASSIGNMENT",
+                "isChargeable": true,
+                "amenityType": "PRE_RESERVED_SEAT"
+              },
+              {
+                "code": "0BX",
+                "description": "LOUNGE",
+                "isChargeable": true,
+                "amenityType": "LOUNGE"
+              },
+              {
+                "code": "02M",
+                "description": "FOOD AND BEVERAGE",
+                "isChargeable": true,
+                "amenityType": "MEAL"
+              },
+              {
+                "code": "059",
+                "description": "CHANGEABLE TICKET",
+                "isChargeable": true,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "0BJ",
+                "description": "UPGRADE",
+                "isChargeable": true,
+                "amenityType": "UPGRADES"
+              },
+              {
+                "code": "SAF",
+                "description": "APPR 50 PERCENT BIOFUEL",
+                "isChargeable": true,
+                "amenityType": "BRANDED_FARES"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "flight-offer",
+    "id": "7",
+    "source": "GDS",
+    "instantTicketingRequired": false,
+    "paymentCardRequired": false,
+    "lastTicketingDate": "2023-12-21",
+    "itineraries": [
+      {
+        "segments": [
+          {
+            "departure": {
+              "iataCode": "CPH",
+              "terminal": "3",
+              "at": "2024-01-08T16:35:00"
+            },
+            "arrival": {
+              "iataCode": "LHR",
+              "at": "2024-01-08T17:40:00"
+            },
+            "carrierCode": "SK",
+            "number": "1517",
+            "aircraft": {
+              "code": "32N"
+            },
+            "operating": {
+              "carrierCode": "SK"
+            },
+            "duration": "PT2H5M",
+            "id": "6",
+            "numberOfStops": 0,
+            "blacklistedInEU": false
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "departure": {
+              "iataCode": "LHR",
+              "terminal": "2",
+              "at": "2024-01-12T06:40:00"
+            },
+            "arrival": {
+              "iataCode": "CPH",
+              "at": "2024-01-12T09:30:00"
+            },
+            "carrierCode": "SK",
+            "number": "500",
+            "aircraft": {
+              "code": "32N"
+            },
+            "operating": {
+              "carrierCode": "SK"
+            },
+            "duration": "PT1H50M",
+            "id": "129",
+            "numberOfStops": 0,
+            "blacklistedInEU": false
+          }
+        ]
+      }
+    ],
+    "price": {
+      "currency": "DKK",
+      "total": "1546.00",
+      "base": "290.00",
+      "fees": [
+        {
+          "amount": "0.00",
+          "type": "TICKETING"
+        }
+      ],
+      "grandTotal": "1546.00"
+    },
+    "pricingOptions": {
+      "fareType": [
+        "PUBLISHED"
+      ],
+      "includedCheckedBagsOnly": false,
+      "refundableFare": false,
+      "noRestrictionFare": false,
+      "noPenaltyFare": false
+    },
+    "validatingAirlineCodes": [
+      "SK"
+    ],
+    "travelerPricings": [
+      {
+        "travelerId": "0",
+        "fareOption": "STANDARD",
+        "travelerType": "ADULT",
+        "price": {
+          "currency": "DKK",
+          "total": "1546",
+          "base": "290",
+          "taxes": [
+            {
+              "amount": "223.00",
+              "code": "ZO"
+            },
+            {
+              "amount": "662.00",
+              "code": "YQ"
+            },
+            {
+              "amount": "68.00",
+              "code": "YR"
+            },
+            {
+              "amount": "113.00",
+              "code": "GB"
+            },
+            {
+              "amount": "190.00",
+              "code": "UB"
+            }
+          ]
+        },
+        "fareDetailsBySegment": [
+          {
+            "segmentId": "6",
+            "cabin": "ECONOMY",
+            "fareBasis": "OLDKRSM",
+            "brandedFare": "GOSMART",
+            "class": "O",
+            "includedCheckedBags": {
+              "quantity": 1
+            },
+            "amenities": [
+              {
+                "code": "0M1",
+                "description": "CARRY ON BAG 55X40X23 8 KG",
+                "isChargeable": false,
+                "amenityType": "BAGGAGE"
+              },
+              {
+                "code": "CBU",
+                "description": "UNDERSEAT BAG 40X30X15",
+                "isChargeable": false,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "0C4",
+                "description": "1 CHECKED BAG UP TO 23KG",
+                "isChargeable": false,
+                "amenityType": "BAGGAGE"
+              },
+              {
+                "code": "0CM",
+                "description": "BONUS MILES",
+                "isChargeable": false,
+                "amenityType": "FREQUENT_FLYER"
+              },
+              {
+                "code": "PSA",
+                "description": "PRE RESERVED SEAT ASSIGNMENT",
+                "isChargeable": true,
+                "amenityType": "PRE_RESERVED_SEAT"
+              },
+              {
+                "code": "0BX",
+                "description": "LOUNGE",
+                "isChargeable": true,
+                "amenityType": "LOUNGE"
+              },
+              {
+                "code": "02M",
+                "description": "FOOD AND BEVERAGE",
+                "isChargeable": true,
+                "amenityType": "MEAL"
+              },
+              {
+                "code": "059",
+                "description": "CHANGEABLE TICKET",
+                "isChargeable": true,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "0BJ",
+                "description": "UPGRADE",
+                "isChargeable": true,
+                "amenityType": "UPGRADES"
+              },
+              {
+                "code": "SAF",
+                "description": "APPR 50 PERCENT BIOFUEL",
+                "isChargeable": true,
+                "amenityType": "BRANDED_FARES"
+              }
+            ]
+          },
+          {
+            "segmentId": "129",
+            "cabin": "ECONOMY",
+            "fareBasis": "OLDRBSM",
+            "brandedFare": "GOSMARTBIO",
+            "class": "O",
+            "includedCheckedBags": {
+              "quantity": 1
+            },
+            "amenities": [
+              {
+                "code": "0M1",
+                "description": "CARRY ON BAG 55X40X23 8 KG",
+                "isChargeable": false,
+                "amenityType": "BAGGAGE"
+              },
+              {
+                "code": "CBU",
+                "description": "UNDERSEAT BAG 40X30X15",
+                "isChargeable": false,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "0C4",
+                "description": "1 CHECKED BAG UP TO 23KG",
+                "isChargeable": false,
+                "amenityType": "BAGGAGE"
+              },
+              {
+                "code": "0CM",
+                "description": "BONUS MILES",
+                "isChargeable": false,
+                "amenityType": "FREQUENT_FLYER"
+              },
+              {
+                "code": "SAF",
+                "description": "APPR 50 PERCENT BIOFUEL",
+                "isChargeable": false,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "PSA",
+                "description": "PRE RESERVED SEAT ASSIGNMENT",
+                "isChargeable": true,
+                "amenityType": "PRE_RESERVED_SEAT"
+              },
+              {
+                "code": "0BX",
+                "description": "LOUNGE",
+                "isChargeable": true,
+                "amenityType": "LOUNGE"
+              },
+              {
+                "code": "02M",
+                "description": "FOOD AND BEVERAGE",
+                "isChargeable": true,
+                "amenityType": "MEAL"
+              },
+              {
+                "code": "059",
+                "description": "CHANGEABLE TICKET",
+                "isChargeable": true,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "0BJ",
+                "description": "UPGRADE",
+                "isChargeable": true,
+                "amenityType": "UPGRADES"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "flight-offer",
+    "id": "8",
+    "source": "GDS",
+    "instantTicketingRequired": false,
+    "paymentCardRequired": false,
+    "lastTicketingDate": "2023-12-21",
+    "itineraries": [
+      {
+        "segments": [
+          {
+            "departure": {
+              "iataCode": "CPH",
+              "terminal": "3",
+              "at": "2024-01-08T16:35:00"
+            },
+            "arrival": {
+              "iataCode": "LHR",
+              "at": "2024-01-08T17:40:00"
+            },
+            "carrierCode": "SK",
+            "number": "1517",
+            "aircraft": {
+              "code": "32N"
+            },
+            "operating": {
+              "carrierCode": "SK"
+            },
+            "duration": "PT2H5M",
+            "id": "6",
+            "numberOfStops": 0,
+            "blacklistedInEU": false
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "departure": {
+              "iataCode": "LHR",
+              "terminal": "2",
+              "at": "2024-01-12T06:40:00"
+            },
+            "arrival": {
+              "iataCode": "CPH",
+              "at": "2024-01-12T09:30:00"
+            },
+            "carrierCode": "SK",
+            "number": "500",
+            "aircraft": {
+              "code": "32N"
+            },
+            "operating": {
+              "carrierCode": "SK"
+            },
+            "duration": "PT1H50M",
+            "id": "129",
+            "numberOfStops": 0,
+            "blacklistedInEU": false
+          }
+        ]
+      }
+    ],
+    "price": {
+      "currency": "DKK",
+      "total": "1786.00",
+      "base": "290.00",
+      "fees": [
+        {
+          "amount": "0.00",
+          "type": "TICKETING"
+        }
+      ],
+      "grandTotal": "1786.00"
+    },
+    "pricingOptions": {
+      "fareType": [
+        "PUBLISHED"
+      ],
+      "includedCheckedBagsOnly": false,
+      "refundableFare": false,
+      "noRestrictionFare": false,
+      "noPenaltyFare": false
+    },
+    "validatingAirlineCodes": [
+      "SK"
+    ],
+    "travelerPricings": [
+      {
+        "travelerId": "0",
+        "fareOption": "STANDARD",
+        "travelerType": "ADULT",
+        "price": {
+          "currency": "DKK",
+          "total": "1786",
+          "base": "290",
+          "taxes": [
+            {
+              "amount": "223.00",
+              "code": "ZO"
+            },
+            {
+              "amount": "902.00",
+              "code": "YQ"
+            },
+            {
+              "amount": "68.00",
+              "code": "YR"
+            },
+            {
+              "amount": "113.00",
+              "code": "GB"
+            },
+            {
+              "amount": "190.00",
+              "code": "UB"
+            }
+          ]
+        },
+        "fareDetailsBySegment": [
+          {
+            "segmentId": "6",
+            "cabin": "ECONOMY",
+            "fareBasis": "OLDRBSM",
+            "brandedFare": "GOSMARTBIO",
+            "class": "O",
+            "includedCheckedBags": {
+              "quantity": 1
+            },
+            "amenities": [
+              {
+                "code": "0M1",
+                "description": "CARRY ON BAG 55X40X23 8 KG",
+                "isChargeable": false,
+                "amenityType": "BAGGAGE"
+              },
+              {
+                "code": "CBU",
+                "description": "UNDERSEAT BAG 40X30X15",
+                "isChargeable": false,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "0C4",
+                "description": "1 CHECKED BAG UP TO 23KG",
+                "isChargeable": false,
+                "amenityType": "BAGGAGE"
+              },
+              {
+                "code": "0CM",
+                "description": "BONUS MILES",
+                "isChargeable": false,
+                "amenityType": "FREQUENT_FLYER"
+              },
+              {
+                "code": "SAF",
+                "description": "APPR 50 PERCENT BIOFUEL",
+                "isChargeable": false,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "PSA",
+                "description": "PRE RESERVED SEAT ASSIGNMENT",
+                "isChargeable": true,
+                "amenityType": "PRE_RESERVED_SEAT"
+              },
+              {
+                "code": "0BX",
+                "description": "LOUNGE",
+                "isChargeable": true,
+                "amenityType": "LOUNGE"
+              },
+              {
+                "code": "02M",
+                "description": "FOOD AND BEVERAGE",
+                "isChargeable": true,
+                "amenityType": "MEAL"
+              },
+              {
+                "code": "059",
+                "description": "CHANGEABLE TICKET",
+                "isChargeable": true,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "0BJ",
+                "description": "UPGRADE",
+                "isChargeable": true,
+                "amenityType": "UPGRADES"
+              }
+            ]
+          },
+          {
+            "segmentId": "129",
+            "cabin": "ECONOMY",
+            "fareBasis": "OLDRBSM",
+            "brandedFare": "GOSMARTBIO",
+            "class": "O",
+            "includedCheckedBags": {
+              "quantity": 1
+            },
+            "amenities": [
+              {
+                "code": "0M1",
+                "description": "CARRY ON BAG 55X40X23 8 KG",
+                "isChargeable": false,
+                "amenityType": "BAGGAGE"
+              },
+              {
+                "code": "CBU",
+                "description": "UNDERSEAT BAG 40X30X15",
+                "isChargeable": false,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "0C4",
+                "description": "1 CHECKED BAG UP TO 23KG",
+                "isChargeable": false,
+                "amenityType": "BAGGAGE"
+              },
+              {
+                "code": "0CM",
+                "description": "BONUS MILES",
+                "isChargeable": false,
+                "amenityType": "FREQUENT_FLYER"
+              },
+              {
+                "code": "SAF",
+                "description": "APPR 50 PERCENT BIOFUEL",
+                "isChargeable": false,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "PSA",
+                "description": "PRE RESERVED SEAT ASSIGNMENT",
+                "isChargeable": true,
+                "amenityType": "PRE_RESERVED_SEAT"
+              },
+              {
+                "code": "0BX",
+                "description": "LOUNGE",
+                "isChargeable": true,
+                "amenityType": "LOUNGE"
+              },
+              {
+                "code": "02M",
+                "description": "FOOD AND BEVERAGE",
+                "isChargeable": true,
+                "amenityType": "MEAL"
+              },
+              {
+                "code": "059",
+                "description": "CHANGEABLE TICKET",
+                "isChargeable": true,
+                "amenityType": "BRANDED_FARES"
+              },
+              {
+                "code": "0BJ",
+                "description": "UPGRADE",
+                "isChargeable": true,
+                "amenityType": "UPGRADES"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
