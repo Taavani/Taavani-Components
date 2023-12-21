@@ -32,12 +32,12 @@ const currency = props.offer.price.currency
       </h1>
 
       <p class="text-sm pt-2 pb-3">
-        {{ $t('extendedOffer.cabin') }}:
+        {{ $t('flightOfferExtended.cabin') }}:
         {{ cabin }}
       </p>
 
       <h2 class="pb-2 uppercase font-light">
-        {{ $t('extendedOffer.included') }}
+        {{ $t('flightOfferExtended.included') }}
       </h2>
       <ul class="pb-3">
         <li v-for="bag in included" class="flex flex-col">
@@ -51,7 +51,7 @@ const currency = props.offer.price.currency
       </ul>
 
       <h2 class="pb-2 uppercase font-light">
-        {{ $t('extendedOffer.purchase')}}
+        {{ $t('flightOfferExtended.purchase')}}
       </h2>
       <ul class="pb-3">
         <li v-for="meal in excluded" class="flex flex-col">
@@ -63,7 +63,7 @@ const currency = props.offer.price.currency
           </div>
         </li>
       </ul>
-      <TButton :title="$t('extendedOffer.select')"
+      <TButton :title="$t('flightOfferExtended.select')"
               class="w-full">
       </TButton>
     </div>

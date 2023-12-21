@@ -74,7 +74,7 @@ const messages = {
             selectHomebound: "Select return flight",
             noOffersDescription: "We were unable to find any offers matching your search criteria."
         },
-        extendedOffer: {
+        flightOfferExtended: {
             cabin: "Cabin class",
             included: "Included",
             purchase: "Purchase",
