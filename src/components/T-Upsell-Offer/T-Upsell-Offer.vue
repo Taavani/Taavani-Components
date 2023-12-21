@@ -25,7 +25,7 @@ const currency = props.offer.price.currency
 
 <template>
   <div class="snap-center rounded-2xl py-4 px-4 bg-white mx-auto w-96 shadow border mb-3">
-    <div>
+    <div class="w-full h-full inline-flex flex-col">
       <h1>
         <span class="font-bold text-xl text-brand-dark-blue pb-3">{{ price }}</span>
         {{ currency }}
@@ -43,7 +43,7 @@ const currency = props.offer.price.currency
         <li v-for="bag in included" class="flex flex-col">
           <div class="flex">
             <checked class="h-5 w-5 text-gray-900" />
-            <p class="pl-2 text-sm">
+            <p class="pl-2 text-xs">
               {{ bag.description }}
             </p>
           </div>
@@ -57,12 +57,14 @@ const currency = props.offer.price.currency
         <li v-for="meal in excluded" class="flex flex-col">
           <div class="flex">
             <no-checked class="h-5 w-5 text-gray-900" />
-            <p class="pl-2 text-sm">
+            <p class="pl-2 text-xs">
               {{ meal.description }}
             </p>
           </div>
         </li>
       </ul>
+
+      <div class="grow"></div>
 
       <TButton :title="$t('flightOfferExtended.select')"
               class="w-full">
