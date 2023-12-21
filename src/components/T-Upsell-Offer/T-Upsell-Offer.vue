@@ -24,7 +24,7 @@ const currency = props.offer.price.currency
 </script>
 
 <template>
-  <div class="snap-center rounded-2xl py-4 px-4 bg-white mx-auto w-72 shadow border mb-3">
+  <div class="snap-center rounded-2xl py-4 px-4 bg-white mx-auto w-96 shadow border mb-3">
     <div>
       <h1>
         <span class="font-bold text-xl text-brand-dark-blue pb-3">{{ price }}</span>
