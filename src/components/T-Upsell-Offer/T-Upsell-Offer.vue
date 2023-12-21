@@ -4,7 +4,8 @@ import noChecked from '@heroicons/vue/24/outline/CurrencyEuroIcon.js'
 import TButton from "../T-Button/T-Button.vue";
 
 const props = defineProps({
-  offer: Object
+  offer: Object,
+  onSelect: Function
 })
 
 const travelerPricings = props.offer.travelerPricings
@@ -67,7 +68,8 @@ const currency = props.offer.price.currency
       <div class="grow"></div>
 
       <TButton :title="$t('flightOfferExtended.select')"
-              class="w-full">
+               @click="props.onSelect(props.offer)"
+               class="w-full">
       </TButton>
     </div>
   </div>

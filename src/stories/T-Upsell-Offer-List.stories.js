@@ -17,7 +17,7 @@ export const ListWithOffers = {
         setup() {
             return { args }
         },
-        template: '<t-upsell-offer-list><t-upsell-offer v-for="offer in args.offers" :offer="offer"></t-upsell-offer></t-upsell-offer-list>'
+        template: '<t-upsell-offer-list><t-upsell-offer v-for="offer in args.offers" :offer="offer" :on-select="props => console.log(props)"></t-upsell-offer></t-upsell-offer-list>'
     }),
     args: {
         offers: data
