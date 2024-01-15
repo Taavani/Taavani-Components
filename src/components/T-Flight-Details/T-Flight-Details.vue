@@ -97,7 +97,6 @@ function calculateLayover( arrivalTime, departureTime) {
           </departure-airplane>
           <p>{{ travelTime(flight) }}</p>
           <p v-if="flight.segments.length > 1">
-            {{ flight.segments.length - 1 }}
             {{ $t('flightOffers.stopover', (flight.segments.length - 1)) }}
           </p>
         </div>
