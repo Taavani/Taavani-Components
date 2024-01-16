@@ -75,6 +75,7 @@ const messages = {
             noOffersDescription: "We were unable to find any offers matching your search criteria."
         },
         flightOfferExtended: {
+            departureDate: "Departure date",
             cabin: "Cabin class",
             included: "Included",
             purchase: "Purchase",

@@ -67,6 +67,7 @@ function calculateLayover( arrivalTime, departureTime) {
     <div class="header grid grid-cols-6">
       <div class="left">
         <p class="description">
+          {{ $t('flightOfferExtended.departureDate') }}
           Departure date
         </p>
         <div class="date">
