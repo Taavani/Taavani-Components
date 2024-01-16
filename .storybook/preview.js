@@ -14,6 +14,7 @@ const messages = {
         passengers: {
             passengerDetails: 'Provide passenger details',
             selectPassenger: 'Select passenger',
+            placeholder: 'Passenger {count}',
             name: {
                 title: 'Names',
                 firstNameLabel: 'First name',

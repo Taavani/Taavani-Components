@@ -188,7 +188,7 @@ watch(passenger, (value) => {
              alt=""
         />
         <h1 class="grow text-neutral-600">
-          {{ passenger.name.firstName.length !== 0 ? passenger.name.firstName : 'Passenger ' + (Number(passenger.id) + 1) }}
+          {{ passenger.name.firstName.length !== 0 ? passenger.name.firstName : $t('passengers.placeholder', (Number(passenger.id) + 1)) }}
           {{ passenger.name.lastName.length !== 0 ? passenger.name.lastName : '' }}
         </h1>
         <div v-if="isTravelerValid()" class="w-8">
