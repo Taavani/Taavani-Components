@@ -4,7 +4,7 @@ import TLargeButton from "../T-Large-Button/T-Large-Button.vue";
 </script>
 
 <template>
-  <div class="grid grid-cols-2 grid-rows-1 gap-4 ">
+  <div class="grid grid-rows-2 grid-cols-1 md:grid-cols-2 md:grid-rows-1 gap-4 ">
     <t-large-button :title="$t('additionalServices.seats.title')"
                     :attention-text="$t('additionalServices.seats.attentionText')"
                     :description="$t('additionalServices.seats.description')"
