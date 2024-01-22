@@ -12,8 +12,7 @@ const travelerPricings = props.offer.travelerPricings
 
 const cabin = travelerPricings[0].fareDetailsBySegment[0].cabin
 
-const amenities = travelerPricings[0].fareDetailsBySegment[0].amenities
-
+const amenities = travelerPricings[0].fareDetailsBySegment[0].amenities ?? []
 
 const included = amenities.filter(amenity => amenity.isChargeable === false)
 const excluded = amenities.filter(amenity => amenity.isChargeable === true)
