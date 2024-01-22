@@ -11,7 +11,7 @@
 }
 
 .t-flight-details .right {
-    @apply flex items-center col-span-5;
+    @apply flex items-center col-span-6 md:col-span-5;
 }
 
 .t-flight-details .right .journey {
@@ -51,7 +51,7 @@
 }
 
 .t-flight-details .buttons {
-    @apply text-right flex px-4;
+    @apply text-right flex pl-4;
 }
 
 .t-flight-details .description {

@@ -65,7 +65,7 @@ function calculateLayover( arrivalTime, departureTime) {
 <template>
   <div class="t-flight-details">
     <div class="header grid grid-cols-6">
-      <div class="left">
+      <div class="left hidden md:block">
         <p class="description">
           {{ $t('flightOfferExtended.departureDate') }}
         </p>
@@ -82,7 +82,12 @@ function calculateLayover( arrivalTime, departureTime) {
       <div class="right">
         <div class="departure ">
           <div class="description">
-            {{ dictionary.locations[flight.segments[0].departure.iataCode][$i18n.locale].city }}
+            <span class="block md:hidden">
+              {{ flight.segments[0].departure.iataCode }}
+            </span>
+            <span class="hidden md:block">
+              {{ dictionary.locations[flight.segments[0].departure.iataCode][$i18n.locale].city }}
+            </span>
           </div>
           <div class="time">
             {{
@@ -93,16 +98,22 @@ function calculateLayover( arrivalTime, departureTime) {
           </div>
         </div>
         <div class="journey ">
-          <departure-airplane class="icon stroke">
+          <departure-airplane class="icon stroke ">
           </departure-airplane>
-          <p>{{ travelTime(flight) }}</p>
-          <p v-if="flight.segments.length > 1">
+          <p class="hidden md:block">{{ travelTime(flight) }}</p>
+          <p v-if="flight.segments.length > 1" class="hidden md:block">
             {{ $t('flightOffers.stopover', (flight.segments.length - 1)) }}
           </p>
         </div>
         <div class="arrival">
           <div class="description">
-            {{ dictionary.locations[flight.segments[flight.segments.length - 1].arrival.iataCode][$i18n.locale].city }}
+             <span class="block md:hidden">
+              {{ flight.segments[flight.segments.length - 1].arrival.iataCode }}
+            </span>
+            <span class="hidden md:block">
+              {{ dictionary.locations[flight.segments[flight.segments.length - 1].arrival.iataCode][$i18n.locale].city }}
+            </span>
+
           </div>
           <div class="time">
             {{
@@ -112,7 +123,7 @@ function calculateLayover( arrivalTime, departureTime) {
             }}
           </div>
         </div>
-        <div class="buttons ">
+        <div class="buttons">
           <button @click="extended = !extended">
             <chevron-up-icon v-if="extended" class="icon text-neutral-400"></chevron-up-icon>
             <chevron-down-icon v-if="!extended" class="icon text-neutral-400"></chevron-down-icon>
@@ -121,7 +132,7 @@ function calculateLayover( arrivalTime, departureTime) {
       </div>
     </div>
     <div v-if="extended" class="body grid grid-cols-6">
-      <div class="left"></div>
+      <div class="left hidden md:block"></div>
       <div class="right">
         <div class="flex flex-col w-full">
           <div class="flex w-full">
@@ -173,9 +184,9 @@ function calculateLayover( arrivalTime, departureTime) {
               </div>
             </div>
           </div>
-          <div class="flight-info">
+          <div class="flight-info flex flex-col md:flex-row">
             <p>{{ dictionary.carriers[flight.segments[0].carrierCode] }}</p>
-            <div class="px-1">|</div>
+            <div class="px-1 hidden md:block">|</div>
             <p>{{ dictionary.aircraft[flight.segments[0].aircraft.code] }}</p>
           </div>
         </div>
