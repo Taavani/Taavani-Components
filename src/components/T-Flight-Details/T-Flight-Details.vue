@@ -57,7 +57,7 @@ function calculateLayover( arrivalTime, departureTime) {
     let hours = Math.floor((diff % 86400000) / 3600000)
     let minutes = Math.round(((diff % 86400000) % 3600000) / 60000)
 
-    return t('journey.flightOffers.layover', { hours: hours, minutes: minutes})
+    return t('flightOffers.layover', { hours: hours, minutes: minutes})
 }
 
 </script>

@@ -1,8 +1,8 @@
 import TPassengersList from "../components/T-Passengers-List/T-Passengers-List.vue";
-import PASSENGERS from '../../data/passengers.json';
-import REQUIREMENTS from '../../data/requirements.json';
+import PASSENGERS from '../../data/PASSENGERS.json';
+import REQUIREMENTS from '../../data/REQUIREMENTS.json';
 import REQUIREMENTS_WITH_PASSENGER_REQUIREMENTS from '../../data/REQUIREMENTS_WITH_PASSENGER_REQUIREMENTS.json';
-import EMPLOYEES from '../../data/employees.json';
+import EMPLOYEES from '../../data/EMPLOYEES.json';
 
 export default {
     components: {TPassengersList},
