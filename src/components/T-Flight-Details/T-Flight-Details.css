@@ -22,13 +22,12 @@
     @apply flex justify-between text-sm font-semibold w-full;
 }
 .t-flight-details .right .flight-info {
-    @apply flex text-sm text-neutral-400 w-full;
+    @apply text-sm text-neutral-400 w-full;
 }
 
 .t-flight-details .right .padding {
     @apply w-[10%];
 }
-
 
 .t-flight-details .departure {
     @apply pr-3 flex-1 flex flex-col;

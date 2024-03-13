@@ -184,7 +184,7 @@ function calculateLayover( arrivalTime, departureTime) {
               </div>
             </div>
           </div>
-          <div class="flight-info flex flex-col sm:flex-row">
+          <div class="flight-info flex flex-row">
             <p>{{ dictionary.carriers[flight.segments[0].carrierCode] }}</p>
             <div class="px-1 hidden md:block">|</div>
             <p>{{ dictionary.aircraft[flight.segments[0].aircraft.code] }}</p>
