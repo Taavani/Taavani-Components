@@ -147,8 +147,10 @@ function calculateLayover( arrivalTime, departureTime) {
                 <p v-if="flight.segments.length === 1">
                   {{ dictionary.locations[flight.segments[flight.segments.length - 1].arrival.iataCode][$i18n.locale].name }}
                 </p>
-                <p v-if="flight.segments.length > 1">
-                  {{ dictionary.locations[flight.segments[0].arrival.iataCode][$i18n.locale].name }}
+                <div v-if="flight.segments.length > 1" class="flex flex-col">
+                  <p>
+                    {{ dictionary.locations[flight.segments[0].arrival.iataCode][$i18n.locale].name }}
+                  </p>
                   <span class="font-medium">
                   ({{
                     ("0" + dayjs(flight.segments[0].arrival.at).hour()).slice(-2)
@@ -156,7 +158,7 @@ function calculateLayover( arrivalTime, departureTime) {
                     + ("0" + dayjs(flight.segments[0].arrival.at).minute()).slice(-2)
                   }})
                   </span>
-                </p>
+                </div>
               </div>
             </div>
             <div v-if="flight.segments.length > 1" class="px-4 pt-1">
@@ -169,8 +171,10 @@ function calculateLayover( arrivalTime, departureTime) {
                 <div class="mx-auto rounded-full border-black border-4 h-5 w-5"></div>
               </div>
               <div class="details">
-                <p>
-                  {{ dictionary.locations[flight.segments[1].departure.iataCode][$i18n.locale].name }}
+                <div class="flex flex-col">
+                  <p>
+                    {{ dictionary.locations[flight.segments[1].departure.iataCode][$i18n.locale].name }}
+                  </p>
                   <span class="font-medium">
                     ({{
                       ("0" + dayjs(flight.segments[1].departure.at).hour()).slice(-2)
@@ -178,9 +182,10 @@ function calculateLayover( arrivalTime, departureTime) {
                       + ("0" + dayjs(flight.segments[1].departure.at).minute()).slice(-2)
                     }})
                   </span>
-                </p>
+                </div>
                 <p>
-                  {{ dictionary.locations[flight.segments[flight.segments.length - 1].arrival.iataCode][$i18n.locale].name }}</p>
+                  {{ dictionary.locations[flight.segments[flight.segments.length - 1].arrival.iataCode][$i18n.locale].name }}
+                </p>
               </div>
             </div>
           </div>
