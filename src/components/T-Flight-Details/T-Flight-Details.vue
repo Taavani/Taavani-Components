@@ -151,7 +151,7 @@ function calculateLayover( arrivalTime, departureTime) {
                   <p>
                     {{ dictionary.locations[flight.segments[0].arrival.iataCode][$i18n.locale].name }}
                   </p>
-                  <span class="font-medium">
+                  <span class="font-medium text-right">
                   ({{
                     ("0" + dayjs(flight.segments[0].arrival.at).hour()).slice(-2)
                     + ':'
