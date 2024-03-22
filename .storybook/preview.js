@@ -122,7 +122,7 @@ setup((app) => {
         locale: 'en',
         fallbackLocale: 'en',
         messages,
-        runtimeOnly: false
+        runtimeOnly: false,
     });
 
     app.use(i18n);

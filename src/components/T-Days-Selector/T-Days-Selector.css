@@ -1,0 +1,35 @@
+.t-days-selector {
+    display: flex;
+    justify-content: space-between;
+}
+
+.t-days-selector .items {
+    display: flex;
+    border-radius: 1rem;
+    outline: none;
+    box-shadow: 0 20px 10px -15px rgba(0, 110, 184, 0.08);
+}
+
+.t-days-selector .items .button {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    text-align: left;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.t-days-selector .items .button:hover {
+    background: #E0E5E9;;
+}
+
+.t-days-selector .items .button:focus-within {
+    outline: 2px solid #085386;
+}
+
+.t-days-selector .items .button .label {
+    font-size: 0.75rem;
+    font-weight: 100;
+    color: #1B1D21;
+}
