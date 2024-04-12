@@ -12,11 +12,11 @@ const dictionary = props.offer.dictionary
 const bookingClass = props.offer.travelerPricings[0].fareDetailsBySegment[0].brandedFare
     ?? props.offer.travelerPricings[0].fareDetailsBySegment[0].cabin
 
-const exchange = props.offer.fareRules ? props.offer.fareRules.rules.find((item) => {
+const exchange = props.offer.travelerPricings[0].fareDetailsBySegment[0].brandedFare ? '' : props.offer.fareRules ? props.offer.fareRules.rules.find((item) => {
   return item.category === 'EXCHANGE'
 }) : {notApplicable: true}
 
-const refund = props.offer.fareRules ? props.offer.fareRules.rules.find((item) => {
+const refund = props.offer.travelerPricings[0].fareDetailsBySegment[0].brandedFare ? '' : props.offer.fareRules ? props.offer.fareRules.rules.find((item) => {
   return item.category === 'REFUND'
 }) : {notApplicable: true}
 
