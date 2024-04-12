@@ -226,9 +226,8 @@ function formatMonth(date) {
           </div>
         </div>
         <div class="second-row flex">
-          <p class="w-1/2">
+          <p>
             {{ dictionary.carriers[offer.validatingAirlineCodes[0]] }}
-            | {{ bookingClass }}
           </p>
           <p class="w-1/2 text-right font-medium">
             {{ $t('flightOffers.refund').toUpperCase() }}: <span v-if="refund.notApplicable" class="font-extrabold text-red-700">✘</span><span v-if="!refund.notApplicable" class="font-extrabold text-green-700">✓</span>
