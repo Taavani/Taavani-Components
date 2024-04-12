@@ -75,7 +75,8 @@ const messages = {
             selectHomebound: "Select return flight",
             noOffersDescription: "We were unable to find any offers matching your search criteria.",
             refund: "Refundable",
-            exchange: "Exchangeable"
+            exchange: "Exchangeable",
+            layover: "{hours}h {minutes}m layover",
         },
         flightOfferExtended: {
             departureDate: "Departure date",
@@ -83,22 +84,6 @@ const messages = {
             included: "Included",
             purchase: "Purchase",
             select: "Select Option",
-        },
-        journey: {
-            flightOffers: {
-                stopover: "stopover",
-                seats: "There is only {count} seat left | There are only {count} seats left",
-                change: "or change",
-                priceFrom: "Price from",
-                totalPrice: "Total price",
-                sameDay: "Same day",
-                notSameDay: "+ 1 day",
-                noOffers: "Unable to find any offers",
-                selectOutbound: "Select departure flight",
-                selectHomebound: "Select return flight",
-                noOffersDescription: "We were unable to find any offers matching your search criteria.",
-                layover: "{hours}h {minutes}m layover",
-            },
         },
         additionalServices: {
             seats: {

@@ -108,7 +108,7 @@ function formatMonth(date) {
             <p class="text-xs">{{ travelTime(offer.itineraries[0]) }}</p>
             <p v-if="offer.itineraries[0].segments.length > 1" class="text-xs">
               {{ offer.itineraries[0].segments.length - 1 }}
-              <!-- {{ $tc('journey.flightOffers.stopover', (offer.itineraries[0].segments.length - 1)) }} -->
+              <!-- {{ $tc('flightOffers.stopover', (offer.itineraries[0].segments.length - 1)) }} -->
             </p>
           </div>
 
@@ -129,7 +129,7 @@ function formatMonth(date) {
             <p class="text-xs">
              <!-- {{
                 sameDate(offer.itineraries[0].segments[0].departure.at, offer.itineraries[0].segments[offer.itineraries[0].segments.length - 1].arrival.at)
-                    ? $t('journey.flightOffers.sameDay') : $t('journey.flightOffers.notSameDay')
+                    ? $t('flightOffers.sameDay') : $t('flightOffers.notSameDay')
               }}-->
             </p>
           </div>
@@ -150,7 +150,7 @@ function formatMonth(date) {
         </div>
         <div class="w-1/2  text-right ">
           <div class="text-xs">
-           <!-- {{ $t('journey.flightOffers.priceFrom') }} -->
+           <!-- {{ $t('flightOffers.priceFrom') }} -->
           </div>
           <div class="text-brand-dark-blue font-bold">
             {{ offer.price.grandTotal }}
@@ -200,7 +200,7 @@ function formatMonth(date) {
             <p v-if="offer.itineraries[0].segments.length > 1"
                class="text">
               {{ offer.itineraries[0].segments.length - 1 }}
-              {{ $t('journey.flightOffers.stopover', (offer.itineraries[0].segments.length - 1)) }}
+              {{ $t('flightOffers.stopover', (offer.itineraries[0].segments.length - 1)) }}
             </p>
           </div>
 
@@ -220,7 +220,7 @@ function formatMonth(date) {
             <p class="date">
              {{
                 sameDate(offer.itineraries[0].segments[0].departure.at, offer.itineraries[0].segments[offer.itineraries[0].segments.length - 1].arrival.at)
-                    ? $t('journey.flightOffers.sameDay') : $t('journey.flightOffers.notSameDay')
+                    ? $t('flightOffers.sameDay') : $t('flightOffers.notSameDay')
               }}
             </p>
           </div>
@@ -248,10 +248,10 @@ function formatMonth(date) {
         <div class="holder">
           <p v-if="offer.numberOfBookableSeats < 9"
                class="warning">
-           {{ $t('journey.flightOffers.seats', offer.numberOfBookableSeats) }}
+           {{ $t('flightOffers.seats', offer.numberOfBookableSeats) }}
           </p>
           <p class="text">
-           {{ $t('journey.flightOffers.priceFrom') }}
+           {{ $t('flightOffers.priceFrom') }}
           </p>
           <div class="price">
             {{ offer.price.grandTotal }}
