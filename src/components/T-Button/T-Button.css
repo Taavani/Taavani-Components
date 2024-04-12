@@ -7,7 +7,7 @@
 }
 
 .t-button--liquid-blue {
-    @apply bg-white border border-brand-blue text-brand-blue hover:bg-neutral-100
+    @apply bg-white border border-brand-blue text-brand-blue hover:bg-neutral-100 disabled:text-neutral-200 disabled:bg-white disabled:border-neutral-200;
 }
 
 .t-button--liquid-blue-small {
