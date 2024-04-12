@@ -1,6 +1,6 @@
 import TFlightOfferList from "../components/T-Flight-Offer-List/T-Flight-Offer-List.vue";
 import TFlightOffer from "../components/T-Flight-Offer/T-Flight-Offer.vue";
-import Offers from "../../data/FLIGHT-OFFERS-CPH-LHR-SINGLE-28-10.json"
+import Offers from "../../data/FLIGHT-OFFERS-GOH-CPH-17-06.json"
 
 export default {
     components: {TFlightOffer},
@@ -10,6 +10,15 @@ export default {
     argTypes: {
         onClick: {},
         offers: Array
+    },
+    parameters: {
+        backgrounds: {
+            default: 'light',
+            values: [
+                { name: 'light', value: '#F4F7FA' },
+                { name: 'dark', value: '#0f0f0f' },
+            ],
+        },
     },
 };
 

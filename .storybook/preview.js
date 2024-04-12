@@ -73,7 +73,9 @@ const messages = {
             noOffers: "Unable to find any offers",
             selectOutbound: "Select departure flight",
             selectHomebound: "Select return flight",
-            noOffersDescription: "We were unable to find any offers matching your search criteria."
+            noOffersDescription: "We were unable to find any offers matching your search criteria.",
+            refund: "Refundable",
+            exchange: "Exchangeable"
         },
         flightOfferExtended: {
             departureDate: "Departure date",

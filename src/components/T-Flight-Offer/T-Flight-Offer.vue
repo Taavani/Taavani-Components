@@ -12,6 +12,14 @@ const dictionary = props.offer.dictionary
 const bookingClass = props.offer.travelerPricings[0].fareDetailsBySegment[0].brandedFare
     ?? props.offer.travelerPricings[0].fareDetailsBySegment[0].cabin
 
+const exchange = props.offer.fareRules ? props.offer.fareRules.rules.find((item) => {
+  return item.category === 'EXCHANGE'
+}) : {notApplicable: true}
+
+const refund = props.offer.fareRules ? props.offer.fareRules.rules.find((item) => {
+  return item.category === 'REFUND'
+}) : {notApplicable: true}
+
 /**
  * Helper function to check if two dates are the same.
  * @param firstDate
@@ -217,10 +225,16 @@ function formatMonth(date) {
             </p>
           </div>
         </div>
-        <p class="second-row">
-          {{ dictionary.carriers[offer.validatingAirlineCodes[0]] }}
-          | {{ bookingClass }}
-        </p>
+        <div class="second-row flex">
+          <p class="w-1/2">
+            {{ dictionary.carriers[offer.validatingAirlineCodes[0]] }}
+            | {{ bookingClass }}
+          </p>
+          <p class="w-1/2 text-right font-medium">
+            {{ $t('flightOffers.refund').toUpperCase() }}: <span v-if="refund.notApplicable" class="font-extrabold text-red-700">✘</span><span v-if="!refund.notApplicable" class="font-extrabold text-green-700">✓</span>
+            | {{ $t('flightOffers.exchange').toUpperCase() }}: <span v-if="exchange.notApplicable" class="font-extrabold text-red-700">✘</span><span v-if="!exchange.notApplicable" class="font-extrabold text-green-700">✓</span>
+          </p>
+        </div>
       </div>
 
       <div class="divider">
