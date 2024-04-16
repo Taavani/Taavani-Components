@@ -1,5 +1,6 @@
 <script setup>
 import {parse} from "tinyduration"
+import {ref} from "vue";
 import DepartureAirplane from "../icons/svg/Departure-Airplane.vue";
 import "./T-Flight-Offer.css"
 
@@ -12,13 +13,26 @@ const dictionary = props.offer.dictionary
 const bookingClass = props.offer.travelerPricings[0].fareDetailsBySegment[0].brandedFare
     ?? props.offer.travelerPricings[0].fareDetailsBySegment[0].cabin
 
-const exchange = props.offer.travelerPricings[0].fareDetailsBySegment[0].brandedFare ? '' : props.offer.fareRules ? props.offer.fareRules.rules.find((item) => {
-  return item.category === 'EXCHANGE'
-}) : {notApplicable: true}
+/**
+ * Logic if brandedFare is available.
+ * Show nothing
+ *
+ * If fareRules are available, show the exchange and refund policy.
+ *
+ * If fareRules are not available, show nothing
+ */
+const exchange = ref('');
+const refund = ref('');
 
-const refund = props.offer.travelerPricings[0].fareDetailsBySegment[0].brandedFare ? '' : props.offer.fareRules ? props.offer.fareRules.rules.find((item) => {
-  return item.category === 'REFUND'
-}) : {notApplicable: true}
+if (props.offer.fareRules) {
+  exchange.value = props.offer.fareRules.rules.find((item) => {
+    return item.category === 'EXCHANGE'
+  })
+
+  refund.value = props.offer.fareRules.rules.find((item) => {
+    return item.category === 'REFUND'
+  })
+}
 
 /**
  * Helper function to check if two dates are the same.
@@ -229,7 +243,7 @@ function formatMonth(date) {
           <p>
             {{ dictionary.carriers[offer.validatingAirlineCodes[0]] }}
           </p>
-          <p class="flex-grow text-right font-medium">
+          <p class="flex-grow text-right font-medium" v-if="exchange && refund">
             {{ $t('flightOffers.refund').toUpperCase() }}: <span v-if="refund.notApplicable" class="font-extrabold text-red-700">✘</span><span v-if="!refund.notApplicable" class="font-extrabold text-green-700">✓</span>
             | {{ $t('flightOffers.exchange').toUpperCase() }}: <span v-if="exchange.notApplicable" class="font-extrabold text-red-700">✘</span><span v-if="!exchange.notApplicable" class="font-extrabold text-green-700">✓</span>
           </p>
