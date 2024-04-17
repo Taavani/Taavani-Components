@@ -5,7 +5,8 @@ const config = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    "@storybook/addon-styling-webpack"
+    "@storybook/addon-styling-webpack",
+    "@chromatic-com/storybook"
   ],
   framework: {
     name: "@storybook/vue3-vite",
