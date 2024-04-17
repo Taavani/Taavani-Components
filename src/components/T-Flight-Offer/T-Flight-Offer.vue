@@ -243,9 +243,9 @@ function formatMonth(date) {
           <p>
             {{ dictionary.carriers[offer.validatingAirlineCodes[0]] }}
           </p>
-          <p class="flex-grow text-right font-medium" v-if="exchange && refund">
-            {{ $t('flightOffers.refund').toUpperCase() }}: <span v-if="refund.notApplicable" class="font-extrabold text-red-700">✘</span><span v-if="!refund.notApplicable" class="font-extrabold text-green-700">✓</span>
-            | {{ $t('flightOffers.exchange').toUpperCase() }}: <span v-if="exchange.notApplicable" class="font-extrabold text-red-700">✘</span><span v-if="!exchange.notApplicable" class="font-extrabold text-green-700">✓</span>
+          <p class="flex-grow text-right font-medium">
+            {{ $t('flightOffers.refund').toUpperCase() }}: <span v-if="refund" class="font-extrabold text-red-700">✘</span><span v-if="!refund" class="font-extrabold text-green-700">✓</span>
+            | {{ $t('flightOffers.exchange').toUpperCase() }}: <span v-if="exchange" class="font-extrabold text-red-700">✘</span><span v-if="!exchange" class="font-extrabold text-green-700">✓</span>
           </p>
         </div>
       </div>
