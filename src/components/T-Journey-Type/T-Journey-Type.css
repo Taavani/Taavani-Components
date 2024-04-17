@@ -1,0 +1,105 @@
+.t-journey-type-mobile {
+    position: relative;
+    display: inline-block;
+}
+
+.t-journey-type-mobile .button {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(53 59 65 / var(--tw-text-opacity));
+    text-align: center;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    padding: 0.125rem 1rem;
+    flex-grow: 1;
+    border-radius: 9999px;
+}
+
+.t-journey-type-mobile .button:focus {
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgb(0 110 184 / var(--tw-ring-opacity));
+    --tw-border-opacity: 1;
+    border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+.t-journey-type-mobile .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 0.75rem;
+    z-index: 50;
+    width: 14rem/* 224px */;
+    transform-origin: top right;
+    border-radius: 0.375rem/* 6px */;
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgb(0 0 0 / var(--tw-ring-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.t-journey-type-desktop .hidden {
+    display: none;
+}
+
+.t-journey-type-mobile .dropdown:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.t-journey-type-desktop {
+    display: none;
+    gap: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(255 255 255);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.t-journey-type-desktop .button {
+    text-align: center;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    padding: 0.125rem 0.25rem;
+    flex-grow: 1;
+    border-radius: 9999px;
+}
+
+.t-journey-type-desktop .active {
+    --tw-text-opacity: 1;
+    color: rgb(244 247 250 / var(--tw-text-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(0 110 184 / var(--tw-bg-opacity));
+}
+
+.t-journey-type-desktop .not-active {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(53 59 65 / var(--tw-text-opacity));
+}
+
+.t-journey-type-desktop .button:focus {
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgb(0 110 184 / var(--tw-ring-opacity));
+}
+
+.t-journey-type-desktop .button:focus-within {
+    --tw-border-opacity: 1;
+    border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+@media (min-width: 1024px) {
+    .t-journey-type-mobile {
+        display: none;
+    }
+
+    .t-journey-type-desktop {
+        display: flex;
+    }
+
+}
