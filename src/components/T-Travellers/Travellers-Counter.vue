@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+import "./T-Travellers-Counter.css"
 
 const props = defineProps({
     min: {
@@ -46,15 +47,15 @@ const down = () => {
 </script>
 
 <template>
-    <div class="grid grid-cols-3 gap-1 items-center">
-        <button class="rounded-full border-black border w-8 h-8 hover:border-brand-blue hover:text-brand-blue disabled:border-neutral-300 disabled:text-neutral-300"
+    <div class="t-travellers-counter">
+        <button class="button"
                 :disabled="number === min"
                 @click="down"
         >
             -
         </button>
-        <span class="text-center">{{ number }}</span>
-        <button class="rounded-full border-black border w-8 h-8 hover:border-brand-blue hover:text-brand-blue disabled:border-neutral-300 disabled:text-neutral-300"
+        <span class="text">{{ number }}</span>
+        <button class="button"
                 :disabled="number === max || availability === 0"
                 @click="up"
         >

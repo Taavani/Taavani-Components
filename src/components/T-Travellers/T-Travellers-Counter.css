@@ -1,0 +1,33 @@
+.t-travellers-counter {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.25rem;
+    align-items: center;
+}
+
+.t-travellers-counter .text {
+    text-align: center;
+}
+
+.t-travellers-counter .button {
+    border-radius: 9999px;
+    --tw-border-opacity: 1;
+    border-color: rgb(0 0 0 / var(--tw-border-opacity));
+    border-width: 1px;
+    width: 2rem/* 32px */;
+    height: 2rem/* 32px */;
+}
+
+.t-travellers-counter .button:hover {
+    --tw-border-opacity: 1;
+    border-color: rgb(0 110 184 / var(--tw-border-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(0 110 184 / var(--tw-text-opacity));
+}
+
+.t-travellers-counter .button:disabled {
+    --tw-border-opacity: 1;
+    border-color: rgb(212 212 212 / var(--tw-border-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(212 212 212 / var(--tw-text-opacity));
+}
