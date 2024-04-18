@@ -1,4 +1,4 @@
-import TSelectTrip from "../stages/T-Select-Trip.vue";
+import TSelectTrip from "../stages/T-Select-Trip/T-Select-Trip.vue";
 
 export default {
   title: "Taavani/Stages/T-Select-Trip",

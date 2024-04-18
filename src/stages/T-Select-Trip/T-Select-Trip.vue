@@ -6,12 +6,12 @@ const {t} = useI18n({useScope: "global"});
 
 import "./T-Select-Trip.css"
 
-import TJourneyType from "../components/T-Journey-Type/T-Journey-Type.vue";
-import TButton from "../components/T-Button/T-Button.vue"
-import TTravellers from "../components/T-Travellers/T-Travellers.vue";
-import TDateSelector from "../components/T-Date-Selector/T-Date-Selector.vue";
-import TDateRangeSelector from "../components/T-Date-Range-Selector/T-Date-Range-Selector.vue";
-import TAirportSelector from "../components/T-Airport-Selector/T-Airport-Selector.vue";
+import TJourneyType from "../../components/T-Journey-Type/T-Journey-Type.vue";
+import TButton from "../../components/T-Button/T-Button.vue"
+import TTravellers from "../../components/T-Travellers/T-Travellers.vue";
+import TDateSelector from "../../components/T-Date-Selector/T-Date-Selector.vue";
+import TDateRangeSelector from "../../components/T-Date-Range-Selector/T-Date-Range-Selector.vue";
+import TAirportSelector from "../../components/T-Airport-Selector/T-Airport-Selector.vue";
 
 // State JourneyType
 const current = ref("single")
