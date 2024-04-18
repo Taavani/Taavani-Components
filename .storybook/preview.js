@@ -11,6 +11,21 @@ import {setup} from "@storybook/vue3";
 
 const messages = {
     en: {
+        journeyType: {
+            single: 'One way',
+            return: 'Round trip',
+            multiCity: 'Multi-city',
+        },
+        buttons: {
+            search: 'Search',
+            continue: 'Continue',
+            back: 'Back',
+            select: 'Select',
+            purchase: 'Purchase',
+            selectOption: 'Select Option',
+            selectSeats: 'Select seats',
+            purchaseBaggage: 'Purchase baggage',
+        },
         passengers: {
             passengerDetails: 'Provide passenger details',
             selectPassenger: 'Select passenger',

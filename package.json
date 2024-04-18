@@ -41,6 +41,9 @@
     "tinyduration": "^3.3.0"
   },
   "dependencies": {
+    "@easepick/core": "^1.2.1",
+    "@easepick/lock-plugin": "^1.2.1",
+    "@easepick/range-plugin": "^1.2.1",
     "@headlessui/vue": "^1.7.16",
     "@heroicons/vue": "^2.0.18",
     "@storybook/test": "^8.0.8",

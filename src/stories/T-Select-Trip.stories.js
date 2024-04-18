@@ -5,12 +5,16 @@ export default {
   component: TSelectTrip,
   tags: ["autodocs"],
   argTypes: {
-    onClick: {},
-    coat: {
-      control: {
-        type: "select",
-      },
-      options: ["solid-blue", "liquid-blue", "liquid-blue-small"],
+  },
+  parameters: {
+    backgrounds: {
+      default: "light",
+      values: [
+        { name: "light", value: "#F4F7FA" },
+        { name: "dark", value: "#0f0f0f" },
+      ],
     },
   },
 };
+
+export const Default = { };

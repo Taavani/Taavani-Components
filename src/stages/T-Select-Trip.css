@@ -1,0 +1,67 @@
+.select-trip-container {
+    max-width: 64rem;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.select-trip {
+    background: linear-gradient(32.82deg, #93CFC3 4.22%, #006EB8 104.14%) no-repeat;
+    border-radius: 0.75rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 2rem 1rem;
+}
+
+.select-trip .options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.select-trip .options .left {
+    width: 83.333333%;
+    flex: 1 1 0;
+}
+
+.select-trip .options .right {
+    width: 16.666667%;
+    display: flex;
+    gap: 0.25rem;
+    justify-content: flex-end;
+    align-items: baseline;
+}
+
+.select-trip .departure-destination {
+    padding-top: 0.75rem/* 12px */;
+    padding-bottom: 0.75rem/* 12px */;
+}
+
+.select-trip .buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media (min-width: 768px) {
+    .select-trip-container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .select-trip .options .left {
+        width: 66.666667%;
+    }
+
+    .select-trip .options .right {
+        width: 33.333333%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .select-trip .departure-destination {
+        padding-top: 0.5rem/* 8px */;
+        padding-bottom: 0.5rem/* 8px */;
+        display: flex;
+    }
+}
