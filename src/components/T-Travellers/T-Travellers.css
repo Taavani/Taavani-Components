@@ -1,0 +1,37 @@
+.t-travellers {
+    position: relative;
+    display: inline-block;
+    text-align: left;
+}
+
+.t-travellers .dropdown {
+    position: absolute;
+    z-index: 50;
+    right: 0;
+    margin-top: 0.5rem;
+    width: 20rem;
+    transform-origin: top right;
+    border-radius: 0.75rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    --tw-ring-opacity: 0.05;
+    --tw-ring-color: rgb(0 0 0 / var(--tw-ring-opacity));
+}
+
+.t-travellers .dropdown .content {
+    padding: 0.5rem 0.75rem;;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 0.75rem;
+}
+
+.t-travellers .dropdown .option-holder {
+    display: flex;
+    align-items: center;
+}
+
+.t-travellers .dropdown .option-holder .header {
+    flex-grow: 1;
+}
