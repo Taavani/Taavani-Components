@@ -1,0 +1,24 @@
+.t-travellers-menu {
+    border-radius: 0.75rem/* 12px */;
+    padding-left: 0.75rem/* 12px */;
+    padding-right: 0.75rem/* 12px */;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.t-travellers-menu .holder {
+    padding: 0.125rem 0.5rem;
+    display: flex;
+    --tw-text-opacity: 1;
+    color: rgb(0 110 184 / var(--tw-text-opacity));
+    font-size: 0.875rem/* 14px */;
+    line-height: 1.25rem/* 20px */;
+    align-items: center;
+}
+
+.t-travellers-menu .holder .icon {
+    height: 1rem/* 16px */;
+    width: 1rem/* 16px */;
+    stroke: #006EB8;
+    margin-right: 0.75rem/* 12px */;
+}
