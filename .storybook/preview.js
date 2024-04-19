@@ -11,6 +11,19 @@ import {setup} from "@storybook/vue3";
 
 const messages = {
     en: {
+        stages: {
+            bookingOptions: {
+                backButtonText: 'Back to search',
+                title: 'Booking Options',
+                description: 'Select the best option for your trip, and continue to the next step.',
+                pricingOption: 'Pricing option',
+                flexibilityOption: 'Flexibility',
+                serviceOption: 'Service',
+                invoiceProjectNumber: 'Project number',
+                invoiceCostCenter: 'Cost center',
+                next: 'Next',
+            }
+        },
         journeyType: {
             single: 'One way',
             return: 'Round trip',

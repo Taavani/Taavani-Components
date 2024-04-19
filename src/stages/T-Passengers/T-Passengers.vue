@@ -54,7 +54,7 @@ const requirements = ref([
                   @click="() => {}"
               >
                 <arrow-left class="w-6 h-6 stroke-2"></arrow-left>
-                {{ $t('passengers.buttonTextBack') }}
+                {{ $t('stages.bookingOptions.backButton') }}
               </button>
             </div>
 
