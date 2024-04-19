@@ -16,19 +16,19 @@ const { t } = useI18n({useScope: "global"});
 const pricingOptions = ref([
   {
     id: 1,
-    name: "Budget"
+    name: t('stages.bookingOptions.pricingOptions.budget')
   },
   {
     id: 2,
-    name: "Economy"
+    name: t('stages.bookingOptions.pricingOptions.economy')
   },
   {
     id: 3,
-    name: "Premium"
+    name: t('stages.bookingOptions.pricingOptions.premium')
   },
   {
     id: 4,
-    name: "Business"
+    name: t('stages.bookingOptions.pricingOptions.business')
   }
 ])
 const selectedPricingOption = ref(null)
@@ -37,11 +37,11 @@ const selectedPricingOption = ref(null)
 const flexibilityOptions = ref([
   {
     id: 1,
-    name: "Standard"
+    name: t('stages.bookingOptions.flexibilityOptions.standard')
   },
   {
     id: 2,
-    name: "Changeable"
+    name: t('stages.bookingOptions.flexibilityOptions.changeable')
   }
 ])
 const selectedFlexibilityOption = ref(null)
@@ -242,7 +242,7 @@ function isFormValid() {
                            id="projectNumber"
                            v-model="projectNumber"
                            class="block w-full rounded-md border-0 py-1.5 pl-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-blue sm:text-sm sm:leading-6"
-                           placeholder="you@example.com">
+                           :placeholder="t('stages.bookingOptions.invoicePlaceholder')">
                   </div>
                 </div>
 

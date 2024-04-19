@@ -20,8 +20,21 @@ const messages = {
                 flexibilityOption: 'Flexibility',
                 serviceOption: 'Service',
                 invoiceProjectNumber: 'Project number',
+                invoicePlaceholder: 'Enter project number',
                 invoiceCostCenter: 'Cost center',
                 next: 'Next',
+                pricingOptions: {
+                    budget: 'Budget',
+                    economy: 'Economy',
+                    premium: 'Premium',
+                    business: 'Business',
+                },
+                flexibilityOptions: {
+                    standard: 'Standard',
+                    changeable: 'Changeable',
+                    refundable: 'Refundable',
+                },
+
             }
         },
         journeyType: {
