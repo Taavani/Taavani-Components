@@ -22,6 +22,8 @@ const props = defineProps({
   }
 })
 
+const emits = defineEmits(['update'])
+
 // Map requirements to passengers.
 let passengerRequirements = [];
 for (let i = 0; i < props.passengers.length; i++) {
@@ -44,17 +46,22 @@ for (let i = 0; i < props.passengers.length; i++) {
   passengerRequirements[passenger.travelerId] = requirements;
 }
 
+function update() {
+  emits('update', props.passengers);
+}
+
 // Are all passengers information valid, activate the confirmation.
 </script>
 
 <template>
   <div class="t-passengers-list">
-    <t-passenger :key="index"
+    <t-passenger v-for="(passenger, index) in passengers"
+                 :key="index"
                  :traveler="passenger"
                  :employees="employees"
                  :requirements="passengerRequirements[passenger.travelerId]"
-                 @update="(value) => console.log(value)"
-                 v-for="(passenger, index) in passengers">
+                 @update="update"
+    >
     </t-passenger>
   </div>
 </template>
