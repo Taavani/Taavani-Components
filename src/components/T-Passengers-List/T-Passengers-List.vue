@@ -29,10 +29,12 @@ let passengerRequirements = [];
 for (let i = 0; i < props.passengers.length; i++) {
   let passenger = props.passengers[i];
   let requirements = {};
-  requirements.emailAddressRequired = props.requirements.emailAddressRequired ?? false;
-  requirements.mobilePhoneNumberRequired = props.requirements.mobilePhoneNumberRequired ?? false;
+
+  requirements.emailAddressRequired = props.requirements.bookingRequirements.emailAddressRequired ?? false;
+  requirements.mobilePhoneNumberRequired = props.requirements.bookingRequirements.mobilePhoneNumberRequired ?? false;
 
   // If traveller requirements are set, add them to the requirements.
+  /*
   if (props.requirements.travelerRequirements && props.requirements.travelerRequirements.length > 0) {
     let requirementsForTraveler = props.requirements.travelerRequirements.find(travelerRequirement => travelerRequirement.travelerId === passenger.travelerId);
     if (requirementsForTraveler) {
@@ -43,11 +45,17 @@ for (let i = 0; i < props.passengers.length; i++) {
       requirements.residenceRequired = requirementsForTraveler.residenceRequired ?? false;
     }
   }
+
+   */
+
   passengerRequirements[passenger.travelerId] = requirements;
 }
 
-function update() {
-  emits('update', props.passengers);
+function update(updatedPassenger) {
+  let passengers = props.passengers;
+  let updatedPassengerIndex = passengers.findIndex(passenger => passenger.travelerId === updatedPassenger.travelerId);
+  passengers[updatedPassengerIndex] = updatedPassenger;
+  emits('update', passengers);
 }
 
 // Are all passengers information valid, activate the confirmation.

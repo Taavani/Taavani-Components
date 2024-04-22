@@ -36,7 +36,7 @@ export const PassengersList = {
       return { args };
     },
     template:
-      '<t-passengers-list :passengers="args.passengers" :employees="args.employees" :requirements="args.requirements"></t-passengers-list>',
+      '<t-passengers-list :passengers="args.passengers" :employees="args.employees" :requirements="args.requirements" @update="(passengers) => console.log(passengers)"></t-passengers-list>',
   }),
   args: {},
 };
@@ -48,7 +48,7 @@ export const PassengersListWithPassengerRequirements = {
       return { args };
     },
     template:
-      '<t-passengers-list :passengers="args.passengers" :employees="args.employees" :requirements="args.requirements"></t-passengers-list>',
+      '<t-passengers-list :passengers="args.passengers" :employees="args.employees" :requirements="args.requirements" @update="(passengers) => console.log(passengers)"></t-passengers-list>',
   }),
   args: {
     passengers: PASSENGERS,

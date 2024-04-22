@@ -1,6 +1,6 @@
 {
   "bookingRequirements": {
     "emailAddressRequired": true,
-    "mobilePhoneNumberRequired": true
+    "mobilePhoneNumberRequired": false
   }
 }

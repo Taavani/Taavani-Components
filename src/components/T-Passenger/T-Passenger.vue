@@ -1,10 +1,11 @@
 <script setup>
 import {reactive, ref, watch} from "vue"
+import {useVuelidate} from "@vuelidate/core"
+import {minLength, required, email} from "@vuelidate/validators"
+
 import CheckCircle from '@heroicons/vue/20/solid/CheckCircleIcon'
 import ChevronDownIcon from '@heroicons/vue/20/solid/ChevronDownIcon'
 import ChevronUpIcon from '@heroicons/vue/20/solid/ChevronUpIcon'
-import {useVuelidate} from "@vuelidate/core"
-import {minLength, required, email} from "@vuelidate/validators"
 
 import Traveler from './Passenger.js'
 import './T-Passenger.css'
@@ -39,7 +40,7 @@ const props = defineProps({
           'companyName': '',
           'emailAddress': ''
         },
-        'profilePhoto':''
+        'profilePhoto': ''
       }
     }
   },
@@ -53,8 +54,15 @@ const props = defineProps({
     type: Object,
     default: () => {
       return {
-        'emailAddressRequired': false,
-        'mobilePhoneNumberRequired': false
+        'bookingRequirements': {
+          'dateOfBirthRequired': false,
+          'genderRequired': false,
+          'documentRequired': false,
+          'documentIssuanceCityRequired': false,
+          'redressRequiredIfAny': false,
+          'residenceRequired': false,
+          'travelerRequirements': []
+        }
       }
     }
   }
@@ -92,15 +100,18 @@ let rules = {
       required,
       minLength: minLength(2)
     },
-  },
-  contact: {
-    emailAddress: {
-      required,
-      email
-    }
   }
 }
 
+/*
+if (props.requirements.emailAddressRequired) {
+  rules.contact.emailAddress = {
+    required,
+    email
+  }
+}
+
+/*
 if (props.requirements.dateOfBirthRequired) {
   rules.dateOfBirth = {
     required
@@ -118,8 +129,6 @@ if (props.requirements.genderRequired) {
  */
 let v$ = useVuelidate(rules, passenger)
 
-console.log(v$.value.$silentErrors)
-
 /**
  * Validation helper. Checks if the traveler is valid
  * @returns {boolean}
@@ -132,6 +141,7 @@ function isTravelerValid() {
  * Selects a traveler from the list of employees
  * @param employee
  */
+/*
 function selectTraveler(employee) {
   passenger.name.firstName = employee.name.firstName
   passenger.name.lastName = employee.name.lastName
@@ -140,11 +150,13 @@ function selectTraveler(employee) {
   extended.value = false
   v$.value.$touch()
 }
+*/
 
 /**
  * Toggles the mode between input and select
  * @param nextMode
  */
+/*
 function toggleMode(nextMode) {
   mode.value = nextMode
   if (!extended.value) {
@@ -156,6 +168,7 @@ function toggleMode(nextMode) {
  * Updates the phone number
  * @param phone
  */
+/*
 function onUpdatedPhone(phone) {
   passenger.contact.phones = [{
     deviceType: 'MOBILE',
@@ -173,14 +186,16 @@ function onUpdateGender(value) {
 /**
  * Watcher for the passenger object. Emits the update event
  */
-watch(passenger, (value) => {
+watch(v$, (value) => {
   isTravelerValid() ? emits('update', passenger) : ''
 })
+
 
 </script>
 
 <template>
   <div class="t-passenger">
+
     <div :class="{ header: true, 'pb-4': extended }">
       <div class="grow flex items-center pr-4">
         <img class="h-8 w-8 rounded-full mr-3"
@@ -188,7 +203,9 @@ watch(passenger, (value) => {
              alt=""
         />
         <h1 class="grow text-neutral-600">
-          {{ passenger.name.firstName.length !== 0 ? passenger.name.firstName : $t('passengers.placeholder', (Number(passenger.id) + 1)) }}
+          {{
+            passenger.name.firstName.length !== 0 ? passenger.name.firstName : $t('passengers.placeholder', (Number(passenger.id) + 1))
+          }}
           {{ passenger.name.lastName.length !== 0 ? passenger.name.lastName : '' }}
         </h1>
         <div v-if="isTravelerValid()" class="w-8">
@@ -196,7 +213,7 @@ watch(passenger, (value) => {
         </div>
       </div>
 
-     <div class="flex gap-2">
+      <div class="flex gap-2">
         <t-button v-if="SELECT === mode"
                   :title="$t('passengers.passengerDetails')"
                   coat="liquid-blue-small"
@@ -210,13 +227,16 @@ watch(passenger, (value) => {
         >
         </t-button>
         <button v-if="!extended" type="button" class="group outline-none" @click="() => extended = !extended">
-          <chevron-down-icon class="w-8 stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue "></chevron-down-icon>
+          <chevron-down-icon
+              class="w-8 stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue "></chevron-down-icon>
         </button>
         <button v-if="extended" type="button" class="outline-none" @click="() => extended = !extended">
-          <chevron-up-icon class="w-8 stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue "></chevron-up-icon>
+          <chevron-up-icon
+              class="w-8 stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue "></chevron-up-icon>
         </button>
       </div>
     </div>
+
     <div v-if="INPUT === mode && extended" class="content-input">
       <t-name-input
           v-model:first-name="passenger.name.firstName"
@@ -234,7 +254,8 @@ watch(passenger, (value) => {
       >
       </t-gender-input>
 
-      <t-email-input v-if="requirements.emailAddressRequired" v-model:email="passenger.contact.emailAddress"></t-email-input>
+      <t-email-input v-if="requirements.emailAddressRequired"
+                     v-model:email="passenger.contact.emailAddress"></t-email-input>
       <t-vue-tel-input v-if="requirements.mobilePhoneNumberRequired"
                        v-bind:phone="passenger.contact.phones[0] ? passenger.contact.phones[0].number : passenger.contact.phones[0]"
                        v-on:update:phone="(value) => onUpdatedPhone(value)"

@@ -4,7 +4,7 @@ import {required, minLength } from '@vuelidate/validators'
 export default class Traveler {
 
     constructor(id) {
-        this.id = id
+        this.travelerId = id
         this.name = {
             firstName: '',
             lastName: ''
@@ -19,7 +19,7 @@ export default class Traveler {
 
     toJson() {
         return {
-            'id': this.id,
+            'travelerId': this.id,
             'dateOfBirth': this.dateOfBirth,
             'name': {
                 'firstName': this.name.firstName,
