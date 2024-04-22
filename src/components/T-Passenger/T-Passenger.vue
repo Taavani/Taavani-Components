@@ -143,7 +143,7 @@ function isTravelerValid() {
  * Selects a traveler from the list of employees
  * @param employee
  */
-/*
+
 function selectTraveler(employee) {
   passenger.name.firstName = employee.name.firstName
   passenger.name.lastName = employee.name.lastName
@@ -152,7 +152,6 @@ function selectTraveler(employee) {
   extended.value = false
   v$.value.$touch()
 }
-*/
 
 /**
  * Toggles the mode between input and select
@@ -193,7 +192,6 @@ watch(v$, (value) => {
     isTravelerValid() ? emits('update', passenger) : ''
   }
 })
-
 
 </script>
 
