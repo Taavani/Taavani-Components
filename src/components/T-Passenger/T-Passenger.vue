@@ -100,10 +100,12 @@ let rules = {
       required,
       minLength: minLength(2)
     },
+  },
+  contact: {
+    emailAddress: { }
   }
 }
 
-/*
 if (props.requirements.emailAddressRequired) {
   rules.contact.emailAddress = {
     required,
@@ -156,7 +158,6 @@ function selectTraveler(employee) {
  * Toggles the mode between input and select
  * @param nextMode
  */
-/*
 function toggleMode(nextMode) {
   mode.value = nextMode
   if (!extended.value) {
@@ -187,7 +188,10 @@ function onUpdateGender(value) {
  * Watcher for the passenger object. Emits the update event
  */
 watch(v$, (value) => {
-  isTravelerValid() ? emits('update', passenger) : ''
+  if (passenger) {
+    passenger.valid = isTravelerValid()
+    isTravelerValid() ? emits('update', passenger) : ''
+  }
 })
 
 

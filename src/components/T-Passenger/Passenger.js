@@ -15,6 +15,7 @@ export default class Traveler {
             emailAddress: '',
             phones: []
         }
+        this.valid = false
     }
 
     toJson() {

@@ -45,8 +45,7 @@ for (let i = 0; i < props.passengers.length; i++) {
       requirements.residenceRequired = requirementsForTraveler.residenceRequired ?? false;
     }
   }
-
-   */
+  */
 
   passengerRequirements[passenger.travelerId] = requirements;
 }
@@ -68,6 +67,7 @@ function update(updatedPassenger) {
                  :traveler="passenger"
                  :employees="employees"
                  :requirements="passengerRequirements[passenger.travelerId]"
+
                  @update="update"
     >
     </t-passenger>
