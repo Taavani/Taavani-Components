@@ -1,4 +1,6 @@
 <script setup>
+import {ref} from "vue";
+
 import checked from '@heroicons/vue/24/outline/CheckIcon.js'
 import noChecked from '@heroicons/vue/24/outline/CurrencyEuroIcon.js'
 import TButton from "../T-Button/T-Button.vue";
@@ -20,6 +22,38 @@ const excluded = amenities.filter(amenity => amenity.isChargeable === true)
 const price = props.offer.price.grandTotal
 const currency = props.offer.price.currency
 
+const refund = ref({
+  active: false,
+  amount: 0
+});
+const exchange = ref({
+  active: false,
+  amount: 0
+});
+
+if (props.offer.fareRules) {
+  let exchangeFare = props.offer.fareRules.rules.find((item) => {
+    return item.category === 'EXCHANGE'
+  })
+
+  if (exchangeFare !== undefined
+      && exchangeFare !== null
+      && (!exchangeFare.notApplicable || exchangeFare.hasOwnProperty('maxPenaltyAmount'))) {
+    exchange.value.active = true
+    exchange.value.amount = exchangeFare.maxPenaltyAmount
+  }
+
+  let refundFare = props.offer.fareRules.rules.find((item) => {
+    return item.category === 'REFUND'
+  })
+
+  if (refundFare !== undefined
+      && refundFare !== null
+      && (!refundFare.notApplicable || refundFare.hasOwnProperty('maxPenaltyAmount'))) {
+    refund.value.active = true
+    refund.value.amount = refundFare.maxPenaltyAmount
+  }
+}
 
 </script>
 
@@ -34,6 +68,22 @@ const currency = props.offer.price.currency
       <p class="text-sm pt-2 pb-3">
         {{ $t('flightOfferExtended.cabin') }}:
         {{ cabin }}
+      </p>
+
+      <p v-if="exchange.active" class="text-sm pt-2 pb-3">
+        {{ $t('flightOfferExtended.exchangeable', exchange.amount) }}
+      </p>
+
+      <p v-if="!exchange.active" class="text-sm pt-2 pb-3">
+        {{ $t('flightOfferExtended.noExchange') }}
+      </p>
+
+      <p v-if="refund.active" class="text-sm pt-2 pb-3">
+        {{ $t('flightOfferExtended.refunable', refund.amount) }}
+      </p>
+
+      <p  v-if="!refund.active" class="text-sm pt-2 pb-3">
+        {{ $t('flightOfferExtended.noRefund') }}
       </p>
 
       <h2 v-if="included.length > 0" class="pb-2 uppercase font-light">
