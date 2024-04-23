@@ -79,7 +79,7 @@ if (props.offer.fareRules) {
       </p>
 
       <p v-if="refund.active" class="text-sm pt-2 pb-3">
-        {{ $t('flightOfferExtended.refunable', refund.amount) }}
+        {{ $t('flightOfferExtended.refundable', refund.amount) }}
       </p>
 
       <p  v-if="!refund.active" class="text-sm pt-2 pb-3">
