@@ -20,7 +20,7 @@ export default class Traveler {
 
     toJson() {
         return {
-            'travelerId': this.travelerId,
+            'id': this.travelerId,
             'dateOfBirth': this.dateOfBirth,
             'name': {
                 'firstName': this.name.firstName,
