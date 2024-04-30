@@ -29,7 +29,11 @@ const emits = defineEmits(['update'])
 const show = ref(false)
 
 const updateAdults = (numberOfAdults ) => {
-  emits('update', {adults: numberOfAdults, children: props.children, infants: props.infants})
+  if (numberOfAdults < props.infants) {
+    emits('update', {adults: numberOfAdults, children: props.children, infants: numberOfAdults})
+  } else {
+    emits('update', {adults: numberOfAdults, children: props.children, infants: props.infants})
+  }
 }
 
 const updateChildren = (numberOfChildren) => {
@@ -116,7 +120,7 @@ function toggle() {
               :min="0"
               :max="9"
               :current="infants"
-              :availability="adults - infants"
+              :availability="adults - infants && 9 - (adults + children + infants)"
               @update="updateInfants"
           ></travellers-counter>
         </div>

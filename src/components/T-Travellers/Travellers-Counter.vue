@@ -1,5 +1,4 @@
 <script setup>
-import { ref } from "vue";
 import "./T-Travellers-Counter.css"
 
 const props = defineProps({
@@ -21,26 +20,21 @@ const props = defineProps({
     }
 })
 
-const number = ref(props.current)
-
 const emits = defineEmits([ 'update' ])
 
 const up = () => {
     if (props.max === -1 && props.availability > 0) {
-        number.value += 1
-        emits('update', number.value)
+        emits('update', props.current + 1)
     }
 
-    if (props.max !== number.value && props.availability > 0) {
-        number.value += 1
-        emits('update', number.value)
+    if (props.availability > 0) {
+        emits('update', props.current + 1)
     }
 }
 
 const down = () => {
-    if (number.value !== props.min) {
-        number.value -= 1
-        emits('update', number.value)
+    if (props.current !== props.min) {
+        emits('update', props.current - 1)
     }
 }
 
@@ -49,14 +43,14 @@ const down = () => {
 <template>
     <div class="t-travellers-counter">
         <button class="button"
-                :disabled="number === min"
+                :disabled="props.current === min"
                 @click="down"
         >
             -
         </button>
-        <span class="text">{{ number }}</span>
+        <span class="text">{{ props.current }}</span>
         <button class="button"
-                :disabled="number === max || availability === 0"
+                :disabled="current === max || availability === 0"
                 @click="up"
         >
             +
