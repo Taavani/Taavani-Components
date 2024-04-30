@@ -80,22 +80,22 @@ function toggle() {
 
 <template>
   <div id="travelers-holder"
-       class="t-travellers">
+       class="relative inline-block text-left">
     <travellers-menu :numberOfTravellers="adults + children + infants"
                      @click="toggle"
     ></travellers-menu>
 
     <div v-if="show"
-         class="dropdown"
+         class="absolute z-50 right-0 mt-2 w-[20rem] origin-top-right rounded-xl bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
          role="menu"
          aria-orientation="vertical"
          aria-labelledby="menu-button"
          tabindex="-1">
-      <div class="content"
+      <div class="py-2 px-3 grid grid-cols-1 gap-3"
            role="none">
         <h3>{{ $t('travellers.travellers') }}</h3>
-        <div class="option-holder">
-          <p class="header">{{ $t('travellers.adults') }}</p>
+        <div class="flex items-center">
+          <p class="grow">{{ $t('travellers.adults') }}</p>
           <travellers-counter
               :min="1"
               :max="9"
@@ -104,8 +104,8 @@ function toggle() {
               @update="updateAdults"
           ></travellers-counter>
         </div>
-        <div class="option-holder">
-          <p class="header">{{ $t('travellers.children') }}</p>
+        <div class="flex items-center">
+          <p class="grow">{{ $t('travellers.children') }}</p>
           <travellers-counter
               :min="0"
               :max="9"
@@ -114,8 +114,8 @@ function toggle() {
               @update="updateChildren"
           ></travellers-counter>
         </div>
-        <div class="option-holder">
-          <p class="header">{{ $t('travellers.infants') }}</p>
+        <div class="flex items-center">
+          <p class="grow">{{ $t('travellers.infants') }}</p>
           <travellers-counter
               :min="0"
               :max="9"
