@@ -27,6 +27,14 @@
     gap: 0.75rem;
 }
 
+.t-travellers h3 {
+    margin: 0;
+}
+
+.t-travellers p {
+    margin: 0;
+}
+
 .t-travellers .dropdown .option-holder {
     display: flex;
     align-items: center;
