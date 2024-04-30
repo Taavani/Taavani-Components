@@ -189,7 +189,7 @@ function onUpdateGender(value) {
 watch(v$, (value) => {
   if (passenger) {
     passenger.valid = isTravelerValid()
-    isTravelerValid() ? emits('update', passenger.value.toJSON()) : ''
+    isTravelerValid() ? emits('update', passenger) : false
   }
 })
 
