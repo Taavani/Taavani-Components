@@ -41,15 +41,15 @@ const down = () => {
 </script>
 
 <template>
-    <div class="t-travellers-counter">
-        <button class="button"
+    <div class="grid grid-cols-3 gap-1 items-center">
+        <button class="rounded-full border-black border w-8 h-8 hover:border-brand-blue hover:text-brand-blue disabled:border-neutral-300 disabled:text-neutral-300"
                 :disabled="props.current === min"
                 @click="down"
         >
             -
         </button>
-        <span class="text">{{ props.current }}</span>
-        <button class="button"
+        <span class="text-center">{{ props.current }}</span>
+        <button class="rounded-full border-black border w-8 h-8 hover:border-brand-blue hover:text-brand-blue disabled:border-neutral-300 disabled:text-neutral-300"
                 :disabled="current === max || availability === 0"
                 @click="up"
         >
