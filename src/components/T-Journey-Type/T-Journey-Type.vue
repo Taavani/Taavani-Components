@@ -55,23 +55,22 @@ function toggle(newJourneyType) {
 </script>
 
 <template>
-  <div class="t-journey-type-desktop">
+  <div class="hidden lg:flex gap-2 justify-between items-center text-white text-sm">
 
     <button v-for="option in options"
             @click="() => toggle(option.value)"
-            class="button"
-            :class="{ 'active': current === option.value, 'not-active': current !== option.value }"
+            class="text-center text-sm px-1 py-0.5 grow flex-1 rounded-full focus:ring-brand-blue focus-within:border-white"
+            :class="{ 'bg-brand-blue text-neutral-100': current === option.value, 'bg-white text-neutral-700': current !== option.value }"
     >
       {{ option.label }}
     </button>
   </div>
 
-  <div id="journey-type-holder"
-       class="t-journey-type-mobile">
+  <div id="journey-type-holder" class="relative inline-block lg:hidden">
     <button type="button"
             aria-expanded="true"
             aria-haspopup="true"
-            class="button"
+            class="flex gap-2 items-center bg-white text-neutral-700 text-center text-sm px-4 py-0.5 grow flex-1 rounded-full focus:ring-brand-blue focus-within:border-white"
             @click="() => toggle()"
     >
       <span v-for="option in options" :class='{ "hidden": option.value !== current }'>
@@ -83,7 +82,7 @@ function toggle(newJourneyType) {
       </svg>
     </button>
     <div v-if="show"
-         class="dropdown"
+         class="absolute left-0 z-50 mt-3 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
          role="menu"
          aria-orientation="vertical"
          aria-labelledby="menu-button"
