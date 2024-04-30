@@ -17,6 +17,7 @@
     padding: 0.125rem 1rem;
     flex-grow: 1;
     border-radius: 9999px;
+    border: 0;
 }
 
 .t-journey-type-mobile .button:focus {
@@ -67,6 +68,7 @@
     padding: 0.125rem 0.25rem;
     flex-grow: 1;
     border-radius: 9999px;
+    border: 0;
 }
 
 .t-journey-type-desktop .active {
