@@ -4,7 +4,7 @@
 </script>
 
 <template>
-  <div class="loading snap-center rounded-2xl py-4 px-4 bg-white mx-auto w-96 shadow border mb-3 min-h-52">
+  <div class="loading snap-center rounded-2xl py-4 px-4 bg-white mx-auto w-96 mb-3 min-h-52">
     <div class="w-full h-full inline-flex flex-col">
 
       <div class="grow"></div>
@@ -14,10 +14,10 @@
 
 <style>
 @keyframes color {
-  0%   { background: #C3CCD6; }
+  0%   { background: #F2F2F2; }
   40%  { background: #78BDC1; }
   80%  { background: #D3F8F0; }
-  100% { background: #C3CCD6; }
+  100% { background: #F2F2F2; }
 }
 
 .loading {
