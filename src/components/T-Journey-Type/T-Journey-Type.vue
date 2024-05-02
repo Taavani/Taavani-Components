@@ -59,7 +59,7 @@ function toggle(newJourneyType) {
 
     <button v-for="option in options"
             @click="() => toggle(option.value)"
-            class="text-center text-sm px-1 py-0.5 grow flex-1 rounded-full focus:ring-brand-blue focus-within:border-white"
+            class="text-center text-nowrap text-sm px-3 py-0.5 grow flex-1 rounded-full focus:ring-brand-blue focus-within:border-white"
             :class="{ 'bg-brand-blue text-neutral-100': current === option.value, 'bg-white text-neutral-700': current !== option.value }"
     >
       {{ option.label }}
