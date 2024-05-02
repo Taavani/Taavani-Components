@@ -70,26 +70,26 @@ if (props.offer.fareRules) {
         {{ cabin }}
       </p>
 
-      <p v-if="exchange.active" class="text-sm pt-2 pb-3">
+      <p v-if="!(included.length > 0) && exchange.active" class="text-sm pt-2 pb-3">
         {{ $t('flightOfferExtended.exchangeable', exchange.amount) }}
       </p>
 
-      <p v-if="!exchange.active" class="text-sm pt-2 pb-3">
+      <p v-if="!(included.length > 0) && !exchange.active" class="text-sm pt-2 pb-3">
         {{ $t('flightOfferExtended.noExchange') }}
       </p>
 
-      <p v-if="refund.active" class="text-sm pt-2 pb-3">
+      <p v-if="!(included.length > 0) && refund.active" class="text-sm pt-2 pb-3">
         {{ $t('flightOfferExtended.refundable', refund.amount) }}
       </p>
 
-      <p  v-if="!refund.active" class="text-sm pt-2 pb-3">
+      <p  v-if="!(included.length > 0) && !refund.active" class="text-sm pt-2 pb-3">
         {{ $t('flightOfferExtended.noRefund') }}
       </p>
 
       <h2 v-if="included.length > 0" class="pb-2 uppercase font-light">
         {{ $t('flightOfferExtended.included') }}
       </h2>
-      <ul class="pb-3">
+      <ul v-if="included.length > 0" class="pb-3">
         <li v-for="bag in included" class="flex flex-col">
           <div class="flex">
             <checked class="h-5 w-5 text-gray-900" />
@@ -103,7 +103,7 @@ if (props.offer.fareRules) {
       <h2 v-if="excluded.length > 0" class="pb-2 uppercase font-light">
         {{ $t('flightOfferExtended.purchase')}}
       </h2>
-      <ul class="pb-3">
+      <ul v-if="excluded.length > 0" class="pb-3">
         <li v-for="meal in excluded" class="flex flex-col">
           <div class="flex">
             <no-checked class="h-5 w-5 text-gray-900" />
