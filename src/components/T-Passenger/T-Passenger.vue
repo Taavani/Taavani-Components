@@ -168,7 +168,7 @@ function toggleMode(nextMode) {
  * Updates the phone number
  * @param phone
  */
-/*
+
 function onUpdatedPhone(phone) {
   passenger.contact.phones = [{
     deviceType: 'MOBILE',
@@ -177,7 +177,7 @@ function onUpdatedPhone(phone) {
   }]
   v$.value.$touch()
 }
-
+/*
 function onUpdateGender(value) {
   passenger.gender = value
   v$.value.$touch()
