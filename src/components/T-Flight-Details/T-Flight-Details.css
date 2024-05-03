@@ -1,5 +1,5 @@
 .t-flight-details {
-    @apply border border-taa-gray-400 rounded-xl px-3;
+    @apply border border-neutral-300 rounded-lg px-3;
 }
 
 .t-flight-details .header {
