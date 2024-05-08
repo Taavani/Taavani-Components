@@ -10,16 +10,7 @@ export default {
   argTypes: {
     onClick: {},
     offers: Array,
-  },
-  parameters: {
-    backgrounds: {
-      default: "light",
-      values: [
-        { name: "light", value: "#F4F7FA" },
-        { name: "dark", value: "#0f0f0f" },
-      ],
-    },
-  },
+  }
 };
 
 export const ListWithOffers = {

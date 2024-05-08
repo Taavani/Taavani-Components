@@ -43,14 +43,18 @@ const messages = {
             multiCity: 'Multi-city',
         },
         buttons: {
-            search: 'Search',
-            continue: 'Continue',
             back: 'Back',
             select: 'Select',
             purchase: 'Purchase',
             selectOption: 'Select Option',
             selectSeats: 'Select seats',
             purchaseBaggage: 'Purchase baggage',
+            continue: "Continue",
+            search: "search",
+            selectOffer: "select offer",
+            close: "Close",
+            confirm: "Confirm",
+            taavani: "Lad Taavani tage sig af det"
         },
         passengers: {
             passengerDetails: 'Provide passenger details',
@@ -125,6 +129,7 @@ const messages = {
             included: "Included",
             purchase: "Purchase",
             select: "Select Option",
+            totalPrice: "Total price",
         },
         additionalServices: {
             seats: {
@@ -139,6 +144,22 @@ const messages = {
                 description: "Do you want to purchase baggage?",
                 buttonText: "Purchase baggage",
             },
+        },
+        confirmOffer: {
+            bookingReference: "Booking reference",
+            passengers: "Passengers",
+            travelDetails: "Travel details",
+            price: "Price",
+            baseCost: "Base cost",
+            taavani: "Taavani",
+            taavaniPlus: "Service",
+            taxes: "Taxes",
+            totalPrice: "Total price",
+            taavaniPlusConfirm: "I wish to purchase <a href='https://taavani.gl/en/terms-and-conditions' target='_blank' class='text-brand-blue'>Taavani Plus</a> for this trip.",
+            additionalServices: "Additional services",
+            additionalServicesDescription: "Add your additional remarks, such as hotel or other services.",
+            termsAndConditionsDescription: "I accept the <a href='https://taavani.gl/en/terms-and-conditions' target='_blank' class='text-brand-blue'>Terms and Conditions</a>.",
+            cancelOffer: "Cancel offer"
         }
     },
 };
@@ -164,6 +185,13 @@ const preview = {
                 color: /(background|color)$/i,
                 date: /Date$/i,
             },
+        },
+        backgrounds: {
+            default: "Light",
+            values: [
+                { name: "Light", value: "rgb(244, 247, 250)" },
+                { name: "Dark", value: "#0f0f0f" },
+            ],
         },
     },
 };

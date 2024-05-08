@@ -6,13 +6,7 @@ export default {
   tags: ["autodocs"],
   argTypes: {
     options: Array,
-  },
-  parameters: {
-    backgrounds: {
-      default: "Taavani-Light",
-      values: [{ name: "Taavani-Light", value: "rgb(244, 247, 250)" }],
-    },
-  },
+  }
 };
 
 export const Example = {

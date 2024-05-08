@@ -3,7 +3,6 @@ import {DialogPanel, TransitionChild} from "@headlessui/vue";
 import {XMarkIcon} from "@heroicons/vue/20/solid";
 
 import TFullscreenContainer from "../../components/T-Fullscreen-Container/T-Fullscreen-Container.vue";
-import CheckCircle from "@heroicons/vue/20/solid/CheckCircleIcon.js";
 import TFlightDetails from "../../components/T-Flight-Details/T-Flight-Details.vue";
 import TButton from "../../components/T-Button/T-Button.vue";
 
@@ -203,7 +202,7 @@ defineEmits([
 </script>
 
 <template>
-  <t-fullscreen-container :show="true">
+  <t-fullscreen-container :show="order">
     <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
       <div class="relative w-full max-w-4xl mx-auto my-20 transform px-4 transition-all opacity-100 scale-100">
         <TransitionChild as="template"

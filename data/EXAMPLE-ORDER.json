@@ -1,0 +1,221 @@
+{
+  "data": {
+    "type": "flight-order",
+    "id": "eJzTd9cPDDMzDg8FAAs5AmI%3D",
+    "queuingOfficeId": "GOHS12101",
+    "associatedRecords": [
+      {
+        "reference": "QV63WU",
+        "creationDate": "2024-05-02T18:03:00.000",
+        "originSystemCode": "GDS",
+        "flightOfferId": "1"
+      }
+    ],
+    "flightOffers": [
+      {
+        "type": "flight-offer",
+        "id": "1",
+        "source": "GDS",
+        "nonHomogeneous": false,
+        "lastTicketingDate": "2024-05-09",
+        "itineraries": [
+          {
+            "segments": [
+              {
+                "departure": {
+                  "iataCode": "FAE",
+                  "at": "2024-05-20T13:15:00"
+                },
+                "arrival": {
+                  "iataCode": "KEF",
+                  "at": "2024-05-20T14:05:00"
+                },
+                "carrierCode": "FI",
+                "number": "301",
+                "aircraft": {
+                  "code": "DH4"
+                },
+                "duration": "PT1H50M",
+                "id": "2",
+                "numberOfStops": 0
+              }
+            ]
+          }
+        ],
+        "price": {
+          "currency": "DKK",
+          "total": "2673.00",
+          "base": "2070.00",
+          "fees": [
+            {
+              "amount": "0.00",
+              "type": "TICKETING"
+            },
+            {
+              "amount": "0.00",
+              "type": "SUPPLIER"
+            },
+            {
+              "amount": "0.00",
+              "type": "FORM_OF_PAYMENT"
+            }
+          ],
+          "grandTotal": "2673.00",
+          "billingCurrency": "DKK"
+        },
+        "pricingOptions": {
+          "fareType": [
+            "PUBLISHED"
+          ],
+          "includedCheckedBagsOnly": true,
+          "refundableFare": true
+        },
+        "validatingAirlineCodes": [
+          "FI"
+        ],
+        "travelerPricings": [
+          {
+            "travelerId": "0",
+            "fareOption": "STANDARD",
+            "travelerType": "ADULT",
+            "price": {
+              "currency": "DKK",
+              "total": "2673.00",
+              "base": "2070.00",
+              "taxes": [
+                {
+                  "amount": "65.00",
+                  "code": "FO"
+                },
+                {
+                  "amount": "10.00",
+                  "code": "T1"
+                },
+                {
+                  "amount": "358.00",
+                  "code": "YR"
+                },
+                {
+                  "amount": "170.00",
+                  "code": "ZO"
+                }
+              ]
+            },
+            "fareDetailsBySegment": [
+              {
+                "segmentId": "2",
+                "cabin": "ECONOMY",
+                "fareBasis": "VU1HFOFL",
+                "brandedFare": "FLEX",
+                "class": "V",
+                "includedCheckedBags": {
+                  "quantity": 1
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "travelers": [
+      {
+        "id": "0",
+        "name": {
+          "firstName": "Perry",
+          "lastName": "Kub"
+        },
+        "contact": {
+          "purpose": "STANDARD",
+          "phones": [
+            {
+              "deviceType": "MOBILE",
+              "countryCallingCode": "45",
+              "number": "50505353"
+            }
+          ],
+          "emailAddress": "towne.aryanna@example.com"
+        }
+      }
+    ],
+    "formOfPayments": [
+      {
+        "creditCard": {
+          "brand": "VISA",
+          "holder": "CORPORATE",
+          "number": "444433XXXXX1111",
+          "expiryDate": "03\/30",
+          "securityCode": "XXX",
+          "flightOfferIds": [
+            "1"
+          ]
+        }
+      }
+    ],
+    "ticketingAgreement": {
+      "option": "DELAY_TO_CANCEL",
+      "delay": "1D"
+    },
+    "automatedProcess": [
+      {
+        "code": "IMMEDIATE",
+        "queue": {
+          "number": "1",
+          "category": "7"
+        },
+        "officeId": "GOHS12101"
+      }
+    ],
+    "contacts": [
+      {
+        "addresseeName": {
+          "firstName": "Christian Andersen"
+        },
+        "address": {
+          "lines": [
+            "Tuapannguit 38"
+          ],
+          "postalCode": "3900",
+          "countryCode": "GL",
+          "cityName": "Nuuk"
+        },
+        "purpose": "INVOICE",
+        "companyName": "Taavani Aps"
+      },
+      {
+        "addresseeName": {
+          "firstName": "Taavani ApS"
+        },
+        "address": {
+          "lines": [
+            "Tuapannguit 38"
+          ],
+          "postalCode": "Nuuk",
+          "countryCode": "GL",
+          "cityName": "Nuuk",
+          "stateName": "Nuuk"
+        },
+        "purpose": "STANDARD",
+        "phones": [
+          {
+            "deviceType": "LANDLINE",
+            "countryCallingCode": "00299",
+            "number": "385490"
+          }
+        ],
+        "emailAddress": "accounting@taavani.gl"
+      }
+    ]
+  },
+  "dictionaries": {
+    "locations": {
+      "FAE": {
+        "cityCode": "FAE",
+        "countryCode": "FO"
+      },
+      "KEF": {
+        "cityCode": "REK",
+        "countryCode": "IS"
+      }
+    }
+  }
+}

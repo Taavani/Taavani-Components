@@ -84,7 +84,7 @@ const airports = ref([
           >
           </t-airport-selector>
           <div :class="{'lg:w-2/6': current === 'single', 'lg:w-3/6': current === 'return' }" class="w-100" >
-            <t-date-selector v-if="current === 'single'"
+           <t-date-selector v-if="current === 'single'"
                              :departure-date="departureDate"
                              @update="(newDate) => departureDate = newDate">
             </t-date-selector>
