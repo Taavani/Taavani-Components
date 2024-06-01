@@ -216,7 +216,7 @@ watch(v$, (value) => {
       </div>
 
       <div class="flex gap-2">
-        <t-button v-if="SELECT === mode"
+        <!--<t-button v-if="SELECT === mode"
                   :title="$t('passengers.passengerDetails')"
                   coat="liquid-blue-small"
                   @click="toggleMode(INPUT)"
@@ -227,7 +227,7 @@ watch(v$, (value) => {
                   coat="liquid-blue-small"
                   @click="toggleMode(SELECT)"
         >
-        </t-button>
+        </t-button>-->
         <button v-if="!extended" type="button" class="group outline-none" @click="() => extended = !extended">
           <chevron-down-icon
               class="w-8 stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue "></chevron-down-icon>
