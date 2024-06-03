@@ -102,7 +102,8 @@ let rules = {
     },
   },
   contact: {
-    emailAddress: { }
+    emailAddress: {
+    }
   }
 }
 
@@ -110,6 +111,12 @@ if (props.requirements.emailAddressRequired) {
   rules.contact.emailAddress = {
     required,
     email
+  }
+}
+
+if (props.requirements.mobilePhoneNumberRequired) {
+  rules.contact.phones = {
+    required
   }
 }
 
@@ -170,12 +177,18 @@ function toggleMode(nextMode) {
  */
 
 function onUpdatedPhone(phone) {
-  passenger.contact.phones = [{
-    deviceType: 'MOBILE',
-    countryCallingCode: phone.countryCallingCode,
-    number: phone.nationalNumber
-  }]
-  v$.value.$touch()
+  if (phone.valid === true) {
+    passenger.contact.phones = [{
+      deviceType: 'MOBILE',
+      countryCallingCode: phone.countryCallingCode,
+      number: phone.nationalNumber
+    }]
+    v$.value.$touch()
+  } else {
+    passenger.contact.phones.length = 0
+
+    v$.value.$touch()
+  }
 }
 /*
 function onUpdateGender(value) {
@@ -258,13 +271,12 @@ watch(v$, (value) => {
 
       <t-email-input v-if="requirements.emailAddressRequired"
                      v-model:email="passenger.contact.emailAddress"></t-email-input>
+
       <t-vue-tel-input v-if="requirements.mobilePhoneNumberRequired"
                        v-bind:phone="passenger.contact.phones[0] ? passenger.contact.phones[0].number : passenger.contact.phones[0]"
                        v-on:update:phone="(value) => onUpdatedPhone(value)"
       >
       </t-vue-tel-input>
-
-
 
       <div v-if="requirements.documentRequired">
         A document is required for the concerned traveler for the creation of the flight-order

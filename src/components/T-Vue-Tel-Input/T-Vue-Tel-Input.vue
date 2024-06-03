@@ -24,15 +24,12 @@ const state = ref({
 
 const v$ = useVuelidate({
   phone: {
-    required,
-    minLength: minLength(2)
+    required
   }
 }, state)
 
 function onValidate(validation) {
-  if (validation.valid) {
-    emit('update:phone', validation)
-  }
+  emit('update:phone', validation)
 }
 </script>
 
