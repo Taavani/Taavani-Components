@@ -13,7 +13,6 @@ import './T-Passenger.css'
 import TNameInput from "../T-Name-Input/T-Name-Input.vue"
 import TEmailInput from "../T-Email-Input/T-Email-Input.vue"
 import TVueTelInput from "../T-Vue-Tel-Input/T-Vue-Tel-Input.vue";
-import TButton from "../T-Button/T-Button.vue";
 import TGenderInput from "../T-Gender-Input/T-Gender-Input.vue";
 import TBirthdayInput from "../T-Birthday-Input/T-Birthday-Input.vue";
 
@@ -177,6 +176,7 @@ function toggleMode(nextMode) {
  */
 
 function onUpdatedPhone(phone) {
+  console.log(phone)
   if (phone.valid === true) {
     passenger.contact.phones = [{
       deviceType: 'MOBILE',
@@ -199,7 +199,7 @@ function onUpdateGender(value) {
  * Watcher for the passenger object. Emits the update event
  */
 watch(v$, (value) => {
-  if (passenger && v$.value.$anyDirty === true) {
+  if (passenger) {
     passenger.valid = isTravelerValid()
     isTravelerValid() ? emits('update', passenger) : false
   }
