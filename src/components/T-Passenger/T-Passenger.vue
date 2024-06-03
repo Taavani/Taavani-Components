@@ -186,7 +186,6 @@ function onUpdatedPhone(phone) {
     v$.value.$touch()
   } else {
     passenger.contact.phones.length = 0
-
     v$.value.$touch()
   }
 }
@@ -200,7 +199,7 @@ function onUpdateGender(value) {
  * Watcher for the passenger object. Emits the update event
  */
 watch(v$, (value) => {
-  if (passenger) {
+  if (passenger && v$.value.$anyDirty === true) {
     passenger.valid = isTravelerValid()
     isTravelerValid() ? emits('update', passenger) : false
   }
