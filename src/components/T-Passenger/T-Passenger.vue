@@ -186,7 +186,9 @@ function onUpdatedPhone(phone) {
     v$.value.$touch()
   } else {
     passenger.contact.phones.length = 0
-    v$.value.$touch()
+    if (v$.value.$anyDirty) {
+      v$.value.$touch()
+    }
   }
 }
 /*
