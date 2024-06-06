@@ -1,7 +1,7 @@
 <script setup>
 import {reactive, ref, watch} from "vue"
 import {useVuelidate} from "@vuelidate/core"
-import {minLength, required, email} from "@vuelidate/validators"
+import {email, minLength, required} from "@vuelidate/validators"
 
 import CheckCircle from '@heroicons/vue/20/solid/CheckCircleIcon'
 import ChevronDownIcon from '@heroicons/vue/20/solid/ChevronDownIcon'
@@ -15,6 +15,7 @@ import TEmailInput from "../T-Email-Input/T-Email-Input.vue"
 import TVueTelInput from "../T-Vue-Tel-Input/T-Vue-Tel-Input.vue";
 import TGenderInput from "../T-Gender-Input/T-Gender-Input.vue";
 import TBirthdayInput from "../T-Birthday-Input/T-Birthday-Input.vue";
+import TButton from "../T-Button/T-Button.vue";
 
 const props = defineProps({
   traveler: {
@@ -115,7 +116,8 @@ if (props.requirements.emailAddressRequired) {
 
 if (props.requirements.mobilePhoneNumberRequired) {
   rules.contact.phones = {
-    required
+    required,
+    minLength: minLength(2)
   }
 }
 
@@ -136,7 +138,7 @@ if (props.requirements.genderRequired) {
  * Validation logic
  */
 let v$ = useVuelidate(rules, passenger)
-
+console.log(rules)
 /**
  * Validation helper. Checks if the traveler is valid
  * @returns {boolean}
@@ -151,11 +153,20 @@ function isTravelerValid() {
  */
 
 function selectTraveler(employee) {
-  passenger.name.firstName = employee.name.firstName
-  passenger.name.lastName = employee.name.lastName
+  // Reset the passenger object
+  passenger.name = {
+    firstName: '',
+    lastName: '',
+    middleName: '',
+    secondLastName: ''
+  }
+  passenger.contact.emailAddress = ''
+  passenger.contact.phones = []
+  // Update the passenger object with the selected employee
+  passenger.name = employee.name
   passenger.contact.emailAddress = employee.contact.emailAddress
   passenger.contact.phones = employee.contact.phones
-  extended.value = false
+  //extended.value = false
   v$.value.$touch()
 }
 
@@ -164,6 +175,7 @@ function selectTraveler(employee) {
  * @param nextMode
  */
 function toggleMode(nextMode) {
+  v$.value.$reset()
   mode.value = nextMode
   if (!extended.value) {
     extended.value = true
@@ -176,7 +188,6 @@ function toggleMode(nextMode) {
  */
 
 function onUpdatedPhone(phone) {
-  console.log(phone)
   if (phone.valid === true) {
     passenger.contact.phones = [{
       deviceType: 'MOBILE',
@@ -230,7 +241,7 @@ watch(v$, (value) => {
       </div>
 
       <div class="flex gap-2">
-        <!--<t-button v-if="SELECT === mode"
+        <t-button v-if="SELECT === mode"
                   :title="$t('passengers.passengerDetails')"
                   coat="liquid-blue-small"
                   @click="toggleMode(INPUT)"
@@ -241,7 +252,7 @@ watch(v$, (value) => {
                   coat="liquid-blue-small"
                   @click="toggleMode(SELECT)"
         >
-        </t-button>-->
+        </t-button>
         <button v-if="!extended" type="button" class="group outline-none" @click="() => extended = !extended">
           <chevron-down-icon
               class="w-8 stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue "></chevron-down-icon>
