@@ -117,7 +117,7 @@ if (props.requirements.emailAddressRequired) {
 if (props.requirements.mobilePhoneNumberRequired) {
   rules.contact.phones = {
     required,
-    minLength: minLength(2)
+    minLength: minLength(1)
   }
 }
 
