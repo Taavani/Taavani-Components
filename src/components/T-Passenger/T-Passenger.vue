@@ -165,8 +165,10 @@ function selectTraveler(employee) {
   passenger.name = employee.name
   passenger.contact.emailAddress = employee.contact.emailAddress
   passenger.contact.phones = employee.contact.phones
-  //extended.value = false
   v$.value.$touch()
+  if (!v$.value.$invalid) {
+    extended.value = false
+  }
 }
 
 /**
@@ -244,7 +246,7 @@ watch(v$, (value) => {
       </div>
 
       <div class="flex gap-2">
-        <!--<t-button v-if="SELECT === mode"
+        <t-button v-if="SELECT === mode"
                   :title="$t('passengers.passengerDetails')"
                   coat="liquid-blue-small"
                   @click="toggleMode(INPUT)"
@@ -255,7 +257,7 @@ watch(v$, (value) => {
                   coat="liquid-blue-small"
                   @click="toggleMode(SELECT)"
         >
-        </t-button>-->
+        </t-button>
         <button v-if="!extended" type="button" class="group outline-none" @click="() => extended = !extended">
           <chevron-down-icon
               class="w-8 stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue "></chevron-down-icon>
@@ -320,9 +322,13 @@ watch(v$, (value) => {
              :src="employee.profilePhoto ? employee.profilePhoto : 'https://ui-avatars.com/api/?name=' + (employee.name.firstName.length > 0 ? employee.name.firstName[0] : 'p') + '&color=828282&background=D3F8F0'"
              alt=""
         />
-        <span class="grow text-neutral-600">
+        <span class="grow text-neutral-600 flex flex-col">
           {{ employee.name.firstName.length !== 0 ? employee.name.firstName : 'Passenger ' + (Number(employee.id) + 1) }}
           {{ employee.name.lastName && employee.name.lastName.length !== 0 ? employee.name.lastName : '' }}
+          <span v-if="employee.contact.emailAddress === passenger.contact.emailAddress && !passenger.valid"
+                class="text-red-700 text-xs">
+            {{ $t('passengers.errors.generic')}}
+          </span>
         </span>
       </button>
     </div>
