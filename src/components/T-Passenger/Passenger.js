@@ -9,7 +9,7 @@ export default class Traveler {
             firstName: '',
             lastName: ''
         }
-        this.dateOfBirth = null
+        this.dateOfBirth = "1984-10-09"
         this.gender = null
         this.contact = {
             emailAddress: '',

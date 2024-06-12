@@ -14,7 +14,7 @@ import TNameInput from "../T-Name-Input/T-Name-Input.vue"
 import TEmailInput from "../T-Email-Input/T-Email-Input.vue"
 import TVueTelInput from "../T-Vue-Tel-Input/T-Vue-Tel-Input.vue";
 import TGenderInput from "../T-Gender-Input/T-Gender-Input.vue";
-import TBirthdayInput from "../T-Birthday-Input/T-Birthday-Input.vue";
+import TBirthdayInput from "../T-Birthday-Input/T-Birthday-Input.v2.vue";
 import TButton from "../T-Button/T-Button.vue";
 
 const props = defineProps({
@@ -60,8 +60,7 @@ const props = defineProps({
           'documentRequired': false,
           'documentIssuanceCityRequired': false,
           'redressRequiredIfAny': false,
-          'residenceRequired': false,
-          'travelerRequirements': []
+          'residenceRequired': false
         }
       }
     }
@@ -121,7 +120,7 @@ if (props.requirements.mobilePhoneNumberRequired) {
   }
 }
 
-/*
+
 if (props.requirements.dateOfBirthRequired) {
   rules.dateOfBirth = {
     required
@@ -138,7 +137,7 @@ if (props.requirements.genderRequired) {
  * Validation logic
  */
 let v$ = useVuelidate(rules, passenger)
-console.log(rules)
+
 /**
  * Validation helper. Checks if the traveler is valid
  * @returns {boolean}
@@ -202,10 +201,14 @@ function onUpdatedPhone(phone) {
     }
   }
 }
-/*
+
 function onUpdateGender(value) {
   passenger.gender = value
-  v$.value.$touch()
+  v$.value.gender.$touch()
+}
+
+function onBirthdayUpdate(value) {
+  passenger.dateOfBirth = value
 }
 
 /**
@@ -271,8 +274,10 @@ watch(v$, (value) => {
       >
       </t-name-input>
 
-      <t-birthday-input v-if="requirements.dateOfBirthRequired">
-
+      <t-birthday-input v-if="requirements.dateOfBirthRequired"
+                        v-bind:model-value="passenger.dateOfBirth"
+                        v-on:update:model-value="onBirthdayUpdate"
+      >
       </t-birthday-input>
 
       <t-gender-input v-if="requirements.genderRequired"
