@@ -1,5 +1,5 @@
 <script setup>
-import {reactive, ref, watch} from "vue"
+import {computed, reactive, ref, watch} from "vue"
 import {useVuelidate} from "@vuelidate/core"
 import {email, minLength, required} from "@vuelidate/validators"
 
@@ -89,54 +89,62 @@ const mode = ref(INPUT)
 const extended = ref(true)
 const passenger = reactive(Traveler.fromTraveler(props.traveler))
 
-let rules = {
-  name: {
-    firstName: {
-      required,
-      minLength: minLength(2)
-    },
-    lastName: {
-      required,
-      minLength: minLength(2)
-    },
-  },
-  contact: {
-    emailAddress: {
+/**
+ * Compute validations.
+ */
+const validations = computed({
+  get: () => {
+    let rules = {
+      name: {
+        firstName: {
+          required,
+          minLength: minLength(2)
+        },
+        lastName: {
+          required,
+          minLength: minLength(2)
+        },
+      },
+      contact: {
+        emailAddress: {
+        }
+      }
     }
-  }
-}
 
-if (props.requirements.emailAddressRequired) {
-  rules.contact.emailAddress = {
-    required,
-    email
-  }
-}
+    if (props.requirements.emailAddressRequired) {
+      rules.contact.emailAddress = {
+        required,
+        email
+      }
+    }
 
-if (props.requirements.mobilePhoneNumberRequired) {
-  rules.contact.phones = {
-    required,
-    minLength: minLength(1)
-  }
-}
+    if (props.requirements.mobilePhoneNumberRequired) {
+      rules.contact.phones = {
+        required,
+        minLength: minLength(1)
+      }
+    }
 
 
-if (props.requirements.dateOfBirthRequired) {
-  rules.dateOfBirth = {
-    required
-  }
-}
+    if (props.requirements.dateOfBirthRequired) {
+      rules.dateOfBirth = {
+        required
+      }
+    }
 
-if (props.requirements.genderRequired) {
-  rules.gender = {
-    required
+    if (props.requirements.genderRequired) {
+      rules.gender = {
+        required
+      }
+    }
+    return rules
   }
-}
+})
 
 /**
  * Validation logic
  */
-let v$ = useVuelidate(rules, passenger)
+let v$ = useVuelidate(validations, passenger)
 
 /**
  * Validation helper. Checks if the traveler is valid
@@ -150,8 +158,7 @@ function isTravelerValid() {
  * Selects a traveler from the list of employees
  * @param employee
  */
-
-function selectTraveler(employee) {
+async function selectTraveler(employee) {
   // Reset the passenger object
   passenger.name = {
     firstName: '',
@@ -166,6 +173,7 @@ function selectTraveler(employee) {
   passenger.contact.emailAddress = employee.contact.emailAddress
   passenger.contact.phones = employee.contact.phones
   v$.value.$touch()
+
   if (!v$.value.$invalid) {
     extended.value = false
   }
@@ -176,6 +184,7 @@ function selectTraveler(employee) {
  * @param nextMode
  */
 function toggleMode(nextMode) {
+  resetPassenger()
   v$.value.$reset()
   mode.value = nextMode
   if (!extended.value) {
@@ -183,11 +192,21 @@ function toggleMode(nextMode) {
   }
 }
 
+function resetPassenger() {
+  passenger.name = {
+    firstName: '',
+    lastName: '',
+    middleName: '',
+    secondLastName: ''
+  }
+  passenger.contact.emailAddress = ''
+  passenger.contact.phones = []
+}
+
 /**
  * Updates the phone number
  * @param phone
  */
-
 function onUpdatedPhone(phone) {
   if (phone.valid === true) {
     passenger.contact.phones = [{
@@ -204,11 +223,19 @@ function onUpdatedPhone(phone) {
   }
 }
 
+/**
+ * Update the gender
+ * @param value
+ */
 function onUpdateGender(value) {
   passenger.gender = value
   v$.value.gender.$touch()
 }
 
+/**
+ * Update the birthday
+ * @param value
+ */
 function onBirthdayUpdate(value) {
   passenger.dateOfBirth = value
 }
@@ -325,7 +352,7 @@ watch(v$, (value) => {
         <span class="grow text-neutral-600 flex flex-col">
           {{ employee.name.firstName.length !== 0 ? employee.name.firstName : 'Passenger ' + (Number(employee.id) + 1) }}
           {{ employee.name.lastName && employee.name.lastName.length !== 0 ? employee.name.lastName : '' }}
-          <span v-if="employee.contact.emailAddress === passenger.contact.emailAddress && !passenger.valid"
+          <span v-if="employee.contact.emailAddress === passenger.contact.emailAddress && v$.$error"
                 class="text-red-700 text-xs">
             {{ $t('passengers.errors.generic')}}
           </span>

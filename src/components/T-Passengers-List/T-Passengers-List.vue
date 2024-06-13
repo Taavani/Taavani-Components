@@ -1,5 +1,5 @@
 <script setup>
-import {isProxy, ref, watch} from "vue";
+import {isProxy, onMounted, ref, toRaw, watch} from "vue";
 import './T-Passengers-List.css'
 import TPassenger from "../T-Passenger/T-Passenger.vue";
 
@@ -24,38 +24,50 @@ const props = defineProps({
 })
 
 const passengerRequirements = ref([]);
+const emits = defineEmits(['update'])
+
+onMounted(function () {
+  const { requirements, passengers } = props
+  passengerRequirements.value = mapRequirementsToPassengers(toRaw(passengers), toRaw(requirements))
+})
 
 // Map requirements to passengers.
 watch(() => props.requirements, (requirements) => {
   if (isProxy(requirements)) {
-
-    for (let i = 0; i < props.passengers.length; i++) {
-      let passenger = props.passengers[i];
-      let requirements = {};
-
-      requirements.emailAddressRequired = props.requirements.emailAddressRequired ?? false;
-      requirements.mobilePhoneNumberRequired = props.requirements.mobilePhoneNumberRequired ?? false;
-
-      // If traveller requirements are set, add them to the requirements.
-      /*
-      if (props.requirements.travelerRequirements && props.requirements.travelerRequirements.length > 0) {
-        let requirementsForTraveler = props.requirements.travelerRequirements.find(travelerRequirement => travelerRequirement.travelerId === passenger.travelerId);
-        if (requirementsForTraveler) {
-          requirements.dateOfBirthRequired = requirementsForTraveler.dateOfBirthRequired ?? false;
-          requirements.documentRequired = requirementsForTraveler.documentRequired ?? false;
-          requirements.genderRequired = requirementsForTraveler.genderRequired ?? false;
-          requirements.redressRequiredIfAny = requirementsForTraveler.redressRequiredIfAny ?? false;
-          requirements.residenceRequired = requirementsForTraveler.residenceRequired ?? false;
-        }
-      }
-      */
-
-      passengerRequirements.value[passenger.travelerId] = requirements;
-    }
+    const { passengers } = props
+    passengerRequirements.value = mapRequirementsToPassengers(toRaw(passengers), toRaw(requirements))
   }
 });
 
-const emits = defineEmits(['update'])
+function mapRequirementsToPassengers (passengers, requirements) {
+  let passengerRequirements = [];
+
+  for (let i = 0; i < passengers.length; i++) {
+    let passenger = passengers[i]
+    let passReq = {};
+
+    passReq.emailAddressRequired = props.requirements.emailAddressRequired ?? false;
+    passReq.mobilePhoneNumberRequired = props.requirements.mobilePhoneNumberRequired ?? false;
+
+    // Make sure there are any travelerRequirements
+    if (requirements.travelerRequirements && Array.isArray(requirements.travelerRequirements)) {
+      let travelerReq = requirements.travelerRequirements.find(function (req) {
+        return req.travelerId === passenger.travelerId
+      })
+
+      if (travelerReq) {
+        passReq.genderRequired = travelerReq.genderRequired ?? false
+        passReq.documentRequired = travelerReq.documentRequired ?? false
+        passReq.dateOfBirthRequired = travelerReq.dateOfBirthRequired ?? false
+        passReq.residenceRequired = travelerReq.residenceRequired ?? false
+        passReq.redressRequiredIfAny = travelerReq.redressRequiredIfAny ?? false
+      }
+    }
+
+    passengerRequirements[passenger.travelerId] = passReq
+  }
+  return passengerRequirements;
+}
 
 function update(updatedPassenger) {
   let passengers = props.passengers;
@@ -74,7 +86,6 @@ function update(updatedPassenger) {
                  :traveler="passenger"
                  :employees="employees"
                  :requirements="passengerRequirements[passenger.travelerId]"
-
                  @update="update"
     >
     </t-passenger>
