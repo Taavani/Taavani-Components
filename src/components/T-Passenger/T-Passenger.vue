@@ -4,9 +4,10 @@ import {useVuelidate} from "@vuelidate/core"
 import {email, minLength, required} from "@vuelidate/validators"
 
 import CheckCircle from '@heroicons/vue/20/solid/CheckCircleIcon'
+import ExclamationCircleIcon from '@heroicons/vue/20/solid/ExclamationCircleIcon'
 import ChevronDownIcon from '@heroicons/vue/20/solid/ChevronDownIcon'
 import ChevronUpIcon from '@heroicons/vue/20/solid/ChevronUpIcon'
-
+import UserIcon from "@heroicons/vue/20/solid/UserIcon";
 import Traveler from './Passenger.js'
 import './T-Passenger.css'
 
@@ -15,7 +16,6 @@ import TEmailInput from "../T-Email-Input/T-Email-Input.vue"
 import TVueTelInput from "../T-Vue-Tel-Input/T-Vue-Tel-Input.vue";
 import TGenderInput from "../T-Gender-Input/T-Gender-Input.vue";
 import TBirthdayInput from "../T-Birthday-Input/T-Birthday-Input.v2.vue";
-import TButton from "../T-Button/T-Button.vue";
 
 const props = defineProps({
   traveler: {
@@ -160,14 +160,8 @@ function isTravelerValid() {
  */
 async function selectTraveler(employee) {
   // Reset the passenger object
-  passenger.name = {
-    firstName: '',
-    lastName: '',
-    middleName: '',
-    secondLastName: ''
-  }
-  passenger.contact.emailAddress = ''
-  passenger.contact.phones = []
+  resetPassenger()
+
   // Update the passenger object with the selected employee
   passenger.name = employee.name
   passenger.contact.emailAddress = employee.contact.emailAddress
@@ -185,13 +179,16 @@ async function selectTraveler(employee) {
  */
 function toggleMode(nextMode) {
   resetPassenger()
-  v$.value.$reset()
+
   mode.value = nextMode
   if (!extended.value) {
     extended.value = true
   }
 }
 
+/**
+ * Reset the passenger information.
+ */
 function resetPassenger() {
   passenger.name = {
     firstName: '',
@@ -201,6 +198,7 @@ function resetPassenger() {
   }
   passenger.contact.emailAddress = ''
   passenger.contact.phones = []
+  v$.value.$reset()
 }
 
 /**
@@ -257,7 +255,7 @@ watch(v$, (value) => {
 
     <div :class="{ header: true, 'pb-4': extended }">
       <div class="grow flex items-center pr-4">
-        <img class="h-8 w-8 rounded-full mr-3"
+        <img class="h-8 w-8 rounded-full mr-3 bg-neutral-300 border-0"
              :src="'https://ui-avatars.com/api/?name=' + (passenger.name.firstName.length > 0 ? passenger.name.firstName[0] : 'p') + '&color=828282&background=D3F8F0'"
              alt=""
         />
@@ -273,25 +271,36 @@ watch(v$, (value) => {
       </div>
 
       <div class="flex gap-2">
-        <t-button v-if="SELECT === mode"
-                  :title="$t('passengers.passengerDetails')"
-                  coat="liquid-blue-small"
-                  @click="toggleMode(INPUT)"
-        >
-        </t-button>
-        <t-button v-if="INPUT === mode"
-                  :title="$t('passengers.selectPassenger')"
-                  coat="liquid-blue-small"
-                  @click="toggleMode(SELECT)"
-        >
-        </t-button>
-        <button v-if="!extended" type="button" class="group outline-none" @click="() => extended = !extended">
-          <chevron-down-icon
-              class="w-8 stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue "></chevron-down-icon>
+        <button type="button"
+                v-if="SELECT === mode"
+                @click="toggleMode(INPUT)"
+                class="border hover:border-brand-blue px-2 border-neutral-300 focus:border-brand-blue rounded-xl group outline-none flex items-center">
+          <user-icon class="w-6 group-hover:stroke-brand-blue group-hover:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue "></user-icon>
+          <span class="hidden sm:block uppercase group-hover:text-brand-blue pl-1 text-xs group-focus:text-brand-blue">
+          {{ $t('passengers.selectPassenger') }}
+          </span>
         </button>
-        <button v-if="extended" type="button" class="outline-none" @click="() => extended = !extended">
+
+        <button type="button"
+                v-if="INPUT === mode"
+                @click="toggleMode(SELECT)"
+                class="border px-2  hover:border-brand-blue border-neutral-300 focus:border-brand-blue rounded-xl group outline-none flex items-center">
+          <user-icon class="w-6 group-hover:stroke-brand-blue group-hover:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue "></user-icon>
+          <span class="hidden sm:block uppercase group-hover:text-brand-blue pl-1 text-xs group-focus:text-brand-blue">
+          {{ $t('passengers.passengerDetails') }}
+          </span>
+        </button>
+
+        <button v-if="!extended"
+                type="button"
+                class="group outline-none"
+                @click="() => extended = !extended">
+          <chevron-down-icon
+              class="w-8 group-hover:text-brand-blue group-hover:stroke-brand-blue group-focus:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue "></chevron-down-icon>
+        </button>
+        <button v-if="extended" type="button" class="group outline-none" @click="() => extended = !extended">
           <chevron-up-icon
-              class="w-8 stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue "></chevron-up-icon>
+              class="w-8 group-hover:text-brand-blue group-hover:stroke-brand-blue group-focus:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue"></chevron-up-icon>
         </button>
       </div>
     </div>
@@ -342,19 +351,25 @@ watch(v$, (value) => {
     </div>
     <div v-if="SELECT === mode && extended" class="content-select-passenger grid grid-cols-1 gap-3">
       <button :key="index" v-for="(employee, index) in employees"
-              class="border border-neutral-300 rounded-xl px-4 py-3 flex outline-none items-center"
+              :class="{ 'border-green-300': !v$.$error && passenger.contact.emailAddress === employee.contact.emailAddress, 'border-neutral-300': passenger.contact.emailAddress !== employee.contact.emailAddress, 'border-red-500': v$.$error && passenger.contact.emailAddress === employee.contact.emailAddress}"
+              class="border rounded-xl px-4 py-3 flex outline-none items-center"
               @click='() => selectTraveler(employee)'
       >
-        <img class="h-8 w-8 rounded-full mr-3"
+        <check-circle v-if="!v$.$error && passenger.contact.emailAddress === employee.contact.emailAddress" class="w-8 stroke-green-500 text-green-500"></check-circle>
+        <exclamation-circle-icon v-else-if="v$.$error && passenger.contact.emailAddress === employee.contact.emailAddress" class="w-8 stroke-red-500 text-red-500"></exclamation-circle-icon>
+        <img v-else :class="{  'bg-green-500': !v$.$error && passenger.contact.emailAddress === employee.contact.emailAddress, 'bg-neutral-300': passenger.contact.emailAddress !== employee.contact.emailAddress, 'bg-red-500': v$.$error && passenger.contact.emailAddress === employee.contact.emailAddress}" class="h-8 w-8 rounded-full mr-3  "
              :src="employee.profilePhoto ? employee.profilePhoto : 'https://ui-avatars.com/api/?name=' + (employee.name.firstName.length > 0 ? employee.name.firstName[0] : 'p') + '&color=828282&background=D3F8F0'"
              alt=""
         />
-        <span class="grow text-neutral-600 flex flex-col">
+        <span :class="{ 'text-green-500': !v$.$error && employee.contact.emailAddress === passenger.contact.emailAddress, 'text-red-500': v$.$error && passenger.contact.emailAddress === employee.contact.emailAddress}" class="grow text-neutral-600 flex flex-col">
           {{ employee.name.firstName.length !== 0 ? employee.name.firstName : 'Passenger ' + (Number(employee.id) + 1) }}
           {{ employee.name.lastName && employee.name.lastName.length !== 0 ? employee.name.lastName : '' }}
           <span v-if="employee.contact.emailAddress === passenger.contact.emailAddress && v$.$error"
-                class="text-red-700 text-xs">
+                class="text-red-500 text-xs">
             {{ $t('passengers.errors.generic')}}
+            <span class="flex flex-col uppercase" v-for="error of v$.$errors" :key="error.$uid">
+              {{ $t('passengers.errors.' + error.$property + '.' + error.$validator) }}
+            </span>
           </span>
         </span>
       </button>
