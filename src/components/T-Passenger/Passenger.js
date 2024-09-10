@@ -9,7 +9,7 @@ export default class Traveler {
             firstName: '',
             lastName: ''
         }
-        this.dateOfBirth = "1984-10-09"
+        this.dateOfBirth = "1980-01-01"
         this.gender = null
         this.contact = {
             emailAddress: '',
@@ -19,6 +19,18 @@ export default class Traveler {
     }
 
     toJson() {
+        let phones = []
+
+        if (this.contact.phones && this.contact.phones.length > 0) {
+            phones = this.contact.phones.map(phone => {
+                return {
+                    'deviceType': phone.deviceType,
+                    'countryCallingCode': phone.countryCallingCode,
+                    'number': phone.number
+                }
+            })
+        }
+
         return {
             'id': this.travelerId,
             'dateOfBirth': this.dateOfBirth,
@@ -29,13 +41,7 @@ export default class Traveler {
             'gender': this.gender,
             'contact': {
                 'emailAddress': this.contact.emailAddress,
-                'phones': this.contact.phones.map(phone => {
-                    return {
-                        'deviceType': phone.deviceType,
-                        'countryCallingCode': phone.countryCallingCode,
-                        'number': phone.number
-                    }
-                })
+                'phones': phones
             },
             'documents': []
         }
