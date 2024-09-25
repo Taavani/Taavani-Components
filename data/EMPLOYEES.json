@@ -19,13 +19,7 @@
       "address": null,
       "language": null,
       "purpose": null,
-      "phones": [
-        {
-          "deviceType": "MOBILE",
-          "countryCallingCode": "299",
-          "number": "445231"
-        }
-      ],
+      "phones": [],
       "companyName": null,
       "emailAddress": "t@test.com"
     },

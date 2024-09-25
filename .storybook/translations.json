@@ -120,7 +120,7 @@
       "noOffersDescription": "We were unable to find any offers matching your search criteria.",
       "refund": "Refundable",
       "exchange": "Exchangeable",
-      "layover": "{hours}h {minutes}m layover"
+      "layover": "{days}d {hours}h {minutes}m layover"
     },
     "flightOfferExtended": {
       "departureDate": "Departure date",

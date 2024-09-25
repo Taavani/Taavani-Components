@@ -1,0 +1,296 @@
+{
+  "data": {
+    "type": "flight-order",
+    "id": "eJzTd9cPDDMzDg8FAAs5AmI%3D",
+    "associatedRecords": [
+      {
+        "reference": "QV63WU",
+        "creationDate": "2024-05-02T18:03:00.000",
+        "originSystemCode": "GDS",
+        "flightOfferId": "1"
+      }
+    ],
+    "queuingOfficeId": "GOHS12101",
+    "ownerOfficeId": "GOHS12101",
+    "flightOffers": [
+      {
+        "type": "flight-offer",
+        "id": "1",
+        "source": "GDS",
+        "instantTicketingRequired": false,
+        "nonHomogeneous": false,
+        "lastTicketingDate": "2024-09-28",
+        "itineraries": [
+          {
+            "segments": [
+              {
+                "departure": {
+                  "iataCode": "ARN",
+                  "terminal": "5",
+                  "at": "2024-10-16T13:50:00"
+                },
+                "arrival": {
+                  "iataCode": "KEF",
+                  "at": "2024-10-16T15:10:00"
+                },
+                "carrierCode": "FI",
+                "number": "307",
+                "aircraft": {
+                  "code": "7M9"
+                },
+                "operating": {
+                  "carrierCode": "FI"
+                },
+                "duration": "PT3H20M",
+                "id": "1",
+                "numberOfStops": 0
+              },
+              {
+                "departure": {
+                  "iataCode": "KEF",
+                  "at": "2024-10-16T18:20:00"
+                },
+                "arrival": {
+                  "iataCode": "GOH",
+                  "at": "2024-10-16T20:40:00"
+                },
+                "carrierCode": "GL",
+                "number": "711",
+                "aircraft": {
+                  "code": "DH2"
+                },
+                "operating": {
+                  "carrierCode": "GL"
+                },
+                "duration": "PT4H20M",
+                "id": "2",
+                "numberOfStops": 0
+              },
+              {
+                "departure": {
+                  "iataCode": "GOH",
+                  "at": "2024-10-17T07:30:00"
+                },
+                "arrival": {
+                  "iataCode": "JAV",
+                  "at": "2024-10-17T09:45:00"
+                },
+                "carrierCode": "GL",
+                "number": "502",
+                "aircraft": {
+                  "code": "DH2"
+                },
+                "operating": {
+                  "carrierCode": "GL"
+                },
+                "duration": "PT2H15M",
+                "stops": [
+                  {
+                    "iataCode": "SFJ",
+                    "duration": "PT35M",
+                    "arrivalAt": "2024-10-17T08:25:00",
+                    "departureAt": "2024-10-17T09:00:00"
+                  }
+                ],
+                "id": "3",
+                "numberOfStops": 1
+              }
+            ]
+          }
+        ],
+        "price": {
+          "currency": "DKK",
+          "total": "11577.00",
+          "base": "10642.00",
+          "fees": [
+            {
+              "amount": "0.00",
+              "type": "SUPPLIER"
+            },
+            {
+              "amount": "0.00",
+              "type": "TICKETING"
+            },
+            {
+              "amount": "0.00",
+              "type": "FORM_OF_PAYMENT"
+            }
+          ],
+          "grandTotal": "11577.00",
+          "billingCurrency": "DKK"
+        },
+        "pricingOptions": {
+          "fareType": [
+            "PUBLISHED"
+          ],
+          "includedCheckedBagsOnly": true
+        },
+        "validatingAirlineCodes": [
+          "GL"
+        ],
+        "travelerPricings": [
+          {
+            "travelerId": "0",
+            "fareOption": "STANDARD",
+            "travelerType": "ADULT",
+            "price": {
+              "currency": "DKK",
+              "total": "11577",
+              "base": "10642",
+              "taxes": [
+                {
+                  "amount": "37.00",
+                  "code": "SF"
+                },
+                {
+                  "amount": "297.00",
+                  "code": "ZO"
+                },
+                {
+                  "amount": "113.00",
+                  "code": "YA"
+                },
+                {
+                  "amount": "122.00",
+                  "code": "IS"
+                },
+                {
+                  "amount": "24.00",
+                  "code": "ZU"
+                },
+                {
+                  "amount": "10.00",
+                  "code": "T1"
+                },
+                {
+                  "amount": "332.00",
+                  "code": "LJ"
+                }
+              ]
+            },
+            "fareDetailsBySegment": [
+              {
+                "segmentId": "1",
+                "cabin": "ECONOMY",
+                "fareBasis": "KNR1B",
+                "class": "H",
+                "includedCheckedBags": {
+                  "weight": 20,
+                  "weightUnit": "KG"
+                }
+              },
+              {
+                "segmentId": "2",
+                "cabin": "ECONOMY",
+                "fareBasis": "KNR1B",
+                "class": "K",
+                "includedCheckedBags": {
+                  "weight": 20,
+                  "weightUnit": "KG"
+                }
+              },
+              {
+                "segmentId": "3",
+                "cabin": "ECONOMY",
+                "fareBasis": "SOWR",
+                "class": "S",
+                "includedCheckedBags": {
+                  "weight": 20,
+                  "weightUnit": "KG"
+                }
+              }
+            ]
+          }
+        ],
+        "paymentCardRequired": false
+      }
+    ],
+    "travelers": [
+      {
+        "id": "0",
+        "name": {
+          "firstName": "Jensia",
+          "lastName": "Dam-Davidsen"
+        },
+        "contact": {
+          "emailAddress": "johan@taavani.gl",
+          "phones": [
+            {
+              "deviceType": "MOBILE",
+              "countryCallingCode": "298",
+              "number": "456532"
+            }
+          ]
+        },
+        "valid": true
+      }
+    ],
+    "remarks": {
+      "general": [
+        {
+          "subType": "GENERAL_MISCELLANEOUS",
+          "text": "Booking from travelwith.taavani.gl"
+        }
+      ],
+      "airline": []
+    },
+    "formOfPayments": [
+      {
+        "creditCard": {
+          "brand": "EASYPAY",
+          "number": "2235291501687105",
+          "expiryDate": "2024-10",
+          "flightOfferIds": [
+            "1"
+          ]
+        }
+      }
+    ],
+    "ticketingAgreement": {
+      "option": "DELAY_TO_CANCEL",
+      "delay": "1D"
+    },
+    "automatedProcess": [
+      {
+        "code": "IMMEDIATE",
+        "queue": {
+          "number": "1",
+          "category": "7"
+        },
+        "officeId": "GOHS12101"
+      }
+    ],
+    "contacts": [
+      {
+        "addresseeName": {
+          "firstName": "Christian",
+          "lastName": "Andersen",
+          "middleName": null,
+          "secondMiddleName": null
+        },
+        "companyName": "Taavani Aps",
+        "purpose": "INVOICE",
+        "phones": [
+          {
+            "deviceType": "LANDLINE",
+            "countryCallingCode": "299",
+            "number": "385490",
+            "purpose": null
+          }
+        ],
+        "emailAddress": "support@taavani.gl",
+        "address": {
+          "lines": [
+            "Tuapannguit 38"
+          ],
+          "postalCode": "3900",
+          "countryCode": "GL",
+          "cityName": "Nuuk",
+          "stateName": null,
+          "postalBox": null
+        },
+        "language": null
+      }
+    ]
+  }
+}

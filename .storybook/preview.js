@@ -9,7 +9,6 @@ import "../src/css/main.css"
 import {createI18n} from 'vue-i18n';
 import {setup} from "@storybook/vue3";
 
-
 setup(async (app) => {
     const {en} = await import('./translations.json')
 
@@ -23,7 +22,7 @@ setup(async (app) => {
         runtimeOnly: false,
     });
 
-    app.use(i18n);
+    app.use(i18n)
 });
 
 /** @type { import('@storybook/vue3').Preview } */

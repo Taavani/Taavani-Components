@@ -1,6 +1,7 @@
 <script setup>
 import {DialogPanel, TransitionChild} from "@headlessui/vue";
 import {XMarkIcon} from "@heroicons/vue/20/solid";
+import ORDER from "../../../data/ORDER-ARN-KEF-SINGLE.json"
 
 import TFullscreenContainer from "../../components/T-Fullscreen-Container/T-Fullscreen-Container.vue";
 import TFlightDetails from "../../components/T-Flight-Details/T-Flight-Details.vue";
@@ -10,145 +11,7 @@ defineProps({
   order: {
     type: Object,
     default: () => {
-      return {
-        type: "flight-order",
-        id: "eJzTd9cPDDMzDg8FAAs5AmI%3D",
-        queuingOfficeId: "GOHS12101",
-        associatedRecords: [
-          {
-            reference: "QV63WU",
-            creationDate: "2024-05-02T18:03:00.000",
-            originSystemCode: "GDS",
-            flightOfferId: "1"
-          }
-        ],
-        flightOffers: [
-          {
-            type: "flight-offer",
-            id: "1",
-            source: "GDS",
-            nonHomogeneous: false,
-            lastTicketingDate: "2024-05-09",
-            itineraries: [
-              {
-                segments: [
-                  {
-                    departure: {
-                      iataCode: "FAE",
-                      at: "2024-05-20T13:15:00"
-                    },
-                    arrival: {
-                      iataCode: "KEF",
-                      at: "2024-05-20T14:05:00"
-                    },
-                    carrierCode: "FI",
-                    number: "301",
-                    aircraft: {
-                      code: "DH4"
-                    },
-                    duration: "PT1H50M",
-                    id: "2",
-                    numberOfStops: 0
-                  }
-                ]
-              }
-            ],
-            price: {
-              currency: "DKK",
-              total: "2673.00",
-              base: "2070.00",
-              fees: [
-                {
-                  amount: "0.00",
-                  type: "TICKETING"
-                },
-                {
-                  amount: "0.00",
-                  type: "SUPPLIER"
-                },
-                {
-                  amount: "0.00",
-                  type: "FORM_OF_PAYMENT"
-                }
-              ],
-              grandTotal: "2673.00",
-              billingCurrency: "DKK"
-            },
-            pricingOptions: {
-              fareType: [
-                "PUBLISHED"
-              ],
-              includedCheckedBagsOnly: true,
-              refundableFare: true
-            },
-            validatingAirlineCodes: [
-              "FI"
-            ],
-            travelerPricings: [
-              {
-                travelerId: "0",
-                fareOption: "STANDARD",
-                travelerType: "ADULT",
-                price: {
-                  currency: "DKK",
-                  total: "2673.00",
-                  base: "2070.00",
-                  taxes: [
-                    {
-                      amount: "65.00",
-                      code: "FO"
-                    },
-                    {
-                      amount: "10.00",
-                      code: "T1"
-                    },
-                    {
-                      amount: "358.00",
-                      code: "YR"
-                    },
-                    {
-                      amount: "170.00",
-                      code: "ZO"
-                    }
-                  ]
-                },
-                fareDetailsBySegment: [
-                  {
-                    segmentId: "2",
-                    cabin: "ECONOMY",
-                    fareBasis: "VU1HFOFL",
-                    brandedFare: "FLEX",
-                    class: "V",
-                    includedCheckedBags: {
-                      quantity: 1
-                    }
-                  }
-                ]
-              }
-            ]
-          }
-        ],
-        travelers: [
-          {
-            id: "0",
-            name: {
-              firstName: "Perry",
-              lastName: "Kub"
-            },
-            contact: {
-              purpose: "STANDARD",
-              phones: [
-                {
-                  deviceType: "MOBILE",
-                  countryCallingCode: "45",
-                  number: "50505353"
-                }
-              ],
-              emailAddress: "towne.aryanna@example.com"
-            }
-          }
-        ],
-      }
+      return ORDER.data
     }
   },
   dictionary: {
@@ -162,6 +25,24 @@ defineProps({
               city: "Vágar"
             }
           },
+          ARN: {
+            en: {
+              name: "Arlanda",
+              city: "Stockholm"
+            }
+          },
+          GOH: {
+            en: {
+              name: "Nuuk",
+              city: "Nuuk"
+            }
+          },
+          JAV: {
+            en: {
+              name: "Ilulissat",
+              city: "Ilulissat"
+            }
+          },
           KEF: {
             en: {
               name: "Keflavik",
@@ -170,10 +51,13 @@ defineProps({
           }
         },
         carriers: {
-          FI: "Icelandair"
+          FI: "Icelandair",
+          GL: "Air Greenland",
         },
-        "aircraft": {
-          "DH4": "DE HAVILLAND DASH 8-400"
+        aircraft: {
+          DH4: "DE HAVILLAND DASH 8-400",
+          DH2: "DE HAVILLAND DASH 8-200",
+          "7M9": "BOEING 737 MAX 9",
         },
       }
     }

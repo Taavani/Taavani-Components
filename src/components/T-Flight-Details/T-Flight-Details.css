@@ -15,7 +15,7 @@
 }
 
 .t-flight-details .right .journey {
-    @apply w-[90%] flex flex-col;
+    @apply w-[95%] flex flex-col;
 }
 
 .t-flight-details .right .journey .details {
@@ -23,10 +23,6 @@
 }
 .t-flight-details .right .flight-info {
     @apply text-sm text-neutral-400 w-full;
-}
-
-.t-flight-details .right .padding {
-    @apply w-[10%];
 }
 
 .t-flight-details .departure {
