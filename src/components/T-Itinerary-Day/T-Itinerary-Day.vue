@@ -22,11 +22,11 @@ const props = defineProps({
   <section>
     <header class="grid grid-cols-6 pb-2">
       <time datetime="2024-10-10" class="col-span-1 font-medium text-xl">{{ date }}</time>
-      <h2 class="col-span-3 text-left font-medium text-xl">{{ day }}</h2>
+      <h2 class="col-span-4 text-left font-medium text-xl">{{ day }}</h2>
       <p v-html="description" class="col-span-1 text-right font-medium text-xl"></p>
     </header>
     <div class="grid grid-cols-6">
-      <ul class="grid grid-cols-1 gap-4 col-start-2 col-span-4 mb-4">
+      <ul class="grid grid-cols-1 gap-4 col-start-2 col-span-5 mb-4">
         <slot></slot>
       </ul>
     </div>

@@ -1,7 +1,7 @@
 {
   "name": "taavani-components",
   "type": "module",
-  "module": "lib/taavani-components.esm.js",
+  "module": "dist/taavani-components.esm.js",
   "version": "0.1.0",
   "description": "This is a component library for the JS components for Taavani.",
   "keywords": [
