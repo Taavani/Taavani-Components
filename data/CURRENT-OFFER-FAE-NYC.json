@@ -1,0 +1,630 @@
+{
+  "type": "flight-offer",
+  "id": "1",
+  "source": "GDS",
+  "instantTicketingRequired": false,
+  "nonHomogeneous": false,
+  "oneWay": false,
+  "lastTicketingDate": "2024-09-27",
+  "numberOfBookableSeats": 2,
+  "itineraries": [
+    {
+      "duration": "PT30H35M",
+      "segments": [
+        {
+          "departure": {
+            "iataCode": "FAE",
+            "at": "2024-10-10T17:35:00"
+          },
+          "arrival": {
+            "iataCode": "CPH",
+            "terminal": "2",
+            "at": "2024-10-10T20:40:00"
+          },
+          "carrierCode": "RC",
+          "number": "458",
+          "aircraft": {
+            "code": "320"
+          },
+          "operating": {
+            "carrierCode": "RC"
+          },
+          "duration": "PT2H5M",
+          "id": "75",
+          "numberOfStops": 0,
+          "blacklistedInEU": false
+        },
+        {
+          "departure": {
+            "iataCode": "CPH",
+            "terminal": "3",
+            "at": "2024-10-11T14:00:00"
+          },
+          "arrival": {
+            "iataCode": "KEF",
+            "at": "2024-10-11T15:20:00"
+          },
+          "carrierCode": "FI",
+          "number": "205",
+          "aircraft": {
+            "code": "75T"
+          },
+          "operating": {
+            "carrierCode": "FI"
+          },
+          "duration": "PT3H20M",
+          "id": "76",
+          "numberOfStops": 0,
+          "blacklistedInEU": false
+        },
+        {
+          "departure": {
+            "iataCode": "KEF",
+            "at": "2024-10-11T17:00:00"
+          },
+          "arrival": {
+            "iataCode": "JFK",
+            "terminal": "7",
+            "at": "2024-10-11T19:10:00"
+          },
+          "carrierCode": "FI",
+          "number": "615",
+          "aircraft": {
+            "code": "76W"
+          },
+          "operating": {
+            "carrierCode": "FI"
+          },
+          "duration": "PT6H10M",
+          "id": "77",
+          "numberOfStops": 0,
+          "blacklistedInEU": false
+        }
+      ]
+    }
+  ],
+  "price": {
+    "currency": "DKK",
+    "total": "8502.00",
+    "base": "6901.00",
+    "fees": [
+      {
+        "amount": "0.00",
+        "type": "SUPPLIER"
+      },
+      {
+        "amount": "0.00",
+        "type": "TICKETING"
+      }
+    ],
+    "grandTotal": "8502.00"
+  },
+  "pricingOptions": {
+    "fareType": [
+      "PUBLISHED"
+    ],
+    "includedCheckedBagsOnly": true
+  },
+  "validatingAirlineCodes": [
+    "FI"
+  ],
+  "travelerPricings": [
+    {
+      "travelerId": "0",
+      "fareOption": "STANDARD",
+      "travelerType": "ADULT",
+      "price": {
+        "currency": "DKK",
+        "total": "8502.00",
+        "base": "6901.00"
+      },
+      "fareDetailsBySegment": [
+        {
+          "segmentId": "75",
+          "cabin": "ECONOMY",
+          "fareBasis": "EJ1QDKEC",
+          "brandedFare": "STANDARD",
+          "brandedFareLabel": "ECONOMY STANDARD",
+          "class": "B",
+          "includedCheckedBags": {
+            "quantity": 1
+          },
+          "amenities": [
+            {
+              "description": "ALCOHOLIC DRINK",
+              "isChargeable": true,
+              "amenityType": "MEAL",
+              "amenityProvider": {
+                "name": "BrandedFare"
+              }
+            },
+            {
+              "description": "NON ALCOHOLIC DRINK",
+              "isChargeable": false,
+              "amenityType": "MEAL",
+              "amenityProvider": {
+                "name": "BrandedFare"
+              }
+            },
+            {
+              "description": "MEAL",
+              "isChargeable": true,
+              "amenityType": "MEAL",
+              "amenityProvider": {
+                "name": "BrandedFare"
+              }
+            },
+            {
+              "description": "USB POWER",
+              "isChargeable": false,
+              "amenityType": "ENTERTAINMENT",
+              "amenityProvider": {
+                "name": "BrandedFare"
+              }
+            },
+            {
+              "description": "BASIC SEAT",
+              "isChargeable": false,
+              "amenityType": "BRANDED_FARES",
+              "amenityProvider": {
+                "name": "BrandedFare"
+              }
+            },
+            {
+              "description": "PREMIUM SEAT",
+              "isChargeable": true,
+              "amenityType": "BRANDED_FARES",
+              "amenityProvider": {
+                "name": "BrandedFare"
+              }
+            },
+            {
+              "description": "CHANGE BEFORE DEPARTURE",
+              "isChargeable": true,
+              "amenityType": "BRANDED_FARES",
+              "amenityProvider": {
+                "name": "BrandedFare"
+              }
+            }
+          ]
+        },
+        {
+          "segmentId": "76",
+          "cabin": "ECONOMY",
+          "fareBasis": "EJ1QDKEC",
+          "brandedFare": "STANDARD",
+          "brandedFareLabel": "ECONOMY STANDARD",
+          "class": "E",
+          "includedCheckedBags": {
+            "quantity": 1
+          },
+          "amenities": [
+            {
+              "description": "ALCOHOLIC DRINK",
+              "isChargeable": true,
+              "amenityType": "MEAL",
+              "amenityProvider": {
+                "name": "BrandedFare"
+              }
+            },
+            {
+              "description": "NON ALCOHOLIC DRINK",
+              "isChargeable": false,
+              "amenityType": "MEAL",
+              "amenityProvider": {
+                "name": "BrandedFare"
+              }
+            },
+            {
+              "description": "MEAL",
+              "isChargeable": true,
+              "amenityType": "MEAL",
+              "amenityProvider": {
+                "name": "BrandedFare"
+              }
+            },
+            {
+              "description": "USB POWER",
+              "isChargeable": false,
+              "amenityType": "ENTERTAINMENT",
+              "amenityProvider": {
+                "name": "BrandedFare"
+              }
+            },
+            {
+              "description": "BASIC SEAT",
+              "isChargeable": false,
+              "amenityType": "BRANDED_FARES",
+              "amenityProvider": {
+                "name": "BrandedFare"
+              }
+            },
+            {
+              "description": "PREMIUM SEAT",
+              "isChargeable": true,
+              "amenityType": "BRANDED_FARES",
+              "amenityProvider": {
+                "name": "BrandedFare"
+              }
+            },
+            {
+              "description": "CHANGE BEFORE DEPARTURE",
+              "isChargeable": true,
+              "amenityType": "BRANDED_FARES",
+              "amenityProvider": {
+                "name": "BrandedFare"
+              }
+            }
+          ]
+        },
+        {
+          "segmentId": "77",
+          "cabin": "ECONOMY",
+          "fareBasis": "EJ1QDKEC",
+          "brandedFare": "STANDARD",
+          "brandedFareLabel": "ECONOMY STANDARD",
+          "class": "E",
+          "includedCheckedBags": {
+            "quantity": 1
+          },
+          "amenities": [
+            {
+              "description": "ALCOHOLIC DRINK",
+              "isChargeable": true,
+              "amenityType": "MEAL",
+              "amenityProvider": {
+                "name": "BrandedFare"
+              }
+            },
+            {
+              "description": "NON ALCOHOLIC DRINK",
+              "isChargeable": false,
+              "amenityType": "MEAL",
+              "amenityProvider": {
+                "name": "BrandedFare"
+              }
+            },
+            {
+              "description": "MEAL",
+              "isChargeable": true,
+              "amenityType": "MEAL",
+              "amenityProvider": {
+                "name": "BrandedFare"
+              }
+            },
+            {
+              "description": "USB POWER",
+              "isChargeable": false,
+              "amenityType": "ENTERTAINMENT",
+              "amenityProvider": {
+                "name": "BrandedFare"
+              }
+            },
+            {
+              "description": "BASIC SEAT",
+              "isChargeable": false,
+              "amenityType": "BRANDED_FARES",
+              "amenityProvider": {
+                "name": "BrandedFare"
+              }
+            },
+            {
+              "description": "PREMIUM SEAT",
+              "isChargeable": true,
+              "amenityType": "BRANDED_FARES",
+              "amenityProvider": {
+                "name": "BrandedFare"
+              }
+            },
+            {
+              "description": "CHANGE BEFORE DEPARTURE",
+              "isChargeable": true,
+              "amenityType": "BRANDED_FARES",
+              "amenityProvider": {
+                "name": "BrandedFare"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fareRules": {
+    "rules": [
+      {
+        "category": "EXCHANGE",
+        "maxPenaltyAmount": "1044"
+      },
+      {
+        "category": "REVALIDATION",
+        "notApplicable": true
+      }
+    ]
+  },
+  "isUpsellOffer": false,
+  "lastTicketingDateTime": "2024-09-27",
+  "dictionary": {
+    "locations": {
+      "CDG": {
+        "kl": {
+          "name": "Charles De Gaulle",
+          "city": "Paris",
+          "country": "France"
+        },
+        "fo": {
+          "name": "Charles De Gaulle",
+          "city": "Paris",
+          "country": "France"
+        },
+        "da": {
+          "name": "Charles De Gaulle",
+          "city": "Paris",
+          "country": "France"
+        },
+        "en": {
+          "name": "Charles De Gaulle",
+          "city": "Paris",
+          "country": "France"
+        },
+        "_geoloc": {
+          "lat": 49.012779,
+          "lng": 2.55
+        },
+        "links_count": 1041
+      },
+      "FRA": {
+        "kl": {
+          "name": "Frankfurt Main",
+          "city": "Frankfurt",
+          "country": "Germany"
+        },
+        "fo": {
+          "name": "Frankfurt Main",
+          "city": "Frankfurt",
+          "country": "Germany"
+        },
+        "da": {
+          "name": "Frankfurt Main",
+          "city": "Frankfurt",
+          "country": "Germany"
+        },
+        "en": {
+          "name": "Frankfurt Main",
+          "city": "Frankfurt",
+          "country": "Germany"
+        },
+        "_geoloc": {
+          "lat": 50.026421,
+          "lng": 8.543125
+        },
+        "links_count": 990
+      },
+      "JFK": {
+        "kl": {
+          "name": "John F Kennedy Intl",
+          "city": "New York",
+          "country": "United States"
+        },
+        "fo": {
+          "name": "John F Kennedy Intl",
+          "city": "New York",
+          "country": "United States"
+        },
+        "da": {
+          "name": "John F Kennedy Intl",
+          "city": "New York",
+          "country": "United States"
+        },
+        "en": {
+          "name": "John F Kennedy Intl",
+          "city": "New York",
+          "country": "United States"
+        },
+        "_geoloc": {
+          "lat": 40.639751,
+          "lng": -73.778925
+        },
+        "links_count": 911
+      },
+      "AMS": {
+        "kl": {
+          "name": "Schiphol",
+          "city": "Amsterdam",
+          "country": "Netherlands"
+        },
+        "fo": {
+          "name": "Schiphol",
+          "city": "Amsterdam",
+          "country": "Netherlands"
+        },
+        "da": {
+          "name": "Schiphol",
+          "city": "Amsterdam",
+          "country": "Netherlands"
+        },
+        "en": {
+          "name": "Schiphol",
+          "city": "Amsterdam",
+          "country": "Netherlands"
+        },
+        "_geoloc": {
+          "lat": 52.308613,
+          "lng": 4.763889
+        },
+        "links_count": 903
+      },
+      "CPH": {
+        "kl": {
+          "name": "Kastrup",
+          "city": "Copenhagen",
+          "country": "Denmark"
+        },
+        "fo": {
+          "name": "Kastrup",
+          "city": "Copenhagen",
+          "country": "Denmark"
+        },
+        "da": {
+          "name": "Kastrup",
+          "city": "Copenhagen",
+          "country": "Denmark"
+        },
+        "en": {
+          "name": "Kastrup",
+          "city": "Copenhagen",
+          "country": "Denmark"
+        },
+        "_geoloc": {
+          "lat": 55.617917,
+          "lng": 12.655972
+        },
+        "links_count": 457
+      },
+      "BOS": {
+        "kl": {
+          "name": "General Edward Lawrence Logan Intl",
+          "city": "Boston",
+          "country": "United States"
+        },
+        "fo": {
+          "name": "General Edward Lawrence Logan Intl",
+          "city": "Boston",
+          "country": "United States"
+        },
+        "da": {
+          "name": "General Edward Lawrence Logan Intl",
+          "city": "Boston",
+          "country": "United States"
+        },
+        "en": {
+          "name": "General Edward Lawrence Logan Intl",
+          "city": "Boston",
+          "country": "United States"
+        },
+        "_geoloc": {
+          "lat": 42.364347,
+          "lng": -71.005181
+        },
+        "links_count": 424
+      },
+      "BLL": {
+        "kl": {
+          "name": "Billund",
+          "city": "Billund",
+          "country": "Denmark"
+        },
+        "fo": {
+          "name": "Billund",
+          "city": "Billund",
+          "country": "Denmark"
+        },
+        "da": {
+          "name": "Billund",
+          "city": "Billund",
+          "country": "Denmark"
+        },
+        "en": {
+          "name": "Billund",
+          "city": "Billund",
+          "country": "Denmark"
+        },
+        "_geoloc": {
+          "lat": 55.740322,
+          "lng": 9.151778
+        },
+        "links_count": 94
+      },
+      "KEF": {
+        "kl": {
+          "name": "Keflavik International Airport",
+          "city": "Keflavik",
+          "country": "Iceland"
+        },
+        "fo": {
+          "name": "Keflavik International Airport",
+          "city": "Keflavik",
+          "country": "Iceland"
+        },
+        "da": {
+          "name": "Keflavik International Airport",
+          "city": "Keflavik",
+          "country": "Iceland"
+        },
+        "en": {
+          "name": "Keflavik International Airport",
+          "city": "Keflavik",
+          "country": "Iceland"
+        },
+        "_geoloc": {
+          "lat": 63.985,
+          "lng": -22.605556
+        },
+        "links_count": 91
+      },
+      "FAE": {
+        "kl": {
+          "name": "Vagar",
+          "city": "Vagar",
+          "country": "Faroe Islands"
+        },
+        "fo": {
+          "name": "Vagar",
+          "city": "Vagar",
+          "country": "Faroe Islands"
+        },
+        "da": {
+          "name": "Vagar",
+          "city": "Vagar",
+          "country": "Faroe Islands"
+        },
+        "en": {
+          "name": "Vagar",
+          "city": "Vagar",
+          "country": "Faroe Islands"
+        },
+        "_geoloc": {
+          "lat": 62.063628,
+          "lng": -7.277219
+        },
+        "links_count": 8
+      }
+    },
+    "aircraft": {
+      "E95": "EMBRAER 195",
+      "7M8": "BOEING 737 MAX 8",
+      "E75": "EMBRAER 175",
+      "73H": "BOEING 737-800 (WINGLETS)",
+      "32N": "AIRBUS A320NEO",
+      "DH2": "DE HAVILLAND DHC-8 200 SERIES",
+      "781": "BOEING 787-10",
+      "320": "AIRBUS A320",
+      "332": "AIRBUS A330-200",
+      "32Q": "AIRBUS A321NEO",
+      "343": "AIRBUS A340-300",
+      "333": "AIRBUS A330-300",
+      "223": "AIRBUS  A220-300",
+      "764": "BOEING 767-400",
+      "75T": "BOEING 757-300 WINGLETS",
+      "359": "AIRBUS A350-900",
+      "77W": "BOEING 777-300ER",
+      "76W": "BOEING 767-300 (WINGLETS)",
+      "339": "AIRBUS A330-900NEO PASSENGER",
+      "73W": "BOEING 737-700 (WINGLETS)",
+      "E90": "EMBRAER 190"
+    },
+    "currencies": {
+      "DKK": "DANISH KRONE"
+    },
+    "carriers": {
+      "RC": "ATLANTIC AIRWAYS",
+      "KL": "KLM ROYAL DUTCH AIRLINES",
+      "FI": "ICELANDAIR",
+      "B6": "JETBLUE AIRWAYS",
+      "AF": "AIR FRANCE",
+      "DL": "DELTA AIR LINES",
+      "SK": "SCANDINAVIAN AIRLINES",
+      "LH": "LUFTHANSA",
+      "UA": "UNITED AIRLINES"
+    }
+  }
+}

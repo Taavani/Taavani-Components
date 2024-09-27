@@ -26,7 +26,7 @@ const props = defineProps({
       <p v-html="description" class="col-span-1 text-right font-medium text-xl"></p>
     </header>
     <div class="grid grid-cols-6">
-      <ul class="grid grid-cols-1 gap-4 col-start-2 col-span-4">
+      <ul class="grid grid-cols-1 gap-4 col-start-2 col-span-4 mb-4">
         <slot></slot>
       </ul>
     </div>
