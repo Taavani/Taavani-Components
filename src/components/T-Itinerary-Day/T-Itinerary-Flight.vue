@@ -10,9 +10,9 @@ defineProps({
 </script>
 
 <template>
-  <li class="px-3 py-2 flex justify-between items-start bg-white md:shadow-[0_20px_10px_-15px_rgba(0,110,184,0.08)] rounded-xl">
+  <li class="px-3 py-2 flex justify-between items-start bg-white shadow border rounded-xl">
     <div >
-      <div class="font-semibold text-brand-blue pt-1">
+      <div class="font-semibold text-brand-dark-blue pt-1">
         {{ flight.flightNumber }}
       </div>
       <p class="text-sm break-words break-after-all pr-3">
