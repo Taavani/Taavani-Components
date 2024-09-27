@@ -73,11 +73,11 @@ function calculateLayover(arrivalTime, departureTime) {
         </p>
         <div class="date">
           {{
-            ("0" + dayjs(flight.segments[0].departure.at).date()).slice(-2)
+            ("0" + new Date(offer.itineraries[0].segments[0].departure.at).getDate()).slice(-2)
             + '-'
-            + ("0" + dayjs(flight.segments[0].departure.at + 1).add(1, 'month').month()).slice(-2)
+            + ("0" + new Date(offer.itineraries[0].segments[0].departure.at).getMonth()).slice(-2)
             + '-'
-            + ("0" + dayjs(flight.segments[0].departure.at).year()).slice(-2)
+            + new Date(offer.itineraries[0].segments[0].departure.at).getFullYear()
           }}
         </div>
       </div>
