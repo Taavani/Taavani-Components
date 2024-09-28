@@ -25,7 +25,7 @@ export default {
   args: {
     passengers: PASSENGERS,
     employees: EMPLOYEES,
-    requirements: REQUIREMENTS,
+    requirements: REQUIREMENTS_WITH_PASSENGER_REQUIREMENTS,
   },
 };
 

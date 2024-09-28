@@ -277,7 +277,7 @@ watch(v$, (value) => {
                 class="border hover:border-brand-blue px-2 border-neutral-300 focus:border-brand-blue rounded-xl group outline-none flex items-center">
           <user-icon class="w-6 group-hover:stroke-brand-blue group-hover:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue "></user-icon>
           <span class="hidden sm:block uppercase group-hover:text-brand-blue pl-1 text-xs group-focus:text-brand-blue">
-          {{ $t('passengers.selectPassenger') }}
+           {{ $t('passengers.passengerDetails') }}
           </span>
         </button>
 
@@ -287,7 +287,7 @@ watch(v$, (value) => {
                 class="border px-2  hover:border-brand-blue border-neutral-300 focus:border-brand-blue rounded-xl group outline-none flex items-center">
           <user-icon class="w-6 group-hover:stroke-brand-blue group-hover:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue "></user-icon>
           <span class="hidden sm:block uppercase group-hover:text-brand-blue pl-1 text-xs group-focus:text-brand-blue">
-          {{ $t('passengers.passengerDetails') }}
+            {{ $t('passengers.selectPassenger') }}
           </span>
         </button>
 

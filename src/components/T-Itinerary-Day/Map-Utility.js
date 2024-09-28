@@ -6,7 +6,7 @@ export function mapSegmentsToItinerariesDays(segments, dictionary, language) {
             date: ("0" + currentDay.getDate()).slice(-2) + '-' +
                 ("0" + (currentDay.getMonth() + 1)).slice(-2) + '-' +
                 currentDay.getFullYear(),
-            day: currentDay.toLocaleDateString('en-GB', {weekday: 'long'}),
+            day: currentDay.toLocaleDateString(language, {weekday: 'long'}),
         };
     });
 
@@ -26,7 +26,7 @@ export function mapSegmentsToItinerariesDays(segments, dictionary, language) {
                 currentDay.getFullYear();
         }).map((flight) => {
             return {
-                departureTime: new Date(flight.departure.at).getHours() + ':' + new Date(flight.departure.at).getMinutes(),
+                departureTime: ("0" + new Date(flight.departure.at).getHours()).slice(-2) + ':' + ("0" + new Date(flight.departure.at).getMinutes()).slice(-2),
                 departureAirport: dictionary.locations[flight.departure.iataCode][language].name,
                 departureCity: dictionary.locations[flight.departure.iataCode][language].city,
                 departureCode: flight.departure.iataCode,
