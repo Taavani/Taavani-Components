@@ -53,6 +53,10 @@ const exchange = ref({
   amount: 0
 });
 
+if (props.offer.pricingOptions.refundableFare) {
+  refund.value.active = true
+}
+
 /**
  * Check if the offer has refund and exchange rules
  */
