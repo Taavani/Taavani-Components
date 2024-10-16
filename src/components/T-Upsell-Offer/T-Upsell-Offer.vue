@@ -1,19 +1,36 @@
 <script setup>
-import {ref} from "vue";
+import {ref} from "vue"
+import {useI18n} from "vue-i18n"
 
 import checked from '@heroicons/vue/24/outline/CheckIcon.js'
 import noChecked from '@heroicons/vue/24/outline/CurrencyEuroIcon.js'
+import MinusIcon from '@heroicons/vue/24/outline/MinusIcon.js'
 import TButton from "../T-Button/T-Button.vue";
 
+/**
+ * Define the props for the component
+ */
 const props = defineProps({
   offer: Object,
   onSelect: Function
 })
 
+const {t} = useI18n({useScope: "global"})
+
+/**
+ * Extract the data from the offer. The data is:
+ *
+ * - The cabin (CABIN)
+ * - The amenities (AMENITIES)
+ * - The included amenities (INCLUDED)
+ * - The excluded amenities (EXCLUDED)
+ * - The price (PRICE)
+ * - The currency (CURRENCY)
+ */
 const travelerPricings = props.offer.travelerPricings
 
 const cabin = travelerPricings[0].fareDetailsBySegment[0].cabin
-
+const baggageEntity = travelerPricings[0].fareDetailsBySegment[0].includedCheckedBags ?? 0
 const amenities = travelerPricings[0].fareDetailsBySegment[0].amenities ?? []
 
 const included = amenities.filter(amenity => amenity.isChargeable === false)
@@ -22,6 +39,11 @@ const excluded = amenities.filter(amenity => amenity.isChargeable === true)
 const price = props.offer.price.grandTotal
 const currency = props.offer.price.currency
 
+/**
+ * Define the refund and exchange data, this is used to show the refund and exchange information
+ *
+ * @type {ToRef<{amount: number, active: boolean}>}
+ */
 const refund = ref({
   active: false,
   amount: 0
@@ -31,6 +53,9 @@ const exchange = ref({
   amount: 0
 });
 
+/**
+ * Check if the offer has refund and exchange rules
+ */
 if (props.offer.fareRules) {
   let exchangeFare = props.offer.fareRules.rules.find((item) => {
     return item.category === 'EXCHANGE'
@@ -66,33 +91,82 @@ if (props.offer.fareRules) {
       </h1>
 
       <p class="text-sm pt-2 pb-3">
-        {{ $t('flightOfferExtended.cabin') }}:
+        {{ t('flightOfferExtended.cabin') }}:
         {{ cabin }}
       </p>
 
-      <p v-if="!(included.length > 0) && exchange.active" class="text-sm pt-2 pb-3">
-        {{ $t('flightOfferExtended.exchangeable', exchange.amount) }}
-      </p>
+      <ul v-if="!(included.length > 0)" class="pb-3">
+        <h2 class="pb-2 uppercase font-light">
+          {{ t('flightOfferExtended.description') }}
+        </h2>
 
-      <p v-if="!(included.length > 0) && !exchange.active" class="text-sm pt-2 pb-3">
-        {{ $t('flightOfferExtended.noExchange') }}
-      </p>
+        <li v-if="exchange.active" class="flex flex-col">
+          <div class="flex">
+            <checked class="h-5 w-5 text-gray-900"/>
+            <p class="pl-2 text-xs content-center">
+              {{ t('flightOfferExtended.exchangeable', exchange.amount) }}
+            </p>
+          </div>
+        </li>
 
-      <p v-if="!(included.length > 0) && refund.active" class="text-sm pt-2 pb-3">
-        {{ $t('flightOfferExtended.refundable', refund.amount) }}
-      </p>
+        <li v-if="!exchange.active">
+          <div class="flex">
+            <minus-icon class="h-5 w-5 text-gray-900"/>
+            <p class="pl-2 text-xs content-center">
+              {{ t('flightOfferExtended.noExchange') }}
+            </p>
+          </div>
+        </li>
 
-      <p  v-if="!(included.length > 0) && !refund.active" class="text-sm pt-2 pb-3">
-        {{ $t('flightOfferExtended.noRefund') }}
-      </p>
+        <li v-if="refund.active" class="flex flex-col">
+          <div class="flex">
+            <checked class="h-5 w-5 text-gray-900"/>
+            <p class="pl-2 text-xs content-center">
+              {{ t('flightOfferExtended.refundable', refund.amount) }}
+            </p>
+          </div>
+        </li>
+
+        <li v-if="!refund.active">
+          <div class="flex">
+            <minus-icon class="h-5 w-5 text-gray-900"/>
+            <p class="pl-2 text-xs content-center">
+              {{ t('flightOfferExtended.noRefund') }}
+            </p>
+          </div>
+        </li>
+
+        <li v-if="baggageEntity.quantity" class="flex flex-col">
+          <div class="flex">
+            <checked class="h-5 w-5 text-gray-900"/>
+            <p class="pl-2 text-xs content-center">
+              {{ t('flightOfferExtended.includedBaggage', baggageEntity.quantity) }}
+            </p>
+          </div>
+        </li>
+
+        <li v-if="baggageEntity.weight">
+          <div class="flex">
+            <checked class="h-5 w-5 text-gray-900"/>
+            <p class="pl-2 text-xs content-center">
+              {{
+                t('flightOfferExtended.includedBaggageWeight', {
+                  weight: baggageEntity.weight,
+                  unit: baggageEntity.weightUnit
+                })
+              }}
+            </p>
+          </div>
+        </li>
+      </ul>
 
       <h2 v-if="included.length > 0" class="pb-2 uppercase font-light">
-        {{ $t('flightOfferExtended.included') }}
+        {{ t('flightOfferExtended.included') }}
       </h2>
       <ul v-if="included.length > 0" class="pb-3">
         <li v-for="bag in included" class="flex flex-col">
           <div class="flex">
-            <checked class="h-5 w-5 text-gray-900" />
+            <checked class="h-5 w-5 text-gray-900"/>
             <p class="pl-2 text-xs">
               {{ bag.description }}
             </p>
@@ -101,12 +175,12 @@ if (props.offer.fareRules) {
       </ul>
 
       <h2 v-if="excluded.length > 0" class="pb-2 uppercase font-light">
-        {{ $t('flightOfferExtended.purchase')}}
+        {{ t('flightOfferExtended.purchase') }}
       </h2>
       <ul v-if="excluded.length > 0" class="pb-3">
         <li v-for="meal in excluded" class="flex flex-col">
           <div class="flex">
-            <no-checked class="h-5 w-5 text-gray-900" />
+            <no-checked class="h-5 w-5 text-gray-900"/>
             <p class="pl-2 text-xs">
               {{ meal.description }}
             </p>
@@ -116,14 +190,10 @@ if (props.offer.fareRules) {
 
       <div class="grow"></div>
 
-      <TButton :title="$t('flightOfferExtended.select')"
+      <TButton :title="t('flightOfferExtended.select')"
                @click="props.onSelect(props.offer)"
                class="w-full">
       </TButton>
     </div>
   </div>
 </template>
-
-<style scoped>
-
-</style>
