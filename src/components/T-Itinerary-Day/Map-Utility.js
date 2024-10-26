@@ -1,4 +1,9 @@
-export function mapSegmentsToItinerariesDays(itineraries, dictionary, language) {
+import { parse } from 'tinyduration'
+
+export function mapSegmentsToItinerariesDays(itineraries, dictionary, i18n) {
+    let t = i18n.t;
+    let language = i18n.locale.value;
+
     let days = [];
     for (let i = 0; i < itineraries.length; i++) {
         let segments = itineraries[i].segments;
@@ -35,6 +40,18 @@ export function mapSegmentsToItinerariesDays(itineraries, dictionary, language) 
                     ("0" + (currentDay.getMonth() + 1)).slice(-2) + '-' +
                     currentDay.getFullYear();
             }).map((flight) => {
+                let duration = parse(flight.duration);
+                // Build duration string
+                let durationString = '';
+                if (duration.days > 0) {
+                    durationString += duration.days + ' ' + t('time.days') + ' ';
+                }
+                if (duration.hours > 0) {
+                    durationString += duration.hours + ' ' + t('time.hours') + ' ';
+                }
+                if (duration.minutes > 0) {
+                    durationString += duration.minutes + ' ' + t('time.minutes') + ' ';
+                }
                 return {
                     departureTime: ("0" + new Date(flight.departure.at).getHours()).slice(-2) + ':' + ("0" + new Date(flight.departure.at).getMinutes()).slice(-2),
                     departureAirport: dictionary.locations[flight.departure.iataCode][language].name,
@@ -44,7 +61,7 @@ export function mapSegmentsToItinerariesDays(itineraries, dictionary, language) 
                     arrivalAirport: dictionary.locations[flight.arrival.iataCode][language].name,
                     arrivalCity: dictionary.locations[flight.arrival.iataCode][language].city,
                     arrivalCode: flight.arrival.iataCode,
-                    duration: flight.duration,
+                    duration: durationString,
                     airline: dictionary.carriers[flight.carrierCode],
                     flightNumber: flight.carrierCode + '-' + flight.number,
                     aircraft: dictionary.aircraft[flight.aircraft.code],

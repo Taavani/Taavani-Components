@@ -144,6 +144,10 @@
         "buttonText": "Purchase baggage"
       }
     },
+    "approve": {
+      "title": "Select manager to approve your booking",
+      "searchPlaceholder": "Search for manager"
+    },
     "confirmOffer": {
       "bookingReference": "Booking reference",
       "passengers": "Passengers",
@@ -159,6 +163,11 @@
       "additionalServicesDescription": "Add your additional remarks, such as hotel or other services.",
       "termsAndConditionsDescription": "I accept the <a href='https://taavani.gl/en/terms-and-conditions' target='_blank' class='text-brand-blue'>Terms and Conditions</a>.",
       "cancelOffer": "Cancel offer"
+    },
+    "time": {
+      "hours": "hours",
+      "minutes": "minutes",
+      "days": "days"
     }
   }
 }

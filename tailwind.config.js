@@ -22,7 +22,7 @@ module.exports = {
           '800': '#465661',
           '900': '#2E3940'
         },
-        'neutral': {
+        'taa-neutral': {
           '900': '#1B1D21',
           '700': '#353B41',
           '400': '#7C8997',
@@ -30,7 +30,7 @@ module.exports = {
           '100': '#F4F7FA',
           '50': '#C3CCD6'
         },
-        'brand': {
+        'taa-brand': {
           'black': '#043150',
           'dark-blue': '#085386',
           'blue': '#006EB8',

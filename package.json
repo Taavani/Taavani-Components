@@ -41,7 +41,7 @@
     "serve": "^14.2.3",
     "storybook": "^8.0.10",
     "tailwindcss": "^3.3.5",
-    "tinyduration": "^3.3.0"
+    "tinyduration": "^3.3.1"
   },
   "dependencies": {
     "@easepick/core": "^1.2.1",

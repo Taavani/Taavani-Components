@@ -18,7 +18,7 @@ export const Default = {
         setup() {
             const i18n = useI18n({ useScope: 'global' });
             return {
-                flightDays: mapSegmentsToItinerariesDays(data[0].itineraries, data[0].dictionary, i18n.locale.value),
+                flightDays: mapSegmentsToItinerariesDays(data[0].itineraries, data[0].dictionary, i18n),
             };
         },
         template: '<t-itinerary-day v-for="days in flightDays" :date="days.date" :day="days.day" :description="days.description"><t-itinerary-flight v-for="flight in days.flights" :flight="flight"></t-itinerary-flight></t-itinerary-day>',
