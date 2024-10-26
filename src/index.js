@@ -12,6 +12,7 @@ import TUpsellOffer from "./components/T-Upsell-Offer/T-Upsell-Offer.vue";
 import TUpsellOfferList from "./components/T-Upsell-Offer-List/T-Upsell-Offer-List.vue";
 import TDaysSelector from "./components/T-Days-Selector/T-Days-Selector.vue";
 import {mapSegmentsToItinerariesDays} from "./components/T-Itinerary-Day/Map-Utility.js";
+import TApprove from "./stages/T-Approve/T-Approve.vue";
 
 export default {
     TBirthdayInput,
@@ -27,5 +28,6 @@ export default {
     TUpsellOffer,
     TUpsellOfferList,
     TVueTelInput,
+    TApprove,
     mapSegmentsToItinerariesDays
 }

@@ -12,7 +12,7 @@ defineProps({
 <template>
   <li class="px-3 py-2 flex justify-between items-start bg-white shadow border rounded-xl">
     <div>
-      <div class="font-semibold text-brand-dark-blue pt-1">
+      <div class="font-semibold text-taa-brand-dark-blue pt-1">
         {{ flight.flightNumber }}
       </div>
       <p class="text-sm break-words break-after-all pr-3">

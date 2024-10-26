@@ -68,7 +68,7 @@ function updateDay(event) {
     {{ $t('passengers.birthday.label')}}
   </h2>
   <div class="flex items-center mb-3">
-    <div class="flex-1 border border-neutral-300 px-3 py-2 rounded-l-lg focus-within:z-10 focus-within:ring-1 focus-within:ring-brand-blue focus-within:border-brand-blue">
+    <div class="flex-1 border border-neutral-300 px-3 py-2 rounded-l-lg focus-within:z-10 focus-within:ring-1 focus-within:ring-taa-brand-blue focus-within:border-taa-brand-blue">
       <label for="birthday" class="sr-only">{{ $t('passengers.birthday.day') }}</label>
       <input id="birthday"
              type="number"
@@ -80,7 +80,7 @@ function updateDay(event) {
              :placeholder="$t('passengers.birthday.day')"
       >
     </div>
-    <div class="flex-1 border border-x-0 border-neutral-300 px-3 py-2 focus-within:z-10 focus-within:border focus-within:ring-1 focus-within:ring-brand-blue focus-within:border-brand-blue">
+    <div class="flex-1 border border-x-0 border-neutral-300 px-3 py-2 focus-within:z-10 focus-within:border focus-within:ring-1 focus-within:ring-taa-brand-blue focus-within:border-taa-brand-blue">
       <label for="birth-month" class="sr-only">{{ $t('passengers.birthday.month') }}</label>
       <input id="birth-month"
              type="number"
@@ -91,7 +91,7 @@ function updateDay(event) {
              :placeholder="$t('passengers.birthday.month')"
       >
     </div>
-    <div class="flex-1 border border-neutral-300 px-3 py-2 rounded-r-lg focus-within:z-10 focus-within:ring-1 focus-within:ring-brand-blue focus-within:border-brand-blue">
+    <div class="flex-1 border border-neutral-300 px-3 py-2 rounded-r-lg focus-within:z-10 focus-within:ring-1 focus-within:ring-taa-brand-blue focus-within:border-taa-brand-blue">
       <label for="birth-year" class="sr-only">{{ $t('passengers.birthday.year') }}</label>
       <input id="birth-year"
              type="number"

@@ -37,7 +37,7 @@ function isCurrentValueLowest(currentValue) {
 <template>
   <ul class="t-days-selector">
     <li v-for="(option, index) in options" class="bg-white items ">
-      <button :class="{ 'outline outline-2 outline-neutral-400': isMiddle(index), 'text-green-700': isCurrentValueLowest(option.value), 'text-brand-dark-blue': !isCurrentValueLowest(option.value) }" class="button" @click="() => onChoose(option.label)">
+      <button :class="{ 'outline outline-2 outline-neutral-400': isMiddle(index), 'text-green-700': isCurrentValueLowest(option.value), 'text-taa-brand-dark-blue': !isCurrentValueLowest(option.value) }" class="button" @click="() => onChoose(option.label)">
         <span class="label">
           {{ option.label }}
         </span>

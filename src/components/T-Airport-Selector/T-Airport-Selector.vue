@@ -102,7 +102,7 @@ function tab(event) {
     <div class="isolate inline-flex flex-col w-full ">
       <div class="flex-1 inline-flex">
         <div
-            class="flex-1 flex items-center bg-white rounded-tl-lg lg:rounded-l-lg px-3 py-2 shadow-sm focus-within:z-10 focus-within:ring-2 focus-within:ring-brand-blue focus-within:border-brand-blue">
+            class="flex-1 flex items-center bg-white rounded-tl-lg lg:rounded-l-lg px-3 py-2 shadow-sm focus-within:z-10 focus-within:ring-2 focus-within:ring-taa-brand-blue focus-within:border-taa-brand-blue">
           <div class="pointer-events-none">
             <departure-airplane class="stroke-neutral-400"></departure-airplane>
           </div>
@@ -128,7 +128,7 @@ function tab(event) {
           </div>
         </div>
         <div
-            class="flex-1 flex items-center bg-white border-l border-neutral-300 rounded-tr-lg lg:rounded-r-lg px-3 py-2 shadow-sm focus-within:z-10 focus-within:ring-2 focus-within:ring-brand-blue focus-within:border-brand-blue">
+            class="flex-1 flex items-center bg-white border-l border-neutral-300 rounded-tr-lg lg:rounded-r-lg px-3 py-2 shadow-sm focus-within:z-10 focus-within:ring-2 focus-within:ring-taa-brand-blue focus-within:border-taa-brand-blue">
           <div class="pointer-events-none">
             <arrival-airplane class="stroke-neutral-400"></arrival-airplane>
           </div>

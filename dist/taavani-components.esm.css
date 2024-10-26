@@ -35,11 +35,11 @@
 
     --tw-bg-opacity: 1;
 
-    background-color: rgb(195 204 214 / var(--tw-bg-opacity));
+    background-color: rgb(229 229 229 / var(--tw-bg-opacity));
 
     --tw-text-opacity: 1;
 
-    color: rgb(124 137 151 / var(--tw-text-opacity))
+    color: rgb(163 163 163 / var(--tw-text-opacity))
 }
 
 .T-Button_t-button--solid-blue__e5G1- {
@@ -60,7 +60,7 @@
 
     --tw-bg-opacity: 1;
 
-    background-color: rgb(195 204 214 / var(--tw-bg-opacity))
+    background-color: rgb(229 229 229 / var(--tw-bg-opacity))
 }
 
 .T-Button_t-button--liquid-blue__epyUs {
@@ -84,14 +84,14 @@
 
     --tw-bg-opacity: 1;
 
-    background-color: rgb(244 247 250 / var(--tw-bg-opacity))
+    background-color: rgb(245 245 245 / var(--tw-bg-opacity))
 }
 
 .T-Button_t-button--liquid-blue__epyUs:disabled {
 
     --tw-border-opacity: 1;
 
-    border-color: rgb(195 204 214 / var(--tw-border-opacity));
+    border-color: rgb(229 229 229 / var(--tw-border-opacity));
 
     --tw-bg-opacity: 1;
 
@@ -99,7 +99,7 @@
 
     --tw-text-opacity: 1;
 
-    color: rgb(195 204 214 / var(--tw-text-opacity))
+    color: rgb(229 229 229 / var(--tw-text-opacity))
 }
 
 .T-Button_t-button--liquid-blue-small__tLLSf {
@@ -131,7 +131,7 @@
 
     --tw-bg-opacity: 1;
 
-    background-color: rgb(244 247 250 / var(--tw-bg-opacity))
+    background-color: rgb(245 245 245 / var(--tw-bg-opacity))
 }
 
 .T-Button_t-button--liquid-blue-small__tLLSf:focus {
@@ -142,7 +142,7 @@
 
     --tw-bg-opacity: 1;
 
-    background-color: rgb(244 247 250 / var(--tw-bg-opacity))
+    background-color: rgb(245 245 245 / var(--tw-bg-opacity))
 }
 
 .T-Button_t-button--liquid-blue-small__tLLSf:focus-visible {
@@ -156,7 +156,7 @@
 
     --tw-border-opacity: 1;
 
-    border-color: rgb(195 204 214 / var(--tw-border-opacity));
+    border-color: rgb(229 229 229 / var(--tw-border-opacity));
 
     --tw-bg-opacity: 1;
 
@@ -164,7 +164,7 @@
 
     --tw-text-opacity: 1;
 
-    color: rgb(195 204 214 / var(--tw-text-opacity))
+    color: rgb(229 229 229 / var(--tw-text-opacity))
 }
 .T-Flight-Offer-List_t-flight-offer-list__g5ou3 {
     margin-bottom: 2rem;
@@ -259,7 +259,7 @@
 
 .T-Flight-Offer_flight-offer__kUHWi .T-Flight-Offer_large__QFc2v .T-Flight-Offer_itinerary__mmN5w .T-Flight-Offer_first-row__DjW4S .T-Flight-Offer_travel-time-holder__rSqmB .T-Flight-Offer_icon__Uv9gh {
     margin: auto;
-    stroke: #7C8997;
+    stroke: #a3a3a3;
 }
 
 .T-Flight-Offer_flight-offer__kUHWi .T-Flight-Offer_large__QFc2v .T-Flight-Offer_itinerary__mmN5w .T-Flight-Offer_first-row__DjW4S .T-Flight-Offer_travel-time-holder__rSqmB .T-Flight-Offer_text__cOBXn {
@@ -2562,4 +2562,19 @@
     font-size: 0.75rem;
     font-weight: 100;
     color: #1B1D21;
+}
+.T-Approve_t-contact-list__-oj8R {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1rem
+}
+
+.T-Approve_pagination__0lvJH button:disabled {
+
+    cursor: not-allowed;
+
+    opacity: 0.5
 }

@@ -75,7 +75,7 @@ onMounted(() => {
       </div>
       <input :id='"departure-date-" + id'
              type="text"
-             class="rounded-md shadow-sm bg-white block w-full border-neutral-300 p-0 pl-10 pr-3 py-2.5 text-gray-900 placeholder-gray-500 sm:text-sm focus:z-10 focus:ring-1 focus:ring-brand-blue focus:border-brand-blue"
+             class="rounded-md shadow-sm bg-white block w-full border-neutral-300 p-0 pl-10 pr-3 py-2.5 text-gray-900 placeholder-gray-500 sm:text-sm focus:z-10 focus:ring-1 focus:ring-brand-blue focus:border-taa-brand-blue"
              :value="modelValue"
              :disabled="disabled"
              :placeholder="$t('labels.departurePlaceholder')"

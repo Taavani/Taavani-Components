@@ -166,7 +166,7 @@ function formatMonth(date) {
           <div class="text-xs">
            <!-- {{ $t('flightOffers.priceFrom') }} -->
           </div>
-          <div class="text-brand-dark-blue font-bold">
+          <div class="text-taa-brand-dark-blue font-bold">
             {{ offer.price.grandTotal }}
             {{ offer.price.currency }}
           </div>
@@ -175,7 +175,7 @@ function formatMonth(date) {
     </a>
 
     <a type="button" class="large group group-focus-visible:ring-0 group-focus-visible:outline-0" style="outline: none" tabindex="0">
-      <div class="itinerary group-focus:border-t-2 group-focus:border-b-2 group-focus:border-l-2 group-focus:border-r-white group-focus:border-brand-dark-blue">
+      <div class="itinerary group-focus:border-t-2 group-focus:border-b-2 group-focus:border-l-2 group-focus:border-r-white group-focus:border-taa-brand-dark-blue">
         <div class="first-row">
           <div class="departure">
             <p class="airport">
@@ -251,13 +251,13 @@ function formatMonth(date) {
       </div>
 
       <div class="divider">
-        <div class="left-upper-corner group-focus:border-t-2 group-focus:border-b-white group-focus:border-l-white group-focus:border-r-white group-focus:border-brand-dark-blue"></div>
+        <div class="left-upper-corner group-focus:border-t-2 group-focus:border-b-white group-focus:border-l-white group-focus:border-r-white group-focus:border-taa-brand-dark-blue"></div>
         <div class="right-upper-corner"></div>
         <div class="right-lower-corner"></div>
         <div class="left-lower-corner"></div>
       </div>
 
-      <div class="pricing group-focus:border-t-2 group-focus:border-b-2 group-focus:border-l-white group-focus:border-r-2 group-focus:border-brand-dark-blue">
+      <div class="pricing group-focus:border-t-2 group-focus:border-b-2 group-focus:border-l-white group-focus:border-r-2 group-focus:border-taa-brand-dark-blue">
         <div class="holder">
           <p v-if="offer.numberOfBookableSeats < 9"
                class="warning">

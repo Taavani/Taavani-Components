@@ -108,5 +108,5 @@
 }
 
 .flight-offer .large .pricing .holder .price {
-    @apply text-xl text-brand-dark-blue font-bold;
+    @apply text-xl text-taa-brand-dark-blue font-bold;
 }

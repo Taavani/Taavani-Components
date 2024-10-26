@@ -3,13 +3,13 @@
 }
 
 .t-button--solid-blue {
-    @apply bg-brand-blue hover:bg-brand-dark-blue disabled:bg-neutral-200;
+    @apply bg-taa-brand-blue hover:bg-taa-brand-dark-blue disabled:bg-neutral-200;
 }
 
 .t-button--liquid-blue {
-    @apply bg-white border border-brand-blue text-brand-blue hover:bg-neutral-100 disabled:text-neutral-200 disabled:bg-white disabled:border-neutral-200;
+    @apply bg-white border border-taa-brand-blue text-taa-brand-blue hover:bg-neutral-100 disabled:text-neutral-200 disabled:bg-white disabled:border-neutral-200;
 }
 
 .t-button--liquid-blue-small {
-    @apply px-3 py-1 border border-brand-blue text-brand-blue uppercase rounded-xl focus:bg-neutral-100 focus:border-brand-dark-blue focus-visible:outline-none hover:bg-neutral-100 disabled:text-neutral-200 disabled:bg-white disabled:border-neutral-200;
+    @apply px-3 py-1 border border-taa-brand-blue text-taa-brand-blue uppercase rounded-xl focus:bg-neutral-100 focus:border-taa-brand-dark-blue focus-visible:outline-none hover:bg-neutral-100 disabled:text-neutral-200 disabled:bg-white disabled:border-neutral-200;
 }

@@ -6,7 +6,7 @@ import {useI18n} from 'vue-i18n'
 
 import TFullscreenContainer from "../../components/T-Fullscreen-Container/T-Fullscreen-Container.vue"
 import TContact from "../../components/T-Contact/T-Contact.vue"
-
+import "./T-Approve.css"
 
 const props = defineProps({
   contacts: {
@@ -128,12 +128,3 @@ watch(searchQuery, () => {
   </t-fullscreen-container>
 </template>
 
-<style scoped>
-.t-contact-list {
-  @apply flex flex-col gap-4;
-}
-
-.pagination button:disabled {
-  @apply opacity-50 cursor-not-allowed;
-}
-</style>

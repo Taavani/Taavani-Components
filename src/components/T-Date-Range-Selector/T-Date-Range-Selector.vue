@@ -75,7 +75,7 @@ onMounted(() => {
 <template>
   <div class="relative lg:flex-1">
     <div
-        class="rounded-b-lg lg:rounded-lg shadow-sm bg-white border-t border-neutral-300 lg:border-0 flex flex-1 focus-within:z-10 focus-within:ring-2 focus-within:ring-brand-blue focus-within:border-brand-blue">
+        class="rounded-b-lg lg:rounded-lg shadow-sm bg-white border-t border-neutral-300 lg:border-0 flex flex-1 focus-within:z-10 focus-within:ring-2 focus-within:ring-taa-brand-blue focus-within:border-taa-brand-blue">
       <div
           class="flex justify-end items-center relative flex-1 pr-3 py-0">
         <label for="departure-date"

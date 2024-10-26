@@ -26,7 +26,7 @@ const passport = ref({
     <input id="passportNumber"
            type="number"
            name="passportNumber"
-           class="border-neutral-300 text-gray-900 rounded-md focus:border-brand-dark-blue"
+           class="border-neutral-300 text-gray-900 rounded-md focus:border-taa-brand-dark-blue"
            placeholder="Passport No."
            required
            v-model="passport.number"
@@ -51,7 +51,7 @@ const passport = ref({
     <input id="issuanceLocation"
            type="text"
            name="issuanceLocation"
-           class="border-neutral-300 rounded-md focus:border-brand-dark-blue text-gray-900"
+           class="border-neutral-300 rounded-md focus:border-taa-brand-dark-blue text-gray-900"
            placeholder="Location"
            required
            v-model="passport.issuanceLocation"

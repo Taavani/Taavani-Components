@@ -90,7 +90,7 @@ if (props.offer.fareRules) {
   <div class="snap-center rounded-2xl py-4 px-4 bg-white mx-auto w-96 shadow border mb-3">
     <div class="w-full h-full inline-flex flex-col">
       <h1>
-        <span class="font-bold text-xl text-brand-dark-blue pb-3">{{ price }}</span>
+        <span class="font-bold text-xl text-taa-brand-dark-blue pb-3">{{ price }}</span>
         {{ currency }}
       </h1>
 

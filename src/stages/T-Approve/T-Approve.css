@@ -1,0 +1,7 @@
+.t-contact-list {
+    @apply flex flex-col gap-4;
+}
+
+.pagination button:disabled {
+    @apply opacity-50 cursor-not-allowed;
+}
