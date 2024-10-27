@@ -12,7 +12,7 @@ export default [
             postcss({
                 extensions: ['.css'],
                 extract: true,
-                modules: true,
+                modules: false,
                 config: {
                     path: './postcss.config.cjs'
                 },
