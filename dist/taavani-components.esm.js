@@ -2472,22 +2472,4 @@ return (_ctx, _cache) => {
 
 };
 
-var index = {
-    TBirthdayInput: script$d,
-    TButton: script$h,
-    TEmailInput: script$c,
-    TDaysSelector: script$3,
-    TFlightOffer: script$e,
-    TFlightOfferList: script$g,
-    TGenderInput: script$b,
-    TNameInput: script$a,
-    TPassenger: script$7,
-    TPassengersList: script$6,
-    TUpsellOffer: script$5,
-    TUpsellOfferList: script$4,
-    TVueTelInput: script$9,
-    TApprove: script,
-    mapSegmentsToItinerariesDays
-};
-
-export { index as default };
+export { script as TApprove, script$d as TBirthdayInput, script$h as TButton, script$3 as TDaysSelector, script$c as TEmailInput, script$e as TFlightOffer, script$g as TFlightOfferList, script$b as TGenderInput, script$a as TNameInput, script$7 as TPassenger, script$6 as TPassengersList, script$5 as TUpsellOffer, script$4 as TUpsellOfferList, script$9 as TVueTelInput, mapSegmentsToItinerariesDays };
