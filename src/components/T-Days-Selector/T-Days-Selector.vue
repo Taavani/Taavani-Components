@@ -1,5 +1,4 @@
 <script setup>
-import { defineProps } from "vue";
 import "./T-Days-Selector.css";
 
 /**

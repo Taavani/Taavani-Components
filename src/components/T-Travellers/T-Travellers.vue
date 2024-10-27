@@ -1,5 +1,5 @@
 <script setup>
-import {ref, defineProps} from "vue";
+import {ref} from "vue";
 import "./T-Travellers.css";
 
 import TravellersMenu from "./Travellers-Menu.vue";

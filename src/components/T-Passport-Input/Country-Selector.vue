@@ -1,5 +1,5 @@
 <script setup>
-import {computed, defineProps, onMounted, ref, watch} from 'vue'
+import {computed, onMounted, ref, watch} from 'vue'
 import regions from './data.js'
 
 import {Listbox, ListboxButton, ListboxLabel, ListboxOption, ListboxOptions,} from '@headlessui/vue'

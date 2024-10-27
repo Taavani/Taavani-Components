@@ -1,5 +1,5 @@
 <script setup>
-import {onMounted, defineProps, defineEmits} from "vue";
+import {onMounted, defineEmits} from "vue";
 import {easepick} from '@easepick/core';
 import {LockPlugin} from '@easepick/lock-plugin';
 

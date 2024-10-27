@@ -1,5 +1,5 @@
 <script setup>
-import {computed, defineEmits, defineProps, onMounted} from "vue";
+import {computed, defineEmits, onMounted} from "vue";
 import {easepick} from "@easepick/core";
 import {LockPlugin} from "@easepick/lock-plugin";
 import CalenderIcon from "@heroicons/vue/20/solid/CalendarIcon";
