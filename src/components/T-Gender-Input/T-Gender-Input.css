@@ -2,25 +2,100 @@
 
 }
 .t-gender-input .label {
-    @apply px-3 text-sm text-neutral-500;
+    --tw-text-opacity: 1;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: rgb(115 115 115 / var(--tw-text-opacity));
 }
 
 .t-gender-input .holder {
-    @apply relative mb-3;
+    position: relative;
+    margin-bottom: 0.75rem;
 }
 
 .t-gender-input .button {
-    @apply relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left text-gray-500 ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-taa-brand-blue text-sm;
+    --tw-bg-opacity: 1;
+    position: relative;
+    width: 100%;
+    cursor: default;
+    border-radius: 0.5rem/* 8px */;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    padding: 0.5rem 2.5rem 0.5rem 0.75rem;
+    text-align: left;
+    color: rgb(107 114 128 / var(--tw-text-opacity));
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgb(209 213 219 / var(--tw-ring-opacity));
+    --tw-ring-inset: inset;
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.t-gender-input .button:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgb(0 110 184 / var(--tw-ring-opacity));
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 
 .t-gender-input .button .text {
-    @apply inline-flex w-full truncate;
+    display: inline-flex;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .t-gender-input .button .icon {
-    @apply pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    padding-right: 0.5rem;
 }
 
 .t-gender-input .options {
-    @apply absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm;
+    --tw-bg-opacity: 1;
+    position: absolute;
+    z-index: 10;
+    margin-top: 0.25rem/* 4px */;
+    max-height: 15rem/* 240px */;
+    width: 100%;
+    overflow: auto;
+    border-radius: 0.375rem/* 6px */;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    padding-top: 0.25rem/* 4px */;
+    padding-bottom: 0.25rem/* 4px */;
+    font-size: 1rem/* 16px */;
+    line-height: 1.5rem/* 24px */;
+    --tw-shadow-color: rgba(0, 0, 0, 0.1);
+    --tw-ring-opacity: 0.05;
+    --tw-ring-color: rgb(0 0 0 / var(--tw-ring-opacity));
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.t-gender-input .options:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+@media (min-width: 640px) {
+    .t-gender-input .options:focus {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+    }
 }
