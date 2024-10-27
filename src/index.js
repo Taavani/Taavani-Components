@@ -14,7 +14,7 @@ import TDaysSelector from "./components/T-Days-Selector/T-Days-Selector.vue";
 import {mapSegmentsToItinerariesDays} from "./components/T-Itinerary-Day/Map-Utility.js";
 import TApprove from "./stages/T-Approve/T-Approve.vue";
 
-export default {
+export {
     TBirthdayInput,
     TButton,
     TEmailInput,
