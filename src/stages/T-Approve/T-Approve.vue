@@ -1,4 +1,12 @@
 <script setup lang="js">
+/**
+ * The T-Approve component
+ *
+ * The purpose of this component is to allow the user to select a manager to approve a booking.
+ *
+ * @component
+ *
+ */
 import {computed, ref, watch} from "vue"
 import {DialogPanel, TransitionChild} from "@headlessui/vue"
 import {useI18n} from 'vue-i18n'
@@ -8,7 +16,11 @@ import TContact from "../../components/T-Contact/T-Contact.vue"
 import "./T-Approve.css"
 import TPagination from "./T-Pagination.vue";
 import TSearch from "./T-Search.vue";
+import TContactList from "./T-Contact-List.vue";
 
+/**
+ * Define the Properties for this component
+ */
 const props = defineProps({
   contacts: {
     type: Array,
@@ -140,13 +152,13 @@ watch(searchQuery, () => {
 
               <t-search v-model="searchQuery"></t-search>
 
-              <ul class="t-contact-list">
+              <t-contact-list>
                 <t-contact v-for="(contact, index) in paginatedContacts"
                            :key="index"
                            :contact="contact"
                            @click="updateManager">
                 </t-contact>
-              </ul>
+              </t-contact-list>
 
               <t-pagination :currentPage="currentPage"
                             :totalPages="totalPages"
