@@ -18,6 +18,8 @@ import TPagination from "./T-Pagination.vue";
 import TSearch from "./T-Search.vue";
 import TContactList from "./T-Contact-List.vue";
 
+const emit = defineEmits(['confirm']);
+
 /**
  * Define the Properties for this component
  */
@@ -127,6 +129,10 @@ function name() {
   return t('approve.sendRequestToApprove', {'name': manager.value.name.firstName + ' ' + manager.value.name.lastName});
 }
 
+function confirm(confirm) {
+  emit('confirm', confirm);
+}
+
 /**
  * Watch the searchQuery and reset the currentPage to 1 when it changes
  */
@@ -166,6 +172,7 @@ watch(searchQuery, () => {
                             :goToPage="goToPage"
                             :manager="manager"
                             :name="name"
+                            @confirm-event="(contact) => confirm(contact)"
                             :paginatedContacts="paginatedContacts">
               </t-pagination>
             </div>

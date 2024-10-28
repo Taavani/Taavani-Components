@@ -36,5 +36,8 @@ const contacts = [
 export const Default = {
     args: {
         contacts: contacts,
+        confirm: (contact) => {
+            console.log(contact);
+        },
     },
 };

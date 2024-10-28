@@ -5,6 +5,7 @@ import {useI18n} from 'vue-i18n'
 
 import './T-Pagination.css'
 
+defineEmits(['confirmEvent'])
 defineProps({
   currentPage: {
     type: Number,
@@ -46,18 +47,18 @@ const {t} = useI18n({useScope: 'global'});
                 class="button back"
                 aria-label="Pagination"
         >
-                    <span class="sr-only">
-                      {{ t('Previous') }}
-                    </span>
+          <span class="sr-only">
+            {{ t('approve.previous') }}
+          </span>
           <ChevronLeftIcon class="h-5 w-5"
                            aria-hidden="true"
           />
         </button>
         <button @click="goToPage(currentPage + 1)" :disabled="currentPage === totalPages"
                 class="button next">
-                    <span class="sr-only">
-                      {{ t('Next') }}
-                    </span>
+          <span class="sr-only">
+            {{ t('approve.next') }}
+          </span>
           <ChevronRightIcon class="h-5 w-5"
                             aria-hidden="true"
           />
@@ -76,7 +77,9 @@ const {t} = useI18n({useScope: 'global'});
         <button @click="goToPage(currentPage - 1)" :disabled="currentPage === 1"
                 :class="{'hover:bg-gray-50 text-gray-400': currentPage === 1}"
                 class="relative inline-flex  items-center rounded-l-md px-2 py-2 ring-1 ring-inset ring-gray-300 focus:z-20 focus:outline-offset-0">
-          <span class="sr-only">{{ t('Previous') }}</span>
+          <span class="sr-only">
+            {{ t('approve.previous') }}
+          </span>
           <ChevronLeftIcon :class="{'fill-gray-400': currentPage === 1}" class="h-5 w-5"
                            aria-hidden="true"/>
         </button>
@@ -88,14 +91,16 @@ const {t} = useI18n({useScope: 'global'});
         <button @click="goToPage(currentPage + 1)" :disabled="currentPage === totalPages"
                 :class="{'hover:bg-gray-50': currentPage !== totalPages}"
                 class="relative inline-flex items-center rounded-r-md px-2 py-2 ring-1 ring-inset ring-gray-300 focus:z-20 focus:outline-offset-0">
-          <span class="sr-only">{{ t('Next') }}</span>
+          <span class="sr-only">
+            {{ t('approve.next') }}
+          </span>
           <ChevronRightIcon :class="{'fill-gray-400': currentPage === totalPages}" class="h-5 w-5"
                             aria-hidden="true"/>
         </button>
       </nav>
       <div v-else></div>
       <div>
-        <t-button :title="name()" :disabled="!manager"></t-button>
+        <t-button :title="name()" :disabled="!manager" @click="() => $emit('confirmEvent', manager)"></t-button>
       </div>
     </div>
   </div>
