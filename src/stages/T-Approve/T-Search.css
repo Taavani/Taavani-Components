@@ -18,14 +18,26 @@
     align-items: center;
 }
 
-.t-search .t-search-input input {
+.t-search .t-search-input .t-input {
     --tw-text-opacity: 1;
     color: rgb(17 24 39 / var(--tw-text-opacity));
     display: block;
     width: 100%;
     border-radius: 0.75rem;
     border-width: 0;
-    padding-top: 0.5rem/* 8px */;
-    padding-bottom: 0.5rem/* 8px */;
-    padding-right: 3.5rem/* 56px */;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-right: 3.5rem;
 }
+
+.t-search .t-search-input .t-input:focus {
+    --tw-ring-inset: inset;
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgb(8 83 134 / var(--tw-ring-opacity));
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
+}
+
+
+

@@ -1,4 +1,4 @@
-import { computed, openBlock, createElementBlock, normalizeClass, toDisplayString, renderSlot, createStaticVNode, ref, createElementVNode, createCommentVNode, createVNode, createTextVNode, unref, onMounted, Fragment, renderList, watch, createBlock, withCtx, Transition, reactive, toRaw, isProxy, onUnmounted, withDirectives, vModelText } from 'vue';
+import { computed, openBlock, createElementBlock, normalizeClass, toDisplayString, renderSlot, createStaticVNode, ref, createElementVNode, createCommentVNode, createVNode, createTextVNode, unref, onMounted, Fragment, renderList, watch, createBlock, withCtx, Transition, reactive, toRaw, isProxy, onUnmounted } from 'vue';
 import { parse } from 'tinyduration';
 import useVuelidate$1, { useVuelidate } from '@vuelidate/core';
 import { required, minValue, maxValue, email, minLength } from '@vuelidate/validators';
@@ -14,9 +14,9 @@ import { useI18n } from 'vue-i18n';
 import checked from '@heroicons/vue/24/outline/CheckIcon.js';
 import noChecked from '@heroicons/vue/24/outline/CurrencyEuroIcon.js';
 import MinusIcon from '@heroicons/vue/24/outline/MinusIcon.js';
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/16/solid';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/16/solid/index.js';
 
-var script$h = {
+var script$k = {
   __name: 'T-Button',
   props: {
   title: {
@@ -49,15 +49,15 @@ return (_ctx, _cache) => {
 
 };
 
-const _hoisted_1$f = { class: "t-flight-offer-list" };
+const _hoisted_1$i = { class: "t-flight-offer-list" };
 
-var script$g = {
+var script$j = {
   __name: 'T-Flight-Offer-List',
   setup(__props) {
 
   
 return (_ctx, _cache) => {
-  return (openBlock(), createElementBlock("ul", _hoisted_1$f, [
+  return (openBlock(), createElementBlock("ul", _hoisted_1$i, [
     renderSlot(_ctx.$slots, "default")
   ]))
 }
@@ -65,7 +65,7 @@ return (_ctx, _cache) => {
 
 };
 
-const _hoisted_1$e = {
+const _hoisted_1$h = {
   width: "24",
   height: "24",
   viewBox: "0 0 24 24",
@@ -74,22 +74,22 @@ const _hoisted_1$e = {
 };
 
 function render$1(_ctx, _cache) {
-  return (openBlock(), createElementBlock("svg", _hoisted_1$e, _cache[0] || (_cache[0] = [
+  return (openBlock(), createElementBlock("svg", _hoisted_1$h, _cache[0] || (_cache[0] = [
     createStaticVNode("<g clip-path=\"url(#clip0_356_3298)\"><path d=\"M14.639 10.2577L19.4686 8.96358C19.981 8.82629 20.5269 8.89816 20.9862 9.16338C21.4456 9.4286 21.7808 9.86543 21.9181 10.3778C22.0554 10.8902 21.9835 11.4361 21.7183 11.8954C21.4531 12.3548 21.0162 12.69 20.5039 12.8273L6.01499 16.7096L1.5643 11.6905L4.46208 10.914L6.91157 12.3282L9.80934 11.5518L6.06576 5.30793L8.96353 4.53147L14.639 10.2577Z\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M3 21H21\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></g><defs><clipPath id=\"clip0_356_3298\"><rect width=\"24\" height=\"24\" fill=\"white\"></rect></clipPath></defs>", 2)
   ])))
 }
 
-const script$f = {};
+const script$i = {};
 
 
-script$f.render = render$1;
+script$i.render = render$1;
 
-const _hoisted_1$d = { class: "flight-offer" };
-const _hoisted_2$b = {
+const _hoisted_1$g = { class: "flight-offer" };
+const _hoisted_2$d = {
   type: "button",
   class: "small"
 };
-const _hoisted_3$b = { class: "md:w-4/6 py-2 md:py-4 px-2 md:px-4 flex rounded-t-xl bg-white md:shadow-[0_20px_10px_-15px_rgba(0,110,184,0.08)]" };
+const _hoisted_3$c = { class: "md:w-4/6 py-2 md:py-4 px-2 md:px-4 flex rounded-t-xl bg-white md:shadow-[0_20px_10px_-15px_rgba(0,110,184,0.08)]" };
 const _hoisted_4$a = { class: "w-full flex justify-between items-center px-2 md:px-4" };
 const _hoisted_5$6 = { class: "text-xl font-bold" };
 const _hoisted_6$6 = { class: "text-xs" };
@@ -104,17 +104,17 @@ const _hoisted_11$5 = { class: "text-sm" };
 const _hoisted_12$3 = { class: "text-xl font-bold" };
 const _hoisted_13$3 = { class: "md:w-2/6 py-2 md:py-4 px-4 items-center rounded-b-xl bg-white shadow-[0_20px_10px_-15px_rgba(0,110,184,0.08)] flex md:flex-col justify-between md:justify-end" };
 const _hoisted_14$3 = { class: "w-1/2 text-xs" };
-const _hoisted_15$3 = { class: "w-1/2 text-right" };
-const _hoisted_16$3 = { class: "text-taa-brand-dark-blue font-bold" };
-const _hoisted_17$3 = {
+const _hoisted_15$2 = { class: "w-1/2 text-right" };
+const _hoisted_16$2 = { class: "text-taa-brand-dark-blue font-bold" };
+const _hoisted_17$2 = {
   type: "button",
   class: "large group group-focus-visible:ring-0 group-focus-visible:outline-0",
   style: {"outline":"none"},
   tabindex: "0"
 };
-const _hoisted_18$2 = { class: "itinerary group-focus:border-t-2 group-focus:border-b-2 group-focus:border-l-2 group-focus:border-r-white group-focus:border-taa-brand-dark-blue" };
-const _hoisted_19$2 = { class: "first-row" };
-const _hoisted_20$2 = { class: "departure" };
+const _hoisted_18$1 = { class: "itinerary group-focus:border-t-2 group-focus:border-b-2 group-focus:border-l-2 group-focus:border-r-white group-focus:border-taa-brand-dark-blue" };
+const _hoisted_19$1 = { class: "first-row" };
+const _hoisted_20$1 = { class: "departure" };
 const _hoisted_21$1 = { class: "airport" };
 const _hoisted_22$1 = { class: "time" };
 const _hoisted_23$1 = { class: "date" };
@@ -156,7 +156,7 @@ const _hoisted_40 = { class: "text" };
 const _hoisted_41 = { class: "price" };
 
 
-var script$e = {
+var script$h = {
   __name: 'T-Flight-Offer',
   props: {
   offer: Object
@@ -239,9 +239,9 @@ function formatMonth(date) {
 }
 
 return (_ctx, _cache) => {
-  return (openBlock(), createElementBlock("li", _hoisted_1$d, [
-    createElementVNode("a", _hoisted_2$b, [
-      createElementVNode("div", _hoisted_3$b, [
+  return (openBlock(), createElementBlock("li", _hoisted_1$g, [
+    createElementVNode("a", _hoisted_2$d, [
+      createElementVNode("div", _hoisted_3$c, [
         createElementVNode("div", _hoisted_4$a, [
           createCommentVNode(" Departure "),
           createElementVNode("div", null, [
@@ -257,7 +257,7 @@ return (_ctx, _cache) => {
           ]),
           createCommentVNode(" offer information "),
           createElementVNode("div", _hoisted_7$6, [
-            createVNode(script$f, { class: "stroke-neutral-400" }),
+            createVNode(script$i, { class: "stroke-neutral-400" }),
             createElementVNode("p", _hoisted_8$5, toDisplayString(travelTime(__props.offer.itineraries[0])), 1 /* TEXT */),
             (__props.offer.itineraries[0].segments.length > 1)
               ? (openBlock(), createElementBlock("p", _hoisted_9$5, [
@@ -279,18 +279,18 @@ return (_ctx, _cache) => {
       _cache[3] || (_cache[3] = createStaticVNode("<div class=\"grid grid-cols-2 h-[20px]\"><div class=\"left-lower-corner border-l-2 border-neutral-300\"></div><div class=\"right-lower-corner border-dashed\"></div><div class=\"right-upper-corner border-l-2 border-neutral-300\"></div><div class=\"left-upper-corner border-dashed\"></div></div>", 1)),
       createElementVNode("div", _hoisted_13$3, [
         createElementVNode("div", _hoisted_14$3, toDisplayString(unref(dictionary).carriers[__props.offer.validatingAirlineCodes[0]]) + " | " + toDisplayString(unref(bookingClass)), 1 /* TEXT */),
-        createElementVNode("div", _hoisted_15$3, [
+        createElementVNode("div", _hoisted_15$2, [
           _cache[2] || (_cache[2] = createElementVNode("div", { class: "text-xs" }, [
             createCommentVNode(" {{ $t('flightOffers.priceFrom') }} ")
           ], -1 /* HOISTED */)),
-          createElementVNode("div", _hoisted_16$3, toDisplayString(__props.offer.price.grandTotal) + " " + toDisplayString(__props.offer.price.currency), 1 /* TEXT */)
+          createElementVNode("div", _hoisted_16$2, toDisplayString(__props.offer.price.grandTotal) + " " + toDisplayString(__props.offer.price.currency), 1 /* TEXT */)
         ])
       ])
     ]),
-    createElementVNode("a", _hoisted_17$3, [
-      createElementVNode("div", _hoisted_18$2, [
-        createElementVNode("div", _hoisted_19$2, [
-          createElementVNode("div", _hoisted_20$2, [
+    createElementVNode("a", _hoisted_17$2, [
+      createElementVNode("div", _hoisted_18$1, [
+        createElementVNode("div", _hoisted_19$1, [
+          createElementVNode("div", _hoisted_20$1, [
             createElementVNode("p", _hoisted_21$1, toDisplayString(__props.offer.dictionary.locations[__props.offer.itineraries[0].segments[0].departure.iataCode][_ctx.$i18n.locale].city) + " (" + toDisplayString(__props.offer.itineraries[0].segments[0].departure.iataCode) + ") ", 1 /* TEXT */),
             createElementVNode("p", _hoisted_22$1, [
               createElementVNode("time", null, toDisplayString(("0" + new Date(__props.offer.itineraries[0].segments[0].departure.at).getHours()).slice(-2)) + ":" + toDisplayString(("0" + new Date(__props.offer.itineraries[0].segments[0].departure.at).getMinutes()).slice(-2)), 1 /* TEXT */)
@@ -304,7 +304,7 @@ return (_ctx, _cache) => {
             ])
           ]),
           createElementVNode("div", _hoisted_24$1, [
-            createVNode(script$f, { class: "icon" }),
+            createVNode(script$i, { class: "icon" }),
             createElementVNode("p", _hoisted_25$1, [
               createElementVNode("time", null, toDisplayString(travelTime(__props.offer.itineraries[0])), 1 /* TEXT */)
             ]),
@@ -357,11 +357,11 @@ return (_ctx, _cache) => {
 
 };
 
-const _hoisted_1$c = {
+const _hoisted_1$f = {
   class: /*@__PURE__*/normalizeClass({ 'px-3 text-sm text-neutral-500': true, 'valid': true })
 };
-const _hoisted_2$a = { class: "flex items-center mb-3" };
-const _hoisted_3$a = { class: "flex-1 border border-neutral-300 px-3 py-2 rounded-l-lg focus-within:z-10 focus-within:ring-1 focus-within:ring-taa-brand-blue focus-within:border-taa-brand-blue" };
+const _hoisted_2$c = { class: "flex items-center mb-3" };
+const _hoisted_3$b = { class: "flex-1 border border-neutral-300 px-3 py-2 rounded-l-lg focus-within:z-10 focus-within:ring-1 focus-within:ring-taa-brand-blue focus-within:border-taa-brand-blue" };
 const _hoisted_4$9 = {
   for: "birthday",
   class: "sr-only"
@@ -381,7 +381,7 @@ const _hoisted_10$4 = {
 const _hoisted_11$4 = ["max", "value", "placeholder"];
 
 
-var script$d = {
+var script$g = {
   __name: 'T-Birthday-Input',
   props: {
   modelValue: {
@@ -445,9 +445,9 @@ function updateDay(event) {
 
 return (_ctx, _cache) => {
   return (openBlock(), createElementBlock(Fragment, null, [
-    createElementVNode("h2", _hoisted_1$c, toDisplayString(_ctx.$t('passengers.birthday.label')), 1 /* TEXT */),
-    createElementVNode("div", _hoisted_2$a, [
-      createElementVNode("div", _hoisted_3$a, [
+    createElementVNode("h2", _hoisted_1$f, toDisplayString(_ctx.$t('passengers.birthday.label')), 1 /* TEXT */),
+    createElementVNode("div", _hoisted_2$c, [
+      createElementVNode("div", _hoisted_3$b, [
         createElementVNode("label", _hoisted_4$9, toDisplayString(_ctx.$t('passengers.birthday.day')), 1 /* TEXT */),
         createElementVNode("input", {
           id: "birthday",
@@ -492,16 +492,16 @@ return (_ctx, _cache) => {
 
 };
 
-const _hoisted_1$b = { class: "holder" };
-const _hoisted_2$9 = { class: "icon" };
-const _hoisted_3$9 = ["placeholder", "value"];
+const _hoisted_1$e = { class: "holder" };
+const _hoisted_2$b = { class: "icon" };
+const _hoisted_3$a = ["placeholder", "value"];
 const _hoisted_4$8 = {
   key: 0,
   class: "px-3 text-sm text-red-500"
 };
 
 
-var script$c = {
+var script$f = {
   __name: 'T-Email-Input',
   props: {
   email: {
@@ -537,8 +537,8 @@ return (_ctx, _cache) => {
       for: "email",
       class: normalizeClass({ 'label': true, 'error': !isEmailValid.value })
     }, toDisplayString(_ctx.$t('passengers.email.label')), 3 /* TEXT, CLASS */),
-    createElementVNode("div", _hoisted_1$b, [
-      createElementVNode("div", _hoisted_2$9, [
+    createElementVNode("div", _hoisted_1$e, [
+      createElementVNode("div", _hoisted_2$b, [
         createVNode(unref(EnvelopeIcon), {
           class: "h-5 w-5 text-gray-400",
           "aria-hidden": "true"
@@ -554,7 +554,7 @@ return (_ctx, _cache) => {
         value: __props.email,
         onInput: _cache[1] || (_cache[1] = $event => (_ctx.$emit('update:email', $event.target.value))),
         class: normalizeClass({ 'input': true, 'error': !isEmailValid.value })
-      }, null, 42 /* CLASS, PROPS, NEED_HYDRATION */, _hoisted_3$9)
+      }, null, 42 /* CLASS, PROPS, NEED_HYDRATION */, _hoisted_3$a)
     ]),
     (unref(v$).$errors.length > 0)
       ? (openBlock(), createElementBlock("div", _hoisted_4$8, [
@@ -571,13 +571,13 @@ return (_ctx, _cache) => {
 
 };
 
-const _hoisted_1$a = { class: "holder" };
-const _hoisted_2$8 = { class: "" };
-const _hoisted_3$8 = { class: "icon" };
+const _hoisted_1$d = { class: "holder" };
+const _hoisted_2$a = { class: "" };
+const _hoisted_3$9 = { class: "icon" };
 const _hoisted_4$7 = { class: "flex" };
 
 
-var script$b = {
+var script$e = {
   __name: 'T-Gender-Input',
   props: {
   gender: {
@@ -625,11 +625,11 @@ return (_ctx, _cache) => {
         ]),
         _: 1 /* STABLE */
       }),
-      createElementVNode("div", _hoisted_1$a, [
+      createElementVNode("div", _hoisted_1$d, [
         createVNode(unref(ListboxButton), { class: "button" }, {
           default: withCtx(() => [
-            createElementVNode("span", _hoisted_2$8, toDisplayString(_ctx.$t('passengers.gender.options.' + selected.value.value)), 1 /* TEXT */),
-            createElementVNode("span", _hoisted_3$8, [
+            createElementVNode("span", _hoisted_2$a, toDisplayString(_ctx.$t('passengers.gender.options.' + selected.value.value)), 1 /* TEXT */),
+            createElementVNode("span", _hoisted_3$9, [
               createVNode(unref(ChevronUpDownIcon), {
                 class: "h-5 w-5 text-gray-400",
                 "aria-hidden": "true"
@@ -692,9 +692,9 @@ return (_ctx, _cache) => {
 
 };
 
-const _hoisted_1$9 = { class: "t-name-input" };
-const _hoisted_2$7 = { class: "holder" };
-const _hoisted_3$7 = {
+const _hoisted_1$c = { class: "t-name-input" };
+const _hoisted_2$9 = { class: "holder" };
+const _hoisted_3$8 = {
   for: "firstName",
   class: "label"
 };
@@ -710,7 +710,7 @@ const _hoisted_7$4 = {
 };
 
 
-var script$a = {
+var script$d = {
   __name: 'T-Name-Input',
   props: {
   firstName: {
@@ -755,15 +755,15 @@ const isLastNameValid = computed(() => {
 
 
 return (_ctx, _cache) => {
-  return (openBlock(), createElementBlock("div", _hoisted_1$9, [
+  return (openBlock(), createElementBlock("div", _hoisted_1$c, [
     createElementVNode("h2", {
       class: normalizeClass({ 'title': true, 'valid': unref(v$).$dirty && isLastNameValid.value && isFirstNameValid.value })
     }, toDisplayString(_ctx.$t('passengers.name.title')), 3 /* TEXT, CLASS */),
-    createElementVNode("div", _hoisted_2$7, [
+    createElementVNode("div", _hoisted_2$9, [
       createElementVNode("div", {
         class: normalizeClass({ 'first-name': true, 'error': !isFirstNameValid.value, 'valid': unref(v$).firstName.$dirty && isFirstNameValid.value })
       }, [
-        createElementVNode("label", _hoisted_3$7, toDisplayString(_ctx.$t('passengers.name.firstNameLabel')), 1 /* TEXT */),
+        createElementVNode("label", _hoisted_3$8, toDisplayString(_ctx.$t('passengers.name.firstNameLabel')), 1 /* TEXT */),
         createElementVNode("input", {
           id: "firstName",
           type: "text",
@@ -862,15 +862,15 @@ class Traveler {
     }
 }
 
-const _hoisted_1$8 = { class: "v-vue-tel-input" };
-const _hoisted_2$6 = { class: "label" };
-const _hoisted_3$6 = {
+const _hoisted_1$b = { class: "v-vue-tel-input" };
+const _hoisted_2$8 = { class: "label" };
+const _hoisted_3$7 = {
   key: 0,
   class: "px-3 text-sm text-red-500"
 };
 
 
-var script$9 = {
+var script$c = {
   __name: 'T-Vue-Tel-Input',
   props: {
   phone: {
@@ -903,8 +903,8 @@ function onValidate(validation) {
 }
 
 return (_ctx, _cache) => {
-  return (openBlock(), createElementBlock("div", _hoisted_1$8, [
-    createElementVNode("h2", _hoisted_2$6, toDisplayString(_ctx.$t('passengers.phone.label')), 1 /* TEXT */),
+  return (openBlock(), createElementBlock("div", _hoisted_1$b, [
+    createElementVNode("h2", _hoisted_2$8, toDisplayString(_ctx.$t('passengers.phone.label')), 1 /* TEXT */),
     createVNode(unref(VueTelInput), {
       mode: "international",
       modelValue: state.value.phone,
@@ -916,7 +916,7 @@ return (_ctx, _cache) => {
       class: normalizeClass({ 'error': unref(v$).phone.$error })
     }, null, 8 /* PROPS */, ["modelValue", "inputOptions", "class"]),
     (unref(v$).$errors.length > 0)
-      ? (openBlock(), createElementBlock("div", _hoisted_3$6, [
+      ? (openBlock(), createElementBlock("div", _hoisted_3$7, [
           (openBlock(true), createElementBlock(Fragment, null, renderList(unref(v$).$errors, (error) => {
             return (openBlock(), createElementBlock("p", {
               key: error.$uid
@@ -930,11 +930,11 @@ return (_ctx, _cache) => {
 
 };
 
-const _hoisted_1$7 = {
+const _hoisted_1$a = {
   class: /*@__PURE__*/normalizeClass({ 'px-3 text-sm text-neutral-500': true, 'valid': true })
 };
-const _hoisted_2$5 = { class: "grid grid-cols-3" };
-const _hoisted_3$5 = { class: "relative mb-2" };
+const _hoisted_2$7 = { class: "grid grid-cols-3" };
+const _hoisted_3$6 = { class: "relative mb-2" };
 const _hoisted_4$5 = { class: "block truncate" };
 const _hoisted_5$3 = { class: "pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2" };
 const _hoisted_6$3 = { class: "relative mb-2" };
@@ -945,7 +945,7 @@ const _hoisted_10$3 = { class: "block truncate" };
 const _hoisted_11$3 = { class: "pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2" };
 
 
-var script$8 = {
+var script$b = {
   __name: 'T-Birthday-Input.v2',
   props: {
   modelValue: {
@@ -1014,8 +1014,8 @@ watch(selectedDay, updateEmit);
 
 return (_ctx, _cache) => {
   return (openBlock(), createElementBlock(Fragment, null, [
-    createElementVNode("h2", _hoisted_1$7, toDisplayString(_ctx.$t('passengers.birthday.label')), 1 /* TEXT */),
-    createElementVNode("div", _hoisted_2$5, [
+    createElementVNode("h2", _hoisted_1$a, toDisplayString(_ctx.$t('passengers.birthday.label')), 1 /* TEXT */),
+    createElementVNode("div", _hoisted_2$7, [
       createVNode(unref(Listbox), {
         as: "div",
         modelValue: selectedYear.value,
@@ -1028,7 +1028,7 @@ return (_ctx, _cache) => {
             ]),
             _: 1 /* STABLE */
           }),
-          createElementVNode("div", _hoisted_3$5, [
+          createElementVNode("div", _hoisted_3$6, [
             createVNode(unref(ListboxButton), { class: "relative w-full cursor-default rounded-l-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-blue sm:text-sm sm:leading-6" }, {
               default: withCtx(() => [
                 createElementVNode("span", _hoisted_4$5, toDisplayString(selectedYear.value.name), 1 /* TEXT */),
@@ -1239,9 +1239,9 @@ return (_ctx, _cache) => {
 
 };
 
-const _hoisted_1$6 = { class: "t-passenger" };
-const _hoisted_2$4 = { class: "grow flex items-center pr-4" };
-const _hoisted_3$4 = ["src"];
+const _hoisted_1$9 = { class: "t-passenger" };
+const _hoisted_2$6 = { class: "grow flex items-center pr-4" };
+const _hoisted_3$5 = ["src"];
 const _hoisted_4$4 = { class: "grow text-neutral-600" };
 const _hoisted_5$2 = {
   key: 0,
@@ -1262,9 +1262,9 @@ const _hoisted_14$2 = {
   key: 1,
   class: "content-select-passenger grid grid-cols-1 gap-3"
 };
-const _hoisted_15$2 = ["onClick"];
-const _hoisted_16$2 = ["src"];
-const _hoisted_17$2 = {
+const _hoisted_15$1 = ["onClick"];
+const _hoisted_16$1 = ["src"];
+const _hoisted_17$1 = {
   key: 0,
   class: "text-red-500 text-xs"
 };
@@ -1280,7 +1280,7 @@ const SELECT = 'select';
  *
  */
 
-var script$7 = {
+var script$a = {
   __name: 'T-Passenger',
   props: {
   traveler: {
@@ -1509,16 +1509,16 @@ watch(v$, (value) => {
 
 
 return (_ctx, _cache) => {
-  return (openBlock(), createElementBlock("div", _hoisted_1$6, [
+  return (openBlock(), createElementBlock("div", _hoisted_1$9, [
     createElementVNode("div", {
       class: normalizeClass({ header: true, 'pb-4': extended.value })
     }, [
-      createElementVNode("div", _hoisted_2$4, [
+      createElementVNode("div", _hoisted_2$6, [
         createElementVNode("img", {
           class: "h-8 w-8 rounded-full mr-3 bg-neutral-300 border-0",
           src: 'https://ui-avatars.com/api/?name=' + (passenger.name.firstName.length > 0 ? passenger.name.firstName[0] : 'p') + '&color=828282&background=D3F8F0',
           alt: ""
-        }, null, 8 /* PROPS */, _hoisted_3$4),
+        }, null, 8 /* PROPS */, _hoisted_3$5),
         createElementVNode("h1", _hoisted_4$4, toDisplayString(passenger.name.firstName.length !== 0 ? passenger.name.firstName : _ctx.$t('passengers.placeholder', (Number(passenger.id) + 1))) + " " + toDisplayString(passenger.name.lastName.length !== 0 ? passenger.name.lastName : ''), 1 /* TEXT */),
         (isTravelerValid())
           ? (openBlock(), createElementBlock("div", _hoisted_5$2, [
@@ -1573,35 +1573,35 @@ return (_ctx, _cache) => {
     ], 2 /* CLASS */),
     (INPUT === mode.value && extended.value)
       ? (openBlock(), createElementBlock("div", _hoisted_9$2, [
-          createVNode(script$a, {
+          createVNode(script$d, {
             "first-name": passenger.name.firstName,
             "onUpdate:firstName": _cache[4] || (_cache[4] = $event => ((passenger.name.firstName) = $event)),
             "last-name": passenger.name.lastName,
             "onUpdate:lastName": _cache[5] || (_cache[5] = $event => ((passenger.name.lastName) = $event))
           }, null, 8 /* PROPS */, ["first-name", "last-name"]),
           (__props.requirements.dateOfBirthRequired)
-            ? (openBlock(), createBlock(script$8, {
+            ? (openBlock(), createBlock(script$b, {
                 key: 0,
                 "model-value": passenger.dateOfBirth,
                 "onUpdate:modelValue": onBirthdayUpdate
               }, null, 8 /* PROPS */, ["model-value"]))
             : createCommentVNode("v-if", true),
           (__props.requirements.genderRequired)
-            ? (openBlock(), createBlock(script$b, {
+            ? (openBlock(), createBlock(script$e, {
                 key: 1,
                 gender: passenger.gender,
                 "onUpdate:gender": _cache[6] || (_cache[6] = (value) => onUpdateGender(value))
               }, null, 8 /* PROPS */, ["gender"]))
             : createCommentVNode("v-if", true),
           (__props.requirements.emailAddressRequired)
-            ? (openBlock(), createBlock(script$c, {
+            ? (openBlock(), createBlock(script$f, {
                 key: 2,
                 email: passenger.contact.emailAddress,
                 "onUpdate:email": _cache[7] || (_cache[7] = $event => ((passenger.contact.emailAddress) = $event))
               }, null, 8 /* PROPS */, ["email"]))
             : createCommentVNode("v-if", true),
           (__props.requirements.mobilePhoneNumberRequired)
-            ? (openBlock(), createBlock(script$9, {
+            ? (openBlock(), createBlock(script$c, {
                 key: 3,
                 phone: passenger.contact.phones[0] ? passenger.contact.phones[0].number : passenger.contact.phones[0],
                 "onUpdate:phone": _cache[8] || (_cache[8] = (value) => onUpdatedPhone(value))
@@ -1644,13 +1644,13 @@ return (_ctx, _cache) => {
                       class: normalizeClass([{  'bg-green-500': !unref(v$).$error && passenger.contact.emailAddress === employee.contact.emailAddress, 'bg-neutral-300': passenger.contact.emailAddress !== employee.contact.emailAddress, 'bg-red-500': unref(v$).$error && passenger.contact.emailAddress === employee.contact.emailAddress}, "h-8 w-8 rounded-full mr-3"]),
                       src: employee.profilePhoto ? employee.profilePhoto : 'https://ui-avatars.com/api/?name=' + (employee.name.firstName.length > 0 ? employee.name.firstName[0] : 'p') + '&color=828282&background=D3F8F0',
                       alt: ""
-                    }, null, 10 /* CLASS, PROPS */, _hoisted_16$2)),
+                    }, null, 10 /* CLASS, PROPS */, _hoisted_16$1)),
               createElementVNode("span", {
                 class: normalizeClass([{ 'text-green-500': !unref(v$).$error && employee.contact.emailAddress === passenger.contact.emailAddress, 'text-red-500': unref(v$).$error && passenger.contact.emailAddress === employee.contact.emailAddress}, "grow text-neutral-600 flex flex-col"])
               }, [
                 createTextVNode(toDisplayString(employee.name.firstName.length !== 0 ? employee.name.firstName : 'Passenger ' + (Number(employee.id) + 1)) + " " + toDisplayString(employee.name.lastName && employee.name.lastName.length !== 0 ? employee.name.lastName : '') + " ", 1 /* TEXT */),
                 (employee.contact.emailAddress === passenger.contact.emailAddress && unref(v$).$error)
-                  ? (openBlock(), createElementBlock("span", _hoisted_17$2, [
+                  ? (openBlock(), createElementBlock("span", _hoisted_17$1, [
                       createTextVNode(toDisplayString(_ctx.$t('passengers.errors.generic')) + " ", 1 /* TEXT */),
                       (openBlock(true), createElementBlock(Fragment, null, renderList(unref(v$).$errors, (error) => {
                         return (openBlock(), createElementBlock("span", {
@@ -1661,7 +1661,7 @@ return (_ctx, _cache) => {
                     ]))
                   : createCommentVNode("v-if", true)
               ], 2 /* CLASS */)
-            ], 10 /* CLASS, PROPS */, _hoisted_15$2))
+            ], 10 /* CLASS, PROPS */, _hoisted_15$1))
           }), 128 /* KEYED_FRAGMENT */))
         ]))
       : createCommentVNode("v-if", true)
@@ -1671,7 +1671,7 @@ return (_ctx, _cache) => {
 
 };
 
-const _hoisted_1$5 = { class: "t-passengers-list" };
+const _hoisted_1$8 = { class: "t-passengers-list" };
 
 /**
  * Define the component properties.
@@ -1679,7 +1679,7 @@ const _hoisted_1$5 = { class: "t-passengers-list" };
  * @type {Prettify<Readonly<ExtractPropTypes<{passengers: {type: ArrayConstructor, required: boolean}, requirements: {type: ObjectConstructor, required: boolean}}>>>}
  */
 
-var script$6 = {
+var script$9 = {
   __name: 'T-Passengers-List',
   props: {
   passengers: {
@@ -1756,9 +1756,9 @@ function update(updatedPassenger) {
 // Are all passengers information valid, activate the confirmation.
 
 return (_ctx, _cache) => {
-  return (openBlock(), createElementBlock("div", _hoisted_1$5, [
+  return (openBlock(), createElementBlock("div", _hoisted_1$8, [
     (openBlock(true), createElementBlock(Fragment, null, renderList(__props.passengers, (passenger, index) => {
-      return (openBlock(), createBlock(script$7, {
+      return (openBlock(), createBlock(script$a, {
         key: index,
         traveler: passenger,
         employees: __props.employees,
@@ -1772,9 +1772,9 @@ return (_ctx, _cache) => {
 
 };
 
-const _hoisted_1$4 = { class: "snap-center rounded-2xl py-4 px-4 bg-white mx-auto w-96 shadow border mb-3" };
-const _hoisted_2$3 = { class: "w-full h-full inline-flex flex-col" };
-const _hoisted_3$3 = { class: "font-bold text-xl text-taa-brand-dark-blue pb-3" };
+const _hoisted_1$7 = { class: "snap-center rounded-2xl py-4 px-4 bg-white mx-auto w-96 shadow border mb-3" };
+const _hoisted_2$5 = { class: "w-full h-full inline-flex flex-col" };
+const _hoisted_3$4 = { class: "font-bold text-xl text-taa-brand-dark-blue pb-3" };
 const _hoisted_4$3 = { class: "text-sm pt-2 pb-3" };
 const _hoisted_5$1 = {
   key: 0,
@@ -1795,15 +1795,15 @@ const _hoisted_13$1 = {
   class: "flex flex-col"
 };
 const _hoisted_14$1 = { class: "flex" };
-const _hoisted_15$1 = { class: "pl-2 text-xs content-center" };
-const _hoisted_16$1 = { key: 3 };
-const _hoisted_17$1 = { class: "flex" };
-const _hoisted_18$1 = { class: "pl-2 text-xs content-center" };
-const _hoisted_19$1 = {
+const _hoisted_15 = { class: "pl-2 text-xs content-center" };
+const _hoisted_16 = { key: 3 };
+const _hoisted_17 = { class: "flex" };
+const _hoisted_18 = { class: "pl-2 text-xs content-center" };
+const _hoisted_19 = {
   key: 4,
   class: "flex flex-col"
 };
-const _hoisted_20$1 = { class: "flex" };
+const _hoisted_20 = { class: "flex" };
 const _hoisted_21 = { class: "pl-2 text-xs content-center" };
 const _hoisted_22 = { key: 5 };
 const _hoisted_23 = { class: "flex" };
@@ -1835,7 +1835,7 @@ const _hoisted_34 = { class: "pl-2 text-xs" };
  * Define the props for the component
  */
 
-var script$5 = {
+var script$8 = {
   __name: 'T-Upsell-Offer',
   props: {
   offer: Object,
@@ -1916,10 +1916,10 @@ if (props.offer.fareRules) {
 
 
 return (_ctx, _cache) => {
-  return (openBlock(), createElementBlock("div", _hoisted_1$4, [
-    createElementVNode("div", _hoisted_2$3, [
+  return (openBlock(), createElementBlock("div", _hoisted_1$7, [
+    createElementVNode("div", _hoisted_2$5, [
       createElementVNode("h1", null, [
-        createElementVNode("span", _hoisted_3$3, toDisplayString(unref(price)), 1 /* TEXT */),
+        createElementVNode("span", _hoisted_3$4, toDisplayString(unref(price)), 1 /* TEXT */),
         createTextVNode(" " + toDisplayString(unref(currency)), 1 /* TEXT */)
       ]),
       createElementVNode("p", _hoisted_4$3, toDisplayString(unref(t)('flightOfferExtended.cabin')) + ": " + toDisplayString(unref(cabin)), 1 /* TEXT */),
@@ -1946,21 +1946,21 @@ return (_ctx, _cache) => {
               ? (openBlock(), createElementBlock("li", _hoisted_13$1, [
                   createElementVNode("div", _hoisted_14$1, [
                     createVNode(unref(checked), { class: "h-5 w-5 text-gray-900" }),
-                    createElementVNode("p", _hoisted_15$1, toDisplayString(unref(t)('flightOfferExtended.refundable', refund.value.amount)), 1 /* TEXT */)
+                    createElementVNode("p", _hoisted_15, toDisplayString(unref(t)('flightOfferExtended.refundable', refund.value.amount)), 1 /* TEXT */)
                   ])
                 ]))
               : createCommentVNode("v-if", true),
             (!refund.value.active)
-              ? (openBlock(), createElementBlock("li", _hoisted_16$1, [
-                  createElementVNode("div", _hoisted_17$1, [
+              ? (openBlock(), createElementBlock("li", _hoisted_16, [
+                  createElementVNode("div", _hoisted_17, [
                     createVNode(unref(MinusIcon), { class: "h-5 w-5 text-gray-900" }),
-                    createElementVNode("p", _hoisted_18$1, toDisplayString(unref(t)('flightOfferExtended.noRefund')), 1 /* TEXT */)
+                    createElementVNode("p", _hoisted_18, toDisplayString(unref(t)('flightOfferExtended.noRefund')), 1 /* TEXT */)
                   ])
                 ]))
               : createCommentVNode("v-if", true),
             (unref(baggageEntity).quantity)
-              ? (openBlock(), createElementBlock("li", _hoisted_19$1, [
-                  createElementVNode("div", _hoisted_20$1, [
+              ? (openBlock(), createElementBlock("li", _hoisted_19, [
+                  createElementVNode("div", _hoisted_20, [
                     createVNode(unref(checked), { class: "h-5 w-5 text-gray-900" }),
                     createElementVNode("p", _hoisted_21, toDisplayString(unref(t)('flightOfferExtended.includedBaggage', unref(baggageEntity).quantity)), 1 /* TEXT */)
                   ])
@@ -2010,7 +2010,7 @@ return (_ctx, _cache) => {
           ]))
         : createCommentVNode("v-if", true),
       _cache[1] || (_cache[1] = createElementVNode("div", { class: "grow" }, null, -1 /* HOISTED */)),
-      createVNode(script$h, {
+      createVNode(script$k, {
         title: unref(t)('flightOfferExtended.select'),
         onClick: _cache[0] || (_cache[0] = $event => (props.onSelect(props.offer))),
         class: "w-full"
@@ -2022,29 +2022,29 @@ return (_ctx, _cache) => {
 
 };
 
-const _hoisted_1$3 = { class: "snap-mandatory snap-x w-full grid grid-flow-col gap-4 overflow-x-scroll overflow-hidden pb-4" };
+const _hoisted_1$6 = { class: "snap-mandatory snap-x w-full grid grid-flow-col gap-4 overflow-x-scroll overflow-hidden pb-4" };
 
 function render(_ctx, _cache) {
-  return (openBlock(), createElementBlock("div", _hoisted_1$3, [
+  return (openBlock(), createElementBlock("div", _hoisted_1$6, [
     renderSlot(_ctx.$slots, "default")
   ]))
 }
 
-const script$4 = {};
+const script$7 = {};
 
 
-script$4.render = render;
+script$7.render = render;
 
-const _hoisted_1$2 = { class: "t-days-selector" };
-const _hoisted_2$2 = { class: "bg-white items" };
-const _hoisted_3$2 = ["onClick"];
+const _hoisted_1$5 = { class: "t-days-selector" };
+const _hoisted_2$4 = { class: "bg-white items" };
+const _hoisted_3$3 = ["onClick"];
 const _hoisted_4$2 = { class: "label" };
 
 /**
  * @type {Prettify<Readonly<ExtractPropTypes<{onChoose: FunctionConstructor, options: ArrayConstructor}>>>}
  */
 
-var script$3 = {
+var script$6 = {
   __name: 'T-Days-Selector',
   props: {
   options: Array,
@@ -2078,16 +2078,16 @@ function isCurrentValueLowest(currentValue) {
 
 
 return (_ctx, _cache) => {
-  return (openBlock(), createElementBlock("ul", _hoisted_1$2, [
+  return (openBlock(), createElementBlock("ul", _hoisted_1$5, [
     (openBlock(true), createElementBlock(Fragment, null, renderList(__props.options, (option, index) => {
-      return (openBlock(), createElementBlock("li", _hoisted_2$2, [
+      return (openBlock(), createElementBlock("li", _hoisted_2$4, [
         createElementVNode("button", {
           class: normalizeClass([{ 'outline outline-2 outline-neutral-400': isMiddle(index), 'text-green-700': isCurrentValueLowest(option.value), 'text-taa-brand-dark-blue': !isCurrentValueLowest(option.value) }, "button"]),
           onClick: () => __props.onChoose(option.label)
         }, [
           createElementVNode("span", _hoisted_4$2, toDisplayString(option.label), 1 /* TEXT */),
           createTextVNode(" " + toDisplayString(option.value), 1 /* TEXT */)
-        ], 10 /* CLASS, PROPS */, _hoisted_3$2)
+        ], 10 /* CLASS, PROPS */, _hoisted_3$3)
       ]))
     }), 256 /* UNKEYED_FRAGMENT */))
   ]))
@@ -2174,7 +2174,7 @@ function mapSegmentsToItinerariesDays(itineraries, dictionary, i18n) {
     })
 }
 
-var script$2 = {
+var script$5 = {
   __name: 'T-Fullscreen-Container',
   props: {
     show: Boolean
@@ -2231,16 +2231,11 @@ return (_ctx, _cache) => {
 
 };
 
-const _hoisted_1$1 = { class: "flex" };
-const _hoisted_2$1 = {
-  class: "grow flex items-center pr-4 bg-white rounded-xl ring-1 ring-inset ring-gray-300 px-2 py-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-taa-brand-dark-blue",
-  "aria-setsize": "4"
-};
-const _hoisted_3$1 = ["src"];
-const _hoisted_4$1 = { class: "grow text-neutral-600 text-left" };
+const _hoisted_1$4 = { class: "flex" };
+const _hoisted_2$3 = ["src"];
 
 
-var script$1 = {
+var script$4 = {
   __name: 'T-Contact',
   props: {
   contact: {
@@ -2251,22 +2246,232 @@ var script$1 = {
         lastName: ''
       }
     })
+  },
+  manager: {
+    type: Object,
+    default: null
   }
 },
-  setup(__props) {
+  emits: ['click'],
+  setup(__props, { emit: __emit }) {
 
 
+
+
+const emit = __emit;
 
 
 return (_ctx, _cache) => {
-  return (openBlock(), createElementBlock("li", _hoisted_1$1, [
-    createElementVNode("button", _hoisted_2$1, [
+  return (openBlock(), createElementBlock("li", _hoisted_1$4, [
+    createElementVNode("button", {
+      class: normalizeClass([{ 'bg-taa-brand-dark-blue': __props.manager && __props.manager.id === __props.contact.id }, "grow flex items-center pr-4 bg-white rounded-xl ring-1 ring-inset ring-gray-300 px-2 py-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-taa-brand-dark-blue"]),
+      "aria-setsize": "4",
+      onClick: _cache[0] || (_cache[0] = () => emit('click', __props.contact))
+    }, [
       createElementVNode("img", {
         class: "h-8 w-8 rounded-full mr-3 bg-neutral-300 border-0",
         src: 'https://ui-avatars.com/api/?name=' + (__props.contact.name.firstName.length > 0 ? __props.contact.name.firstName[0] : 'p') + '&color=828282&background=D3F8F0',
         alt: ""
-      }, null, 8 /* PROPS */, _hoisted_3$1),
-      createElementVNode("span", _hoisted_4$1, toDisplayString(__props.contact.name.firstName.length !== 0 ? __props.contact.name.firstName : '') + " " + toDisplayString(__props.contact.name.lastName.length !== 0 ? __props.contact.name.lastName : ''), 1 /* TEXT */)
+      }, null, 8 /* PROPS */, _hoisted_2$3),
+      createElementVNode("span", {
+        class: normalizeClass(["grow text-neutral-600 text-left", { 'text-white': __props.manager && __props.manager.id === __props.contact.id }])
+      }, toDisplayString(__props.contact.name.firstName.length !== 0 ? __props.contact.name.firstName : '') + " " + toDisplayString(__props.contact.name.lastName.length !== 0 ? __props.contact.name.lastName : ''), 3 /* TEXT, CLASS */)
+    ], 2 /* CLASS */)
+  ]))
+}
+}
+
+};
+
+const _hoisted_1$3 = {
+  key: 0,
+  class: "t-pagination"
+};
+const _hoisted_2$2 = {
+  key: 0,
+  class: "small"
+};
+const _hoisted_3$2 = ["disabled"];
+const _hoisted_4$1 = { class: "sr-only" };
+const _hoisted_5 = ["disabled"];
+const _hoisted_6 = { class: "sr-only" };
+const _hoisted_7 = { class: "hidden sm:flex sm:flex-1 sm:items-center sm:justify-between" };
+const _hoisted_8 = {
+  key: 0,
+  class: "isolate inline-flex -space-x-px rounded-md shadow-sm",
+  "aria-label": "Pagination"
+};
+const _hoisted_9 = ["disabled"];
+const _hoisted_10 = { class: "sr-only" };
+const _hoisted_11 = ["onClick"];
+const _hoisted_12 = ["disabled"];
+const _hoisted_13 = { class: "sr-only" };
+const _hoisted_14 = { key: 1 };
+
+
+var script$3 = {
+  __name: 'T-Pagination',
+  props: {
+  currentPage: {
+    type: Number,
+    default: 1
+  },
+  totalPages: {
+    type: Number,
+    default: 1
+  },
+  goToPage: {
+    type: Function,
+    required: true
+  },
+  manager: {
+    type: Object,
+    default: null
+  },
+  name: {
+    type: Function,
+    required: true
+  },
+  paginatedContacts: {
+    type: Array,
+    default: () => []
+  }
+},
+  emits: ['confirmEvent'],
+  setup(__props) {
+
+
+
+const {t} = useI18n({useScope: 'global'});
+
+
+return (_ctx, _cache) => {
+  return (0 < __props.paginatedContacts.length)
+    ? (openBlock(), createElementBlock("div", _hoisted_1$3, [
+        (__props.paginatedContacts.length > 4)
+          ? (openBlock(), createElementBlock("div", _hoisted_2$2, [
+              createElementVNode("div", null, [
+                createElementVNode("button", {
+                  onClick: _cache[0] || (_cache[0] = $event => (__props.goToPage(__props.currentPage - 1))),
+                  disabled: __props.currentPage === 1,
+                  class: "button back",
+                  "aria-label": "Pagination"
+                }, [
+                  createElementVNode("span", _hoisted_4$1, toDisplayString(unref(t)('approve.previous')), 1 /* TEXT */),
+                  createVNode(unref(ChevronLeftIcon), {
+                    class: "h-5 w-5",
+                    "aria-hidden": "true"
+                  })
+                ], 8 /* PROPS */, _hoisted_3$2),
+                createElementVNode("button", {
+                  onClick: _cache[1] || (_cache[1] = $event => (__props.goToPage(__props.currentPage + 1))),
+                  disabled: __props.currentPage === __props.totalPages,
+                  class: "button next"
+                }, [
+                  createElementVNode("span", _hoisted_6, toDisplayString(unref(t)('approve.next')), 1 /* TEXT */),
+                  createVNode(unref(ChevronRightIcon), {
+                    class: "h-5 w-5",
+                    "aria-hidden": "true"
+                  })
+                ], 8 /* PROPS */, _hoisted_5)
+              ]),
+              createElementVNode("div", null, [
+                createVNode(script$k, {
+                  title: __props.name(),
+                  disabled: !__props.manager
+                }, null, 8 /* PROPS */, ["title", "disabled"])
+              ])
+            ]))
+          : createCommentVNode("v-if", true),
+        createElementVNode("div", _hoisted_7, [
+          (__props.paginatedContacts.length > 4)
+            ? (openBlock(), createElementBlock("nav", _hoisted_8, [
+                createElementVNode("button", {
+                  onClick: _cache[2] || (_cache[2] = $event => (__props.goToPage(__props.currentPage - 1))),
+                  disabled: __props.currentPage === 1,
+                  class: normalizeClass([{'hover:bg-gray-50 text-gray-400': __props.currentPage === 1}, "relative inline-flex items-center rounded-l-md px-2 py-2 ring-1 ring-inset ring-gray-300 focus:z-20 focus:outline-offset-0"])
+                }, [
+                  createElementVNode("span", _hoisted_10, toDisplayString(unref(t)('approve.previous')), 1 /* TEXT */),
+                  createVNode(unref(ChevronLeftIcon), {
+                    class: normalizeClass([{'fill-gray-400': __props.currentPage === 1}, "h-5 w-5"]),
+                    "aria-hidden": "true"
+                  }, null, 8 /* PROPS */, ["class"])
+                ], 10 /* CLASS, PROPS */, _hoisted_9),
+                (openBlock(true), createElementBlock(Fragment, null, renderList(__props.totalPages, (page) => {
+                  return (openBlock(), createElementBlock("button", {
+                    key: page,
+                    onClick: $event => (__props.goToPage(page)),
+                    class: normalizeClass([{ 'z-10 bg-white text-taa-brand-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600': page === __props.currentPage }, "relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"])
+                  }, toDisplayString(page), 11 /* TEXT, CLASS, PROPS */, _hoisted_11))
+                }), 128 /* KEYED_FRAGMENT */)),
+                createElementVNode("button", {
+                  onClick: _cache[3] || (_cache[3] = $event => (__props.goToPage(__props.currentPage + 1))),
+                  disabled: __props.currentPage === __props.totalPages,
+                  class: normalizeClass([{'hover:bg-gray-50': __props.currentPage !== __props.totalPages}, "relative inline-flex items-center rounded-r-md px-2 py-2 ring-1 ring-inset ring-gray-300 focus:z-20 focus:outline-offset-0"])
+                }, [
+                  createElementVNode("span", _hoisted_13, toDisplayString(unref(t)('approve.next')), 1 /* TEXT */),
+                  createVNode(unref(ChevronRightIcon), {
+                    class: normalizeClass([{'fill-gray-400': __props.currentPage === __props.totalPages}, "h-5 w-5"]),
+                    "aria-hidden": "true"
+                  }, null, 8 /* PROPS */, ["class"])
+                ], 10 /* CLASS, PROPS */, _hoisted_12)
+              ]))
+            : (openBlock(), createElementBlock("div", _hoisted_14)),
+          createElementVNode("div", null, [
+            createVNode(script$k, {
+              title: __props.name(),
+              disabled: !__props.manager,
+              onClick: _cache[4] || (_cache[4] = () => _ctx.$emit('confirmEvent', __props.manager))
+            }, null, 8 /* PROPS */, ["title", "disabled"])
+          ])
+        ])
+      ]))
+    : createCommentVNode("v-if", true)
+}
+}
+
+};
+
+const _hoisted_1$2 = { class: "t-search" };
+const _hoisted_2$1 = {
+  for: "search",
+  class: "t-search-label"
+};
+const _hoisted_3$1 = { class: "t-search-input" };
+const _hoisted_4 = ["value", "placeholder"];
+
+
+var script$2 = {
+  __name: 'T-Search',
+  props: {
+  modelValue: {
+    type: String,
+    default: ''
+  }
+},
+  emits: ['update:modelValue'],
+  setup(__props, { emit: __emit }) {
+
+const emit = __emit;
+const {t} = useI18n({useScope: 'global'});
+
+function updateSearchQuery(event) {
+  emit('update:modelValue', event.target.value);
+}
+
+return (_ctx, _cache) => {
+  return (openBlock(), createElementBlock("div", _hoisted_1$2, [
+    createElementVNode("label", _hoisted_2$1, toDisplayString(unref(t)('approve.title')), 1 /* TEXT */),
+    createElementVNode("div", _hoisted_3$1, [
+      createElementVNode("input", {
+        id: "search",
+        type: "text",
+        name: "search",
+        value: __props.modelValue,
+        onInput: updateSearchQuery,
+        placeholder: unref(t)('approve.searchPlaceholder'),
+        class: "t-input shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6"
+      }, null, 40 /* PROPS, NEED_HYDRATION */, _hoisted_4)
     ])
   ]))
 }
@@ -2274,38 +2479,34 @@ return (_ctx, _cache) => {
 
 };
 
-const _hoisted_1 = { class: "fixed inset-0 z-10 w-screen overflow-y-auto" };
-const _hoisted_2 = { class: "relative w-full max-w-4xl mx-auto my-20 transform px-4 transition-all opacity-100 scale-100" };
-const _hoisted_3 = { class: "relative transform overflow-hidden rounded-lg bg-white pb-4 pt-5 text-left shadow-xl transition-all" };
-const _hoisted_4 = { class: "px-4" };
-const _hoisted_5 = { class: "pb-3" };
-const _hoisted_6 = {
-  for: "search",
-  class: "block text-sm font-medium leading-6 text-gray-900"
+const _hoisted_1$1 = { class: "t-contact-list" };
+
+var script$1 = {
+  __name: 'T-Contact-List',
+  setup(__props) {
+
+  
+return (_ctx, _cache) => {
+  return (openBlock(), createElementBlock("ul", _hoisted_1$1, [
+    renderSlot(_ctx.$slots, "default")
+  ]))
+}
+}
+
 };
-const _hoisted_7 = { class: "relative mt-2 flex items-center" };
-const _hoisted_8 = ["placeholder"];
-const _hoisted_9 = { class: "t-contact-list" };
-const _hoisted_10 = {
-  key: 0,
-  class: "py-3"
-};
-const _hoisted_11 = { class: "flex flex-1 justify-between sm:hidden" };
-const _hoisted_12 = ["disabled"];
-const _hoisted_13 = ["disabled"];
-const _hoisted_14 = { class: "hidden sm:flex sm:flex-1 sm:items-center sm:justify-between" };
-const _hoisted_15 = {
-  class: "isolate inline-flex -space-x-px rounded-md shadow-sm",
-  "aria-label": "Pagination"
-};
-const _hoisted_16 = ["disabled"];
-const _hoisted_17 = { class: "sr-only" };
-const _hoisted_18 = ["onClick"];
-const _hoisted_19 = ["disabled"];
-const _hoisted_20 = { class: "sr-only" };
+
+const _hoisted_1 = { class: "t-holder" };
+const _hoisted_2 = { class: "t-content transform scale-100" };
+const _hoisted_3 = { class: "t-approve transform shadow-xl" };
 
 const itemsPerPage = 5;
 
+/**
+ * Manager
+ * This is the manager, that approves the booking.
+ *
+ * @type {Ref<null, null>}
+ */
 
 var script = {
   __name: 'T-Approve',
@@ -2316,13 +2517,54 @@ var script = {
     default: () => []
   }
 },
-  setup(__props) {
+  emits: ['confirm'],
+  setup(__props, { emit: __emit }) {
 
+/**
+ * The T-Approve component
+ *
+ * The purpose of this component is to allow the user to select a manager to approve a booking.
+ *
+ * @component
+ *
+ */
+const emit = __emit;
+
+/**
+ * Define the Properties for this component
+ */
 const props = __props;
-const {t} = useI18n({ useScope: 'global' });
+const {t} = useI18n({useScope: 'global'});
 
+/**
+ * Search query
+ * This is used for the search input
+ *
+ * @type {Ref<UnwrapRef<string>, UnwrapRef<string> | string>}
+ */
 const searchQuery = ref('');
+
+/**
+ * Current page
+ * This is used for the pagination
+ *
+ * @type {Ref<UnwrapRef<number>, UnwrapRef<number> | number>}
+ */
 const currentPage = ref(1);
+
+/**
+ * Items per page
+ * This is used for the pagination
+ *
+ * @type {number}
+ */
+const manager = ref(null);
+
+/**
+ * Filtered contacts
+ *
+ * @type {ComputedRef<*>}
+ */
 const filteredContacts = computed(() => {
   return props.contacts.filter(contact =>
       contact.name.firstName.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
@@ -2330,28 +2572,73 @@ const filteredContacts = computed(() => {
   );
 });
 
+/**
+ * Paginated contacts
+ *
+ * @type {ComputedRef<*>}
+ */
 const paginatedContacts = computed(() => {
   const start = (currentPage.value - 1) * itemsPerPage;
   const end = start + itemsPerPage;
   return filteredContacts.value.slice(start, end);
 });
 
+/**
+ * Total pages
+ *
+ * @type {ComputedRef<number>}
+ */
 const totalPages = computed(() => {
   return Math.ceil(filteredContacts.value.length / itemsPerPage);
 });
 
+/**
+ * Change page
+ *
+ * @param page
+ */
 function goToPage(page) {
   if (page >= 1 && page <= totalPages.value) {
     currentPage.value = page;
   }
 }
-// Watch the searchQuery and reset the currentPage to 1 when it changes
+
+/**
+ * Update the manager
+ *
+ * @param contact
+ */
+function updateManager(contact) {
+  manager.value = contact;
+}
+
+/**
+ * Name
+ *
+ * @returns {string}
+ */
+function name() {
+  if (!manager.value) {
+    return t('approve.selectApprove');
+  }
+
+  return t('approve.sendRequestToApprove', {'name': manager.value.name.firstName + ' ' + manager.value.name.lastName});
+}
+
+function confirm(confirm) {
+  emit('confirm', confirm);
+}
+
+/**
+ * Watch the searchQuery and reset the currentPage to 1 when it changes
+ */
 watch(searchQuery, () => {
   currentPage.value = 1;
+  manager.value = null;
 });
 
 return (_ctx, _cache) => {
-  return (openBlock(), createBlock(script$2, { show: true }, {
+  return (openBlock(), createBlock(script$5, { show: true }, {
     default: withCtx(() => [
       createElementVNode("div", _hoisted_1, [
         createElementVNode("div", _hoisted_2, [
@@ -2368,93 +2655,32 @@ return (_ctx, _cache) => {
               createVNode(unref(DialogPanel), null, {
                 default: withCtx(() => [
                   createElementVNode("div", _hoisted_3, [
-                    createElementVNode("div", _hoisted_4, [
-                      createElementVNode("div", _hoisted_5, [
-                        createElementVNode("label", _hoisted_6, toDisplayString(unref(t)('approve.title')), 1 /* TEXT */),
-                        createElementVNode("div", _hoisted_7, [
-                          withDirectives(createElementVNode("input", {
-                            "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => ((searchQuery).value = $event)),
-                            type: "text",
-                            name: "search",
-                            id: "search",
-                            placeholder: unref(t)('approve.searchPlaceholder'),
-                            class: "block w-full rounded-xl border-0 py-2 pr-14 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-taa-brand-dark-blue sm:text-sm sm:leading-6"
-                          }, null, 8 /* PROPS */, _hoisted_8), [
-                            [vModelText, searchQuery.value]
-                          ])
-                        ])
-                      ]),
-                      createElementVNode("ul", _hoisted_9, [
+                    createVNode(script$2, {
+                      modelValue: searchQuery.value,
+                      "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => ((searchQuery).value = $event))
+                    }, null, 8 /* PROPS */, ["modelValue"]),
+                    createVNode(script$1, null, {
+                      default: withCtx(() => [
                         (openBlock(true), createElementBlock(Fragment, null, renderList(paginatedContacts.value, (contact, index) => {
-                          return (openBlock(), createBlock(script$1, {
+                          return (openBlock(), createBlock(script$4, {
                             key: index,
-                            contact: contact
-                          }, null, 8 /* PROPS */, ["contact"]))
+                            contact: contact,
+                            manager: manager.value,
+                            onClick: updateManager
+                          }, null, 8 /* PROPS */, ["contact", "manager"]))
                         }), 128 /* KEYED_FRAGMENT */))
                       ]),
-                      (0 < paginatedContacts.value.length)
-                        ? (openBlock(), createElementBlock("div", _hoisted_10, [
-                            createElementVNode("div", _hoisted_11, [
-                              createElementVNode("button", {
-                                onClick: _cache[1] || (_cache[1] = $event => (goToPage(currentPage.value - 1))),
-                                disabled: currentPage.value === 1,
-                                class: "relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
-                              }, [
-                                _cache[5] || (_cache[5] = createElementVNode("span", { class: "sr-only" }, "Previous", -1 /* HOISTED */)),
-                                createVNode(unref(ChevronLeftIcon), {
-                                  class: "h-5 w-5",
-                                  "aria-hidden": "true"
-                                })
-                              ], 8 /* PROPS */, _hoisted_12),
-                              createElementVNode("button", {
-                                onClick: _cache[2] || (_cache[2] = $event => (goToPage(currentPage.value + 1))),
-                                disabled: currentPage.value === totalPages.value,
-                                class: "relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
-                              }, [
-                                _cache[6] || (_cache[6] = createElementVNode("span", { class: "sr-only" }, "Next", -1 /* HOISTED */)),
-                                createVNode(unref(ChevronRightIcon), {
-                                  class: "h-5 w-5",
-                                  "aria-hidden": "true"
-                                })
-                              ], 8 /* PROPS */, _hoisted_13)
-                            ]),
-                            createElementVNode("div", _hoisted_14, [
-                              _cache[7] || (_cache[7] = createElementVNode("div", null, null, -1 /* HOISTED */)),
-                              createElementVNode("nav", _hoisted_15, [
-                                createElementVNode("button", {
-                                  onClick: _cache[3] || (_cache[3] = $event => (goToPage(currentPage.value - 1))),
-                                  disabled: currentPage.value === 1,
-                                  class: normalizeClass([{'hover:bg-gray-50 text-gray-400': currentPage.value === 1}, "relative inline-flex items-center rounded-l-md px-2 py-2 ring-1 ring-inset ring-gray-300 focus:z-20 focus:outline-offset-0"])
-                                }, [
-                                  createElementVNode("span", _hoisted_17, toDisplayString(unref(t)('Previous')), 1 /* TEXT */),
-                                  createVNode(unref(ChevronLeftIcon), {
-                                    class: normalizeClass([{'fill-gray-400': currentPage.value === 1}, "h-5 w-5"]),
-                                    "aria-hidden": "true"
-                                  }, null, 8 /* PROPS */, ["class"])
-                                ], 10 /* CLASS, PROPS */, _hoisted_16),
-                                (openBlock(true), createElementBlock(Fragment, null, renderList(totalPages.value, (page) => {
-                                  return (openBlock(), createElementBlock("button", {
-                                    key: page,
-                                    onClick: $event => (goToPage(page)),
-                                    class: normalizeClass([{ 'z-10 bg-white text-taa-brand-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600': page === currentPage.value }, "relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"])
-                                  }, toDisplayString(page), 11 /* TEXT, CLASS, PROPS */, _hoisted_18))
-                                }), 128 /* KEYED_FRAGMENT */)),
-                                createElementVNode("button", {
-                                  onClick: _cache[4] || (_cache[4] = $event => (goToPage(currentPage.value + 1))),
-                                  disabled: currentPage.value === totalPages.value,
-                                  class: normalizeClass([{'hover:bg-gray-50': currentPage.value !== totalPages.value}, "relative inline-flex items-center rounded-r-md px-2 py-2 ring-1 ring-inset ring-gray-300 focus:z-20 focus:outline-offset-0"])
-                                }, [
-                                  createElementVNode("span", _hoisted_20, toDisplayString(unref(t)('Next')), 1 /* TEXT */),
-                                  createVNode(unref(ChevronRightIcon), {
-                                    class: normalizeClass([{'fill-gray-400': currentPage.value === totalPages.value}, "h-5 w-5"]),
-                                    "aria-hidden": "true"
-                                  }, null, 8 /* PROPS */, ["class"])
-                                ], 10 /* CLASS, PROPS */, _hoisted_19)
-                              ])
-                            ])
-                          ]))
-                        : createCommentVNode("v-if", true)
-                    ])
+                      _: 1 /* STABLE */
+                    }),
+                    createVNode(script$3, {
+                      currentPage: currentPage.value,
+                      totalPages: totalPages.value,
+                      goToPage: goToPage,
+                      manager: manager.value,
+                      name: name,
+                      onConfirmEvent: _cache[1] || (_cache[1] = (contact) => confirm(contact)),
+                      paginatedContacts: paginatedContacts.value
+                    }, null, 8 /* PROPS */, ["currentPage", "totalPages", "manager", "paginatedContacts"])
                   ])
                 ]),
                 _: 1 /* STABLE */
@@ -2472,4 +2698,4 @@ return (_ctx, _cache) => {
 
 };
 
-export { script as TApprove, script$d as TBirthdayInput, script$h as TButton, script$3 as TDaysSelector, script$c as TEmailInput, script$e as TFlightOffer, script$g as TFlightOfferList, script$b as TGenderInput, script$a as TNameInput, script$7 as TPassenger, script$6 as TPassengersList, script$5 as TUpsellOffer, script$4 as TUpsellOfferList, script$9 as TVueTelInput, mapSegmentsToItinerariesDays };
+export { script as TApprove, script$g as TBirthdayInput, script$k as TButton, script$6 as TDaysSelector, script$f as TEmailInput, script$h as TFlightOffer, script$j as TFlightOfferList, script$e as TGenderInput, script$d as TNameInput, script$a as TPassenger, script$9 as TPassengersList, script$8 as TUpsellOffer, script$7 as TUpsellOfferList, script$c as TVueTelInput, mapSegmentsToItinerariesDays };

@@ -2270,18 +2270,136 @@
     font-weight: 100;
     color: #1B1D21;
 }
-.t-contact-list {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 1rem
+.t-holder {
+    z-index: 10;
+    width: 100vw;
+    overflow-y: auto;
+    inset: 0;
+    position: fixed;
 }
 
-.pagination button:disabled {
+.t-holder .t-content {
+    position: relative;
+    width: 100%;
+    max-width: 42rem;
+    margin: 5rem auto;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
+    transition-duration: 150ms;
+}
 
+.t-holder .t-approve {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    text-align: left;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    padding: 1.25rem 1rem 1rem;;
+}
+
+
+.t-pagination {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.t-pagination .small {
+    display: flex;
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.t-pagination .small .button {
+    --tw-border-opacity: 1;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 0.375rem;
+    border-width: 1px;
+    border-color: rgb(209 213 219 / var(--tw-border-opacity));
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem/* 14px */;
+    line-height: 1.25rem/* 20px */;
+    font-weight: 500;
+    color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
+.t-pagination .small .button:disabled {
+    opacity: 0.5;
     cursor: not-allowed;
+}
 
-    opacity: 0.5
+.t-pagination .small .button:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+
+.t-pagination .small .back {
+
+}
+
+.t-pagination .small .next {
+    margin-left: 0.75rem;
+}
+
+@media (min-width: 640px) {
+    .t-pagination .small {
+        display: none;
+    }
+}
+.t-search {
+    padding-bottom: 0.75rem;
+}
+
+.t-search .t-search-label {
+    --tw-text-opacity: 1;
+    display: block;
+    font-weight: 500;
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75rem; /* 28px */
+    color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
+.t-search .t-search-input {
+    position: relative;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.t-search .t-search-input .t-input {
+    --tw-text-opacity: 1;
+    color: rgb(17 24 39 / var(--tw-text-opacity));
+    display: block;
+    width: 100%;
+    border-radius: 0.75rem;
+    border-width: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-right: 3.5rem;
+}
+
+.t-search .t-search-input .t-input:focus {
+    --tw-ring-inset: inset;
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgb(8 83 134 / var(--tw-ring-opacity));
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
+}
+
+
+
+
+.t-contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }

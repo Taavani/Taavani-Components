@@ -31,7 +31,7 @@ function updateSearchQuery(event) {
              :value="modelValue"
              @input="updateSearchQuery"
              :placeholder="t('approve.searchPlaceholder')"
-             class="shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-taa-brand-dark-blue sm:text-sm sm:leading-6"/>
+             class="t-input shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6"/>
     </div>
   </div>
 </template>
