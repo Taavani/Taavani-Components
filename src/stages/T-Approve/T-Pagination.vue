@@ -40,27 +40,34 @@ const {t} = useI18n({useScope: 'global'});
        class="t-pagination">
     <div v-if="paginatedContacts.length > 4"
          class="small">
-      <button @click="goToPage(currentPage - 1)"
-              :disabled="currentPage === 1"
-              class="button back"
-              aria-label="Pagination"
-      >
+      <div>
+        <button @click="goToPage(currentPage - 1)"
+                :disabled="currentPage === 1"
+                class="button back"
+                aria-label="Pagination"
+        >
                     <span class="sr-only">
                       {{ t('Previous') }}
                     </span>
-        <ChevronLeftIcon class="h-5 w-5"
-                         aria-hidden="true"
-        />
-      </button>
-      <button @click="goToPage(currentPage + 1)" :disabled="currentPage === totalPages"
-              class="button next">
+          <ChevronLeftIcon class="h-5 w-5"
+                           aria-hidden="true"
+          />
+        </button>
+        <button @click="goToPage(currentPage + 1)" :disabled="currentPage === totalPages"
+                class="button next">
                     <span class="sr-only">
                       {{ t('Next') }}
                     </span>
-        <ChevronRightIcon class="h-5 w-5"
-                          aria-hidden="true"
-        />
-      </button>
+          <ChevronRightIcon class="h-5 w-5"
+                            aria-hidden="true"
+          />
+        </button>
+      </div>
+      <div>
+        <t-button :title="name()" :disabled="!manager"></t-button>
+
+      </div>
+
     </div>
     <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
       <nav v-if="paginatedContacts.length > 4"

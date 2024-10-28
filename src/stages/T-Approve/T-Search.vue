@@ -1,5 +1,6 @@
 <script setup>
 import {useI18n} from 'vue-i18n'
+import './T-Search.css'
 
 const emit = defineEmits(['update:modelValue'])
 
@@ -19,7 +20,7 @@ function updateSearchQuery(event) {
 <template>
   <div class="t-search">
     <label for="search"
-           class="t-search-label"
+           class="t-search-label text"
     >
       {{ t('approve.title') }}
     </label>

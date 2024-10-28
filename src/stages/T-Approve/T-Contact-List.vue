@@ -1,5 +1,5 @@
 <script setup>
-
+  import './T-Contact-List.css'
 </script>
 
 <template>

@@ -6,6 +6,8 @@
 .t-pagination .small {
     display: flex;
     flex: 1 1 0;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .t-pagination .small .button {
