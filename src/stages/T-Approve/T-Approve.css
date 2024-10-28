@@ -1,7 +1,67 @@
-.t-contact-list {
-    @apply flex flex-col gap-4;
+.t-holder {
+    z-index: 10;
+    width: 100vw;
+    overflow-y: auto;
+    inset: 0;
+    position: fixed;
 }
 
-.pagination button:disabled {
-    @apply opacity-50 cursor-not-allowed;
+.t-holder .t-content {
+    position: relative;
+    width: 100%;
+    max-width: 42rem;
+    margin: 5rem auto;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
+    transition-duration: 150ms;
+}
+
+.t-holder .t-approve {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    text-align: left;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    padding: 1.25rem 1rem 1rem;;
+}
+
+.t-search {
+    padding-bottom: 0.75rem;
+}
+
+.t-search .t-search-label {
+    --tw-text-opacity: 1;
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
+.t-search .t-search-input {
+    position: relative;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.t-search .t-search-input input {
+    --tw-text-opacity: 1;
+    color: rgb(17 24 39 / var(--tw-text-opacity));
+    display: block;
+    width: 100%;
+    border-radius: 0.75rem;
+    border-width: 0;
+    padding-top: 0.5rem/* 8px */;
+    padding-bottom: 0.5rem/* 8px */;
+    padding-right: 3.5rem/* 56px */;
+}
+
+.t-contact-list {
+    @apply flex flex-col gap-4;
 }

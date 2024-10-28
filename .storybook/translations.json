@@ -146,7 +146,9 @@
     },
     "approve": {
       "title": "Select manager to approve your booking",
-      "searchPlaceholder": "Search for manager"
+      "searchPlaceholder": "Search for manager",
+      "selectApprove": "Select person to approve",
+      "sendRequestToApprove": "Send to {name} for approval"
     },
     "confirmOffer": {
       "bookingReference": "Booking reference",
