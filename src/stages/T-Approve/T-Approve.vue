@@ -156,6 +156,7 @@ watch(searchQuery, () => {
                 <t-contact v-for="(contact, index) in paginatedContacts"
                            :key="index"
                            :contact="contact"
+                           :manager="manager"
                            @click="updateManager">
                 </t-contact>
               </t-contact-list>

@@ -20,7 +20,7 @@ function updateSearchQuery(event) {
 <template>
   <div class="t-search">
     <label for="search"
-           class="t-search-label text"
+           class="t-search-label"
     >
       {{ t('approve.title') }}
     </label>

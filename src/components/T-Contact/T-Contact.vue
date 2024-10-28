@@ -9,6 +9,10 @@ defineProps({
         lastName: ''
       }
     })
+  },
+  manager: {
+    type: Object,
+    default: null
   }
 })
 
@@ -18,7 +22,8 @@ const emit = defineEmits(['click'])
 
 <template>
   <li class="flex">
-    <button class="grow flex items-center pr-4 bg-white rounded-xl ring-1 ring-inset ring-gray-300 px-2 py-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-taa-brand-dark-blue"
+    <button :class="{ 'bg-taa-brand-dark-blue': manager && manager.id === contact.id }"
+            class="grow flex items-center pr-4 bg-white rounded-xl ring-1 ring-inset ring-gray-300 px-2 py-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-taa-brand-dark-blue"
             aria-setsize="4"
             @click="() => emit('click', contact)"
     >
@@ -26,7 +31,9 @@ const emit = defineEmits(['click'])
              :src="'https://ui-avatars.com/api/?name=' + (contact.name.firstName.length > 0 ? contact.name.firstName[0] : 'p') + '&color=828282&background=D3F8F0'"
              alt=""
         />
-        <span class="grow text-neutral-600 text-left">
+        <span class="grow text-neutral-600 text-left"
+              :class="{ 'text-white': manager && manager.id === contact.id }"
+        >
           {{
             contact.name.firstName.length !== 0 ? contact.name.firstName : ''
           }}
