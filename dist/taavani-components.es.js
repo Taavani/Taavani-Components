@@ -1,12 +1,19 @@
-import { computed, openBlock, createElementBlock, normalizeClass, toDisplayString, renderSlot, createStaticVNode, ref, createElementVNode, createCommentVNode, createVNode, createTextVNode, unref, onMounted, Fragment, renderList, watch, createBlock, withCtx, Transition, reactive, resolveComponent, toRaw, isProxy, onUnmounted } from 'vue';
+import { computed, openBlock, createElementBlock, normalizeClass, toDisplayString, renderSlot, createStaticVNode, ref, createElementVNode, createCommentVNode, createVNode, createTextVNode, unref, onMounted, Fragment, renderList, watch, createBlock, withCtx, Transition, reactive, toRaw, isProxy, onUnmounted } from 'vue';
 import { parse } from 'tinyduration';
 import useVuelidate$1, { useVuelidate } from '@vuelidate/core';
 import { required, minValue, maxValue, email, minLength } from '@vuelidate/validators';
-import { EnvelopeIcon, ChevronUpDownIcon, CheckIcon, CheckCircleIcon, UserIcon, ChevronDownIcon, ChevronUpIcon, ExclamationCircleIcon } from '@heroicons/vue/20/solid';
+import { EnvelopeIcon, ChevronUpDownIcon, CheckIcon } from '@heroicons/vue/20/solid';
 import { Listbox, ListboxLabel, ListboxButton, ListboxOptions, ListboxOption, TransitionRoot, Dialog, TransitionChild, DialogPanel } from '@headlessui/vue';
+import CheckCircle from '@heroicons/vue/20/solid/CheckCircleIcon';
+import ExclamationCircleIcon from '@heroicons/vue/20/solid/ExclamationCircleIcon';
+import ChevronDownIcon from '@heroicons/vue/20/solid/ChevronDownIcon';
+import ChevronUpIcon from '@heroicons/vue/20/solid/ChevronUpIcon';
+import UserIcon from '@heroicons/vue/20/solid/UserIcon';
 import { VueTelInput } from 'vue-tel-input';
 import { useI18n } from 'vue-i18n';
-import { CheckIcon as CheckIcon$1, MinusIcon, CurrencyEuroIcon } from '@heroicons/vue/24/outline';
+import checked from '@heroicons/vue/24/outline/CheckIcon.js';
+import noChecked from '@heroicons/vue/24/outline/CurrencyEuroIcon.js';
+import MinusIcon from '@heroicons/vue/24/outline/MinusIcon.js';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/16/solid/index.js';
 
 var script$k = {
@@ -1502,8 +1509,6 @@ watch(v$, (value) => {
 
 
 return (_ctx, _cache) => {
-  const _component_check_circle = resolveComponent("check-circle");
-
   return (openBlock(), createElementBlock("div", _hoisted_1$9, [
     createElementVNode("div", {
       class: normalizeClass({ header: true, 'pb-4': extended.value })
@@ -1517,7 +1522,7 @@ return (_ctx, _cache) => {
         createElementVNode("h1", _hoisted_4$4, toDisplayString(passenger.name.firstName.length !== 0 ? passenger.name.firstName : _ctx.$t('passengers.placeholder', (Number(passenger.id) + 1))) + " " + toDisplayString(passenger.name.lastName.length !== 0 ? passenger.name.lastName : ''), 1 /* TEXT */),
         (isTravelerValid())
           ? (openBlock(), createElementBlock("div", _hoisted_5$2, [
-              createVNode(unref(CheckCircleIcon), { class: "text-success-900" })
+              createVNode(unref(CheckCircle), { class: "text-success-900" })
             ]))
           : createCommentVNode("v-if", true)
       ]),
@@ -1625,7 +1630,7 @@ return (_ctx, _cache) => {
               onClick: () => selectTraveler(employee)
             }, [
               (!unref(v$).$error && passenger.contact.emailAddress === employee.contact.emailAddress)
-                ? (openBlock(), createBlock(_component_check_circle, {
+                ? (openBlock(), createBlock(unref(CheckCircle), {
                     key: 0,
                     class: "w-8 stroke-green-500 text-green-500"
                   }))
@@ -1924,7 +1929,7 @@ return (_ctx, _cache) => {
             (exchange.value.active)
               ? (openBlock(), createElementBlock("li", _hoisted_7$1, [
                   createElementVNode("div", _hoisted_8$1, [
-                    createVNode(unref(CheckIcon$1), { class: "h-5 w-5 text-gray-900" }),
+                    createVNode(unref(checked), { class: "h-5 w-5 text-gray-900" }),
                     createElementVNode("p", _hoisted_9$1, toDisplayString(unref(t)('flightOfferExtended.exchangeable', exchange.value.amount)), 1 /* TEXT */)
                   ])
                 ]))
@@ -1940,7 +1945,7 @@ return (_ctx, _cache) => {
             (refund.value.active)
               ? (openBlock(), createElementBlock("li", _hoisted_13$1, [
                   createElementVNode("div", _hoisted_14$1, [
-                    createVNode(unref(CheckIcon$1), { class: "h-5 w-5 text-gray-900" }),
+                    createVNode(unref(checked), { class: "h-5 w-5 text-gray-900" }),
                     createElementVNode("p", _hoisted_15, toDisplayString(unref(t)('flightOfferExtended.refundable', refund.value.amount)), 1 /* TEXT */)
                   ])
                 ]))
@@ -1956,7 +1961,7 @@ return (_ctx, _cache) => {
             (unref(baggageEntity).quantity)
               ? (openBlock(), createElementBlock("li", _hoisted_19, [
                   createElementVNode("div", _hoisted_20, [
-                    createVNode(unref(CheckIcon$1), { class: "h-5 w-5 text-gray-900" }),
+                    createVNode(unref(checked), { class: "h-5 w-5 text-gray-900" }),
                     createElementVNode("p", _hoisted_21, toDisplayString(unref(t)('flightOfferExtended.includedBaggage', unref(baggageEntity).quantity)), 1 /* TEXT */)
                   ])
                 ]))
@@ -1964,7 +1969,7 @@ return (_ctx, _cache) => {
             (unref(baggageEntity).weight)
               ? (openBlock(), createElementBlock("li", _hoisted_22, [
                   createElementVNode("div", _hoisted_23, [
-                    createVNode(unref(CheckIcon$1), { class: "h-5 w-5 text-gray-900" }),
+                    createVNode(unref(checked), { class: "h-5 w-5 text-gray-900" }),
                     createElementVNode("p", _hoisted_24, toDisplayString(unref(t)('flightOfferExtended.includedBaggageWeight', {
                   weight: unref(baggageEntity).weight,
                   unit: unref(baggageEntity).weightUnit
@@ -1982,7 +1987,7 @@ return (_ctx, _cache) => {
             (openBlock(true), createElementBlock(Fragment, null, renderList(unref(included), (bag) => {
               return (openBlock(), createElementBlock("li", _hoisted_27, [
                 createElementVNode("div", _hoisted_28, [
-                  createVNode(unref(CheckIcon$1), { class: "h-5 w-5 text-gray-900" }),
+                  createVNode(unref(checked), { class: "h-5 w-5 text-gray-900" }),
                   createElementVNode("p", _hoisted_29, toDisplayString(bag.description), 1 /* TEXT */)
                 ])
               ]))
@@ -1997,7 +2002,7 @@ return (_ctx, _cache) => {
             (openBlock(true), createElementBlock(Fragment, null, renderList(unref(excluded), (meal) => {
               return (openBlock(), createElementBlock("li", _hoisted_32, [
                 createElementVNode("div", _hoisted_33, [
-                  createVNode(unref(CurrencyEuroIcon), { class: "h-5 w-5 text-gray-900" }),
+                  createVNode(unref(noChecked), { class: "h-5 w-5 text-gray-900" }),
                   createElementVNode("p", _hoisted_34, toDisplayString(meal.description), 1 /* TEXT */)
                 ])
               ]))

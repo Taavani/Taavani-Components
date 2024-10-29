@@ -3,11 +3,7 @@ import {computed, reactive, ref, watch} from "vue"
 import {useVuelidate} from "@vuelidate/core"
 import {email, minLength, required} from "@vuelidate/validators"
 
-import CheckCircle from '@heroicons/vue/20/solid/CheckCircleIcon'
-import ExclamationCircleIcon from '@heroicons/vue/20/solid/ExclamationCircleIcon'
-import ChevronDownIcon from '@heroicons/vue/20/solid/ChevronDownIcon'
-import ChevronUpIcon from '@heroicons/vue/20/solid/ChevronUpIcon'
-import UserIcon from "@heroicons/vue/20/solid/UserIcon";
+import { ExclamationCircleIcon, CheckCircleIcon, ChevronDownIcon, ChevronUpIcon, UserIcon } from '@heroicons/vue/20/solid'
 import Traveler from './Passenger.js'
 import './T-Passenger.css'
 
@@ -266,7 +262,7 @@ watch(v$, (value) => {
           {{ passenger.name.lastName.length !== 0 ? passenger.name.lastName : '' }}
         </h1>
         <div v-if="isTravelerValid()" class="w-8">
-          <check-circle class="text-success-900"></check-circle>
+          <check-circle-icon class="text-success-900"></check-circle-icon>
         </div>
       </div>
 

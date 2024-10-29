@@ -1,13 +1,15 @@
-import { computed, openBlock, createElementBlock, normalizeClass, toDisplayString, renderSlot, createStaticVNode, ref, createElementVNode, createCommentVNode, createVNode, createTextVNode, unref, onMounted, Fragment, renderList, watch, createBlock, withCtx, Transition, reactive, resolveComponent, toRaw, isProxy, onUnmounted } from 'vue';
-import { parse } from 'tinyduration';
-import useVuelidate$1, { useVuelidate } from '@vuelidate/core';
-import { required, minValue, maxValue, email, minLength } from '@vuelidate/validators';
-import { EnvelopeIcon, ChevronUpDownIcon, CheckIcon, CheckCircleIcon, UserIcon, ChevronDownIcon, ChevronUpIcon, ExclamationCircleIcon } from '@heroicons/vue/20/solid';
-import { Listbox, ListboxLabel, ListboxButton, ListboxOptions, ListboxOption, TransitionRoot, Dialog, TransitionChild, DialogPanel } from '@headlessui/vue';
-import { VueTelInput } from 'vue-tel-input';
-import { useI18n } from 'vue-i18n';
-import { CheckIcon as CheckIcon$1, MinusIcon, CurrencyEuroIcon } from '@heroicons/vue/24/outline';
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/16/solid/index.js';
+'use strict';
+
+var vue = require('vue');
+var tinyduration = require('tinyduration');
+var useVuelidate = require('@vuelidate/core');
+var validators = require('@vuelidate/validators');
+var solid = require('@heroicons/vue/20/solid');
+var vue$1 = require('@headlessui/vue');
+var vueTelInput = require('vue-tel-input');
+var vueI18n = require('vue-i18n');
+var outline = require('@heroicons/vue/24/outline');
+var index_js = require('@heroicons/vue/16/solid/index.js');
 
 var script$k = {
   __name: 'T-Button',
@@ -27,16 +29,16 @@ var script$k = {
 
 const props = __props;
 
-const classes = computed(() => ({
+const classes = vue.computed(() => ({
   't-button': true,
   [`t-button--${props.coat || 'solid-blue'}`]: true,
 }));
 
 return (_ctx, _cache) => {
-  return (openBlock(), createElementBlock("button", {
+  return (vue.openBlock(), vue.createElementBlock("button", {
     type: "button",
-    class: normalizeClass(classes.value)
-  }, toDisplayString(__props.title), 3 /* TEXT, CLASS */))
+    class: vue.normalizeClass(classes.value)
+  }, vue.toDisplayString(__props.title), 3 /* TEXT, CLASS */))
 }
 }
 
@@ -50,8 +52,8 @@ var script$j = {
 
   
 return (_ctx, _cache) => {
-  return (openBlock(), createElementBlock("ul", _hoisted_1$i, [
-    renderSlot(_ctx.$slots, "default")
+  return (vue.openBlock(), vue.createElementBlock("ul", _hoisted_1$i, [
+    vue.renderSlot(_ctx.$slots, "default")
   ]))
 }
 }
@@ -67,8 +69,8 @@ const _hoisted_1$h = {
 };
 
 function render$1(_ctx, _cache) {
-  return (openBlock(), createElementBlock("svg", _hoisted_1$h, _cache[0] || (_cache[0] = [
-    createStaticVNode("<g clip-path=\"url(#clip0_356_3298)\"><path d=\"M14.639 10.2577L19.4686 8.96358C19.981 8.82629 20.5269 8.89816 20.9862 9.16338C21.4456 9.4286 21.7808 9.86543 21.9181 10.3778C22.0554 10.8902 21.9835 11.4361 21.7183 11.8954C21.4531 12.3548 21.0162 12.69 20.5039 12.8273L6.01499 16.7096L1.5643 11.6905L4.46208 10.914L6.91157 12.3282L9.80934 11.5518L6.06576 5.30793L8.96353 4.53147L14.639 10.2577Z\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M3 21H21\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></g><defs><clipPath id=\"clip0_356_3298\"><rect width=\"24\" height=\"24\" fill=\"white\"></rect></clipPath></defs>", 2)
+  return (vue.openBlock(), vue.createElementBlock("svg", _hoisted_1$h, _cache[0] || (_cache[0] = [
+    vue.createStaticVNode("<g clip-path=\"url(#clip0_356_3298)\"><path d=\"M14.639 10.2577L19.4686 8.96358C19.981 8.82629 20.5269 8.89816 20.9862 9.16338C21.4456 9.4286 21.7808 9.86543 21.9181 10.3778C22.0554 10.8902 21.9835 11.4361 21.7183 11.8954C21.4531 12.3548 21.0162 12.69 20.5039 12.8273L6.01499 16.7096L1.5643 11.6905L4.46208 10.914L6.91157 12.3282L9.80934 11.5518L6.06576 5.30793L8.96353 4.53147L14.639 10.2577Z\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M3 21H21\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></g><defs><clipPath id=\"clip0_356_3298\"><rect width=\"24\" height=\"24\" fill=\"white\"></rect></clipPath></defs>", 2)
   ])))
 }
 
@@ -171,8 +173,8 @@ const bookingClass = props.offer.travelerPricings[0].fareDetailsBySegment[0].bra
  *
  * If fareRules are not available, show nothing
  */
-const exchange = ref('');
-const refund = ref('');
+const exchange = vue.ref('');
+const refund = vue.ref('');
 
 if (props.offer.fareRules) {
   exchange.value = props.offer.fareRules.rules.find((item) => {
@@ -211,7 +213,7 @@ function travelTime(segment) {
     return ''
   }
 
-  let time = parse(segment.duration);
+  let time = tinyduration.parse(segment.duration);
   let timeText = '';
 
   if (time.hours) {
@@ -232,115 +234,115 @@ function formatMonth(date) {
 }
 
 return (_ctx, _cache) => {
-  return (openBlock(), createElementBlock("li", _hoisted_1$g, [
-    createElementVNode("a", _hoisted_2$d, [
-      createElementVNode("div", _hoisted_3$c, [
-        createElementVNode("div", _hoisted_4$a, [
-          createCommentVNode(" Departure "),
-          createElementVNode("div", null, [
-            _cache[0] || (_cache[0] = createElementVNode("p", { class: "text-sm" }, [
-              createCommentVNode(" {{ offer.dictionary.locations[offer.itineraries[0].segments[0].departure.iataCode][$i18n.locale].city }}\n              ( {{ offer.dictionary.locations[offer.itineraries[0].segments[0].departure.iataCode][$i18n.locale].name }} ) ")
+  return (vue.openBlock(), vue.createElementBlock("li", _hoisted_1$g, [
+    vue.createElementVNode("a", _hoisted_2$d, [
+      vue.createElementVNode("div", _hoisted_3$c, [
+        vue.createElementVNode("div", _hoisted_4$a, [
+          vue.createCommentVNode(" Departure "),
+          vue.createElementVNode("div", null, [
+            _cache[0] || (_cache[0] = vue.createElementVNode("p", { class: "text-sm" }, [
+              vue.createCommentVNode(" {{ offer.dictionary.locations[offer.itineraries[0].segments[0].departure.iataCode][$i18n.locale].city }}\n              ( {{ offer.dictionary.locations[offer.itineraries[0].segments[0].departure.iataCode][$i18n.locale].name }} ) ")
             ], -1 /* HOISTED */)),
-            createElementVNode("p", _hoisted_5$6, toDisplayString(("0" + new Date(__props.offer.itineraries[0].segments[0].departure.at).getHours()).slice(-2)) + ":" + toDisplayString(("0" + new Date(__props.offer.itineraries[0].segments[0].departure.at).getMinutes()).slice(-2)), 1 /* TEXT */),
-            createElementVNode("p", _hoisted_6$6, toDisplayString(("0" + new Date(__props.offer.itineraries[0].segments[0].departure.at).getDate()).slice(-2)
+            vue.createElementVNode("p", _hoisted_5$6, vue.toDisplayString(("0" + new Date(__props.offer.itineraries[0].segments[0].departure.at).getHours()).slice(-2)) + ":" + vue.toDisplayString(("0" + new Date(__props.offer.itineraries[0].segments[0].departure.at).getMinutes()).slice(-2)), 1 /* TEXT */),
+            vue.createElementVNode("p", _hoisted_6$6, vue.toDisplayString(("0" + new Date(__props.offer.itineraries[0].segments[0].departure.at).getDate()).slice(-2)
                 + '-'
                 + ("0" + new Date(__props.offer.itineraries[0].segments[0].departure.at).getMonth()).slice(-2)
                 + '-'
                 + new Date(__props.offer.itineraries[0].segments[0].departure.at).getFullYear()), 1 /* TEXT */)
           ]),
-          createCommentVNode(" offer information "),
-          createElementVNode("div", _hoisted_7$6, [
-            createVNode(script$i, { class: "stroke-neutral-400" }),
-            createElementVNode("p", _hoisted_8$5, toDisplayString(travelTime(__props.offer.itineraries[0])), 1 /* TEXT */),
+          vue.createCommentVNode(" offer information "),
+          vue.createElementVNode("div", _hoisted_7$6, [
+            vue.createVNode(script$i, { class: "stroke-neutral-400" }),
+            vue.createElementVNode("p", _hoisted_8$5, vue.toDisplayString(travelTime(__props.offer.itineraries[0])), 1 /* TEXT */),
             (__props.offer.itineraries[0].segments.length > 1)
-              ? (openBlock(), createElementBlock("p", _hoisted_9$5, [
-                  createTextVNode(toDisplayString(__props.offer.itineraries[0].segments.length - 1) + " ", 1 /* TEXT */),
-                  createCommentVNode(" {{ $tc('flightOffers.stopover', (offer.itineraries[0].segments.length - 1)) }} ")
+              ? (vue.openBlock(), vue.createElementBlock("p", _hoisted_9$5, [
+                  vue.createTextVNode(vue.toDisplayString(__props.offer.itineraries[0].segments.length - 1) + " ", 1 /* TEXT */),
+                  vue.createCommentVNode(" {{ $tc('flightOffers.stopover', (offer.itineraries[0].segments.length - 1)) }} ")
                 ]))
-              : createCommentVNode("v-if", true)
+              : vue.createCommentVNode("v-if", true)
           ]),
-          createCommentVNode(" Arrival "),
-          createElementVNode("div", _hoisted_10$5, [
-            createElementVNode("p", _hoisted_11$5, toDisplayString(__props.offer.itineraries[0].segments[__props.offer.itineraries[0].segments.length - 1].arrival.iataCode), 1 /* TEXT */),
-            createElementVNode("p", _hoisted_12$3, toDisplayString(("0" + new Date(__props.offer.itineraries[0].segments[__props.offer.itineraries[0].segments.length - 1].arrival.at).getHours()).slice(-2)) + ":" + toDisplayString(("0" + new Date(__props.offer.itineraries[0].segments[__props.offer.itineraries[0].segments.length - 1].arrival.at).getMinutes()).slice(-2)), 1 /* TEXT */),
-            _cache[1] || (_cache[1] = createElementVNode("p", { class: "text-xs" }, [
-              createCommentVNode(" {{\n                sameDate(offer.itineraries[0].segments[0].departure.at, offer.itineraries[0].segments[offer.itineraries[0].segments.length - 1].arrival.at)\n                    ? $t('flightOffers.sameDay') : $t('flightOffers.notSameDay')\n              }}")
+          vue.createCommentVNode(" Arrival "),
+          vue.createElementVNode("div", _hoisted_10$5, [
+            vue.createElementVNode("p", _hoisted_11$5, vue.toDisplayString(__props.offer.itineraries[0].segments[__props.offer.itineraries[0].segments.length - 1].arrival.iataCode), 1 /* TEXT */),
+            vue.createElementVNode("p", _hoisted_12$3, vue.toDisplayString(("0" + new Date(__props.offer.itineraries[0].segments[__props.offer.itineraries[0].segments.length - 1].arrival.at).getHours()).slice(-2)) + ":" + vue.toDisplayString(("0" + new Date(__props.offer.itineraries[0].segments[__props.offer.itineraries[0].segments.length - 1].arrival.at).getMinutes()).slice(-2)), 1 /* TEXT */),
+            _cache[1] || (_cache[1] = vue.createElementVNode("p", { class: "text-xs" }, [
+              vue.createCommentVNode(" {{\n                sameDate(offer.itineraries[0].segments[0].departure.at, offer.itineraries[0].segments[offer.itineraries[0].segments.length - 1].arrival.at)\n                    ? $t('flightOffers.sameDay') : $t('flightOffers.notSameDay')\n              }}")
             ], -1 /* HOISTED */))
           ])
         ])
       ]),
-      _cache[3] || (_cache[3] = createStaticVNode("<div class=\"grid grid-cols-2 h-[20px]\"><div class=\"left-lower-corner border-l-2 border-neutral-300\"></div><div class=\"right-lower-corner border-dashed\"></div><div class=\"right-upper-corner border-l-2 border-neutral-300\"></div><div class=\"left-upper-corner border-dashed\"></div></div>", 1)),
-      createElementVNode("div", _hoisted_13$3, [
-        createElementVNode("div", _hoisted_14$3, toDisplayString(unref(dictionary).carriers[__props.offer.validatingAirlineCodes[0]]) + " | " + toDisplayString(unref(bookingClass)), 1 /* TEXT */),
-        createElementVNode("div", _hoisted_15$2, [
-          _cache[2] || (_cache[2] = createElementVNode("div", { class: "text-xs" }, [
-            createCommentVNode(" {{ $t('flightOffers.priceFrom') }} ")
+      _cache[3] || (_cache[3] = vue.createStaticVNode("<div class=\"grid grid-cols-2 h-[20px]\"><div class=\"left-lower-corner border-l-2 border-neutral-300\"></div><div class=\"right-lower-corner border-dashed\"></div><div class=\"right-upper-corner border-l-2 border-neutral-300\"></div><div class=\"left-upper-corner border-dashed\"></div></div>", 1)),
+      vue.createElementVNode("div", _hoisted_13$3, [
+        vue.createElementVNode("div", _hoisted_14$3, vue.toDisplayString(vue.unref(dictionary).carriers[__props.offer.validatingAirlineCodes[0]]) + " | " + vue.toDisplayString(vue.unref(bookingClass)), 1 /* TEXT */),
+        vue.createElementVNode("div", _hoisted_15$2, [
+          _cache[2] || (_cache[2] = vue.createElementVNode("div", { class: "text-xs" }, [
+            vue.createCommentVNode(" {{ $t('flightOffers.priceFrom') }} ")
           ], -1 /* HOISTED */)),
-          createElementVNode("div", _hoisted_16$2, toDisplayString(__props.offer.price.grandTotal) + " " + toDisplayString(__props.offer.price.currency), 1 /* TEXT */)
+          vue.createElementVNode("div", _hoisted_16$2, vue.toDisplayString(__props.offer.price.grandTotal) + " " + vue.toDisplayString(__props.offer.price.currency), 1 /* TEXT */)
         ])
       ])
     ]),
-    createElementVNode("a", _hoisted_17$2, [
-      createElementVNode("div", _hoisted_18$1, [
-        createElementVNode("div", _hoisted_19$1, [
-          createElementVNode("div", _hoisted_20$1, [
-            createElementVNode("p", _hoisted_21$1, toDisplayString(__props.offer.dictionary.locations[__props.offer.itineraries[0].segments[0].departure.iataCode][_ctx.$i18n.locale].city) + " (" + toDisplayString(__props.offer.itineraries[0].segments[0].departure.iataCode) + ") ", 1 /* TEXT */),
-            createElementVNode("p", _hoisted_22$1, [
-              createElementVNode("time", null, toDisplayString(("0" + new Date(__props.offer.itineraries[0].segments[0].departure.at).getHours()).slice(-2)) + ":" + toDisplayString(("0" + new Date(__props.offer.itineraries[0].segments[0].departure.at).getMinutes()).slice(-2)), 1 /* TEXT */)
+    vue.createElementVNode("a", _hoisted_17$2, [
+      vue.createElementVNode("div", _hoisted_18$1, [
+        vue.createElementVNode("div", _hoisted_19$1, [
+          vue.createElementVNode("div", _hoisted_20$1, [
+            vue.createElementVNode("p", _hoisted_21$1, vue.toDisplayString(__props.offer.dictionary.locations[__props.offer.itineraries[0].segments[0].departure.iataCode][_ctx.$i18n.locale].city) + " (" + vue.toDisplayString(__props.offer.itineraries[0].segments[0].departure.iataCode) + ") ", 1 /* TEXT */),
+            vue.createElementVNode("p", _hoisted_22$1, [
+              vue.createElementVNode("time", null, vue.toDisplayString(("0" + new Date(__props.offer.itineraries[0].segments[0].departure.at).getHours()).slice(-2)) + ":" + vue.toDisplayString(("0" + new Date(__props.offer.itineraries[0].segments[0].departure.at).getMinutes()).slice(-2)), 1 /* TEXT */)
             ]),
-            createElementVNode("p", _hoisted_23$1, [
-              createElementVNode("time", null, toDisplayString(("0" + new Date(__props.offer.itineraries[0].segments[0].departure.at).getDate()).slice(-2)
+            vue.createElementVNode("p", _hoisted_23$1, [
+              vue.createElementVNode("time", null, vue.toDisplayString(("0" + new Date(__props.offer.itineraries[0].segments[0].departure.at).getDate()).slice(-2)
                   + '-'
                   + formatMonth(__props.offer.itineraries[0].segments[0].departure.at)
                   + '-'
                   + new Date(__props.offer.itineraries[0].segments[0].departure.at).getFullYear()), 1 /* TEXT */)
             ])
           ]),
-          createElementVNode("div", _hoisted_24$1, [
-            createVNode(script$i, { class: "icon" }),
-            createElementVNode("p", _hoisted_25$1, [
-              createElementVNode("time", null, toDisplayString(travelTime(__props.offer.itineraries[0])), 1 /* TEXT */)
+          vue.createElementVNode("div", _hoisted_24$1, [
+            vue.createVNode(script$i, { class: "icon" }),
+            vue.createElementVNode("p", _hoisted_25$1, [
+              vue.createElementVNode("time", null, vue.toDisplayString(travelTime(__props.offer.itineraries[0])), 1 /* TEXT */)
             ]),
             (__props.offer.itineraries[0].segments.length > 1)
-              ? (openBlock(), createElementBlock("p", _hoisted_26$1, toDisplayString(__props.offer.itineraries[0].segments.length - 1) + " " + toDisplayString(_ctx.$t('flightOffers.stopover', (__props.offer.itineraries[0].segments.length - 1))), 1 /* TEXT */))
-              : createCommentVNode("v-if", true)
+              ? (vue.openBlock(), vue.createElementBlock("p", _hoisted_26$1, vue.toDisplayString(__props.offer.itineraries[0].segments.length - 1) + " " + vue.toDisplayString(_ctx.$t('flightOffers.stopover', (__props.offer.itineraries[0].segments.length - 1))), 1 /* TEXT */))
+              : vue.createCommentVNode("v-if", true)
           ]),
-          createCommentVNode(" Arrival "),
-          createElementVNode("div", _hoisted_27$1, [
-            createElementVNode("p", _hoisted_28$1, toDisplayString(__props.offer.dictionary.locations[__props.offer.itineraries[0].segments[__props.offer.itineraries[0].segments.length - 1].arrival.iataCode][_ctx.$i18n.locale].city) + " (" + toDisplayString(__props.offer.itineraries[0].segments[__props.offer.itineraries[0].segments.length - 1].arrival.iataCode) + ") ", 1 /* TEXT */),
-            createElementVNode("p", _hoisted_29$1, toDisplayString(("0" + new Date(__props.offer.itineraries[0].segments[__props.offer.itineraries[0].segments.length - 1].arrival.at).getHours()).slice(-2)) + ":" + toDisplayString(("0" + new Date(__props.offer.itineraries[0].segments[__props.offer.itineraries[0].segments.length - 1].arrival.at).getMinutes()).slice(-2)), 1 /* TEXT */),
-            createElementVNode("p", _hoisted_30$1, toDisplayString(sameDate(__props.offer.itineraries[0].segments[0].departure.at, __props.offer.itineraries[0].segments[__props.offer.itineraries[0].segments.length - 1].arrival.at)
+          vue.createCommentVNode(" Arrival "),
+          vue.createElementVNode("div", _hoisted_27$1, [
+            vue.createElementVNode("p", _hoisted_28$1, vue.toDisplayString(__props.offer.dictionary.locations[__props.offer.itineraries[0].segments[__props.offer.itineraries[0].segments.length - 1].arrival.iataCode][_ctx.$i18n.locale].city) + " (" + vue.toDisplayString(__props.offer.itineraries[0].segments[__props.offer.itineraries[0].segments.length - 1].arrival.iataCode) + ") ", 1 /* TEXT */),
+            vue.createElementVNode("p", _hoisted_29$1, vue.toDisplayString(("0" + new Date(__props.offer.itineraries[0].segments[__props.offer.itineraries[0].segments.length - 1].arrival.at).getHours()).slice(-2)) + ":" + vue.toDisplayString(("0" + new Date(__props.offer.itineraries[0].segments[__props.offer.itineraries[0].segments.length - 1].arrival.at).getMinutes()).slice(-2)), 1 /* TEXT */),
+            vue.createElementVNode("p", _hoisted_30$1, vue.toDisplayString(sameDate(__props.offer.itineraries[0].segments[0].departure.at, __props.offer.itineraries[0].segments[__props.offer.itineraries[0].segments.length - 1].arrival.at)
                     ? _ctx.$t('flightOffers.sameDay') : _ctx.$t('flightOffers.notSameDay')), 1 /* TEXT */)
           ])
         ]),
-        createElementVNode("div", _hoisted_31$1, [
-          createElementVNode("p", null, toDisplayString(unref(dictionary).carriers[__props.offer.validatingAirlineCodes[0]]), 1 /* TEXT */),
-          createElementVNode("p", _hoisted_32$1, [
-            createTextVNode(toDisplayString(_ctx.$t('flightOffers.refund').toUpperCase()) + ": ", 1 /* TEXT */),
+        vue.createElementVNode("div", _hoisted_31$1, [
+          vue.createElementVNode("p", null, vue.toDisplayString(vue.unref(dictionary).carriers[__props.offer.validatingAirlineCodes[0]]), 1 /* TEXT */),
+          vue.createElementVNode("p", _hoisted_32$1, [
+            vue.createTextVNode(vue.toDisplayString(_ctx.$t('flightOffers.refund').toUpperCase()) + ": ", 1 /* TEXT */),
             (refund.value)
-              ? (openBlock(), createElementBlock("span", _hoisted_33$1, "✘"))
-              : createCommentVNode("v-if", true),
+              ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_33$1, "✘"))
+              : vue.createCommentVNode("v-if", true),
             (!refund.value)
-              ? (openBlock(), createElementBlock("span", _hoisted_34$1, "✓"))
-              : createCommentVNode("v-if", true),
-            createTextVNode(" | " + toDisplayString(_ctx.$t('flightOffers.exchange').toUpperCase()) + ": ", 1 /* TEXT */),
+              ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_34$1, "✓"))
+              : vue.createCommentVNode("v-if", true),
+            vue.createTextVNode(" | " + vue.toDisplayString(_ctx.$t('flightOffers.exchange').toUpperCase()) + ": ", 1 /* TEXT */),
             (exchange.value)
-              ? (openBlock(), createElementBlock("span", _hoisted_35, "✘"))
-              : createCommentVNode("v-if", true),
+              ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_35, "✘"))
+              : vue.createCommentVNode("v-if", true),
             (!exchange.value)
-              ? (openBlock(), createElementBlock("span", _hoisted_36, "✓"))
-              : createCommentVNode("v-if", true)
+              ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_36, "✓"))
+              : vue.createCommentVNode("v-if", true)
           ])
         ])
       ]),
-      _cache[4] || (_cache[4] = createStaticVNode("<div class=\"divider\"><div class=\"left-upper-corner group-focus:border-t-2 group-focus:border-b-white group-focus:border-l-white group-focus:border-r-white group-focus:border-taa-brand-dark-blue\"></div><div class=\"right-upper-corner\"></div><div class=\"right-lower-corner\"></div><div class=\"left-lower-corner\"></div></div>", 1)),
-      createElementVNode("div", _hoisted_37, [
-        createElementVNode("div", _hoisted_38, [
+      _cache[4] || (_cache[4] = vue.createStaticVNode("<div class=\"divider\"><div class=\"left-upper-corner group-focus:border-t-2 group-focus:border-b-white group-focus:border-l-white group-focus:border-r-white group-focus:border-taa-brand-dark-blue\"></div><div class=\"right-upper-corner\"></div><div class=\"right-lower-corner\"></div><div class=\"left-lower-corner\"></div></div>", 1)),
+      vue.createElementVNode("div", _hoisted_37, [
+        vue.createElementVNode("div", _hoisted_38, [
           (__props.offer.numberOfBookableSeats < 9)
-            ? (openBlock(), createElementBlock("p", _hoisted_39, toDisplayString(_ctx.$t('flightOffers.seats', __props.offer.numberOfBookableSeats)), 1 /* TEXT */))
-            : createCommentVNode("v-if", true),
-          createElementVNode("p", _hoisted_40, toDisplayString(_ctx.$t('flightOffers.priceFrom')), 1 /* TEXT */),
-          createElementVNode("div", _hoisted_41, toDisplayString(__props.offer.price.grandTotal) + " " + toDisplayString(__props.offer.price.currency), 1 /* TEXT */)
+            ? (vue.openBlock(), vue.createElementBlock("p", _hoisted_39, vue.toDisplayString(_ctx.$t('flightOffers.seats', __props.offer.numberOfBookableSeats)), 1 /* TEXT */))
+            : vue.createCommentVNode("v-if", true),
+          vue.createElementVNode("p", _hoisted_40, vue.toDisplayString(_ctx.$t('flightOffers.priceFrom')), 1 /* TEXT */),
+          vue.createElementVNode("div", _hoisted_41, vue.toDisplayString(__props.offer.price.grandTotal) + " " + vue.toDisplayString(__props.offer.price.currency), 1 /* TEXT */)
         ])
       ])
     ])
@@ -351,7 +353,7 @@ return (_ctx, _cache) => {
 };
 
 const _hoisted_1$f = {
-  class: /*@__PURE__*/normalizeClass({ 'px-3 text-sm text-neutral-500': true, 'valid': true })
+  class: /*@__PURE__*/vue.normalizeClass({ 'px-3 text-sm text-neutral-500': true, 'valid': true })
 };
 const _hoisted_2$c = { class: "flex items-center mb-3" };
 const _hoisted_3$b = { class: "flex-1 border border-neutral-300 px-3 py-2 rounded-l-lg focus-within:z-10 focus-within:ring-1 focus-within:ring-taa-brand-blue focus-within:border-taa-brand-blue" };
@@ -388,7 +390,7 @@ var script$g = {
 
 const props = __props;
 
-onMounted(function () {
+vue.onMounted(function () {
   const pb = Date.parse(props.modelValue);
 
   if (pb instanceof Date) {
@@ -401,7 +403,7 @@ onMounted(function () {
 /**
  * Local state
  */
-const lb = ref({
+const lb = vue.ref({
   day: null,
   month: null,
   year: null
@@ -413,21 +415,21 @@ const currentYear = currentDate.getFullYear();
 // Calculate the year 120 years ago
 const year120YearsAgo = currentYear - 120;
 
-const v$ = useVuelidate({
+const v$ = useVuelidate.useVuelidate({
   day: {
-    required,
-    minValue: minValue(1),
-    maxValue: maxValue(31)
+    required: validators.required,
+    minValue: validators.minValue(1),
+    maxValue: validators.maxValue(31)
   },
   month: {
-    required,
-    minValue: minValue(1),
-    maxValue: maxValue(12)
+    required: validators.required,
+    minValue: validators.minValue(1),
+    maxValue: validators.maxValue(12)
   },
   year: {
-    required,
-    minValue: minValue(year120YearsAgo),
-    maxValue: maxValue(currentYear)
+    required: validators.required,
+    minValue: validators.minValue(year120YearsAgo),
+    maxValue: validators.maxValue(currentYear)
   }
 }, lb.value);
 
@@ -437,12 +439,12 @@ function updateDay(event) {
 }
 
 return (_ctx, _cache) => {
-  return (openBlock(), createElementBlock(Fragment, null, [
-    createElementVNode("h2", _hoisted_1$f, toDisplayString(_ctx.$t('passengers.birthday.label')), 1 /* TEXT */),
-    createElementVNode("div", _hoisted_2$c, [
-      createElementVNode("div", _hoisted_3$b, [
-        createElementVNode("label", _hoisted_4$9, toDisplayString(_ctx.$t('passengers.birthday.day')), 1 /* TEXT */),
-        createElementVNode("input", {
+  return (vue.openBlock(), vue.createElementBlock(vue.Fragment, null, [
+    vue.createElementVNode("h2", _hoisted_1$f, vue.toDisplayString(_ctx.$t('passengers.birthday.label')), 1 /* TEXT */),
+    vue.createElementVNode("div", _hoisted_2$c, [
+      vue.createElementVNode("div", _hoisted_3$b, [
+        vue.createElementVNode("label", _hoisted_4$9, vue.toDisplayString(_ctx.$t('passengers.birthday.day')), 1 /* TEXT */),
+        vue.createElementVNode("input", {
           id: "birthday",
           type: "number",
           min: "1",
@@ -453,9 +455,9 @@ return (_ctx, _cache) => {
           placeholder: _ctx.$t('passengers.birthday.day')
         }, null, 40 /* PROPS, NEED_HYDRATION */, _hoisted_5$5)
       ]),
-      createElementVNode("div", _hoisted_6$5, [
-        createElementVNode("label", _hoisted_7$5, toDisplayString(_ctx.$t('passengers.birthday.month')), 1 /* TEXT */),
-        createElementVNode("input", {
+      vue.createElementVNode("div", _hoisted_6$5, [
+        vue.createElementVNode("label", _hoisted_7$5, vue.toDisplayString(_ctx.$t('passengers.birthday.month')), 1 /* TEXT */),
+        vue.createElementVNode("input", {
           id: "birth-month",
           type: "number",
           min: "1",
@@ -465,20 +467,20 @@ return (_ctx, _cache) => {
           placeholder: _ctx.$t('passengers.birthday.month')
         }, null, 8 /* PROPS */, _hoisted_8$4)
       ]),
-      createElementVNode("div", _hoisted_9$4, [
-        createElementVNode("label", _hoisted_10$4, toDisplayString(_ctx.$t('passengers.birthday.year')), 1 /* TEXT */),
-        createElementVNode("input", {
+      vue.createElementVNode("div", _hoisted_9$4, [
+        vue.createElementVNode("label", _hoisted_10$4, vue.toDisplayString(_ctx.$t('passengers.birthday.year')), 1 /* TEXT */),
+        vue.createElementVNode("input", {
           id: "birth-year",
           type: "number",
           min: year120YearsAgo,
-          max: unref(currentYear),
+          max: vue.unref(currentYear),
           value: lb.value.year,
           class: "block w-full border-white border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm",
           placeholder: _ctx.$t('passengers.birthday.year')
         }, null, 8 /* PROPS */, _hoisted_11$4)
       ])
     ]),
-    createTextVNode(" " + toDisplayString(unref(v$).day.$dirty), 1 /* TEXT */)
+    vue.createTextVNode(" " + vue.toDisplayString(vue.unref(v$).day.$dirty), 1 /* TEXT */)
   ], 64 /* STABLE_FRAGMENT */))
 }
 }
@@ -510,54 +512,54 @@ var script$f = {
 
 const props = __props;
 
-const v$ = useVuelidate({
+const v$ = useVuelidate.useVuelidate({
   email: {
-    required,
-    emailValidator: email
+    required: validators.required,
+    emailValidator: validators.email
   }
 }, props);
 
-const isEmailValid = computed(() => {
+const isEmailValid = vue.computed(() => {
   return v$.value.email.$dirty ? !v$.value.email.$invalid : true
 });
 
 
 return (_ctx, _cache) => {
-  return (openBlock(), createElementBlock("div", {
-    class: normalizeClass({ 't-email-input': true, 'error': !isEmailValid.value })
+  return (vue.openBlock(), vue.createElementBlock("div", {
+    class: vue.normalizeClass({ 't-email-input': true, 'error': !isEmailValid.value })
   }, [
-    createElementVNode("label", {
+    vue.createElementVNode("label", {
       for: "email",
-      class: normalizeClass({ 'label': true, 'error': !isEmailValid.value })
-    }, toDisplayString(_ctx.$t('passengers.email.label')), 3 /* TEXT, CLASS */),
-    createElementVNode("div", _hoisted_1$e, [
-      createElementVNode("div", _hoisted_2$b, [
-        createVNode(unref(EnvelopeIcon), {
+      class: vue.normalizeClass({ 'label': true, 'error': !isEmailValid.value })
+    }, vue.toDisplayString(_ctx.$t('passengers.email.label')), 3 /* TEXT, CLASS */),
+    vue.createElementVNode("div", _hoisted_1$e, [
+      vue.createElementVNode("div", _hoisted_2$b, [
+        vue.createVNode(vue.unref(solid.EnvelopeIcon), {
           class: "h-5 w-5 text-gray-400",
           "aria-hidden": "true"
         })
       ]),
-      createElementVNode("input", {
+      vue.createElementVNode("input", {
         type: "email",
         name: "email",
         required: "",
         id: "email",
-        onBlur: _cache[0] || (_cache[0] = $event => (unref(v$).email.$touch())),
+        onBlur: _cache[0] || (_cache[0] = $event => (vue.unref(v$).email.$touch())),
         placeholder: _ctx.$t('passengers.email.placeholder'),
         value: __props.email,
         onInput: _cache[1] || (_cache[1] = $event => (_ctx.$emit('update:email', $event.target.value))),
-        class: normalizeClass({ 'input': true, 'error': !isEmailValid.value })
+        class: vue.normalizeClass({ 'input': true, 'error': !isEmailValid.value })
       }, null, 42 /* CLASS, PROPS, NEED_HYDRATION */, _hoisted_3$a)
     ]),
-    (unref(v$).$errors.length > 0)
-      ? (openBlock(), createElementBlock("div", _hoisted_4$8, [
-          (openBlock(true), createElementBlock(Fragment, null, renderList(unref(v$).$errors, (error) => {
-            return (openBlock(), createElementBlock("p", {
+    (vue.unref(v$).$errors.length > 0)
+      ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_4$8, [
+          (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(vue.unref(v$).$errors, (error) => {
+            return (vue.openBlock(), vue.createElementBlock("p", {
               key: error.$uid
-            }, toDisplayString(_ctx.$t('passengers.errors.' + error.$property + '.' + error.$validator)), 1 /* TEXT */))
+            }, vue.toDisplayString(_ctx.$t('passengers.errors.' + error.$property + '.' + error.$validator)), 1 /* TEXT */))
           }), 128 /* KEYED_FRAGMENT */))
         ]))
-      : createCommentVNode("v-if", true)
+      : vue.createCommentVNode("v-if", true)
   ], 2 /* CLASS */))
 }
 }
@@ -596,34 +598,34 @@ const options = [
 let optionIndex = options.findIndex((option) => {
   return option.value === props.gender;
 });
-const selected = ref(options[optionIndex ?? 0]);
+const selected = vue.ref(options[optionIndex ?? 0]);
 
-watch(selected, (value) => {
+vue.watch(selected, (value) => {
   emits('update:gender', value.value);
 });
 
 
 return (_ctx, _cache) => {
-  return (openBlock(), createBlock(unref(Listbox), {
+  return (vue.openBlock(), vue.createBlock(vue.unref(vue$1.Listbox), {
     as: "div",
     modelValue: selected.value,
     "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => ((selected).value = $event)),
     onSelected: _cache[1] || (_cache[1] = () => _ctx.$emit('update:gender', selected.value.value)),
     class: "t-gender-input"
   }, {
-    default: withCtx(() => [
-      createVNode(unref(ListboxLabel), { class: "label" }, {
-        default: withCtx(() => [
-          createTextVNode(toDisplayString(_ctx.$t('passengers.gender.label')), 1 /* TEXT */)
+    default: vue.withCtx(() => [
+      vue.createVNode(vue.unref(vue$1.ListboxLabel), { class: "label" }, {
+        default: vue.withCtx(() => [
+          vue.createTextVNode(vue.toDisplayString(_ctx.$t('passengers.gender.label')), 1 /* TEXT */)
         ]),
         _: 1 /* STABLE */
       }),
-      createElementVNode("div", _hoisted_1$d, [
-        createVNode(unref(ListboxButton), { class: "button" }, {
-          default: withCtx(() => [
-            createElementVNode("span", _hoisted_2$a, toDisplayString(_ctx.$t('passengers.gender.options.' + selected.value.value)), 1 /* TEXT */),
-            createElementVNode("span", _hoisted_3$9, [
-              createVNode(unref(ChevronUpDownIcon), {
+      vue.createElementVNode("div", _hoisted_1$d, [
+        vue.createVNode(vue.unref(vue$1.ListboxButton), { class: "button" }, {
+          default: vue.withCtx(() => [
+            vue.createElementVNode("span", _hoisted_2$a, vue.toDisplayString(_ctx.$t('passengers.gender.options.' + selected.value.value)), 1 /* TEXT */),
+            vue.createElementVNode("span", _hoisted_3$9, [
+              vue.createVNode(vue.unref(solid.ChevronUpDownIcon), {
                 class: "h-5 w-5 text-gray-400",
                 "aria-hidden": "true"
               })
@@ -631,40 +633,40 @@ return (_ctx, _cache) => {
           ]),
           _: 1 /* STABLE */
         }),
-        createVNode(Transition, {
+        vue.createVNode(vue.Transition, {
           "leave-active-class": "transition ease-in duration-100",
           "leave-from-class": "opacity-100",
           "leave-to-class": "opacity-0"
         }, {
-          default: withCtx(() => [
-            createVNode(unref(ListboxOptions), { class: "options" }, {
-              default: withCtx(() => [
-                (openBlock(), createElementBlock(Fragment, null, renderList(options, (option) => {
-                  return createVNode(unref(ListboxOption), {
+          default: vue.withCtx(() => [
+            vue.createVNode(vue.unref(vue$1.ListboxOptions), { class: "options" }, {
+              default: vue.withCtx(() => [
+                (vue.openBlock(), vue.createElementBlock(vue.Fragment, null, vue.renderList(options, (option) => {
+                  return vue.createVNode(vue.unref(vue$1.ListboxOption), {
                     as: "template",
                     key: option.value,
                     value: option
                   }, {
-                    default: withCtx(({ active, selected }) => [
-                      createElementVNode("li", {
-                        class: normalizeClass([active ? 'bg-brand-blue text-white' : 'text-gray-900', 'relative cursor-default select-none py-2 pl-3 pr-9'])
+                    default: vue.withCtx(({ active, selected }) => [
+                      vue.createElementVNode("li", {
+                        class: vue.normalizeClass([active ? 'bg-brand-blue text-white' : 'text-gray-900', 'relative cursor-default select-none py-2 pl-3 pr-9'])
                       }, [
-                        createElementVNode("div", _hoisted_4$7, [
-                          createElementVNode("span", {
-                            class: normalizeClass([selected ? 'font-semibold' : 'font-normal', 'truncate'])
-                          }, toDisplayString(_ctx.$t('passengers.gender.options.' + option.value)), 3 /* TEXT, CLASS */)
+                        vue.createElementVNode("div", _hoisted_4$7, [
+                          vue.createElementVNode("span", {
+                            class: vue.normalizeClass([selected ? 'font-semibold' : 'font-normal', 'truncate'])
+                          }, vue.toDisplayString(_ctx.$t('passengers.gender.options.' + option.value)), 3 /* TEXT, CLASS */)
                         ]),
                         selected
-                          ? (openBlock(), createElementBlock("span", {
+                          ? (vue.openBlock(), vue.createElementBlock("span", {
                               key: 0,
-                              class: normalizeClass([active ? 'text-white' : 'text-brand-blue', 'absolute inset-y-0 right-0 flex items-center pr-4'])
+                              class: vue.normalizeClass([active ? 'text-white' : 'text-brand-blue', 'absolute inset-y-0 right-0 flex items-center pr-4'])
                             }, [
-                              createVNode(unref(CheckIcon), {
+                              vue.createVNode(vue.unref(solid.CheckIcon), {
                                 class: "h-5 w-5",
                                 "aria-hidden": "true"
                               })
                             ], 2 /* CLASS */))
-                          : createCommentVNode("v-if", true)
+                          : vue.createCommentVNode("v-if", true)
                       ], 2 /* CLASS */)
                     ]),
                     _: 2 /* DYNAMIC */
@@ -726,75 +728,75 @@ var script$d = {
 
 const props = __props;
 
-const v$ = useVuelidate({
+const v$ = useVuelidate.useVuelidate({
   firstName: {
-    required,
-    minLength: minLength(2)
+    required: validators.required,
+    minLength: validators.minLength(2)
   },
   lastName: {
-    required,
-    minLength: minLength(2)
+    required: validators.required,
+    minLength: validators.minLength(2)
   }
 },props);
 
-const isFirstNameValid = computed(() => {
+const isFirstNameValid = vue.computed(() => {
   return v$.value.firstName.$dirty ? !v$.value.firstName.$invalid : true
 });
 
-const isLastNameValid = computed(() => {
+const isLastNameValid = vue.computed(() => {
   return v$.value.lastName.$dirty ? !v$.value.lastName.$invalid : true
 });
 
 
 
 return (_ctx, _cache) => {
-  return (openBlock(), createElementBlock("div", _hoisted_1$c, [
-    createElementVNode("h2", {
-      class: normalizeClass({ 'title': true, 'valid': unref(v$).$dirty && isLastNameValid.value && isFirstNameValid.value })
-    }, toDisplayString(_ctx.$t('passengers.name.title')), 3 /* TEXT, CLASS */),
-    createElementVNode("div", _hoisted_2$9, [
-      createElementVNode("div", {
-        class: normalizeClass({ 'first-name': true, 'error': !isFirstNameValid.value, 'valid': unref(v$).firstName.$dirty && isFirstNameValid.value })
+  return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$c, [
+    vue.createElementVNode("h2", {
+      class: vue.normalizeClass({ 'title': true, 'valid': vue.unref(v$).$dirty && isLastNameValid.value && isFirstNameValid.value })
+    }, vue.toDisplayString(_ctx.$t('passengers.name.title')), 3 /* TEXT, CLASS */),
+    vue.createElementVNode("div", _hoisted_2$9, [
+      vue.createElementVNode("div", {
+        class: vue.normalizeClass({ 'first-name': true, 'error': !isFirstNameValid.value, 'valid': vue.unref(v$).firstName.$dirty && isFirstNameValid.value })
       }, [
-        createElementVNode("label", _hoisted_3$8, toDisplayString(_ctx.$t('passengers.name.firstNameLabel')), 1 /* TEXT */),
-        createElementVNode("input", {
+        vue.createElementVNode("label", _hoisted_3$8, vue.toDisplayString(_ctx.$t('passengers.name.firstNameLabel')), 1 /* TEXT */),
+        vue.createElementVNode("input", {
           id: "firstName",
           type: "text",
           name: "firstName",
           placeholder: _ctx.$t('passengers.name.firstNameLabel'),
           class: "input",
           required: "",
-          onBlur: _cache[0] || (_cache[0] = $event => (unref(v$).firstName.$touch())),
+          onBlur: _cache[0] || (_cache[0] = $event => (vue.unref(v$).firstName.$touch())),
           value: __props.firstName,
           onInput: _cache[1] || (_cache[1] = ($event) => _ctx.$emit('update:first-name', $event.target.value))
         }, null, 40 /* PROPS, NEED_HYDRATION */, _hoisted_4$6)
       ], 2 /* CLASS */),
-      createElementVNode("div", {
-        class: normalizeClass({ 'last-name': true, 'error': !isLastNameValid.value, 'valid': unref(v$).lastName.$dirty && isLastNameValid.value })
+      vue.createElementVNode("div", {
+        class: vue.normalizeClass({ 'last-name': true, 'error': !isLastNameValid.value, 'valid': vue.unref(v$).lastName.$dirty && isLastNameValid.value })
       }, [
-        createElementVNode("label", _hoisted_5$4, toDisplayString(_ctx.$t('passengers.name.lastNameLabel')), 1 /* TEXT */),
-        createElementVNode("input", {
+        vue.createElementVNode("label", _hoisted_5$4, vue.toDisplayString(_ctx.$t('passengers.name.lastNameLabel')), 1 /* TEXT */),
+        vue.createElementVNode("input", {
           id: "lastName",
           type: "text",
           name: "lastName",
           placeholder: _ctx.$t('passengers.name.lastNameLabel'),
           class: "input",
-          onBlur: _cache[2] || (_cache[2] = $event => (unref(v$).lastName.$touch())),
+          onBlur: _cache[2] || (_cache[2] = $event => (vue.unref(v$).lastName.$touch())),
           required: "",
           value: __props.lastName,
           onInput: _cache[3] || (_cache[3] = $event => (_ctx.$emit('update:last-name', $event.target.value)))
         }, null, 40 /* PROPS, NEED_HYDRATION */, _hoisted_6$4)
       ], 2 /* CLASS */)
     ]),
-    (unref(v$).$errors.length > 0)
-      ? (openBlock(), createElementBlock("div", _hoisted_7$4, [
-          (openBlock(true), createElementBlock(Fragment, null, renderList(unref(v$).$errors, (error) => {
-            return (openBlock(), createElementBlock("p", {
+    (vue.unref(v$).$errors.length > 0)
+      ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_7$4, [
+          (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(vue.unref(v$).$errors, (error) => {
+            return (vue.openBlock(), vue.createElementBlock("p", {
               key: error.$uid
-            }, toDisplayString(_ctx.$t('passengers.errors.' + error.$property + '.' + error.$validator)), 1 /* TEXT */))
+            }, vue.toDisplayString(_ctx.$t('passengers.errors.' + error.$property + '.' + error.$validator)), 1 /* TEXT */))
           }), 128 /* KEYED_FRAGMENT */))
         ]))
-      : createCommentVNode("v-if", true)
+      : vue.createCommentVNode("v-if", true)
   ]))
 }
 }
@@ -881,13 +883,13 @@ const props = __props;
 
 const emit = __emit;
 
-const state = ref({
+const state = vue.ref({
   phone: props.phone && ''
 });
 
-const v$ = useVuelidate$1({
+const v$ = useVuelidate({
   phone: {
-    required
+    required: validators.required
   }
 }, state);
 
@@ -896,27 +898,27 @@ function onValidate(validation) {
 }
 
 return (_ctx, _cache) => {
-  return (openBlock(), createElementBlock("div", _hoisted_1$b, [
-    createElementVNode("h2", _hoisted_2$8, toDisplayString(_ctx.$t('passengers.phone.label')), 1 /* TEXT */),
-    createVNode(unref(VueTelInput), {
+  return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$b, [
+    vue.createElementVNode("h2", _hoisted_2$8, vue.toDisplayString(_ctx.$t('passengers.phone.label')), 1 /* TEXT */),
+    vue.createVNode(vue.unref(vueTelInput.VueTelInput), {
       mode: "international",
       modelValue: state.value.phone,
       "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => ((state.value.phone) = $event)),
       required: "true",
       inputOptions: { placeholder: _ctx.$t('passengers.phone.placeholder') },
-      onBlur: _cache[1] || (_cache[1] = $event => (unref(v$).phone.$touch())),
+      onBlur: _cache[1] || (_cache[1] = $event => (vue.unref(v$).phone.$touch())),
       onValidate: _cache[2] || (_cache[2] = (value) => onValidate(value)),
-      class: normalizeClass({ 'error': unref(v$).phone.$error })
+      class: vue.normalizeClass({ 'error': vue.unref(v$).phone.$error })
     }, null, 8 /* PROPS */, ["modelValue", "inputOptions", "class"]),
-    (unref(v$).$errors.length > 0)
-      ? (openBlock(), createElementBlock("div", _hoisted_3$7, [
-          (openBlock(true), createElementBlock(Fragment, null, renderList(unref(v$).$errors, (error) => {
-            return (openBlock(), createElementBlock("p", {
+    (vue.unref(v$).$errors.length > 0)
+      ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3$7, [
+          (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(vue.unref(v$).$errors, (error) => {
+            return (vue.openBlock(), vue.createElementBlock("p", {
               key: error.$uid
-            }, toDisplayString(_ctx.$t('passengers.errors.' + error.$property + '.' + error.$validator)), 1 /* TEXT */))
+            }, vue.toDisplayString(_ctx.$t('passengers.errors.' + error.$property + '.' + error.$validator)), 1 /* TEXT */))
           }), 128 /* KEYED_FRAGMENT */))
         ]))
-      : createCommentVNode("v-if", true)
+      : vue.createCommentVNode("v-if", true)
   ]))
 }
 }
@@ -924,7 +926,7 @@ return (_ctx, _cache) => {
 };
 
 const _hoisted_1$a = {
-  class: /*@__PURE__*/normalizeClass({ 'px-3 text-sm text-neutral-500': true, 'valid': true })
+  class: /*@__PURE__*/vue.normalizeClass({ 'px-3 text-sm text-neutral-500': true, 'valid': true })
 };
 const _hoisted_2$7 = { class: "grid grid-cols-3" };
 const _hoisted_3$6 = { class: "relative mb-2" };
@@ -954,7 +956,7 @@ const props = __props;
 
 const emits = __emit;
 
-onMounted(function () {
+vue.onMounted(function () {
   if (Date.parse(props.modelValue)) {
     const pb = new Date(props.modelValue);
     selectedYear.value = years.value[years.value.findIndex((year) => year.id === pb.getFullYear())];
@@ -972,61 +974,61 @@ const currentYear = currentDate.getFullYear();
  * Year selector state
  */
 const yearsArray = Array.from({length: 120}, (_, i) => currentYear - i);
-const years = ref(yearsArray.map((year) => {
+const years = vue.ref(yearsArray.map((year) => {
   return {id: year, name: year}
 }));
-const selectedYear = ref(years.value[20]);
+const selectedYear = vue.ref(years.value[20]);
 
 /**
  * Month selector state
  */
-const months = ref(Array.from({length: 12}, (_, i) => {
+const months = vue.ref(Array.from({length: 12}, (_, i) => {
   let index = (i + 1).toString().padStart(2, '0');
   return {id: i + 1, name: index }
 }));
-const selectedMonth = ref(months.value[0]);
+const selectedMonth = vue.ref(months.value[0]);
 
 /**
  * Day selector state
  */
-const days = ref(Array.from({length: 31}, (_, i) => {
+const days = vue.ref(Array.from({length: 31}, (_, i) => {
   let index = (i + 1).toString().padStart(2, '0');
   return {id: i + 1, name: index}
 }));
-const selectedDay = ref(days.value[0]);
+const selectedDay = vue.ref(days.value[0]);
 
 
 function updateEmit() {
   const pb = new Date(selectedYear.value.id, selectedMonth.value.id, selectedDay.value.id);
   emits('update:modelValue', pb.getFullYear() + '-' + (pb.getMonth()).toString().padStart(2, '0') + '-' + (pb.getDate()).toString().padStart(2, '0'));
 }
-watch(selectedYear, updateEmit);
-watch(selectedMonth, updateEmit);
-watch(selectedDay, updateEmit);
+vue.watch(selectedYear, updateEmit);
+vue.watch(selectedMonth, updateEmit);
+vue.watch(selectedDay, updateEmit);
 
 
 return (_ctx, _cache) => {
-  return (openBlock(), createElementBlock(Fragment, null, [
-    createElementVNode("h2", _hoisted_1$a, toDisplayString(_ctx.$t('passengers.birthday.label')), 1 /* TEXT */),
-    createElementVNode("div", _hoisted_2$7, [
-      createVNode(unref(Listbox), {
+  return (vue.openBlock(), vue.createElementBlock(vue.Fragment, null, [
+    vue.createElementVNode("h2", _hoisted_1$a, vue.toDisplayString(_ctx.$t('passengers.birthday.label')), 1 /* TEXT */),
+    vue.createElementVNode("div", _hoisted_2$7, [
+      vue.createVNode(vue.unref(vue$1.Listbox), {
         as: "div",
         modelValue: selectedYear.value,
         "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => ((selectedYear).value = $event))
       }, {
-        default: withCtx(() => [
-          createVNode(unref(ListboxLabel), { class: "hidden" }, {
-            default: withCtx(() => [
-              createTextVNode(toDisplayString(_ctx.$t('passengers.birthday.year')), 1 /* TEXT */)
+        default: vue.withCtx(() => [
+          vue.createVNode(vue.unref(vue$1.ListboxLabel), { class: "hidden" }, {
+            default: vue.withCtx(() => [
+              vue.createTextVNode(vue.toDisplayString(_ctx.$t('passengers.birthday.year')), 1 /* TEXT */)
             ]),
             _: 1 /* STABLE */
           }),
-          createElementVNode("div", _hoisted_3$6, [
-            createVNode(unref(ListboxButton), { class: "relative w-full cursor-default rounded-l-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-blue sm:text-sm sm:leading-6" }, {
-              default: withCtx(() => [
-                createElementVNode("span", _hoisted_4$5, toDisplayString(selectedYear.value.name), 1 /* TEXT */),
-                createElementVNode("span", _hoisted_5$3, [
-                  createVNode(unref(ChevronUpDownIcon), {
+          vue.createElementVNode("div", _hoisted_3$6, [
+            vue.createVNode(vue.unref(vue$1.ListboxButton), { class: "relative w-full cursor-default rounded-l-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-blue sm:text-sm sm:leading-6" }, {
+              default: vue.withCtx(() => [
+                vue.createElementVNode("span", _hoisted_4$5, vue.toDisplayString(selectedYear.value.name), 1 /* TEXT */),
+                vue.createElementVNode("span", _hoisted_5$3, [
+                  vue.createVNode(vue.unref(solid.ChevronUpDownIcon), {
                     class: "h-5 w-5 text-gray-400",
                     "aria-hidden": "true"
                   })
@@ -1034,38 +1036,38 @@ return (_ctx, _cache) => {
               ]),
               _: 1 /* STABLE */
             }),
-            createVNode(Transition, {
+            vue.createVNode(vue.Transition, {
               "leave-active-class": "transition ease-in duration-100",
               "leave-from-class": "opacity-100",
               "leave-to-class": "opacity-0"
             }, {
-              default: withCtx(() => [
-                createVNode(unref(ListboxOptions), { class: "absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm" }, {
-                  default: withCtx(() => [
-                    (openBlock(true), createElementBlock(Fragment, null, renderList(years.value, (year) => {
-                      return (openBlock(), createBlock(unref(ListboxOption), {
+              default: vue.withCtx(() => [
+                vue.createVNode(vue.unref(vue$1.ListboxOptions), { class: "absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm" }, {
+                  default: vue.withCtx(() => [
+                    (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(years.value, (year) => {
+                      return (vue.openBlock(), vue.createBlock(vue.unref(vue$1.ListboxOption), {
                         as: "template",
                         key: year.id,
                         value: year
                       }, {
-                        default: withCtx(({ active, selected}) => [
-                          createElementVNode("li", {
-                            class: normalizeClass([active ? 'bg-brand-blue text-white' : 'text-gray-900', 'relative cursor-default select-none py-2 pl-3 pr-9'])
+                        default: vue.withCtx(({ active, selected}) => [
+                          vue.createElementVNode("li", {
+                            class: vue.normalizeClass([active ? 'bg-brand-blue text-white' : 'text-gray-900', 'relative cursor-default select-none py-2 pl-3 pr-9'])
                           }, [
-                            createElementVNode("span", {
-                              class: normalizeClass([selected ? 'font-semibold' : 'font-normal', 'block truncate'])
-                            }, toDisplayString(year.name), 3 /* TEXT, CLASS */),
+                            vue.createElementVNode("span", {
+                              class: vue.normalizeClass([selected ? 'font-semibold' : 'font-normal', 'block truncate'])
+                            }, vue.toDisplayString(year.name), 3 /* TEXT, CLASS */),
                             selected
-                              ? (openBlock(), createElementBlock("span", {
+                              ? (vue.openBlock(), vue.createElementBlock("span", {
                                   key: 0,
-                                  class: normalizeClass([active ? 'text-white' : 'text-brand-blue', 'absolute inset-y-0 right-0 flex items-center pr-4'])
+                                  class: vue.normalizeClass([active ? 'text-white' : 'text-brand-blue', 'absolute inset-y-0 right-0 flex items-center pr-4'])
                                 }, [
-                                  createVNode(unref(CheckIcon), {
+                                  vue.createVNode(vue.unref(solid.CheckIcon), {
                                     class: "h-5 w-5",
                                     "aria-hidden": "true"
                                   })
                                 ], 2 /* CLASS */))
-                              : createCommentVNode("v-if", true)
+                              : vue.createCommentVNode("v-if", true)
                           ], 2 /* CLASS */)
                         ]),
                         _: 2 /* DYNAMIC */
@@ -1081,24 +1083,24 @@ return (_ctx, _cache) => {
         ]),
         _: 1 /* STABLE */
       }, 8 /* PROPS */, ["modelValue"]),
-      createVNode(unref(Listbox), {
+      vue.createVNode(vue.unref(vue$1.Listbox), {
         as: "div",
         modelValue: selectedMonth.value,
         "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => ((selectedMonth).value = $event))
       }, {
-        default: withCtx(() => [
-          createVNode(unref(ListboxLabel), { class: "hidden" }, {
-            default: withCtx(() => [
-              createTextVNode(toDisplayString(_ctx.$t('passengers.birthday.month')), 1 /* TEXT */)
+        default: vue.withCtx(() => [
+          vue.createVNode(vue.unref(vue$1.ListboxLabel), { class: "hidden" }, {
+            default: vue.withCtx(() => [
+              vue.createTextVNode(vue.toDisplayString(_ctx.$t('passengers.birthday.month')), 1 /* TEXT */)
             ]),
             _: 1 /* STABLE */
           }),
-          createElementVNode("div", _hoisted_6$3, [
-            createVNode(unref(ListboxButton), { class: "relative w-full cursor-default bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-blue sm:text-sm sm:leading-6" }, {
-              default: withCtx(() => [
-                createElementVNode("span", _hoisted_7$3, toDisplayString(selectedMonth.value.name), 1 /* TEXT */),
-                createElementVNode("span", _hoisted_8$3, [
-                  createVNode(unref(ChevronUpDownIcon), {
+          vue.createElementVNode("div", _hoisted_6$3, [
+            vue.createVNode(vue.unref(vue$1.ListboxButton), { class: "relative w-full cursor-default bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-blue sm:text-sm sm:leading-6" }, {
+              default: vue.withCtx(() => [
+                vue.createElementVNode("span", _hoisted_7$3, vue.toDisplayString(selectedMonth.value.name), 1 /* TEXT */),
+                vue.createElementVNode("span", _hoisted_8$3, [
+                  vue.createVNode(vue.unref(solid.ChevronUpDownIcon), {
                     class: "h-5 w-5 text-gray-400",
                     "aria-hidden": "true"
                   })
@@ -1106,38 +1108,38 @@ return (_ctx, _cache) => {
               ]),
               _: 1 /* STABLE */
             }),
-            createVNode(Transition, {
+            vue.createVNode(vue.Transition, {
               "leave-active-class": "transition ease-in duration-100",
               "leave-from-class": "opacity-100",
               "leave-to-class": "opacity-0"
             }, {
-              default: withCtx(() => [
-                createVNode(unref(ListboxOptions), { class: "absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm" }, {
-                  default: withCtx(() => [
-                    (openBlock(true), createElementBlock(Fragment, null, renderList(months.value, (month) => {
-                      return (openBlock(), createBlock(unref(ListboxOption), {
+              default: vue.withCtx(() => [
+                vue.createVNode(vue.unref(vue$1.ListboxOptions), { class: "absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm" }, {
+                  default: vue.withCtx(() => [
+                    (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(months.value, (month) => {
+                      return (vue.openBlock(), vue.createBlock(vue.unref(vue$1.ListboxOption), {
                         as: "template",
                         key: month.id,
                         value: month
                       }, {
-                        default: withCtx(({ active, selected }) => [
-                          createElementVNode("li", {
-                            class: normalizeClass([active ? 'bg-brand-blue text-white' : 'text-gray-900', 'relative cursor-default select-none py-2 pl-3 pr-9'])
+                        default: vue.withCtx(({ active, selected }) => [
+                          vue.createElementVNode("li", {
+                            class: vue.normalizeClass([active ? 'bg-brand-blue text-white' : 'text-gray-900', 'relative cursor-default select-none py-2 pl-3 pr-9'])
                           }, [
-                            createElementVNode("span", {
-                              class: normalizeClass([selected ? 'font-semibold' : 'font-normal', 'block truncate'])
-                            }, toDisplayString(month.name), 3 /* TEXT, CLASS */),
+                            vue.createElementVNode("span", {
+                              class: vue.normalizeClass([selected ? 'font-semibold' : 'font-normal', 'block truncate'])
+                            }, vue.toDisplayString(month.name), 3 /* TEXT, CLASS */),
                             selected
-                              ? (openBlock(), createElementBlock("span", {
+                              ? (vue.openBlock(), vue.createElementBlock("span", {
                                   key: 0,
-                                  class: normalizeClass([active ? 'text-white' : 'text-brand-blue', 'absolute inset-y-0 right-0 flex items-center pr-4'])
+                                  class: vue.normalizeClass([active ? 'text-white' : 'text-brand-blue', 'absolute inset-y-0 right-0 flex items-center pr-4'])
                                 }, [
-                                  createVNode(unref(CheckIcon), {
+                                  vue.createVNode(vue.unref(solid.CheckIcon), {
                                     class: "h-5 w-5",
                                     "aria-hidden": "true"
                                   })
                                 ], 2 /* CLASS */))
-                              : createCommentVNode("v-if", true)
+                              : vue.createCommentVNode("v-if", true)
                           ], 2 /* CLASS */)
                         ]),
                         _: 2 /* DYNAMIC */
@@ -1153,24 +1155,24 @@ return (_ctx, _cache) => {
         ]),
         _: 1 /* STABLE */
       }, 8 /* PROPS */, ["modelValue"]),
-      createVNode(unref(Listbox), {
+      vue.createVNode(vue.unref(vue$1.Listbox), {
         as: "div",
         modelValue: selectedDay.value,
         "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => ((selectedDay).value = $event))
       }, {
-        default: withCtx(() => [
-          createVNode(unref(ListboxLabel), { class: "hidden" }, {
-            default: withCtx(() => [
-              createTextVNode(toDisplayString(_ctx.$t('passengers.birthday.day')), 1 /* TEXT */)
+        default: vue.withCtx(() => [
+          vue.createVNode(vue.unref(vue$1.ListboxLabel), { class: "hidden" }, {
+            default: vue.withCtx(() => [
+              vue.createTextVNode(vue.toDisplayString(_ctx.$t('passengers.birthday.day')), 1 /* TEXT */)
             ]),
             _: 1 /* STABLE */
           }),
-          createElementVNode("div", _hoisted_9$3, [
-            createVNode(unref(ListboxButton), { class: "relative w-full cursor-default rounded-r-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-blue sm:text-sm sm:leading-6" }, {
-              default: withCtx(() => [
-                createElementVNode("span", _hoisted_10$3, toDisplayString(selectedDay.value.name), 1 /* TEXT */),
-                createElementVNode("span", _hoisted_11$3, [
-                  createVNode(unref(ChevronUpDownIcon), {
+          vue.createElementVNode("div", _hoisted_9$3, [
+            vue.createVNode(vue.unref(vue$1.ListboxButton), { class: "relative w-full cursor-default rounded-r-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-blue sm:text-sm sm:leading-6" }, {
+              default: vue.withCtx(() => [
+                vue.createElementVNode("span", _hoisted_10$3, vue.toDisplayString(selectedDay.value.name), 1 /* TEXT */),
+                vue.createElementVNode("span", _hoisted_11$3, [
+                  vue.createVNode(vue.unref(solid.ChevronUpDownIcon), {
                     class: "h-5 w-5 text-gray-400",
                     "aria-hidden": "true"
                   })
@@ -1178,38 +1180,38 @@ return (_ctx, _cache) => {
               ]),
               _: 1 /* STABLE */
             }),
-            createVNode(Transition, {
+            vue.createVNode(vue.Transition, {
               "leave-active-class": "transition ease-in duration-100",
               "leave-from-class": "opacity-100",
               "leave-to-class": "opacity-0"
             }, {
-              default: withCtx(() => [
-                createVNode(unref(ListboxOptions), { class: "absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm" }, {
-                  default: withCtx(() => [
-                    (openBlock(true), createElementBlock(Fragment, null, renderList(days.value, (day) => {
-                      return (openBlock(), createBlock(unref(ListboxOption), {
+              default: vue.withCtx(() => [
+                vue.createVNode(vue.unref(vue$1.ListboxOptions), { class: "absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm" }, {
+                  default: vue.withCtx(() => [
+                    (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(days.value, (day) => {
+                      return (vue.openBlock(), vue.createBlock(vue.unref(vue$1.ListboxOption), {
                         as: "template",
                         key: day.id,
                         value: day
                       }, {
-                        default: withCtx(({ active, selected }) => [
-                          createElementVNode("li", {
-                            class: normalizeClass([active ? 'bg-brand-blue text-white' : 'text-gray-900', 'relative cursor-default select-none py-2 pl-3 pr-9'])
+                        default: vue.withCtx(({ active, selected }) => [
+                          vue.createElementVNode("li", {
+                            class: vue.normalizeClass([active ? 'bg-brand-blue text-white' : 'text-gray-900', 'relative cursor-default select-none py-2 pl-3 pr-9'])
                           }, [
-                            createElementVNode("span", {
-                              class: normalizeClass([selected ? 'font-semibold' : 'font-normal', 'block truncate'])
-                            }, toDisplayString(day.name), 3 /* TEXT, CLASS */),
+                            vue.createElementVNode("span", {
+                              class: vue.normalizeClass([selected ? 'font-semibold' : 'font-normal', 'block truncate'])
+                            }, vue.toDisplayString(day.name), 3 /* TEXT, CLASS */),
                             selected
-                              ? (openBlock(), createElementBlock("span", {
+                              ? (vue.openBlock(), vue.createElementBlock("span", {
                                   key: 0,
-                                  class: normalizeClass([active ? 'text-white' : 'text-brand-blue', 'absolute inset-y-0 right-0 flex items-center pr-4'])
+                                  class: vue.normalizeClass([active ? 'text-white' : 'text-brand-blue', 'absolute inset-y-0 right-0 flex items-center pr-4'])
                                 }, [
-                                  createVNode(unref(CheckIcon), {
+                                  vue.createVNode(vue.unref(solid.CheckIcon), {
                                     class: "h-5 w-5",
                                     "aria-hidden": "true"
                                   })
                                 ], 2 /* CLASS */))
-                              : createCommentVNode("v-if", true)
+                              : vue.createCommentVNode("v-if", true)
                           ], 2 /* CLASS */)
                         ]),
                         _: 2 /* DYNAMIC */
@@ -1337,24 +1339,24 @@ const emits = __emit;
  * Constants for local state
  * @type {string}
  */
-const mode = ref(INPUT);
-const extended = ref(true);
-const passenger = reactive(Traveler.fromTraveler(props.traveler));
+const mode = vue.ref(INPUT);
+const extended = vue.ref(true);
+const passenger = vue.reactive(Traveler.fromTraveler(props.traveler));
 
 /**
  * Compute validations.
  */
-const validations = computed({
+const validations = vue.computed({
   get: () => {
     let rules = {
       name: {
         firstName: {
-          required,
-          minLength: minLength(2)
+          required: validators.required,
+          minLength: validators.minLength(2)
         },
         lastName: {
-          required,
-          minLength: minLength(2)
+          required: validators.required,
+          minLength: validators.minLength(2)
         },
       },
       contact: {
@@ -1365,28 +1367,28 @@ const validations = computed({
 
     if (props.requirements.emailAddressRequired) {
       rules.contact.emailAddress = {
-        required,
-        email
+        required: validators.required,
+        email: validators.email
       };
     }
 
     if (props.requirements.mobilePhoneNumberRequired) {
       rules.contact.phones = {
-        required,
-        minLength: minLength(1)
+        required: validators.required,
+        minLength: validators.minLength(1)
       };
     }
 
 
     if (props.requirements.dateOfBirthRequired) {
       rules.dateOfBirth = {
-        required
+        required: validators.required
       };
     }
 
     if (props.requirements.genderRequired) {
       rules.gender = {
-        required
+        required: validators.required
       };
     }
     return rules
@@ -1396,7 +1398,7 @@ const validations = computed({
 /**
  * Validation logic
  */
-let v$ = useVuelidate(validations, passenger);
+let v$ = useVuelidate.useVuelidate(validations, passenger);
 
 /**
  * Validation helper. Checks if the traveler is valid
@@ -1493,7 +1495,7 @@ function onBirthdayUpdate(value) {
 /**
  * Watcher for the passenger object. Emits the update event
  */
-watch(v$, (value) => {
+vue.watch(v$, (value) => {
   if (passenger) {
     passenger.valid = isTravelerValid();
     isTravelerValid() ? emits('update', passenger) : false;
@@ -1502,164 +1504,164 @@ watch(v$, (value) => {
 
 
 return (_ctx, _cache) => {
-  const _component_check_circle = resolveComponent("check-circle");
+  const _component_check_circle = vue.resolveComponent("check-circle");
 
-  return (openBlock(), createElementBlock("div", _hoisted_1$9, [
-    createElementVNode("div", {
-      class: normalizeClass({ header: true, 'pb-4': extended.value })
+  return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$9, [
+    vue.createElementVNode("div", {
+      class: vue.normalizeClass({ header: true, 'pb-4': extended.value })
     }, [
-      createElementVNode("div", _hoisted_2$6, [
-        createElementVNode("img", {
+      vue.createElementVNode("div", _hoisted_2$6, [
+        vue.createElementVNode("img", {
           class: "h-8 w-8 rounded-full mr-3 bg-neutral-300 border-0",
           src: 'https://ui-avatars.com/api/?name=' + (passenger.name.firstName.length > 0 ? passenger.name.firstName[0] : 'p') + '&color=828282&background=D3F8F0',
           alt: ""
         }, null, 8 /* PROPS */, _hoisted_3$5),
-        createElementVNode("h1", _hoisted_4$4, toDisplayString(passenger.name.firstName.length !== 0 ? passenger.name.firstName : _ctx.$t('passengers.placeholder', (Number(passenger.id) + 1))) + " " + toDisplayString(passenger.name.lastName.length !== 0 ? passenger.name.lastName : ''), 1 /* TEXT */),
+        vue.createElementVNode("h1", _hoisted_4$4, vue.toDisplayString(passenger.name.firstName.length !== 0 ? passenger.name.firstName : _ctx.$t('passengers.placeholder', (Number(passenger.id) + 1))) + " " + vue.toDisplayString(passenger.name.lastName.length !== 0 ? passenger.name.lastName : ''), 1 /* TEXT */),
         (isTravelerValid())
-          ? (openBlock(), createElementBlock("div", _hoisted_5$2, [
-              createVNode(unref(CheckCircleIcon), { class: "text-success-900" })
+          ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_5$2, [
+              vue.createVNode(vue.unref(solid.CheckCircleIcon), { class: "text-success-900" })
             ]))
-          : createCommentVNode("v-if", true)
+          : vue.createCommentVNode("v-if", true)
       ]),
-      createElementVNode("div", _hoisted_6$2, [
+      vue.createElementVNode("div", _hoisted_6$2, [
         (SELECT === mode.value)
-          ? (openBlock(), createElementBlock("button", {
+          ? (vue.openBlock(), vue.createElementBlock("button", {
               key: 0,
               type: "button",
               onClick: _cache[0] || (_cache[0] = $event => (toggleMode(INPUT))),
               class: "border hover:border-taa-brand-blue px-2 border-neutral-300 focus:border-taa-brand-blue rounded-xl group outline-none flex items-center"
             }, [
-              createVNode(unref(UserIcon), { class: "w-6 group-hover:stroke-brand-blue group-hover:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue" }),
-              createElementVNode("span", _hoisted_7$2, toDisplayString(_ctx.$t('passengers.passengerDetails')), 1 /* TEXT */)
+              vue.createVNode(vue.unref(solid.UserIcon), { class: "w-6 group-hover:stroke-brand-blue group-hover:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue" }),
+              vue.createElementVNode("span", _hoisted_7$2, vue.toDisplayString(_ctx.$t('passengers.passengerDetails')), 1 /* TEXT */)
             ]))
-          : createCommentVNode("v-if", true),
+          : vue.createCommentVNode("v-if", true),
         (INPUT === mode.value)
-          ? (openBlock(), createElementBlock("button", {
+          ? (vue.openBlock(), vue.createElementBlock("button", {
               key: 1,
               type: "button",
               onClick: _cache[1] || (_cache[1] = $event => (toggleMode(SELECT))),
               class: "border px-2 hover:border-taa-brand-blue border-neutral-300 focus:border-taa-brand-blue rounded-xl group outline-none flex items-center"
             }, [
-              createVNode(unref(UserIcon), { class: "w-6 group-hover:stroke-brand-blue group-hover:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue" }),
-              createElementVNode("span", _hoisted_8$2, toDisplayString(_ctx.$t('passengers.selectPassenger')), 1 /* TEXT */)
+              vue.createVNode(vue.unref(solid.UserIcon), { class: "w-6 group-hover:stroke-brand-blue group-hover:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue" }),
+              vue.createElementVNode("span", _hoisted_8$2, vue.toDisplayString(_ctx.$t('passengers.selectPassenger')), 1 /* TEXT */)
             ]))
-          : createCommentVNode("v-if", true),
+          : vue.createCommentVNode("v-if", true),
         (!extended.value)
-          ? (openBlock(), createElementBlock("button", {
+          ? (vue.openBlock(), vue.createElementBlock("button", {
               key: 2,
               type: "button",
               class: "group outline-none",
               onClick: _cache[2] || (_cache[2] = () => extended.value = !extended.value)
             }, [
-              createVNode(unref(ChevronDownIcon), { class: "w-8 group-hover:text-brand-blue group-hover:stroke-brand-blue group-focus:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue" })
+              vue.createVNode(vue.unref(solid.ChevronDownIcon), { class: "w-8 group-hover:text-brand-blue group-hover:stroke-brand-blue group-focus:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue" })
             ]))
-          : createCommentVNode("v-if", true),
+          : vue.createCommentVNode("v-if", true),
         (extended.value)
-          ? (openBlock(), createElementBlock("button", {
+          ? (vue.openBlock(), vue.createElementBlock("button", {
               key: 3,
               type: "button",
               class: "group outline-none",
               onClick: _cache[3] || (_cache[3] = () => extended.value = !extended.value)
             }, [
-              createVNode(unref(ChevronUpIcon), { class: "w-8 group-hover:text-brand-blue group-hover:stroke-brand-blue group-focus:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue" })
+              vue.createVNode(vue.unref(solid.ChevronUpIcon), { class: "w-8 group-hover:text-brand-blue group-hover:stroke-brand-blue group-focus:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue" })
             ]))
-          : createCommentVNode("v-if", true)
+          : vue.createCommentVNode("v-if", true)
       ])
     ], 2 /* CLASS */),
     (INPUT === mode.value && extended.value)
-      ? (openBlock(), createElementBlock("div", _hoisted_9$2, [
-          createVNode(script$d, {
+      ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_9$2, [
+          vue.createVNode(script$d, {
             "first-name": passenger.name.firstName,
             "onUpdate:firstName": _cache[4] || (_cache[4] = $event => ((passenger.name.firstName) = $event)),
             "last-name": passenger.name.lastName,
             "onUpdate:lastName": _cache[5] || (_cache[5] = $event => ((passenger.name.lastName) = $event))
           }, null, 8 /* PROPS */, ["first-name", "last-name"]),
           (__props.requirements.dateOfBirthRequired)
-            ? (openBlock(), createBlock(script$b, {
+            ? (vue.openBlock(), vue.createBlock(script$b, {
                 key: 0,
                 "model-value": passenger.dateOfBirth,
                 "onUpdate:modelValue": onBirthdayUpdate
               }, null, 8 /* PROPS */, ["model-value"]))
-            : createCommentVNode("v-if", true),
+            : vue.createCommentVNode("v-if", true),
           (__props.requirements.genderRequired)
-            ? (openBlock(), createBlock(script$e, {
+            ? (vue.openBlock(), vue.createBlock(script$e, {
                 key: 1,
                 gender: passenger.gender,
                 "onUpdate:gender": _cache[6] || (_cache[6] = (value) => onUpdateGender(value))
               }, null, 8 /* PROPS */, ["gender"]))
-            : createCommentVNode("v-if", true),
+            : vue.createCommentVNode("v-if", true),
           (__props.requirements.emailAddressRequired)
-            ? (openBlock(), createBlock(script$f, {
+            ? (vue.openBlock(), vue.createBlock(script$f, {
                 key: 2,
                 email: passenger.contact.emailAddress,
                 "onUpdate:email": _cache[7] || (_cache[7] = $event => ((passenger.contact.emailAddress) = $event))
               }, null, 8 /* PROPS */, ["email"]))
-            : createCommentVNode("v-if", true),
+            : vue.createCommentVNode("v-if", true),
           (__props.requirements.mobilePhoneNumberRequired)
-            ? (openBlock(), createBlock(script$c, {
+            ? (vue.openBlock(), vue.createBlock(script$c, {
                 key: 3,
                 phone: passenger.contact.phones[0] ? passenger.contact.phones[0].number : passenger.contact.phones[0],
                 "onUpdate:phone": _cache[8] || (_cache[8] = (value) => onUpdatedPhone(value))
               }, null, 8 /* PROPS */, ["phone"]))
-            : createCommentVNode("v-if", true),
+            : vue.createCommentVNode("v-if", true),
           (__props.requirements.documentRequired)
-            ? (openBlock(), createElementBlock("div", _hoisted_10$2, " A document is required for the concerned traveler for the creation of the flight-order "))
-            : createCommentVNode("v-if", true),
+            ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_10$2, " A document is required for the concerned traveler for the creation of the flight-order "))
+            : vue.createCommentVNode("v-if", true),
           (__props.requirements.documentIssuanceCityRequired)
-            ? (openBlock(), createElementBlock("div", _hoisted_11$2, " The issuance city of the document is required for the concerned traveler for the creation of the flight-order "))
-            : createCommentVNode("v-if", true),
+            ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_11$2, " The issuance city of the document is required for the concerned traveler for the creation of the flight-order "))
+            : vue.createCommentVNode("v-if", true),
           (__props.requirements.redressRequiredIfAny)
-            ? (openBlock(), createElementBlock("div", _hoisted_12$2, " The redress is required if any for the concerned traveler for the creation of the flight-order "))
-            : createCommentVNode("v-if", true),
+            ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_12$2, " The redress is required if any for the concerned traveler for the creation of the flight-order "))
+            : vue.createCommentVNode("v-if", true),
           (__props.requirements.residenceRequired)
-            ? (openBlock(), createElementBlock("div", _hoisted_13$2, " The address is required for the concerned traveler for the creation of the flight-order "))
-            : createCommentVNode("v-if", true)
+            ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_13$2, " The address is required for the concerned traveler for the creation of the flight-order "))
+            : vue.createCommentVNode("v-if", true)
         ]))
-      : createCommentVNode("v-if", true),
+      : vue.createCommentVNode("v-if", true),
     (SELECT === mode.value && extended.value)
-      ? (openBlock(), createElementBlock("div", _hoisted_14$2, [
-          (openBlock(true), createElementBlock(Fragment, null, renderList(__props.employees, (employee, index) => {
-            return (openBlock(), createElementBlock("button", {
+      ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_14$2, [
+          (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(__props.employees, (employee, index) => {
+            return (vue.openBlock(), vue.createElementBlock("button", {
               key: index,
-              class: normalizeClass([{ 'border-green-300': !unref(v$).$error && passenger.contact.emailAddress === employee.contact.emailAddress, 'border-neutral-300': passenger.contact.emailAddress !== employee.contact.emailAddress, 'border-red-500': unref(v$).$error && passenger.contact.emailAddress === employee.contact.emailAddress}, "border rounded-xl px-4 py-3 flex outline-none items-center"]),
+              class: vue.normalizeClass([{ 'border-green-300': !vue.unref(v$).$error && passenger.contact.emailAddress === employee.contact.emailAddress, 'border-neutral-300': passenger.contact.emailAddress !== employee.contact.emailAddress, 'border-red-500': vue.unref(v$).$error && passenger.contact.emailAddress === employee.contact.emailAddress}, "border rounded-xl px-4 py-3 flex outline-none items-center"]),
               onClick: () => selectTraveler(employee)
             }, [
-              (!unref(v$).$error && passenger.contact.emailAddress === employee.contact.emailAddress)
-                ? (openBlock(), createBlock(_component_check_circle, {
+              (!vue.unref(v$).$error && passenger.contact.emailAddress === employee.contact.emailAddress)
+                ? (vue.openBlock(), vue.createBlock(_component_check_circle, {
                     key: 0,
                     class: "w-8 stroke-green-500 text-green-500"
                   }))
-                : (unref(v$).$error && passenger.contact.emailAddress === employee.contact.emailAddress)
-                  ? (openBlock(), createBlock(unref(ExclamationCircleIcon), {
+                : (vue.unref(v$).$error && passenger.contact.emailAddress === employee.contact.emailAddress)
+                  ? (vue.openBlock(), vue.createBlock(vue.unref(solid.ExclamationCircleIcon), {
                       key: 1,
                       class: "w-8 stroke-red-500 text-red-500"
                     }))
-                  : (openBlock(), createElementBlock("img", {
+                  : (vue.openBlock(), vue.createElementBlock("img", {
                       key: 2,
-                      class: normalizeClass([{  'bg-green-500': !unref(v$).$error && passenger.contact.emailAddress === employee.contact.emailAddress, 'bg-neutral-300': passenger.contact.emailAddress !== employee.contact.emailAddress, 'bg-red-500': unref(v$).$error && passenger.contact.emailAddress === employee.contact.emailAddress}, "h-8 w-8 rounded-full mr-3"]),
+                      class: vue.normalizeClass([{  'bg-green-500': !vue.unref(v$).$error && passenger.contact.emailAddress === employee.contact.emailAddress, 'bg-neutral-300': passenger.contact.emailAddress !== employee.contact.emailAddress, 'bg-red-500': vue.unref(v$).$error && passenger.contact.emailAddress === employee.contact.emailAddress}, "h-8 w-8 rounded-full mr-3"]),
                       src: employee.profilePhoto ? employee.profilePhoto : 'https://ui-avatars.com/api/?name=' + (employee.name.firstName.length > 0 ? employee.name.firstName[0] : 'p') + '&color=828282&background=D3F8F0',
                       alt: ""
                     }, null, 10 /* CLASS, PROPS */, _hoisted_16$1)),
-              createElementVNode("span", {
-                class: normalizeClass([{ 'text-green-500': !unref(v$).$error && employee.contact.emailAddress === passenger.contact.emailAddress, 'text-red-500': unref(v$).$error && passenger.contact.emailAddress === employee.contact.emailAddress}, "grow text-neutral-600 flex flex-col"])
+              vue.createElementVNode("span", {
+                class: vue.normalizeClass([{ 'text-green-500': !vue.unref(v$).$error && employee.contact.emailAddress === passenger.contact.emailAddress, 'text-red-500': vue.unref(v$).$error && passenger.contact.emailAddress === employee.contact.emailAddress}, "grow text-neutral-600 flex flex-col"])
               }, [
-                createTextVNode(toDisplayString(employee.name.firstName.length !== 0 ? employee.name.firstName : 'Passenger ' + (Number(employee.id) + 1)) + " " + toDisplayString(employee.name.lastName && employee.name.lastName.length !== 0 ? employee.name.lastName : '') + " ", 1 /* TEXT */),
-                (employee.contact.emailAddress === passenger.contact.emailAddress && unref(v$).$error)
-                  ? (openBlock(), createElementBlock("span", _hoisted_17$1, [
-                      createTextVNode(toDisplayString(_ctx.$t('passengers.errors.generic')) + " ", 1 /* TEXT */),
-                      (openBlock(true), createElementBlock(Fragment, null, renderList(unref(v$).$errors, (error) => {
-                        return (openBlock(), createElementBlock("span", {
+                vue.createTextVNode(vue.toDisplayString(employee.name.firstName.length !== 0 ? employee.name.firstName : 'Passenger ' + (Number(employee.id) + 1)) + " " + vue.toDisplayString(employee.name.lastName && employee.name.lastName.length !== 0 ? employee.name.lastName : '') + " ", 1 /* TEXT */),
+                (employee.contact.emailAddress === passenger.contact.emailAddress && vue.unref(v$).$error)
+                  ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_17$1, [
+                      vue.createTextVNode(vue.toDisplayString(_ctx.$t('passengers.errors.generic')) + " ", 1 /* TEXT */),
+                      (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(vue.unref(v$).$errors, (error) => {
+                        return (vue.openBlock(), vue.createElementBlock("span", {
                           class: "flex flex-col uppercase",
                           key: error.$uid
-                        }, toDisplayString(_ctx.$t('passengers.errors.' + error.$property + '.' + error.$validator)), 1 /* TEXT */))
+                        }, vue.toDisplayString(_ctx.$t('passengers.errors.' + error.$property + '.' + error.$validator)), 1 /* TEXT */))
                       }), 128 /* KEYED_FRAGMENT */))
                     ]))
-                  : createCommentVNode("v-if", true)
+                  : vue.createCommentVNode("v-if", true)
               ], 2 /* CLASS */)
             ], 10 /* CLASS, PROPS */, _hoisted_15$1))
           }), 128 /* KEYED_FRAGMENT */))
         ]))
-      : createCommentVNode("v-if", true)
+      : vue.createCommentVNode("v-if", true)
   ]))
 }
 }
@@ -1695,19 +1697,19 @@ var script$9 = {
 
 const props = __props;
 
-const passengerRequirements = ref([]);
+const passengerRequirements = vue.ref([]);
 const emits = __emit;
 
-onMounted(function () {
+vue.onMounted(function () {
   const { requirements, passengers } = props;
-  passengerRequirements.value = mapRequirementsToPassengers(toRaw(passengers), toRaw(requirements));
+  passengerRequirements.value = mapRequirementsToPassengers(vue.toRaw(passengers), vue.toRaw(requirements));
 });
 
 // Map requirements to passengers.
-watch(() => props.requirements, (requirements) => {
-  if (isProxy(requirements)) {
+vue.watch(() => props.requirements, (requirements) => {
+  if (vue.isProxy(requirements)) {
     const { passengers } = props;
-    passengerRequirements.value = mapRequirementsToPassengers(toRaw(passengers), toRaw(requirements));
+    passengerRequirements.value = mapRequirementsToPassengers(vue.toRaw(passengers), vue.toRaw(requirements));
   }
 });
 
@@ -1751,9 +1753,9 @@ function update(updatedPassenger) {
 // Are all passengers information valid, activate the confirmation.
 
 return (_ctx, _cache) => {
-  return (openBlock(), createElementBlock("div", _hoisted_1$8, [
-    (openBlock(true), createElementBlock(Fragment, null, renderList(__props.passengers, (passenger, index) => {
-      return (openBlock(), createBlock(script$a, {
+  return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$8, [
+    (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(__props.passengers, (passenger, index) => {
+      return (vue.openBlock(), vue.createBlock(script$a, {
         key: index,
         traveler: passenger,
         employees: __props.employees,
@@ -1840,7 +1842,7 @@ var script$8 = {
 
 const props = __props;
 
-const {t} = useI18n({useScope: "global"});
+const {t} = vueI18n.useI18n({useScope: "global"});
 
 /**
  * Extract the data from the offer. The data is:
@@ -1869,11 +1871,11 @@ const currency = props.offer.price.currency;
  *
  * @type {ToRef<{amount: number, active: boolean}>}
  */
-const refund = ref({
+const refund = vue.ref({
   active: false,
   amount: 0
 });
-const exchange = ref({
+const exchange = vue.ref({
   active: false,
   amount: 0
 });
@@ -1911,102 +1913,102 @@ if (props.offer.fareRules) {
 
 
 return (_ctx, _cache) => {
-  return (openBlock(), createElementBlock("div", _hoisted_1$7, [
-    createElementVNode("div", _hoisted_2$5, [
-      createElementVNode("h1", null, [
-        createElementVNode("span", _hoisted_3$4, toDisplayString(unref(price)), 1 /* TEXT */),
-        createTextVNode(" " + toDisplayString(unref(currency)), 1 /* TEXT */)
+  return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$7, [
+    vue.createElementVNode("div", _hoisted_2$5, [
+      vue.createElementVNode("h1", null, [
+        vue.createElementVNode("span", _hoisted_3$4, vue.toDisplayString(vue.unref(price)), 1 /* TEXT */),
+        vue.createTextVNode(" " + vue.toDisplayString(vue.unref(currency)), 1 /* TEXT */)
       ]),
-      createElementVNode("p", _hoisted_4$3, toDisplayString(unref(t)('flightOfferExtended.cabin')) + ": " + toDisplayString(unref(cabin)), 1 /* TEXT */),
-      (!(unref(included).length > 0))
-        ? (openBlock(), createElementBlock("ul", _hoisted_5$1, [
-            createElementVNode("h2", _hoisted_6$1, toDisplayString(unref(t)('flightOfferExtended.description')), 1 /* TEXT */),
+      vue.createElementVNode("p", _hoisted_4$3, vue.toDisplayString(vue.unref(t)('flightOfferExtended.cabin')) + ": " + vue.toDisplayString(vue.unref(cabin)), 1 /* TEXT */),
+      (!(vue.unref(included).length > 0))
+        ? (vue.openBlock(), vue.createElementBlock("ul", _hoisted_5$1, [
+            vue.createElementVNode("h2", _hoisted_6$1, vue.toDisplayString(vue.unref(t)('flightOfferExtended.description')), 1 /* TEXT */),
             (exchange.value.active)
-              ? (openBlock(), createElementBlock("li", _hoisted_7$1, [
-                  createElementVNode("div", _hoisted_8$1, [
-                    createVNode(unref(CheckIcon$1), { class: "h-5 w-5 text-gray-900" }),
-                    createElementVNode("p", _hoisted_9$1, toDisplayString(unref(t)('flightOfferExtended.exchangeable', exchange.value.amount)), 1 /* TEXT */)
+              ? (vue.openBlock(), vue.createElementBlock("li", _hoisted_7$1, [
+                  vue.createElementVNode("div", _hoisted_8$1, [
+                    vue.createVNode(vue.unref(outline.CheckIcon), { class: "h-5 w-5 text-gray-900" }),
+                    vue.createElementVNode("p", _hoisted_9$1, vue.toDisplayString(vue.unref(t)('flightOfferExtended.exchangeable', exchange.value.amount)), 1 /* TEXT */)
                   ])
                 ]))
-              : createCommentVNode("v-if", true),
+              : vue.createCommentVNode("v-if", true),
             (!exchange.value.active)
-              ? (openBlock(), createElementBlock("li", _hoisted_10$1, [
-                  createElementVNode("div", _hoisted_11$1, [
-                    createVNode(unref(MinusIcon), { class: "h-5 w-5 text-gray-900" }),
-                    createElementVNode("p", _hoisted_12$1, toDisplayString(unref(t)('flightOfferExtended.noExchange')), 1 /* TEXT */)
+              ? (vue.openBlock(), vue.createElementBlock("li", _hoisted_10$1, [
+                  vue.createElementVNode("div", _hoisted_11$1, [
+                    vue.createVNode(vue.unref(outline.MinusIcon), { class: "h-5 w-5 text-gray-900" }),
+                    vue.createElementVNode("p", _hoisted_12$1, vue.toDisplayString(vue.unref(t)('flightOfferExtended.noExchange')), 1 /* TEXT */)
                   ])
                 ]))
-              : createCommentVNode("v-if", true),
+              : vue.createCommentVNode("v-if", true),
             (refund.value.active)
-              ? (openBlock(), createElementBlock("li", _hoisted_13$1, [
-                  createElementVNode("div", _hoisted_14$1, [
-                    createVNode(unref(CheckIcon$1), { class: "h-5 w-5 text-gray-900" }),
-                    createElementVNode("p", _hoisted_15, toDisplayString(unref(t)('flightOfferExtended.refundable', refund.value.amount)), 1 /* TEXT */)
+              ? (vue.openBlock(), vue.createElementBlock("li", _hoisted_13$1, [
+                  vue.createElementVNode("div", _hoisted_14$1, [
+                    vue.createVNode(vue.unref(outline.CheckIcon), { class: "h-5 w-5 text-gray-900" }),
+                    vue.createElementVNode("p", _hoisted_15, vue.toDisplayString(vue.unref(t)('flightOfferExtended.refundable', refund.value.amount)), 1 /* TEXT */)
                   ])
                 ]))
-              : createCommentVNode("v-if", true),
+              : vue.createCommentVNode("v-if", true),
             (!refund.value.active)
-              ? (openBlock(), createElementBlock("li", _hoisted_16, [
-                  createElementVNode("div", _hoisted_17, [
-                    createVNode(unref(MinusIcon), { class: "h-5 w-5 text-gray-900" }),
-                    createElementVNode("p", _hoisted_18, toDisplayString(unref(t)('flightOfferExtended.noRefund')), 1 /* TEXT */)
+              ? (vue.openBlock(), vue.createElementBlock("li", _hoisted_16, [
+                  vue.createElementVNode("div", _hoisted_17, [
+                    vue.createVNode(vue.unref(outline.MinusIcon), { class: "h-5 w-5 text-gray-900" }),
+                    vue.createElementVNode("p", _hoisted_18, vue.toDisplayString(vue.unref(t)('flightOfferExtended.noRefund')), 1 /* TEXT */)
                   ])
                 ]))
-              : createCommentVNode("v-if", true),
-            (unref(baggageEntity).quantity)
-              ? (openBlock(), createElementBlock("li", _hoisted_19, [
-                  createElementVNode("div", _hoisted_20, [
-                    createVNode(unref(CheckIcon$1), { class: "h-5 w-5 text-gray-900" }),
-                    createElementVNode("p", _hoisted_21, toDisplayString(unref(t)('flightOfferExtended.includedBaggage', unref(baggageEntity).quantity)), 1 /* TEXT */)
+              : vue.createCommentVNode("v-if", true),
+            (vue.unref(baggageEntity).quantity)
+              ? (vue.openBlock(), vue.createElementBlock("li", _hoisted_19, [
+                  vue.createElementVNode("div", _hoisted_20, [
+                    vue.createVNode(vue.unref(outline.CheckIcon), { class: "h-5 w-5 text-gray-900" }),
+                    vue.createElementVNode("p", _hoisted_21, vue.toDisplayString(vue.unref(t)('flightOfferExtended.includedBaggage', vue.unref(baggageEntity).quantity)), 1 /* TEXT */)
                   ])
                 ]))
-              : createCommentVNode("v-if", true),
-            (unref(baggageEntity).weight)
-              ? (openBlock(), createElementBlock("li", _hoisted_22, [
-                  createElementVNode("div", _hoisted_23, [
-                    createVNode(unref(CheckIcon$1), { class: "h-5 w-5 text-gray-900" }),
-                    createElementVNode("p", _hoisted_24, toDisplayString(unref(t)('flightOfferExtended.includedBaggageWeight', {
-                  weight: unref(baggageEntity).weight,
-                  unit: unref(baggageEntity).weightUnit
+              : vue.createCommentVNode("v-if", true),
+            (vue.unref(baggageEntity).weight)
+              ? (vue.openBlock(), vue.createElementBlock("li", _hoisted_22, [
+                  vue.createElementVNode("div", _hoisted_23, [
+                    vue.createVNode(vue.unref(outline.CheckIcon), { class: "h-5 w-5 text-gray-900" }),
+                    vue.createElementVNode("p", _hoisted_24, vue.toDisplayString(vue.unref(t)('flightOfferExtended.includedBaggageWeight', {
+                  weight: vue.unref(baggageEntity).weight,
+                  unit: vue.unref(baggageEntity).weightUnit
                 })), 1 /* TEXT */)
                   ])
                 ]))
-              : createCommentVNode("v-if", true)
+              : vue.createCommentVNode("v-if", true)
           ]))
-        : createCommentVNode("v-if", true),
-      (unref(included).length > 0)
-        ? (openBlock(), createElementBlock("h2", _hoisted_25, toDisplayString(unref(t)('flightOfferExtended.included')), 1 /* TEXT */))
-        : createCommentVNode("v-if", true),
-      (unref(included).length > 0)
-        ? (openBlock(), createElementBlock("ul", _hoisted_26, [
-            (openBlock(true), createElementBlock(Fragment, null, renderList(unref(included), (bag) => {
-              return (openBlock(), createElementBlock("li", _hoisted_27, [
-                createElementVNode("div", _hoisted_28, [
-                  createVNode(unref(CheckIcon$1), { class: "h-5 w-5 text-gray-900" }),
-                  createElementVNode("p", _hoisted_29, toDisplayString(bag.description), 1 /* TEXT */)
+        : vue.createCommentVNode("v-if", true),
+      (vue.unref(included).length > 0)
+        ? (vue.openBlock(), vue.createElementBlock("h2", _hoisted_25, vue.toDisplayString(vue.unref(t)('flightOfferExtended.included')), 1 /* TEXT */))
+        : vue.createCommentVNode("v-if", true),
+      (vue.unref(included).length > 0)
+        ? (vue.openBlock(), vue.createElementBlock("ul", _hoisted_26, [
+            (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(vue.unref(included), (bag) => {
+              return (vue.openBlock(), vue.createElementBlock("li", _hoisted_27, [
+                vue.createElementVNode("div", _hoisted_28, [
+                  vue.createVNode(vue.unref(outline.CheckIcon), { class: "h-5 w-5 text-gray-900" }),
+                  vue.createElementVNode("p", _hoisted_29, vue.toDisplayString(bag.description), 1 /* TEXT */)
                 ])
               ]))
             }), 256 /* UNKEYED_FRAGMENT */))
           ]))
-        : createCommentVNode("v-if", true),
-      (unref(excluded).length > 0)
-        ? (openBlock(), createElementBlock("h2", _hoisted_30, toDisplayString(unref(t)('flightOfferExtended.purchase')), 1 /* TEXT */))
-        : createCommentVNode("v-if", true),
-      (unref(excluded).length > 0)
-        ? (openBlock(), createElementBlock("ul", _hoisted_31, [
-            (openBlock(true), createElementBlock(Fragment, null, renderList(unref(excluded), (meal) => {
-              return (openBlock(), createElementBlock("li", _hoisted_32, [
-                createElementVNode("div", _hoisted_33, [
-                  createVNode(unref(CurrencyEuroIcon), { class: "h-5 w-5 text-gray-900" }),
-                  createElementVNode("p", _hoisted_34, toDisplayString(meal.description), 1 /* TEXT */)
+        : vue.createCommentVNode("v-if", true),
+      (vue.unref(excluded).length > 0)
+        ? (vue.openBlock(), vue.createElementBlock("h2", _hoisted_30, vue.toDisplayString(vue.unref(t)('flightOfferExtended.purchase')), 1 /* TEXT */))
+        : vue.createCommentVNode("v-if", true),
+      (vue.unref(excluded).length > 0)
+        ? (vue.openBlock(), vue.createElementBlock("ul", _hoisted_31, [
+            (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(vue.unref(excluded), (meal) => {
+              return (vue.openBlock(), vue.createElementBlock("li", _hoisted_32, [
+                vue.createElementVNode("div", _hoisted_33, [
+                  vue.createVNode(vue.unref(outline.CurrencyEuroIcon), { class: "h-5 w-5 text-gray-900" }),
+                  vue.createElementVNode("p", _hoisted_34, vue.toDisplayString(meal.description), 1 /* TEXT */)
                 ])
               ]))
             }), 256 /* UNKEYED_FRAGMENT */))
           ]))
-        : createCommentVNode("v-if", true),
-      _cache[1] || (_cache[1] = createElementVNode("div", { class: "grow" }, null, -1 /* HOISTED */)),
-      createVNode(script$k, {
-        title: unref(t)('flightOfferExtended.select'),
+        : vue.createCommentVNode("v-if", true),
+      _cache[1] || (_cache[1] = vue.createElementVNode("div", { class: "grow" }, null, -1 /* HOISTED */)),
+      vue.createVNode(script$k, {
+        title: vue.unref(t)('flightOfferExtended.select'),
         onClick: _cache[0] || (_cache[0] = $event => (props.onSelect(props.offer))),
         class: "w-full"
       }, null, 8 /* PROPS */, ["title"])
@@ -2020,8 +2022,8 @@ return (_ctx, _cache) => {
 const _hoisted_1$6 = { class: "snap-mandatory snap-x w-full grid grid-flow-col gap-4 overflow-x-scroll overflow-hidden pb-4" };
 
 function render(_ctx, _cache) {
-  return (openBlock(), createElementBlock("div", _hoisted_1$6, [
-    renderSlot(_ctx.$slots, "default")
+  return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$6, [
+    vue.renderSlot(_ctx.$slots, "default")
   ]))
 }
 
@@ -2073,15 +2075,15 @@ function isCurrentValueLowest(currentValue) {
 
 
 return (_ctx, _cache) => {
-  return (openBlock(), createElementBlock("ul", _hoisted_1$5, [
-    (openBlock(true), createElementBlock(Fragment, null, renderList(__props.options, (option, index) => {
-      return (openBlock(), createElementBlock("li", _hoisted_2$4, [
-        createElementVNode("button", {
-          class: normalizeClass([{ 'outline outline-2 outline-neutral-400': isMiddle(index), 'text-green-700': isCurrentValueLowest(option.value), 'text-taa-brand-dark-blue': !isCurrentValueLowest(option.value) }, "button"]),
+  return (vue.openBlock(), vue.createElementBlock("ul", _hoisted_1$5, [
+    (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(__props.options, (option, index) => {
+      return (vue.openBlock(), vue.createElementBlock("li", _hoisted_2$4, [
+        vue.createElementVNode("button", {
+          class: vue.normalizeClass([{ 'outline outline-2 outline-neutral-400': isMiddle(index), 'text-green-700': isCurrentValueLowest(option.value), 'text-taa-brand-dark-blue': !isCurrentValueLowest(option.value) }, "button"]),
           onClick: () => __props.onChoose(option.label)
         }, [
-          createElementVNode("span", _hoisted_4$2, toDisplayString(option.label), 1 /* TEXT */),
-          createTextVNode(" " + toDisplayString(option.value), 1 /* TEXT */)
+          vue.createElementVNode("span", _hoisted_4$2, vue.toDisplayString(option.label), 1 /* TEXT */),
+          vue.createTextVNode(" " + vue.toDisplayString(option.value), 1 /* TEXT */)
         ], 10 /* CLASS, PROPS */, _hoisted_3$3)
       ]))
     }), 256 /* UNKEYED_FRAGMENT */))
@@ -2131,7 +2133,7 @@ function mapSegmentsToItinerariesDays(itineraries, dictionary, i18n) {
                     ("0" + (currentDay.getMonth() + 1)).slice(-2) + '-' +
                     currentDay.getFullYear();
             }).map((flight) => {
-                let duration = parse(flight.duration);
+                let duration = tinyduration.parse(flight.duration);
                 // Build duration string
                 let durationString = '';
                 if (duration.days > 0) {
@@ -2178,29 +2180,29 @@ var script$5 = {
 
 
 
-onMounted(() => {
+vue.onMounted(() => {
     let body = document.body;
     body.classList.add('overflow-hidden');
 });
 
-onUnmounted(() => {
+vue.onUnmounted(() => {
     let body = document.body;
     body.classList.remove('overflow-hidden');
 });
 
 
 return (_ctx, _cache) => {
-  return (openBlock(), createBlock(unref(TransitionRoot), {
+  return (vue.openBlock(), vue.createBlock(vue.unref(vue$1.TransitionRoot), {
     show: __props.show,
     as: "template"
   }, {
-    default: withCtx(() => [
-      createVNode(unref(Dialog), {
+    default: vue.withCtx(() => [
+      vue.createVNode(vue.unref(vue$1.Dialog), {
         as: "div",
         class: "relative z-50"
       }, {
-        default: withCtx(() => [
-          createVNode(unref(TransitionChild), {
+        default: vue.withCtx(() => [
+          vue.createVNode(vue.unref(vue$1.TransitionChild), {
             as: "template",
             enter: "ease-out duration-300",
             "enter-from": "opacity-0",
@@ -2209,12 +2211,12 @@ return (_ctx, _cache) => {
             "leave-from": "opacity-100",
             "leave-to": "opacity-0"
           }, {
-            default: withCtx(() => _cache[0] || (_cache[0] = [
-              createElementVNode("div", { class: "fixed inset-0 bg-neutral-400/25 backdrop-blur bg-opacity-75 transition-opacity" }, null, -1 /* HOISTED */)
+            default: vue.withCtx(() => _cache[0] || (_cache[0] = [
+              vue.createElementVNode("div", { class: "fixed inset-0 bg-neutral-400/25 backdrop-blur bg-opacity-75 transition-opacity" }, null, -1 /* HOISTED */)
             ])),
             _: 1 /* STABLE */
           }),
-          renderSlot(_ctx.$slots, "default")
+          vue.renderSlot(_ctx.$slots, "default")
         ]),
         _: 3 /* FORWARDED */
       })
@@ -2257,20 +2259,20 @@ const emit = __emit;
 
 
 return (_ctx, _cache) => {
-  return (openBlock(), createElementBlock("li", _hoisted_1$4, [
-    createElementVNode("button", {
-      class: normalizeClass([{ 'bg-taa-brand-dark-blue': __props.manager && __props.manager.id === __props.contact.id }, "grow flex items-center pr-4 bg-white rounded-xl ring-1 ring-inset ring-gray-300 px-2 py-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-taa-brand-dark-blue"]),
+  return (vue.openBlock(), vue.createElementBlock("li", _hoisted_1$4, [
+    vue.createElementVNode("button", {
+      class: vue.normalizeClass([{ 'bg-taa-brand-dark-blue': __props.manager && __props.manager.id === __props.contact.id }, "grow flex items-center pr-4 bg-white rounded-xl ring-1 ring-inset ring-gray-300 px-2 py-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-taa-brand-dark-blue"]),
       "aria-setsize": "4",
       onClick: _cache[0] || (_cache[0] = () => emit('click', __props.contact))
     }, [
-      createElementVNode("img", {
+      vue.createElementVNode("img", {
         class: "h-8 w-8 rounded-full mr-3 bg-neutral-300 border-0",
         src: 'https://ui-avatars.com/api/?name=' + (__props.contact.name.firstName.length > 0 ? __props.contact.name.firstName[0] : 'p') + '&color=828282&background=D3F8F0',
         alt: ""
       }, null, 8 /* PROPS */, _hoisted_2$3),
-      createElementVNode("span", {
-        class: normalizeClass(["grow text-neutral-600 text-left", { 'text-white': __props.manager && __props.manager.id === __props.contact.id }])
-      }, toDisplayString(__props.contact.name.firstName.length !== 0 ? __props.contact.name.firstName : '') + " " + toDisplayString(__props.contact.name.lastName.length !== 0 ? __props.contact.name.lastName : ''), 3 /* TEXT, CLASS */)
+      vue.createElementVNode("span", {
+        class: vue.normalizeClass(["grow text-neutral-600 text-left", { 'text-white': __props.manager && __props.manager.id === __props.contact.id }])
+      }, vue.toDisplayString(__props.contact.name.firstName.length !== 0 ? __props.contact.name.firstName : '') + " " + vue.toDisplayString(__props.contact.name.lastName.length !== 0 ? __props.contact.name.lastName : ''), 3 /* TEXT, CLASS */)
     ], 2 /* CLASS */)
   ]))
 }
@@ -2337,83 +2339,83 @@ var script$3 = {
 
 
 
-const {t} = useI18n({useScope: 'global'});
+const {t} = vueI18n.useI18n({useScope: 'global'});
 
 
 return (_ctx, _cache) => {
   return (0 < __props.paginatedContacts.length)
-    ? (openBlock(), createElementBlock("div", _hoisted_1$3, [
+    ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$3, [
         (__props.paginatedContacts.length > 4)
-          ? (openBlock(), createElementBlock("div", _hoisted_2$2, [
-              createElementVNode("div", null, [
-                createElementVNode("button", {
+          ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2$2, [
+              vue.createElementVNode("div", null, [
+                vue.createElementVNode("button", {
                   onClick: _cache[0] || (_cache[0] = $event => (__props.goToPage(__props.currentPage - 1))),
                   disabled: __props.currentPage === 1,
                   class: "button back",
                   "aria-label": "Pagination"
                 }, [
-                  createElementVNode("span", _hoisted_4$1, toDisplayString(unref(t)('approve.previous')), 1 /* TEXT */),
-                  createVNode(unref(ChevronLeftIcon), {
+                  vue.createElementVNode("span", _hoisted_4$1, vue.toDisplayString(vue.unref(t)('approve.previous')), 1 /* TEXT */),
+                  vue.createVNode(vue.unref(index_js.ChevronLeftIcon), {
                     class: "h-5 w-5",
                     "aria-hidden": "true"
                   })
                 ], 8 /* PROPS */, _hoisted_3$2),
-                createElementVNode("button", {
+                vue.createElementVNode("button", {
                   onClick: _cache[1] || (_cache[1] = $event => (__props.goToPage(__props.currentPage + 1))),
                   disabled: __props.currentPage === __props.totalPages,
                   class: "button next"
                 }, [
-                  createElementVNode("span", _hoisted_6, toDisplayString(unref(t)('approve.next')), 1 /* TEXT */),
-                  createVNode(unref(ChevronRightIcon), {
+                  vue.createElementVNode("span", _hoisted_6, vue.toDisplayString(vue.unref(t)('approve.next')), 1 /* TEXT */),
+                  vue.createVNode(vue.unref(index_js.ChevronRightIcon), {
                     class: "h-5 w-5",
                     "aria-hidden": "true"
                   })
                 ], 8 /* PROPS */, _hoisted_5)
               ]),
-              createElementVNode("div", null, [
-                createVNode(script$k, {
+              vue.createElementVNode("div", null, [
+                vue.createVNode(script$k, {
                   title: __props.name(),
                   disabled: !__props.manager
                 }, null, 8 /* PROPS */, ["title", "disabled"])
               ])
             ]))
-          : createCommentVNode("v-if", true),
-        createElementVNode("div", _hoisted_7, [
+          : vue.createCommentVNode("v-if", true),
+        vue.createElementVNode("div", _hoisted_7, [
           (__props.paginatedContacts.length > 4)
-            ? (openBlock(), createElementBlock("nav", _hoisted_8, [
-                createElementVNode("button", {
+            ? (vue.openBlock(), vue.createElementBlock("nav", _hoisted_8, [
+                vue.createElementVNode("button", {
                   onClick: _cache[2] || (_cache[2] = $event => (__props.goToPage(__props.currentPage - 1))),
                   disabled: __props.currentPage === 1,
-                  class: normalizeClass([{'hover:bg-gray-50 text-gray-400': __props.currentPage === 1}, "relative inline-flex items-center rounded-l-md px-2 py-2 ring-1 ring-inset ring-gray-300 focus:z-20 focus:outline-offset-0"])
+                  class: vue.normalizeClass([{'hover:bg-gray-50 text-gray-400': __props.currentPage === 1}, "relative inline-flex items-center rounded-l-md px-2 py-2 ring-1 ring-inset ring-gray-300 focus:z-20 focus:outline-offset-0"])
                 }, [
-                  createElementVNode("span", _hoisted_10, toDisplayString(unref(t)('approve.previous')), 1 /* TEXT */),
-                  createVNode(unref(ChevronLeftIcon), {
-                    class: normalizeClass([{'fill-gray-400': __props.currentPage === 1}, "h-5 w-5"]),
+                  vue.createElementVNode("span", _hoisted_10, vue.toDisplayString(vue.unref(t)('approve.previous')), 1 /* TEXT */),
+                  vue.createVNode(vue.unref(index_js.ChevronLeftIcon), {
+                    class: vue.normalizeClass([{'fill-gray-400': __props.currentPage === 1}, "h-5 w-5"]),
                     "aria-hidden": "true"
                   }, null, 8 /* PROPS */, ["class"])
                 ], 10 /* CLASS, PROPS */, _hoisted_9),
-                (openBlock(true), createElementBlock(Fragment, null, renderList(__props.totalPages, (page) => {
-                  return (openBlock(), createElementBlock("button", {
+                (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(__props.totalPages, (page) => {
+                  return (vue.openBlock(), vue.createElementBlock("button", {
                     key: page,
                     onClick: $event => (__props.goToPage(page)),
-                    class: normalizeClass([{ 'z-10 bg-white text-taa-brand-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600': page === __props.currentPage }, "relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"])
-                  }, toDisplayString(page), 11 /* TEXT, CLASS, PROPS */, _hoisted_11))
+                    class: vue.normalizeClass([{ 'z-10 bg-white text-taa-brand-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600': page === __props.currentPage }, "relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"])
+                  }, vue.toDisplayString(page), 11 /* TEXT, CLASS, PROPS */, _hoisted_11))
                 }), 128 /* KEYED_FRAGMENT */)),
-                createElementVNode("button", {
+                vue.createElementVNode("button", {
                   onClick: _cache[3] || (_cache[3] = $event => (__props.goToPage(__props.currentPage + 1))),
                   disabled: __props.currentPage === __props.totalPages,
-                  class: normalizeClass([{'hover:bg-gray-50': __props.currentPage !== __props.totalPages}, "relative inline-flex items-center rounded-r-md px-2 py-2 ring-1 ring-inset ring-gray-300 focus:z-20 focus:outline-offset-0"])
+                  class: vue.normalizeClass([{'hover:bg-gray-50': __props.currentPage !== __props.totalPages}, "relative inline-flex items-center rounded-r-md px-2 py-2 ring-1 ring-inset ring-gray-300 focus:z-20 focus:outline-offset-0"])
                 }, [
-                  createElementVNode("span", _hoisted_13, toDisplayString(unref(t)('approve.next')), 1 /* TEXT */),
-                  createVNode(unref(ChevronRightIcon), {
-                    class: normalizeClass([{'fill-gray-400': __props.currentPage === __props.totalPages}, "h-5 w-5"]),
+                  vue.createElementVNode("span", _hoisted_13, vue.toDisplayString(vue.unref(t)('approve.next')), 1 /* TEXT */),
+                  vue.createVNode(vue.unref(index_js.ChevronRightIcon), {
+                    class: vue.normalizeClass([{'fill-gray-400': __props.currentPage === __props.totalPages}, "h-5 w-5"]),
                     "aria-hidden": "true"
                   }, null, 8 /* PROPS */, ["class"])
                 ], 10 /* CLASS, PROPS */, _hoisted_12)
               ]))
-            : (openBlock(), createElementBlock("div", _hoisted_14)),
-          createElementVNode("div", null, [
-            createVNode(script$k, {
+            : (vue.openBlock(), vue.createElementBlock("div", _hoisted_14)),
+          vue.createElementVNode("div", null, [
+            vue.createVNode(script$k, {
               title: __props.name(),
               disabled: !__props.manager,
               onClick: _cache[4] || (_cache[4] = () => _ctx.$emit('confirmEvent', __props.manager))
@@ -2421,7 +2423,7 @@ return (_ctx, _cache) => {
           ])
         ])
       ]))
-    : createCommentVNode("v-if", true)
+    : vue.createCommentVNode("v-if", true)
 }
 }
 
@@ -2448,23 +2450,23 @@ var script$2 = {
   setup(__props, { emit: __emit }) {
 
 const emit = __emit;
-const {t} = useI18n({useScope: 'global'});
+const {t} = vueI18n.useI18n({useScope: 'global'});
 
 function updateSearchQuery(event) {
   emit('update:modelValue', event.target.value);
 }
 
 return (_ctx, _cache) => {
-  return (openBlock(), createElementBlock("div", _hoisted_1$2, [
-    createElementVNode("label", _hoisted_2$1, toDisplayString(unref(t)('approve.title')), 1 /* TEXT */),
-    createElementVNode("div", _hoisted_3$1, [
-      createElementVNode("input", {
+  return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$2, [
+    vue.createElementVNode("label", _hoisted_2$1, vue.toDisplayString(vue.unref(t)('approve.title')), 1 /* TEXT */),
+    vue.createElementVNode("div", _hoisted_3$1, [
+      vue.createElementVNode("input", {
         id: "search",
         type: "text",
         name: "search",
         value: __props.modelValue,
         onInput: updateSearchQuery,
-        placeholder: unref(t)('approve.searchPlaceholder'),
+        placeholder: vue.unref(t)('approve.searchPlaceholder'),
         class: "t-input shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6"
       }, null, 40 /* PROPS, NEED_HYDRATION */, _hoisted_4)
     ])
@@ -2482,8 +2484,8 @@ var script$1 = {
 
   
 return (_ctx, _cache) => {
-  return (openBlock(), createElementBlock("ul", _hoisted_1$1, [
-    renderSlot(_ctx.$slots, "default")
+  return (vue.openBlock(), vue.createElementBlock("ul", _hoisted_1$1, [
+    vue.renderSlot(_ctx.$slots, "default")
   ]))
 }
 }
@@ -2529,7 +2531,7 @@ const emit = __emit;
  * Define the Properties for this component
  */
 const props = __props;
-const {t} = useI18n({useScope: 'global'});
+const {t} = vueI18n.useI18n({useScope: 'global'});
 
 /**
  * Search query
@@ -2537,7 +2539,7 @@ const {t} = useI18n({useScope: 'global'});
  *
  * @type {Ref<UnwrapRef<string>, UnwrapRef<string> | string>}
  */
-const searchQuery = ref('');
+const searchQuery = vue.ref('');
 
 /**
  * Current page
@@ -2545,7 +2547,7 @@ const searchQuery = ref('');
  *
  * @type {Ref<UnwrapRef<number>, UnwrapRef<number> | number>}
  */
-const currentPage = ref(1);
+const currentPage = vue.ref(1);
 
 /**
  * Items per page
@@ -2553,14 +2555,14 @@ const currentPage = ref(1);
  *
  * @type {number}
  */
-const manager = ref(null);
+const manager = vue.ref(null);
 
 /**
  * Filtered contacts
  *
  * @type {ComputedRef<*>}
  */
-const filteredContacts = computed(() => {
+const filteredContacts = vue.computed(() => {
   return props.contacts.filter(contact =>
       contact.name.firstName.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
       contact.name.lastName.toLowerCase().includes(searchQuery.value.toLowerCase())
@@ -2572,7 +2574,7 @@ const filteredContacts = computed(() => {
  *
  * @type {ComputedRef<*>}
  */
-const paginatedContacts = computed(() => {
+const paginatedContacts = vue.computed(() => {
   const start = (currentPage.value - 1) * itemsPerPage;
   const end = start + itemsPerPage;
   return filteredContacts.value.slice(start, end);
@@ -2583,7 +2585,7 @@ const paginatedContacts = computed(() => {
  *
  * @type {ComputedRef<number>}
  */
-const totalPages = computed(() => {
+const totalPages = vue.computed(() => {
   return Math.ceil(filteredContacts.value.length / itemsPerPage);
 });
 
@@ -2627,17 +2629,17 @@ function confirm(confirm) {
 /**
  * Watch the searchQuery and reset the currentPage to 1 when it changes
  */
-watch(searchQuery, () => {
+vue.watch(searchQuery, () => {
   currentPage.value = 1;
   manager.value = null;
 });
 
 return (_ctx, _cache) => {
-  return (openBlock(), createBlock(script$5, { show: true }, {
-    default: withCtx(() => [
-      createElementVNode("div", _hoisted_1, [
-        createElementVNode("div", _hoisted_2, [
-          createVNode(unref(TransitionChild), {
+  return (vue.openBlock(), vue.createBlock(script$5, { show: true }, {
+    default: vue.withCtx(() => [
+      vue.createElementVNode("div", _hoisted_1, [
+        vue.createElementVNode("div", _hoisted_2, [
+          vue.createVNode(vue.unref(vue$1.TransitionChild), {
             as: "template",
             enter: "ease-out duration-300",
             "enter-from": "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95",
@@ -2646,18 +2648,18 @@ return (_ctx, _cache) => {
             "leave-from": "opacity-100 translate-y-0 sm:scale-100",
             "leave-to": "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           }, {
-            default: withCtx(() => [
-              createVNode(unref(DialogPanel), null, {
-                default: withCtx(() => [
-                  createElementVNode("div", _hoisted_3, [
-                    createVNode(script$2, {
+            default: vue.withCtx(() => [
+              vue.createVNode(vue.unref(vue$1.DialogPanel), null, {
+                default: vue.withCtx(() => [
+                  vue.createElementVNode("div", _hoisted_3, [
+                    vue.createVNode(script$2, {
                       modelValue: searchQuery.value,
                       "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => ((searchQuery).value = $event))
                     }, null, 8 /* PROPS */, ["modelValue"]),
-                    createVNode(script$1, null, {
-                      default: withCtx(() => [
-                        (openBlock(true), createElementBlock(Fragment, null, renderList(paginatedContacts.value, (contact, index) => {
-                          return (openBlock(), createBlock(script$4, {
+                    vue.createVNode(script$1, null, {
+                      default: vue.withCtx(() => [
+                        (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(paginatedContacts.value, (contact, index) => {
+                          return (vue.openBlock(), vue.createBlock(script$4, {
                             key: index,
                             contact: contact,
                             manager: manager.value,
@@ -2667,7 +2669,7 @@ return (_ctx, _cache) => {
                       ]),
                       _: 1 /* STABLE */
                     }),
-                    createVNode(script$3, {
+                    vue.createVNode(script$3, {
                       currentPage: currentPage.value,
                       totalPages: totalPages.value,
                       goToPage: goToPage,
@@ -2693,4 +2695,18 @@ return (_ctx, _cache) => {
 
 };
 
-export { script as TApprove, script$g as TBirthdayInput, script$k as TButton, script$6 as TDaysSelector, script$f as TEmailInput, script$h as TFlightOffer, script$j as TFlightOfferList, script$e as TGenderInput, script$d as TNameInput, script$a as TPassenger, script$9 as TPassengersList, script$8 as TUpsellOffer, script$7 as TUpsellOfferList, script$c as TVueTelInput, mapSegmentsToItinerariesDays };
+exports.TApprove = script;
+exports.TBirthdayInput = script$g;
+exports.TButton = script$k;
+exports.TDaysSelector = script$6;
+exports.TEmailInput = script$f;
+exports.TFlightOffer = script$h;
+exports.TFlightOfferList = script$j;
+exports.TGenderInput = script$e;
+exports.TNameInput = script$d;
+exports.TPassenger = script$a;
+exports.TPassengersList = script$9;
+exports.TUpsellOffer = script$8;
+exports.TUpsellOfferList = script$7;
+exports.TVueTelInput = script$c;
+exports.mapSegmentsToItinerariesDays = mapSegmentsToItinerariesDays;

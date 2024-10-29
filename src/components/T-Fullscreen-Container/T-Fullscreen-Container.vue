@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
+import { Dialog, TransitionChild, TransitionRoot } from '@headlessui/vue'
 import {onMounted, onUnmounted} from "vue";
 
 defineProps({

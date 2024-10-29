@@ -4,10 +4,16 @@ import vue from "rollup-plugin-vue"
 export default [
     {
         input: 'src/index.js',
-        output: {
-            format: 'esm',
-            file: 'dist/taavani-components.esm.js',
-        },
+        output: [
+            {
+                format: 'cjs',
+                file: 'dist/taavani-components.cjs.js',
+            },
+            {
+                format: 'es',
+                file: 'dist/taavani-components.esm.js',
+            }
+        ],
         plugins: [
             postcss({
                 extensions: ['.css'],
@@ -24,9 +30,10 @@ export default [
             'vue-i18n',
             'tinyduration',
             '@heroicons/vue',
+            '@heroicons/vue/20/solid',
+            '@heroicons/vue/24/outline',
             '@headlessui/vue',
             '@vuelidate/core',
-            '@heroicons/vue/20/solid',
             '@vuelidate/validators',
             'vue-tel-input'
         ]

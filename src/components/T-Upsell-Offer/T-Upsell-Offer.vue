@@ -2,9 +2,7 @@
 import {ref} from "vue"
 import {useI18n} from "vue-i18n"
 
-import checked from '@heroicons/vue/24/outline/CheckIcon.js'
-import noChecked from '@heroicons/vue/24/outline/CurrencyEuroIcon.js'
-import MinusIcon from '@heroicons/vue/24/outline/MinusIcon.js'
+import { CheckIcon, CurrencyEuroIcon, MinusIcon } from '@heroicons/vue/24/outline'
 import TButton from "../T-Button/T-Button.vue";
 
 /**
@@ -106,7 +104,7 @@ if (props.offer.fareRules) {
 
         <li v-if="exchange.active" class="flex flex-col">
           <div class="flex">
-            <checked class="h-5 w-5 text-gray-900"/>
+            <check-icon class="h-5 w-5 text-gray-900"/>
             <p class="pl-2 text-xs content-center">
               {{ t('flightOfferExtended.exchangeable', exchange.amount) }}
             </p>
@@ -124,7 +122,7 @@ if (props.offer.fareRules) {
 
         <li v-if="refund.active" class="flex flex-col">
           <div class="flex">
-            <checked class="h-5 w-5 text-gray-900"/>
+            <check-icon class="h-5 w-5 text-gray-900"/>
             <p class="pl-2 text-xs content-center">
               {{ t('flightOfferExtended.refundable', refund.amount) }}
             </p>
@@ -142,7 +140,7 @@ if (props.offer.fareRules) {
 
         <li v-if="baggageEntity.quantity" class="flex flex-col">
           <div class="flex">
-            <checked class="h-5 w-5 text-gray-900"/>
+            <check-icon class="h-5 w-5 text-gray-900"/>
             <p class="pl-2 text-xs content-center">
               {{ t('flightOfferExtended.includedBaggage', baggageEntity.quantity) }}
             </p>
@@ -151,7 +149,7 @@ if (props.offer.fareRules) {
 
         <li v-if="baggageEntity.weight">
           <div class="flex">
-            <checked class="h-5 w-5 text-gray-900"/>
+            <check-icon class="h-5 w-5 text-gray-900"/>
             <p class="pl-2 text-xs content-center">
               {{
                 t('flightOfferExtended.includedBaggageWeight', {
@@ -170,7 +168,7 @@ if (props.offer.fareRules) {
       <ul v-if="included.length > 0" class="pb-3">
         <li v-for="bag in included" class="flex flex-col">
           <div class="flex">
-            <checked class="h-5 w-5 text-gray-900"/>
+            <check-icon class="h-5 w-5 text-gray-900"/>
             <p class="pl-2 text-xs">
               {{ bag.description }}
             </p>
@@ -184,7 +182,7 @@ if (props.offer.fareRules) {
       <ul v-if="excluded.length > 0" class="pb-3">
         <li v-for="meal in excluded" class="flex flex-col">
           <div class="flex">
-            <no-checked class="h-5 w-5 text-gray-900"/>
+            <Currency-euro-icon class="h-5 w-5 text-gray-900"/>
             <p class="pl-2 text-xs">
               {{ meal.description }}
             </p>
