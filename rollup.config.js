@@ -30,6 +30,7 @@ export default [
             'vue-i18n',
             'tinyduration',
             '@heroicons/vue',
+            '@heroicons/vue/16/solid',
             '@heroicons/vue/20/solid',
             '@heroicons/vue/24/outline',
             '@headlessui/vue',

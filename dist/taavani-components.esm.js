@@ -7,7 +7,7 @@ import { Listbox, ListboxLabel, ListboxButton, ListboxOptions, ListboxOption, Tr
 import { VueTelInput } from 'vue-tel-input';
 import { useI18n } from 'vue-i18n';
 import { CheckIcon as CheckIcon$1, MinusIcon, CurrencyEuroIcon } from '@heroicons/vue/24/outline';
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/16/solid/index.js';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/16/solid';
 
 var script$k = {
   __name: 'T-Button',

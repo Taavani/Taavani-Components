@@ -9,7 +9,7 @@ var vue$1 = require('@headlessui/vue');
 var vueTelInput = require('vue-tel-input');
 var vueI18n = require('vue-i18n');
 var outline = require('@heroicons/vue/24/outline');
-var index_js = require('@heroicons/vue/16/solid/index.js');
+var solid$1 = require('@heroicons/vue/16/solid');
 
 var script$k = {
   __name: 'T-Button',
@@ -2355,7 +2355,7 @@ return (_ctx, _cache) => {
                   "aria-label": "Pagination"
                 }, [
                   vue.createElementVNode("span", _hoisted_4$1, vue.toDisplayString(vue.unref(t)('approve.previous')), 1 /* TEXT */),
-                  vue.createVNode(vue.unref(index_js.ChevronLeftIcon), {
+                  vue.createVNode(vue.unref(solid$1.ChevronLeftIcon), {
                     class: "h-5 w-5",
                     "aria-hidden": "true"
                   })
@@ -2366,7 +2366,7 @@ return (_ctx, _cache) => {
                   class: "button next"
                 }, [
                   vue.createElementVNode("span", _hoisted_6, vue.toDisplayString(vue.unref(t)('approve.next')), 1 /* TEXT */),
-                  vue.createVNode(vue.unref(index_js.ChevronRightIcon), {
+                  vue.createVNode(vue.unref(solid$1.ChevronRightIcon), {
                     class: "h-5 w-5",
                     "aria-hidden": "true"
                   })
@@ -2389,7 +2389,7 @@ return (_ctx, _cache) => {
                   class: vue.normalizeClass([{'hover:bg-gray-50 text-gray-400': __props.currentPage === 1}, "relative inline-flex items-center rounded-l-md px-2 py-2 ring-1 ring-inset ring-gray-300 focus:z-20 focus:outline-offset-0"])
                 }, [
                   vue.createElementVNode("span", _hoisted_10, vue.toDisplayString(vue.unref(t)('approve.previous')), 1 /* TEXT */),
-                  vue.createVNode(vue.unref(index_js.ChevronLeftIcon), {
+                  vue.createVNode(vue.unref(solid$1.ChevronLeftIcon), {
                     class: vue.normalizeClass([{'fill-gray-400': __props.currentPage === 1}, "h-5 w-5"]),
                     "aria-hidden": "true"
                   }, null, 8 /* PROPS */, ["class"])
@@ -2407,7 +2407,7 @@ return (_ctx, _cache) => {
                   class: vue.normalizeClass([{'hover:bg-gray-50': __props.currentPage !== __props.totalPages}, "relative inline-flex items-center rounded-r-md px-2 py-2 ring-1 ring-inset ring-gray-300 focus:z-20 focus:outline-offset-0"])
                 }, [
                   vue.createElementVNode("span", _hoisted_13, vue.toDisplayString(vue.unref(t)('approve.next')), 1 /* TEXT */),
-                  vue.createVNode(vue.unref(index_js.ChevronRightIcon), {
+                  vue.createVNode(vue.unref(solid$1.ChevronRightIcon), {
                     class: vue.normalizeClass([{'fill-gray-400': __props.currentPage === __props.totalPages}, "h-5 w-5"]),
                     "aria-hidden": "true"
                   }, null, 8 /* PROPS */, ["class"])

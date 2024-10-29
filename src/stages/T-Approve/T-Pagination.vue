@@ -1,5 +1,5 @@
 <script setup>
-import {ChevronLeftIcon, ChevronRightIcon} from "@heroicons/vue/16/solid/index.js";
+import {ChevronLeftIcon, ChevronRightIcon} from "@heroicons/vue/16/solid";
 import TButton from "../../components/T-Button/T-Button.vue";
 import {useI18n} from 'vue-i18n'
 
