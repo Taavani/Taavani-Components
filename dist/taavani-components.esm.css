@@ -2303,6 +2303,7 @@
 
 .t-contact .active {
     --tw-bg-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-bg-opacity));
     background-color: rgb(8 83 134 / var(--tw-bg-opacity));
 }
 
