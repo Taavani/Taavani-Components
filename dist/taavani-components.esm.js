@@ -2226,7 +2226,7 @@ return (_ctx, _cache) => {
 
 };
 
-const _hoisted_1$4 = { class: "flex" };
+const _hoisted_1$4 = { class: "t-contact" };
 const _hoisted_2$3 = ["src"];
 
 
@@ -2259,17 +2259,17 @@ const emit = __emit;
 return (_ctx, _cache) => {
   return (openBlock(), createElementBlock("li", _hoisted_1$4, [
     createElementVNode("button", {
-      class: normalizeClass([{ 'bg-taa-brand-dark-blue': __props.manager && __props.manager.id === __props.contact.id }, "grow flex items-center pr-4 bg-white rounded-xl ring-1 ring-inset ring-gray-300 px-2 py-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-taa-brand-dark-blue"]),
+      class: normalizeClass([{ 'active': __props.manager && __props.manager.id === __props.contact.id }, "t-button"]),
       "aria-setsize": "4",
       onClick: _cache[0] || (_cache[0] = () => emit('click', __props.contact))
     }, [
       createElementVNode("img", {
-        class: "h-8 w-8 rounded-full mr-3 bg-neutral-300 border-0",
+        class: "image",
         src: 'https://ui-avatars.com/api/?name=' + (__props.contact.name.firstName.length > 0 ? __props.contact.name.firstName[0] : 'p') + '&color=828282&background=D3F8F0',
         alt: ""
       }, null, 8 /* PROPS */, _hoisted_2$3),
       createElementVNode("span", {
-        class: normalizeClass(["grow text-neutral-600 text-left", { 'text-white': __props.manager && __props.manager.id === __props.contact.id }])
+        class: normalizeClass(["name", { 'text-white': __props.manager && __props.manager.id === __props.contact.id }])
       }, toDisplayString(__props.contact.name.firstName.length !== 0 ? __props.contact.name.firstName : '') + " " + toDisplayString(__props.contact.name.lastName.length !== 0 ? __props.contact.name.lastName : ''), 3 /* TEXT, CLASS */)
     ], 2 /* CLASS */)
   ]))
