@@ -31,7 +31,6 @@
 
 .t-contact .active {
     --tw-bg-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-bg-opacity));
     background-color: rgb(8 83 134 / var(--tw-bg-opacity));
 }
 
@@ -50,4 +49,9 @@
     --tw-text-opacity: 1;
     color: rgb(82 82 82 / var(--tw-text-opacity));
     text-align: left;
+}
+
+.t-contact .active .name {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
 }
