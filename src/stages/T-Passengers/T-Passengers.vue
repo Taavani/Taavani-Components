@@ -1,33 +1,61 @@
 <script setup>
-import {ref} from "vue";
-import {DialogPanel, TransitionChild} from "@headlessui/vue";
+/**
+ * Global dependencies
+ */
+import {ref} from "vue"
+import {DialogPanel, TransitionChild} from "@headlessui/vue"
+import {useI18n} from "vue-i18n"
 
-import TPassengersList from "../../components/T-Passengers-List/T-Passengers-List.vue";
-import TFullscreenContainer from "../../components/T-Fullscreen-Container/T-Fullscreen-Container.vue";
-import ArrowLeft from "../../components/icons/svg/Arrow-Left.vue";
-import TButton from "../../components/T-Button/T-Button.vue";
+/**
+ * Local dependencies
+ */
+import TPassengersList from "../../components/T-Passengers-List/T-Passengers-List.vue"
+import TFullscreenContainer from "../../components/T-Fullscreen-Container/T-Fullscreen-Container.vue"
+import ArrowLeft from "../../components/icons/svg/Arrow-Left.vue"
+import TButton from "../../components/T-Button/T-Button.vue"
 
+/**
+ * Local component setup
+ */
+const {t} = useI18n({useScope: 'global'})
+
+// Define the passengers.
+// This is a mock data structure for demonstration purposes.
 const passengers = ref([
   {
     id: 1,
-    name: "John Doe",
-    email: ""
+    name: {
+      firstName: "John",
+      lastName: "Doe"
+    },
+    contact: {
+      emailAddress: ""
+    }
   }
 ])
 
+// Define the employees.
+// This is a mock data structure for demonstration purposes.
 const employees = ref([
   {
     id: 1,
-    name: "Jane Doe",
-    email: ""
+    name: {
+      firstName: "John",
+      lastName: "Doe"
+    },
+    contact: {
+      emailAddress: ""
+    }
   }
 ])
 
+// Define the requirements for the passengers.
+// This is a mock data structure for demonstration purposes.
 const requirements = ref([
   {
     "bookingRequirements": {
       "emailAddressRequired": true,
-      "mobilePhoneNumberRequired": true
+      "mobilePhoneNumberRequired": true,
     }
   }
 ])
@@ -54,7 +82,7 @@ const requirements = ref([
                   @click="() => {}"
               >
                 <arrow-left class="w-6 h-6 stroke-2"></arrow-left>
-                {{ $t('stages.bookingOptions.backButton') }}
+                {{ t('stages.bookingOptions.backButton') }}
               </button>
             </div>
 
@@ -65,10 +93,10 @@ const requirements = ref([
                 <div class="w-full flex mt-6">
                   <div class="w-full md:w-4/6 px-2">
                     <h1 class="text-2xl">
-                      {{ $t('passengers.title') }}
+                      {{ t('passengers.title') }}
                     </h1>
                     <p class="text-sm font-semibold">
-                      {{ $t('passengers.description') }}
+                      {{ t('passengers.description') }}
                     </p>
                   </div>
                 </div>
@@ -79,9 +107,9 @@ const requirements = ref([
                                        :requirements="requirements">
                     </t-passengers-list>
                     <div class="mx-auto py-4 flex justify-end">
-                    <t-Button :title="$t('passengers.buttonText')" >
+                      <t-Button :title="t('passengers.buttonText')">
 
-                    </t-Button>
+                      </t-Button>
                     </div>
                   </div>
                 </div>

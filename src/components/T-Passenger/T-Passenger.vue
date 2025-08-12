@@ -1,17 +1,32 @@
 <script setup>
+/**
+ * Global dependencies
+ */
 import {computed, reactive, ref, watch} from "vue"
 import {useVuelidate} from "@vuelidate/core"
 import {email, minLength, required} from "@vuelidate/validators"
+import {ExclamationCircleIcon, CheckCircleIcon, ChevronDownIcon, ChevronUpIcon, UserIcon} from '@heroicons/vue/20/solid'
+import {useI18n} from "vue-i18n"
 
-import { ExclamationCircleIcon, CheckCircleIcon, ChevronDownIcon, ChevronUpIcon, UserIcon } from '@heroicons/vue/20/solid'
+/**
+ * Local dependencies
+ */
 import Traveler from './Passenger.js'
 import './T-Passenger.css'
 
+/**
+ * Local components
+ */
 import TNameInput from "../T-Name-Input/T-Name-Input.vue"
 import TEmailInput from "../T-Email-Input/T-Email-Input.vue"
 import TVueTelInput from "../T-Vue-Tel-Input/T-Vue-Tel-Input.vue";
 import TGenderInput from "../T-Gender-Input/T-Gender-Input.vue";
 import TBirthdayInput from "../T-Birthday-Input/T-Birthday-Input.v2.vue";
+
+/**
+ * Local component setup
+ */
+const {t} = useI18n({useScope: 'global'})
 
 const props = defineProps({
   traveler: {
@@ -102,8 +117,7 @@ const validations = computed({
         },
       },
       contact: {
-        emailAddress: {
-        }
+        emailAddress: {}
       }
     }
 
@@ -237,7 +251,7 @@ function onBirthdayUpdate(value) {
 /**
  * Watcher for the passenger object. Emits the update event
  */
-watch(v$, (value) => {
+watch(v$, () => {
   if (passenger) {
     passenger.valid = isTravelerValid()
     isTravelerValid() ? emits('update', passenger) : false
@@ -257,7 +271,7 @@ watch(v$, (value) => {
         />
         <h1 class="grow text-neutral-600">
           {{
-            passenger.name.firstName.length !== 0 ? passenger.name.firstName : $t('passengers.placeholder', (Number(passenger.id) + 1))
+            passenger.name.firstName.length !== 0 ? passenger.name.firstName : t('passengers.placeholder', (Number(passenger.id) + 1))
           }}
           {{ passenger.name.lastName.length !== 0 ? passenger.name.lastName : '' }}
         </h1>
@@ -271,9 +285,10 @@ watch(v$, (value) => {
                 v-if="SELECT === mode"
                 @click="toggleMode(INPUT)"
                 class="border hover:border-taa-brand-blue px-2 border-neutral-300 focus:border-taa-brand-blue rounded-xl group outline-none flex items-center">
-          <user-icon class="w-6 group-hover:stroke-brand-blue group-hover:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue "></user-icon>
+          <user-icon
+              class="w-6 group-hover:stroke-brand-blue group-hover:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue "></user-icon>
           <span class="hidden sm:block uppercase group-hover:text-brand-blue pl-1 text-xs group-focus:text-brand-blue">
-           {{ $t('passengers.passengerDetails') }}
+           {{ t('passengers.passengerDetails') }}
           </span>
         </button>
 
@@ -281,9 +296,10 @@ watch(v$, (value) => {
                 v-if="INPUT === mode"
                 @click="toggleMode(SELECT)"
                 class="border px-2  hover:border-taa-brand-blue border-neutral-300 focus:border-taa-brand-blue rounded-xl group outline-none flex items-center">
-          <user-icon class="w-6 group-hover:stroke-brand-blue group-hover:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue "></user-icon>
+          <user-icon
+              class="w-6 group-hover:stroke-brand-blue group-hover:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue "></user-icon>
           <span class="hidden sm:block uppercase group-hover:text-brand-blue pl-1 text-xs group-focus:text-brand-blue">
-            {{ $t('passengers.selectPassenger') }}
+            {{ t('passengers.selectPassenger') }}
           </span>
         </button>
 
@@ -351,20 +367,29 @@ watch(v$, (value) => {
               class="border rounded-xl px-4 py-3 flex outline-none items-center"
               @click='() => selectTraveler(employee)'
       >
-        <check-circle v-if="!v$.$error && passenger.contact.emailAddress === employee.contact.emailAddress" class="w-8 stroke-green-500 text-green-500"></check-circle>
-        <exclamation-circle-icon v-else-if="v$.$error && passenger.contact.emailAddress === employee.contact.emailAddress" class="w-8 stroke-red-500 text-red-500"></exclamation-circle-icon>
-        <img v-else :class="{  'bg-green-500': !v$.$error && passenger.contact.emailAddress === employee.contact.emailAddress, 'bg-neutral-300': passenger.contact.emailAddress !== employee.contact.emailAddress, 'bg-red-500': v$.$error && passenger.contact.emailAddress === employee.contact.emailAddress}" class="h-8 w-8 rounded-full mr-3  "
+        <check-circle-icon v-if="!v$.$error && passenger.contact.emailAddress === employee.contact.emailAddress"
+                           class="w-8 stroke-green-500 text-green-500"></check-circle-icon>
+        <exclamation-circle-icon
+            v-else-if="v$.$error && passenger.contact.emailAddress === employee.contact.emailAddress"
+            class="w-8 stroke-red-500 text-red-500"></exclamation-circle-icon>
+        <img v-else
+             :class="{  'bg-green-500': !v$.$error && passenger.contact.emailAddress === employee.contact.emailAddress, 'bg-neutral-300': passenger.contact.emailAddress !== employee.contact.emailAddress, 'bg-red-500': v$.$error && passenger.contact.emailAddress === employee.contact.emailAddress}"
+             class="h-8 w-8 rounded-full mr-3  "
              :src="employee.profilePhoto ? employee.profilePhoto : 'https://ui-avatars.com/api/?name=' + (employee.name.firstName.length > 0 ? employee.name.firstName[0] : 'p') + '&color=828282&background=D3F8F0'"
              alt=""
         />
-        <span :class="{ 'text-green-500': !v$.$error && employee.contact.emailAddress === passenger.contact.emailAddress, 'text-red-500': v$.$error && passenger.contact.emailAddress === employee.contact.emailAddress}" class="grow text-neutral-600 flex flex-col">
-          {{ employee.name.firstName.length !== 0 ? employee.name.firstName : 'Passenger ' + (Number(employee.id) + 1) }}
+        <span
+            :class="{ 'text-green-500': !v$.$error && employee.contact.emailAddress === passenger.contact.emailAddress, 'text-red-500': v$.$error && passenger.contact.emailAddress === employee.contact.emailAddress}"
+            class="grow text-neutral-600 flex flex-col">
+          {{
+            employee.name.firstName.length !== 0 ? employee.name.firstName : 'Passenger ' + (Number(employee.id) + 1)
+          }}
           {{ employee.name.lastName && employee.name.lastName.length !== 0 ? employee.name.lastName : '' }}
           <span v-if="employee.contact.emailAddress === passenger.contact.emailAddress && v$.$error"
                 class="text-red-500 text-xs">
-            {{ $t('passengers.errors.generic')}}
+            {{ t('passengers.errors.generic') }}
             <span class="flex flex-col uppercase" v-for="error of v$.$errors" :key="error.$uid">
-              {{ $t('passengers.errors.' + error.$property + '.' + error.$validator) }}
+              {{ t('passengers.errors.' + error.$property + '.' + error.$validator) }}
             </span>
           </span>
         </span>

@@ -8,7 +8,7 @@ import './T-Gender-Input.css'
 const props = defineProps({
   gender: {
     type: String,
-    default: 'undisclosed'
+    default: 'unspecified'
   }
 })
 
@@ -17,7 +17,6 @@ const emits = defineEmits([
 ])
 
 const options = [
-  {value: 'undisclosed'},
   {value: 'male'},
   {value: 'female'},
   {value: 'unspecified'}
