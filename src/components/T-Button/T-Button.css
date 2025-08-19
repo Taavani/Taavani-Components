@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     padding: 0.75rem 1rem;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
+    color: rgb(255 255 255);
     font-weight: 600;
 }
 
@@ -55,8 +55,9 @@
 }
 
 .t-button--liquid-blue-small {
-    --tw-border-opacity: 1;
+    --tw-bg-opacity: 1;
     padding: 0.25rem 0.75rem;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
     border-width: 1px;
     border-color: rgb(0 110 184 / var(--tw-border-opacity));
     color: rgb(0 110 184 / var(--tw-text-opacity));
