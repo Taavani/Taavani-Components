@@ -3,6 +3,7 @@
     "stages": {
       "bookingOptions": {
         "backButtonText": "Back to search",
+        "backButton": "Back",
         "title": "Booking Options",
         "description": "Select the best option for your trip, and continue to the next step.",
         "pricingOption": "Pricing option",
@@ -28,7 +29,7 @@
     "journeyType": {
       "single": "One way",
       "return": "Round trip",
-      "multiCity": "Multi-city"
+      "multiStop": "Multi-city"
     },
     "buttons": {
       "back": "Back",
@@ -42,9 +43,12 @@
       "selectOffer": "select offer",
       "close": "Close",
       "confirm": "Confirm",
-      "taavani": "Lad Taavani tage sig af det"
+      "taavani": "Lad Taavani tage sig af det",
+      "addJourney": "Add journey"
     },
     "passengers": {
+      "title": "Passenger details",
+      "description": "Please provide the details of the passengers traveling on this booking.",
       "passengerDetails": "Provide passenger details",
       "selectPassenger": "Select passenger",
       "placeholder": "Passenger {count}",

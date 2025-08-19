@@ -7,7 +7,7 @@ import "../src/css/main.css"
  *
  */
 import {createI18n} from 'vue-i18n';
-import {setup} from "@storybook/vue3";
+import {setup} from "@storybook/vue3-vite";
 
 setup(async (app) => {
     const {en} = await import('./translations.json')
@@ -25,7 +25,7 @@ setup(async (app) => {
     app.use(i18n)
 });
 
-/** @type { import('@storybook/vue3').Preview } */
+/** @type { import('@storybook/vue3-vite').Preview } */
 const preview = {
     parameters: {
         controls: {
