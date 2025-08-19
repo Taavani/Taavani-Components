@@ -66,6 +66,7 @@
       "gender": {
         "label": "Specify gender",
         "options": {
+          "placeholder": "Please select",
           "undisclosed": "Undisclosed",
           "male": "Male",
           "female": "Female",

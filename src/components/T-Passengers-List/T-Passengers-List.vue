@@ -28,7 +28,6 @@ const emits = defineEmits(['update'])
 
 onMounted(function () {
   const { requirements, passengers } = props
-  console.log(requirements)
   passengerRequirements.value = mapRequirementsToPassengers(toRaw(passengers), toRaw(requirements))
 })
 
@@ -42,7 +41,6 @@ watch(() => props.requirements, (requirements) => {
 
 function mapRequirementsToPassengers (passengers, requirements) {
   let passengerRequirements = [];
-  console.log(requirements)
   for (let i = 0; i < passengers.length; i++) {
     let passenger = passengers[i]
     let passReq = {};

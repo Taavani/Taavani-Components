@@ -1,14 +1,17 @@
 <script setup>
-import {ref, watch} from "vue"
+import {ref, watch, computed} from 'vue'
+import {useI18n} from 'vue-i18n'
 import {Listbox, ListboxButton, ListboxLabel, ListboxOption, ListboxOptions} from '@headlessui/vue'
 import {CheckIcon, ChevronUpDownIcon} from '@heroicons/vue/20/solid'
 
 import './T-Gender-Input.css'
 
+const { t } = useI18n({ useScope: 'global' })
+
 const props = defineProps({
   gender: {
     type: String,
-    default: 'unspecified'
+    default: 'male',
   }
 })
 
@@ -19,12 +22,12 @@ const emits = defineEmits([
 const options = [
   {value: 'male'},
   {value: 'female'},
-  {value: 'unspecified'}
 ]
 let optionIndex = options.findIndex((option) => {
   return option.value === props.gender;
 });
 const selected = ref(options[optionIndex ?? 0])
+
 
 watch(selected, (value) => {
   emits('update:gender', value.value)
@@ -36,12 +39,12 @@ watch(selected, (value) => {
   <Listbox as="div" v-model="selected" v-on:selected="() => $emit('update:gender', selected.value)"
            class="t-gender-input">
     <ListboxLabel class="label">
-      {{ $t('passengers.gender.label') }}
+      {{ t('passengers.gender.label') }}
     </ListboxLabel>
     <div class="holder">
       <ListboxButton class="button">
         <span class="">
-          {{ $t('passengers.gender.options.' + selected.value) }}
+          {{ t('passengers.gender.options.' + selected.value) }}
         </span>
         <span class="icon">
           <ChevronUpDownIcon class="h-5 w-5 text-gray-400" aria-hidden="true"/>
@@ -58,7 +61,7 @@ watch(selected, (value) => {
             <li :class="[active ? 'bg-brand-blue text-white' : 'text-gray-900', 'relative cursor-default select-none py-2 pl-3 pr-9']">
               <div class="flex">
                 <span :class="[selected ? 'font-semibold' : 'font-normal', 'truncate']">{{
-                    $t('passengers.gender.options.' + option.value)
+                    t('passengers.gender.options.' + option.value)
                   }}</span>
               </div>
               <span v-if="selected"
