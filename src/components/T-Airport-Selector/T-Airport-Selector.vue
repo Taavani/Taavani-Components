@@ -3,6 +3,7 @@ import {ref} from "vue";
 
 import SearchOptions from "./Search-Options.vue";
 import DepartureAirplane from "../icons/svg/Departure-Airplane.vue";
+import ArrivalAirplane from "../icons/svg/Arrival-Airplane.vue";
 import MapPin from "../icons/svg/Map-Pin.vue";
 
 const props = defineProps({
