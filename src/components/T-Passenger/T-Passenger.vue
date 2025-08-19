@@ -258,6 +258,10 @@ watch(v$, () => {
   }
 })
 
+watch(() => props.requirements, (requirements) => {
+  resetPassenger()
+});
+
 </script>
 
 <template>

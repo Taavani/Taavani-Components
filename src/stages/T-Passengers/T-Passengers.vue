@@ -51,14 +51,15 @@ const employees = ref([
 
 // Define the requirements for the passengers.
 // This is a mock data structure for demonstration purposes.
-const requirements = ref([
-  {
-    "bookingRequirements": {
+const requirements = ref(
+    {
       "emailAddressRequired": true,
       "mobilePhoneNumberRequired": true,
+      "travelerRequirements": {
+        "genderRequired": true
+      }
     }
-  }
-])
+)
 
 </script>
 
@@ -107,7 +108,7 @@ const requirements = ref([
                                        :requirements="requirements">
                     </t-passengers-list>
                     <div class="mx-auto py-4 flex justify-end">
-                      <t-Button :title="t('passengers.buttonText')">
+                      <t-Button :title="t('stages.bookingOptions.backButton')">
 
                       </t-Button>
                     </div>

@@ -28,6 +28,7 @@ const emits = defineEmits(['update'])
 
 onMounted(function () {
   const { requirements, passengers } = props
+  console.log(requirements)
   passengerRequirements.value = mapRequirementsToPassengers(toRaw(passengers), toRaw(requirements))
 })
 
@@ -41,13 +42,14 @@ watch(() => props.requirements, (requirements) => {
 
 function mapRequirementsToPassengers (passengers, requirements) {
   let passengerRequirements = [];
-
+  console.log(requirements)
   for (let i = 0; i < passengers.length; i++) {
     let passenger = passengers[i]
     let passReq = {};
 
-    passReq.emailAddressRequired = props.requirements.emailAddressRequired ?? false;
-    passReq.mobilePhoneNumberRequired = props.requirements.mobilePhoneNumberRequired ?? false;
+    passReq.emailAddressRequired = requirements.emailAddressRequired ?? false;
+    passReq.mobilePhoneNumberRequired = requirements.mobilePhoneNumberRequired ?? false;
+    passReq.genderRequired = requirements.travelerRequirements.genderRequired ?? false;
 
     // Make sure there are any travelerRequirements
     if (requirements.travelerRequirements && Array.isArray(requirements.travelerRequirements)) {
