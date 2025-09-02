@@ -335,6 +335,7 @@ watch(() => props.requirements, (requirements) => {
       </t-birthday-input>
 
       <t-gender-input v-if="requirements.genderRequired"
+                      v-on:required="requirements.genderRequired"
                       v-bind:gender="passenger.gender"
                       v-on:update:gender="(value) => onUpdateGender(value)"
       >

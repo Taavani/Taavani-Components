@@ -11,7 +11,7 @@ const { t } = useI18n({ useScope: 'global' })
 const props = defineProps({
   gender: {
     type: String,
-    default: 'male',
+    default: 'MALE',
   }
 })
 
@@ -20,8 +20,9 @@ const emits = defineEmits([
 ])
 
 const options = [
-  {value: 'male'},
-  {value: 'female'},
+  {value: 'MALE'},
+  {value: 'FEMALE'},
+  {value: 'UNSPECIFIED'},
 ]
 let optionIndex = options.findIndex((option) => {
   return option.value === props.gender;

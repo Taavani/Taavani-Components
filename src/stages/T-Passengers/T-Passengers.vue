@@ -19,6 +19,13 @@ import TButton from "../../components/T-Button/T-Button.vue"
  */
 const {t} = useI18n({useScope: 'global'})
 
+defineProps({
+  requirements: {
+    type: Object,
+    required: false,
+  }
+})
+
 // Define the passengers.
 // This is a mock data structure for demonstration purposes.
 const passengers = ref([
@@ -51,15 +58,15 @@ const employees = ref([
 
 // Define the requirements for the passengers.
 // This is a mock data structure for demonstration purposes.
-const requirements = ref(
-    {
-      "emailAddressRequired": true,
-      "mobilePhoneNumberRequired": true,
-      "travelerRequirements": {
-        "genderRequired": true
-      }
-    }
-)
+//const requirements = ref(
+//    {
+//      "emailAddressRequired": true,
+//      "mobilePhoneNumberRequired": true,
+//      "travelerRequirements": {
+//        "genderRequired": true
+//     }
+//    }
+//)
 
 </script>
 
