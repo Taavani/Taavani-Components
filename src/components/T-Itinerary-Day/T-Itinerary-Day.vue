@@ -20,10 +20,10 @@ const props = defineProps({
 
 <template>
   <section>
-    <header class="grid grid-cols-6 pb-2">
-      <time datetime="2024-10-10" class="col-span-2 md:col-span-1  font-medium text-lg md:text-xl">{{ date }}</time>
-      <h2 class="col-span-1 md:col-span-4 text-left font-medium text-lg  md:text-xl">{{ day }}</h2>
-      <p v-html="description" class="col-span-3 md:col-span-1 text-right font-medium text-lg  md:text-xl"></p>
+    <header class="flex flex-wrap items-baseline pb-2 gap-y-1 md:grid md:grid-cols-6">
+      <time datetime="2024-10-10" class="font-medium text-lg md:text-xl md:col-span-1 mr-2 md:mr-0">{{ date }}</time>
+      <h2 class="font-medium text-lg md:text-xl text-left md:col-span-4 mr-auto md:mr-0">{{ day }}</h2>
+      <p v-html="description" class="font-medium text-lg md:text-xl text-right md:col-span-1 ml-auto md:ml-0"></p>
     </header>
     <div class="grid grid-cols-6">
       <ul class="grid col-span-6 md:grid-cols-1 gap-4 col-start-1 md:col-start-2 md:col-span-5 mb-4">
