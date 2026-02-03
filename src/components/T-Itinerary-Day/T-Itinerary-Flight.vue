@@ -28,7 +28,7 @@ defineProps({
 
       <div class="flex justify-between text-base w-full font-semibold">
         <p>
-          {{ flight.departureCity }}
+          <span class="break-words">{{ flight.departureCity }}</span>
           <time class="font-medium text-sm">
             ({{ flight.departureTime }})
           </time>
