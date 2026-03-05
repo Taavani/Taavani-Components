@@ -59,6 +59,7 @@ const isLastNameValid = computed(() => {
         <input id="firstName"
                type="text"
                name="firstName"
+               autocomplete="given-name"
                :placeholder="$t('passengers.name.firstNameLabel')"
                class="input"
                required
@@ -74,6 +75,7 @@ const isLastNameValid = computed(() => {
         <input id="lastName"
                type="text"
                name="lastName"
+               autocomplete="family-name"
                :placeholder="$t('passengers.name.lastNameLabel')"
                class="input"
                @blur="v$.lastName.$touch()"

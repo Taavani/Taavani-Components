@@ -46,6 +46,7 @@ const isEmailValid = computed(() => {
              name="email"
              required
              id="email"
+             autocomplete="email"
              @blur="v$.email.$touch()"
              :placeholder="$t('passengers.email.placeholder')"
              :value="email"

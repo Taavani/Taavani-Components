@@ -288,6 +288,7 @@ watch(() => props.requirements, (requirements) => {
         <button type="button"
                 v-if="SELECT === mode"
                 @click="toggleMode(INPUT)"
+                :aria-label="t('passengers.passengerDetails')"
                 class="border hover:border-taa-brand-blue px-2 border-neutral-300 focus:border-taa-brand-blue rounded-xl group outline-none flex items-center">
           <user-icon
               class="w-6 group-hover:stroke-brand-blue group-hover:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue "></user-icon>
@@ -299,6 +300,7 @@ watch(() => props.requirements, (requirements) => {
         <button type="button"
                 v-if="INPUT === mode"
                 @click="toggleMode(SELECT)"
+                :aria-label="t('passengers.selectPassenger')"
                 class="border px-2  hover:border-taa-brand-blue border-neutral-300 focus:border-taa-brand-blue rounded-xl group outline-none flex items-center">
           <user-icon
               class="w-6 group-hover:stroke-brand-blue group-hover:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue "></user-icon>
@@ -310,11 +312,12 @@ watch(() => props.requirements, (requirements) => {
         <button v-if="!extended"
                 type="button"
                 class="group outline-none"
+                :aria-label="t('passengers.expandDetails', 'Expand details')"
                 @click="() => extended = !extended">
           <chevron-down-icon
               class="w-8 group-hover:text-brand-blue group-hover:stroke-brand-blue group-focus:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue "></chevron-down-icon>
         </button>
-        <button v-if="extended" type="button" class="group outline-none" @click="() => extended = !extended">
+        <button v-if="extended" type="button" class="group outline-none" @click="() => extended = !extended" :aria-label="t('passengers.collapseDetails', 'Collapse details')">
           <chevron-up-icon
               class="w-8 group-hover:text-brand-blue group-hover:stroke-brand-blue group-focus:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue"></chevron-up-icon>
         </button>
