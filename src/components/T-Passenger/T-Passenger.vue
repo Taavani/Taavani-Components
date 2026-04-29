@@ -4,7 +4,7 @@
  */
 import {computed, reactive, ref, watch} from "vue"
 import {useVuelidate} from "@vuelidate/core"
-import {email, minLength, required} from "@vuelidate/validators"
+import {email, helpers, minLength, required} from "@vuelidate/validators"
 import {ExclamationCircleIcon, CheckCircleIcon, ChevronDownIcon, ChevronUpIcon, UserIcon} from '@heroicons/vue/20/solid'
 import {useI18n} from "vue-i18n"
 
@@ -22,6 +22,7 @@ import TEmailInput from "../T-Email-Input/T-Email-Input.vue"
 import TVueTelInput from "../T-Vue-Tel-Input/T-Vue-Tel-Input.vue";
 import TGenderInput from "../T-Gender-Input/T-Gender-Input.vue";
 import TBirthdayInput from "../T-Birthday-Input/T-Birthday-Input.v2.vue";
+import TPassportInput from "../T-Passport-Input/T-Passport-Input.vue";
 
 /**
  * Local component setup
@@ -147,6 +148,16 @@ const validations = computed({
         required
       }
     }
+
+    if (props.requirements.documentRequired) {
+      rules.documents = {
+        hasDocument: helpers.withMessage(
+            'Document with number is required',
+            (val) => Array.isArray(val) && val.length > 0 && !!val[0]?.number
+        )
+      }
+    }
+
     return rules
   }
 })
@@ -249,6 +260,15 @@ function onBirthdayUpdate(value) {
 }
 
 /**
+ * Update the travel document
+ * @param value
+ */
+function onDocumentUpdate(value) {
+  passenger.documents = [value]
+  v$.value.$touch()
+}
+
+/**
  * Watcher for the passenger object. Emits the update event
  */
 watch(v$, () => {
@@ -292,8 +312,8 @@ watch(() => props.requirements, (requirements) => {
           <user-icon
               class="w-6 group-hover:stroke-brand-blue group-hover:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue "></user-icon>
           <span class="hidden sm:block uppercase group-hover:text-brand-blue pl-1 text-xs group-focus:text-brand-blue">
-           {{ t('passengers.passengerDetails') }}
-          </span>
+             {{ t('passengers.passengerDetails') }}
+            </span>
         </button>
 
         <button type="button"
@@ -303,8 +323,8 @@ watch(() => props.requirements, (requirements) => {
           <user-icon
               class="w-6 group-hover:stroke-brand-blue group-hover:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue "></user-icon>
           <span class="hidden sm:block uppercase group-hover:text-brand-blue pl-1 text-xs group-focus:text-brand-blue">
-            {{ t('passengers.selectPassenger') }}
-          </span>
+              {{ t('passengers.selectPassenger') }}
+            </span>
         </button>
 
         <button v-if="!extended"
@@ -341,6 +361,11 @@ watch(() => props.requirements, (requirements) => {
       >
       </t-gender-input>
 
+      <t-passport-input v-if="requirements.documentRequired"
+                        :model-value="passenger.documents[0] ?? {}"
+                        @update:model-value="onDocumentUpdate">
+      </t-passport-input>
+
       <t-email-input v-if="requirements.emailAddressRequired"
                      v-model:email="passenger.contact.emailAddress"></t-email-input>
 
@@ -349,10 +374,6 @@ watch(() => props.requirements, (requirements) => {
                        v-on:update:phone="(value) => onUpdatedPhone(value)"
       >
       </t-vue-tel-input>
-
-      <div v-if="requirements.documentRequired">
-        A document is required for the concerned traveler for the creation of the flight-order
-      </div>
 
       <div v-if="requirements.documentIssuanceCityRequired">
         The issuance city of the document is required for the concerned traveler for the creation of the flight-order
@@ -368,7 +389,8 @@ watch(() => props.requirements, (requirements) => {
     </div>
     <div v-if="SELECT === mode && extended" class="content-select-passenger grid grid-cols-1 gap-3">
       <button :key="index" v-for="(employee, index) in employees"
-              :class="{ 'border-green-300': !v$.$error && passenger.contact.emailAddress === employee.contact.emailAddress, 'border-neutral-300': passenger.contact.emailAddress !== employee.contact.emailAddress, 'border-red-500': v$.$error && passenger.contact.emailAddress === employee.contact.emailAddress}"
+              :class="{ 'border-green-300': !v$.$error && passenger.contact.emailAddress === employee.contact.emailAddress, 'border-neutral-300': passenger.contact.emailAddress !== employee.contact.emailAddress, 'border-red-500': v$.$error && passenger.contact.emailAddress ===
+  employee.contact.emailAddress}"
               class="border rounded-xl px-4 py-3 flex outline-none items-center"
               @click='() => selectTraveler(employee)'
       >
@@ -378,7 +400,8 @@ watch(() => props.requirements, (requirements) => {
             v-else-if="v$.$error && passenger.contact.emailAddress === employee.contact.emailAddress"
             class="w-8 stroke-red-500 text-red-500"></exclamation-circle-icon>
         <img v-else
-             :class="{  'bg-green-500': !v$.$error && passenger.contact.emailAddress === employee.contact.emailAddress, 'bg-neutral-300': passenger.contact.emailAddress !== employee.contact.emailAddress, 'bg-red-500': v$.$error && passenger.contact.emailAddress === employee.contact.emailAddress}"
+             :class="{  'bg-green-500': !v$.$error && passenger.contact.emailAddress === employee.contact.emailAddress, 'bg-neutral-300': passenger.contact.emailAddress !== employee.contact.emailAddress, 'bg-red-500': v$.$error && passenger.contact.emailAddress ===
+  employee.contact.emailAddress}"
              class="h-8 w-8 rounded-full mr-3  "
              :src="employee.profilePhoto ? employee.profilePhoto : 'https://ui-avatars.com/api/?name=' + (employee.name.firstName.length > 0 ? employee.name.firstName[0] : 'p') + '&color=828282&background=D3F8F0'"
              alt=""
@@ -386,18 +409,18 @@ watch(() => props.requirements, (requirements) => {
         <span
             :class="{ 'text-green-500': !v$.$error && employee.contact.emailAddress === passenger.contact.emailAddress, 'text-red-500': v$.$error && passenger.contact.emailAddress === employee.contact.emailAddress}"
             class="grow text-neutral-600 flex flex-col">
-          {{
+            {{
             employee.name.firstName.length !== 0 ? employee.name.firstName : 'Passenger ' + (Number(employee.id) + 1)
           }}
-          {{ employee.name.lastName && employee.name.lastName.length !== 0 ? employee.name.lastName : '' }}
-          <span v-if="employee.contact.emailAddress === passenger.contact.emailAddress && v$.$error"
-                class="text-red-500 text-xs">
-            {{ t('passengers.errors.generic') }}
-            <span class="flex flex-col uppercase" v-for="error of v$.$errors" :key="error.$uid">
-              {{ t('passengers.errors.' + error.$property + '.' + error.$validator) }}
+            {{ employee.name.lastName && employee.name.lastName.length !== 0 ? employee.name.lastName : '' }}
+            <span v-if="employee.contact.emailAddress === passenger.contact.emailAddress && v$.$error"
+                  class="text-red-500 text-xs">
+              {{ t('passengers.errors.generic') }}
+              <span class="flex flex-col uppercase" v-for="error of v$.$errors" :key="error.$uid">
+                {{ t('passengers.errors.' + error.$property + '.' + error.$validator) }}
+              </span>
             </span>
           </span>
-        </span>
       </button>
     </div>
   </div>

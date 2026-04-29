@@ -59,8 +59,8 @@ function toggle(newJourneyType) {
 
     <button v-for="option in options"
             @click="() => toggle(option.value)"
-            class="text-center text-nowrap text-sm px-3 py-0.5 grow flex-1 rounded-full focus:ring-brand-blue focus-within:border-white"
-            :class="{ 'bg-brand-blue text-neutral-100': current === option.value, 'bg-white text-neutral-700': current !== option.value }"
+            class="text-center text-nowrap text-sm px-3 py-0.5 grow flex-1 rounded-full focus:ring-taa-brand-blue focus-within:border-white"
+            :class="{ 'bg-taa-brand-blue text-neutral-100': current === option.value, 'bg-white text-neutral-700': current !== option.value }"
     >
       {{ option.label }}
     </button>
@@ -70,7 +70,7 @@ function toggle(newJourneyType) {
     <button type="button"
             aria-expanded="true"
             aria-haspopup="true"
-            class="flex gap-2 items-center bg-white text-neutral-700 text-center text-sm px-4 py-0.5 grow flex-1 rounded-full focus:ring-brand-blue focus-within:border-white"
+            class="flex gap-2 items-center bg-white text-neutral-700 text-center text-sm px-4 py-0.5 grow flex-1 rounded-full focus:ring-taa-brand-blue focus-within:border-white"
             @click="() => toggle()"
     >
       <span v-for="option in options" :class='{ "hidden": option.value !== current }'>
@@ -90,7 +90,7 @@ function toggle(newJourneyType) {
       <div class="py-1 px-1" role="none">
         <button v-for="option in options"
                 :key="option.value"
-                class="w-full text-left text-gray-700 block rounded-xl px-4 py-1 text-sm hover:bg-brand-blue/30"
+                class="w-full text-left text-gray-700 block rounded-xl px-4 py-1 text-sm hover:bg-taa-brand-blue/30"
                 role="menuitem"
                 @click="() => toggle(option.value)"
                 tabindex="-1">

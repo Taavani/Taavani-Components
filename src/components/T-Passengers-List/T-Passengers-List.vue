@@ -47,16 +47,21 @@ function mapRequirementsToPassengers (passengers, requirements) {
 
     passReq.emailAddressRequired = requirements.emailAddressRequired ?? false;
     passReq.mobilePhoneNumberRequired = requirements.mobilePhoneNumberRequired ?? false;
-    passReq.genderRequired = requirements.travelerRequirements.genderRequired ?? false;
+    passReq.genderRequired = requirements.travelerRequirements?.genderRequired ?? false;
 
-    // Make sure there are any travelerRequirements
-    if (requirements.travelerRequirements && Array.isArray(requirements.travelerRequirements)) {
-      let travelerReq = requirements.travelerRequirements.find(function (req) {
-        return req.travelerId === passenger.travelerId
-      })
+    if (requirements.travelerRequirements) {
+      const travelerReqs = requirements.travelerRequirements;
+      let travelerReq;
+
+      if (Array.isArray(travelerReqs)) {
+        travelerReq = travelerReqs.find(req => req.travelerId === passenger.travelerId)
+      } else {
+        // travelerRequirements is an object keyed by travelerId string
+        travelerReq = travelerReqs[passenger.travelerId]
+      }
 
       if (travelerReq) {
-        passReq.genderRequired = travelerReq.genderRequired ?? false
+        passReq.genderRequired = travelerReq.genderRequired ?? passReq.genderRequired
         passReq.documentRequired = travelerReq.documentRequired ?? false
         passReq.dateOfBirthRequired = travelerReq.dateOfBirthRequired ?? false
         passReq.residenceRequired = travelerReq.residenceRequired ?? false

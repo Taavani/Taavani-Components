@@ -1,7 +1,8 @@
 <script setup>
 import {parse} from "tinyduration"
-import {ref} from "vue";
-import DepartureAirplane from "../icons/svg/Departure-Airplane.vue";
+import {ref} from "vue"
+
+import DepartureAirplane from "../icons/svg/Departure-Airplane.vue"
 import "./T-Flight-Offer.css"
 
 const props = defineProps({
@@ -10,8 +11,9 @@ const props = defineProps({
 
 const dictionary = props.offer.dictionary
 
-const bookingClass = props.offer.travelerPricings[0].fareDetailsBySegment[0].brandedFare
-    ?? props.offer.travelerPricings[0].fareDetailsBySegment[0].cabin
+const bookingClass =
+    props.offer.travelerPricings[0].fareDetailsBySegment[0].brandedFare ??
+    props.offer.travelerPricings[0].fareDetailsBySegment[0].cabin
 
 /**
  * Logic if brandedFare is available.

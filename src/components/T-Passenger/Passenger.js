@@ -15,6 +15,7 @@ export default class Traveler {
             emailAddress: '',
             phones: []
         }
+        this.documents = []
         this.valid = false
     }
 
@@ -43,7 +44,7 @@ export default class Traveler {
                 'emailAddress': this.contact.emailAddress,
                 'phones': phones
             },
-            'documents': []
+            'documents': this.documents
         }
     }
 

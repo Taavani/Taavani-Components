@@ -1,72 +1,93 @@
 <script setup>
-import { ref} from 'vue'
-
 import DateSelector from "./Date-Selector.vue";
 import CountrySelector from "./Country-Selector.vue";
 
-const passport = ref({
-  type: 'PASSPORT', // VISA, PASSPORT, IDENTITY_CARD, KNOWN_TRAVELER, REDRESS
-  number: null,
-  issuanceLocation: null,
-  issuanceDate: null, // DATE
-  expiryDate: null, // DATE
-  issuanceCountry: null, // ISO 3166-1 alpha-2 , pattern: [a-zA-Z]{2}
-  nationality: null, // ISO 3166-1 alpha-2 , pattern: [a-zA-Z]{2}
-  holder: true,
-  birthPlace: null, // String
-  validityCountry: null // ISO 3166-1 alpha-2 , pattern: [a-zA-Z]{2}
+const props = defineProps({
+  modelValue: {
+    type: Object,
+    default: () => ({
+      documentType: 'PASSPORT',
+      number: null,
+      issuanceLocation: null,
+      issuanceDate: null,
+      expiryDate: null,
+      issuanceCountry: null,
+      nationality: null,
+      holder: true,
+    })
+  }
 })
+
+const emits = defineEmits(['update:modelValue'])
+
+function update(field, value) {
+  emits('update:modelValue', { ...props.modelValue, [field]: value })
+}
 </script>
 
 <template>
-  <div class="flex flex-col">
-    <label for="passportNumber" class="pl-3 text-neutral-500">
-      Passport No.
-    </label>
-    <input id="passportNumber"
-           type="number"
-           name="passportNumber"
-           class="border-neutral-300 text-gray-900 rounded-md focus:border-taa-brand-dark-blue"
-           placeholder="Passport No."
-           required
-           v-model="passport.number"
-    />
+  <div class="mb-3">
+    <h2 class="px-3 text-sm text-neutral-500 mb-1">
+      {{ $t('passengers.document.title') }}
+    </h2>
+
+    <div class="flex flex-col gap-2">
+      <div class="flex flex-col">
+        <label for="passportNumber" class="px-3 text-sm font-medium text-neutral-500">
+          {{ $t('passengers.document.number') }}
+        </label>
+        <input id="passportNumber"
+               type="text"
+               name="passportNumber"
+               :placeholder="$t('passengers.document.numberPlaceholder')"
+               :value="modelValue.number"
+               @input="update('number', $event.target.value)"
+               class="w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-blue sm:text-sm sm:leading-6"
+        />
+      </div>
+
+      <div class="grid grid-cols-2 gap-2">
+        <div class="flex flex-col">
+          <label class="px-3 text-sm font-medium text-neutral-500">
+            {{ $t('passengers.document.issuanceDate') }}
+          </label>
+          <date-selector :model-value="modelValue.issuanceDate"
+                         @update:model-value="update('issuanceDate', $event)">
+          </date-selector>
+        </div>
+        <div class="flex flex-col">
+          <label class="px-3 text-sm font-medium text-neutral-500">
+            {{ $t('passengers.document.expiryDate') }}
+          </label>
+          <date-selector :model-value="modelValue.expiryDate"
+                         @update:model-value="update('expiryDate', $event)">
+          </date-selector>
+        </div>
+      </div>
+
+      <div class="flex flex-col">
+        <label class="px-3 text-sm font-medium text-neutral-500">
+          {{ $t('passengers.document.issuanceCountry') }}
+        </label>
+        <country-selector :model-value="modelValue.issuanceCountry"
+                          @update:model-value="update('issuanceCountry', $event)"
+                          class-name="border-neutral-300 rounded-md w-full">
+        </country-selector>
+      </div>
+
+      <div class="flex flex-col">
+        <label for="issuanceLocation" class="px-3 text-sm font-medium text-neutral-500">
+          {{ $t('passengers.document.issuanceLocation') }}
+        </label>
+        <input id="issuanceLocation"
+               type="text"
+               name="issuanceLocation"
+               :placeholder="$t('passengers.document.issuanceLocationPlaceholder')"
+               :value="modelValue.issuanceLocation"
+               @input="update('issuanceLocation', $event.target.value)"
+               class="w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-blue sm:text-sm sm:leading-6"
+        />
+      </div>
+    </div>
   </div>
-
-  <date-selector v-model="passport.issuanceDate"></date-selector>
-
-  <date-selector v-model="passport.expiryDate"></date-selector>
-
-  <label class="pl-3 text-neutral-500">
-    Country of Issuance
-  </label>
-  <country-selector v-model="passport.issuanceCountry"
-                    class-name="border-neutral-300 rounded-md w-full">
-  </country-selector>
-
-  <div class="flex flex-col">
-    <label for="issuanceLocation" class="pl-3 text-neutral-500">
-      Location
-    </label>
-    <input id="issuanceLocation"
-           type="text"
-           name="issuanceLocation"
-           class="border-neutral-300 rounded-md focus:border-taa-brand-dark-blue text-gray-900"
-           placeholder="Location"
-           required
-           v-model="passport.issuanceLocation"
-    />
-  </div>
-
-  <!-- Nationality selector -->
-  <!-- Country selector -->
-  <!-- Holder -->
-
-  <p>Number: {{ passport.number}}</p>
-  <p>issuanceLocation: {{ passport.issuanceLocation}}</p>
-  <p>issuanceDate: {{ passport.issuanceDate }}</p>
-  <p>expiryDate: {{ passport.expiryDate }}</p>
-  <p>issuanceCountry: {{ passport.issuanceCountry }}</p>
-  <p>nationality: {{ passport.nationality }}</p>
-  <p>holder: {{ passport.holder }}</p>
 </template>
