@@ -1,5 +1,5 @@
 <script setup>
-import {ref, watch, computed} from 'vue'
+import {ref, watch} from 'vue'
 import {useI18n} from 'vue-i18n'
 import {Listbox, ListboxButton, ListboxLabel, ListboxOption, ListboxOptions} from '@headlessui/vue'
 import {CheckIcon, ChevronUpDownIcon} from '@heroicons/vue/20/solid'
@@ -11,7 +11,7 @@ const { t } = useI18n({ useScope: 'global' })
 const props = defineProps({
   gender: {
     type: String,
-    default: 'MALE',
+    default: null,
   }
 })
 
@@ -24,28 +24,23 @@ const options = [
   {value: 'FEMALE'},
   {value: 'UNSPECIFIED'},
 ]
-let optionIndex = options.findIndex((option) => {
-  return option.value === props.gender;
-});
-const selected = ref(options[optionIndex ?? 0])
-
+const selected = ref(options.find((option) => option.value === props.gender) ?? null)
 
 watch(selected, (value) => {
-  emits('update:gender', value.value)
+  emits('update:gender', value ? value.value : null)
 })
 
 </script>
 
 <template>
-  <Listbox as="div" v-model="selected" v-on:selected="() => $emit('update:gender', selected.value)"
-           class="t-gender-input">
+  <Listbox as="div" v-model="selected" class="t-gender-input">
     <ListboxLabel class="label">
       {{ t('passengers.gender.label') }}
     </ListboxLabel>
     <div class="holder">
       <ListboxButton class="button">
         <span class="">
-          {{ t('passengers.gender.options.' + selected.value) }}
+          {{ selected ? t('passengers.gender.options.' + selected.value.toLowerCase()) : t('passengers.gender.options.placeholder') }}
         </span>
         <span class="icon">
           <ChevronUpDownIcon class="h-5 w-5 text-gray-400" aria-hidden="true"/>
@@ -59,10 +54,10 @@ watch(selected, (value) => {
             class="options">
           <ListboxOption as="template" v-for="option in options" :key="option.value" :value="option"
                          v-slot="{ active, selected }">
-            <li :class="[active ? 'bg-brand-blue text-white' : 'text-gray-900', 'relative cursor-default select-none py-2 pl-3 pr-9']">
+            <li :class="[active ? 'bg-taa-brand-blue text-white' : 'text-gray-900', 'relative cursor-default select-none py-2 pl-3 pr-9']">
               <div class="flex">
                 <span :class="[selected ? 'font-semibold' : 'font-normal', 'truncate']">{{
-                    t('passengers.gender.options.' + option.value)
+                    t('passengers.gender.options.' + option.value.toLowerCase())
                   }}</span>
               </div>
               <span v-if="selected"

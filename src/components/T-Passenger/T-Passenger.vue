@@ -295,7 +295,7 @@ watch(() => props.requirements, (requirements) => {
         />
         <h1 class="grow text-neutral-600">
           {{
-            passenger.name.firstName.length !== 0 ? passenger.name.firstName : t('passengers.placeholder', (Number(passenger.id) + 1))
+            passenger.name.firstName.length !== 0 ? passenger.name.firstName : t('passengers.placeholder', (Number(passenger.travelerId) + 1))
           }}
           {{ passenger.name.lastName.length !== 0 ? passenger.name.lastName : '' }}
         </h1>
@@ -355,7 +355,6 @@ watch(() => props.requirements, (requirements) => {
       </t-birthday-input>
 
       <t-gender-input v-if="requirements.genderRequired"
-                      v-on:required="requirements.genderRequired"
                       v-bind:gender="passenger.gender"
                       v-on:update:gender="(value) => onUpdateGender(value)"
       >

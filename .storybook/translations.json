@@ -58,7 +58,7 @@
         "lastNameLabel": "Last name"
       },
       "birthday": {
-        "label": "Birthday (YYYY-MM-DD)",
+        "label": "Birthday (DD-MM-YYYY)",
         "day": "Day",
         "month": "Month",
         "year": "Year"

@@ -75,10 +75,10 @@ function mapRequirementsToPassengers (passengers, requirements) {
 }
 
 function update(updatedPassenger) {
-  let passengers = props.passengers;
-  let updatedPassengerIndex = passengers.findIndex(passenger => passenger.travelerId === updatedPassenger.travelerId);
-  passengers[updatedPassengerIndex] = updatedPassenger;
-  emits('update', passengers);
+  const updatedPassengers = props.passengers.map(passenger =>
+      passenger.travelerId === updatedPassenger.travelerId ? updatedPassenger : passenger
+  );
+  emits('update', updatedPassengers);
 }
 
 // Are all passengers information valid, activate the confirmation.

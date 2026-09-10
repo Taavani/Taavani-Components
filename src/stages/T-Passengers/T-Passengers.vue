@@ -30,7 +30,7 @@ defineProps({
 // This is a mock data structure for demonstration purposes.
 const passengers = ref([
   {
-    id: 1,
+    travelerId: 1,
     name: {
       firstName: "John",
       lastName: "Doe"
