@@ -48,3 +48,7 @@ CSS is handled by Vite's built-in PostCSS support (`cssCodeSplit: false` merges 
 ### Storybook setup
 
 `.storybook/preview.js` installs `vue-i18n` globally for all stories (loading `en` messages from `.storybook/translations.json`) and imports the global stylesheet `src/css/main.css`. Story files live under `src/stories/`, one `.stories.js` file per component/stage, separate from the component's own folder.
+
+## Known issues
+
+- **`npm audit` reports 9 moderate vulnerabilities**, all from a single advisory ([GHSA-82fw-gwwq-j7x9](https://github.com/advisories/GHSA-82fw-gwwq-j7x9), path traversal in `@vitest/mocker`) pulled in transitively by `storybook@9.1.x`. It's devDependency-only (not in the published `dist/`) and the vitest dev server this affects isn't used in this project, so risk is low. The only fix `npm audit fix` offers is a major bump to `storybook@10`, which is a breaking change (and `@storybook/addon-styling-webpack@2.0.0`'s Storybook 10 compatibility is unverified) — deferred until addon compatibility catches up. Re-run `npm audit` periodically to check if a non-breaking fix lands upstream.

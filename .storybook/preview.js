@@ -35,12 +35,17 @@ const preview = {
             },
         },
         backgrounds: {
-            default: "Light",
-            values: [
-                {name: "Light", value: "rgb(244, 247, 250)"},
-                {name: "Dark", value: "#0f0f0f"},
-            ],
+            options: {
+                light: {name: "Light", value: "rgb(244, 247, 250)"},
+                dark: {name: "Dark", value: "#0f0f0f"}
+            }
         },
+    },
+
+    initialGlobals: {
+        backgrounds: {
+            value: "light"
+        }
     }
 };
 
