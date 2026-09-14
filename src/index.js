@@ -11,8 +11,8 @@ import TVueTelInput from "./components/T-Vue-Tel-Input/T-Vue-Tel-Input.vue";
 import TUpsellOffer from "./components/T-Upsell-Offer/T-Upsell-Offer.vue";
 import TUpsellOfferList from "./components/T-Upsell-Offer-List/T-Upsell-Offer-List.vue";
 import TDaysSelector from "./components/T-Days-Selector/T-Days-Selector.vue";
-import {mapSegmentsToItinerariesDays} from "./components/T-Itinerary-Day/Map-Utility.js";
 import TApprove from "./stages/T-Approve/T-Approve.vue";
+import {mapSegmentsToItinerariesDays} from "./components/T-Itinerary-Day/Map-Utility.js";
 
 export {
     TBirthdayInput,

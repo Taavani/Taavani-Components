@@ -239,7 +239,7 @@ defineEmits([
                     <span class="sr-only">{{ $t('confirmOffer.taavaniPlus') }}</span>
                     <span aria-hidden="true" class="pointer-events-none absolute h-full w-full rounded-md bg-white"></span>
                     <span aria-hidden="true"
-                          :class="{ 'bg-brand-blue': plus, 'bg-gray-200': !plus}"
+                          :class="{ 'bg-taa-brand-blue': plus, 'bg-gray-200': !plus}"
                           class="pointer-events-none absolute mx-auto h-4 w-9 rounded-full transition-colors duration-200 ease-in-out">
                 </span>
                     <span aria-hidden="true"
@@ -262,7 +262,7 @@ defineEmits([
                           class="pointer-events-none absolute h-full w-full rounded-md bg-white">
                 </span>
                     <span aria-hidden="true"
-                          :class="{ 'bg-brand-blue': termsAndConditions, 'bg-gray-200': !termsAndConditions}"
+                          :class="{ 'bg-taa-brand-blue': termsAndConditions, 'bg-gray-200': !termsAndConditions}"
                           class="pointer-events-none absolute mx-auto h-4 w-9 rounded-full transition-colors duration-200 ease-in-out">
                 </span>
                     <span aria-hidden="true"

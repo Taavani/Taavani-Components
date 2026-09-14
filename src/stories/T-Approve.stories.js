@@ -5,16 +5,22 @@ export default {
     component: TApprove,
     tags: ["autodocs"],
     argTypes: {},
+
     parameters: {
         backgrounds: {
-            default: "light",
-            values: [
-                {name: "light", value: "#F4F7FA"},
-                {name: "dark", value: "#0f0f0f"},
-            ],
+            options: {
+                light: {name: "light", value: "#F4F7FA"},
+                dark: {name: "dark", value: "#0f0f0f"}
+            }
         },
     },
-}
+
+    globals: {
+        backgrounds: {
+            value: "light"
+        }
+    }
+};
 const contacts = [
     { id: 1, name: { firstName: 'John', lastName: 'Doe' }, profilePhoto: '', contact: { emailAddress: 'john.doe@example.com' } },
     { id: 2, name: { firstName: 'Jane', lastName: 'Smith' }, profilePhoto: '', contact: { emailAddress: 'jane.smith@example.com' } },

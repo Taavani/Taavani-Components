@@ -1,8 +1,8 @@
 <script setup>
-import {computed, defineEmits, onMounted} from "vue";
-import {easepick} from "@easepick/core";
+import {computed, onMounted} from "vue";
+import {create} from "@easepick/core";
 import {LockPlugin} from "@easepick/lock-plugin";
-import CalenderIcon from "@heroicons/vue/20/solid/CalendarIcon";
+import {CalendarIcon} from "@heroicons/vue/20/solid";
 
 import '../T-Date-Selector/T-Date-Selector.css'
 
@@ -27,7 +27,7 @@ const id = computed(() => {
 
 onMounted(() => {
 
-  const picker = new easepick.create({
+  const picker = new create({
 
     element: document.getElementById('departure-date-' + id.value),
 
