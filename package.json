@@ -5,6 +5,9 @@
   "main": "dist/taavani-components.cjs.js",
   "version": "0.1.2",
   "description": "This is a component library for the JS components for Taavani.",
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "VueJS",
     "Components",
