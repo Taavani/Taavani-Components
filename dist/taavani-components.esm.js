@@ -1,10 +1,10 @@
-var sn = Object.defineProperty;
-var dn = (e, o, t) => o in e ? sn(e, o, { enumerable: !0, configurable: !0, writable: !0, value: t }) : e[o] = t;
-var j = (e, o, t) => dn(e, typeof o != "symbol" ? o + "" : o, t);
-import * as St from "vue";
-import { computed as N, openBlock as p, createElementBlock as y, normalizeClass as T, toDisplayString as v, renderSlot as Re, createStaticVNode as zo, ref as k, createElementVNode as m, createVNode as M, createCommentVNode as P, unref as c, createTextVNode as ce, getCurrentInstance as fa, onBeforeMount as ln, watch as V, isRef as Wo, reactive as no, onBeforeUnmount as hn, inject as te, provide as se, isReactive as un, isReadonly as mn, nextTick as fe, onMounted as G, Fragment as F, renderList as Q, watchEffect as de, cloneVNode as Cn, h as _, defineComponent as z, onUnmounted as ie, shallowRef as cn, Teleport as gn, toRaw as ne, createBlock as J, withCtx as x, Transition as _e, resolveDirective as $n, withDirectives as Lo, withKeys as je, withModifiers as fn, vModelText as pn, vModelDynamic as yn, resolveComponent as vn } from "vue";
+var dn = Object.defineProperty;
+var ln = (e, o, t) => o in e ? dn(e, o, { enumerable: !0, configurable: !0, writable: !0, value: t }) : e[o] = t;
+var F = (e, o, t) => ln(e, typeof o != "symbol" ? o + "" : o, t);
+import * as Nt from "vue";
+import { computed as N, openBlock as p, createElementBlock as y, normalizeClass as B, toDisplayString as v, renderSlot as Re, createStaticVNode as Wo, ref as k, createElementVNode as m, createVNode as w, createCommentVNode as P, unref as c, createTextVNode as Ce, getCurrentInstance as ya, onBeforeMount as hn, watch as V, isRef as Yo, reactive as no, onBeforeUnmount as un, inject as te, provide as se, isReactive as mn, isReadonly as Cn, nextTick as fe, onMounted as j, Fragment as I, renderList as U, watchEffect as de, cloneVNode as cn, h as z, defineComponent as W, onUnmounted as ie, shallowRef as gn, Teleport as $n, toRaw as ne, createBlock as J, withCtx as x, Transition as _e, resolveDirective as fn, withDirectives as Lo, withKeys as je, withModifiers as pn, vModelText as yn, vModelDynamic as vn, resolveComponent as bn } from "vue";
 import { useI18n as xe } from "vue-i18n";
-const Yo = {
+const qo = {
   __name: "T-Button",
   props: {
     title: {
@@ -25,20 +25,20 @@ const Yo = {
     }));
     return (a, n) => (p(), y("button", {
       type: "button",
-      class: T(t.value)
+      class: B(t.value)
     }, v(e.title), 3));
   }
-}, bn = { class: "t-flight-offer-list" }, Am = {
+}, Sn = { class: "t-flight-offer-list" }, Zm = {
   __name: "T-Flight-Offer-List",
   setup(e) {
-    return (o, t) => (p(), y("ul", bn, [
+    return (o, t) => (p(), y("ul", Sn, [
       Re(o.$slots, "default")
     ]));
   }
 };
-var xo = {}, At;
-function Sn() {
-  return At || (At = 1, (function(e) {
+var xo = {}, kt;
+function An() {
+  return kt || (kt = 1, (function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.serialize = e.parse = e.MultipleFractionsError = e.InvalidDurationError = void 0;
     const o = {
       allowMultipleFractions: !0
@@ -50,7 +50,7 @@ function Sn() {
       { unit: "hours", symbol: "H" },
       { unit: "minutes", symbol: "M" },
       { unit: "seconds", symbol: "S" }
-    ], a = (i, u) => `((?<${i}>-?\\d*[\\.,]?\\d+)${u})?`, n = new RegExp([
+    ], a = (i, h) => `((?<${i}>-?\\d*[\\.,]?\\d+)${h})?`, n = new RegExp([
       "(?<negative>-)?P",
       a("years", "Y"),
       a("months", "M"),
@@ -68,31 +68,31 @@ function Sn() {
         return parseFloat(i.replace(",", "."));
     }
     e.InvalidDurationError = new Error("Invalid duration"), e.MultipleFractionsError = new Error("Multiple fractions specified");
-    function s(i, u = o) {
-      const h = n.exec(i);
-      if (!h || !h.groups)
+    function s(i, h = o) {
+      const u = n.exec(i);
+      if (!u || !u.groups)
         throw e.InvalidDurationError;
       let g = !0, f = 0;
       const C = {};
       for (const { unit: b } of t)
-        if (h.groups[b] && (g = !1, C[b] = r(h.groups[b]), !u.allowMultipleFractions && !Number.isInteger(C[b]) && (f++, f > 1)))
+        if (u.groups[b] && (g = !1, C[b] = r(u.groups[b]), !h.allowMultipleFractions && !Number.isInteger(C[b]) && (f++, f > 1)))
           throw e.MultipleFractionsError;
       if (g)
         throw e.InvalidDurationError;
       const $ = C;
-      return h.groups.negative && ($.negative = !0), $;
+      return u.groups.negative && ($.negative = !0), $;
     }
     e.parse = s;
-    const d = (i, u) => {
+    const d = (i, h) => {
       if (!i)
         return;
-      let h = i.toString();
-      const g = h.indexOf("e");
+      let u = i.toString();
+      const g = u.indexOf("e");
       if (g > -1) {
-        const f = parseInt(h.slice(g + 2), 10);
-        h = i.toFixed(f + g - 2);
+        const f = parseInt(u.slice(g + 2), 10);
+        u = i.toFixed(f + g - 2);
       }
-      return h + u;
+      return u + h;
     };
     function l(i) {
       return !i.years && !i.months && !i.weeks && !i.days && !i.hours && !i.minutes && !i.seconds ? "PT0S" : [
@@ -111,54 +111,54 @@ function Sn() {
     e.serialize = l;
   })(xo)), xo;
 }
-var pa = Sn();
-const ya = (e, o) => {
+var va = An();
+const ut = (e, o) => {
   const t = e.__vccOpts || e;
   for (const [a, n] of o)
     t[a] = n;
   return t;
-}, An = {}, Nn = {
+}, Nn = {}, kn = {
   width: "24",
   height: "24",
   viewBox: "0 0 24 24",
   fill: "none",
   xmlns: "http://www.w3.org/2000/svg"
 };
-function kn(e, o) {
-  return p(), y("svg", Nn, [...o[0] || (o[0] = [
-    zo('<g clip-path="url(#clip0_356_3298)"><path d="M14.639 10.2577L19.4686 8.96358C19.981 8.82629 20.5269 8.89816 20.9862 9.16338C21.4456 9.4286 21.7808 9.86543 21.9181 10.3778C22.0554 10.8902 21.9835 11.4361 21.7183 11.8954C21.4531 12.3548 21.0162 12.69 20.5039 12.8273L6.01499 16.7096L1.5643 11.6905L4.46208 10.914L6.91157 12.3282L9.80934 11.5518L6.06576 5.30793L8.96353 4.53147L14.639 10.2577Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 21H21" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_356_3298"><rect width="24" height="24" fill="white"></rect></clipPath></defs>', 2)
+function wn(e, o) {
+  return p(), y("svg", kn, [...o[0] || (o[0] = [
+    Wo('<g clip-path="url(#clip0_356_3298)"><path d="M14.639 10.2577L19.4686 8.96358C19.981 8.82629 20.5269 8.89816 20.9862 9.16338C21.4456 9.4286 21.7808 9.86543 21.9181 10.3778C22.0554 10.8902 21.9835 11.4361 21.7183 11.8954C21.4531 12.3548 21.0162 12.69 20.5039 12.8273L6.01499 16.7096L1.5643 11.6905L4.46208 10.914L6.91157 12.3282L9.80934 11.5518L6.06576 5.30793L8.96353 4.53147L14.639 10.2577Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 21H21" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_356_3298"><rect width="24" height="24" fill="white"></rect></clipPath></defs>', 2)
   ])]);
 }
-const Nt = /* @__PURE__ */ ya(An, [["render", kn]]), wn = { class: "flight-offer" }, Mn = {
+const wt = /* @__PURE__ */ ut(Nn, [["render", wn]]), Mn = { class: "flight-offer" }, On = {
   type: "button",
   class: "small"
-}, On = { class: "md:w-4/6 py-2 md:py-4 px-2 md:px-4 flex rounded-t-xl bg-white md:shadow-[0_20px_10px_-15px_rgba(0,110,184,0.08)]" }, Pn = { class: "w-full flex justify-between items-center px-2 md:px-4" }, Bn = { class: "text-xl font-bold" }, Tn = { class: "text-xs" }, Dn = { class: "text-center" }, Ln = { class: "text-xs" }, xn = {
+}, Pn = { class: "md:w-4/6 py-2 md:py-4 px-2 md:px-4 flex rounded-t-xl bg-white md:shadow-[0_20px_10px_-15px_rgba(0,110,184,0.08)]" }, Bn = { class: "w-full flex justify-between items-center px-2 md:px-4" }, Tn = { class: "text-xl font-bold" }, Dn = { class: "text-xs" }, Ln = { class: "text-center" }, xn = { class: "text-xs" }, En = {
   key: 0,
   class: "text-xs"
-}, En = { class: "text-right" }, Rn = { class: "text-sm" }, In = { class: "text-xl font-bold" }, Kn = { class: "md:w-2/6 py-2 md:py-4 px-4 items-center rounded-b-xl bg-white shadow-[0_20px_10px_-15px_rgba(0,110,184,0.08)] flex md:flex-col justify-between md:justify-end" }, Gn = { class: "w-1/2 text-xs" }, jn = { class: "w-1/2 text-right" }, Fn = { class: "text-taa-brand-dark-blue font-bold" }, Hn = {
+}, Rn = { class: "text-right" }, In = { class: "text-sm" }, Kn = { class: "text-xl font-bold" }, Gn = { class: "md:w-2/6 py-2 md:py-4 px-4 items-center rounded-b-xl bg-white shadow-[0_20px_10px_-15px_rgba(0,110,184,0.08)] flex md:flex-col justify-between md:justify-end" }, jn = { class: "w-1/2 text-xs" }, Fn = { class: "w-1/2 text-right" }, Hn = { class: "text-taa-brand-dark-blue font-bold" }, Vn = {
   type: "button",
   class: "large group group-focus-visible:ring-0 group-focus-visible:outline-0",
   style: { outline: "none" },
   tabindex: "0"
-}, Vn = { class: "itinerary group-focus:border-t-2 group-focus:border-b-2 group-focus:border-l-2 group-focus:border-r-white group-focus:border-taa-brand-dark-blue" }, Un = { class: "first-row" }, _n = { class: "departure" }, zn = { class: "airport" }, Wn = { class: "time" }, Yn = { class: "date" }, qn = { class: "travel-time-holder" }, Jn = { class: "text" }, Zn = {
+}, Un = { class: "itinerary group-focus:border-t-2 group-focus:border-b-2 group-focus:border-l-2 group-focus:border-r-white group-focus:border-taa-brand-dark-blue" }, _n = { class: "first-row" }, zn = { class: "departure" }, Wn = { class: "airport" }, Yn = { class: "time" }, qn = { class: "date" }, Zn = { class: "travel-time-holder" }, Jn = { class: "text" }, Qn = {
   key: 0,
   class: "text"
-}, Qn = { class: "arrival" }, Xn = { class: "airport" }, er = { class: "time" }, or = { class: "date" }, tr = { class: "second-row flex" }, ar = { class: "flex-grow text-right font-medium" }, nr = {
+}, Xn = { class: "arrival" }, er = { class: "airport" }, or = { class: "time" }, tr = { class: "date" }, ar = { class: "second-row flex" }, nr = { class: "flex-grow text-right font-medium" }, rr = {
   key: 0,
   class: "font-extrabold text-red-700"
-}, rr = {
+}, sr = {
   key: 1,
   class: "font-extrabold text-green-700"
-}, sr = {
+}, dr = {
   key: 2,
   class: "font-extrabold text-red-700"
-}, dr = {
+}, ir = {
   key: 3,
   class: "font-extrabold text-green-700"
-}, ir = { class: "pricing group-focus:border-t-2 group-focus:border-b-2 group-focus:border-l-white group-focus:border-r-2 group-focus:border-taa-brand-dark-blue" }, lr = { class: "holder" }, hr = {
+}, lr = { class: "pricing group-focus:border-t-2 group-focus:border-b-2 group-focus:border-l-white group-focus:border-r-2 group-focus:border-taa-brand-dark-blue" }, hr = { class: "holder" }, ur = {
   key: 0,
   class: "warning"
-}, ur = { class: "text" }, mr = { class: "price" }, Nm = {
+}, mr = { class: "text" }, Cr = { class: "price" }, Jm = {
   __name: "T-Flight-Offer",
   props: {
     offer: Object
@@ -166,99 +166,99 @@ const Nt = /* @__PURE__ */ ya(An, [["render", kn]]), wn = { class: "flight-offer
   setup(e) {
     const o = e, t = o.offer.dictionary, a = o.offer.travelerPricings[0].fareDetailsBySegment[0].brandedFare ?? o.offer.travelerPricings[0].fareDetailsBySegment[0].cabin, n = k(""), r = k("");
     o.offer.fareRules && (n.value = o.offer.fareRules.rules.find((i) => i.category === "EXCHANGE"), r.value = o.offer.fareRules.rules.find((i) => i.category === "REFUND"));
-    function s(i, u) {
-      let h = new Date(i), g = new Date(u);
-      return h.getDate() === g.getDate() && h.getMonth() === g.getMonth() && h.getFullYear() === g.getFullYear();
+    function s(i, h) {
+      let u = new Date(i), g = new Date(h);
+      return u.getDate() === g.getDate() && u.getMonth() === g.getMonth() && u.getFullYear() === g.getFullYear();
     }
     function d(i) {
       if (!i.duration)
         return "";
-      let u = pa.parse(i.duration), h = "";
-      return u.hours && (h += u.hours + " h "), u.minutes && (h += u.minutes + " m "), h;
+      let h = va.parse(i.duration), u = "";
+      return h.hours && (u += h.hours + " h "), h.minutes && (u += h.minutes + " m "), u;
     }
     function l(i) {
       return ("0" + (new Date(i).getMonth() + 1)).slice(-2);
     }
-    return (i, u) => (p(), y("li", wn, [
-      m("a", Mn, [
-        m("div", On, [
-          m("div", Pn, [
+    return (i, h) => (p(), y("li", Mn, [
+      m("a", On, [
+        m("div", Pn, [
+          m("div", Bn, [
             m("div", null, [
-              u[0] || (u[0] = m("p", { class: "text-sm" }, null, -1)),
-              m("p", Bn, v(("0" + new Date(e.offer.itineraries[0].segments[0].departure.at).getHours()).slice(-2)) + ":" + v(("0" + new Date(e.offer.itineraries[0].segments[0].departure.at).getMinutes()).slice(-2)), 1),
-              m("p", Tn, v(("0" + new Date(e.offer.itineraries[0].segments[0].departure.at).getDate()).slice(-2) + "-" + ("0" + new Date(e.offer.itineraries[0].segments[0].departure.at).getMonth()).slice(-2) + "-" + new Date(e.offer.itineraries[0].segments[0].departure.at).getFullYear()), 1)
+              h[0] || (h[0] = m("p", { class: "text-sm" }, null, -1)),
+              m("p", Tn, v(("0" + new Date(e.offer.itineraries[0].segments[0].departure.at).getHours()).slice(-2)) + ":" + v(("0" + new Date(e.offer.itineraries[0].segments[0].departure.at).getMinutes()).slice(-2)), 1),
+              m("p", Dn, v(("0" + new Date(e.offer.itineraries[0].segments[0].departure.at).getDate()).slice(-2) + "-" + ("0" + new Date(e.offer.itineraries[0].segments[0].departure.at).getMonth()).slice(-2) + "-" + new Date(e.offer.itineraries[0].segments[0].departure.at).getFullYear()), 1)
             ]),
-            m("div", Dn, [
-              M(Nt, { class: "stroke-neutral-400" }),
-              m("p", Ln, v(d(e.offer.itineraries[0])), 1),
-              e.offer.itineraries[0].segments.length > 1 ? (p(), y("p", xn, v(e.offer.itineraries[0].segments.length - 1), 1)) : P("", !0)
+            m("div", Ln, [
+              w(wt, { class: "stroke-neutral-400" }),
+              m("p", xn, v(d(e.offer.itineraries[0])), 1),
+              e.offer.itineraries[0].segments.length > 1 ? (p(), y("p", En, v(e.offer.itineraries[0].segments.length - 1), 1)) : P("", !0)
             ]),
-            m("div", En, [
-              m("p", Rn, v(e.offer.itineraries[0].segments[e.offer.itineraries[0].segments.length - 1].arrival.iataCode), 1),
-              m("p", In, v(("0" + new Date(e.offer.itineraries[0].segments[e.offer.itineraries[0].segments.length - 1].arrival.at).getHours()).slice(-2)) + ":" + v(("0" + new Date(e.offer.itineraries[0].segments[e.offer.itineraries[0].segments.length - 1].arrival.at).getMinutes()).slice(-2)), 1),
-              u[1] || (u[1] = m("p", { class: "text-xs" }, null, -1))
+            m("div", Rn, [
+              m("p", In, v(e.offer.itineraries[0].segments[e.offer.itineraries[0].segments.length - 1].arrival.iataCode), 1),
+              m("p", Kn, v(("0" + new Date(e.offer.itineraries[0].segments[e.offer.itineraries[0].segments.length - 1].arrival.at).getHours()).slice(-2)) + ":" + v(("0" + new Date(e.offer.itineraries[0].segments[e.offer.itineraries[0].segments.length - 1].arrival.at).getMinutes()).slice(-2)), 1),
+              h[1] || (h[1] = m("p", { class: "text-xs" }, null, -1))
             ])
           ])
         ]),
-        u[3] || (u[3] = zo('<div class="grid grid-cols-2 h-[20px]"><div class="left-lower-corner border-l-2 border-neutral-300"></div><div class="right-lower-corner border-dashed"></div><div class="right-upper-corner border-l-2 border-neutral-300"></div><div class="left-upper-corner border-dashed"></div></div>', 1)),
-        m("div", Kn, [
-          m("div", Gn, v(c(t).carriers[e.offer.validatingAirlineCodes[0]]) + " | " + v(c(a)), 1),
-          m("div", jn, [
-            u[2] || (u[2] = m("div", { class: "text-xs" }, null, -1)),
-            m("div", Fn, v(e.offer.price.grandTotal) + " " + v(e.offer.price.currency), 1)
+        h[3] || (h[3] = Wo('<div class="grid grid-cols-2 h-[20px]"><div class="left-lower-corner border-l-2 border-neutral-300"></div><div class="right-lower-corner border-dashed"></div><div class="right-upper-corner border-l-2 border-neutral-300"></div><div class="left-upper-corner border-dashed"></div></div>', 1)),
+        m("div", Gn, [
+          m("div", jn, v(c(t).carriers[e.offer.validatingAirlineCodes[0]]) + " | " + v(c(a)), 1),
+          m("div", Fn, [
+            h[2] || (h[2] = m("div", { class: "text-xs" }, null, -1)),
+            m("div", Hn, v(e.offer.price.grandTotal) + " " + v(e.offer.price.currency), 1)
           ])
         ])
       ]),
-      m("a", Hn, [
-        m("div", Vn, [
-          m("div", Un, [
-            m("div", _n, [
-              m("p", zn, v(e.offer.dictionary.locations[e.offer.itineraries[0].segments[0].departure.iataCode][i.$i18n.locale].city) + " (" + v(e.offer.itineraries[0].segments[0].departure.iataCode) + ") ", 1),
-              m("p", Wn, [
+      m("a", Vn, [
+        m("div", Un, [
+          m("div", _n, [
+            m("div", zn, [
+              m("p", Wn, v(e.offer.dictionary.locations[e.offer.itineraries[0].segments[0].departure.iataCode][i.$i18n.locale].city) + " (" + v(e.offer.itineraries[0].segments[0].departure.iataCode) + ") ", 1),
+              m("p", Yn, [
                 m("time", null, v(("0" + new Date(e.offer.itineraries[0].segments[0].departure.at).getHours()).slice(-2)) + ":" + v(("0" + new Date(e.offer.itineraries[0].segments[0].departure.at).getMinutes()).slice(-2)), 1)
               ]),
-              m("p", Yn, [
+              m("p", qn, [
                 m("time", null, v(("0" + new Date(e.offer.itineraries[0].segments[0].departure.at).getDate()).slice(-2) + "-" + l(e.offer.itineraries[0].segments[0].departure.at) + "-" + new Date(e.offer.itineraries[0].segments[0].departure.at).getFullYear()), 1)
               ])
             ]),
-            m("div", qn, [
-              M(Nt, { class: "icon" }),
+            m("div", Zn, [
+              w(wt, { class: "icon" }),
               m("p", Jn, [
                 m("time", null, v(d(e.offer.itineraries[0])), 1)
               ]),
-              e.offer.itineraries[0].segments.length > 1 ? (p(), y("p", Zn, v(e.offer.itineraries[0].segments.length - 1) + " " + v(i.$t("flightOffers.stopover", e.offer.itineraries[0].segments.length - 1)), 1)) : P("", !0)
+              e.offer.itineraries[0].segments.length > 1 ? (p(), y("p", Qn, v(e.offer.itineraries[0].segments.length - 1) + " " + v(i.$t("flightOffers.stopover", e.offer.itineraries[0].segments.length - 1)), 1)) : P("", !0)
             ]),
-            m("div", Qn, [
-              m("p", Xn, v(e.offer.dictionary.locations[e.offer.itineraries[0].segments[e.offer.itineraries[0].segments.length - 1].arrival.iataCode][i.$i18n.locale].city) + " (" + v(e.offer.itineraries[0].segments[e.offer.itineraries[0].segments.length - 1].arrival.iataCode) + ") ", 1),
-              m("p", er, v(("0" + new Date(e.offer.itineraries[0].segments[e.offer.itineraries[0].segments.length - 1].arrival.at).getHours()).slice(-2)) + ":" + v(("0" + new Date(e.offer.itineraries[0].segments[e.offer.itineraries[0].segments.length - 1].arrival.at).getMinutes()).slice(-2)), 1),
-              m("p", or, v(s(e.offer.itineraries[0].segments[0].departure.at, e.offer.itineraries[0].segments[e.offer.itineraries[0].segments.length - 1].arrival.at) ? i.$t("flightOffers.sameDay") : i.$t("flightOffers.notSameDay")), 1)
+            m("div", Xn, [
+              m("p", er, v(e.offer.dictionary.locations[e.offer.itineraries[0].segments[e.offer.itineraries[0].segments.length - 1].arrival.iataCode][i.$i18n.locale].city) + " (" + v(e.offer.itineraries[0].segments[e.offer.itineraries[0].segments.length - 1].arrival.iataCode) + ") ", 1),
+              m("p", or, v(("0" + new Date(e.offer.itineraries[0].segments[e.offer.itineraries[0].segments.length - 1].arrival.at).getHours()).slice(-2)) + ":" + v(("0" + new Date(e.offer.itineraries[0].segments[e.offer.itineraries[0].segments.length - 1].arrival.at).getMinutes()).slice(-2)), 1),
+              m("p", tr, v(s(e.offer.itineraries[0].segments[0].departure.at, e.offer.itineraries[0].segments[e.offer.itineraries[0].segments.length - 1].arrival.at) ? i.$t("flightOffers.sameDay") : i.$t("flightOffers.notSameDay")), 1)
             ])
           ]),
-          m("div", tr, [
+          m("div", ar, [
             m("p", null, v(c(t).carriers[e.offer.validatingAirlineCodes[0]]), 1),
-            m("p", ar, [
-              ce(v(i.$t("flightOffers.refund").toUpperCase()) + ": ", 1),
-              r.value ? (p(), y("span", nr, "✘")) : P("", !0),
-              r.value ? P("", !0) : (p(), y("span", rr, "✓")),
-              ce(" | " + v(i.$t("flightOffers.exchange").toUpperCase()) + ": ", 1),
-              n.value ? (p(), y("span", sr, "✘")) : P("", !0),
-              n.value ? P("", !0) : (p(), y("span", dr, "✓"))
+            m("p", nr, [
+              Ce(v(i.$t("flightOffers.refund").toUpperCase()) + ": ", 1),
+              r.value ? (p(), y("span", rr, "✘")) : P("", !0),
+              r.value ? P("", !0) : (p(), y("span", sr, "✓")),
+              Ce(" | " + v(i.$t("flightOffers.exchange").toUpperCase()) + ": ", 1),
+              n.value ? (p(), y("span", dr, "✘")) : P("", !0),
+              n.value ? P("", !0) : (p(), y("span", ir, "✓"))
             ])
           ])
         ]),
-        u[4] || (u[4] = zo('<div class="divider"><div class="left-upper-corner group-focus:border-t-2 group-focus:border-b-white group-focus:border-l-white group-focus:border-r-white group-focus:border-taa-brand-dark-blue"></div><div class="right-upper-corner"></div><div class="right-lower-corner"></div><div class="left-lower-corner"></div></div>', 1)),
-        m("div", ir, [
-          m("div", lr, [
-            e.offer.numberOfBookableSeats < 9 ? (p(), y("p", hr, v(i.$t("flightOffers.seats", e.offer.numberOfBookableSeats)), 1)) : P("", !0),
-            m("p", ur, v(i.$t("flightOffers.priceFrom")), 1),
-            m("div", mr, v(e.offer.price.grandTotal) + " " + v(e.offer.price.currency), 1)
+        h[4] || (h[4] = Wo('<div class="divider"><div class="left-upper-corner group-focus:border-t-2 group-focus:border-b-white group-focus:border-l-white group-focus:border-r-white group-focus:border-taa-brand-dark-blue"></div><div class="right-upper-corner"></div><div class="right-lower-corner"></div><div class="left-lower-corner"></div></div>', 1)),
+        m("div", lr, [
+          m("div", hr, [
+            e.offer.numberOfBookableSeats < 9 ? (p(), y("p", ur, v(i.$t("flightOffers.seats", e.offer.numberOfBookableSeats)), 1)) : P("", !0),
+            m("p", mr, v(i.$t("flightOffers.priceFrom")), 1),
+            m("div", Cr, v(e.offer.price.grandTotal) + " " + v(e.offer.price.currency), 1)
           ])
         ])
       ])
     ]));
   }
 };
-function kt(e, o) {
+function Mt(e, o) {
   var t = Object.keys(e);
   if (Object.getOwnPropertySymbols) {
     var a = Object.getOwnPropertySymbols(e);
@@ -271,15 +271,15 @@ function kt(e, o) {
 function Ae(e) {
   for (var o = 1; o < arguments.length; o++) {
     var t = arguments[o] != null ? arguments[o] : {};
-    o % 2 ? kt(Object(t), !0).forEach(function(a) {
-      Cr(e, a, t[a]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : kt(Object(t)).forEach(function(a) {
+    o % 2 ? Mt(Object(t), !0).forEach(function(a) {
+      cr(e, a, t[a]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : Mt(Object(t)).forEach(function(a) {
       Object.defineProperty(e, a, Object.getOwnPropertyDescriptor(t, a));
     });
   }
   return e;
 }
-function Cr(e, o, t) {
+function cr(e, o, t) {
   return o in e ? Object.defineProperty(e, o, {
     value: t,
     enumerable: !0,
@@ -287,17 +287,17 @@ function Cr(e, o, t) {
     writable: !0
   }) : e[o] = t, e;
 }
-function wt(e) {
+function Ot(e) {
   let o = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : [];
   return Object.keys(e).reduce((t, a) => (o.includes(a) || (t[a] = c(e[a])), t), {});
 }
 function So(e) {
   return typeof e == "function";
 }
-function cr(e) {
-  return un(e) || mn(e);
+function gr(e) {
+  return mn(e) || Cn(e);
 }
-function va(e, o, t) {
+function ba(e, o, t) {
   let a = e;
   const n = o.split(".");
   for (let r = 0; r < n.length; r++) {
@@ -307,44 +307,44 @@ function va(e, o, t) {
   return a;
 }
 function Eo(e, o, t) {
-  return N(() => e.some((a) => va(o, a, {
+  return N(() => e.some((a) => ba(o, a, {
     [t]: !1
   })[t]));
 }
-function Mt(e, o, t) {
+function Pt(e, o, t) {
   return N(() => e.reduce((a, n) => {
-    const r = va(o, n, {
+    const r = ba(o, n, {
       [t]: !1
     })[t] || [];
     return a.concat(r);
   }, []));
 }
-function ba(e, o, t, a) {
+function Sa(e, o, t, a) {
   return e.call(a, c(o), c(t), a);
 }
-function Sa(e) {
+function Aa(e) {
   return e.$valid !== void 0 ? !e.$valid : !e;
 }
-function gr(e, o, t, a, n, r, s) {
+function $r(e, o, t, a, n, r, s) {
   let {
     $lazy: d,
     $rewardEarly: l
-  } = n, i = arguments.length > 7 && arguments[7] !== void 0 ? arguments[7] : [], u = arguments.length > 8 ? arguments[8] : void 0, h = arguments.length > 9 ? arguments[9] : void 0, g = arguments.length > 10 ? arguments[10] : void 0;
+  } = n, i = arguments.length > 7 && arguments[7] !== void 0 ? arguments[7] : [], h = arguments.length > 8 ? arguments[8] : void 0, u = arguments.length > 9 ? arguments[9] : void 0, g = arguments.length > 10 ? arguments[10] : void 0;
   const f = k(!!a.value), C = k(0);
   t.value = !1;
   const $ = V([o, a].concat(i, g), () => {
-    if (d && !a.value || l && !h.value && !t.value)
+    if (d && !a.value || l && !u.value && !t.value)
       return;
     let b;
     try {
-      b = ba(e, o, u, s);
-    } catch (w) {
-      b = Promise.reject(w);
+      b = Sa(e, o, h, s);
+    } catch (M) {
+      b = Promise.reject(M);
     }
-    C.value++, t.value = !!C.value, f.value = !1, Promise.resolve(b).then((w) => {
-      C.value--, t.value = !!C.value, r.value = w, f.value = Sa(w);
-    }).catch((w) => {
-      C.value--, t.value = !!C.value, r.value = w, f.value = !0;
+    C.value++, t.value = !!C.value, f.value = !1, Promise.resolve(b).then((M) => {
+      C.value--, t.value = !!C.value, r.value = M, f.value = Aa(M);
+    }).catch((M) => {
+      C.value--, t.value = !!C.value, r.value = M, f.value = !0;
     });
   }, {
     immediate: !0,
@@ -355,44 +355,44 @@ function gr(e, o, t, a, n, r, s) {
     $unwatch: $
   };
 }
-function $r(e, o, t, a, n, r, s, d) {
+function fr(e, o, t, a, n, r, s, d) {
   let {
     $lazy: l,
     $rewardEarly: i
   } = a;
-  const u = () => ({}), h = N(() => {
+  const h = () => ({}), u = N(() => {
     if (l && !t.value || i && !d.value)
       return !1;
     let g = !0;
     try {
-      const f = ba(e, o, s, r);
-      n.value = f, g = Sa(f);
+      const f = Sa(e, o, s, r);
+      n.value = f, g = Aa(f);
     } catch (f) {
       n.value = f;
     }
     return g;
   });
   return {
-    $unwatch: u,
-    $invalid: h
+    $unwatch: h,
+    $invalid: u
   };
 }
-function fr(e, o, t, a, n, r, s, d, l, i, u) {
-  const h = k(!1), g = e.$params || {}, f = k(null);
+function pr(e, o, t, a, n, r, s, d, l, i, h) {
+  const u = k(!1), g = e.$params || {}, f = k(null);
   let C, $;
   e.$async ? {
     $invalid: C,
     $unwatch: $
-  } = gr(e.$validator, o, h, t, a, f, n, e.$watchTargets, l, i, u) : {
+  } = $r(e.$validator, o, u, t, a, f, n, e.$watchTargets, l, i, h) : {
     $invalid: C,
     $unwatch: $
-  } = $r(e.$validator, o, t, a, f, n, l, i);
+  } = fr(e.$validator, o, t, a, f, n, l, i);
   const b = e.$message;
   return {
-    $message: So(b) ? N(() => b(wt({
-      $pending: h,
+    $message: So(b) ? N(() => b(Ot({
+      $pending: u,
       $invalid: C,
-      $params: wt(g),
+      $params: Ot(g),
       $model: o,
       $response: f,
       $validator: r,
@@ -400,13 +400,13 @@ function fr(e, o, t, a, n, r, s, d, l, i, u) {
       $property: s
     }))) : b || "",
     $params: g,
-    $pending: h,
+    $pending: u,
     $invalid: C,
     $response: f,
     $unwatch: $
   };
 }
-function pr() {
+function yr() {
   let e = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
   const o = c(e), t = Object.keys(o), a = {}, n = {}, r = {};
   let s = null;
@@ -437,27 +437,27 @@ function pr() {
     validationGroups: s
   };
 }
-const yr = "__root";
-function vr(e, o, t, a, n, r, s, d, l) {
-  const i = Object.keys(e), u = a.get(n, e), h = k(!1), g = k(!1), f = k(0);
-  if (u) {
-    if (!u.$partial) return u;
-    u.$unwatch(), h.value = u.$dirty.value;
+const vr = "__root";
+function br(e, o, t, a, n, r, s, d, l) {
+  const i = Object.keys(e), h = a.get(n, e), u = k(!1), g = k(!1), f = k(0);
+  if (h) {
+    if (!h.$partial) return h;
+    h.$unwatch(), u.value = h.$dirty.value;
   }
   const C = {
-    $dirty: h,
+    $dirty: u,
     $path: n,
     $touch: () => {
-      h.value || (h.value = !0);
+      u.value || (u.value = !0);
     },
     $reset: () => {
-      h.value && (h.value = !1);
+      u.value && (u.value = !1);
     },
     $commit: () => {
     }
   };
   return i.length ? (i.forEach(($) => {
-    C[$] = fr(e[$], o, C.$dirty, r, s, $, t, n, l, g, f);
+    C[$] = pr(e[$], o, C.$dirty, r, s, $, t, n, l, g, f);
   }), C.$externalResults = N(() => d.value ? [].concat(d.value).map(($, b) => ({
     $propertyPath: n,
     $property: t,
@@ -486,11 +486,11 @@ function vr(e, o, t, a, n, r, s, d, l) {
     C[$].$unwatch();
   }), C.$commit = () => {
     g.value = !0, f.value = Date.now();
-  }, a.set(n, e, C), C) : (u && a.set(n, e, C), C);
+  }, a.set(n, e, C), C) : (h && a.set(n, e, C), C);
 }
-function br(e, o, t, a, n, r, s) {
+function Sr(e, o, t, a, n, r, s) {
   const d = Object.keys(e);
-  return d.length ? d.reduce((l, i) => (l[i] = qo({
+  return d.length ? d.reduce((l, i) => (l[i] = Zo({
     validations: e[i],
     state: o,
     key: i,
@@ -501,7 +501,7 @@ function br(e, o, t, a, n, r, s) {
     externalResults: s
   }), l), {}) : {};
 }
-function Sr(e, o, t) {
+function Ar(e, o, t) {
   const a = N(() => [o, t].filter((C) => C).reduce((C, $) => C.concat(Object.values(c($))), [])), n = N({
     get() {
       return e.$dirty.value || (a.value.length ? a.value.every((C) => C.$dirty) : !1);
@@ -510,12 +510,12 @@ function Sr(e, o, t) {
       e.$dirty.value = C;
     }
   }), r = N(() => {
-    const C = c(e.$silentErrors) || [], $ = a.value.filter((b) => (c(b).$silentErrors || []).length).reduce((b, w) => b.concat(...w.$silentErrors), []);
+    const C = c(e.$silentErrors) || [], $ = a.value.filter((b) => (c(b).$silentErrors || []).length).reduce((b, M) => b.concat(...M.$silentErrors), []);
     return C.concat($);
   }), s = N(() => {
-    const C = c(e.$errors) || [], $ = a.value.filter((b) => (c(b).$errors || []).length).reduce((b, w) => b.concat(...w.$errors), []);
+    const C = c(e.$errors) || [], $ = a.value.filter((b) => (c(b).$errors || []).length).reduce((b, M) => b.concat(...M.$errors), []);
     return C.concat($);
-  }), d = N(() => a.value.some((C) => C.$invalid) || c(e.$invalid) || !1), l = N(() => a.value.some((C) => c(C.$pending)) || c(e.$pending) || !1), i = N(() => a.value.some((C) => C.$dirty) || a.value.some((C) => C.$anyDirty) || n.value), u = N(() => n.value ? l.value || d.value : !1), h = () => {
+  }), d = N(() => a.value.some((C) => C.$invalid) || c(e.$invalid) || !1), l = N(() => a.value.some((C) => c(C.$pending)) || c(e.$pending) || !1), i = N(() => a.value.some((C) => C.$dirty) || a.value.some((C) => C.$anyDirty) || n.value), h = N(() => n.value ? l.value || d.value : !1), u = () => {
     e.$touch(), a.value.forEach((C) => {
       C.$touch();
     });
@@ -528,20 +528,20 @@ function Sr(e, o, t) {
       C.$reset();
     });
   };
-  return a.value.length && a.value.every((C) => C.$dirty) && h(), {
+  return a.value.length && a.value.every((C) => C.$dirty) && u(), {
     $dirty: n,
     $errors: s,
     $invalid: d,
     $anyDirty: i,
-    $error: u,
+    $error: h,
     $pending: l,
-    $touch: h,
+    $touch: u,
     $reset: f,
     $silentErrors: r,
     $commit: g
   };
 }
-function qo(e) {
+function Zo(e) {
   let {
     validations: o,
     state: t,
@@ -553,31 +553,31 @@ function qo(e) {
     instance: l,
     externalResults: i
   } = e;
-  const u = n ? `${n}.${a}` : a, {
-    rules: h,
+  const h = n ? `${n}.${a}` : a, {
+    rules: u,
     nestedValidators: g,
     config: f,
     validationGroups: C
-  } = pr(o), $ = Ae(Ae({}, d), f), b = a ? N(() => {
-    const K = c(t);
-    return K ? c(K[a]) : void 0;
-  }) : t, w = Ae({}, c(i) || {}), O = N(() => {
-    const K = c(i);
-    return a ? K ? c(K[a]) : void 0 : K;
-  }), A = vr(h, b, a, s, u, $, l, O, t), S = br(g, b, u, s, $, l, O), B = {};
-  C && Object.entries(C).forEach((K) => {
-    let [E, R] = K;
-    B[E] = {
+  } = yr(o), $ = Ae(Ae({}, d), f), b = a ? N(() => {
+    const G = c(t);
+    return G ? c(G[a]) : void 0;
+  }) : t, M = Ae({}, c(i) || {}), O = N(() => {
+    const G = c(i);
+    return a ? G ? c(G[a]) : void 0 : G;
+  }), A = br(u, b, a, s, h, $, l, O, t), S = Sr(g, b, h, s, $, l, O), T = {};
+  C && Object.entries(C).forEach((G) => {
+    let [E, R] = G;
+    T[E] = {
       $invalid: Eo(R, S, "$invalid"),
       $error: Eo(R, S, "$error"),
       $pending: Eo(R, S, "$pending"),
-      $errors: Mt(R, S, "$errors"),
-      $silentErrors: Mt(R, S, "$silentErrors")
+      $errors: Pt(R, S, "$errors"),
+      $silentErrors: Pt(R, S, "$silentErrors")
     };
   });
   const {
     $dirty: D,
-    $errors: I,
+    $errors: K,
     $invalid: X,
     $anyDirty: ve,
     $error: be,
@@ -586,58 +586,58 @@ function qo(e) {
     $reset: le,
     $silentErrors: Pe,
     $commit: he
-  } = Sr(A, S, r), Ce = a ? N({
+  } = Ar(A, S, r), ce = a ? N({
     get: () => c(b),
-    set: (K) => {
+    set: (G) => {
       D.value = !0;
       const E = c(t), R = c(i);
-      R && (R[a] = w[a]), Wo(E[a]) ? E[a].value = K : E[a] = K;
+      R && (R[a] = M[a]), Yo(E[a]) ? E[a].value = G : E[a] = G;
     }
   }) : null;
   a && $.$autoDirty && V(b, () => {
     D.value || Oe();
-    const K = c(i);
-    K && (K[a] = w[a]);
+    const G = c(i);
+    G && (G[a] = M[a]);
   }, {
     flush: "sync"
   });
   async function Se() {
-    return Oe(), $.$rewardEarly && (he(), await fe()), await fe(), new Promise((K) => {
-      if (!Me.value) return K(!X.value);
+    return Oe(), $.$rewardEarly && (he(), await fe()), await fe(), new Promise((G) => {
+      if (!Me.value) return G(!X.value);
       const E = V(Me, () => {
-        K(!X.value), E();
+        G(!X.value), E();
       });
     });
   }
-  function uo(K) {
-    return (r.value || {})[K];
+  function uo(G) {
+    return (r.value || {})[G];
   }
   function mo() {
-    Wo(i) ? i.value = w : Object.keys(w).length === 0 ? Object.keys(i).forEach((K) => {
-      delete i[K];
-    }) : Object.assign(i, w);
+    Yo(i) ? i.value = M : Object.keys(M).length === 0 ? Object.keys(i).forEach((G) => {
+      delete i[G];
+    }) : Object.assign(i, M);
   }
   return no(Ae(Ae(Ae({}, A), {}, {
-    $model: Ce,
+    $model: ce,
     $dirty: D,
     $error: be,
-    $errors: I,
+    $errors: K,
     $invalid: X,
     $anyDirty: ve,
     $pending: Me,
     $touch: Oe,
     $reset: le,
-    $path: u || yr,
+    $path: h || vr,
     $silentErrors: Pe,
     $validate: Se,
     $commit: he
   }, r && {
     $getResultsForChild: uo,
     $clearExternalResults: mo,
-    $validationGroups: B
+    $validationGroups: T
   }), S));
 }
-class Ar {
+class Nr {
   constructor() {
     this.storage = /* @__PURE__ */ new Map();
   }
@@ -668,43 +668,43 @@ class Ar {
 const po = {
   COLLECT_ALL: !0,
   COLLECT_NONE: !1
-}, Ot = Symbol("vuelidate#injectChildResults"), Pt = Symbol("vuelidate#removeChildResults");
-function Nr(e) {
+}, Bt = Symbol("vuelidate#injectChildResults"), Tt = Symbol("vuelidate#removeChildResults");
+function kr(e) {
   let {
     $scope: o,
     instance: t
   } = e;
-  const a = {}, n = k([]), r = N(() => n.value.reduce((u, h) => (u[h] = c(a[h]), u), {}));
-  function s(u, h) {
+  const a = {}, n = k([]), r = N(() => n.value.reduce((h, u) => (h[u] = c(a[u]), h), {}));
+  function s(h, u) {
     let {
       $registerAs: g,
       $scope: f,
       $stopPropagation: C
-    } = h;
-    C || o === po.COLLECT_NONE || f === po.COLLECT_NONE || o !== po.COLLECT_ALL && o !== f || (a[g] = u, n.value.push(g));
+    } = u;
+    C || o === po.COLLECT_NONE || f === po.COLLECT_NONE || o !== po.COLLECT_ALL && o !== f || (a[g] = h, n.value.push(g));
   }
   t.__vuelidateInjectInstances = [].concat(t.__vuelidateInjectInstances || [], s);
-  function d(u) {
-    n.value = n.value.filter((h) => h !== u), delete a[u];
+  function d(h) {
+    n.value = n.value.filter((u) => u !== h), delete a[h];
   }
   t.__vuelidateRemoveInstances = [].concat(t.__vuelidateRemoveInstances || [], d);
-  const l = te(Ot, []);
-  se(Ot, t.__vuelidateInjectInstances);
-  const i = te(Pt, []);
-  return se(Pt, t.__vuelidateRemoveInstances), {
+  const l = te(Bt, []);
+  se(Bt, t.__vuelidateInjectInstances);
+  const i = te(Tt, []);
+  return se(Tt, t.__vuelidateRemoveInstances), {
     childResults: r,
     sendValidationResultsToParent: l,
     removeValidationResultsFromParent: i
   };
 }
-function Aa(e) {
+function Na(e) {
   return new Proxy(e, {
     get(o, t) {
-      return typeof o[t] == "object" ? Aa(o[t]) : N(() => o[t]);
+      return typeof o[t] == "object" ? Na(o[t]) : N(() => o[t]);
     }
   });
 }
-let Bt = 0;
+let Dt = 0;
 function ro(e, o) {
   var t;
   let a = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
@@ -716,24 +716,24 @@ function ro(e, o) {
     $externalResults: d,
     currentVueInstance: l
   } = a;
-  const i = l || ((t = fa()) === null || t === void 0 ? void 0 : t.proxy), u = i ? i.$options : {};
-  n || (Bt += 1, n = `_vuelidate_${Bt}`);
-  const h = k({}), g = new Ar(), {
+  const i = l || ((t = ya()) === null || t === void 0 ? void 0 : t.proxy), h = i ? i.$options : {};
+  n || (Dt += 1, n = `_vuelidate_${Dt}`);
+  const u = k({}), g = new Nr(), {
     childResults: f,
     sendValidationResultsToParent: C,
     removeValidationResultsFromParent: $
-  } = i ? Nr({
+  } = i ? kr({
     $scope: r,
     instance: i
   }) : {
     childResults: k({})
   };
-  if (!e && u.validations) {
-    const b = u.validations;
-    o = k({}), ln(() => {
-      o.value = i, V(() => So(b) ? b.call(o.value, new Aa(o.value)) : b, (w) => {
-        h.value = qo({
-          validations: w,
+  if (!e && h.validations) {
+    const b = h.validations;
+    o = k({}), hn(() => {
+      o.value = i, V(() => So(b) ? b.call(o.value, new Na(o.value)) : b, (M) => {
+        u.value = Zo({
+          validations: M,
           state: o,
           childResults: f,
           resultsCache: g,
@@ -744,12 +744,12 @@ function ro(e, o) {
       }, {
         immediate: !0
       });
-    }), a = u.validationsConfig || a;
+    }), a = h.validationsConfig || a;
   } else {
-    const b = Wo(e) || cr(e) ? e : no(e || {});
-    V(b, (w) => {
-      h.value = qo({
-        validations: w,
+    const b = Yo(e) || gr(e) ? e : no(e || {});
+    V(b, (M) => {
+      u.value = Zo({
+        validations: M,
         state: o,
         childResults: f,
         resultsCache: g,
@@ -761,13 +761,13 @@ function ro(e, o) {
       immediate: !0
     });
   }
-  return i && (C.forEach((b) => b(h, {
+  return i && (C.forEach((b) => b(u, {
     $registerAs: n,
     $scope: r,
     $stopPropagation: s
-  })), hn(() => $.forEach((b) => b(n)))), N(() => Ae(Ae({}, c(h.value)), f.value));
+  })), un(() => $.forEach((b) => b(n)))), N(() => Ae(Ae({}, c(u.value)), f.value));
 }
-function Tt(e, o) {
+function Lt(e, o) {
   var t = Object.keys(e);
   if (Object.getOwnPropertySymbols) {
     var a = Object.getOwnPropertySymbols(e);
@@ -780,15 +780,15 @@ function Tt(e, o) {
 function eo(e) {
   for (var o = 1; o < arguments.length; o++) {
     var t = arguments[o] != null ? arguments[o] : {};
-    o % 2 ? Tt(Object(t), !0).forEach(function(a) {
-      kr(e, a, t[a]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : Tt(Object(t)).forEach(function(a) {
+    o % 2 ? Lt(Object(t), !0).forEach(function(a) {
+      wr(e, a, t[a]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : Lt(Object(t)).forEach(function(a) {
       Object.defineProperty(e, a, Object.getOwnPropertyDescriptor(t, a));
     });
   }
   return e;
 }
-function kr(e, o, t) {
+function wr(e, o, t) {
   return o in e ? Object.defineProperty(e, o, {
     value: t,
     enumerable: !0,
@@ -807,25 +807,25 @@ function Mo(e) {
     $validator: e
   };
 }
-function Na(e) {
+function ka(e) {
   return typeof e == "object" ? e.$valid : e;
 }
-function ka(e) {
+function wa(e) {
   return e.$validator || e;
 }
-function wr(e, o) {
+function Mr(e, o) {
   if (!Jo(e)) throw new Error(`[@vuelidate/validators]: First parameter to "withParams" should be an object, provided ${typeof e}`);
   if (!Jo(o) && !Ao(o)) throw new Error("[@vuelidate/validators]: Validator must be a function or object with $validator parameter");
   const t = Mo(o);
   return t.$params = eo(eo({}, t.$params || {}), e), t;
 }
-function Mr(e, o) {
+function Or(e, o) {
   if (!Ao(e) && typeof c(e) != "string") throw new Error(`[@vuelidate/validators]: First parameter to "withMessage" should be string or a function returning a string, provided ${typeof e}`);
   if (!Jo(o) && !Ao(o)) throw new Error("[@vuelidate/validators]: Validator must be a function or object with $validator parameter");
   const t = Mo(o);
   return t.$message = e, t;
 }
-function Or(e) {
+function Pr(e) {
   let o = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : [];
   const t = Mo(e);
   return eo(eo({}, t), {}, {
@@ -833,38 +833,38 @@ function Or(e) {
     $watchTargets: o
   });
 }
-function Pr(e) {
+function Br(e) {
   return {
     $validator(o) {
       for (var t = arguments.length, a = new Array(t > 1 ? t - 1 : 0), n = 1; n < t; n++)
         a[n - 1] = arguments[n];
       return c(o).reduce((r, s, d) => {
-        const l = Object.entries(s).reduce((i, u) => {
-          let [h, g] = u;
-          const f = e[h] || {}, C = Object.entries(f).reduce(($, b) => {
-            let [w, O] = b;
-            const S = ka(O).call(this, g, s, d, ...a), B = Na(S);
-            if ($.$data[w] = S, $.$data.$invalid = !B || !!$.$data.$invalid, $.$data.$error = $.$data.$invalid, !B) {
+        const l = Object.entries(s).reduce((i, h) => {
+          let [u, g] = h;
+          const f = e[u] || {}, C = Object.entries(f).reduce(($, b) => {
+            let [M, O] = b;
+            const S = wa(O).call(this, g, s, d, ...a), T = ka(S);
+            if ($.$data[M] = S, $.$data.$invalid = !T || !!$.$data.$invalid, $.$data.$error = $.$data.$invalid, !T) {
               let D = O.$message || "";
-              const I = O.$params || {};
+              const K = O.$params || {};
               typeof D == "function" && (D = D({
                 $pending: !1,
-                $invalid: !B,
-                $params: I,
+                $invalid: !T,
+                $params: K,
                 $model: g,
                 $response: S
               })), $.$errors.push({
-                $property: h,
+                $property: u,
                 $message: D,
-                $params: I,
+                $params: K,
                 $response: S,
                 $model: g,
                 $pending: !1,
-                $validator: w
+                $validator: M
               });
             }
             return {
-              $valid: $.$valid && B,
+              $valid: $.$valid && T,
               $data: $.$data,
               $errors: $.$errors
             };
@@ -873,7 +873,7 @@ function Pr(e) {
             $data: {},
             $errors: []
           });
-          return i.$data[h] = C.$data, i.$errors[h] = C.$errors, {
+          return i.$data[u] = C.$data, i.$errors[u] = C.$errors, {
             $valid: i.$valid && C.$valid,
             $data: i.$data,
             $errors: i.$errors
@@ -915,43 +915,43 @@ const Ke = (e) => {
     return !1;
   }
   return !!String(e).length;
-}, wa = (e) => (e = c(e), Array.isArray(e) ? e.length : typeof e == "object" ? Object.keys(e).length : String(e).length);
+}, Ma = (e) => (e = c(e), Array.isArray(e) ? e.length : typeof e == "object" ? Object.keys(e).length : String(e).length);
 function we() {
   for (var e = arguments.length, o = new Array(e), t = 0; t < e; t++)
     o[t] = arguments[t];
   return (a) => (a = c(a), !Ke(a) || o.every((n) => (n.lastIndex = 0, n.test(a))));
 }
-var Br = /* @__PURE__ */ Object.freeze({
+var Tr = /* @__PURE__ */ Object.freeze({
   __proto__: null,
-  forEach: Pr,
-  len: wa,
+  forEach: Br,
+  len: Ma,
   normalizeValidatorObject: Mo,
   regex: we,
   req: Ke,
   unwrap: c,
-  unwrapNormalizedValidator: ka,
-  unwrapValidatorResponse: Na,
-  withAsync: Or,
-  withMessage: Mr,
-  withParams: wr
+  unwrapNormalizedValidator: wa,
+  unwrapValidatorResponse: ka,
+  withAsync: Pr,
+  withMessage: Or,
+  withParams: Mr
 });
 we(/^[a-zA-Z]*$/);
 we(/^[a-zA-Z0-9]*$/);
 we(/^\d*(\.\d+)?$/);
-const Tr = /^(?:[A-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[A-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9]{2,}(?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/i;
-var Dr = we(Tr), Ma = {
-  $validator: Dr,
+const Dr = /^(?:[A-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[A-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9]{2,}(?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/i;
+var Lr = we(Dr), Oa = {
+  $validator: Lr,
   $message: "Value is not a valid email address",
   $params: {
     type: "email"
   }
 };
-function Lr(e) {
-  return (o) => !Ke(o) || wa(o) >= c(e);
+function xr(e) {
+  return (o) => !Ke(o) || Ma(o) >= c(e);
 }
 function ze(e) {
   return {
-    $validator: Lr(e),
+    $validator: xr(e),
     $message: (o) => {
       let {
         $params: t
@@ -964,24 +964,24 @@ function ze(e) {
     }
   };
 }
-function xr(e) {
+function Er(e) {
   return typeof e == "string" && (e = e.trim()), Ke(e);
 }
 var re = {
-  $validator: xr,
+  $validator: Er,
   $message: "Value is required",
   $params: {
     type: "required"
   }
 };
-const Er = /^(?:(?:(?:https?|ftp):)?\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z0-9\u00a1-\uffff][a-z0-9\u00a1-\uffff_-]{0,62})?[a-z0-9\u00a1-\uffff]\.)+(?:[a-z\u00a1-\uffff]{2,}\.?))(?::\d{2,5})?(?:[/?#]\S*)?$/i;
-we(Er);
-function Rr(e) {
+const Rr = /^(?:(?:(?:https?|ftp):)?\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z0-9\u00a1-\uffff][a-z0-9\u00a1-\uffff_-]{0,62})?[a-z0-9\u00a1-\uffff]\.)+(?:[a-z\u00a1-\uffff]{2,}\.?))(?::\d{2,5})?(?:[/?#]\S*)?$/i;
+we(Rr);
+function Ir(e) {
   return (o) => !Ke(o) || (!/\s/.test(o) || o instanceof Date) && +o >= +c(e);
 }
 function Ro(e) {
   return {
-    $validator: Rr(e),
+    $validator: Ir(e),
     $message: (o) => {
       let {
         $params: t
@@ -994,11 +994,11 @@ function Ro(e) {
     }
   };
 }
-function Ir(e) {
+function Kr(e) {
   return (o) => !Ke(o) || (!/\s/.test(o) || o instanceof Date) && +o <= +c(e);
 }
 var Io = ((e) => ({
-  $validator: Ir(e),
+  $validator: Kr(e),
   $message: (o) => {
     let {
       $params: t
@@ -1012,18 +1012,18 @@ var Io = ((e) => ({
 }));
 we(/(^[0-9]*$)|(^-[0-9]+$)/);
 we(/^[-]?\d*(\.\d+)?$/);
-const Kr = {
-  class: /* @__PURE__ */ T({ "px-3 text-sm text-neutral-500": !0, valid: !0 })
-}, Gr = { class: "flex items-center mb-3" }, jr = { class: "flex-1 border border-neutral-300 px-3 py-2 rounded-l-lg focus-within:z-10 focus-within:ring-1 focus-within:ring-taa-brand-blue focus-within:border-taa-brand-blue" }, Fr = {
+const Gr = {
+  class: /* @__PURE__ */ B({ "px-3 text-sm text-neutral-500": !0, valid: !0 })
+}, jr = { class: "flex items-center mb-3" }, Fr = { class: "flex-1 border border-neutral-300 px-3 py-2 rounded-l-lg focus-within:z-10 focus-within:ring-1 focus-within:ring-taa-brand-blue focus-within:border-taa-brand-blue" }, Hr = {
   for: "birthday",
   class: "sr-only"
-}, Hr = ["value", "placeholder"], Vr = { class: "flex-1 border border-x-0 border-neutral-300 px-3 py-2 focus-within:z-10 focus-within:border focus-within:ring-1 focus-within:ring-taa-brand-blue focus-within:border-taa-brand-blue" }, Ur = {
+}, Vr = ["value", "placeholder"], Ur = { class: "flex-1 border border-x-0 border-neutral-300 px-3 py-2 focus-within:z-10 focus-within:border focus-within:ring-1 focus-within:ring-taa-brand-blue focus-within:border-taa-brand-blue" }, _r = {
   for: "birth-month",
   class: "sr-only"
-}, _r = ["value", "placeholder"], zr = { class: "flex-1 border border-neutral-300 px-3 py-2 rounded-r-lg focus-within:z-10 focus-within:ring-1 focus-within:ring-taa-brand-blue focus-within:border-taa-brand-blue" }, Wr = {
+}, zr = ["value", "placeholder"], Wr = { class: "flex-1 border border-neutral-300 px-3 py-2 rounded-r-lg focus-within:z-10 focus-within:ring-1 focus-within:ring-taa-brand-blue focus-within:border-taa-brand-blue" }, Yr = {
   for: "birth-year",
   class: "sr-only"
-}, Yr = ["max", "value", "placeholder"], km = {
+}, qr = ["max", "value", "placeholder"], Qm = {
   __name: "T-Birthday-Input",
   props: {
     modelValue: {
@@ -1035,7 +1035,7 @@ const Kr = {
   ],
   setup(e, { emit: o }) {
     const t = e;
-    G(function() {
+    j(function() {
       const i = Date.parse(t.modelValue);
       i instanceof Date && (a.value.day = i.getDate(), a.value.month = i.getMonth() + 1, a.value.year = i.getFullYear());
     });
@@ -1061,14 +1061,14 @@ const Kr = {
       }
     }, a.value);
     function l(i) {
-      const { data: u } = i;
+      const { data: h } = i;
       a.value.day = i.target.value, console.log(d.value.day.$dirty);
     }
-    return (i, u) => (p(), y(F, null, [
-      m("h2", Kr, v(i.$t("passengers.birthday.label")), 1),
-      m("div", Gr, [
-        m("div", jr, [
-          m("label", Fr, v(i.$t("passengers.birthday.day")), 1),
+    return (i, h) => (p(), y(I, null, [
+      m("h2", Gr, v(i.$t("passengers.birthday.label")), 1),
+      m("div", jr, [
+        m("div", Fr, [
+          m("label", Hr, v(i.$t("passengers.birthday.day")), 1),
           m("input", {
             id: "birthday",
             type: "number",
@@ -1078,10 +1078,10 @@ const Kr = {
             onInput: l,
             class: "block w-full border-white border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm",
             placeholder: i.$t("passengers.birthday.day")
-          }, null, 40, Hr)
+          }, null, 40, Vr)
         ]),
-        m("div", Vr, [
-          m("label", Ur, v(i.$t("passengers.birthday.month")), 1),
+        m("div", Ur, [
+          m("label", _r, v(i.$t("passengers.birthday.month")), 1),
           m("input", {
             id: "birth-month",
             type: "number",
@@ -1090,10 +1090,10 @@ const Kr = {
             value: a.value.month,
             class: "block w-full border-white border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm",
             placeholder: i.$t("passengers.birthday.month")
-          }, null, 8, _r)
+          }, null, 8, zr)
         ]),
-        m("div", zr, [
-          m("label", Wr, v(i.$t("passengers.birthday.year")), 1),
+        m("div", Wr, [
+          m("label", Yr, v(i.$t("passengers.birthday.year")), 1),
           m("input", {
             id: "birth-year",
             type: "number",
@@ -1102,14 +1102,14 @@ const Kr = {
             value: a.value.year,
             class: "block w-full border-white border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm",
             placeholder: i.$t("passengers.birthday.year")
-          }, null, 8, Yr)
+          }, null, 8, qr)
         ])
       ]),
-      ce(" " + v(c(d).day.$dirty), 1)
+      Ce(" " + v(c(d).day.$dirty), 1)
     ], 64));
   }
 };
-function Dt(e, o) {
+function xt(e, o) {
   return p(), y("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     viewBox: "0 0 20 20",
@@ -1139,7 +1139,7 @@ function We(e, o) {
     })
   ]);
 }
-function qr(e, o) {
+function Zr(e, o) {
   return p(), y("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     viewBox: "0 0 20 20",
@@ -1184,7 +1184,7 @@ function Jr(e, o) {
     })
   ]);
 }
-function Zr(e, o) {
+function Qr(e, o) {
   return p(), y("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     viewBox: "0 0 20 20",
@@ -1196,7 +1196,7 @@ function Zr(e, o) {
     m("path", { d: "m19 8.839-7.77 3.885a2.75 2.75 0 0 1-2.46 0L1 8.839V14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.839Z" })
   ]);
 }
-function Qr(e, o) {
+function Xr(e, o) {
   return p(), y("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     viewBox: "0 0 20 20",
@@ -1211,7 +1211,7 @@ function Qr(e, o) {
     })
   ]);
 }
-function Lt(e, o) {
+function Et(e, o) {
   return p(), y("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     viewBox: "0 0 20 20",
@@ -1222,10 +1222,10 @@ function Lt(e, o) {
     m("path", { d: "M10 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM3.465 14.493a1.23 1.23 0 0 0 .41 1.412A9.957 9.957 0 0 0 10 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 0 0-13.074.003Z" })
   ]);
 }
-const Xr = { class: "holder" }, es = { class: "icon" }, os = ["placeholder", "value"], ts = {
+const es = { class: "holder" }, os = { class: "icon" }, ts = ["placeholder", "value"], as = {
   key: 0,
   class: "px-3 text-sm text-red-500"
-}, as = {
+}, ns = {
   __name: "T-Email-Input",
   props: {
     email: {
@@ -1241,19 +1241,19 @@ const Xr = { class: "holder" }, es = { class: "icon" }, os = ["placeholder", "va
     const a = ro({
       email: {
         required: re,
-        emailValidator: Ma
+        emailValidator: Oa
       }
     }, e), n = N(() => a.value.email.$dirty ? !a.value.email.$invalid : !0);
     return (r, s) => (p(), y("div", {
-      class: T({ "t-email-input": !0, error: !n.value })
+      class: B({ "t-email-input": !0, error: !n.value })
     }, [
       m("label", {
         for: "email",
-        class: T({ label: !0, error: !n.value })
+        class: B({ label: !0, error: !n.value })
       }, v(r.$t("passengers.email.label")), 3),
-      m("div", Xr, [
-        m("div", es, [
-          M(c(Zr), {
+      m("div", es, [
+        m("div", os, [
+          w(c(Qr), {
             class: "h-5 w-5 text-gray-400",
             "aria-hidden": "true"
           })
@@ -1267,24 +1267,24 @@ const Xr = { class: "holder" }, es = { class: "icon" }, os = ["placeholder", "va
           placeholder: r.$t("passengers.email.placeholder"),
           value: e.email,
           onInput: s[1] || (s[1] = (d) => r.$emit("update:email", d.target.value)),
-          class: T({ input: !0, error: !n.value })
-        }, null, 42, os)
+          class: B({ input: !0, error: !n.value })
+        }, null, 42, ts)
       ]),
-      c(a).$errors.length > 0 ? (p(), y("div", ts, [
-        (p(!0), y(F, null, Q(c(a).$errors, (d) => (p(), y("p", {
+      c(a).$errors.length > 0 ? (p(), y("div", as, [
+        (p(!0), y(I, null, U(c(a).$errors, (d) => (p(), y("p", {
           key: d.$uid
         }, v(r.$t("passengers.errors." + d.$property + "." + d.$validator)), 1))), 128))
       ])) : P("", !0)
     ], 2));
   }
 };
-function ns(e, o, t) {
+function rs(e, o, t) {
   let a = k(t == null ? void 0 : t.value), n = N(() => e.value !== void 0);
   return [N(() => n.value ? e.value : a.value), function(r) {
     return n.value || (a.value = r), o == null ? void 0 : o(r);
   }];
 }
-function ht(e) {
+function mt(e) {
   typeof queueMicrotask == "function" ? queueMicrotask(e) : Promise.resolve().then(e).catch((o) => setTimeout(() => {
     throw o;
   }));
@@ -1304,7 +1304,7 @@ function so() {
     o.add(() => clearTimeout(a));
   }, microTask(...t) {
     let a = { current: !0 };
-    return ht(() => {
+    return mt(() => {
       a.current && t[0]();
     }), o.add(() => {
       a.current = !1;
@@ -1327,10 +1327,10 @@ function so() {
   } };
   return o;
 }
-var xt;
-let rs = Symbol("headlessui.useid"), ss = 0;
-const $e = (xt = St.useId) != null ? xt : function() {
-  return St.inject(rs, () => `${++ss}`)();
+var Rt;
+let ss = Symbol("headlessui.useid"), ds = 0;
+const $e = (Rt = Nt.useId) != null ? Rt : function() {
+  return Nt.inject(ss, () => `${++ds}`)();
 };
 function L(e) {
   var o;
@@ -1338,18 +1338,18 @@ function L(e) {
   let t = (o = e.value.$el) != null ? o : e.value;
   return t instanceof Node ? t : null;
 }
-function Y(e, o, ...t) {
+function q(e, o, ...t) {
   if (e in o) {
     let n = o[e];
     return typeof n == "function" ? n(...t) : n;
   }
   let a = new Error(`Tried to handle "${e}" but there is no handler defined. Only defined handlers are: ${Object.keys(o).map((n) => `"${n}"`).join(", ")}.`);
-  throw Error.captureStackTrace && Error.captureStackTrace(a, Y), a;
+  throw Error.captureStackTrace && Error.captureStackTrace(a, q), a;
 }
-var ds = Object.defineProperty, is = (e, o, t) => o in e ? ds(e, o, { enumerable: !0, configurable: !0, writable: !0, value: t }) : e[o] = t, Et = (e, o, t) => (is(e, typeof o != "symbol" ? o + "" : o, t), t);
-let ls = class {
+var is = Object.defineProperty, ls = (e, o, t) => o in e ? is(e, o, { enumerable: !0, configurable: !0, writable: !0, value: t }) : e[o] = t, It = (e, o, t) => (ls(e, typeof o != "symbol" ? o + "" : o, t), t);
+let hs = class {
   constructor() {
-    Et(this, "current", this.detect()), Et(this, "currentId", 0);
+    It(this, "current", this.detect()), It(this, "currentId", 0);
   }
   set(o) {
     this.current !== o && (this.currentId = 0, this.current = o);
@@ -1369,7 +1369,7 @@ let ls = class {
   detect() {
     return typeof window > "u" || typeof document > "u" ? "server" : "client";
   }
-}, io = new ls();
+}, io = new hs();
 function Ge(e) {
   if (io.isServer) return null;
   if (e instanceof Node) return e.ownerDocument;
@@ -1379,26 +1379,26 @@ function Ge(e) {
   }
   return document;
 }
-let Zo = ["[contentEditable=true]", "[tabindex]", "a[href]", "area[href]", "button:not([disabled])", "iframe", "input:not([disabled])", "select:not([disabled])", "textarea:not([disabled])"].map((e) => `${e}:not([tabindex='-1'])`).join(",");
-var Ne = ((e) => (e[e.First = 1] = "First", e[e.Previous = 2] = "Previous", e[e.Next = 4] = "Next", e[e.Last = 8] = "Last", e[e.WrapAround = 16] = "WrapAround", e[e.NoScroll = 32] = "NoScroll", e))(Ne || {}), Oa = ((e) => (e[e.Error = 0] = "Error", e[e.Overflow = 1] = "Overflow", e[e.Success = 2] = "Success", e[e.Underflow = 3] = "Underflow", e))(Oa || {}), hs = ((e) => (e[e.Previous = -1] = "Previous", e[e.Next = 1] = "Next", e))(hs || {});
-function us(e = document.body) {
-  return e == null ? [] : Array.from(e.querySelectorAll(Zo)).sort((o, t) => Math.sign((o.tabIndex || Number.MAX_SAFE_INTEGER) - (t.tabIndex || Number.MAX_SAFE_INTEGER)));
+let Qo = ["[contentEditable=true]", "[tabindex]", "a[href]", "area[href]", "button:not([disabled])", "iframe", "input:not([disabled])", "select:not([disabled])", "textarea:not([disabled])"].map((e) => `${e}:not([tabindex='-1'])`).join(",");
+var Ne = ((e) => (e[e.First = 1] = "First", e[e.Previous = 2] = "Previous", e[e.Next = 4] = "Next", e[e.Last = 8] = "Last", e[e.WrapAround = 16] = "WrapAround", e[e.NoScroll = 32] = "NoScroll", e))(Ne || {}), Pa = ((e) => (e[e.Error = 0] = "Error", e[e.Overflow = 1] = "Overflow", e[e.Success = 2] = "Success", e[e.Underflow = 3] = "Underflow", e))(Pa || {}), us = ((e) => (e[e.Previous = -1] = "Previous", e[e.Next = 1] = "Next", e))(us || {});
+function ms(e = document.body) {
+  return e == null ? [] : Array.from(e.querySelectorAll(Qo)).sort((o, t) => Math.sign((o.tabIndex || Number.MAX_SAFE_INTEGER) - (t.tabIndex || Number.MAX_SAFE_INTEGER)));
 }
-var ut = ((e) => (e[e.Strict = 0] = "Strict", e[e.Loose = 1] = "Loose", e))(ut || {});
-function Pa(e, o = 0) {
+var Ct = ((e) => (e[e.Strict = 0] = "Strict", e[e.Loose = 1] = "Loose", e))(Ct || {});
+function Ba(e, o = 0) {
   var t;
-  return e === ((t = Ge(e)) == null ? void 0 : t.body) ? !1 : Y(o, { 0() {
-    return e.matches(Zo);
+  return e === ((t = Ge(e)) == null ? void 0 : t.body) ? !1 : q(o, { 0() {
+    return e.matches(Qo);
   }, 1() {
     let a = e;
     for (; a !== null; ) {
-      if (a.matches(Zo)) return !0;
+      if (a.matches(Qo)) return !0;
       a = a.parentElement;
     }
     return !1;
   } });
 }
-var ms = ((e) => (e[e.Keyboard = 0] = "Keyboard", e[e.Mouse = 1] = "Mouse", e))(ms || {});
+var Cs = ((e) => (e[e.Keyboard = 0] = "Keyboard", e[e.Mouse = 1] = "Mouse", e))(Cs || {});
 typeof window < "u" && typeof document < "u" && (document.addEventListener("keydown", (e) => {
   e.metaKey || e.altKey || e.ctrlKey || (document.documentElement.dataset.headlessuiFocusVisible = "");
 }, !0), document.addEventListener("click", (e) => {
@@ -1407,12 +1407,12 @@ typeof window < "u" && typeof document < "u" && (document.addEventListener("keyd
 function Le(e) {
   e == null || e.focus({ preventScroll: !0 });
 }
-let Cs = ["textarea", "input"].join(",");
-function cs(e) {
+let cs = ["textarea", "input"].join(",");
+function gs(e) {
   var o, t;
-  return (t = (o = e == null ? void 0 : e.matches) == null ? void 0 : o.call(e, Cs)) != null ? t : !1;
+  return (t = (o = e == null ? void 0 : e.matches) == null ? void 0 : o.call(e, cs)) != null ? t : !1;
 }
-function Ba(e, o = (t) => t) {
+function Ta(e, o = (t) => t) {
   return e.slice().sort((t, a) => {
     let n = o(t), r = o(a);
     if (n === null || r === null) return 0;
@@ -1422,7 +1422,7 @@ function Ba(e, o = (t) => t) {
 }
 function yo(e, o, { sorted: t = !0, relativeTo: a = null, skipElements: n = [] } = {}) {
   var r;
-  let s = (r = Array.isArray(e) ? e.length > 0 ? e[0].ownerDocument : document : e == null ? void 0 : e.ownerDocument) != null ? r : document, d = Array.isArray(e) ? t ? Ba(e) : e : us(e);
+  let s = (r = Array.isArray(e) ? e.length > 0 ? e[0].ownerDocument : document : e == null ? void 0 : e.ownerDocument) != null ? r : document, d = Array.isArray(e) ? t ? Ta(e) : e : ms(e);
   n.length > 0 && d.length > 1 && (d = d.filter((C) => !n.includes(C))), a = a ?? s.activeElement;
   let l = (() => {
     if (o & 5) return 1;
@@ -1434,52 +1434,52 @@ function yo(e, o, { sorted: t = !0, relativeTo: a = null, skipElements: n = [] }
     if (o & 4) return Math.max(0, d.indexOf(a)) + 1;
     if (o & 8) return d.length - 1;
     throw new Error("Missing Focus.First, Focus.Previous, Focus.Next or Focus.Last");
-  })(), u = o & 32 ? { preventScroll: !0 } : {}, h = 0, g = d.length, f;
+  })(), h = o & 32 ? { preventScroll: !0 } : {}, u = 0, g = d.length, f;
   do {
-    if (h >= g || h + g <= 0) return 0;
-    let C = i + h;
+    if (u >= g || u + g <= 0) return 0;
+    let C = i + u;
     if (o & 16) C = (C + g) % g;
     else {
       if (C < 0) return 3;
       if (C >= g) return 1;
     }
-    f = d[C], f == null || f.focus(u), h += l;
+    f = d[C], f == null || f.focus(h), u += l;
   } while (f !== s.activeElement);
-  return o & 6 && cs(f) && f.select(), 2;
+  return o & 6 && gs(f) && f.select(), 2;
 }
-function Ta() {
+function Da() {
   return /iPhone/gi.test(window.navigator.platform) || /Mac/gi.test(window.navigator.platform) && window.navigator.maxTouchPoints > 0;
 }
-function gs() {
+function $s() {
   return /Android/gi.test(window.navigator.userAgent);
 }
-function $s() {
-  return Ta() || gs();
+function fs() {
+  return Da() || $s();
 }
 function co(e, o, t) {
   io.isServer || de((a) => {
     document.addEventListener(e, o, t), a(() => document.removeEventListener(e, o, t));
   });
 }
-function Da(e, o, t) {
+function La(e, o, t) {
   io.isServer || de((a) => {
     window.addEventListener(e, o, t), a(() => window.removeEventListener(e, o, t));
   });
 }
-function La(e, o, t = N(() => !0)) {
+function xa(e, o, t = N(() => !0)) {
   function a(r, s) {
     if (!t.value || r.defaultPrevented) return;
     let d = s(r);
     if (d === null || !d.getRootNode().contains(d)) return;
-    let l = (function i(u) {
-      return typeof u == "function" ? i(u()) : Array.isArray(u) || u instanceof Set ? u : [u];
+    let l = (function i(h) {
+      return typeof h == "function" ? i(h()) : Array.isArray(h) || h instanceof Set ? h : [h];
     })(e);
     for (let i of l) {
       if (i === null) continue;
-      let u = i instanceof HTMLElement ? i : L(i);
-      if (u != null && u.contains(d) || r.composed && r.composedPath().includes(u)) return;
+      let h = i instanceof HTMLElement ? i : L(i);
+      if (h != null && h.contains(d) || r.composed && r.composedPath().includes(h)) return;
     }
-    return !Pa(d, ut.Loose) && d.tabIndex !== -1 && r.preventDefault(), o(r, d);
+    return !Ba(d, Ct.Loose) && d.tabIndex !== -1 && r.preventDefault(), o(r, d);
   }
   let n = k(null);
   co("pointerdown", (r) => {
@@ -1489,43 +1489,43 @@ function La(e, o, t = N(() => !0)) {
     var s, d;
     t.value && (n.value = ((d = (s = r.composedPath) == null ? void 0 : s.call(r)) == null ? void 0 : d[0]) || r.target);
   }, !0), co("click", (r) => {
-    $s() || n.value && (a(r, () => n.value), n.value = null);
-  }, !0), co("touchend", (r) => a(r, () => r.target instanceof HTMLElement ? r.target : null), !0), Da("blur", (r) => a(r, () => window.document.activeElement instanceof HTMLIFrameElement ? window.document.activeElement : null), !0);
+    fs() || n.value && (a(r, () => n.value), n.value = null);
+  }, !0), co("touchend", (r) => a(r, () => r.target instanceof HTMLElement ? r.target : null), !0), La("blur", (r) => a(r, () => window.document.activeElement instanceof HTMLIFrameElement ? window.document.activeElement : null), !0);
 }
-function Rt(e, o) {
+function Kt(e, o) {
   if (e) return e;
   let t = o ?? "button";
   if (typeof t == "string" && t.toLowerCase() === "button") return "button";
 }
-function fs(e, o) {
-  let t = k(Rt(e.value.type, e.value.as));
-  return G(() => {
-    t.value = Rt(e.value.type, e.value.as);
+function ps(e, o) {
+  let t = k(Kt(e.value.type, e.value.as));
+  return j(() => {
+    t.value = Kt(e.value.type, e.value.as);
   }), de(() => {
     var a;
     t.value || L(o) && L(o) instanceof HTMLButtonElement && !((a = L(o)) != null && a.hasAttribute("type")) && (t.value = "button");
   }), t;
 }
-function It(e) {
+function Gt(e) {
   return [e.screenX, e.screenY];
 }
-function ps() {
+function ys() {
   let e = k([-1, -1]);
   return { wasMoved(o) {
-    let t = It(o);
+    let t = Gt(o);
     return e.value[0] === t[0] && e.value[1] === t[1] ? !1 : (e.value = t, !0);
   }, update(o) {
-    e.value = It(o);
+    e.value = Gt(o);
   } };
 }
 var Ie = ((e) => (e[e.None = 0] = "None", e[e.RenderStrategy = 1] = "RenderStrategy", e[e.Static = 2] = "Static", e))(Ie || {}), ke = ((e) => (e[e.Unmount = 0] = "Unmount", e[e.Hidden = 1] = "Hidden", e))(ke || {});
-function q({ visible: e = !0, features: o = 0, ourProps: t, theirProps: a, ...n }) {
+function Z({ visible: e = !0, features: o = 0, ourProps: t, theirProps: a, ...n }) {
   var r;
-  let s = Ea(a, t), d = Object.assign(n, { props: s });
+  let s = Ra(a, t), d = Object.assign(n, { props: s });
   if (e || o & 2 && s.static) return Ko(d);
   if (o & 1) {
     let l = (r = s.unmount) == null || r ? 0 : 1;
-    return Y(l, { 0() {
+    return q(l, { 0() {
       return null;
     }, 1() {
       return Ko({ ...n, props: { ...s, hidden: !0, style: { display: "none" } } });
@@ -1535,31 +1535,31 @@ function q({ visible: e = !0, features: o = 0, ourProps: t, theirProps: a, ...n 
 }
 function Ko({ props: e, attrs: o, slots: t, slot: a, name: n }) {
   var r, s;
-  let { as: d, ...l } = mt(e, ["unmount", "static"]), i = (r = t.default) == null ? void 0 : r.call(t, a), u = {};
+  let { as: d, ...l } = ct(e, ["unmount", "static"]), i = (r = t.default) == null ? void 0 : r.call(t, a), h = {};
   if (a) {
-    let h = !1, g = [];
-    for (let [f, C] of Object.entries(a)) typeof C == "boolean" && (h = !0), C === !0 && g.push(f);
-    h && (u["data-headlessui-state"] = g.join(" "));
+    let u = !1, g = [];
+    for (let [f, C] of Object.entries(a)) typeof C == "boolean" && (u = !0), C === !0 && g.push(f);
+    u && (h["data-headlessui-state"] = g.join(" "));
   }
   if (d === "template") {
-    if (i = xa(i ?? []), Object.keys(l).length > 0 || Object.keys(o).length > 0) {
-      let [h, ...g] = i ?? [];
-      if (!vs(h) || g.length > 0) throw new Error(['Passing props on "template"!', "", `The current component <${n} /> is rendering a "template".`, "However we need to passthrough the following props:", Object.keys(l).concat(Object.keys(o)).map(($) => $.trim()).filter(($, b, w) => w.indexOf($) === b).sort(($, b) => $.localeCompare(b)).map(($) => `  - ${$}`).join(`
+    if (i = Ea(i ?? []), Object.keys(l).length > 0 || Object.keys(o).length > 0) {
+      let [u, ...g] = i ?? [];
+      if (!bs(u) || g.length > 0) throw new Error(['Passing props on "template"!', "", `The current component <${n} /> is rendering a "template".`, "However we need to passthrough the following props:", Object.keys(l).concat(Object.keys(o)).map(($) => $.trim()).filter(($, b, M) => M.indexOf($) === b).sort(($, b) => $.localeCompare(b)).map(($) => `  - ${$}`).join(`
 `), "", "You can apply a few solutions:", ['Add an `as="..."` prop, to ensure that we render an actual element instead of a "template".', "Render a single element as the child so that we can forward the props onto that element."].map(($) => `  - ${$}`).join(`
 `)].join(`
 `));
-      let f = Ea((s = h.props) != null ? s : {}, l, u), C = Cn(h, f, !0);
+      let f = Ra((s = u.props) != null ? s : {}, l, h), C = cn(u, f, !0);
       for (let $ in f) $.startsWith("on") && (C.props || (C.props = {}), C.props[$] = f[$]);
       return C;
     }
     return Array.isArray(i) && i.length === 1 ? i[0] : i;
   }
-  return _(d, Object.assign({}, l, u), { default: () => i });
+  return z(d, Object.assign({}, l, h), { default: () => i });
 }
-function xa(e) {
-  return e.flatMap((o) => o.type === F ? xa(o.children) : [o]);
+function Ea(e) {
+  return e.flatMap((o) => o.type === I ? Ea(o.children) : [o]);
 }
-function Ea(...e) {
+function Ra(...e) {
   if (e.length === 0) return {};
   if (e.length === 1) return e[0];
   let o = {}, t = {};
@@ -1574,56 +1574,56 @@ function Ea(...e) {
   } });
   return o;
 }
-function ys(e) {
+function vs(e) {
   let o = Object.assign({}, e);
   for (let t in o) o[t] === void 0 && delete o[t];
   return o;
 }
-function mt(e, o = []) {
+function ct(e, o = []) {
   let t = Object.assign({}, e);
   for (let a of o) a in t && delete t[a];
   return t;
 }
-function vs(e) {
+function bs(e) {
   return e == null ? !1 : typeof e.type == "string" || typeof e.type == "object" || typeof e.type == "function";
 }
 var oo = ((e) => (e[e.None = 1] = "None", e[e.Focusable = 2] = "Focusable", e[e.Hidden = 4] = "Hidden", e))(oo || {});
-let No = z({ name: "Hidden", props: { as: { type: [Object, String], default: "div" }, features: { type: Number, default: 1 } }, setup(e, { slots: o, attrs: t }) {
+let No = W({ name: "Hidden", props: { as: { type: [Object, String], default: "div" }, features: { type: Number, default: 1 } }, setup(e, { slots: o, attrs: t }) {
   return () => {
     var a;
     let { features: n, ...r } = e, s = { "aria-hidden": (n & 2) === 2 ? !0 : (a = r["aria-hidden"]) != null ? a : void 0, hidden: (n & 4) === 4 ? !0 : void 0, style: { position: "fixed", top: 1, left: 1, width: 1, height: 0, padding: 0, margin: -1, overflow: "hidden", clip: "rect(0, 0, 0, 0)", whiteSpace: "nowrap", borderWidth: "0", ...(n & 4) === 4 && (n & 2) !== 2 && { display: "none" } } };
-    return q({ ourProps: s, theirProps: r, slot: {}, attrs: t, slots: o, name: "Hidden" });
+    return Z({ ourProps: s, theirProps: r, slot: {}, attrs: t, slots: o, name: "Hidden" });
   };
-} }), Ra = Symbol("Context");
-var Z = ((e) => (e[e.Open = 1] = "Open", e[e.Closed = 2] = "Closed", e[e.Closing = 4] = "Closing", e[e.Opening = 8] = "Opening", e))(Z || {});
-function bs() {
+} }), Ia = Symbol("Context");
+var Q = ((e) => (e[e.Open = 1] = "Open", e[e.Closed = 2] = "Closed", e[e.Closing = 4] = "Closing", e[e.Opening = 8] = "Opening", e))(Q || {});
+function Ss() {
   return Oo() !== null;
 }
 function Oo() {
-  return te(Ra, null);
+  return te(Ia, null);
 }
-function Ia(e) {
-  se(Ra, e);
+function Ka(e) {
+  se(Ia, e);
 }
-var U = ((e) => (e.Space = " ", e.Enter = "Enter", e.Escape = "Escape", e.Backspace = "Backspace", e.Delete = "Delete", e.ArrowLeft = "ArrowLeft", e.ArrowUp = "ArrowUp", e.ArrowRight = "ArrowRight", e.ArrowDown = "ArrowDown", e.Home = "Home", e.End = "End", e.PageUp = "PageUp", e.PageDown = "PageDown", e.Tab = "Tab", e))(U || {});
-function Ss(e) {
+var _ = ((e) => (e.Space = " ", e.Enter = "Enter", e.Escape = "Escape", e.Backspace = "Backspace", e.Delete = "Delete", e.ArrowLeft = "ArrowLeft", e.ArrowUp = "ArrowUp", e.ArrowRight = "ArrowRight", e.ArrowDown = "ArrowDown", e.Home = "Home", e.End = "End", e.PageUp = "PageUp", e.PageDown = "PageDown", e.Tab = "Tab", e))(_ || {});
+function As(e) {
   function o() {
     document.readyState !== "loading" && (e(), document.removeEventListener("DOMContentLoaded", o));
   }
   typeof window < "u" && typeof document < "u" && (document.addEventListener("DOMContentLoaded", o), o());
 }
 let Te = [];
-Ss(() => {
+As(() => {
   function e(o) {
     o.target instanceof HTMLElement && o.target !== document.body && Te[0] !== o.target && (Te.unshift(o.target), Te = Te.filter((t) => t != null && t.isConnected), Te.splice(10));
   }
   window.addEventListener("click", e, { capture: !0 }), window.addEventListener("mousedown", e, { capture: !0 }), window.addEventListener("focus", e, { capture: !0 }), document.body.addEventListener("click", e, { capture: !0 }), document.body.addEventListener("mousedown", e, { capture: !0 }), document.body.addEventListener("focus", e, { capture: !0 });
 });
-function As(e) {
+function Ns(e) {
   throw new Error("Unexpected object: " + e);
 }
 var oe = ((e) => (e[e.First = 0] = "First", e[e.Previous = 1] = "Previous", e[e.Next = 2] = "Next", e[e.Last = 3] = "Last", e[e.Specific = 4] = "Specific", e[e.Nothing = 5] = "Nothing", e))(oe || {});
-function Ns(e, o) {
+function ks(e, o) {
   let t = o.resolveItems();
   if (t.length <= 0) return null;
   let a = o.resolveActiveIndex(), n = a ?? -1;
@@ -1652,33 +1652,33 @@ function Ns(e, o) {
     case 5:
       return null;
     default:
-      As(e);
+      Ns(e);
   }
 }
-function Ka(e = {}, o = null, t = []) {
-  for (let [a, n] of Object.entries(e)) ja(t, Ga(o, a), n);
+function Ga(e = {}, o = null, t = []) {
+  for (let [a, n] of Object.entries(e)) Fa(t, ja(o, a), n);
   return t;
 }
-function Ga(e, o) {
+function ja(e, o) {
   return e ? e + "[" + o + "]" : o;
 }
-function ja(e, o, t) {
-  if (Array.isArray(t)) for (let [a, n] of t.entries()) ja(e, Ga(o, a.toString()), n);
-  else t instanceof Date ? e.push([o, t.toISOString()]) : typeof t == "boolean" ? e.push([o, t ? "1" : "0"]) : typeof t == "string" ? e.push([o, t]) : typeof t == "number" ? e.push([o, `${t}`]) : t == null ? e.push([o, ""]) : Ka(t, o, e);
+function Fa(e, o, t) {
+  if (Array.isArray(t)) for (let [a, n] of t.entries()) Fa(e, ja(o, a.toString()), n);
+  else t instanceof Date ? e.push([o, t.toISOString()]) : typeof t == "boolean" ? e.push([o, t ? "1" : "0"]) : typeof t == "string" ? e.push([o, t]) : typeof t == "number" ? e.push([o, `${t}`]) : t == null ? e.push([o, ""]) : Ga(t, o, e);
 }
-function Fa(e, o, t, a) {
+function Ha(e, o, t, a) {
   io.isServer || de((n) => {
     e = e ?? window, e.addEventListener(o, t, a), n(() => e.removeEventListener(o, t, a));
   });
 }
 var Ue = ((e) => (e[e.Forwards = 0] = "Forwards", e[e.Backwards = 1] = "Backwards", e))(Ue || {});
-function ks() {
+function ws() {
   let e = k(0);
-  return Da("keydown", (o) => {
+  return La("keydown", (o) => {
     o.key === "Tab" && (e.value = o.shiftKey ? 1 : 0);
   }), e;
 }
-function Ha(e) {
+function Va(e) {
   if (!e) return /* @__PURE__ */ new Set();
   if (typeof e == "function") return new Set(e());
   let o = /* @__PURE__ */ new Set();
@@ -1688,47 +1688,47 @@ function Ha(e) {
   }
   return o;
 }
-var Va = ((e) => (e[e.None = 1] = "None", e[e.InitialFocus = 2] = "InitialFocus", e[e.TabLock = 4] = "TabLock", e[e.FocusLock = 8] = "FocusLock", e[e.RestoreFocus = 16] = "RestoreFocus", e[e.All = 30] = "All", e))(Va || {});
-let Fe = Object.assign(z({ name: "FocusTrap", props: { as: { type: [Object, String], default: "div" }, initialFocus: { type: Object, default: null }, features: { type: Number, default: 30 }, containers: { type: [Object, Function], default: k(/* @__PURE__ */ new Set()) } }, inheritAttrs: !1, setup(e, { attrs: o, slots: t, expose: a }) {
+var Ua = ((e) => (e[e.None = 1] = "None", e[e.InitialFocus = 2] = "InitialFocus", e[e.TabLock = 4] = "TabLock", e[e.FocusLock = 8] = "FocusLock", e[e.RestoreFocus = 16] = "RestoreFocus", e[e.All = 30] = "All", e))(Ua || {});
+let Fe = Object.assign(W({ name: "FocusTrap", props: { as: { type: [Object, String], default: "div" }, initialFocus: { type: Object, default: null }, features: { type: Number, default: 30 }, containers: { type: [Object, Function], default: k(/* @__PURE__ */ new Set()) } }, inheritAttrs: !1, setup(e, { attrs: o, slots: t, expose: a }) {
   let n = k(null);
   a({ el: n, $el: n });
   let r = N(() => Ge(n)), s = k(!1);
-  G(() => s.value = !0), ie(() => s.value = !1), Ms({ ownerDocument: r }, N(() => s.value && !!(e.features & 16)));
-  let d = Os({ ownerDocument: r, container: n, initialFocus: N(() => e.initialFocus) }, N(() => s.value && !!(e.features & 2)));
-  Ps({ ownerDocument: r, container: n, containers: e.containers, previousActiveElement: d }, N(() => s.value && !!(e.features & 8)));
-  let l = ks();
+  j(() => s.value = !0), ie(() => s.value = !1), Os({ ownerDocument: r }, N(() => s.value && !!(e.features & 16)));
+  let d = Ps({ ownerDocument: r, container: n, initialFocus: N(() => e.initialFocus) }, N(() => s.value && !!(e.features & 2)));
+  Bs({ ownerDocument: r, container: n, containers: e.containers, previousActiveElement: d }, N(() => s.value && !!(e.features & 8)));
+  let l = ws();
   function i(f) {
     let C = L(n);
     C && (($) => $())(() => {
-      Y(l.value, { [Ue.Forwards]: () => {
+      q(l.value, { [Ue.Forwards]: () => {
         yo(C, Ne.First, { skipElements: [f.relatedTarget] });
       }, [Ue.Backwards]: () => {
         yo(C, Ne.Last, { skipElements: [f.relatedTarget] });
       } });
     });
   }
-  let u = k(!1);
-  function h(f) {
-    f.key === "Tab" && (u.value = !0, requestAnimationFrame(() => {
-      u.value = !1;
+  let h = k(!1);
+  function u(f) {
+    f.key === "Tab" && (h.value = !0, requestAnimationFrame(() => {
+      h.value = !1;
     }));
   }
   function g(f) {
     if (!s.value) return;
-    let C = Ha(e.containers);
+    let C = Va(e.containers);
     L(n) instanceof HTMLElement && C.add(L(n));
     let $ = f.relatedTarget;
-    $ instanceof HTMLElement && $.dataset.headlessuiFocusGuard !== "true" && (Ua(C, $) || (u.value ? yo(L(n), Y(l.value, { [Ue.Forwards]: () => Ne.Next, [Ue.Backwards]: () => Ne.Previous }) | Ne.WrapAround, { relativeTo: f.target }) : f.target instanceof HTMLElement && Le(f.target)));
+    $ instanceof HTMLElement && $.dataset.headlessuiFocusGuard !== "true" && (_a(C, $) || (h.value ? yo(L(n), q(l.value, { [Ue.Forwards]: () => Ne.Next, [Ue.Backwards]: () => Ne.Previous }) | Ne.WrapAround, { relativeTo: f.target }) : f.target instanceof HTMLElement && Le(f.target)));
   }
   return () => {
-    let f = {}, C = { ref: n, onKeydown: h, onFocusout: g }, { features: $, initialFocus: b, containers: w, ...O } = e;
-    return _(F, [!!($ & 4) && _(No, { as: "button", type: "button", "data-headlessui-focus-guard": !0, onFocus: i, features: oo.Focusable }), q({ ourProps: C, theirProps: { ...o, ...O }, slot: f, attrs: o, slots: t, name: "FocusTrap" }), !!($ & 4) && _(No, { as: "button", type: "button", "data-headlessui-focus-guard": !0, onFocus: i, features: oo.Focusable })]);
+    let f = {}, C = { ref: n, onKeydown: u, onFocusout: g }, { features: $, initialFocus: b, containers: M, ...O } = e;
+    return z(I, [!!($ & 4) && z(No, { as: "button", type: "button", "data-headlessui-focus-guard": !0, onFocus: i, features: oo.Focusable }), Z({ ourProps: C, theirProps: { ...o, ...O }, slot: f, attrs: o, slots: t, name: "FocusTrap" }), !!($ & 4) && z(No, { as: "button", type: "button", "data-headlessui-focus-guard": !0, onFocus: i, features: oo.Focusable })]);
   };
-} }), { features: Va });
-function ws(e) {
+} }), { features: Ua });
+function Ms(e) {
   let o = k(Te.slice());
   return V([e], ([t], [a]) => {
-    a === !0 && t === !1 ? ht(() => {
+    a === !0 && t === !1 ? mt(() => {
       o.value.splice(0);
     }) : a === !1 && t === !0 && (o.value = Te.slice());
   }, { flush: "post" }), () => {
@@ -1736,9 +1736,9 @@ function ws(e) {
     return (t = o.value.find((a) => a != null && a.isConnected)) != null ? t : null;
   };
 }
-function Ms({ ownerDocument: e }, o) {
-  let t = ws(o);
-  G(() => {
+function Os({ ownerDocument: e }, o) {
+  let t = Ms(o);
+  j(() => {
     de(() => {
       var a, n;
       o.value || ((a = e.value) == null ? void 0 : a.activeElement) === ((n = e.value) == null ? void 0 : n.body) && Le(t());
@@ -1747,18 +1747,18 @@ function Ms({ ownerDocument: e }, o) {
     o.value && Le(t());
   });
 }
-function Os({ ownerDocument: e, container: o, initialFocus: t }, a) {
+function Ps({ ownerDocument: e, container: o, initialFocus: t }, a) {
   let n = k(null), r = k(!1);
-  return G(() => r.value = !0), ie(() => r.value = !1), G(() => {
+  return j(() => r.value = !0), ie(() => r.value = !1), j(() => {
     V([o, t, a], (s, d) => {
-      if (s.every((i, u) => (d == null ? void 0 : d[u]) === i) || !a.value) return;
+      if (s.every((i, h) => (d == null ? void 0 : d[h]) === i) || !a.value) return;
       let l = L(o);
-      l && ht(() => {
-        var i, u;
+      l && mt(() => {
+        var i, h;
         if (!r.value) return;
-        let h = L(t), g = (i = e.value) == null ? void 0 : i.activeElement;
-        if (h) {
-          if (h === g) {
+        let u = L(t), g = (i = e.value) == null ? void 0 : i.activeElement;
+        if (u) {
+          if (u === g) {
             n.value = g;
             return;
           }
@@ -1766,34 +1766,34 @@ function Os({ ownerDocument: e, container: o, initialFocus: t }, a) {
           n.value = g;
           return;
         }
-        h ? Le(h) : yo(l, Ne.First | Ne.NoScroll) === Oa.Error && console.warn("There are no focusable elements inside the <FocusTrap />"), n.value = (u = e.value) == null ? void 0 : u.activeElement;
+        u ? Le(u) : yo(l, Ne.First | Ne.NoScroll) === Pa.Error && console.warn("There are no focusable elements inside the <FocusTrap />"), n.value = (h = e.value) == null ? void 0 : h.activeElement;
       });
     }, { immediate: !0, flush: "post" });
   }), n;
 }
-function Ps({ ownerDocument: e, container: o, containers: t, previousActiveElement: a }, n) {
+function Bs({ ownerDocument: e, container: o, containers: t, previousActiveElement: a }, n) {
   var r;
-  Fa((r = e.value) == null ? void 0 : r.defaultView, "focus", (s) => {
+  Ha((r = e.value) == null ? void 0 : r.defaultView, "focus", (s) => {
     if (!n.value) return;
-    let d = Ha(t);
+    let d = Va(t);
     L(o) instanceof HTMLElement && d.add(L(o));
     let l = a.value;
     if (!l) return;
     let i = s.target;
-    i && i instanceof HTMLElement ? Ua(d, i) ? (a.value = i, Le(i)) : (s.preventDefault(), s.stopPropagation(), Le(l)) : Le(a.value);
+    i && i instanceof HTMLElement ? _a(d, i) ? (a.value = i, Le(i)) : (s.preventDefault(), s.stopPropagation(), Le(l)) : Le(a.value);
   }, !0);
 }
-function Ua(e, o) {
+function _a(e, o) {
   for (let t of e) if (t.contains(o)) return !0;
   return !1;
 }
-function Bs(e) {
-  let o = cn(e.getSnapshot());
+function Ts(e) {
+  let o = gn(e.getSnapshot());
   return ie(e.subscribe(() => {
     o.value = e.getSnapshot();
   })), o;
 }
-function Ts(e, o) {
+function Ds(e, o) {
   let t = e(), a = /* @__PURE__ */ new Set();
   return { getSnapshot() {
     return t;
@@ -1804,7 +1804,7 @@ function Ts(e, o) {
     s && (t = s, a.forEach((d) => d()));
   } };
 }
-function Ds() {
+function Ls() {
   let e;
   return { before({ doc: o }) {
     var t;
@@ -1815,8 +1815,8 @@ function Ds() {
     t.style(a, "paddingRight", `${r}px`);
   } };
 }
-function Ls() {
-  return Ta() ? { before({ doc: e, d: o, meta: t }) {
+function xs() {
+  return Da() ? { before({ doc: e, d: o, meta: t }) {
     function a(n) {
       return t.containers.flatMap((r) => r()).some((r) => r.contains(n));
     }
@@ -1831,8 +1831,8 @@ function Ls() {
         if (d.target instanceof HTMLElement) try {
           let l = d.target.closest("a");
           if (!l) return;
-          let { hash: i } = new URL(l.href), u = e.querySelector(i);
-          u && !a(u) && (s = u);
+          let { hash: i } = new URL(l.href), h = e.querySelector(i);
+          h && !a(h) && (s = h);
         } catch {
         }
       }, !0), o.addEventListener(e, "touchstart", (d) => {
@@ -1858,17 +1858,17 @@ function Ls() {
     });
   } } : {};
 }
-function xs() {
+function Es() {
   return { before({ doc: e, d: o }) {
     o.style(e.documentElement, "overflow", "hidden");
   } };
 }
-function Es(e) {
+function Rs(e) {
   let o = {};
   for (let t of e) Object.assign(o, t(o));
   return o;
 }
-let De = Ts(() => /* @__PURE__ */ new Map(), { PUSH(e, o) {
+let De = Ds(() => /* @__PURE__ */ new Map(), { PUSH(e, o) {
   var t;
   let a = (t = this.get(e)) != null ? t : { doc: e, count: 0, d: so(), meta: /* @__PURE__ */ new Set() };
   return a.count++, a.meta.add(o), this.set(e, a), this;
@@ -1876,7 +1876,7 @@ let De = Ts(() => /* @__PURE__ */ new Map(), { PUSH(e, o) {
   let t = this.get(e);
   return t && (t.count--, t.meta.delete(o)), this;
 }, SCROLL_PREVENT({ doc: e, d: o, meta: t }) {
-  let a = { doc: e, d: o, meta: Es(t) }, n = [Ls(), Ds(), xs()];
+  let a = { doc: e, d: o, meta: Rs(t) }, n = [xs(), Ls(), Es()];
   n.forEach(({ before: r }) => r == null ? void 0 : r(a)), n.forEach(({ after: r }) => r == null ? void 0 : r(a));
 }, SCROLL_ALLOW({ d: e }) {
   e.dispose();
@@ -1891,8 +1891,8 @@ De.subscribe(() => {
     (n && !a || !n && a) && De.dispatch(t.count > 0 ? "SCROLL_PREVENT" : "SCROLL_ALLOW", t), t.count === 0 && De.dispatch("TEARDOWN", t);
   }
 });
-function Rs(e, o, t) {
-  let a = Bs(De), n = N(() => {
+function Is(e, o, t) {
+  let a = Ts(De), n = N(() => {
     let r = e.value ? a.value.get(e.value) : void 0;
     return r ? r.count > 0 : !1;
   });
@@ -1906,7 +1906,7 @@ function Rs(e, o, t) {
   }, { immediate: !0 }), n;
 }
 let Go = /* @__PURE__ */ new Map(), He = /* @__PURE__ */ new Map();
-function Kt(e, o = k(!0)) {
+function jt(e, o = k(!0)) {
   de((t) => {
     var a;
     if (!o.value) return;
@@ -1924,57 +1924,57 @@ function Kt(e, o = k(!0)) {
     He.set(n, r + 1), r === 0 && (Go.set(n, { "aria-hidden": n.getAttribute("aria-hidden"), inert: n.inert }), n.setAttribute("aria-hidden", "true"), n.inert = !0);
   });
 }
-function Is({ defaultContainers: e = [], portals: o, mainTreeNodeRef: t } = {}) {
+function Ks({ defaultContainers: e = [], portals: o, mainTreeNodeRef: t } = {}) {
   let a = k(null), n = Ge(a);
   function r() {
     var s, d, l;
     let i = [];
-    for (let u of e) u !== null && (u instanceof HTMLElement ? i.push(u) : "value" in u && u.value instanceof HTMLElement && i.push(u.value));
-    if (o != null && o.value) for (let u of o.value) i.push(u);
-    for (let u of (s = n == null ? void 0 : n.querySelectorAll("html > *, body > *")) != null ? s : []) u !== document.body && u !== document.head && u instanceof HTMLElement && u.id !== "headlessui-portal-root" && (u.contains(L(a)) || u.contains((l = (d = L(a)) == null ? void 0 : d.getRootNode()) == null ? void 0 : l.host) || i.some((h) => u.contains(h)) || i.push(u));
+    for (let h of e) h !== null && (h instanceof HTMLElement ? i.push(h) : "value" in h && h.value instanceof HTMLElement && i.push(h.value));
+    if (o != null && o.value) for (let h of o.value) i.push(h);
+    for (let h of (s = n == null ? void 0 : n.querySelectorAll("html > *, body > *")) != null ? s : []) h !== document.body && h !== document.head && h instanceof HTMLElement && h.id !== "headlessui-portal-root" && (h.contains(L(a)) || h.contains((l = (d = L(a)) == null ? void 0 : d.getRootNode()) == null ? void 0 : l.host) || i.some((u) => h.contains(u)) || i.push(h));
     return i;
   }
   return { resolveContainers: r, contains(s) {
     return r().some((d) => d.contains(s));
   }, mainTreeNodeRef: a, MainTreeNode() {
-    return t != null ? null : _(No, { features: oo.Hidden, ref: a });
+    return t != null ? null : z(No, { features: oo.Hidden, ref: a });
   } };
 }
-let _a = Symbol("ForcePortalRootContext");
-function Ks() {
-  return te(_a, !1);
-}
-let Qo = z({ name: "ForcePortalRoot", props: { as: { type: [Object, String], default: "template" }, force: { type: Boolean, default: !1 } }, setup(e, { slots: o, attrs: t }) {
-  return se(_a, e.force), () => {
-    let { force: a, ...n } = e;
-    return q({ theirProps: n, ourProps: {}, slot: {}, slots: o, attrs: t, name: "ForcePortalRoot" });
-  };
-} }), za = Symbol("StackContext");
-var Xo = ((e) => (e[e.Add = 0] = "Add", e[e.Remove = 1] = "Remove", e))(Xo || {});
+let za = Symbol("ForcePortalRootContext");
 function Gs() {
-  return te(za, () => {
+  return te(za, !1);
+}
+let Xo = W({ name: "ForcePortalRoot", props: { as: { type: [Object, String], default: "template" }, force: { type: Boolean, default: !1 } }, setup(e, { slots: o, attrs: t }) {
+  return se(za, e.force), () => {
+    let { force: a, ...n } = e;
+    return Z({ theirProps: n, ourProps: {}, slot: {}, slots: o, attrs: t, name: "ForcePortalRoot" });
+  };
+} }), Wa = Symbol("StackContext");
+var et = ((e) => (e[e.Add = 0] = "Add", e[e.Remove = 1] = "Remove", e))(et || {});
+function js() {
+  return te(Wa, () => {
   });
 }
-function js({ type: e, enabled: o, element: t, onUpdate: a }) {
-  let n = Gs();
+function Fs({ type: e, enabled: o, element: t, onUpdate: a }) {
+  let n = js();
   function r(...s) {
     a == null || a(...s), n(...s);
   }
-  G(() => {
+  j(() => {
     V(o, (s, d) => {
       s ? r(0, e, t) : d === !0 && r(1, e, t);
     }, { immediate: !0, flush: "sync" });
   }), ie(() => {
     o.value && r(1, e, t);
-  }), se(za, r);
+  }), se(Wa, r);
 }
-let Wa = Symbol("DescriptionContext");
-function Fs() {
-  let e = te(Wa, null);
+let Ya = Symbol("DescriptionContext");
+function Hs() {
+  let e = te(Ya, null);
   if (e === null) throw new Error("Missing parent");
   return e;
 }
-function Hs({ slot: e = k({}), name: o = "Description", props: t = {} } = {}) {
+function Vs({ slot: e = k({}), name: o = "Description", props: t = {} } = {}) {
   let a = k([]);
   function n(r) {
     return a.value.push(r), () => {
@@ -1982,17 +1982,17 @@ function Hs({ slot: e = k({}), name: o = "Description", props: t = {} } = {}) {
       s !== -1 && a.value.splice(s, 1);
     };
   }
-  return se(Wa, { register: n, slot: e, name: o, props: t }), N(() => a.value.length > 0 ? a.value.join(" ") : void 0);
+  return se(Ya, { register: n, slot: e, name: o, props: t }), N(() => a.value.length > 0 ? a.value.join(" ") : void 0);
 }
-z({ name: "Description", props: { as: { type: [Object, String], default: "p" }, id: { type: String, default: null } }, setup(e, { attrs: o, slots: t }) {
+W({ name: "Description", props: { as: { type: [Object, String], default: "p" }, id: { type: String, default: null } }, setup(e, { attrs: o, slots: t }) {
   var a;
-  let n = (a = e.id) != null ? a : `headlessui-description-${$e()}`, r = Fs();
-  return G(() => ie(r.register(n))), () => {
-    let { name: s = "Description", slot: d = k({}), props: l = {} } = r, { ...i } = e, u = { ...Object.entries(l).reduce((h, [g, f]) => Object.assign(h, { [g]: c(f) }), {}), id: n };
-    return q({ ourProps: u, theirProps: i, slot: d.value, attrs: o, slots: t, name: s });
+  let n = (a = e.id) != null ? a : `headlessui-description-${$e()}`, r = Hs();
+  return j(() => ie(r.register(n))), () => {
+    let { name: s = "Description", slot: d = k({}), props: l = {} } = r, { ...i } = e, h = { ...Object.entries(l).reduce((u, [g, f]) => Object.assign(u, { [g]: c(f) }), {}), id: n };
+    return Z({ ourProps: h, theirProps: i, slot: d.value, attrs: o, slots: t, name: s });
   };
 } });
-function Vs(e) {
+function Us(e) {
   let o = Ge(e);
   if (!o) {
     if (e === null) return null;
@@ -2003,41 +2003,41 @@ function Vs(e) {
   let a = o.createElement("div");
   return a.setAttribute("id", "headlessui-portal-root"), o.body.appendChild(a);
 }
-const et = /* @__PURE__ */ new WeakMap();
-function Us(e) {
+const ot = /* @__PURE__ */ new WeakMap();
+function _s(e) {
   var o;
-  return (o = et.get(e)) != null ? o : 0;
+  return (o = ot.get(e)) != null ? o : 0;
 }
-function Gt(e, o) {
-  let t = o(Us(e));
-  return t <= 0 ? et.delete(e) : et.set(e, t), t;
+function Ft(e, o) {
+  let t = o(_s(e));
+  return t <= 0 ? ot.delete(e) : ot.set(e, t), t;
 }
-let Ya = z({ name: "Portal", props: { as: { type: [Object, String], default: "div" } }, setup(e, { slots: o, attrs: t }) {
-  let a = k(null), n = N(() => Ge(a)), r = Ks(), s = te(qa, null), d = k(r === !0 || s == null ? Vs(a.value) : s.resolveTarget());
-  d.value && Gt(d.value, (g) => g + 1);
+let qa = W({ name: "Portal", props: { as: { type: [Object, String], default: "div" } }, setup(e, { slots: o, attrs: t }) {
+  let a = k(null), n = N(() => Ge(a)), r = Gs(), s = te(Za, null), d = k(r === !0 || s == null ? Us(a.value) : s.resolveTarget());
+  d.value && Ft(d.value, (g) => g + 1);
   let l = k(!1);
-  G(() => {
+  j(() => {
     l.value = !0;
   }), de(() => {
     r || s != null && (d.value = s.resolveTarget());
   });
-  let i = te(ot, null), u = !1, h = fa();
+  let i = te(tt, null), h = !1, u = ya();
   return V(a, () => {
-    if (u || !i) return;
+    if (h || !i) return;
     let g = L(a);
-    g && (ie(i.register(g), h), u = !0);
+    g && (ie(i.register(g), u), h = !0);
   }), ie(() => {
     var g, f;
     let C = (g = n.value) == null ? void 0 : g.getElementById("headlessui-portal-root");
-    !C || d.value !== C || Gt(d.value, ($) => $ - 1) || d.value.children.length > 0 || (f = d.value.parentElement) == null || f.removeChild(d.value);
+    !C || d.value !== C || Ft(d.value, ($) => $ - 1) || d.value.children.length > 0 || (f = d.value.parentElement) == null || f.removeChild(d.value);
   }), () => {
     if (!l.value || d.value === null) return null;
     let g = { ref: a, "data-headlessui-portal": "" };
-    return _(gn, { to: d.value }, q({ ourProps: g, theirProps: e, slot: {}, attrs: t, slots: o, name: "Portal" }));
+    return z($n, { to: d.value }, Z({ ourProps: g, theirProps: e, slot: {}, attrs: t, slots: o, name: "Portal" }));
   };
-} }), ot = Symbol("PortalParentContext");
-function _s() {
-  let e = te(ot, null), o = k([]);
+} }), tt = Symbol("PortalParentContext");
+function zs() {
+  let e = te(tt, null), o = k([]);
   function t(r) {
     return o.value.push(r), e && e.register(r), () => a(r);
   }
@@ -2046,72 +2046,72 @@ function _s() {
     s !== -1 && o.value.splice(s, 1), e && e.unregister(r);
   }
   let n = { register: t, unregister: a, portals: o };
-  return [o, z({ name: "PortalWrapper", setup(r, { slots: s }) {
-    return se(ot, n), () => {
+  return [o, W({ name: "PortalWrapper", setup(r, { slots: s }) {
+    return se(tt, n), () => {
       var d;
       return (d = s.default) == null ? void 0 : d.call(s);
     };
   } })];
 }
-let qa = Symbol("PortalGroupContext"), zs = z({ name: "PortalGroup", props: { as: { type: [Object, String], default: "template" }, target: { type: Object, default: null } }, setup(e, { attrs: o, slots: t }) {
+let Za = Symbol("PortalGroupContext"), Ws = W({ name: "PortalGroup", props: { as: { type: [Object, String], default: "template" }, target: { type: Object, default: null } }, setup(e, { attrs: o, slots: t }) {
   let a = no({ resolveTarget() {
     return e.target;
   } });
-  return se(qa, a), () => {
+  return se(Za, a), () => {
     let { target: n, ...r } = e;
-    return q({ theirProps: r, ourProps: {}, slot: {}, attrs: o, slots: t, name: "PortalGroup" });
+    return Z({ theirProps: r, ourProps: {}, slot: {}, attrs: o, slots: t, name: "PortalGroup" });
   };
 } });
-var Ws = ((e) => (e[e.Open = 0] = "Open", e[e.Closed = 1] = "Closed", e))(Ws || {});
-let tt = Symbol("DialogContext");
+var Ys = ((e) => (e[e.Open = 0] = "Open", e[e.Closed = 1] = "Closed", e))(Ys || {});
+let at = Symbol("DialogContext");
 function lo(e) {
-  let o = te(tt, null);
+  let o = te(at, null);
   if (o === null) {
     let t = new Error(`<${e} /> is missing a parent <Dialog /> component.`);
     throw Error.captureStackTrace && Error.captureStackTrace(t, lo), t;
   }
   return o;
 }
-let go = "DC8F892D-2EBD-447C-A4C8-A03058436FF4", Ys = z({ name: "Dialog", inheritAttrs: !1, props: { as: { type: [Object, String], default: "div" }, static: { type: Boolean, default: !1 }, unmount: { type: Boolean, default: !0 }, open: { type: [Boolean, String], default: go }, initialFocus: { type: Object, default: null }, id: { type: String, default: null }, role: { type: String, default: "dialog" } }, emits: { close: (e) => !0 }, setup(e, { emit: o, attrs: t, slots: a, expose: n }) {
+let go = "DC8F892D-2EBD-447C-A4C8-A03058436FF4", qs = W({ name: "Dialog", inheritAttrs: !1, props: { as: { type: [Object, String], default: "div" }, static: { type: Boolean, default: !1 }, unmount: { type: Boolean, default: !0 }, open: { type: [Boolean, String], default: go }, initialFocus: { type: Object, default: null }, id: { type: String, default: null }, role: { type: String, default: "dialog" } }, emits: { close: (e) => !0 }, setup(e, { emit: o, attrs: t, slots: a, expose: n }) {
   var r, s;
   let d = (r = e.id) != null ? r : `headlessui-dialog-${$e()}`, l = k(!1);
-  G(() => {
+  j(() => {
     l.value = !0;
   });
-  let i = !1, u = N(() => e.role === "dialog" || e.role === "alertdialog" ? e.role : (i || (i = !0, console.warn(`Invalid role [${u}] passed to <Dialog />. Only \`dialog\` and and \`alertdialog\` are supported. Using \`dialog\` instead.`)), "dialog")), h = k(0), g = Oo(), f = N(() => e.open === go && g !== null ? (g.value & Z.Open) === Z.Open : e.open), C = k(null), $ = N(() => Ge(C));
+  let i = !1, h = N(() => e.role === "dialog" || e.role === "alertdialog" ? e.role : (i || (i = !0, console.warn(`Invalid role [${h}] passed to <Dialog />. Only \`dialog\` and and \`alertdialog\` are supported. Using \`dialog\` instead.`)), "dialog")), u = k(0), g = Oo(), f = N(() => e.open === go && g !== null ? (g.value & Q.Open) === Q.Open : e.open), C = k(null), $ = N(() => Ge(C));
   if (n({ el: C, $el: C }), !(e.open !== go || g !== null)) throw new Error("You forgot to provide an `open` prop to the `Dialog`.");
   if (typeof f.value != "boolean") throw new Error(`You provided an \`open\` prop to the \`Dialog\`, but the value is not a boolean. Received: ${f.value === go ? void 0 : e.open}`);
-  let b = N(() => l.value && f.value ? 0 : 1), w = N(() => b.value === 0), O = N(() => h.value > 1), A = te(tt, null) !== null, [S, B] = _s(), { resolveContainers: D, mainTreeNodeRef: I, MainTreeNode: X } = Is({ portals: S, defaultContainers: [N(() => {
+  let b = N(() => l.value && f.value ? 0 : 1), M = N(() => b.value === 0), O = N(() => u.value > 1), A = te(at, null) !== null, [S, T] = zs(), { resolveContainers: D, mainTreeNodeRef: K, MainTreeNode: X } = Ks({ portals: S, defaultContainers: [N(() => {
     var E;
     return (E = Se.panelRef.value) != null ? E : C.value;
-  })] }), ve = N(() => O.value ? "parent" : "leaf"), be = N(() => g !== null ? (g.value & Z.Closing) === Z.Closing : !1), Me = N(() => A || be.value ? !1 : w.value), Oe = N(() => {
+  })] }), ve = N(() => O.value ? "parent" : "leaf"), be = N(() => g !== null ? (g.value & Q.Closing) === Q.Closing : !1), Me = N(() => A || be.value ? !1 : M.value), Oe = N(() => {
     var E, R, ue;
-    return (ue = Array.from((R = (E = $.value) == null ? void 0 : E.querySelectorAll("body > *")) != null ? R : []).find((me) => me.id === "headlessui-portal-root" ? !1 : me.contains(L(I)) && me instanceof HTMLElement)) != null ? ue : null;
+    return (ue = Array.from((R = (E = $.value) == null ? void 0 : E.querySelectorAll("body > *")) != null ? R : []).find((me) => me.id === "headlessui-portal-root" ? !1 : me.contains(L(K)) && me instanceof HTMLElement)) != null ? ue : null;
   });
-  Kt(Oe, Me);
-  let le = N(() => O.value ? !0 : w.value), Pe = N(() => {
+  jt(Oe, Me);
+  let le = N(() => O.value ? !0 : M.value), Pe = N(() => {
     var E, R, ue;
-    return (ue = Array.from((R = (E = $.value) == null ? void 0 : E.querySelectorAll("[data-headlessui-portal]")) != null ? R : []).find((me) => me.contains(L(I)) && me instanceof HTMLElement)) != null ? ue : null;
+    return (ue = Array.from((R = (E = $.value) == null ? void 0 : E.querySelectorAll("[data-headlessui-portal]")) != null ? R : []).find((me) => me.contains(L(K)) && me instanceof HTMLElement)) != null ? ue : null;
   });
-  Kt(Pe, le), js({ type: "Dialog", enabled: N(() => b.value === 0), element: C, onUpdate: (E, R) => {
-    if (R === "Dialog") return Y(E, { [Xo.Add]: () => h.value += 1, [Xo.Remove]: () => h.value -= 1 });
+  jt(Pe, le), Fs({ type: "Dialog", enabled: N(() => b.value === 0), element: C, onUpdate: (E, R) => {
+    if (R === "Dialog") return q(E, { [et.Add]: () => u.value += 1, [et.Remove]: () => u.value -= 1 });
   } });
-  let he = Hs({ name: "DialogDescription", slot: N(() => ({ open: f.value })) }), Ce = k(null), Se = { titleId: Ce, panelRef: k(null), dialogState: b, setTitleId(E) {
-    Ce.value !== E && (Ce.value = E);
+  let he = Vs({ name: "DialogDescription", slot: N(() => ({ open: f.value })) }), ce = k(null), Se = { titleId: ce, panelRef: k(null), dialogState: b, setTitleId(E) {
+    ce.value !== E && (ce.value = E);
   }, close() {
     o("close", !1);
   } };
-  se(tt, Se);
-  let uo = N(() => !(!w.value || O.value));
-  La(D, (E, R) => {
+  se(at, Se);
+  let uo = N(() => !(!M.value || O.value));
+  xa(D, (E, R) => {
     E.preventDefault(), Se.close(), fe(() => R == null ? void 0 : R.focus());
   }, uo);
   let mo = N(() => !(O.value || b.value !== 0));
-  Fa((s = $.value) == null ? void 0 : s.defaultView, "keydown", (E) => {
-    mo.value && (E.defaultPrevented || E.key === U.Escape && (E.preventDefault(), E.stopPropagation(), Se.close()));
+  Ha((s = $.value) == null ? void 0 : s.defaultView, "keydown", (E) => {
+    mo.value && (E.defaultPrevented || E.key === _.Escape && (E.preventDefault(), E.stopPropagation(), Se.close()));
   });
-  let K = N(() => !(be.value || b.value !== 0 || A));
-  return Rs($, K, (E) => {
+  let G = N(() => !(be.value || b.value !== 0 || A));
+  return Is($, G, (E) => {
     var R;
     return { containers: [...(R = E.containers) != null ? R : [], D] };
   }), de((E) => {
@@ -2126,11 +2126,11 @@ let go = "DC8F892D-2EBD-447C-A4C8-A03058436FF4", Ys = z({ name: "Dialog", inheri
     });
     ue.observe(R), E(() => ue.disconnect());
   }), () => {
-    let { open: E, initialFocus: R, ...ue } = e, me = { ...t, ref: C, id: d, role: u.value, "aria-modal": b.value === 0 ? !0 : void 0, "aria-labelledby": Ce.value, "aria-describedby": he.value }, Do = { open: b.value === 0 };
-    return _(Qo, { force: !0 }, () => [_(Ya, () => _(zs, { target: C.value }, () => _(Qo, { force: !1 }, () => _(Fe, { initialFocus: R, containers: D, features: w.value ? Y(ve.value, { parent: Fe.features.RestoreFocus, leaf: Fe.features.All & ~Fe.features.FocusLock }) : Fe.features.None }, () => _(B, {}, () => q({ ourProps: me, theirProps: { ...ue, ...t }, slot: Do, attrs: t, slots: a, visible: b.value === 0, features: Ie.RenderStrategy | Ie.Static, name: "Dialog" })))))), _(X)]);
+    let { open: E, initialFocus: R, ...ue } = e, me = { ...t, ref: C, id: d, role: h.value, "aria-modal": b.value === 0 ? !0 : void 0, "aria-labelledby": ce.value, "aria-describedby": he.value }, Do = { open: b.value === 0 };
+    return z(Xo, { force: !0 }, () => [z(qa, () => z(Ws, { target: C.value }, () => z(Xo, { force: !1 }, () => z(Fe, { initialFocus: R, containers: D, features: M.value ? q(ve.value, { parent: Fe.features.RestoreFocus, leaf: Fe.features.All & ~Fe.features.FocusLock }) : Fe.features.None }, () => z(T, {}, () => Z({ ourProps: me, theirProps: { ...ue, ...t }, slot: Do, attrs: t, slots: a, visible: b.value === 0, features: Ie.RenderStrategy | Ie.Static, name: "Dialog" })))))), z(X)]);
   };
 } });
-z({ name: "DialogOverlay", props: { as: { type: [Object, String], default: "div" }, id: { type: String, default: null } }, setup(e, { attrs: o, slots: t }) {
+W({ name: "DialogOverlay", props: { as: { type: [Object, String], default: "div" }, id: { type: String, default: null } }, setup(e, { attrs: o, slots: t }) {
   var a;
   let n = (a = e.id) != null ? a : `headlessui-dialog-overlay-${$e()}`, r = lo("DialogOverlay");
   function s(d) {
@@ -2138,20 +2138,20 @@ z({ name: "DialogOverlay", props: { as: { type: [Object, String], default: "div"
   }
   return () => {
     let { ...d } = e;
-    return q({ ourProps: { id: n, "aria-hidden": !0, onClick: s }, theirProps: d, slot: { open: r.dialogState.value === 0 }, attrs: o, slots: t, name: "DialogOverlay" });
+    return Z({ ourProps: { id: n, "aria-hidden": !0, onClick: s }, theirProps: d, slot: { open: r.dialogState.value === 0 }, attrs: o, slots: t, name: "DialogOverlay" });
   };
 } });
-z({ name: "DialogBackdrop", props: { as: { type: [Object, String], default: "div" }, id: { type: String, default: null } }, inheritAttrs: !1, setup(e, { attrs: o, slots: t, expose: a }) {
+W({ name: "DialogBackdrop", props: { as: { type: [Object, String], default: "div" }, id: { type: String, default: null } }, inheritAttrs: !1, setup(e, { attrs: o, slots: t, expose: a }) {
   var n;
   let r = (n = e.id) != null ? n : `headlessui-dialog-backdrop-${$e()}`, s = lo("DialogBackdrop"), d = k(null);
-  return a({ el: d, $el: d }), G(() => {
+  return a({ el: d, $el: d }), j(() => {
     if (s.panelRef.value === null) throw new Error("A <DialogBackdrop /> component is being used, but a <DialogPanel /> component is missing.");
   }), () => {
     let { ...l } = e, i = { id: r, ref: d, "aria-hidden": !0 };
-    return _(Qo, { force: !0 }, () => _(Ya, () => q({ ourProps: i, theirProps: { ...o, ...l }, slot: { open: s.dialogState.value === 0 }, attrs: o, slots: t, name: "DialogBackdrop" })));
+    return z(Xo, { force: !0 }, () => z(qa, () => Z({ ourProps: i, theirProps: { ...o, ...l }, slot: { open: s.dialogState.value === 0 }, attrs: o, slots: t, name: "DialogBackdrop" })));
   };
 } });
-let qs = z({ name: "DialogPanel", props: { as: { type: [Object, String], default: "div" }, id: { type: String, default: null } }, setup(e, { attrs: o, slots: t, expose: a }) {
+let Zs = W({ name: "DialogPanel", props: { as: { type: [Object, String], default: "div" }, id: { type: String, default: null } }, setup(e, { attrs: o, slots: t, expose: a }) {
   var n;
   let r = (n = e.id) != null ? n : `headlessui-dialog-panel-${$e()}`, s = lo("DialogPanel");
   a({ el: s.panelRef, $el: s.panelRef });
@@ -2160,28 +2160,28 @@ let qs = z({ name: "DialogPanel", props: { as: { type: [Object, String], default
   }
   return () => {
     let { ...l } = e, i = { id: r, ref: s.panelRef, onClick: d };
-    return q({ ourProps: i, theirProps: l, slot: { open: s.dialogState.value === 0 }, attrs: o, slots: t, name: "DialogPanel" });
+    return Z({ ourProps: i, theirProps: l, slot: { open: s.dialogState.value === 0 }, attrs: o, slots: t, name: "DialogPanel" });
   };
 } });
-z({ name: "DialogTitle", props: { as: { type: [Object, String], default: "h2" }, id: { type: String, default: null } }, setup(e, { attrs: o, slots: t }) {
+W({ name: "DialogTitle", props: { as: { type: [Object, String], default: "h2" }, id: { type: String, default: null } }, setup(e, { attrs: o, slots: t }) {
   var a;
   let n = (a = e.id) != null ? a : `headlessui-dialog-title-${$e()}`, r = lo("DialogTitle");
-  return G(() => {
+  return j(() => {
     r.setTitleId(n), ie(() => r.setTitleId(null));
   }), () => {
     let { ...s } = e;
-    return q({ ourProps: { id: n }, theirProps: s, slot: { open: r.dialogState.value === 0 }, attrs: o, slots: t, name: "DialogTitle" });
+    return Z({ ourProps: { id: n }, theirProps: s, slot: { open: r.dialogState.value === 0 }, attrs: o, slots: t, name: "DialogTitle" });
   };
 } });
-let jt = /([\u2700-\u27BF]|[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g;
-function Ft(e) {
+let Ht = /([\u2700-\u27BF]|[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g;
+function Vt(e) {
   var o, t;
   let a = (o = e.innerText) != null ? o : "", n = e.cloneNode(!0);
   if (!(n instanceof HTMLElement)) return a;
   let r = !1;
   for (let d of n.querySelectorAll('[hidden],[aria-hidden],[role="img"]')) d.remove(), r = !0;
   let s = r ? (t = n.innerText) != null ? t : "" : a;
-  return jt.test(s) && (s = s.replace(jt, "")), s;
+  return Ht.test(s) && (s = s.replace(Ht, "")), s;
 }
 function Js(e) {
   let o = e.getAttribute("aria-label");
@@ -2192,15 +2192,15 @@ function Js(e) {
       let r = document.getElementById(n);
       if (r) {
         let s = r.getAttribute("aria-label");
-        return typeof s == "string" ? s.trim() : Ft(r).trim();
+        return typeof s == "string" ? s.trim() : Vt(r).trim();
       }
       return null;
     }).filter(Boolean);
     if (a.length > 0) return a.join(", ");
   }
-  return Ft(e).trim();
+  return Vt(e).trim();
 }
-function Zs(e) {
+function Qs(e) {
   let o = k(""), t = k("");
   return () => {
     let a = L(e);
@@ -2211,11 +2211,11 @@ function Zs(e) {
     return o.value = n, t.value = r, r;
   };
 }
-function Qs(e, o) {
+function Xs(e, o) {
   return e === o;
 }
-var Xs = ((e) => (e[e.Open = 0] = "Open", e[e.Closed = 1] = "Closed", e))(Xs || {}), ed = ((e) => (e[e.Single = 0] = "Single", e[e.Multi = 1] = "Multi", e))(ed || {}), od = ((e) => (e[e.Pointer = 0] = "Pointer", e[e.Other = 1] = "Other", e))(od || {});
-function td(e) {
+var ed = ((e) => (e[e.Open = 0] = "Open", e[e.Closed = 1] = "Closed", e))(ed || {}), od = ((e) => (e[e.Single = 0] = "Single", e[e.Multi = 1] = "Multi", e))(od || {}), td = ((e) => (e[e.Pointer = 0] = "Pointer", e[e.Other = 1] = "Other", e))(td || {});
+function ad(e) {
   requestAnimationFrame(() => requestAnimationFrame(e));
 }
 let Ja = Symbol("ListboxContext");
@@ -2227,64 +2227,64 @@ function ho(e) {
   }
   return o;
 }
-let qe = z({ name: "Listbox", emits: { "update:modelValue": (e) => !0 }, props: { as: { type: [Object, String], default: "template" }, disabled: { type: [Boolean], default: !1 }, by: { type: [String, Function], default: () => Qs }, horizontal: { type: [Boolean], default: !1 }, modelValue: { type: [Object, String, Number, Boolean], default: void 0 }, defaultValue: { type: [Object, String, Number, Boolean], default: void 0 }, form: { type: String, optional: !0 }, name: { type: String, optional: !0 }, multiple: { type: [Boolean], default: !1 } }, inheritAttrs: !1, setup(e, { slots: o, attrs: t, emit: a }) {
-  let n = k(1), r = k(null), s = k(null), d = k(null), l = k([]), i = k(""), u = k(null), h = k(1);
+let qe = W({ name: "Listbox", emits: { "update:modelValue": (e) => !0 }, props: { as: { type: [Object, String], default: "template" }, disabled: { type: [Boolean], default: !1 }, by: { type: [String, Function], default: () => Xs }, horizontal: { type: [Boolean], default: !1 }, modelValue: { type: [Object, String, Number, Boolean], default: void 0 }, defaultValue: { type: [Object, String, Number, Boolean], default: void 0 }, form: { type: String, optional: !0 }, name: { type: String, optional: !0 }, multiple: { type: [Boolean], default: !1 } }, inheritAttrs: !1, setup(e, { slots: o, attrs: t, emit: a }) {
+  let n = k(1), r = k(null), s = k(null), d = k(null), l = k([]), i = k(""), h = k(null), u = k(1);
   function g(A = (S) => S) {
-    let S = u.value !== null ? l.value[u.value] : null, B = Ba(A(l.value.slice()), (I) => L(I.dataRef.domRef)), D = S ? B.indexOf(S) : null;
-    return D === -1 && (D = null), { options: B, activeOptionIndex: D };
+    let S = h.value !== null ? l.value[h.value] : null, T = Ta(A(l.value.slice()), (K) => L(K.dataRef.domRef)), D = S ? T.indexOf(S) : null;
+    return D === -1 && (D = null), { options: T, activeOptionIndex: D };
   }
-  let f = N(() => e.multiple ? 1 : 0), [C, $] = ns(N(() => e.modelValue), (A) => a("update:modelValue", A), N(() => e.defaultValue)), b = N(() => C.value === void 0 ? Y(f.value, { 1: [], 0: void 0 }) : C.value), w = { listboxState: n, value: b, mode: f, compare(A, S) {
+  let f = N(() => e.multiple ? 1 : 0), [C, $] = rs(N(() => e.modelValue), (A) => a("update:modelValue", A), N(() => e.defaultValue)), b = N(() => C.value === void 0 ? q(f.value, { 1: [], 0: void 0 }) : C.value), M = { listboxState: n, value: b, mode: f, compare(A, S) {
     if (typeof e.by == "string") {
-      let B = e.by;
-      return (A == null ? void 0 : A[B]) === (S == null ? void 0 : S[B]);
+      let T = e.by;
+      return (A == null ? void 0 : A[T]) === (S == null ? void 0 : S[T]);
     }
     return e.by(A, S);
-  }, orientation: N(() => e.horizontal ? "horizontal" : "vertical"), labelRef: r, buttonRef: s, optionsRef: d, disabled: N(() => e.disabled), options: l, searchQuery: i, activeOptionIndex: u, activationTrigger: h, closeListbox() {
-    e.disabled || n.value !== 1 && (n.value = 1, u.value = null);
+  }, orientation: N(() => e.horizontal ? "horizontal" : "vertical"), labelRef: r, buttonRef: s, optionsRef: d, disabled: N(() => e.disabled), options: l, searchQuery: i, activeOptionIndex: h, activationTrigger: u, closeListbox() {
+    e.disabled || n.value !== 1 && (n.value = 1, h.value = null);
   }, openListbox() {
     e.disabled || n.value !== 0 && (n.value = 0);
-  }, goToOption(A, S, B) {
+  }, goToOption(A, S, T) {
     if (e.disabled || n.value === 1) return;
-    let D = g(), I = Ns(A === oe.Specific ? { focus: oe.Specific, id: S } : { focus: A }, { resolveItems: () => D.options, resolveActiveIndex: () => D.activeOptionIndex, resolveId: (X) => X.id, resolveDisabled: (X) => X.dataRef.disabled });
-    i.value = "", u.value = I, h.value = B ?? 1, l.value = D.options;
+    let D = g(), K = ks(A === oe.Specific ? { focus: oe.Specific, id: S } : { focus: A }, { resolveItems: () => D.options, resolveActiveIndex: () => D.activeOptionIndex, resolveId: (X) => X.id, resolveDisabled: (X) => X.dataRef.disabled });
+    i.value = "", h.value = K, u.value = T ?? 1, l.value = D.options;
   }, search(A) {
     if (e.disabled || n.value === 1) return;
     let S = i.value !== "" ? 0 : 1;
     i.value += A.toLowerCase();
-    let B = (u.value !== null ? l.value.slice(u.value + S).concat(l.value.slice(0, u.value + S)) : l.value).find((I) => I.dataRef.textValue.startsWith(i.value) && !I.dataRef.disabled), D = B ? l.value.indexOf(B) : -1;
-    D === -1 || D === u.value || (u.value = D, h.value = 1);
+    let T = (h.value !== null ? l.value.slice(h.value + S).concat(l.value.slice(0, h.value + S)) : l.value).find((K) => K.dataRef.textValue.startsWith(i.value) && !K.dataRef.disabled), D = T ? l.value.indexOf(T) : -1;
+    D === -1 || D === h.value || (h.value = D, u.value = 1);
   }, clearSearch() {
     e.disabled || n.value !== 1 && i.value !== "" && (i.value = "");
   }, registerOption(A, S) {
-    let B = g((D) => [...D, { id: A, dataRef: S }]);
-    l.value = B.options, u.value = B.activeOptionIndex;
+    let T = g((D) => [...D, { id: A, dataRef: S }]);
+    l.value = T.options, h.value = T.activeOptionIndex;
   }, unregisterOption(A) {
-    let S = g((B) => {
-      let D = B.findIndex((I) => I.id === A);
-      return D !== -1 && B.splice(D, 1), B;
+    let S = g((T) => {
+      let D = T.findIndex((K) => K.id === A);
+      return D !== -1 && T.splice(D, 1), T;
     });
-    l.value = S.options, u.value = S.activeOptionIndex, h.value = 1;
+    l.value = S.options, h.value = S.activeOptionIndex, u.value = 1;
   }, theirOnChange(A) {
     e.disabled || $(A);
   }, select(A) {
-    e.disabled || $(Y(f.value, { 0: () => A, 1: () => {
-      let S = ne(w.value.value).slice(), B = ne(A), D = S.findIndex((I) => w.compare(B, ne(I)));
-      return D === -1 ? S.push(B) : S.splice(D, 1), S;
+    e.disabled || $(q(f.value, { 0: () => A, 1: () => {
+      let S = ne(M.value.value).slice(), T = ne(A), D = S.findIndex((K) => M.compare(T, ne(K)));
+      return D === -1 ? S.push(T) : S.splice(D, 1), S;
     } }));
   } };
-  La([s, d], (A, S) => {
-    var B;
-    w.closeListbox(), Pa(S, ut.Loose) || (A.preventDefault(), (B = L(s)) == null || B.focus());
-  }, N(() => n.value === 0)), se(Ja, w), Ia(N(() => Y(n.value, { 0: Z.Open, 1: Z.Closed })));
+  xa([s, d], (A, S) => {
+    var T;
+    M.closeListbox(), Ba(S, Ct.Loose) || (A.preventDefault(), (T = L(s)) == null || T.focus());
+  }, N(() => n.value === 0)), se(Ja, M), Ka(N(() => q(n.value, { 0: Q.Open, 1: Q.Closed })));
   let O = N(() => {
     var A;
     return (A = L(s)) == null ? void 0 : A.closest("form");
   });
-  return G(() => {
+  return j(() => {
     V([O], () => {
       if (!O.value || e.defaultValue === void 0) return;
       function A() {
-        w.theirOnChange(e.defaultValue);
+        M.theirOnChange(e.defaultValue);
       }
       return O.value.addEventListener("reset", A), () => {
         var S;
@@ -2292,10 +2292,10 @@ let qe = z({ name: "Listbox", emits: { "update:modelValue": (e) => !0 }, props: 
       };
     }, { immediate: !0 });
   }), () => {
-    let { name: A, modelValue: S, disabled: B, form: D, ...I } = e, X = { open: n.value === 0, disabled: B, value: b.value };
-    return _(F, [...A != null && b.value != null ? Ka({ [A]: b.value }).map(([ve, be]) => _(No, ys({ features: oo.Hidden, key: ve, as: "input", type: "hidden", hidden: !0, readOnly: !0, form: D, disabled: B, name: ve, value: be }))) : [], q({ ourProps: {}, theirProps: { ...t, ...mt(I, ["defaultValue", "onUpdate:modelValue", "horizontal", "multiple", "by"]) }, slot: X, slots: o, attrs: t, name: "Listbox" })]);
+    let { name: A, modelValue: S, disabled: T, form: D, ...K } = e, X = { open: n.value === 0, disabled: T, value: b.value };
+    return z(I, [...A != null && b.value != null ? Ga({ [A]: b.value }).map(([ve, be]) => z(No, vs({ features: oo.Hidden, key: ve, as: "input", type: "hidden", hidden: !0, readOnly: !0, form: D, disabled: T, name: ve, value: be }))) : [], Z({ ourProps: {}, theirProps: { ...t, ...ct(K, ["defaultValue", "onUpdate:modelValue", "horizontal", "multiple", "by"]) }, slot: X, slots: o, attrs: t, name: "Listbox" })]);
   };
-} }), Je = z({ name: "ListboxLabel", props: { as: { type: [Object, String], default: "label" }, id: { type: String, default: null } }, setup(e, { attrs: o, slots: t }) {
+} }), Ze = W({ name: "ListboxLabel", props: { as: { type: [Object, String], default: "label" }, id: { type: String, default: null } }, setup(e, { attrs: o, slots: t }) {
   var a;
   let n = (a = e.id) != null ? a : `headlessui-listbox-label-${$e()}`, r = ho("ListboxLabel");
   function s() {
@@ -2304,62 +2304,62 @@ let qe = z({ name: "Listbox", emits: { "update:modelValue": (e) => !0 }, props: 
   }
   return () => {
     let d = { open: r.listboxState.value === 0, disabled: r.disabled.value }, { ...l } = e, i = { id: n, ref: r.labelRef, onClick: s };
-    return q({ ourProps: i, theirProps: l, slot: d, attrs: o, slots: t, name: "ListboxLabel" });
+    return Z({ ourProps: i, theirProps: l, slot: d, attrs: o, slots: t, name: "ListboxLabel" });
   };
-} }), Ze = z({ name: "ListboxButton", props: { as: { type: [Object, String], default: "button" }, id: { type: String, default: null } }, setup(e, { attrs: o, slots: t, expose: a }) {
+} }), Je = W({ name: "ListboxButton", props: { as: { type: [Object, String], default: "button" }, id: { type: String, default: null } }, setup(e, { attrs: o, slots: t, expose: a }) {
   var n;
   let r = (n = e.id) != null ? n : `headlessui-listbox-button-${$e()}`, s = ho("ListboxButton");
   a({ el: s.buttonRef, $el: s.buttonRef });
-  function d(h) {
-    switch (h.key) {
-      case U.Space:
-      case U.Enter:
-      case U.ArrowDown:
-        h.preventDefault(), s.openListbox(), fe(() => {
+  function d(u) {
+    switch (u.key) {
+      case _.Space:
+      case _.Enter:
+      case _.ArrowDown:
+        u.preventDefault(), s.openListbox(), fe(() => {
           var g;
           (g = L(s.optionsRef)) == null || g.focus({ preventScroll: !0 }), s.value.value || s.goToOption(oe.First);
         });
         break;
-      case U.ArrowUp:
-        h.preventDefault(), s.openListbox(), fe(() => {
+      case _.ArrowUp:
+        u.preventDefault(), s.openListbox(), fe(() => {
           var g;
           (g = L(s.optionsRef)) == null || g.focus({ preventScroll: !0 }), s.value.value || s.goToOption(oe.Last);
         });
         break;
     }
   }
-  function l(h) {
-    switch (h.key) {
-      case U.Space:
-        h.preventDefault();
+  function l(u) {
+    switch (u.key) {
+      case _.Space:
+        u.preventDefault();
         break;
     }
   }
-  function i(h) {
+  function i(u) {
     s.disabled.value || (s.listboxState.value === 0 ? (s.closeListbox(), fe(() => {
       var g;
       return (g = L(s.buttonRef)) == null ? void 0 : g.focus({ preventScroll: !0 });
-    })) : (h.preventDefault(), s.openListbox(), td(() => {
+    })) : (u.preventDefault(), s.openListbox(), ad(() => {
       var g;
       return (g = L(s.optionsRef)) == null ? void 0 : g.focus({ preventScroll: !0 });
     })));
   }
-  let u = fs(N(() => ({ as: e.as, type: o.type })), s.buttonRef);
+  let h = ps(N(() => ({ as: e.as, type: o.type })), s.buttonRef);
   return () => {
-    var h, g;
-    let f = { open: s.listboxState.value === 0, disabled: s.disabled.value, value: s.value.value }, { ...C } = e, $ = { ref: s.buttonRef, id: r, type: u.value, "aria-haspopup": "listbox", "aria-controls": (h = L(s.optionsRef)) == null ? void 0 : h.id, "aria-expanded": s.listboxState.value === 0, "aria-labelledby": s.labelRef.value ? [(g = L(s.labelRef)) == null ? void 0 : g.id, r].join(" ") : void 0, disabled: s.disabled.value === !0 ? !0 : void 0, onKeydown: d, onKeyup: l, onClick: i };
-    return q({ ourProps: $, theirProps: C, slot: f, attrs: o, slots: t, name: "ListboxButton" });
+    var u, g;
+    let f = { open: s.listboxState.value === 0, disabled: s.disabled.value, value: s.value.value }, { ...C } = e, $ = { ref: s.buttonRef, id: r, type: h.value, "aria-haspopup": "listbox", "aria-controls": (u = L(s.optionsRef)) == null ? void 0 : u.id, "aria-expanded": s.listboxState.value === 0, "aria-labelledby": s.labelRef.value ? [(g = L(s.labelRef)) == null ? void 0 : g.id, r].join(" ") : void 0, disabled: s.disabled.value === !0 ? !0 : void 0, onKeydown: d, onKeyup: l, onClick: i };
+    return Z({ ourProps: $, theirProps: C, slot: f, attrs: o, slots: t, name: "ListboxButton" });
   };
-} }), Qe = z({ name: "ListboxOptions", props: { as: { type: [Object, String], default: "ul" }, static: { type: Boolean, default: !1 }, unmount: { type: Boolean, default: !0 }, id: { type: String, default: null } }, setup(e, { attrs: o, slots: t, expose: a }) {
+} }), Qe = W({ name: "ListboxOptions", props: { as: { type: [Object, String], default: "ul" }, static: { type: Boolean, default: !1 }, unmount: { type: Boolean, default: !0 }, id: { type: String, default: null } }, setup(e, { attrs: o, slots: t, expose: a }) {
   var n;
   let r = (n = e.id) != null ? n : `headlessui-listbox-options-${$e()}`, s = ho("ListboxOptions"), d = k(null);
   a({ el: s.optionsRef, $el: s.optionsRef });
-  function l(h) {
-    switch (d.value && clearTimeout(d.value), h.key) {
-      case U.Space:
-        if (s.searchQuery.value !== "") return h.preventDefault(), h.stopPropagation(), s.search(h.key);
-      case U.Enter:
-        if (h.preventDefault(), h.stopPropagation(), s.activeOptionIndex.value !== null) {
+  function l(u) {
+    switch (d.value && clearTimeout(d.value), u.key) {
+      case _.Space:
+        if (s.searchQuery.value !== "") return u.preventDefault(), u.stopPropagation(), s.search(u.key);
+      case _.Enter:
+        if (u.preventDefault(), u.stopPropagation(), s.activeOptionIndex.value !== null) {
           let g = s.options.value[s.activeOptionIndex.value];
           s.select(g.dataRef.value);
         }
@@ -2368,51 +2368,51 @@ let qe = z({ name: "Listbox", emits: { "update:modelValue": (e) => !0 }, props: 
           return (g = L(s.buttonRef)) == null ? void 0 : g.focus({ preventScroll: !0 });
         }));
         break;
-      case Y(s.orientation.value, { vertical: U.ArrowDown, horizontal: U.ArrowRight }):
-        return h.preventDefault(), h.stopPropagation(), s.goToOption(oe.Next);
-      case Y(s.orientation.value, { vertical: U.ArrowUp, horizontal: U.ArrowLeft }):
-        return h.preventDefault(), h.stopPropagation(), s.goToOption(oe.Previous);
-      case U.Home:
-      case U.PageUp:
-        return h.preventDefault(), h.stopPropagation(), s.goToOption(oe.First);
-      case U.End:
-      case U.PageDown:
-        return h.preventDefault(), h.stopPropagation(), s.goToOption(oe.Last);
-      case U.Escape:
-        h.preventDefault(), h.stopPropagation(), s.closeListbox(), fe(() => {
+      case q(s.orientation.value, { vertical: _.ArrowDown, horizontal: _.ArrowRight }):
+        return u.preventDefault(), u.stopPropagation(), s.goToOption(oe.Next);
+      case q(s.orientation.value, { vertical: _.ArrowUp, horizontal: _.ArrowLeft }):
+        return u.preventDefault(), u.stopPropagation(), s.goToOption(oe.Previous);
+      case _.Home:
+      case _.PageUp:
+        return u.preventDefault(), u.stopPropagation(), s.goToOption(oe.First);
+      case _.End:
+      case _.PageDown:
+        return u.preventDefault(), u.stopPropagation(), s.goToOption(oe.Last);
+      case _.Escape:
+        u.preventDefault(), u.stopPropagation(), s.closeListbox(), fe(() => {
           var g;
           return (g = L(s.buttonRef)) == null ? void 0 : g.focus({ preventScroll: !0 });
         });
         break;
-      case U.Tab:
-        h.preventDefault(), h.stopPropagation();
+      case _.Tab:
+        u.preventDefault(), u.stopPropagation();
         break;
       default:
-        h.key.length === 1 && (s.search(h.key), d.value = setTimeout(() => s.clearSearch(), 350));
+        u.key.length === 1 && (s.search(u.key), d.value = setTimeout(() => s.clearSearch(), 350));
         break;
     }
   }
-  let i = Oo(), u = N(() => i !== null ? (i.value & Z.Open) === Z.Open : s.listboxState.value === 0);
+  let i = Oo(), h = N(() => i !== null ? (i.value & Q.Open) === Q.Open : s.listboxState.value === 0);
   return () => {
-    var h, g;
-    let f = { open: s.listboxState.value === 0 }, { ...C } = e, $ = { "aria-activedescendant": s.activeOptionIndex.value === null || (h = s.options.value[s.activeOptionIndex.value]) == null ? void 0 : h.id, "aria-multiselectable": s.mode.value === 1 ? !0 : void 0, "aria-labelledby": (g = L(s.buttonRef)) == null ? void 0 : g.id, "aria-orientation": s.orientation.value, id: r, onKeydown: l, role: "listbox", tabIndex: 0, ref: s.optionsRef };
-    return q({ ourProps: $, theirProps: C, slot: f, attrs: o, slots: t, features: Ie.RenderStrategy | Ie.Static, visible: u.value, name: "ListboxOptions" });
+    var u, g;
+    let f = { open: s.listboxState.value === 0 }, { ...C } = e, $ = { "aria-activedescendant": s.activeOptionIndex.value === null || (u = s.options.value[s.activeOptionIndex.value]) == null ? void 0 : u.id, "aria-multiselectable": s.mode.value === 1 ? !0 : void 0, "aria-labelledby": (g = L(s.buttonRef)) == null ? void 0 : g.id, "aria-orientation": s.orientation.value, id: r, onKeydown: l, role: "listbox", tabIndex: 0, ref: s.optionsRef };
+    return Z({ ourProps: $, theirProps: C, slot: f, attrs: o, slots: t, features: Ie.RenderStrategy | Ie.Static, visible: h.value, name: "ListboxOptions" });
   };
-} }), Xe = z({ name: "ListboxOption", props: { as: { type: [Object, String], default: "li" }, value: { type: [Object, String, Number, Boolean] }, disabled: { type: Boolean, default: !1 }, id: { type: String, default: null } }, setup(e, { slots: o, attrs: t, expose: a }) {
+} }), Xe = W({ name: "ListboxOption", props: { as: { type: [Object, String], default: "li" }, value: { type: [Object, String, Number, Boolean] }, disabled: { type: Boolean, default: !1 }, id: { type: String, default: null } }, setup(e, { slots: o, attrs: t, expose: a }) {
   var n;
   let r = (n = e.id) != null ? n : `headlessui-listbox-option-${$e()}`, s = ho("ListboxOption"), d = k(null);
   a({ el: d, $el: d });
-  let l = N(() => s.activeOptionIndex.value !== null ? s.options.value[s.activeOptionIndex.value].id === r : !1), i = N(() => Y(s.mode.value, { 0: () => s.compare(ne(s.value.value), ne(e.value)), 1: () => ne(s.value.value).some((A) => s.compare(ne(A), ne(e.value))) })), u = N(() => Y(s.mode.value, { 1: () => {
+  let l = N(() => s.activeOptionIndex.value !== null ? s.options.value[s.activeOptionIndex.value].id === r : !1), i = N(() => q(s.mode.value, { 0: () => s.compare(ne(s.value.value), ne(e.value)), 1: () => ne(s.value.value).some((A) => s.compare(ne(A), ne(e.value))) })), h = N(() => q(s.mode.value, { 1: () => {
     var A;
     let S = ne(s.value.value);
-    return ((A = s.options.value.find((B) => S.some((D) => s.compare(ne(D), ne(B.dataRef.value))))) == null ? void 0 : A.id) === r;
-  }, 0: () => i.value })), h = Zs(d), g = N(() => ({ disabled: e.disabled, value: e.value, get textValue() {
-    return h();
+    return ((A = s.options.value.find((T) => S.some((D) => s.compare(ne(D), ne(T.dataRef.value))))) == null ? void 0 : A.id) === r;
+  }, 0: () => i.value })), u = Qs(d), g = N(() => ({ disabled: e.disabled, value: e.value, get textValue() {
+    return u();
   }, domRef: d }));
-  G(() => s.registerOption(r, g)), ie(() => s.unregisterOption(r)), G(() => {
+  j(() => s.registerOption(r, g)), ie(() => s.unregisterOption(r)), j(() => {
     V([s.listboxState, i], () => {
-      s.listboxState.value === 0 && i.value && Y(s.mode.value, { 1: () => {
-        u.value && s.goToOption(oe.Specific, r);
+      s.listboxState.value === 0 && i.value && q(s.mode.value, { 1: () => {
+        h.value && s.goToOption(oe.Specific, r);
       }, 0: () => {
         s.goToOption(oe.Specific, r);
       } });
@@ -2434,22 +2434,22 @@ let qe = z({ name: "Listbox", emits: { "update:modelValue": (e) => !0 }, props: 
     if (e.disabled) return s.goToOption(oe.Nothing);
     s.goToOption(oe.Specific, r);
   }
-  let $ = ps();
+  let $ = ys();
   function b(A) {
     $.update(A);
   }
-  function w(A) {
+  function M(A) {
     $.wasMoved(A) && (e.disabled || l.value || s.goToOption(oe.Specific, r, 0));
   }
   function O(A) {
     $.wasMoved(A) && (e.disabled || l.value && s.goToOption(oe.Nothing));
   }
   return () => {
-    let { disabled: A } = e, S = { active: l.value, selected: i.value, disabled: A }, { value: B, disabled: D, ...I } = e, X = { id: r, ref: d, role: "option", tabIndex: A === !0 ? void 0 : -1, "aria-disabled": A === !0 ? !0 : void 0, "aria-selected": i.value, disabled: void 0, onClick: f, onFocus: C, onPointerenter: b, onMouseenter: b, onPointermove: w, onMousemove: w, onPointerleave: O, onMouseleave: O };
-    return q({ ourProps: X, theirProps: I, slot: S, attrs: t, slots: o, name: "ListboxOption" });
+    let { disabled: A } = e, S = { active: l.value, selected: i.value, disabled: A }, { value: T, disabled: D, ...K } = e, X = { id: r, ref: d, role: "option", tabIndex: A === !0 ? void 0 : -1, "aria-disabled": A === !0 ? !0 : void 0, "aria-selected": i.value, disabled: void 0, onClick: f, onFocus: C, onPointerenter: b, onMouseenter: b, onPointermove: M, onMousemove: M, onPointerleave: O, onMouseleave: O };
+    return Z({ ourProps: X, theirProps: K, slot: S, attrs: t, slots: o, name: "ListboxOption" });
   };
 } });
-function ad(e) {
+function nd(e) {
   let o = { called: !1 };
   return (...t) => {
     if (!o.called) return o.called = !0, e(...t);
@@ -2461,51 +2461,51 @@ function jo(e, ...o) {
 function $o(e, ...o) {
   e && o.length > 0 && e.classList.remove(...o);
 }
-var at = ((e) => (e.Finished = "finished", e.Cancelled = "cancelled", e))(at || {});
-function nd(e, o) {
+var nt = ((e) => (e.Finished = "finished", e.Cancelled = "cancelled", e))(nt || {});
+function rd(e, o) {
   let t = so();
   if (!e) return t.dispose;
   let { transitionDuration: a, transitionDelay: n } = getComputedStyle(e), [r, s] = [a, n].map((d) => {
-    let [l = 0] = d.split(",").filter(Boolean).map((i) => i.includes("ms") ? parseFloat(i) : parseFloat(i) * 1e3).sort((i, u) => u - i);
+    let [l = 0] = d.split(",").filter(Boolean).map((i) => i.includes("ms") ? parseFloat(i) : parseFloat(i) * 1e3).sort((i, h) => h - i);
     return l;
   });
   return r !== 0 ? t.setTimeout(() => o("finished"), r + s) : o("finished"), t.add(() => o("cancelled")), t.dispose;
 }
-function Ht(e, o, t, a, n, r) {
-  let s = so(), d = r !== void 0 ? ad(r) : () => {
+function Ut(e, o, t, a, n, r) {
+  let s = so(), d = r !== void 0 ? nd(r) : () => {
   };
   return $o(e, ...n), jo(e, ...o, ...t), s.nextFrame(() => {
-    $o(e, ...t), jo(e, ...a), s.add(nd(e, (l) => ($o(e, ...a, ...o), jo(e, ...n), d(l))));
+    $o(e, ...t), jo(e, ...a), s.add(rd(e, (l) => ($o(e, ...a, ...o), jo(e, ...n), d(l))));
   }), s.add(() => $o(e, ...o, ...t, ...a, ...n)), s.add(() => d("cancelled")), s.dispose;
 }
 function Be(e = "") {
   return e.split(/\s+/).filter((o) => o.length > 1);
 }
-let Ct = Symbol("TransitionContext");
-var rd = ((e) => (e.Visible = "visible", e.Hidden = "hidden", e))(rd || {});
-function sd() {
-  return te(Ct, null) !== null;
-}
+let gt = Symbol("TransitionContext");
+var sd = ((e) => (e.Visible = "visible", e.Hidden = "hidden", e))(sd || {});
 function dd() {
-  let e = te(Ct, null);
-  if (e === null) throw new Error("A <TransitionChild /> is used but it is missing a parent <TransitionRoot />.");
-  return e;
+  return te(gt, null) !== null;
 }
 function id() {
-  let e = te(ct, null);
+  let e = te(gt, null);
   if (e === null) throw new Error("A <TransitionChild /> is used but it is missing a parent <TransitionRoot />.");
   return e;
 }
-let ct = Symbol("NestingContext");
+function ld() {
+  let e = te($t, null);
+  if (e === null) throw new Error("A <TransitionChild /> is used but it is missing a parent <TransitionRoot />.");
+  return e;
+}
+let $t = Symbol("NestingContext");
 function Po(e) {
   return "children" in e ? Po(e.children) : e.value.filter(({ state: o }) => o === "visible").length > 0;
 }
-function Za(e) {
+function Qa(e) {
   let o = k([]), t = k(!1);
-  G(() => t.value = !0), ie(() => t.value = !1);
+  j(() => t.value = !0), ie(() => t.value = !1);
   function a(r, s = ke.Hidden) {
     let d = o.value.findIndex(({ id: l }) => l === r);
-    d !== -1 && (Y(s, { [ke.Unmount]() {
+    d !== -1 && (q(s, { [ke.Unmount]() {
       o.value.splice(d, 1);
     }, [ke.Hidden]() {
       o.value[d].state = "hidden";
@@ -2517,81 +2517,81 @@ function Za(e) {
   }
   return { children: o, register: n, unregister: a };
 }
-let Qa = Ie.RenderStrategy, gt = z({ props: { as: { type: [Object, String], default: "div" }, show: { type: [Boolean], default: null }, unmount: { type: [Boolean], default: !0 }, appear: { type: [Boolean], default: !1 }, enter: { type: [String], default: "" }, enterFrom: { type: [String], default: "" }, enterTo: { type: [String], default: "" }, entered: { type: [String], default: "" }, leave: { type: [String], default: "" }, leaveFrom: { type: [String], default: "" }, leaveTo: { type: [String], default: "" } }, emits: { beforeEnter: () => !0, afterEnter: () => !0, beforeLeave: () => !0, afterLeave: () => !0 }, setup(e, { emit: o, attrs: t, slots: a, expose: n }) {
+let Xa = Ie.RenderStrategy, ft = W({ props: { as: { type: [Object, String], default: "div" }, show: { type: [Boolean], default: null }, unmount: { type: [Boolean], default: !0 }, appear: { type: [Boolean], default: !1 }, enter: { type: [String], default: "" }, enterFrom: { type: [String], default: "" }, enterTo: { type: [String], default: "" }, entered: { type: [String], default: "" }, leave: { type: [String], default: "" }, leaveFrom: { type: [String], default: "" }, leaveTo: { type: [String], default: "" } }, emits: { beforeEnter: () => !0, afterEnter: () => !0, beforeLeave: () => !0, afterLeave: () => !0 }, setup(e, { emit: o, attrs: t, slots: a, expose: n }) {
   let r = k(0);
   function s() {
-    r.value |= Z.Opening, o("beforeEnter");
+    r.value |= Q.Opening, o("beforeEnter");
   }
   function d() {
-    r.value &= ~Z.Opening, o("afterEnter");
+    r.value &= ~Q.Opening, o("afterEnter");
   }
   function l() {
-    r.value |= Z.Closing, o("beforeLeave");
+    r.value |= Q.Closing, o("beforeLeave");
   }
   function i() {
-    r.value &= ~Z.Closing, o("afterLeave");
+    r.value &= ~Q.Closing, o("afterLeave");
   }
-  if (!sd() && bs()) return () => _(Xa, { ...e, onBeforeEnter: s, onAfterEnter: d, onBeforeLeave: l, onAfterLeave: i }, a);
-  let u = k(null), h = N(() => e.unmount ? ke.Unmount : ke.Hidden);
-  n({ el: u, $el: u });
-  let { show: g, appear: f } = dd(), { register: C, unregister: $ } = id(), b = k(g.value ? "visible" : "hidden"), w = { value: !0 }, O = $e(), A = { value: !1 }, S = Za(() => {
+  if (!dd() && Ss()) return () => z(en, { ...e, onBeforeEnter: s, onAfterEnter: d, onBeforeLeave: l, onAfterLeave: i }, a);
+  let h = k(null), u = N(() => e.unmount ? ke.Unmount : ke.Hidden);
+  n({ el: h, $el: h });
+  let { show: g, appear: f } = id(), { register: C, unregister: $ } = ld(), b = k(g.value ? "visible" : "hidden"), M = { value: !0 }, O = $e(), A = { value: !1 }, S = Qa(() => {
     !A.value && b.value !== "hidden" && (b.value = "hidden", $(O), i());
   });
-  G(() => {
+  j(() => {
     let le = C(O);
     ie(le);
   }), de(() => {
-    if (h.value === ke.Hidden && O) {
+    if (u.value === ke.Hidden && O) {
       if (g.value && b.value !== "visible") {
         b.value = "visible";
         return;
       }
-      Y(b.value, { hidden: () => $(O), visible: () => C(O) });
+      q(b.value, { hidden: () => $(O), visible: () => C(O) });
     }
   });
-  let B = Be(e.enter), D = Be(e.enterFrom), I = Be(e.enterTo), X = Be(e.entered), ve = Be(e.leave), be = Be(e.leaveFrom), Me = Be(e.leaveTo);
-  G(() => {
+  let T = Be(e.enter), D = Be(e.enterFrom), K = Be(e.enterTo), X = Be(e.entered), ve = Be(e.leave), be = Be(e.leaveFrom), Me = Be(e.leaveTo);
+  j(() => {
     de(() => {
       if (b.value === "visible") {
-        let le = L(u);
+        let le = L(h);
         if (le instanceof Comment && le.data === "") throw new Error("Did you forget to passthrough the `ref` to the actual DOM node?");
       }
     });
   });
   function Oe(le) {
-    let Pe = w.value && !f.value, he = L(u);
-    !he || !(he instanceof HTMLElement) || Pe || (A.value = !0, g.value && s(), g.value || l(), le(g.value ? Ht(he, B, D, I, X, (Ce) => {
-      A.value = !1, Ce === at.Finished && d();
-    }) : Ht(he, ve, be, Me, X, (Ce) => {
-      A.value = !1, Ce === at.Finished && (Po(S) || (b.value = "hidden", $(O), i()));
+    let Pe = M.value && !f.value, he = L(h);
+    !he || !(he instanceof HTMLElement) || Pe || (A.value = !0, g.value && s(), g.value || l(), le(g.value ? Ut(he, T, D, K, X, (ce) => {
+      A.value = !1, ce === nt.Finished && d();
+    }) : Ut(he, ve, be, Me, X, (ce) => {
+      A.value = !1, ce === nt.Finished && (Po(S) || (b.value = "hidden", $(O), i()));
     })));
   }
-  return G(() => {
+  return j(() => {
     V([g], (le, Pe, he) => {
-      Oe(he), w.value = !1;
+      Oe(he), M.value = !1;
     }, { immediate: !0 });
-  }), se(ct, S), Ia(N(() => Y(b.value, { visible: Z.Open, hidden: Z.Closed }) | r.value)), () => {
-    let { appear: le, show: Pe, enter: he, enterFrom: Ce, enterTo: Se, entered: uo, leave: mo, leaveFrom: K, leaveTo: E, ...R } = e, ue = { ref: u }, me = { ...R, ...f.value && g.value && io.isServer ? { class: T([t.class, R.class, ...B, ...D]) } : {} };
-    return q({ theirProps: me, ourProps: ue, slot: {}, slots: a, attrs: t, features: Qa, visible: b.value === "visible", name: "TransitionChild" });
+  }), se($t, S), Ka(N(() => q(b.value, { visible: Q.Open, hidden: Q.Closed }) | r.value)), () => {
+    let { appear: le, show: Pe, enter: he, enterFrom: ce, enterTo: Se, entered: uo, leave: mo, leaveFrom: G, leaveTo: E, ...R } = e, ue = { ref: h }, me = { ...R, ...f.value && g.value && io.isServer ? { class: B([t.class, R.class, ...T, ...D]) } : {} };
+    return Z({ theirProps: me, ourProps: ue, slot: {}, slots: a, attrs: t, features: Xa, visible: b.value === "visible", name: "TransitionChild" });
   };
-} }), ld = gt, Xa = z({ inheritAttrs: !1, props: { as: { type: [Object, String], default: "div" }, show: { type: [Boolean], default: null }, unmount: { type: [Boolean], default: !0 }, appear: { type: [Boolean], default: !1 }, enter: { type: [String], default: "" }, enterFrom: { type: [String], default: "" }, enterTo: { type: [String], default: "" }, entered: { type: [String], default: "" }, leave: { type: [String], default: "" }, leaveFrom: { type: [String], default: "" }, leaveTo: { type: [String], default: "" } }, emits: { beforeEnter: () => !0, afterEnter: () => !0, beforeLeave: () => !0, afterLeave: () => !0 }, setup(e, { emit: o, attrs: t, slots: a }) {
-  let n = Oo(), r = N(() => e.show === null && n !== null ? (n.value & Z.Open) === Z.Open : e.show);
+} }), hd = ft, en = W({ inheritAttrs: !1, props: { as: { type: [Object, String], default: "div" }, show: { type: [Boolean], default: null }, unmount: { type: [Boolean], default: !0 }, appear: { type: [Boolean], default: !1 }, enter: { type: [String], default: "" }, enterFrom: { type: [String], default: "" }, enterTo: { type: [String], default: "" }, entered: { type: [String], default: "" }, leave: { type: [String], default: "" }, leaveFrom: { type: [String], default: "" }, leaveTo: { type: [String], default: "" } }, emits: { beforeEnter: () => !0, afterEnter: () => !0, beforeLeave: () => !0, afterLeave: () => !0 }, setup(e, { emit: o, attrs: t, slots: a }) {
+  let n = Oo(), r = N(() => e.show === null && n !== null ? (n.value & Q.Open) === Q.Open : e.show);
   de(() => {
     if (![!0, !1].includes(r.value)) throw new Error('A <Transition /> is used but it is missing a `:show="true | false"` prop.');
   });
-  let s = k(r.value ? "visible" : "hidden"), d = Za(() => {
+  let s = k(r.value ? "visible" : "hidden"), d = Qa(() => {
     s.value = "hidden";
   }), l = k(!0), i = { show: r, appear: N(() => e.appear || !l.value) };
-  return G(() => {
+  return j(() => {
     de(() => {
       l.value = !1, r.value ? s.value = "visible" : Po(d) || (s.value = "hidden");
     });
-  }), se(ct, d), se(Ct, i), () => {
-    let u = mt(e, ["show", "appear", "unmount", "onBeforeEnter", "onBeforeLeave", "onAfterEnter", "onAfterLeave"]), h = { unmount: e.unmount };
-    return q({ ourProps: { ...h, as: "template" }, theirProps: {}, slot: {}, slots: { ...a, default: () => [_(ld, { onBeforeEnter: () => o("beforeEnter"), onAfterEnter: () => o("afterEnter"), onBeforeLeave: () => o("beforeLeave"), onAfterLeave: () => o("afterLeave"), ...t, ...h, ...u }, a.default)] }, attrs: {}, features: Qa, visible: s.value === "visible", name: "Transition" });
+  }), se($t, d), se(gt, i), () => {
+    let h = ct(e, ["show", "appear", "unmount", "onBeforeEnter", "onBeforeLeave", "onAfterEnter", "onAfterLeave"]), u = { unmount: e.unmount };
+    return Z({ ourProps: { ...u, as: "template" }, theirProps: {}, slot: {}, slots: { ...a, default: () => [z(hd, { onBeforeEnter: () => o("beforeEnter"), onAfterEnter: () => o("afterEnter"), onBeforeLeave: () => o("beforeLeave"), onAfterLeave: () => o("afterLeave"), ...t, ...u, ...h }, a.default)] }, attrs: {}, features: Xa, visible: s.value === "visible", name: "Transition" });
   };
 } });
-const hd = { class: "holder" }, ud = { class: "" }, md = { class: "icon" }, Cd = { class: "flex" }, cd = {
+const ud = { class: "holder" }, md = { class: "" }, Cd = { class: "icon" }, cd = { class: "flex" }, gd = {
   __name: "T-Gender-Input",
   props: {
     gender: {
@@ -2617,18 +2617,18 @@ const hd = { class: "holder" }, ud = { class: "" }, md = { class: "icon" }, Cd =
       class: "t-gender-input"
     }, {
       default: x(() => [
-        M(c(Je), { class: "label" }, {
+        w(c(Ze), { class: "label" }, {
           default: x(() => [
-            ce(v(c(t)("passengers.gender.label")), 1)
+            Ce(v(c(t)("passengers.gender.label")), 1)
           ]),
           _: 1
         }),
-        m("div", hd, [
-          M(c(Ze), { class: "button" }, {
+        m("div", ud, [
+          w(c(Je), { class: "button" }, {
             default: x(() => [
-              m("span", ud, v(s.value ? c(t)("passengers.gender.options." + s.value.value.toLowerCase()) : c(t)("passengers.gender.options.placeholder")), 1),
-              m("span", md, [
-                M(c(Ye), {
+              m("span", md, v(s.value ? c(t)("passengers.gender.options." + s.value.value.toLowerCase()) : c(t)("passengers.gender.options.placeholder")), 1),
+              m("span", Cd, [
+                w(c(Ye), {
                   class: "h-5 w-5 text-gray-400",
                   "aria-hidden": "true"
                 })
@@ -2636,33 +2636,33 @@ const hd = { class: "holder" }, ud = { class: "" }, md = { class: "icon" }, Cd =
             ]),
             _: 1
           }),
-          M(_e, {
+          w(_e, {
             "leave-active-class": "transition ease-in duration-100",
             "leave-from-class": "opacity-100",
             "leave-to-class": "opacity-0"
           }, {
             default: x(() => [
-              M(c(Qe), { class: "options" }, {
+              w(c(Qe), { class: "options" }, {
                 default: x(() => [
-                  (p(), y(F, null, Q(r, (i) => M(c(Xe), {
+                  (p(), y(I, null, U(r, (i) => w(c(Xe), {
                     as: "template",
                     key: i.value,
                     value: i
                   }, {
-                    default: x(({ active: u, selected: h }) => [
+                    default: x(({ active: h, selected: u }) => [
                       m("li", {
-                        class: T([u ? "bg-taa-brand-blue text-white" : "text-gray-900", "relative cursor-default select-none py-2 pl-3 pr-9"])
+                        class: B([h ? "bg-taa-brand-blue text-white" : "text-gray-900", "relative cursor-default select-none py-2 pl-3 pr-9"])
                       }, [
-                        m("div", Cd, [
+                        m("div", cd, [
                           m("span", {
-                            class: T([h ? "font-semibold" : "font-normal", "truncate"])
+                            class: B([u ? "font-semibold" : "font-normal", "truncate"])
                           }, v(c(t)("passengers.gender.options." + i.value.toLowerCase())), 3)
                         ]),
-                        h ? (p(), y("span", {
+                        u ? (p(), y("span", {
                           key: 0,
-                          class: T([u ? "text-white" : "text-brand-blue", "absolute inset-y-0 right-0 flex items-center pr-4"])
+                          class: B([h ? "text-white" : "text-brand-blue", "absolute inset-y-0 right-0 flex items-center pr-4"])
                         }, [
-                          M(c(We), {
+                          w(c(We), {
                             class: "h-5 w-5",
                             "aria-hidden": "true"
                           })
@@ -2682,16 +2682,102 @@ const hd = { class: "holder" }, ud = { class: "" }, md = { class: "icon" }, Cd =
       _: 1
     }, 8, ["modelValue"]));
   }
-}, gd = { class: "t-name-input" }, $d = { class: "holder" }, fd = {
+}, $d = { class: "hidden lg:flex gap-2 justify-between items-center text-white text-sm" }, fd = ["onClick"], pd = {
+  id: "journey-type-holder",
+  class: "relative inline-block lg:hidden"
+}, yd = {
+  key: 0,
+  class: "absolute left-0 z-50 mt-3 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none",
+  role: "menu",
+  "aria-orientation": "vertical",
+  "aria-labelledby": "menu-button",
+  tabindex: "-1"
+}, vd = {
+  class: "py-1 px-1",
+  role: "none"
+}, bd = ["onClick"], eC = {
+  __name: "T-Journey-Type",
+  props: {
+    disabled: {
+      type: Boolean,
+      default: !1
+    },
+    current: {
+      type: String,
+      default: null
+    },
+    options: {
+      type: Array,
+      default: () => []
+    }
+  },
+  emits: ["change"],
+  setup(e, { emit: o }) {
+    const t = e, a = o, n = k(!1);
+    function r(d) {
+      let l = d.target, i = document.getElementById("journey-type-holder");
+      l !== i && !i.contains(l) && s();
+    }
+    function s(d) {
+      t.disabled || (d && d !== t.current && a("change", d), n.value && document.removeEventListener("click", r), n.value || document.addEventListener("click", r), n.value = !n.value);
+    }
+    return (d, l) => (p(), y(I, null, [
+      m("div", $d, [
+        (p(!0), y(I, null, U(e.options, (i) => (p(), y("button", {
+          onClick: () => s(i.value),
+          class: B(["text-center text-nowrap text-sm px-3 py-0.5 grow flex-1 rounded-full focus:ring-taa-brand-blue focus-within:border-white", { "bg-taa-brand-blue text-neutral-100": e.current === i.value, "bg-white text-neutral-700": e.current !== i.value }])
+        }, v(i.label), 11, fd))), 256))
+      ]),
+      m("div", pd, [
+        m("button", {
+          type: "button",
+          "aria-expanded": "true",
+          "aria-haspopup": "true",
+          class: "flex gap-2 items-center bg-white text-neutral-700 text-center text-sm px-4 py-0.5 grow flex-1 rounded-full focus:ring-taa-brand-blue focus-within:border-white",
+          onClick: l[0] || (l[0] = () => s())
+        }, [
+          (p(!0), y(I, null, U(e.options, (i) => (p(), y("span", {
+            class: B({ hidden: i.value !== e.current })
+          }, v(i.value === e.current ? i.label : ""), 3))), 256)),
+          l[1] || (l[1] = m("svg", {
+            xmlns: "http://www.w3.org/2000/svg",
+            fill: "none",
+            viewBox: "0 0 24 24",
+            "stroke-width": "1.5",
+            stroke: "currentColor",
+            class: "w-4 h-4"
+          }, [
+            m("path", {
+              "stroke-linecap": "round",
+              "stroke-linejoin": "round",
+              d: "M19.5 8.25l-7.5 7.5-7.5-7.5"
+            })
+          ], -1))
+        ]),
+        n.value ? (p(), y("div", yd, [
+          m("div", vd, [
+            (p(!0), y(I, null, U(e.options, (i) => (p(), y("button", {
+              key: i.value,
+              class: "w-full text-left text-gray-700 block rounded-xl px-4 py-1 text-sm hover:bg-taa-brand-blue/30",
+              role: "menuitem",
+              onClick: () => s(i.value),
+              tabindex: "-1"
+            }, v(i.label), 9, bd))), 128))
+          ])
+        ])) : P("", !0)
+      ])
+    ], 64));
+  }
+}, Sd = { class: "t-name-input" }, Ad = { class: "holder" }, Nd = {
   for: "firstName",
   class: "label"
-}, pd = ["placeholder", "value"], yd = {
+}, kd = ["placeholder", "value"], wd = {
   for: "lastName",
   class: "label"
-}, vd = ["placeholder", "value"], bd = {
+}, Md = ["placeholder", "value"], Od = {
   key: 0,
   class: "px-3 text-sm text-red-500"
-}, Sd = {
+}, Pd = {
   __name: "T-Name-Input",
   props: {
     firstName: {
@@ -2720,15 +2806,15 @@ const hd = { class: "holder" }, ud = { class: "" }, md = { class: "icon" }, Cd =
         minLength: ze(2)
       }
     }, t), n = N(() => a.value.firstName.$dirty ? !a.value.firstName.$invalid : !0), r = N(() => a.value.lastName.$dirty ? !a.value.lastName.$invalid : !0);
-    return (s, d) => (p(), y("div", gd, [
+    return (s, d) => (p(), y("div", Sd, [
       m("h2", {
-        class: T({ title: !0, valid: c(a).$dirty && r.value && n.value })
+        class: B({ title: !0, valid: c(a).$dirty && r.value && n.value })
       }, v(s.$t("passengers.name.title")), 3),
-      m("div", $d, [
+      m("div", Ad, [
         m("div", {
-          class: T({ "first-name": !0, error: !n.value, valid: c(a).firstName.$dirty && n.value })
+          class: B({ "first-name": !0, error: !n.value, valid: c(a).firstName.$dirty && n.value })
         }, [
-          m("label", fd, v(s.$t("passengers.name.firstNameLabel")), 1),
+          m("label", Nd, v(s.$t("passengers.name.firstNameLabel")), 1),
           m("input", {
             id: "firstName",
             type: "text",
@@ -2739,12 +2825,12 @@ const hd = { class: "holder" }, ud = { class: "" }, md = { class: "icon" }, Cd =
             onBlur: d[0] || (d[0] = (l) => c(a).firstName.$touch()),
             value: e.firstName,
             onInput: d[1] || (d[1] = (l) => s.$emit("update:first-name", l.target.value))
-          }, null, 40, pd)
+          }, null, 40, kd)
         ], 2),
         m("div", {
-          class: T({ "last-name": !0, error: !r.value, valid: c(a).lastName.$dirty && r.value })
+          class: B({ "last-name": !0, error: !r.value, valid: c(a).lastName.$dirty && r.value })
         }, [
-          m("label", yd, v(s.$t("passengers.name.lastNameLabel")), 1),
+          m("label", wd, v(s.$t("passengers.name.lastNameLabel")), 1),
           m("input", {
             id: "lastName",
             type: "text",
@@ -2755,18 +2841,18 @@ const hd = { class: "holder" }, ud = { class: "" }, md = { class: "icon" }, Cd =
             required: "",
             value: e.lastName,
             onInput: d[3] || (d[3] = (l) => s.$emit("update:last-name", l.target.value))
-          }, null, 40, vd)
+          }, null, 40, Md)
         ], 2)
       ]),
-      c(a).$errors.length > 0 ? (p(), y("div", bd, [
-        (p(!0), y(F, null, Q(c(a).$errors, (l) => (p(), y("p", {
+      c(a).$errors.length > 0 ? (p(), y("div", Od, [
+        (p(!0), y(I, null, U(c(a).$errors, (l) => (p(), y("p", {
           key: l.$uid
         }, v(s.$t("passengers.errors." + l.$property + "." + l.$validator)), 1))), 128))
       ])) : P("", !0)
     ]));
   }
 };
-class $t {
+class pt {
   constructor(o) {
     this.travelerId = o, this.name = {
       firstName: "",
@@ -2798,11 +2884,11 @@ class $t {
     };
   }
   static fromTraveler(o) {
-    let t = new $t(o.travelerId);
+    let t = new pt(o.travelerId);
     return t.dateOfBirth = o.dateOfBirth, t.gender = o.gender, t;
   }
 }
-const Ad = [
+const Bd = [
   [
     "Afghanistan (‫افغانستان‬‎)",
     "af",
@@ -4108,14 +4194,14 @@ const Ad = [
     1,
     ["18"]
   ]
-], Nd = Ad.map(([e, o, t, a = 0, n = null]) => ({
+], Td = Bd.map(([e, o, t, a = 0, n = null]) => ({
   name: e,
   iso2: o.toUpperCase(),
   dialCode: t,
   priority: a,
   areaCodes: n
 }));
-function kd() {
+function Dd() {
   return fetch("https://ip2c.org/s").then((e) => e.text()).then((e) => {
     const o = (e || "").toString();
     if (!o || o[0] !== "1")
@@ -4123,7 +4209,7 @@ function kd() {
     return o.substr(2, 2);
   });
 }
-function wd(e, o) {
+function Ld(e, o) {
   if (e.setSelectionRange)
     e.focus(), e.setSelectionRange(o, o);
   else if (e.createTextRange) {
@@ -4131,11 +4217,11 @@ function wd(e, o) {
     t.collapse(!0), t.moveEnd("character", o), t.moveStart("character", o), t.select();
   }
 }
-const Md = [
+const xd = [
   {
     name: "allCountries",
     type: Array,
-    default: Nd,
+    default: Td,
     description: "All countries that are used in <code>libphonenumber-js</code>, can be overridden by this prop",
     inDemo: !1
   },
@@ -4376,42 +4462,42 @@ const Md = [
     description: "Only allow valid characters in a phone number (will also verify in <code>mounted</code>, so phone number with invalid characters will be shown as an empty string)",
     inDemo: !1
   }
-], Od = [...Md].reduce((e, o) => {
+], Ed = [...xd].reduce((e, o) => {
   if (o.name.includes(".")) {
     const [t, a] = o.name.split(".");
     e[t] ? Object.assign(e[t], { [a]: o.default }) : Object.assign(e, { [t]: { [a]: o.default } });
   } else
     Object.assign(e, { [o.name]: o.default });
   return e;
-}, {}), Vt = {
-  options: { ...Od }
-}, Pd = { version: 4, country_calling_codes: { 1: ["US", "AG", "AI", "AS", "BB", "BM", "BS", "CA", "DM", "DO", "GD", "GU", "JM", "KN", "KY", "LC", "MP", "MS", "PR", "SX", "TC", "TT", "VC", "VG", "VI"], 7: ["RU", "KZ"], 20: ["EG"], 27: ["ZA"], 30: ["GR"], 31: ["NL"], 32: ["BE"], 33: ["FR"], 34: ["ES"], 36: ["HU"], 39: ["IT", "VA"], 40: ["RO"], 41: ["CH"], 43: ["AT"], 44: ["GB", "GG", "IM", "JE"], 45: ["DK"], 46: ["SE"], 47: ["NO", "SJ"], 48: ["PL"], 49: ["DE"], 51: ["PE"], 52: ["MX"], 53: ["CU"], 54: ["AR"], 55: ["BR"], 56: ["CL"], 57: ["CO"], 58: ["VE"], 60: ["MY"], 61: ["AU", "CC", "CX"], 62: ["ID"], 63: ["PH"], 64: ["NZ"], 65: ["SG"], 66: ["TH"], 81: ["JP"], 82: ["KR"], 84: ["VN"], 86: ["CN"], 90: ["TR"], 91: ["IN"], 92: ["PK"], 93: ["AF"], 94: ["LK"], 95: ["MM"], 98: ["IR"], 211: ["SS"], 212: ["MA", "EH"], 213: ["DZ"], 216: ["TN"], 218: ["LY"], 220: ["GM"], 221: ["SN"], 222: ["MR"], 223: ["ML"], 224: ["GN"], 225: ["CI"], 226: ["BF"], 227: ["NE"], 228: ["TG"], 229: ["BJ"], 230: ["MU"], 231: ["LR"], 232: ["SL"], 233: ["GH"], 234: ["NG"], 235: ["TD"], 236: ["CF"], 237: ["CM"], 238: ["CV"], 239: ["ST"], 240: ["GQ"], 241: ["GA"], 242: ["CG"], 243: ["CD"], 244: ["AO"], 245: ["GW"], 246: ["IO"], 247: ["AC"], 248: ["SC"], 249: ["SD"], 250: ["RW"], 251: ["ET"], 252: ["SO"], 253: ["DJ"], 254: ["KE"], 255: ["TZ"], 256: ["UG"], 257: ["BI"], 258: ["MZ"], 260: ["ZM"], 261: ["MG"], 262: ["RE", "YT"], 263: ["ZW"], 264: ["NA"], 265: ["MW"], 266: ["LS"], 267: ["BW"], 268: ["SZ"], 269: ["KM"], 290: ["SH", "TA"], 291: ["ER"], 297: ["AW"], 298: ["FO"], 299: ["GL"], 350: ["GI"], 351: ["PT"], 352: ["LU"], 353: ["IE"], 354: ["IS"], 355: ["AL"], 356: ["MT"], 357: ["CY"], 358: ["FI", "AX"], 359: ["BG"], 370: ["LT"], 371: ["LV"], 372: ["EE"], 373: ["MD"], 374: ["AM"], 375: ["BY"], 376: ["AD"], 377: ["MC"], 378: ["SM"], 380: ["UA"], 381: ["RS"], 382: ["ME"], 383: ["XK"], 385: ["HR"], 386: ["SI"], 387: ["BA"], 389: ["MK"], 420: ["CZ"], 421: ["SK"], 423: ["LI"], 500: ["FK"], 501: ["BZ"], 502: ["GT"], 503: ["SV"], 504: ["HN"], 505: ["NI"], 506: ["CR"], 507: ["PA"], 508: ["PM"], 509: ["HT"], 590: ["GP", "BL", "MF"], 591: ["BO"], 592: ["GY"], 593: ["EC"], 594: ["GF"], 595: ["PY"], 596: ["MQ"], 597: ["SR"], 598: ["UY"], 599: ["CW", "BQ"], 670: ["TL"], 672: ["NF"], 673: ["BN"], 674: ["NR"], 675: ["PG"], 676: ["TO"], 677: ["SB"], 678: ["VU"], 679: ["FJ"], 680: ["PW"], 681: ["WF"], 682: ["CK"], 683: ["NU"], 685: ["WS"], 686: ["KI"], 687: ["NC"], 688: ["TV"], 689: ["PF"], 690: ["TK"], 691: ["FM"], 692: ["MH"], 850: ["KP"], 852: ["HK"], 853: ["MO"], 855: ["KH"], 856: ["LA"], 880: ["BD"], 886: ["TW"], 960: ["MV"], 961: ["LB"], 962: ["JO"], 963: ["SY"], 964: ["IQ"], 965: ["KW"], 966: ["SA"], 967: ["YE"], 968: ["OM"], 970: ["PS"], 971: ["AE"], 972: ["IL"], 973: ["BH"], 974: ["QA"], 975: ["BT"], 976: ["MN"], 977: ["NP"], 992: ["TJ"], 993: ["TM"], 994: ["AZ"], 995: ["GE"], 996: ["KG"], 998: ["UZ"] }, countries: { AC: ["247", "00", "(?:[01589]\\d|[46])\\d{4}", [5, 6]], AD: ["376", "00", "(?:1|6\\d)\\d{7}|[135-9]\\d{5}", [6, 8, 9], [["(\\d{3})(\\d{3})", "$1 $2", ["[135-9]"]], ["(\\d{4})(\\d{4})", "$1 $2", ["1"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["6"]]]], AE: ["971", "00", "(?:[4-7]\\d|9[0-689])\\d{7}|800\\d{2,9}|[2-4679]\\d{7}", [5, 6, 7, 8, 9, 10, 11, 12], [["(\\d{3})(\\d{2,9})", "$1 $2", ["60|8"]], ["(\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["[236]|[479][2-8]"], "0$1"], ["(\\d{3})(\\d)(\\d{5})", "$1 $2 $3", ["[479]"]], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["5"], "0$1"]], "0"], AF: ["93", "00", "[2-7]\\d{8}", [9], [["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[2-7]"], "0$1"]], "0"], AG: ["1", "011", "(?:268|[58]\\d\\d|900)\\d{7}", [10], 0, "1", 0, "([457]\\d{6})$|1", "268$1", 0, "268"], AI: ["1", "011", "(?:264|[58]\\d\\d|900)\\d{7}", [10], 0, "1", 0, "([2457]\\d{6})$|1", "264$1", 0, "264"], AL: ["355", "00", "(?:700\\d\\d|900)\\d{3}|8\\d{5,7}|(?:[2-5]|6\\d)\\d{7}", [6, 7, 8, 9], [["(\\d{3})(\\d{3,4})", "$1 $2", ["80|9"], "0$1"], ["(\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["4[2-6]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[2358][2-5]|4"], "0$1"], ["(\\d{3})(\\d{5})", "$1 $2", ["[23578]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["6"], "0$1"]], "0"], AM: ["374", "00", "(?:[1-489]\\d|55|60|77)\\d{6}", [8], [["(\\d{3})(\\d{2})(\\d{3})", "$1 $2 $3", ["[89]0"], "0 $1"], ["(\\d{3})(\\d{5})", "$1 $2", ["2|3[12]"], "(0$1)"], ["(\\d{2})(\\d{6})", "$1 $2", ["1|47"], "(0$1)"], ["(\\d{2})(\\d{6})", "$1 $2", ["[3-9]"], "0$1"]], "0"], AO: ["244", "00", "[29]\\d{8}", [9], [["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[29]"]]]], AR: ["54", "00", "(?:11|[89]\\d\\d)\\d{8}|[2368]\\d{9}", [10, 11], [["(\\d{4})(\\d{2})(\\d{4})", "$1 $2-$3", ["2(?:2[024-9]|3[0-59]|47|6[245]|9[02-8])|3(?:3[28]|4[03-9]|5[2-46-8]|7[1-578]|8[2-9])", "2(?:[23]02|6(?:[25]|4[6-8])|9(?:[02356]|4[02568]|72|8[23]))|3(?:3[28]|4(?:[04679]|3[5-8]|5[4-68]|8[2379])|5(?:[2467]|3[237]|8[2-5])|7[1-578]|8(?:[2469]|3[2578]|5[4-8]|7[36-8]|8[5-8]))|2(?:2[24-9]|3[1-59]|47)", "2(?:[23]02|6(?:[25]|4(?:64|[78]))|9(?:[02356]|4(?:[0268]|5[2-6])|72|8[23]))|3(?:3[28]|4(?:[04679]|3[78]|5(?:4[46]|8)|8[2379])|5(?:[2467]|3[237]|8[23])|7[1-578]|8(?:[2469]|3[278]|5[56][46]|86[3-6]))|2(?:2[24-9]|3[1-59]|47)|38(?:[58][78]|7[378])|3(?:4[35][56]|58[45]|8(?:[38]5|54|76))[4-6]", "2(?:[23]02|6(?:[25]|4(?:64|[78]))|9(?:[02356]|4(?:[0268]|5[2-6])|72|8[23]))|3(?:3[28]|4(?:[04679]|3(?:5(?:4[0-25689]|[56])|[78])|58|8[2379])|5(?:[2467]|3[237]|8(?:[23]|4(?:[45]|60)|5(?:4[0-39]|5|64)))|7[1-578]|8(?:[2469]|3[278]|54(?:4|5[13-7]|6[89])|86[3-6]))|2(?:2[24-9]|3[1-59]|47)|38(?:[58][78]|7[378])|3(?:454|85[56])[46]|3(?:4(?:36|5[56])|8(?:[38]5|76))[4-6]"], "0$1", 1], ["(\\d{2})(\\d{4})(\\d{4})", "$1 $2-$3", ["1"], "0$1", 1], ["(\\d{3})(\\d{3})(\\d{4})", "$1-$2-$3", ["[68]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2-$3", ["[23]"], "0$1", 1], ["(\\d)(\\d{4})(\\d{2})(\\d{4})", "$2 15-$3-$4", ["9(?:2[2-469]|3[3-578])", "9(?:2(?:2[024-9]|3[0-59]|47|6[245]|9[02-8])|3(?:3[28]|4[03-9]|5[2-46-8]|7[1-578]|8[2-9]))", "9(?:2(?:[23]02|6(?:[25]|4[6-8])|9(?:[02356]|4[02568]|72|8[23]))|3(?:3[28]|4(?:[04679]|3[5-8]|5[4-68]|8[2379])|5(?:[2467]|3[237]|8[2-5])|7[1-578]|8(?:[2469]|3[2578]|5[4-8]|7[36-8]|8[5-8])))|92(?:2[24-9]|3[1-59]|47)", "9(?:2(?:[23]02|6(?:[25]|4(?:64|[78]))|9(?:[02356]|4(?:[0268]|5[2-6])|72|8[23]))|3(?:3[28]|4(?:[04679]|3[78]|5(?:4[46]|8)|8[2379])|5(?:[2467]|3[237]|8[23])|7[1-578]|8(?:[2469]|3[278]|5(?:[56][46]|[78])|7[378]|8(?:6[3-6]|[78]))))|92(?:2[24-9]|3[1-59]|47)|93(?:4[35][56]|58[45]|8(?:[38]5|54|76))[4-6]", "9(?:2(?:[23]02|6(?:[25]|4(?:64|[78]))|9(?:[02356]|4(?:[0268]|5[2-6])|72|8[23]))|3(?:3[28]|4(?:[04679]|3(?:5(?:4[0-25689]|[56])|[78])|5(?:4[46]|8)|8[2379])|5(?:[2467]|3[237]|8(?:[23]|4(?:[45]|60)|5(?:4[0-39]|5|64)))|7[1-578]|8(?:[2469]|3[278]|5(?:4(?:4|5[13-7]|6[89])|[56][46]|[78])|7[378]|8(?:6[3-6]|[78]))))|92(?:2[24-9]|3[1-59]|47)|93(?:4(?:36|5[56])|8(?:[38]5|76))[4-6]"], "0$1", 0, "$1 $2 $3-$4"], ["(\\d)(\\d{2})(\\d{4})(\\d{4})", "$2 15-$3-$4", ["91"], "0$1", 0, "$1 $2 $3-$4"], ["(\\d{3})(\\d{3})(\\d{5})", "$1-$2-$3", ["8"], "0$1"], ["(\\d)(\\d{3})(\\d{3})(\\d{4})", "$2 15-$3-$4", ["9"], "0$1", 0, "$1 $2 $3-$4"]], "0", 0, "0?(?:(11|2(?:2(?:02?|[13]|2[13-79]|4[1-6]|5[2457]|6[124-8]|7[1-4]|8[13-6]|9[1267])|3(?:02?|1[467]|2[03-6]|3[13-8]|[49][2-6]|5[2-8]|[67])|4(?:7[3-578]|9)|6(?:[0136]|2[24-6]|4[6-8]?|5[15-8])|80|9(?:0[1-3]|[19]|2\\d|3[1-6]|4[02568]?|5[2-4]|6[2-46]|72?|8[23]?))|3(?:3(?:2[79]|6|8[2578])|4(?:0[0-24-9]|[12]|3[5-8]?|4[24-7]|5[4-68]?|6[02-9]|7[126]|8[2379]?|9[1-36-8])|5(?:1|2[1245]|3[237]?|4[1-46-9]|6[2-4]|7[1-6]|8[2-5]?)|6[24]|7(?:[069]|1[1568]|2[15]|3[145]|4[13]|5[14-8]|7[2-57]|8[126])|8(?:[01]|2[15-7]|3[2578]?|4[13-6]|5[4-8]?|6[1-357-9]|7[36-8]?|8[5-8]?|9[124])))15)?", "9$1"], AS: ["1", "011", "(?:[58]\\d\\d|684|900)\\d{7}", [10], 0, "1", 0, "([267]\\d{6})$|1", "684$1", 0, "684"], AT: ["43", "00", "1\\d{3,12}|2\\d{6,12}|43(?:(?:0\\d|5[02-9])\\d{3,9}|2\\d{4,5}|[3467]\\d{4}|8\\d{4,6}|9\\d{4,7})|5\\d{4,12}|8\\d{7,12}|9\\d{8,12}|(?:[367]\\d|4[0-24-9])\\d{4,11}", [4, 5, 6, 7, 8, 9, 10, 11, 12, 13], [["(\\d)(\\d{3,12})", "$1 $2", ["1(?:11|[2-9])"], "0$1"], ["(\\d{3})(\\d{2})", "$1 $2", ["517"], "0$1"], ["(\\d{2})(\\d{3,5})", "$1 $2", ["5[079]"], "0$1"], ["(\\d{3})(\\d{3,10})", "$1 $2", ["(?:31|4)6|51|6(?:5[0-3579]|[6-9])|7(?:20|32|8)|[89]"], "0$1"], ["(\\d{4})(\\d{3,9})", "$1 $2", ["[2-467]|5[2-6]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["5"], "0$1"], ["(\\d{2})(\\d{4})(\\d{4,7})", "$1 $2 $3", ["5"], "0$1"]], "0"], AU: ["61", "001[14-689]|14(?:1[14]|34|4[17]|[56]6|7[47]|88)0011", "1(?:[0-79]\\d{7}(?:\\d(?:\\d{2})?)?|8[0-24-9]\\d{7})|[2-478]\\d{8}|1\\d{4,7}", [5, 6, 7, 8, 9, 10, 12], [["(\\d{2})(\\d{3,4})", "$1 $2", ["16"], "0$1"], ["(\\d{2})(\\d{3})(\\d{2,4})", "$1 $2 $3", ["16"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["14|4"], "0$1"], ["(\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["[2378]"], "(0$1)"], ["(\\d{4})(\\d{3})(\\d{3})", "$1 $2 $3", ["1(?:30|[89])"]]], "0", 0, "(183[12])|0", 0, 0, 0, [["(?:(?:2(?:[0-26-9]\\d|3[0-8]|4[02-9]|5[0135-9])|3(?:[0-3589]\\d|4[0-578]|6[1-9]|7[0-35-9])|7(?:[013-57-9]\\d|2[0-8]))\\d{3}|8(?:51(?:0(?:0[03-9]|[12479]\\d|3[2-9]|5[0-8]|6[1-9]|8[0-7])|1(?:[0235689]\\d|1[0-69]|4[0-589]|7[0-47-9])|2(?:0[0-79]|[18][13579]|2[14-9]|3[0-46-9]|[4-6]\\d|7[89]|9[0-4]))|(?:6[0-8]|[78]\\d)\\d{3}|9(?:[02-9]\\d{3}|1(?:(?:[0-58]\\d|6[0135-9])\\d|7(?:0[0-24-9]|[1-9]\\d)|9(?:[0-46-9]\\d|5[0-79])))))\\d{3}", [9]], ["4(?:(?:79|94)[01]|83[0-389])\\d{5}|4(?:[0-3]\\d|4[047-9]|5[0-25-9]|6[0-26-9]|7[02-8]|8[0-24-9]|9[0-37-9])\\d{6}", [9]], ["180(?:0\\d{3}|2)\\d{3}", [7, 10]], ["190[0-26]\\d{6}", [10]], 0, 0, 0, ["163\\d{2,6}", [5, 6, 7, 8, 9]], ["14(?:5(?:1[0458]|[23][458])|71\\d)\\d{4}", [9]], ["13(?:00\\d{6}(?:\\d{2})?|45[0-4]\\d{3})|13\\d{4}", [6, 8, 10, 12]]], "0011"], AW: ["297", "00", "(?:[25-79]\\d\\d|800)\\d{4}", [7], [["(\\d{3})(\\d{4})", "$1 $2", ["[25-9]"]]]], AX: ["358", "00|99(?:[01469]|5(?:[14]1|3[23]|5[59]|77|88|9[09]))", "2\\d{4,9}|35\\d{4,5}|(?:60\\d\\d|800)\\d{4,6}|7\\d{5,11}|(?:[14]\\d|3[0-46-9]|50)\\d{4,8}", [5, 6, 7, 8, 9, 10, 11, 12], 0, "0", 0, 0, 0, 0, "18", 0, "00"], AZ: ["994", "00", "365\\d{6}|(?:[124579]\\d|60|88)\\d{7}", [9], [["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["90"], "0$1"], ["(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["1[28]|2|365|46", "1[28]|2|365[45]|46", "1[28]|2|365(?:4|5[02])|46"], "(0$1)"], ["(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[13-9]"], "0$1"]], "0"], BA: ["387", "00", "6\\d{8}|(?:[35689]\\d|49|70)\\d{6}", [8, 9], [["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["6[1-3]|[7-9]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3})", "$1 $2-$3", ["[3-5]|6[56]"], "0$1"], ["(\\d{2})(\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3 $4", ["6"], "0$1"]], "0"], BB: ["1", "011", "(?:246|[58]\\d\\d|900)\\d{7}", [10], 0, "1", 0, "([2-9]\\d{6})$|1", "246$1", 0, "246"], BD: ["880", "00", "[1-469]\\d{9}|8[0-79]\\d{7,8}|[2-79]\\d{8}|[2-9]\\d{7}|[3-9]\\d{6}|[57-9]\\d{5}", [6, 7, 8, 9, 10], [["(\\d{2})(\\d{4,6})", "$1-$2", ["31[5-8]|[459]1"], "0$1"], ["(\\d{3})(\\d{3,7})", "$1-$2", ["3(?:[67]|8[013-9])|4(?:6[168]|7|[89][18])|5(?:6[128]|9)|6(?:[15]|28|4[14])|7[2-589]|8(?:0[014-9]|[12])|9[358]|(?:3[2-5]|4[235]|5[2-578]|6[0389]|76|8[3-7]|9[24])1|(?:44|66)[01346-9]"], "0$1"], ["(\\d{4})(\\d{3,6})", "$1-$2", ["[13-9]|22"], "0$1"], ["(\\d)(\\d{7,8})", "$1-$2", ["2"], "0$1"]], "0"], BE: ["32", "00", "4\\d{8}|[1-9]\\d{7}", [8, 9], [["(\\d{3})(\\d{2})(\\d{3})", "$1 $2 $3", ["(?:80|9)0"], "0$1"], ["(\\d)(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[239]|4[23]"], "0$1"], ["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[15-8]"], "0$1"], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["4"], "0$1"]], "0"], BF: ["226", "00", "[025-7]\\d{7}", [8], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[025-7]"]]]], BG: ["359", "00", "00800\\d{7}|[2-7]\\d{6,7}|[89]\\d{6,8}|2\\d{5}", [6, 7, 8, 9, 12], [["(\\d)(\\d)(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["2"], "0$1"], ["(\\d{3})(\\d{4})", "$1 $2", ["43[1-6]|70[1-9]"], "0$1"], ["(\\d)(\\d{3})(\\d{3,4})", "$1 $2 $3", ["2"], "0$1"], ["(\\d{2})(\\d{3})(\\d{2,3})", "$1 $2 $3", ["[356]|4[124-7]|7[1-9]|8[1-6]|9[1-7]"], "0$1"], ["(\\d{3})(\\d{2})(\\d{3})", "$1 $2 $3", ["(?:70|8)0"], "0$1"], ["(\\d{3})(\\d{3})(\\d{2})", "$1 $2 $3", ["43[1-7]|7"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[48]|9[08]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["9"], "0$1"]], "0"], BH: ["973", "00", "[136-9]\\d{7}", [8], [["(\\d{4})(\\d{4})", "$1 $2", ["[13679]|8[02-4679]"]]]], BI: ["257", "00", "(?:[267]\\d|31)\\d{6}", [8], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[2367]"]]]], BJ: ["229", "00", "[24-689]\\d{7}", [8], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[24-689]"]]]], BL: ["590", "00", "590\\d{6}|(?:69|80|9\\d)\\d{7}", [9], 0, "0", 0, 0, 0, 0, 0, [["590(?:2[7-9]|3[3-7]|5[12]|87)\\d{4}"], ["69(?:0\\d\\d|1(?:2[2-9]|3[0-5]))\\d{4}"], ["80[0-5]\\d{6}"], 0, 0, 0, 0, 0, ["9(?:(?:395|76[018])\\d|475[0-5])\\d{4}"]]], BM: ["1", "011", "(?:441|[58]\\d\\d|900)\\d{7}", [10], 0, "1", 0, "([2-9]\\d{6})$|1", "441$1", 0, "441"], BN: ["673", "00", "[2-578]\\d{6}", [7], [["(\\d{3})(\\d{4})", "$1 $2", ["[2-578]"]]]], BO: ["591", "00(?:1\\d)?", "(?:[2-467]\\d\\d|8001)\\d{5}", [8, 9], [["(\\d)(\\d{7})", "$1 $2", ["[23]|4[46]"]], ["(\\d{8})", "$1", ["[67]"]], ["(\\d{3})(\\d{2})(\\d{4})", "$1 $2 $3", ["8"]]], "0", 0, "0(1\\d)?"], BQ: ["599", "00", "(?:[34]1|7\\d)\\d{5}", [7], 0, 0, 0, 0, 0, 0, "[347]"], BR: ["55", "00(?:1[245]|2[1-35]|31|4[13]|[56]5|99)", "(?:[1-46-9]\\d\\d|5(?:[0-46-9]\\d|5[0-46-9]))\\d{8}|[1-9]\\d{9}|[3589]\\d{8}|[34]\\d{7}", [8, 9, 10, 11], [["(\\d{4})(\\d{4})", "$1-$2", ["300|4(?:0[02]|37)", "4(?:02|37)0|[34]00"]], ["(\\d{3})(\\d{2,3})(\\d{4})", "$1 $2 $3", ["(?:[358]|90)0"], "0$1"], ["(\\d{2})(\\d{4})(\\d{4})", "$1 $2-$3", ["(?:[14689][1-9]|2[12478]|3[1-578]|5[13-5]|7[13-579])[2-57]"], "($1)"], ["(\\d{2})(\\d{5})(\\d{4})", "$1 $2-$3", ["[16][1-9]|[2-57-9]"], "($1)"]], "0", 0, "(?:0|90)(?:(1[245]|2[1-35]|31|4[13]|[56]5|99)(\\d{10,11}))?", "$2"], BS: ["1", "011", "(?:242|[58]\\d\\d|900)\\d{7}", [10], 0, "1", 0, "([3-8]\\d{6})$|1", "242$1", 0, "242"], BT: ["975", "00", "[17]\\d{7}|[2-8]\\d{6}", [7, 8], [["(\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["[2-68]|7[246]"]], ["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["1[67]|7"]]]], BW: ["267", "00", "(?:0800|(?:[37]|800)\\d)\\d{6}|(?:[2-6]\\d|90)\\d{5}", [7, 8, 10], [["(\\d{2})(\\d{5})", "$1 $2", ["90"]], ["(\\d{3})(\\d{4})", "$1 $2", ["[24-6]|3[15-9]"]], ["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[37]"]], ["(\\d{4})(\\d{3})(\\d{3})", "$1 $2 $3", ["0"]], ["(\\d{3})(\\d{4})(\\d{3})", "$1 $2 $3", ["8"]]]], BY: ["375", "810", "(?:[12]\\d|33|44|902)\\d{7}|8(?:0[0-79]\\d{5,7}|[1-7]\\d{9})|8(?:1[0-489]|[5-79]\\d)\\d{7}|8[1-79]\\d{6,7}|8[0-79]\\d{5}|8\\d{5}", [6, 7, 8, 9, 10, 11], [["(\\d{3})(\\d{3})", "$1 $2", ["800"], "8 $1"], ["(\\d{3})(\\d{2})(\\d{2,4})", "$1 $2 $3", ["800"], "8 $1"], ["(\\d{4})(\\d{2})(\\d{3})", "$1 $2-$3", ["1(?:5[169]|6[3-5]|7[179])|2(?:1[35]|2[34]|3[3-5])", "1(?:5[169]|6(?:3[1-3]|4|5[125])|7(?:1[3-9]|7[0-24-6]|9[2-7]))|2(?:1[35]|2[34]|3[3-5])"], "8 0$1"], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2-$3-$4", ["1(?:[56]|7[467])|2[1-3]"], "8 0$1"], ["(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2-$3-$4", ["[1-4]"], "8 0$1"], ["(\\d{3})(\\d{3,4})(\\d{4})", "$1 $2 $3", ["[89]"], "8 $1"]], "8", 0, "0|80?", 0, 0, 0, 0, "8~10"], BZ: ["501", "00", "(?:0800\\d|[2-8])\\d{6}", [7, 11], [["(\\d{3})(\\d{4})", "$1-$2", ["[2-8]"]], ["(\\d)(\\d{3})(\\d{4})(\\d{3})", "$1-$2-$3-$4", ["0"]]]], CA: ["1", "011", "(?:[2-8]\\d|90)\\d{8}|3\\d{6}", [7, 10], 0, "1", 0, 0, 0, 0, 0, [["(?:2(?:04|[23]6|[48]9|50|63)|3(?:06|43|54|6[578]|82)|4(?:03|1[68]|[26]8|3[178]|50|74)|5(?:06|1[49]|48|79|8[147])|6(?:04|[18]3|39|47|72)|7(?:0[59]|42|53|78|8[02])|8(?:[06]7|19|25|73)|90[25])[2-9]\\d{6}", [10]], ["", [10]], ["8(?:00|33|44|55|66|77|88)[2-9]\\d{6}", [10]], ["900[2-9]\\d{6}", [10]], ["52(?:3(?:[2-46-9][02-9]\\d|5(?:[02-46-9]\\d|5[0-46-9]))|4(?:[2-478][02-9]\\d|5(?:[034]\\d|2[024-9]|5[0-46-9])|6(?:0[1-9]|[2-9]\\d)|9(?:[05-9]\\d|2[0-5]|49)))\\d{4}|52[34][2-9]1[02-9]\\d{4}|(?:5(?:00|2[125-9]|33|44|66|77|88)|622)[2-9]\\d{6}", [10]], 0, ["310\\d{4}", [7]], 0, ["600[2-9]\\d{6}", [10]]]], CC: ["61", "001[14-689]|14(?:1[14]|34|4[17]|[56]6|7[47]|88)0011", "1(?:[0-79]\\d{8}(?:\\d{2})?|8[0-24-9]\\d{7})|[148]\\d{8}|1\\d{5,7}", [6, 7, 8, 9, 10, 12], 0, "0", 0, "([59]\\d{7})$|0", "8$1", 0, 0, [["8(?:51(?:0(?:02|31|60|89)|1(?:18|76)|223)|91(?:0(?:1[0-2]|29)|1(?:[28]2|50|79)|2(?:10|64)|3(?:[06]8|22)|4[29]8|62\\d|70[23]|959))\\d{3}", [9]], ["4(?:(?:79|94)[01]|83[0-389])\\d{5}|4(?:[0-3]\\d|4[047-9]|5[0-25-9]|6[0-26-9]|7[02-8]|8[0-24-9]|9[0-37-9])\\d{6}", [9]], ["180(?:0\\d{3}|2)\\d{3}", [7, 10]], ["190[0-26]\\d{6}", [10]], 0, 0, 0, 0, ["14(?:5(?:1[0458]|[23][458])|71\\d)\\d{4}", [9]], ["13(?:00\\d{6}(?:\\d{2})?|45[0-4]\\d{3})|13\\d{4}", [6, 8, 10, 12]]], "0011"], CD: ["243", "00", "[189]\\d{8}|[1-68]\\d{6}", [7, 9], [["(\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3", ["88"], "0$1"], ["(\\d{2})(\\d{5})", "$1 $2", ["[1-6]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["1"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[89]"], "0$1"]], "0"], CF: ["236", "00", "(?:[27]\\d{3}|8776)\\d{4}", [8], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[278]"]]]], CG: ["242", "00", "222\\d{6}|(?:0\\d|80)\\d{7}", [9], [["(\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["8"]], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[02]"]]]], CH: ["41", "00", "8\\d{11}|[2-9]\\d{8}", [9], [["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["8[047]|90"], "0$1"], ["(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[2-79]|81"], "0$1"], ["(\\d{3})(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4 $5", ["8"], "0$1"]], "0"], CI: ["225", "00", "[02]\\d{9}", [10], [["(\\d{2})(\\d{2})(\\d)(\\d{5})", "$1 $2 $3 $4", ["2"]], ["(\\d{2})(\\d{2})(\\d{2})(\\d{4})", "$1 $2 $3 $4", ["0"]]]], CK: ["682", "00", "[2-578]\\d{4}", [5], [["(\\d{2})(\\d{3})", "$1 $2", ["[2-578]"]]]], CL: ["56", "(?:0|1(?:1[0-69]|2[02-5]|5[13-58]|69|7[0167]|8[018]))0", "12300\\d{6}|6\\d{9,10}|[2-9]\\d{8}", [9, 10, 11], [["(\\d{5})(\\d{4})", "$1 $2", ["219", "2196"], "($1)"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["44"]], ["(\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["2[1-36]"], "($1)"], ["(\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["9[2-9]"]], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["3[2-5]|[47]|5[1-3578]|6[13-57]|8(?:0[1-9]|[1-9])"], "($1)"], ["(\\d{3})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["60|8"]], ["(\\d{4})(\\d{3})(\\d{4})", "$1 $2 $3", ["1"]], ["(\\d{3})(\\d{3})(\\d{2})(\\d{3})", "$1 $2 $3 $4", ["60"]]]], CM: ["237", "00", "[26]\\d{8}|88\\d{6,7}", [8, 9], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["88"]], ["(\\d)(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4 $5", ["[26]|88"]]]], CN: ["86", "00|1(?:[12]\\d|79)\\d\\d00", "1[127]\\d{8,9}|2\\d{9}(?:\\d{2})?|[12]\\d{6,7}|86\\d{6}|(?:1[03-689]\\d|6)\\d{7,9}|(?:[3-579]\\d|8[0-57-9])\\d{6,9}", [7, 8, 9, 10, 11, 12], [["(\\d{2})(\\d{5,6})", "$1 $2", ["(?:10|2[0-57-9])[19]", "(?:10|2[0-57-9])(?:10|9[56])", "10(?:10|9[56])|2[0-57-9](?:100|9[56])"], "0$1"], ["(\\d{3})(\\d{5,6})", "$1 $2", ["3(?:[157]|35|49|9[1-68])|4(?:[17]|2[179]|6[47-9]|8[23])|5(?:[1357]|2[37]|4[36]|6[1-46]|80)|6(?:3[1-5]|6[0238]|9[12])|7(?:01|[1579]|2[248]|3[014-9]|4[3-6]|6[023689])|8(?:1[236-8]|2[5-7]|[37]|8[36-8]|9[1-8])|9(?:0[1-3689]|1[1-79]|[379]|4[13]|5[1-5])|(?:4[35]|59|85)[1-9]", "(?:3(?:[157]\\d|35|49|9[1-68])|4(?:[17]\\d|2[179]|[35][1-9]|6[47-9]|8[23])|5(?:[1357]\\d|2[37]|4[36]|6[1-46]|80|9[1-9])|6(?:3[1-5]|6[0238]|9[12])|7(?:01|[1579]\\d|2[248]|3[014-9]|4[3-6]|6[023689])|8(?:1[236-8]|2[5-7]|[37]\\d|5[1-9]|8[36-8]|9[1-8])|9(?:0[1-3689]|1[1-79]|[379]\\d|4[13]|5[1-5]))[19]", "85[23](?:10|95)|(?:3(?:[157]\\d|35|49|9[1-68])|4(?:[17]\\d|2[179]|[35][1-9]|6[47-9]|8[23])|5(?:[1357]\\d|2[37]|4[36]|6[1-46]|80|9[1-9])|6(?:3[1-5]|6[0238]|9[12])|7(?:01|[1579]\\d|2[248]|3[014-9]|4[3-6]|6[023689])|8(?:1[236-8]|2[5-7]|[37]\\d|5[14-9]|8[36-8]|9[1-8])|9(?:0[1-3689]|1[1-79]|[379]\\d|4[13]|5[1-5]))(?:10|9[56])", "85[23](?:100|95)|(?:3(?:[157]\\d|35|49|9[1-68])|4(?:[17]\\d|2[179]|[35][1-9]|6[47-9]|8[23])|5(?:[1357]\\d|2[37]|4[36]|6[1-46]|80|9[1-9])|6(?:3[1-5]|6[0238]|9[12])|7(?:01|[1579]\\d|2[248]|3[014-9]|4[3-6]|6[023689])|8(?:1[236-8]|2[5-7]|[37]\\d|5[14-9]|8[36-8]|9[1-8])|9(?:0[1-3689]|1[1-79]|[379]\\d|4[13]|5[1-5]))(?:100|9[56])"], "0$1"], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["(?:4|80)0"]], ["(\\d{2})(\\d{4})(\\d{4})", "$1 $2 $3", ["10|2(?:[02-57-9]|1[1-9])", "10|2(?:[02-57-9]|1[1-9])", "10[0-79]|2(?:[02-57-9]|1[1-79])|(?:10|21)8(?:0[1-9]|[1-9])"], "0$1", 1], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["3(?:[3-59]|7[02-68])|4(?:[26-8]|3[3-9]|5[2-9])|5(?:3[03-9]|[468]|7[028]|9[2-46-9])|6|7(?:[0-247]|3[04-9]|5[0-4689]|6[2368])|8(?:[1-358]|9[1-7])|9(?:[013479]|5[1-5])|(?:[34]1|55|79|87)[02-9]"], "0$1", 1], ["(\\d{3})(\\d{7,8})", "$1 $2", ["9"]], ["(\\d{4})(\\d{3})(\\d{4})", "$1 $2 $3", ["80"], "0$1", 1], ["(\\d{3})(\\d{4})(\\d{4})", "$1 $2 $3", ["[3-578]"], "0$1", 1], ["(\\d{3})(\\d{4})(\\d{4})", "$1 $2 $3", ["1[3-9]"]], ["(\\d{2})(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3 $4", ["[12]"], "0$1", 1]], "0", 0, "(1(?:[12]\\d|79)\\d\\d)|0", 0, 0, 0, 0, "00"], CO: ["57", "00(?:4(?:[14]4|56)|[579])", "(?:60\\d\\d|9101)\\d{6}|(?:1\\d|3)\\d{9}", [10, 11], [["(\\d{3})(\\d{7})", "$1 $2", ["6"], "($1)"], ["(\\d{3})(\\d{7})", "$1 $2", ["3[0-357]|91"]], ["(\\d)(\\d{3})(\\d{7})", "$1-$2-$3", ["1"], "0$1", 0, "$1 $2 $3"]], "0", 0, "0([3579]|4(?:[14]4|56))?"], CR: ["506", "00", "(?:8\\d|90)\\d{8}|(?:[24-8]\\d{3}|3005)\\d{4}", [8, 10], [["(\\d{4})(\\d{4})", "$1 $2", ["[2-7]|8[3-9]"]], ["(\\d{3})(\\d{3})(\\d{4})", "$1-$2-$3", ["[89]"]]], 0, 0, "(19(?:0[0-2468]|1[09]|20|66|77|99))"], CU: ["53", "119", "[27]\\d{6,7}|[34]\\d{5,7}|63\\d{6}|(?:5|8\\d\\d)\\d{7}", [6, 7, 8, 10], [["(\\d{2})(\\d{4,6})", "$1 $2", ["2[1-4]|[34]"], "(0$1)"], ["(\\d)(\\d{6,7})", "$1 $2", ["7"], "(0$1)"], ["(\\d)(\\d{7})", "$1 $2", ["[56]"], "0$1"], ["(\\d{3})(\\d{7})", "$1 $2", ["8"], "0$1"]], "0"], CV: ["238", "0", "(?:[2-59]\\d\\d|800)\\d{4}", [7], [["(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3", ["[2-589]"]]]], CW: ["599", "00", "(?:[34]1|60|(?:7|9\\d)\\d)\\d{5}", [7, 8], [["(\\d{3})(\\d{4})", "$1 $2", ["[3467]"]], ["(\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["9[4-8]"]]], 0, 0, 0, 0, 0, "[69]"], CX: ["61", "001[14-689]|14(?:1[14]|34|4[17]|[56]6|7[47]|88)0011", "1(?:[0-79]\\d{8}(?:\\d{2})?|8[0-24-9]\\d{7})|[148]\\d{8}|1\\d{5,7}", [6, 7, 8, 9, 10, 12], 0, "0", 0, "([59]\\d{7})$|0", "8$1", 0, 0, [["8(?:51(?:0(?:01|30|59|88)|1(?:17|46|75)|2(?:22|35))|91(?:00[6-9]|1(?:[28]1|49|78)|2(?:09|63)|3(?:12|26|75)|4(?:56|97)|64\\d|7(?:0[01]|1[0-2])|958))\\d{3}", [9]], ["4(?:(?:79|94)[01]|83[0-389])\\d{5}|4(?:[0-3]\\d|4[047-9]|5[0-25-9]|6[0-26-9]|7[02-8]|8[0-24-9]|9[0-37-9])\\d{6}", [9]], ["180(?:0\\d{3}|2)\\d{3}", [7, 10]], ["190[0-26]\\d{6}", [10]], 0, 0, 0, 0, ["14(?:5(?:1[0458]|[23][458])|71\\d)\\d{4}", [9]], ["13(?:00\\d{6}(?:\\d{2})?|45[0-4]\\d{3})|13\\d{4}", [6, 8, 10, 12]]], "0011"], CY: ["357", "00", "(?:[279]\\d|[58]0)\\d{6}", [8], [["(\\d{2})(\\d{6})", "$1 $2", ["[257-9]"]]]], CZ: ["420", "00", "(?:[2-578]\\d|60)\\d{7}|9\\d{8,11}", [9], [["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[2-8]|9[015-7]"]], ["(\\d{2})(\\d{3})(\\d{3})(\\d{2})", "$1 $2 $3 $4", ["96"]], ["(\\d{2})(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["9"]], ["(\\d{3})(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["9"]]]], DE: ["49", "00", "[2579]\\d{5,14}|49(?:[34]0|69|8\\d)\\d\\d?|49(?:37|49|60|7[089]|9\\d)\\d{1,3}|49(?:2[024-9]|3[2-689]|7[1-7])\\d{1,8}|(?:1|[368]\\d|4[0-8])\\d{3,13}|49(?:[015]\\d|2[13]|31|[46][1-8])\\d{1,9}", [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], [["(\\d{2})(\\d{3,13})", "$1 $2", ["3[02]|40|[68]9"], "0$1"], ["(\\d{3})(\\d{3,12})", "$1 $2", ["2(?:0[1-389]|1[124]|2[18]|3[14])|3(?:[35-9][15]|4[015])|906|(?:2[4-9]|4[2-9]|[579][1-9]|[68][1-8])1", "2(?:0[1-389]|12[0-8])|3(?:[35-9][15]|4[015])|906|2(?:[13][14]|2[18])|(?:2[4-9]|4[2-9]|[579][1-9]|[68][1-8])1"], "0$1"], ["(\\d{4})(\\d{2,11})", "$1 $2", ["[24-6]|3(?:[3569][02-46-9]|4[2-4679]|7[2-467]|8[2-46-8])|70[2-8]|8(?:0[2-9]|[1-8])|90[7-9]|[79][1-9]", "[24-6]|3(?:3(?:0[1-467]|2[127-9]|3[124578]|7[1257-9]|8[1256]|9[145])|4(?:2[135]|4[13578]|9[1346])|5(?:0[14]|2[1-3589]|6[1-4]|7[13468]|8[13568])|6(?:2[1-489]|3[124-6]|6[13]|7[12579]|8[1-356]|9[135])|7(?:2[1-7]|4[145]|6[1-5]|7[1-4])|8(?:21|3[1468]|6|7[1467]|8[136])|9(?:0[12479]|2[1358]|4[134679]|6[1-9]|7[136]|8[147]|9[1468]))|70[2-8]|8(?:0[2-9]|[1-8])|90[7-9]|[79][1-9]|3[68]4[1347]|3(?:47|60)[1356]|3(?:3[46]|46|5[49])[1246]|3[4579]3[1357]"], "0$1"], ["(\\d{3})(\\d{4})", "$1 $2", ["138"], "0$1"], ["(\\d{5})(\\d{2,10})", "$1 $2", ["3"], "0$1"], ["(\\d{3})(\\d{5,11})", "$1 $2", ["181"], "0$1"], ["(\\d{3})(\\d)(\\d{4,10})", "$1 $2 $3", ["1(?:3|80)|9"], "0$1"], ["(\\d{3})(\\d{7,8})", "$1 $2", ["1[67]"], "0$1"], ["(\\d{3})(\\d{7,12})", "$1 $2", ["8"], "0$1"], ["(\\d{5})(\\d{6})", "$1 $2", ["185", "1850", "18500"], "0$1"], ["(\\d{3})(\\d{4})(\\d{4})", "$1 $2 $3", ["7"], "0$1"], ["(\\d{4})(\\d{7})", "$1 $2", ["18[68]"], "0$1"], ["(\\d{5})(\\d{6})", "$1 $2", ["15[0568]"], "0$1"], ["(\\d{4})(\\d{7})", "$1 $2", ["15[1279]"], "0$1"], ["(\\d{3})(\\d{8})", "$1 $2", ["18"], "0$1"], ["(\\d{3})(\\d{2})(\\d{7,8})", "$1 $2 $3", ["1(?:6[023]|7)"], "0$1"], ["(\\d{4})(\\d{2})(\\d{7})", "$1 $2 $3", ["15[279]"], "0$1"], ["(\\d{3})(\\d{2})(\\d{8})", "$1 $2 $3", ["15"], "0$1"]], "0"], DJ: ["253", "00", "(?:2\\d|77)\\d{6}", [8], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[27]"]]]], DK: ["45", "00", "[2-9]\\d{7}", [8], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[2-9]"]]]], DM: ["1", "011", "(?:[58]\\d\\d|767|900)\\d{7}", [10], 0, "1", 0, "([2-7]\\d{6})$|1", "767$1", 0, "767"], DO: ["1", "011", "(?:[58]\\d\\d|900)\\d{7}", [10], 0, "1", 0, 0, 0, 0, "8001|8[024]9"], DZ: ["213", "00", "(?:[1-4]|[5-79]\\d|80)\\d{7}", [8, 9], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[1-4]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["9"], "0$1"], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[5-8]"], "0$1"]], "0"], EC: ["593", "00", "1\\d{9,10}|(?:[2-7]|9\\d)\\d{7}", [8, 9, 10, 11], [["(\\d)(\\d{3})(\\d{4})", "$1 $2-$3", ["[2-7]"], "(0$1)", 0, "$1-$2-$3"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["9"], "0$1"], ["(\\d{4})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["1"]]], "0"], EE: ["372", "00", "8\\d{9}|[4578]\\d{7}|(?:[3-8]\\d|90)\\d{5}", [7, 8, 10], [["(\\d{3})(\\d{4})", "$1 $2", ["[369]|4[3-8]|5(?:[0-2]|5[0-478]|6[45])|7[1-9]|88", "[369]|4[3-8]|5(?:[02]|1(?:[0-8]|95)|5[0-478]|6(?:4[0-4]|5[1-589]))|7[1-9]|88"]], ["(\\d{4})(\\d{3,4})", "$1 $2", ["[45]|8(?:00|[1-49])", "[45]|8(?:00[1-9]|[1-49])"]], ["(\\d{2})(\\d{2})(\\d{4})", "$1 $2 $3", ["7"]], ["(\\d{4})(\\d{3})(\\d{3})", "$1 $2 $3", ["8"]]]], EG: ["20", "00", "[189]\\d{8,9}|[24-6]\\d{8}|[135]\\d{7}", [8, 9, 10], [["(\\d)(\\d{7,8})", "$1 $2", ["[23]"], "0$1"], ["(\\d{2})(\\d{6,7})", "$1 $2", ["1[35]|[4-6]|8[2468]|9[235-7]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["[89]"], "0$1"], ["(\\d{2})(\\d{8})", "$1 $2", ["1"], "0$1"]], "0"], EH: ["212", "00", "[5-8]\\d{8}", [9], 0, "0", 0, 0, 0, 0, "528[89]"], ER: ["291", "00", "[178]\\d{6}", [7], [["(\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["[178]"], "0$1"]], "0"], ES: ["34", "00", "[5-9]\\d{8}", [9], [["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[89]00"]], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[5-9]"]]]], ET: ["251", "00", "(?:11|[2-579]\\d)\\d{7}", [9], [["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[1-579]"], "0$1"]], "0"], FI: ["358", "00|99(?:[01469]|5(?:[14]1|3[23]|5[59]|77|88|9[09]))", "[1-35689]\\d{4}|7\\d{10,11}|(?:[124-7]\\d|3[0-46-9])\\d{8}|[1-9]\\d{5,8}", [5, 6, 7, 8, 9, 10, 11, 12], [["(\\d)(\\d{4,9})", "$1 $2", ["[2568][1-8]|3(?:0[1-9]|[1-9])|9"], "0$1"], ["(\\d{3})(\\d{3,7})", "$1 $2", ["[12]00|[368]|70[07-9]"], "0$1"], ["(\\d{2})(\\d{4,8})", "$1 $2", ["[1245]|7[135]"], "0$1"], ["(\\d{2})(\\d{6,10})", "$1 $2", ["7"], "0$1"]], "0", 0, 0, 0, 0, "1[03-79]|[2-9]", 0, "00"], FJ: ["679", "0(?:0|52)", "45\\d{5}|(?:0800\\d|[235-9])\\d{6}", [7, 11], [["(\\d{3})(\\d{4})", "$1 $2", ["[235-9]|45"]], ["(\\d{4})(\\d{3})(\\d{4})", "$1 $2 $3", ["0"]]], 0, 0, 0, 0, 0, 0, 0, "00"], FK: ["500", "00", "[2-7]\\d{4}", [5]], FM: ["691", "00", "(?:[39]\\d\\d|820)\\d{4}", [7], [["(\\d{3})(\\d{4})", "$1 $2", ["[389]"]]]], FO: ["298", "00", "[2-9]\\d{5}", [6], [["(\\d{6})", "$1", ["[2-9]"]]], 0, 0, "(10(?:01|[12]0|88))"], FR: ["33", "00", "[1-9]\\d{8}", [9], [["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["8"], "0 $1"], ["(\\d)(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4 $5", ["[1-79]"], "0$1"]], "0"], GA: ["241", "00", "(?:[067]\\d|11)\\d{6}|[2-7]\\d{6}", [7, 8], [["(\\d)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[2-7]"], "0$1"], ["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["0"]], ["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["11|[67]"], "0$1"]], 0, 0, "0(11\\d{6}|60\\d{6}|61\\d{6}|6[256]\\d{6}|7[467]\\d{6})", "$1"], GB: ["44", "00", "[1-357-9]\\d{9}|[18]\\d{8}|8\\d{6}", [7, 9, 10], [["(\\d{3})(\\d{4})", "$1 $2", ["800", "8001", "80011", "800111", "8001111"], "0$1"], ["(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3", ["845", "8454", "84546", "845464"], "0$1"], ["(\\d{3})(\\d{6})", "$1 $2", ["800"], "0$1"], ["(\\d{5})(\\d{4,5})", "$1 $2", ["1(?:38|5[23]|69|76|94)", "1(?:(?:38|69)7|5(?:24|39)|768|946)", "1(?:3873|5(?:242|39[4-6])|(?:697|768)[347]|9467)"], "0$1"], ["(\\d{4})(\\d{5,6})", "$1 $2", ["1(?:[2-69][02-9]|[78])"], "0$1"], ["(\\d{2})(\\d{4})(\\d{4})", "$1 $2 $3", ["[25]|7(?:0|6[02-9])", "[25]|7(?:0|6(?:[03-9]|2[356]))"], "0$1"], ["(\\d{4})(\\d{6})", "$1 $2", ["7"], "0$1"], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["[1389]"], "0$1"]], "0", 0, 0, 0, 0, 0, [["(?:1(?:1(?:3(?:[0-58]\\d\\d|73[0235])|4(?:[0-5]\\d\\d|69[7-9]|70[0-79])|(?:(?:5[0-26-9]|[78][0-49])\\d|6(?:[0-4]\\d|50))\\d)|(?:2(?:(?:0[024-9]|2[3-9]|3[3-79]|4[1-689]|[58][02-9]|6[0-47-9]|7[013-9]|9\\d)\\d|1(?:[0-7]\\d|8[0-2]))|(?:3(?:0\\d|1[0-8]|[25][02-9]|3[02-579]|[468][0-46-9]|7[1-35-79]|9[2-578])|4(?:0[03-9]|[137]\\d|[28][02-57-9]|4[02-69]|5[0-8]|[69][0-79])|5(?:0[1-35-9]|[16]\\d|2[024-9]|3[015689]|4[02-9]|5[03-9]|7[0-35-9]|8[0-468]|9[0-57-9])|6(?:0[034689]|1\\d|2[0-35689]|[38][013-9]|4[1-467]|5[0-69]|6[13-9]|7[0-8]|9[0-24578])|7(?:0[0246-9]|2\\d|3[0236-8]|4[03-9]|5[0-46-9]|6[013-9]|7[0-35-9]|8[024-9]|9[02-9])|8(?:0[35-9]|2[1-57-9]|3[02-578]|4[0-578]|5[124-9]|6[2-69]|7\\d|8[02-9]|9[02569])|9(?:0[02-589]|[18]\\d|2[02-689]|3[1-57-9]|4[2-9]|5[0-579]|6[2-47-9]|7[0-24578]|9[2-57]))\\d)\\d)|2(?:0[013478]|3[0189]|4[017]|8[0-46-9]|9[0-2])\\d{3})\\d{4}|1(?:2(?:0(?:46[1-4]|87[2-9])|545[1-79]|76(?:2\\d|3[1-8]|6[1-6])|9(?:7(?:2[0-4]|3[2-5])|8(?:2[2-8]|7[0-47-9]|8[3-5])))|3(?:6(?:38[2-5]|47[23])|8(?:47[04-9]|64[0157-9]))|4(?:044[1-7]|20(?:2[23]|8\\d)|6(?:0(?:30|5[2-57]|6[1-8]|7[2-8])|140)|8(?:052|87[1-3]))|5(?:2(?:4(?:3[2-79]|6\\d)|76\\d)|6(?:26[06-9]|686))|6(?:06(?:4\\d|7[4-79])|295[5-7]|35[34]\\d|47(?:24|61)|59(?:5[08]|6[67]|74)|9(?:55[0-4]|77[23]))|7(?:26(?:6[13-9]|7[0-7])|(?:442|688)\\d|50(?:2[0-3]|[3-68]2|76))|8(?:27[56]\\d|37(?:5[2-5]|8[239])|843[2-58])|9(?:0(?:0(?:6[1-8]|85)|52\\d)|3583|4(?:66[1-8]|9(?:2[01]|81))|63(?:23|3[1-4])|9561))\\d{3}", [9, 10]], ["7(?:457[0-57-9]|700[01]|911[028])\\d{5}|7(?:[1-3]\\d\\d|4(?:[0-46-9]\\d|5[0-689])|5(?:0[0-8]|[13-9]\\d|2[0-35-9])|7(?:0[1-9]|[1-7]\\d|8[02-9]|9[0-689])|8(?:[014-9]\\d|[23][0-8])|9(?:[024-9]\\d|1[02-9]|3[0-689]))\\d{6}", [10]], ["80[08]\\d{7}|800\\d{6}|8001111"], ["(?:8(?:4[2-5]|7[0-3])|9(?:[01]\\d|8[2-49]))\\d{7}|845464\\d", [7, 10]], ["70\\d{8}", [10]], 0, ["(?:3[0347]|55)\\d{8}", [10]], ["76(?:464|652)\\d{5}|76(?:0[0-28]|2[356]|34|4[01347]|5[49]|6[0-369]|77|8[14]|9[139])\\d{6}", [10]], ["56\\d{8}", [10]]], 0, " x"], GD: ["1", "011", "(?:473|[58]\\d\\d|900)\\d{7}", [10], 0, "1", 0, "([2-9]\\d{6})$|1", "473$1", 0, "473"], GE: ["995", "00", "(?:[3-57]\\d\\d|800)\\d{6}", [9], [["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["70"], "0$1"], ["(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["32"], "0$1"], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[57]"]], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[348]"], "0$1"]], "0"], GF: ["594", "00", "[56]94\\d{6}|(?:80|9\\d)\\d{7}", [9], [["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[56]|9[47]"], "0$1"], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[89]"], "0$1"]], "0"], GG: ["44", "00", "(?:1481|[357-9]\\d{3})\\d{6}|8\\d{6}(?:\\d{2})?", [7, 9, 10], 0, "0", 0, "([25-9]\\d{5})$|0", "1481$1", 0, 0, [["1481[25-9]\\d{5}", [10]], ["7(?:(?:781|839)\\d|911[17])\\d{5}", [10]], ["80[08]\\d{7}|800\\d{6}|8001111"], ["(?:8(?:4[2-5]|7[0-3])|9(?:[01]\\d|8[0-3]))\\d{7}|845464\\d", [7, 10]], ["70\\d{8}", [10]], 0, ["(?:3[0347]|55)\\d{8}", [10]], ["76(?:464|652)\\d{5}|76(?:0[0-28]|2[356]|34|4[01347]|5[49]|6[0-369]|77|8[14]|9[139])\\d{6}", [10]], ["56\\d{8}", [10]]]], GH: ["233", "00", "(?:[235]\\d{3}|800)\\d{5}", [8, 9], [["(\\d{3})(\\d{5})", "$1 $2", ["8"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[235]"], "0$1"]], "0"], GI: ["350", "00", "(?:[25]\\d|60)\\d{6}", [8], [["(\\d{3})(\\d{5})", "$1 $2", ["2"]]]], GL: ["299", "00", "(?:19|[2-689]\\d|70)\\d{4}", [6], [["(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3", ["19|[2-9]"]]]], GM: ["220", "00", "[2-9]\\d{6}", [7], [["(\\d{3})(\\d{4})", "$1 $2", ["[2-9]"]]]], GN: ["224", "00", "722\\d{6}|(?:3|6\\d)\\d{7}", [8, 9], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["3"]], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[67]"]]]], GP: ["590", "00", "590\\d{6}|(?:69|80|9\\d)\\d{7}", [9], [["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[569]"], "0$1"], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["8"], "0$1"]], "0", 0, 0, 0, 0, 0, [["590(?:0[1-68]|[14][0-24-9]|2[0-68]|3[1-9]|5[3-579]|[68][0-689]|7[08]|9\\d)\\d{4}"], ["69(?:0\\d\\d|1(?:2[2-9]|3[0-5]))\\d{4}"], ["80[0-5]\\d{6}"], 0, 0, 0, 0, 0, ["9(?:(?:395|76[018])\\d|475[0-5])\\d{4}"]]], GQ: ["240", "00", "222\\d{6}|(?:3\\d|55|[89]0)\\d{7}", [9], [["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[235]"]], ["(\\d{3})(\\d{6})", "$1 $2", ["[89]"]]]], GR: ["30", "00", "5005000\\d{3}|8\\d{9,11}|(?:[269]\\d|70)\\d{8}", [10, 11, 12], [["(\\d{2})(\\d{4})(\\d{4})", "$1 $2 $3", ["21|7"]], ["(\\d{4})(\\d{6})", "$1 $2", ["2(?:2|3[2-57-9]|4[2-469]|5[2-59]|6[2-9]|7[2-69]|8[2-49])|5"]], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["[2689]"]], ["(\\d{3})(\\d{3,4})(\\d{5})", "$1 $2 $3", ["8"]]]], GT: ["502", "00", "80\\d{6}|(?:1\\d{3}|[2-7])\\d{7}", [8, 11], [["(\\d{4})(\\d{4})", "$1 $2", ["[2-8]"]], ["(\\d{4})(\\d{3})(\\d{4})", "$1 $2 $3", ["1"]]]], GU: ["1", "011", "(?:[58]\\d\\d|671|900)\\d{7}", [10], 0, "1", 0, "([2-9]\\d{6})$|1", "671$1", 0, "671"], GW: ["245", "00", "[49]\\d{8}|4\\d{6}", [7, 9], [["(\\d{3})(\\d{4})", "$1 $2", ["40"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[49]"]]]], GY: ["592", "001", "(?:[2-8]\\d{3}|9008)\\d{3}", [7], [["(\\d{3})(\\d{4})", "$1 $2", ["[2-9]"]]]], HK: ["852", "00(?:30|5[09]|[126-9]?)", "8[0-46-9]\\d{6,7}|9\\d{4,7}|(?:[2-7]|9\\d{3})\\d{7}", [5, 6, 7, 8, 9, 11], [["(\\d{3})(\\d{2,5})", "$1 $2", ["900", "9003"]], ["(\\d{4})(\\d{4})", "$1 $2", ["[2-7]|8[1-4]|9(?:0[1-9]|[1-8])"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["8"]], ["(\\d{3})(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["9"]]], 0, 0, 0, 0, 0, 0, 0, "00"], HN: ["504", "00", "8\\d{10}|[237-9]\\d{7}", [8, 11], [["(\\d{4})(\\d{4})", "$1-$2", ["[237-9]"]]]], HR: ["385", "00", "(?:[24-69]\\d|3[0-79])\\d{7}|80\\d{5,7}|[1-79]\\d{7}|6\\d{5,6}", [6, 7, 8, 9], [["(\\d{2})(\\d{2})(\\d{2,3})", "$1 $2 $3", ["6[01]"], "0$1"], ["(\\d{3})(\\d{2})(\\d{2,3})", "$1 $2 $3", ["8"], "0$1"], ["(\\d)(\\d{4})(\\d{3})", "$1 $2 $3", ["1"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[67]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["9"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[2-5]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["8"], "0$1"]], "0"], HT: ["509", "00", "(?:[2-489]\\d|55)\\d{6}", [8], [["(\\d{2})(\\d{2})(\\d{4})", "$1 $2 $3", ["[2-589]"]]]], HU: ["36", "00", "[235-7]\\d{8}|[1-9]\\d{7}", [8, 9], [["(\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["1"], "(06 $1)"], ["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[27][2-9]|3[2-7]|4[24-9]|5[2-79]|6|8[2-57-9]|9[2-69]"], "(06 $1)"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[2-9]"], "06 $1"]], "06"], ID: ["62", "00[89]", "(?:(?:00[1-9]|8\\d)\\d{4}|[1-36])\\d{6}|00\\d{10}|[1-9]\\d{8,10}|[2-9]\\d{7}", [7, 8, 9, 10, 11, 12, 13], [["(\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["15"]], ["(\\d{2})(\\d{5,9})", "$1 $2", ["2[124]|[36]1"], "(0$1)"], ["(\\d{3})(\\d{5,7})", "$1 $2", ["800"], "0$1"], ["(\\d{3})(\\d{5,8})", "$1 $2", ["[2-79]"], "(0$1)"], ["(\\d{3})(\\d{3,4})(\\d{3})", "$1-$2-$3", ["8[1-35-9]"], "0$1"], ["(\\d{3})(\\d{6,8})", "$1 $2", ["1"], "0$1"], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["804"], "0$1"], ["(\\d{3})(\\d)(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["80"], "0$1"], ["(\\d{3})(\\d{4})(\\d{4,5})", "$1-$2-$3", ["8"], "0$1"]], "0"], IE: ["353", "00", "(?:1\\d|[2569])\\d{6,8}|4\\d{6,9}|7\\d{8}|8\\d{8,9}", [7, 8, 9, 10], [["(\\d{2})(\\d{5})", "$1 $2", ["2[24-9]|47|58|6[237-9]|9[35-9]"], "(0$1)"], ["(\\d{3})(\\d{5})", "$1 $2", ["[45]0"], "(0$1)"], ["(\\d)(\\d{3,4})(\\d{4})", "$1 $2 $3", ["1"], "(0$1)"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[2569]|4[1-69]|7[14]"], "(0$1)"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["70"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["81"], "(0$1)"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[78]"], "0$1"], ["(\\d{4})(\\d{3})(\\d{3})", "$1 $2 $3", ["1"]], ["(\\d{2})(\\d{4})(\\d{4})", "$1 $2 $3", ["4"], "(0$1)"], ["(\\d{2})(\\d)(\\d{3})(\\d{4})", "$1 $2 $3 $4", ["8"], "0$1"]], "0"], IL: ["972", "0(?:0|1[2-9])", "1\\d{6}(?:\\d{3,5})?|[57]\\d{8}|[1-489]\\d{7}", [7, 8, 9, 10, 11, 12], [["(\\d{4})(\\d{3})", "$1-$2", ["125"]], ["(\\d{4})(\\d{2})(\\d{2})", "$1-$2-$3", ["121"]], ["(\\d)(\\d{3})(\\d{4})", "$1-$2-$3", ["[2-489]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1-$2-$3", ["[57]"], "0$1"], ["(\\d{4})(\\d{3})(\\d{3})", "$1-$2-$3", ["12"]], ["(\\d{4})(\\d{6})", "$1-$2", ["159"]], ["(\\d)(\\d{3})(\\d{3})(\\d{3})", "$1-$2-$3-$4", ["1[7-9]"]], ["(\\d{3})(\\d{1,2})(\\d{3})(\\d{4})", "$1-$2 $3-$4", ["15"]]], "0"], IM: ["44", "00", "1624\\d{6}|(?:[3578]\\d|90)\\d{8}", [10], 0, "0", 0, "([25-8]\\d{5})$|0", "1624$1", 0, "74576|(?:16|7[56])24"], IN: ["91", "00", "(?:000800|[2-9]\\d\\d)\\d{7}|1\\d{7,12}", [8, 9, 10, 11, 12, 13], [["(\\d{8})", "$1", ["5(?:0|2[23]|3[03]|[67]1|88)", "5(?:0|2(?:21|3)|3(?:0|3[23])|616|717|888)", "5(?:0|2(?:21|3)|3(?:0|3[23])|616|717|8888)"], 0, 1], ["(\\d{4})(\\d{4,5})", "$1 $2", ["180", "1800"], 0, 1], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["140"], 0, 1], ["(\\d{2})(\\d{4})(\\d{4})", "$1 $2 $3", ["11|2[02]|33|4[04]|79[1-7]|80[2-46]", "11|2[02]|33|4[04]|79(?:[1-6]|7[19])|80(?:[2-4]|6[0-589])", "11|2[02]|33|4[04]|79(?:[124-6]|3(?:[02-9]|1[0-24-9])|7(?:1|9[1-6]))|80(?:[2-4]|6[0-589])"], "0$1", 1], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["1(?:2[0-249]|3[0-25]|4[145]|[68]|7[1257])|2(?:1[257]|3[013]|4[01]|5[0137]|6[0158]|78|8[1568])|3(?:26|4[1-3]|5[34]|6[01489]|7[02-46]|8[159])|4(?:1[36]|2[1-47]|5[12]|6[0-26-9]|7[0-24-9]|8[013-57]|9[014-7])|5(?:1[025]|22|[36][25]|4[28]|5[12]|[78]1)|6(?:12|[2-4]1|5[17]|6[13]|80)|7(?:12|3[134]|4[47]|61|88)|8(?:16|2[014]|3[126]|6[136]|7[078]|8[34]|91)|(?:43|59|75)[15]|(?:1[59]|29|67|72)[14]", "1(?:2[0-24]|3[0-25]|4[145]|[59][14]|6[1-9]|7[1257]|8[1-57-9])|2(?:1[257]|3[013]|4[01]|5[0137]|6[058]|78|8[1568]|9[14])|3(?:26|4[1-3]|5[34]|6[01489]|7[02-46]|8[159])|4(?:1[36]|2[1-47]|3[15]|5[12]|6[0-26-9]|7[0-24-9]|8[013-57]|9[014-7])|5(?:1[025]|22|[36][25]|4[28]|[578]1|9[15])|674|7(?:(?:2[14]|3[34]|5[15])[2-6]|61[346]|88[0-8])|8(?:70[2-6]|84[235-7]|91[3-7])|(?:1(?:29|60|8[06])|261|552|6(?:12|[2-47]1|5[17]|6[13]|80)|7(?:12|31|4[47])|8(?:16|2[014]|3[126]|6[136]|7[78]|83))[2-7]", "1(?:2[0-24]|3[0-25]|4[145]|[59][14]|6[1-9]|7[1257]|8[1-57-9])|2(?:1[257]|3[013]|4[01]|5[0137]|6[058]|78|8[1568]|9[14])|3(?:26|4[1-3]|5[34]|6[01489]|7[02-46]|8[159])|4(?:1[36]|2[1-47]|3[15]|5[12]|6[0-26-9]|7[0-24-9]|8[013-57]|9[014-7])|5(?:1[025]|22|[36][25]|4[28]|[578]1|9[15])|6(?:12(?:[2-6]|7[0-8])|74[2-7])|7(?:(?:2[14]|5[15])[2-6]|3171|61[346]|88(?:[2-7]|82))|8(?:70[2-6]|84(?:[2356]|7[19])|91(?:[3-6]|7[19]))|73[134][2-6]|(?:74[47]|8(?:16|2[014]|3[126]|6[136]|7[78]|83))(?:[2-6]|7[19])|(?:1(?:29|60|8[06])|261|552|6(?:[2-4]1|5[17]|6[13]|7(?:1|4[0189])|80)|7(?:12|88[01]))[2-7]"], "0$1", 1], ["(\\d{4})(\\d{3})(\\d{3})", "$1 $2 $3", ["1(?:[2-479]|5[0235-9])|[2-5]|6(?:1[1358]|2[2457-9]|3[2-5]|4[235-7]|5[2-689]|6[24578]|7[235689]|8[1-6])|7(?:1[013-9]|28|3[129]|4[1-35689]|5[29]|6[02-5]|70)|807", "1(?:[2-479]|5[0235-9])|[2-5]|6(?:1[1358]|2(?:[2457]|84|95)|3(?:[2-4]|55)|4[235-7]|5[2-689]|6[24578]|7[235689]|8[1-6])|7(?:1(?:[013-8]|9[6-9])|28[6-8]|3(?:17|2[0-49]|9[2-57])|4(?:1[2-4]|[29][0-7]|3[0-8]|[56]|8[0-24-7])|5(?:2[1-3]|9[0-6])|6(?:0[5689]|2[5-9]|3[02-8]|4|5[0-367])|70[13-7])|807[19]", "1(?:[2-479]|5(?:[0236-9]|5[013-9]))|[2-5]|6(?:2(?:84|95)|355|83)|73179|807(?:1|9[1-3])|(?:1552|6(?:1[1358]|2[2457]|3[2-4]|4[235-7]|5[2-689]|6[24578]|7[235689]|8[124-6])\\d|7(?:1(?:[013-8]\\d|9[6-9])|28[6-8]|3(?:2[0-49]|9[2-57])|4(?:1[2-4]|[29][0-7]|3[0-8]|[56]\\d|8[0-24-7])|5(?:2[1-3]|9[0-6])|6(?:0[5689]|2[5-9]|3[02-8]|4\\d|5[0-367])|70[13-7]))[2-7]"], "0$1", 1], ["(\\d{5})(\\d{5})", "$1 $2", ["[6-9]"], "0$1", 1], ["(\\d{4})(\\d{2,4})(\\d{4})", "$1 $2 $3", ["1(?:6|8[06])", "1(?:6|8[06]0)"], 0, 1], ["(\\d{4})(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["18"], 0, 1]], "0"], IO: ["246", "00", "3\\d{6}", [7], [["(\\d{3})(\\d{4})", "$1 $2", ["3"]]]], IQ: ["964", "00", "(?:1|7\\d\\d)\\d{7}|[2-6]\\d{7,8}", [8, 9, 10], [["(\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["1"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[2-6]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["7"], "0$1"]], "0"], IR: ["98", "00", "[1-9]\\d{9}|(?:[1-8]\\d\\d|9)\\d{3,4}", [4, 5, 6, 7, 10], [["(\\d{4,5})", "$1", ["96"], "0$1"], ["(\\d{2})(\\d{4,5})", "$1 $2", ["(?:1[137]|2[13-68]|3[1458]|4[145]|5[1468]|6[16]|7[1467]|8[13467])[12689]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["9"], "0$1"], ["(\\d{2})(\\d{4})(\\d{4})", "$1 $2 $3", ["[1-8]"], "0$1"]], "0"], IS: ["354", "00|1(?:0(?:01|[12]0)|100)", "(?:38\\d|[4-9])\\d{6}", [7, 9], [["(\\d{3})(\\d{4})", "$1 $2", ["[4-9]"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["3"]]], 0, 0, 0, 0, 0, 0, 0, "00"], IT: ["39", "00", "0\\d{5,10}|1\\d{8,10}|3(?:[0-8]\\d{7,10}|9\\d{7,8})|(?:55|70)\\d{8}|8\\d{5}(?:\\d{2,4})?", [6, 7, 8, 9, 10, 11], [["(\\d{2})(\\d{4,6})", "$1 $2", ["0[26]"]], ["(\\d{3})(\\d{3,6})", "$1 $2", ["0[13-57-9][0159]|8(?:03|4[17]|9[2-5])", "0[13-57-9][0159]|8(?:03|4[17]|9(?:2|3[04]|[45][0-4]))"]], ["(\\d{4})(\\d{2,6})", "$1 $2", ["0(?:[13-579][2-46-8]|8[236-8])"]], ["(\\d{4})(\\d{4})", "$1 $2", ["894"]], ["(\\d{2})(\\d{3,4})(\\d{4})", "$1 $2 $3", ["0[26]|5"]], ["(\\d{3})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["1(?:44|[679])|[378]"]], ["(\\d{3})(\\d{3,4})(\\d{4})", "$1 $2 $3", ["0[13-57-9][0159]|14"]], ["(\\d{2})(\\d{4})(\\d{5})", "$1 $2 $3", ["0[26]"]], ["(\\d{4})(\\d{3})(\\d{4})", "$1 $2 $3", ["0"]], ["(\\d{3})(\\d{4})(\\d{4,5})", "$1 $2 $3", ["3"]]], 0, 0, 0, 0, 0, 0, [["0669[0-79]\\d{1,6}|0(?:1(?:[0159]\\d|[27][1-5]|31|4[1-4]|6[1356]|8[2-57])|2\\d\\d|3(?:[0159]\\d|2[1-4]|3[12]|[48][1-6]|6[2-59]|7[1-7])|4(?:[0159]\\d|[23][1-9]|4[245]|6[1-5]|7[1-4]|81)|5(?:[0159]\\d|2[1-5]|3[2-6]|4[1-79]|6[4-6]|7[1-578]|8[3-8])|6(?:[0-57-9]\\d|6[0-8])|7(?:[0159]\\d|2[12]|3[1-7]|4[2-46]|6[13569]|7[13-6]|8[1-59])|8(?:[0159]\\d|2[3-578]|3[1-356]|[6-8][1-5])|9(?:[0159]\\d|[238][1-5]|4[12]|6[1-8]|7[1-6]))\\d{2,7}"], ["3[1-9]\\d{8}|3[2-9]\\d{7}", [9, 10]], ["80(?:0\\d{3}|3)\\d{3}", [6, 9]], ["(?:0878\\d{3}|89(?:2\\d|3[04]|4(?:[0-4]|[5-9]\\d\\d)|5[0-4]))\\d\\d|(?:1(?:44|6[346])|89(?:38|5[5-9]|9))\\d{6}", [6, 8, 9, 10]], ["1(?:78\\d|99)\\d{6}", [9, 10]], 0, 0, 0, ["55\\d{8}", [10]], ["84(?:[08]\\d{3}|[17])\\d{3}", [6, 9]]]], JE: ["44", "00", "1534\\d{6}|(?:[3578]\\d|90)\\d{8}", [10], 0, "0", 0, "([0-24-8]\\d{5})$|0", "1534$1", 0, 0, [["1534[0-24-8]\\d{5}"], ["7(?:(?:(?:50|82)9|937)\\d|7(?:00[378]|97[7-9]))\\d{5}"], ["80(?:07(?:35|81)|8901)\\d{4}"], ["(?:8(?:4(?:4(?:4(?:05|42|69)|703)|5(?:041|800))|7(?:0002|1206))|90(?:066[59]|1810|71(?:07|55)))\\d{4}"], ["701511\\d{4}"], 0, ["(?:3(?:0(?:07(?:35|81)|8901)|3\\d{4}|4(?:4(?:4(?:05|42|69)|703)|5(?:041|800))|7(?:0002|1206))|55\\d{4})\\d{4}"], ["76(?:464|652)\\d{5}|76(?:0[0-28]|2[356]|34|4[01347]|5[49]|6[0-369]|77|8[14]|9[139])\\d{6}"], ["56\\d{8}"]]], JM: ["1", "011", "(?:[58]\\d\\d|658|900)\\d{7}", [10], 0, "1", 0, 0, 0, 0, "658|876"], JO: ["962", "00", "(?:(?:[2689]|7\\d)\\d|32|53)\\d{6}", [8, 9], [["(\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["[2356]|87"], "(0$1)"], ["(\\d{3})(\\d{5,6})", "$1 $2", ["[89]"], "0$1"], ["(\\d{2})(\\d{7})", "$1 $2", ["70"], "0$1"], ["(\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["7"], "0$1"]], "0"], JP: ["81", "010", "00[1-9]\\d{6,14}|[257-9]\\d{9}|(?:00|[1-9]\\d\\d)\\d{6}", [8, 9, 10, 11, 12, 13, 14, 15, 16, 17], [["(\\d{3})(\\d{3})(\\d{3})", "$1-$2-$3", ["(?:12|57|99)0"], "0$1"], ["(\\d{4})(\\d)(\\d{4})", "$1-$2-$3", ["1(?:26|3[79]|4[56]|5[4-68]|6[3-5])|499|5(?:76|97)|746|8(?:3[89]|47|51)|9(?:80|9[16])", "1(?:267|3(?:7[247]|9[278])|466|5(?:47|58|64)|6(?:3[245]|48|5[4-68]))|499[2468]|5(?:76|97)9|7468|8(?:3(?:8[7-9]|96)|477|51[2-9])|9(?:802|9(?:1[23]|69))|1(?:45|58)[67]", "1(?:267|3(?:7[247]|9[278])|466|5(?:47|58|64)|6(?:3[245]|48|5[4-68]))|499[2468]|5(?:769|979[2-69])|7468|8(?:3(?:8[7-9]|96[2457-9])|477|51[2-9])|9(?:802|9(?:1[23]|69))|1(?:45|58)[67]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1-$2-$3", ["60"], "0$1"], ["(\\d)(\\d{4})(\\d{4})", "$1-$2-$3", ["[36]|4(?:2[09]|7[01])", "[36]|4(?:2(?:0|9[02-69])|7(?:0[019]|1))"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1-$2-$3", ["1(?:1|5[45]|77|88|9[69])|2(?:2[1-37]|3[0-269]|4[59]|5|6[24]|7[1-358]|8[1369]|9[0-38])|4(?:[28][1-9]|3[0-57]|[45]|6[248]|7[2-579]|9[29])|5(?:2|3[0459]|4[0-369]|5[29]|8[02389]|9[0-389])|7(?:2[02-46-9]|34|[58]|6[0249]|7[57]|9[2-6])|8(?:2[124589]|3[26-9]|49|51|6|7[0-468]|8[68]|9[019])|9(?:[23][1-9]|4[15]|5[138]|6[1-3]|7[156]|8[189]|9[1-489])", "1(?:1|5(?:4[018]|5[017])|77|88|9[69])|2(?:2(?:[127]|3[014-9])|3[0-269]|4[59]|5(?:[1-3]|5[0-69]|9[19])|62|7(?:[1-35]|8[0189])|8(?:[16]|3[0134]|9[0-5])|9(?:[028]|17))|4(?:2(?:[13-79]|8[014-6])|3[0-57]|[45]|6[248]|7[2-47]|8[1-9]|9[29])|5(?:2|3(?:[045]|9[0-8])|4[0-369]|5[29]|8[02389]|9[0-3])|7(?:2[02-46-9]|34|[58]|6[0249]|7[57]|9(?:[23]|4[0-59]|5[01569]|6[0167]))|8(?:2(?:[1258]|4[0-39]|9[0-2469])|3(?:[29]|60)|49|51|6(?:[0-24]|36|5[0-3589]|7[23]|9[01459])|7[0-468]|8[68])|9(?:[23][1-9]|4[15]|5[138]|6[1-3]|7[156]|8[189]|9(?:[1289]|3[34]|4[0178]))|(?:264|837)[016-9]|2(?:57|93)[015-9]|(?:25[0468]|422|838)[01]|(?:47[59]|59[89]|8(?:6[68]|9))[019]", "1(?:1|5(?:4[018]|5[017])|77|88|9[69])|2(?:2[127]|3[0-269]|4[59]|5(?:[1-3]|5[0-69]|9(?:17|99))|6(?:2|4[016-9])|7(?:[1-35]|8[0189])|8(?:[16]|3[0134]|9[0-5])|9(?:[028]|17))|4(?:2(?:[13-79]|8[014-6])|3[0-57]|[45]|6[248]|7[2-47]|9[29])|5(?:2|3(?:[045]|9(?:[0-58]|6[4-9]|7[0-35689]))|4[0-369]|5[29]|8[02389]|9[0-3])|7(?:2[02-46-9]|34|[58]|6[0249]|7[57]|9(?:[23]|4[0-59]|5[01569]|6[0167]))|8(?:2(?:[1258]|4[0-39]|9[0169])|3(?:[29]|60|7(?:[017-9]|6[6-8]))|49|51|6(?:[0-24]|36[2-57-9]|5(?:[0-389]|5[23])|6(?:[01]|9[178])|7(?:2[2-468]|3[78])|9[0145])|7[0-468]|8[68])|9(?:4[15]|5[138]|7[156]|8[189]|9(?:[1289]|3(?:31|4[357])|4[0178]))|(?:8294|96)[1-3]|2(?:57|93)[015-9]|(?:223|8699)[014-9]|(?:25[0468]|422|838)[01]|(?:48|8292|9[23])[1-9]|(?:47[59]|59[89]|8(?:68|9))[019]"], "0$1"], ["(\\d{3})(\\d{2})(\\d{4})", "$1-$2-$3", ["[14]|[289][2-9]|5[3-9]|7[2-4679]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{4})", "$1-$2-$3", ["800"], "0$1"], ["(\\d{2})(\\d{4})(\\d{4})", "$1-$2-$3", ["[257-9]"], "0$1"]], "0", 0, "(000[259]\\d{6})$|(?:(?:003768)0?)|0", "$1"], KE: ["254", "000", "(?:[17]\\d\\d|900)\\d{6}|(?:2|80)0\\d{6,7}|[4-6]\\d{6,8}", [7, 8, 9, 10], [["(\\d{2})(\\d{5,7})", "$1 $2", ["[24-6]"], "0$1"], ["(\\d{3})(\\d{6})", "$1 $2", ["[17]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[89]"], "0$1"]], "0"], KG: ["996", "00", "8\\d{9}|[235-9]\\d{8}", [9, 10], [["(\\d{4})(\\d{5})", "$1 $2", ["3(?:1[346]|[24-79])"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[235-79]|88"], "0$1"], ["(\\d{3})(\\d{3})(\\d)(\\d{2,3})", "$1 $2 $3 $4", ["8"], "0$1"]], "0"], KH: ["855", "00[14-9]", "1\\d{9}|[1-9]\\d{7,8}", [8, 9, 10], [["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[1-9]"], "0$1"], ["(\\d{4})(\\d{3})(\\d{3})", "$1 $2 $3", ["1"]]], "0"], KI: ["686", "00", "(?:[37]\\d|6[0-79])\\d{6}|(?:[2-48]\\d|50)\\d{3}", [5, 8], 0, "0"], KM: ["269", "00", "[3478]\\d{6}", [7], [["(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3", ["[3478]"]]]], KN: ["1", "011", "(?:[58]\\d\\d|900)\\d{7}", [10], 0, "1", 0, "([2-7]\\d{6})$|1", "869$1", 0, "869"], KP: ["850", "00|99", "85\\d{6}|(?:19\\d|[2-7])\\d{7}", [8, 10], [["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["8"], "0$1"], ["(\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["[2-7]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["1"], "0$1"]], "0"], KR: ["82", "00(?:[125689]|3(?:[46]5|91)|7(?:00|27|3|55|6[126]))", "00[1-9]\\d{8,11}|(?:[12]|5\\d{3})\\d{7}|[13-6]\\d{9}|(?:[1-6]\\d|80)\\d{7}|[3-6]\\d{4,5}|(?:00|7)0\\d{8}", [5, 6, 8, 9, 10, 11, 12, 13, 14], [["(\\d{2})(\\d{3,4})", "$1-$2", ["(?:3[1-3]|[46][1-4]|5[1-5])1"], "0$1"], ["(\\d{4})(\\d{4})", "$1-$2", ["1"]], ["(\\d)(\\d{3,4})(\\d{4})", "$1-$2-$3", ["2"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1-$2-$3", ["60|8"], "0$1"], ["(\\d{2})(\\d{3,4})(\\d{4})", "$1-$2-$3", ["[1346]|5[1-5]"], "0$1"], ["(\\d{2})(\\d{4})(\\d{4})", "$1-$2-$3", ["[57]"], "0$1"], ["(\\d{2})(\\d{5})(\\d{4})", "$1-$2-$3", ["5"], "0$1"]], "0", 0, "0(8(?:[1-46-8]|5\\d\\d))?"], KW: ["965", "00", "18\\d{5}|(?:[2569]\\d|41)\\d{6}", [7, 8], [["(\\d{4})(\\d{3,4})", "$1 $2", ["[169]|2(?:[235]|4[1-35-9])|52"]], ["(\\d{3})(\\d{5})", "$1 $2", ["[245]"]]]], KY: ["1", "011", "(?:345|[58]\\d\\d|900)\\d{7}", [10], 0, "1", 0, "([2-9]\\d{6})$|1", "345$1", 0, "345"], KZ: ["7", "810", "(?:33622|8\\d{8})\\d{5}|[78]\\d{9}", [10, 14], 0, "8", 0, 0, 0, 0, "33|7", 0, "8~10"], LA: ["856", "00", "[23]\\d{9}|3\\d{8}|(?:[235-8]\\d|41)\\d{6}", [8, 9, 10], [["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["2[13]|3[14]|[4-8]"], "0$1"], ["(\\d{2})(\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3 $4", ["30[013-9]"], "0$1"], ["(\\d{2})(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["[23]"], "0$1"]], "0"], LB: ["961", "00", "[27-9]\\d{7}|[13-9]\\d{6}", [7, 8], [["(\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["[13-69]|7(?:[2-57]|62|8[0-7]|9[04-9])|8[02-9]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[27-9]"]]], "0"], LC: ["1", "011", "(?:[58]\\d\\d|758|900)\\d{7}", [10], 0, "1", 0, "([2-8]\\d{6})$|1", "758$1", 0, "758"], LI: ["423", "00", "[68]\\d{8}|(?:[2378]\\d|90)\\d{5}", [7, 9], [["(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3", ["[2379]|8(?:0[09]|7)", "[2379]|8(?:0(?:02|9)|7)"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["8"]], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["69"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["6"]]], "0", 0, "(1001)|0"], LK: ["94", "00", "[1-9]\\d{8}", [9], [["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["7"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[1-689]"], "0$1"]], "0"], LR: ["231", "00", "(?:[25]\\d|33|77|88)\\d{7}|(?:2\\d|[4-6])\\d{6}", [7, 8, 9], [["(\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["[4-6]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["2"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[23578]"], "0$1"]], "0"], LS: ["266", "00", "(?:[256]\\d\\d|800)\\d{5}", [8], [["(\\d{4})(\\d{4})", "$1 $2", ["[2568]"]]]], LT: ["370", "00", "(?:[3469]\\d|52|[78]0)\\d{6}", [8], [["(\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["52[0-7]"], "(8-$1)", 1], ["(\\d{3})(\\d{2})(\\d{3})", "$1 $2 $3", ["[7-9]"], "8 $1", 1], ["(\\d{2})(\\d{6})", "$1 $2", ["37|4(?:[15]|6[1-8])"], "(8-$1)", 1], ["(\\d{3})(\\d{5})", "$1 $2", ["[3-6]"], "(8-$1)", 1]], "8", 0, "[08]"], LU: ["352", "00", "35[013-9]\\d{4,8}|6\\d{8}|35\\d{2,4}|(?:[2457-9]\\d|3[0-46-9])\\d{2,9}", [4, 5, 6, 7, 8, 9, 10, 11], [["(\\d{2})(\\d{3})", "$1 $2", ["2(?:0[2-689]|[2-9])|[3-57]|8(?:0[2-9]|[13-9])|9(?:0[89]|[2-579])"]], ["(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3", ["2(?:0[2-689]|[2-9])|[3-57]|8(?:0[2-9]|[13-9])|9(?:0[89]|[2-579])"]], ["(\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3", ["20[2-689]"]], ["(\\d{2})(\\d{2})(\\d{2})(\\d{1,2})", "$1 $2 $3 $4", ["2(?:[0367]|4[3-8])"]], ["(\\d{3})(\\d{2})(\\d{3})", "$1 $2 $3", ["80[01]|90[015]"]], ["(\\d{2})(\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3 $4", ["20"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["6"]], ["(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{1,2})", "$1 $2 $3 $4 $5", ["2(?:[0367]|4[3-8])"]], ["(\\d{2})(\\d{2})(\\d{2})(\\d{1,5})", "$1 $2 $3 $4", ["[3-57]|8[13-9]|9(?:0[89]|[2-579])|(?:2|80)[2-9]"]]], 0, 0, "(15(?:0[06]|1[12]|[35]5|4[04]|6[26]|77|88|99)\\d)"], LV: ["371", "00", "(?:[268]\\d|90)\\d{6}", [8], [["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[269]|8[01]"]]]], LY: ["218", "00", "[2-9]\\d{8}", [9], [["(\\d{2})(\\d{7})", "$1-$2", ["[2-9]"], "0$1"]], "0"], MA: ["212", "00", "[5-8]\\d{8}", [9], [["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["5[45]"], "0$1"], ["(\\d{4})(\\d{5})", "$1-$2", ["5(?:2[2-489]|3[5-9]|9)|8(?:0[89]|92)", "5(?:2(?:[2-49]|8[235-9])|3[5-9]|9)|8(?:0[89]|92)"], "0$1"], ["(\\d{2})(\\d{7})", "$1-$2", ["8"], "0$1"], ["(\\d{3})(\\d{6})", "$1-$2", ["[5-7]"], "0$1"]], "0", 0, 0, 0, 0, 0, [["5(?:2(?:[0-25-79]\\d|3[1-578]|4[02-46-8]|8[0235-7])|3(?:[0-47]\\d|5[02-9]|6[02-8]|8[014-9]|9[3-9])|(?:4[067]|5[03])\\d)\\d{5}"], ["(?:6(?:[0-79]\\d|8[0-247-9])|7(?:[0167]\\d|2[0-2]|5[01]|8[0-3]))\\d{6}"], ["80[0-7]\\d{6}"], ["89\\d{7}"], 0, 0, 0, 0, ["(?:592(?:4[0-2]|93)|80[89]\\d\\d)\\d{4}"]]], MC: ["377", "00", "(?:[3489]|6\\d)\\d{7}", [8, 9], [["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["4"], "0$1"], ["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[389]"]], ["(\\d)(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4 $5", ["6"], "0$1"]], "0"], MD: ["373", "00", "(?:[235-7]\\d|[89]0)\\d{6}", [8], [["(\\d{3})(\\d{5})", "$1 $2", ["[89]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["22|3"], "0$1"], ["(\\d{3})(\\d{2})(\\d{3})", "$1 $2 $3", ["[25-7]"], "0$1"]], "0"], ME: ["382", "00", "(?:20|[3-79]\\d)\\d{6}|80\\d{6,7}", [8, 9], [["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[2-9]"], "0$1"]], "0"], MF: ["590", "00", "590\\d{6}|(?:69|80|9\\d)\\d{7}", [9], 0, "0", 0, 0, 0, 0, 0, [["590(?:0[079]|[14]3|[27][79]|3[03-7]|5[0-268]|87)\\d{4}"], ["69(?:0\\d\\d|1(?:2[2-9]|3[0-5]))\\d{4}"], ["80[0-5]\\d{6}"], 0, 0, 0, 0, 0, ["9(?:(?:395|76[018])\\d|475[0-5])\\d{4}"]]], MG: ["261", "00", "[23]\\d{8}", [9], [["(\\d{2})(\\d{2})(\\d{3})(\\d{2})", "$1 $2 $3 $4", ["[23]"], "0$1"]], "0", 0, "([24-9]\\d{6})$|0", "20$1"], MH: ["692", "011", "329\\d{4}|(?:[256]\\d|45)\\d{5}", [7], [["(\\d{3})(\\d{4})", "$1-$2", ["[2-6]"]]], "1"], MK: ["389", "00", "[2-578]\\d{7}", [8], [["(\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["2|34[47]|4(?:[37]7|5[47]|64)"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[347]"], "0$1"], ["(\\d{3})(\\d)(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[58]"], "0$1"]], "0"], ML: ["223", "00", "[24-9]\\d{7}", [8], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[24-9]"]]]], MM: ["95", "00", "1\\d{5,7}|95\\d{6}|(?:[4-7]|9[0-46-9])\\d{6,8}|(?:2|8\\d)\\d{5,8}", [6, 7, 8, 9, 10], [["(\\d)(\\d{2})(\\d{3})", "$1 $2 $3", ["16|2"], "0$1"], ["(\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3", ["[45]|6(?:0[23]|[1-689]|7[235-7])|7(?:[0-4]|5[2-7])|8[1-6]"], "0$1"], ["(\\d)(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[12]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[4-7]|8[1-35]"], "0$1"], ["(\\d)(\\d{3})(\\d{4,6})", "$1 $2 $3", ["9(?:2[0-4]|[35-9]|4[137-9])"], "0$1"], ["(\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["2"], "0$1"], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["8"], "0$1"], ["(\\d)(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["92"], "0$1"], ["(\\d)(\\d{5})(\\d{4})", "$1 $2 $3", ["9"], "0$1"]], "0"], MN: ["976", "001", "[12]\\d{7,9}|[5-9]\\d{7}", [8, 9, 10], [["(\\d{2})(\\d{2})(\\d{4})", "$1 $2 $3", ["[12]1"], "0$1"], ["(\\d{4})(\\d{4})", "$1 $2", ["[5-9]"]], ["(\\d{3})(\\d{5,6})", "$1 $2", ["[12]2[1-3]"], "0$1"], ["(\\d{4})(\\d{5,6})", "$1 $2", ["[12](?:27|3[2-8]|4[2-68]|5[1-4689])", "[12](?:27|3[2-8]|4[2-68]|5[1-4689])[0-3]"], "0$1"], ["(\\d{5})(\\d{4,5})", "$1 $2", ["[12]"], "0$1"]], "0"], MO: ["853", "00", "0800\\d{3}|(?:28|[68]\\d)\\d{6}", [7, 8], [["(\\d{4})(\\d{3})", "$1 $2", ["0"]], ["(\\d{4})(\\d{4})", "$1 $2", ["[268]"]]]], MP: ["1", "011", "[58]\\d{9}|(?:67|90)0\\d{7}", [10], 0, "1", 0, "([2-9]\\d{6})$|1", "670$1", 0, "670"], MQ: ["596", "00", "596\\d{6}|(?:69|80|9\\d)\\d{7}", [9], [["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[569]"], "0$1"], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["8"], "0$1"]], "0"], MR: ["222", "00", "(?:[2-4]\\d\\d|800)\\d{5}", [8], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[2-48]"]]]], MS: ["1", "011", "(?:[58]\\d\\d|664|900)\\d{7}", [10], 0, "1", 0, "([34]\\d{6})$|1", "664$1", 0, "664"], MT: ["356", "00", "3550\\d{4}|(?:[2579]\\d\\d|800)\\d{5}", [8], [["(\\d{4})(\\d{4})", "$1 $2", ["[2357-9]"]]]], MU: ["230", "0(?:0|[24-7]0|3[03])", "(?:[57]|8\\d\\d)\\d{7}|[2-468]\\d{6}", [7, 8, 10], [["(\\d{3})(\\d{4})", "$1 $2", ["[2-46]|8[013]"]], ["(\\d{4})(\\d{4})", "$1 $2", ["[57]"]], ["(\\d{5})(\\d{5})", "$1 $2", ["8"]]], 0, 0, 0, 0, 0, 0, 0, "020"], MV: ["960", "0(?:0|19)", "(?:800|9[0-57-9]\\d)\\d{7}|[34679]\\d{6}", [7, 10], [["(\\d{3})(\\d{4})", "$1-$2", ["[34679]"]], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["[89]"]]], 0, 0, 0, 0, 0, 0, 0, "00"], MW: ["265", "00", "(?:[1289]\\d|31|77)\\d{7}|1\\d{6}", [7, 9], [["(\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["1[2-9]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["2"], "0$1"], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[137-9]"], "0$1"]], "0"], MX: ["52", "0[09]", "1(?:(?:[27]2|44|87|99)[1-9]|65[0-689])\\d{7}|(?:1(?:[01]\\d|2[13-9]|[35][1-9]|4[0-35-9]|6[0-46-9]|7[013-9]|8[1-69]|9[1-8])|[2-9]\\d)\\d{8}", [10, 11], [["(\\d{2})(\\d{4})(\\d{4})", "$1 $2 $3", ["33|5[56]|81"], 0, 1], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["[2-9]"], 0, 1], ["(\\d)(\\d{2})(\\d{4})(\\d{4})", "$2 $3 $4", ["1(?:33|5[56]|81)"], 0, 1], ["(\\d)(\\d{3})(\\d{3})(\\d{4})", "$2 $3 $4", ["1"], 0, 1]], "01", 0, "0(?:[12]|4[45])|1", 0, 0, 0, 0, "00"], MY: ["60", "00", "1\\d{8,9}|(?:3\\d|[4-9])\\d{7}", [8, 9, 10], [["(\\d)(\\d{3})(\\d{4})", "$1-$2 $3", ["[4-79]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1-$2 $3", ["1(?:[02469]|[378][1-9]|53)|8", "1(?:[02469]|[37][1-9]|53|8(?:[1-46-9]|5[7-9]))|8"], "0$1"], ["(\\d)(\\d{4})(\\d{4})", "$1-$2 $3", ["3"], "0$1"], ["(\\d)(\\d{3})(\\d{2})(\\d{4})", "$1-$2-$3-$4", ["1(?:[367]|80)"]], ["(\\d{3})(\\d{3})(\\d{4})", "$1-$2 $3", ["15"], "0$1"], ["(\\d{2})(\\d{4})(\\d{4})", "$1-$2 $3", ["1"], "0$1"]], "0"], MZ: ["258", "00", "(?:2|8\\d)\\d{7}", [8, 9], [["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["2|8[2-79]"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["8"]]]], NA: ["264", "00", "[68]\\d{7,8}", [8, 9], [["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["88"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["6"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["87"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["8"], "0$1"]], "0"], NC: ["687", "00", "(?:050|[2-57-9]\\d\\d)\\d{3}", [6], [["(\\d{2})(\\d{2})(\\d{2})", "$1.$2.$3", ["[02-57-9]"]]]], NE: ["227", "00", "[027-9]\\d{7}", [8], [["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["08"]], ["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[089]|2[013]|7[047]"]]]], NF: ["672", "00", "[13]\\d{5}", [6], [["(\\d{2})(\\d{4})", "$1 $2", ["1[0-3]"]], ["(\\d)(\\d{5})", "$1 $2", ["[13]"]]], 0, 0, "([0-258]\\d{4})$", "3$1"], NG: ["234", "009", "(?:[124-7]|9\\d{3})\\d{6}|[1-9]\\d{7}|[78]\\d{9,13}", [7, 8, 10, 11, 12, 13, 14], [["(\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3", ["78"], "0$1"], ["(\\d)(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[12]|9(?:0[3-9]|[1-9])"], "0$1"], ["(\\d{2})(\\d{3})(\\d{2,3})", "$1 $2 $3", ["[3-7]|8[2-9]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[7-9]"], "0$1"], ["(\\d{3})(\\d{4})(\\d{4,5})", "$1 $2 $3", ["[78]"], "0$1"], ["(\\d{3})(\\d{5})(\\d{5,6})", "$1 $2 $3", ["[78]"], "0$1"]], "0"], NI: ["505", "00", "(?:1800|[25-8]\\d{3})\\d{4}", [8], [["(\\d{4})(\\d{4})", "$1 $2", ["[125-8]"]]]], NL: ["31", "00", "(?:[124-7]\\d\\d|3(?:[02-9]\\d|1[0-8]))\\d{6}|8\\d{6,9}|9\\d{6,10}|1\\d{4,5}", [5, 6, 7, 8, 9, 10, 11], [["(\\d{3})(\\d{4,7})", "$1 $2", ["[89]0"], "0$1"], ["(\\d{2})(\\d{7})", "$1 $2", ["66"], "0$1"], ["(\\d)(\\d{8})", "$1 $2", ["6"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["1[16-8]|2[259]|3[124]|4[17-9]|5[124679]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[1-578]|91"], "0$1"], ["(\\d{3})(\\d{3})(\\d{5})", "$1 $2 $3", ["9"], "0$1"]], "0"], NO: ["47", "00", "(?:0|[2-9]\\d{3})\\d{4}", [5, 8], [["(\\d{3})(\\d{2})(\\d{3})", "$1 $2 $3", ["8"]], ["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[2-79]"]]], 0, 0, 0, 0, 0, "[02-689]|7[0-8]"], NP: ["977", "00", "(?:1\\d|9)\\d{9}|[1-9]\\d{7}", [8, 10, 11], [["(\\d)(\\d{7})", "$1-$2", ["1[2-6]"], "0$1"], ["(\\d{2})(\\d{6})", "$1-$2", ["1[01]|[2-8]|9(?:[1-59]|[67][2-6])"], "0$1"], ["(\\d{3})(\\d{7})", "$1-$2", ["9"]]], "0"], NR: ["674", "00", "(?:444|(?:55|8\\d)\\d|666)\\d{4}", [7], [["(\\d{3})(\\d{4})", "$1 $2", ["[4-68]"]]]], NU: ["683", "00", "(?:[4-7]|888\\d)\\d{3}", [4, 7], [["(\\d{3})(\\d{4})", "$1 $2", ["8"]]]], NZ: ["64", "0(?:0|161)", "[1289]\\d{9}|50\\d{5}(?:\\d{2,3})?|[27-9]\\d{7,8}|(?:[34]\\d|6[0-35-9])\\d{6}|8\\d{4,6}", [5, 6, 7, 8, 9, 10], [["(\\d{2})(\\d{3,8})", "$1 $2", ["8[1-79]"], "0$1"], ["(\\d{3})(\\d{2})(\\d{2,3})", "$1 $2 $3", ["50[036-8]|8|90", "50(?:[0367]|88)|8|90"], "0$1"], ["(\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["24|[346]|7[2-57-9]|9[2-9]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["2(?:10|74)|[589]"], "0$1"], ["(\\d{2})(\\d{3,4})(\\d{4})", "$1 $2 $3", ["1|2[028]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3,5})", "$1 $2 $3", ["2(?:[169]|7[0-35-9])|7"], "0$1"]], "0", 0, 0, 0, 0, 0, 0, "00"], OM: ["968", "00", "(?:1505|[279]\\d{3}|500)\\d{4}|800\\d{5,6}", [7, 8, 9], [["(\\d{3})(\\d{4,6})", "$1 $2", ["[58]"]], ["(\\d{2})(\\d{6})", "$1 $2", ["2"]], ["(\\d{4})(\\d{4})", "$1 $2", ["[179]"]]]], PA: ["507", "00", "(?:00800|8\\d{3})\\d{6}|[68]\\d{7}|[1-57-9]\\d{6}", [7, 8, 10, 11], [["(\\d{3})(\\d{4})", "$1-$2", ["[1-57-9]"]], ["(\\d{4})(\\d{4})", "$1-$2", ["[68]"]], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["8"]]]], PE: ["51", "00|19(?:1[124]|77|90)00", "(?:[14-8]|9\\d)\\d{7}", [8, 9], [["(\\d{3})(\\d{5})", "$1 $2", ["80"], "(0$1)"], ["(\\d)(\\d{7})", "$1 $2", ["1"], "(0$1)"], ["(\\d{2})(\\d{6})", "$1 $2", ["[4-8]"], "(0$1)"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["9"]]], "0", 0, 0, 0, 0, 0, 0, "00", " Anexo "], PF: ["689", "00", "4\\d{5}(?:\\d{2})?|8\\d{7,8}", [6, 8, 9], [["(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3", ["44"]], ["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["4|8[7-9]"]], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["8"]]]], PG: ["675", "00|140[1-3]", "(?:180|[78]\\d{3})\\d{4}|(?:[2-589]\\d|64)\\d{5}", [7, 8], [["(\\d{3})(\\d{4})", "$1 $2", ["18|[2-69]|85"]], ["(\\d{4})(\\d{4})", "$1 $2", ["[78]"]]], 0, 0, 0, 0, 0, 0, 0, "00"], PH: ["63", "00", "(?:[2-7]|9\\d)\\d{8}|2\\d{5}|(?:1800|8)\\d{7,9}", [6, 8, 9, 10, 11, 12, 13], [["(\\d)(\\d{5})", "$1 $2", ["2"], "(0$1)"], ["(\\d{4})(\\d{4,6})", "$1 $2", ["3(?:23|39|46)|4(?:2[3-6]|[35]9|4[26]|76)|544|88[245]|(?:52|64|86)2", "3(?:230|397|461)|4(?:2(?:35|[46]4|51)|396|4(?:22|63)|59[347]|76[15])|5(?:221|446)|642[23]|8(?:622|8(?:[24]2|5[13]))"], "(0$1)"], ["(\\d{5})(\\d{4})", "$1 $2", ["346|4(?:27|9[35])|883", "3469|4(?:279|9(?:30|56))|8834"], "(0$1)"], ["(\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["2"], "(0$1)"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[3-7]|8[2-8]"], "(0$1)"], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["[89]"], "0$1"], ["(\\d{4})(\\d{3})(\\d{4})", "$1 $2 $3", ["1"]], ["(\\d{4})(\\d{1,2})(\\d{3})(\\d{4})", "$1 $2 $3 $4", ["1"]]], "0"], PK: ["92", "00", "122\\d{6}|[24-8]\\d{10,11}|9(?:[013-9]\\d{8,10}|2(?:[01]\\d\\d|2(?:[06-8]\\d|1[01]))\\d{7})|(?:[2-8]\\d{3}|92(?:[0-7]\\d|8[1-9]))\\d{6}|[24-9]\\d{8}|[89]\\d{7}", [8, 9, 10, 11, 12], [["(\\d{3})(\\d{3})(\\d{2,7})", "$1 $2 $3", ["[89]0"], "0$1"], ["(\\d{4})(\\d{5})", "$1 $2", ["1"]], ["(\\d{3})(\\d{6,7})", "$1 $2", ["2(?:3[2358]|4[2-4]|9[2-8])|45[3479]|54[2-467]|60[468]|72[236]|8(?:2[2-689]|3[23578]|4[3478]|5[2356])|9(?:2[2-8]|3[27-9]|4[2-6]|6[3569]|9[25-8])", "9(?:2[3-8]|98)|(?:2(?:3[2358]|4[2-4]|9[2-8])|45[3479]|54[2-467]|60[468]|72[236]|8(?:2[2-689]|3[23578]|4[3478]|5[2356])|9(?:22|3[27-9]|4[2-6]|6[3569]|9[25-7]))[2-9]"], "(0$1)"], ["(\\d{2})(\\d{7,8})", "$1 $2", ["(?:2[125]|4[0-246-9]|5[1-35-7]|6[1-8]|7[14]|8[16]|91)[2-9]"], "(0$1)"], ["(\\d{5})(\\d{5})", "$1 $2", ["58"], "(0$1)"], ["(\\d{3})(\\d{7})", "$1 $2", ["3"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["2[125]|4[0-246-9]|5[1-35-7]|6[1-8]|7[14]|8[16]|91"], "(0$1)"], ["(\\d{3})(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["[24-9]"], "(0$1)"]], "0"], PL: ["48", "00", "(?:6|8\\d\\d)\\d{7}|[1-9]\\d{6}(?:\\d{2})?|[26]\\d{5}", [6, 7, 8, 9, 10], [["(\\d{5})", "$1", ["19"]], ["(\\d{3})(\\d{3})", "$1 $2", ["11|20|64"]], ["(\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3", ["(?:1[2-8]|2[2-69]|3[2-4]|4[1-468]|5[24-689]|6[1-3578]|7[14-7]|8[1-79]|9[145])1", "(?:1[2-8]|2[2-69]|3[2-4]|4[1-468]|5[24-689]|6[1-3578]|7[14-7]|8[1-79]|9[145])19"]], ["(\\d{3})(\\d{2})(\\d{2,3})", "$1 $2 $3", ["64"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["21|39|45|5[0137]|6[0469]|7[02389]|8(?:0[14]|8)"]], ["(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["1[2-8]|[2-7]|8[1-79]|9[145]"]], ["(\\d{3})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["8"]]]], PM: ["508", "00", "[45]\\d{5}|(?:708|80\\d)\\d{6}", [6, 9], [["(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3", ["[45]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["7"]], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["8"], "0$1"]], "0"], PR: ["1", "011", "(?:[589]\\d\\d|787)\\d{7}", [10], 0, "1", 0, 0, 0, 0, "787|939"], PS: ["970", "00", "[2489]2\\d{6}|(?:1\\d|5)\\d{8}", [8, 9, 10], [["(\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["[2489]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["5"], "0$1"], ["(\\d{4})(\\d{3})(\\d{3})", "$1 $2 $3", ["1"]]], "0"], PT: ["351", "00", "1693\\d{5}|(?:[26-9]\\d|30)\\d{7}", [9], [["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["2[12]"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["16|[236-9]"]]]], PW: ["680", "01[12]", "(?:[24-8]\\d\\d|345|900)\\d{4}", [7], [["(\\d{3})(\\d{4})", "$1 $2", ["[2-9]"]]]], PY: ["595", "00", "59\\d{4,6}|9\\d{5,10}|(?:[2-46-8]\\d|5[0-8])\\d{4,7}", [6, 7, 8, 9, 10, 11], [["(\\d{3})(\\d{3,6})", "$1 $2", ["[2-9]0"], "0$1"], ["(\\d{2})(\\d{5})", "$1 $2", ["[26]1|3[289]|4[1246-8]|7[1-3]|8[1-36]"], "(0$1)"], ["(\\d{3})(\\d{4,5})", "$1 $2", ["2[279]|3[13-5]|4[359]|5|6(?:[34]|7[1-46-8])|7[46-8]|85"], "(0$1)"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["2[14-68]|3[26-9]|4[1246-8]|6(?:1|75)|7[1-35]|8[1-36]"], "(0$1)"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["87"]], ["(\\d{3})(\\d{6})", "$1 $2", ["9(?:[5-79]|8[1-6])"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[2-8]"], "0$1"], ["(\\d{4})(\\d{3})(\\d{4})", "$1 $2 $3", ["9"]]], "0"], QA: ["974", "00", "800\\d{4}|(?:2|800)\\d{6}|(?:0080|[3-7])\\d{7}", [7, 8, 9, 11], [["(\\d{3})(\\d{4})", "$1 $2", ["2[16]|8"]], ["(\\d{4})(\\d{4})", "$1 $2", ["[3-7]"]]]], RE: ["262", "00", "(?:26|[689]\\d)\\d{7}", [9], [["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[2689]"], "0$1"]], "0", 0, 0, 0, 0, 0, [["26(?:2\\d\\d|3(?:0\\d|1[0-6]))\\d{4}"], ["69(?:2\\d\\d|3(?:[06][0-6]|1[013]|2[0-2]|3[0-39]|4\\d|5[0-5]|7[0-37]|8[0-8]|9[0-479]))\\d{4}"], ["80\\d{7}"], ["89[1-37-9]\\d{6}"], 0, 0, 0, 0, ["9(?:399[0-3]|479[0-5]|76(?:2[27]|3[0-37]))\\d{4}"], ["8(?:1[019]|2[0156]|84|90)\\d{6}"]]], RO: ["40", "00", "(?:[2378]\\d|62|90)\\d{7}|[23]\\d{5}", [6, 9], [["(\\d{3})(\\d{3})", "$1 $2", ["2[3-6]", "2[3-6]\\d9"], "0$1"], ["(\\d{2})(\\d{4})", "$1 $2", ["219|31"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[23]1"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[236-9]"], "0$1"]], "0", 0, 0, 0, 0, 0, 0, 0, " int "], RS: ["381", "00", "38[02-9]\\d{6,9}|6\\d{7,9}|90\\d{4,8}|38\\d{5,6}|(?:7\\d\\d|800)\\d{3,9}|(?:[12]\\d|3[0-79])\\d{5,10}", [6, 7, 8, 9, 10, 11, 12], [["(\\d{3})(\\d{3,9})", "$1 $2", ["(?:2[389]|39)0|[7-9]"], "0$1"], ["(\\d{2})(\\d{5,10})", "$1 $2", ["[1-36]"], "0$1"]], "0"], RU: ["7", "810", "8\\d{13}|[347-9]\\d{9}", [10, 14], [["(\\d{4})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["7(?:1[0-8]|2[1-9])", "7(?:1(?:[0-356]2|4[29]|7|8[27])|2(?:1[23]|[2-9]2))", "7(?:1(?:[0-356]2|4[29]|7|8[27])|2(?:13[03-69]|62[013-9]))|72[1-57-9]2"], "8 ($1)", 1], ["(\\d{5})(\\d)(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["7(?:1[0-68]|2[1-9])", "7(?:1(?:[06][3-6]|[18]|2[35]|[3-5][3-5])|2(?:[13][3-5]|[24-689]|7[457]))", "7(?:1(?:0(?:[356]|4[023])|[18]|2(?:3[013-9]|5)|3[45]|43[013-79]|5(?:3[1-8]|4[1-7]|5)|6(?:3[0-35-9]|[4-6]))|2(?:1(?:3[178]|[45])|[24-689]|3[35]|7[457]))|7(?:14|23)4[0-8]|71(?:33|45)[1-79]"], "8 ($1)", 1], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["7"], "8 ($1)", 1], ["(\\d{3})(\\d{3})(\\d{2})(\\d{2})", "$1 $2-$3-$4", ["[349]|8(?:[02-7]|1[1-8])"], "8 ($1)", 1], ["(\\d{4})(\\d{4})(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["8"], "8 ($1)"]], "8", 0, 0, 0, 0, "3[04-689]|[489]", 0, "8~10"], RW: ["250", "00", "(?:06|[27]\\d\\d|[89]00)\\d{6}", [8, 9], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["0"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["2"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[7-9]"], "0$1"]], "0"], SA: ["966", "00", "92\\d{7}|(?:[15]|8\\d)\\d{8}", [9, 10], [["(\\d{4})(\\d{5})", "$1 $2", ["9"]], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["1"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["5"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["81"], "0$1"], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["8"]]], "0"], SB: ["677", "0[01]", "(?:[1-6]|[7-9]\\d\\d)\\d{4}", [5, 7], [["(\\d{2})(\\d{5})", "$1 $2", ["7|8[4-9]|9(?:[1-8]|9[0-8])"]]]], SC: ["248", "010|0[0-2]", "800\\d{4}|(?:[249]\\d|64)\\d{5}", [7], [["(\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["[246]|9[57]"]]], 0, 0, 0, 0, 0, 0, 0, "00"], SD: ["249", "00", "[19]\\d{8}", [9], [["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[19]"], "0$1"]], "0"], SE: ["46", "00", "(?:[26]\\d\\d|9)\\d{9}|[1-9]\\d{8}|[1-689]\\d{7}|[1-4689]\\d{6}|2\\d{5}", [6, 7, 8, 9, 10], [["(\\d{2})(\\d{2,3})(\\d{2})", "$1-$2 $3", ["20"], "0$1", 0, "$1 $2 $3"], ["(\\d{3})(\\d{4})", "$1-$2", ["9(?:00|39|44|9)"], "0$1", 0, "$1 $2"], ["(\\d{2})(\\d{3})(\\d{2})", "$1-$2 $3", ["[12][136]|3[356]|4[0246]|6[03]|90[1-9]"], "0$1", 0, "$1 $2 $3"], ["(\\d)(\\d{2,3})(\\d{2})(\\d{2})", "$1-$2 $3 $4", ["8"], "0$1", 0, "$1 $2 $3 $4"], ["(\\d{3})(\\d{2,3})(\\d{2})", "$1-$2 $3", ["1[2457]|2(?:[247-9]|5[0138])|3[0247-9]|4[1357-9]|5[0-35-9]|6(?:[125689]|4[02-57]|7[0-2])|9(?:[125-8]|3[02-5]|4[0-3])"], "0$1", 0, "$1 $2 $3"], ["(\\d{3})(\\d{2,3})(\\d{3})", "$1-$2 $3", ["9(?:00|39|44)"], "0$1", 0, "$1 $2 $3"], ["(\\d{2})(\\d{2,3})(\\d{2})(\\d{2})", "$1-$2 $3 $4", ["1[13689]|2[0136]|3[1356]|4[0246]|54|6[03]|90[1-9]"], "0$1", 0, "$1 $2 $3 $4"], ["(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1-$2 $3 $4", ["10|7"], "0$1", 0, "$1 $2 $3 $4"], ["(\\d)(\\d{3})(\\d{3})(\\d{2})", "$1-$2 $3 $4", ["8"], "0$1", 0, "$1 $2 $3 $4"], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1-$2 $3 $4", ["[13-5]|2(?:[247-9]|5[0138])|6(?:[124-689]|7[0-2])|9(?:[125-8]|3[02-5]|4[0-3])"], "0$1", 0, "$1 $2 $3 $4"], ["(\\d{3})(\\d{2})(\\d{2})(\\d{3})", "$1-$2 $3 $4", ["9"], "0$1", 0, "$1 $2 $3 $4"], ["(\\d{3})(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1-$2 $3 $4 $5", ["[26]"], "0$1", 0, "$1 $2 $3 $4 $5"]], "0"], SG: ["65", "0[0-3]\\d", "(?:(?:1\\d|8)\\d\\d|7000)\\d{7}|[3689]\\d{7}", [8, 10, 11], [["(\\d{4})(\\d{4})", "$1 $2", ["[369]|8(?:0[1-8]|[1-9])"]], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["8"]], ["(\\d{4})(\\d{4})(\\d{3})", "$1 $2 $3", ["7"]], ["(\\d{4})(\\d{3})(\\d{4})", "$1 $2 $3", ["1"]]]], SH: ["290", "00", "(?:[256]\\d|8)\\d{3}", [4, 5], 0, 0, 0, 0, 0, 0, "[256]"], SI: ["386", "00|10(?:22|66|88|99)", "[1-7]\\d{7}|8\\d{4,7}|90\\d{4,6}", [5, 6, 7, 8], [["(\\d{2})(\\d{3,6})", "$1 $2", ["8[09]|9"], "0$1"], ["(\\d{3})(\\d{5})", "$1 $2", ["59|8"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[37][01]|4[0139]|51|6"], "0$1"], ["(\\d)(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[1-57]"], "(0$1)"]], "0", 0, 0, 0, 0, 0, 0, "00"], SJ: ["47", "00", "0\\d{4}|(?:[489]\\d|79)\\d{6}", [5, 8], 0, 0, 0, 0, 0, 0, "79"], SK: ["421", "00", "[2-689]\\d{8}|[2-59]\\d{6}|[2-5]\\d{5}", [6, 7, 9], [["(\\d)(\\d{2})(\\d{3,4})", "$1 $2 $3", ["21"], "0$1"], ["(\\d{2})(\\d{2})(\\d{2,3})", "$1 $2 $3", ["[3-5][1-8]1", "[3-5][1-8]1[67]"], "0$1"], ["(\\d)(\\d{3})(\\d{3})(\\d{2})", "$1/$2 $3 $4", ["2"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[689]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1/$2 $3 $4", ["[3-5]"], "0$1"]], "0"], SL: ["232", "00", "(?:[237-9]\\d|66)\\d{6}", [8], [["(\\d{2})(\\d{6})", "$1 $2", ["[236-9]"], "(0$1)"]], "0"], SM: ["378", "00", "(?:0549|[5-7]\\d)\\d{6}", [8, 10], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[5-7]"]], ["(\\d{4})(\\d{6})", "$1 $2", ["0"]]], 0, 0, "([89]\\d{5})$", "0549$1"], SN: ["221", "00", "(?:[378]\\d|93)\\d{7}", [9], [["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["8"]], ["(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[379]"]]]], SO: ["252", "00", "[346-9]\\d{8}|[12679]\\d{7}|[1-5]\\d{6}|[1348]\\d{5}", [6, 7, 8, 9], [["(\\d{2})(\\d{4})", "$1 $2", ["8[125]"]], ["(\\d{6})", "$1", ["[134]"]], ["(\\d)(\\d{6})", "$1 $2", ["[15]|2[0-79]|3[0-46-8]|4[0-7]"]], ["(\\d)(\\d{7})", "$1 $2", ["(?:2|90)4|[67]"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[348]|64|79|90"]], ["(\\d{2})(\\d{5,7})", "$1 $2", ["1|28|6[0-35-9]|77|9[2-9]"]]], "0"], SR: ["597", "00", "(?:[2-5]|68|[78]\\d)\\d{5}", [6, 7], [["(\\d{2})(\\d{2})(\\d{2})", "$1-$2-$3", ["56"]], ["(\\d{3})(\\d{3})", "$1-$2", ["[2-5]"]], ["(\\d{3})(\\d{4})", "$1-$2", ["[6-8]"]]]], SS: ["211", "00", "[19]\\d{8}", [9], [["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[19]"], "0$1"]], "0"], ST: ["239", "00", "(?:22|9\\d)\\d{5}", [7], [["(\\d{3})(\\d{4})", "$1 $2", ["[29]"]]]], SV: ["503", "00", "[267]\\d{7}|[89]00\\d{4}(?:\\d{4})?", [7, 8, 11], [["(\\d{3})(\\d{4})", "$1 $2", ["[89]"]], ["(\\d{4})(\\d{4})", "$1 $2", ["[267]"]], ["(\\d{3})(\\d{4})(\\d{4})", "$1 $2 $3", ["[89]"]]]], SX: ["1", "011", "7215\\d{6}|(?:[58]\\d\\d|900)\\d{7}", [10], 0, "1", 0, "(5\\d{6})$|1", "721$1", 0, "721"], SY: ["963", "00", "[1-39]\\d{8}|[1-5]\\d{7}", [8, 9], [["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[1-5]"], "0$1", 1], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["9"], "0$1", 1]], "0"], SZ: ["268", "00", "0800\\d{4}|(?:[237]\\d|900)\\d{6}", [8, 9], [["(\\d{4})(\\d{4})", "$1 $2", ["[0237]"]], ["(\\d{5})(\\d{4})", "$1 $2", ["9"]]]], TA: ["290", "00", "8\\d{3}", [4], 0, 0, 0, 0, 0, 0, "8"], TC: ["1", "011", "(?:[58]\\d\\d|649|900)\\d{7}", [10], 0, "1", 0, "([2-479]\\d{6})$|1", "649$1", 0, "649"], TD: ["235", "00|16", "(?:22|[69]\\d|77)\\d{6}", [8], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[2679]"]]], 0, 0, 0, 0, 0, 0, 0, "00"], TG: ["228", "00", "[279]\\d{7}", [8], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[279]"]]]], TH: ["66", "00[1-9]", "(?:001800|[2-57]|[689]\\d)\\d{7}|1\\d{7,9}", [8, 9, 10, 13], [["(\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["2"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[13-9]"], "0$1"], ["(\\d{4})(\\d{3})(\\d{3})", "$1 $2 $3", ["1"]]], "0"], TJ: ["992", "810", "[0-57-9]\\d{8}", [9], [["(\\d{6})(\\d)(\\d{2})", "$1 $2 $3", ["331", "3317"]], ["(\\d{3})(\\d{2})(\\d{4})", "$1 $2 $3", ["44[02-479]|[34]7"]], ["(\\d{4})(\\d)(\\d{4})", "$1 $2 $3", ["3[1-5]"]], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[0-57-9]"]]], 0, 0, 0, 0, 0, 0, 0, "8~10"], TK: ["690", "00", "[2-47]\\d{3,6}", [4, 5, 6, 7]], TL: ["670", "00", "7\\d{7}|(?:[2-47]\\d|[89]0)\\d{5}", [7, 8], [["(\\d{3})(\\d{4})", "$1 $2", ["[2-489]|70"]], ["(\\d{4})(\\d{4})", "$1 $2", ["7"]]]], TM: ["993", "810", "[1-6]\\d{7}", [8], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2-$3-$4", ["12"], "(8 $1)"], ["(\\d{3})(\\d)(\\d{2})(\\d{2})", "$1 $2-$3-$4", ["[1-5]"], "(8 $1)"], ["(\\d{2})(\\d{6})", "$1 $2", ["6"], "8 $1"]], "8", 0, 0, 0, 0, 0, 0, "8~10"], TN: ["216", "00", "[2-57-9]\\d{7}", [8], [["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[2-57-9]"]]]], TO: ["676", "00", "(?:0800|(?:[5-8]\\d\\d|999)\\d)\\d{3}|[2-8]\\d{4}", [5, 7], [["(\\d{2})(\\d{3})", "$1-$2", ["[2-4]|50|6[09]|7[0-24-69]|8[05]"]], ["(\\d{4})(\\d{3})", "$1 $2", ["0"]], ["(\\d{3})(\\d{4})", "$1 $2", ["[5-9]"]]]], TR: ["90", "00", "4\\d{6}|8\\d{11,12}|(?:[2-58]\\d\\d|900)\\d{7}", [7, 10, 12, 13], [["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["512|8[01589]|90"], "0$1", 1], ["(\\d{3})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["5(?:[0-59]|61)", "5(?:[0-59]|61[06])", "5(?:[0-59]|61[06]1)"], "0$1", 1], ["(\\d{3})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[24][1-8]|3[1-9]"], "(0$1)", 1], ["(\\d{3})(\\d{3})(\\d{6,7})", "$1 $2 $3", ["80"], "0$1", 1]], "0"], TT: ["1", "011", "(?:[58]\\d\\d|900)\\d{7}", [10], 0, "1", 0, "([2-46-8]\\d{6})$|1", "868$1", 0, "868"], TV: ["688", "00", "(?:2|7\\d\\d|90)\\d{4}", [5, 6, 7], [["(\\d{2})(\\d{3})", "$1 $2", ["2"]], ["(\\d{2})(\\d{4})", "$1 $2", ["90"]], ["(\\d{2})(\\d{5})", "$1 $2", ["7"]]]], TW: ["886", "0(?:0[25-79]|19)", "[2-689]\\d{8}|7\\d{9,10}|[2-8]\\d{7}|2\\d{6}", [7, 8, 9, 10, 11], [["(\\d{2})(\\d)(\\d{4})", "$1 $2 $3", ["202"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[258]0"], "0$1"], ["(\\d)(\\d{3,4})(\\d{4})", "$1 $2 $3", ["[23568]|4(?:0[02-48]|[1-47-9])|7[1-9]", "[23568]|4(?:0[2-48]|[1-47-9])|(?:400|7)[1-9]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[49]"], "0$1"], ["(\\d{2})(\\d{4})(\\d{4,5})", "$1 $2 $3", ["7"], "0$1"]], "0", 0, 0, 0, 0, 0, 0, 0, "#"], TZ: ["255", "00[056]", "(?:[25-8]\\d|41|90)\\d{7}", [9], [["(\\d{3})(\\d{2})(\\d{4})", "$1 $2 $3", ["[89]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[24]"], "0$1"], ["(\\d{2})(\\d{7})", "$1 $2", ["5"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[67]"], "0$1"]], "0"], UA: ["380", "00", "[89]\\d{9}|[3-9]\\d{8}", [9, 10], [["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["6[12][29]|(?:3[1-8]|4[136-8]|5[12457]|6[49])2|(?:56|65)[24]", "6[12][29]|(?:35|4[1378]|5[12457]|6[49])2|(?:56|65)[24]|(?:3[1-46-8]|46)2[013-9]"], "0$1"], ["(\\d{4})(\\d{5})", "$1 $2", ["3[1-8]|4(?:[1367]|[45][6-9]|8[4-6])|5(?:[1-5]|6[0135689]|7[4-6])|6(?:[12][3-7]|[459])", "3[1-8]|4(?:[1367]|[45][6-9]|8[4-6])|5(?:[1-5]|6(?:[015689]|3[02389])|7[4-6])|6(?:[12][3-7]|[459])"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[3-7]|89|9[1-9]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[89]"], "0$1"]], "0", 0, 0, 0, 0, 0, 0, "0~0"], UG: ["256", "00[057]", "800\\d{6}|(?:[29]0|[347]\\d)\\d{7}", [9], [["(\\d{4})(\\d{5})", "$1 $2", ["202", "2024"], "0$1"], ["(\\d{3})(\\d{6})", "$1 $2", ["[27-9]|4(?:6[45]|[7-9])"], "0$1"], ["(\\d{2})(\\d{7})", "$1 $2", ["[34]"], "0$1"]], "0"], US: ["1", "011", "[2-9]\\d{9}|3\\d{6}", [10], [["(\\d{3})(\\d{4})", "$1-$2", ["310"], 0, 1], ["(\\d{3})(\\d{3})(\\d{4})", "($1) $2-$3", ["[2-9]"], 0, 1, "$1-$2-$3"]], "1", 0, 0, 0, 0, 0, [["(?:5056(?:[0-35-9]\\d|4[468])|73020\\d)\\d{4}|(?:4722|505[2-57-9]|983[289])\\d{6}|(?:2(?:0[1-35-9]|1[02-9]|2[03-57-9]|3[149]|4[08]|5[1-46]|6[0279]|7[0269]|8[13])|3(?:0[1-57-9]|1[02-9]|2[013569]|3[0-24679]|4[167]|5[0-2]|6[0149]|8[056])|4(?:0[124-9]|1[02-579]|2[3-5]|3[0245]|4[023578]|58|6[349]|7[0589]|8[04])|5(?:0[1-47-9]|1[0235-8]|20|3[0149]|4[01]|5[179]|6[1-47]|7[0-5]|8[0256])|6(?:0[1-35-9]|1[024-9]|2[03689]|[34][016]|5[01679]|6[0-279]|78|8[0-29])|7(?:0[1-46-8]|1[2-9]|2[04-7]|3[1247]|4[037]|5[47]|6[02359]|7[0-59]|8[156])|8(?:0[1-68]|1[02-8]|2[068]|3[0-2589]|4[03578]|5[046-9]|6[02-5]|7[028])|9(?:0[1346-9]|1[02-9]|2[0589]|3[0146-8]|4[01357-9]|5[12469]|7[0-389]|8[04-69]))[2-9]\\d{6}"], [""], ["8(?:00|33|44|55|66|77|88)[2-9]\\d{6}"], ["900[2-9]\\d{6}"], ["52(?:3(?:[2-46-9][02-9]\\d|5(?:[02-46-9]\\d|5[0-46-9]))|4(?:[2-478][02-9]\\d|5(?:[034]\\d|2[024-9]|5[0-46-9])|6(?:0[1-9]|[2-9]\\d)|9(?:[05-9]\\d|2[0-5]|49)))\\d{4}|52[34][2-9]1[02-9]\\d{4}|5(?:00|2[125-9]|33|44|66|77|88)[2-9]\\d{6}"]]], UY: ["598", "0(?:0|1[3-9]\\d)", "0004\\d{2,9}|[1249]\\d{7}|(?:[49]\\d|80)\\d{5}", [6, 7, 8, 9, 10, 11, 12, 13], [["(\\d{3})(\\d{3,4})", "$1 $2", ["0"]], ["(\\d{3})(\\d{4})", "$1 $2", ["[49]0|8"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["9"], "0$1"], ["(\\d{4})(\\d{4})", "$1 $2", ["[124]"]], ["(\\d{3})(\\d{3})(\\d{2,4})", "$1 $2 $3", ["0"]], ["(\\d{3})(\\d{3})(\\d{3})(\\d{2,4})", "$1 $2 $3 $4", ["0"]]], "0", 0, 0, 0, 0, 0, 0, "00", " int. "], UZ: ["998", "810", "(?:20|33|[5-79]\\d|88)\\d{7}", [9], [["(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[235-9]"], "8 $1"]], "8", 0, 0, 0, 0, 0, 0, "8~10"], VA: ["39", "00", "0\\d{5,10}|3[0-8]\\d{7,10}|55\\d{8}|8\\d{5}(?:\\d{2,4})?|(?:1\\d|39)\\d{7,8}", [6, 7, 8, 9, 10, 11], 0, 0, 0, 0, 0, 0, "06698"], VC: ["1", "011", "(?:[58]\\d\\d|784|900)\\d{7}", [10], 0, "1", 0, "([2-7]\\d{6})$|1", "784$1", 0, "784"], VE: ["58", "00", "[68]00\\d{7}|(?:[24]\\d|[59]0)\\d{8}", [10], [["(\\d{3})(\\d{7})", "$1-$2", ["[24-689]"], "0$1"]], "0"], VG: ["1", "011", "(?:284|[58]\\d\\d|900)\\d{7}", [10], 0, "1", 0, "([2-578]\\d{6})$|1", "284$1", 0, "284"], VI: ["1", "011", "[58]\\d{9}|(?:34|90)0\\d{7}", [10], 0, "1", 0, "([2-9]\\d{6})$|1", "340$1", 0, "340"], VN: ["84", "00", "[12]\\d{9}|[135-9]\\d{8}|[16]\\d{7}|[16-8]\\d{6}", [7, 8, 9, 10], [["(\\d{2})(\\d{5})", "$1 $2", ["80"], "0$1", 1], ["(\\d{4})(\\d{4,6})", "$1 $2", ["1"], 0, 1], ["(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["6"], "0$1", 1], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[357-9]"], "0$1", 1], ["(\\d{2})(\\d{4})(\\d{4})", "$1 $2 $3", ["2[48]"], "0$1", 1], ["(\\d{3})(\\d{4})(\\d{3})", "$1 $2 $3", ["2"], "0$1", 1]], "0"], VU: ["678", "00", "[57-9]\\d{6}|(?:[238]\\d|48)\\d{3}", [5, 7], [["(\\d{3})(\\d{4})", "$1 $2", ["[57-9]"]]]], WF: ["681", "00", "(?:40|72)\\d{4}|8\\d{5}(?:\\d{3})?", [6, 9], [["(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3", ["[478]"]], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["8"]]]], WS: ["685", "0", "(?:[2-6]|8\\d{5})\\d{4}|[78]\\d{6}|[68]\\d{5}", [5, 6, 7, 10], [["(\\d{5})", "$1", ["[2-5]|6[1-9]"]], ["(\\d{3})(\\d{3,7})", "$1 $2", ["[68]"]], ["(\\d{2})(\\d{5})", "$1 $2", ["7"]]]], XK: ["383", "00", "[23]\\d{7,8}|(?:4\\d\\d|[89]00)\\d{5}", [8, 9], [["(\\d{3})(\\d{5})", "$1 $2", ["[89]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[2-4]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[23]"], "0$1"]], "0"], YE: ["967", "00", "(?:1|7\\d)\\d{7}|[1-7]\\d{6}", [7, 8, 9], [["(\\d)(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[1-6]|7(?:[24-6]|8[0-7])"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["7"], "0$1"]], "0"], YT: ["262", "00", "(?:80|9\\d)\\d{7}|(?:26|63)9\\d{6}", [9], 0, "0", 0, 0, 0, 0, 0, [["269(?:0[0-467]|5[0-4]|6\\d|[78]0)\\d{4}"], ["639(?:0[0-79]|1[019]|[267]\\d|3[09]|40|5[05-9]|9[04-79])\\d{4}"], ["80\\d{7}"], 0, 0, 0, 0, 0, ["9(?:(?:39|47)8[01]|769\\d)\\d{4}"]]], ZA: ["27", "00", "[1-79]\\d{8}|8\\d{4,9}", [5, 6, 7, 8, 9, 10], [["(\\d{2})(\\d{3,4})", "$1 $2", ["8[1-4]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{2,3})", "$1 $2 $3", ["8[1-4]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["860"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[1-9]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["8"], "0$1"]], "0"], ZM: ["260", "00", "800\\d{6}|(?:21|63|[79]\\d)\\d{7}", [9], [["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[28]"], "0$1"], ["(\\d{2})(\\d{7})", "$1 $2", ["[79]"], "0$1"]], "0"], ZW: ["263", "00", "2(?:[0-57-9]\\d{6,8}|6[0-24-9]\\d{6,7})|[38]\\d{9}|[35-8]\\d{8}|[3-6]\\d{7}|[1-689]\\d{6}|[1-3569]\\d{5}|[1356]\\d{4}", [5, 6, 7, 8, 9, 10], [["(\\d{3})(\\d{3,5})", "$1 $2", ["2(?:0[45]|2[278]|[49]8)|3(?:[09]8|17)|6(?:[29]8|37|75)|[23][78]|(?:33|5[15]|6[68])[78]"], "0$1"], ["(\\d)(\\d{3})(\\d{2,4})", "$1 $2 $3", ["[49]"], "0$1"], ["(\\d{3})(\\d{4})", "$1 $2", ["80"], "0$1"], ["(\\d{2})(\\d{7})", "$1 $2", ["24|8[13-59]|(?:2[05-79]|39|5[45]|6[15-8])2", "2(?:02[014]|4|[56]20|[79]2)|392|5(?:42|525)|6(?:[16-8]21|52[013])|8[13-59]"], "(0$1)"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["7"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["2(?:1[39]|2[0157]|[378]|[56][14])|3(?:12|29)", "2(?:1[39]|2[0157]|[378]|[56][14])|3(?:123|29)"], "0$1"], ["(\\d{4})(\\d{6})", "$1 $2", ["8"], "0$1"], ["(\\d{2})(\\d{3,5})", "$1 $2", ["1|2(?:0[0-36-9]|12|29|[56])|3(?:1[0-689]|[24-6])|5(?:[0236-9]|1[2-4])|6(?:[013-59]|7[0-46-9])|(?:33|55|6[68])[0-69]|(?:29|3[09]|62)[0-79]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["29[013-9]|39|54"], "0$1"], ["(\\d{4})(\\d{3,5})", "$1 $2", ["(?:25|54)8", "258|5483"], "0$1"]], "0"] }, nonGeographic: { 800: ["800", 0, "(?:00|[1-9]\\d)\\d{6}", [8], [["(\\d{4})(\\d{4})", "$1 $2", ["\\d"]]], 0, 0, 0, 0, 0, 0, [0, 0, ["(?:00|[1-9]\\d)\\d{6}"]]], 808: ["808", 0, "[1-9]\\d{7}", [8], [["(\\d{4})(\\d{4})", "$1 $2", ["[1-9]"]]], 0, 0, 0, 0, 0, 0, [0, 0, 0, 0, 0, 0, 0, 0, 0, ["[1-9]\\d{7}"]]], 870: ["870", 0, "7\\d{11}|[35-7]\\d{8}", [9, 12], [["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[35-7]"]]], 0, 0, 0, 0, 0, 0, [0, ["(?:[356]|774[45])\\d{8}|7[6-8]\\d{7}"]]], 878: ["878", 0, "10\\d{10}", [12], [["(\\d{2})(\\d{5})(\\d{5})", "$1 $2 $3", ["1"]]], 0, 0, 0, 0, 0, 0, [0, 0, 0, 0, 0, 0, 0, 0, ["10\\d{10}"]]], 881: ["881", 0, "6\\d{9}|[0-36-9]\\d{8}", [9, 10], [["(\\d)(\\d{3})(\\d{5})", "$1 $2 $3", ["[0-37-9]"]], ["(\\d)(\\d{3})(\\d{5,6})", "$1 $2 $3", ["6"]]], 0, 0, 0, 0, 0, 0, [0, ["6\\d{9}|[0-36-9]\\d{8}"]]], 882: ["882", 0, "[13]\\d{6}(?:\\d{2,5})?|[19]\\d{7}|(?:[25]\\d\\d|4)\\d{7}(?:\\d{2})?", [7, 8, 9, 10, 11, 12], [["(\\d{2})(\\d{5})", "$1 $2", ["16|342"]], ["(\\d{2})(\\d{6})", "$1 $2", ["49"]], ["(\\d{2})(\\d{2})(\\d{4})", "$1 $2 $3", ["1[36]|9"]], ["(\\d{2})(\\d{4})(\\d{3})", "$1 $2 $3", ["3[23]"]], ["(\\d{2})(\\d{3,4})(\\d{4})", "$1 $2 $3", ["16"]], ["(\\d{2})(\\d{4})(\\d{4})", "$1 $2 $3", ["10|23|3(?:[15]|4[57])|4|51"]], ["(\\d{3})(\\d{4})(\\d{4})", "$1 $2 $3", ["34"]], ["(\\d{2})(\\d{4,5})(\\d{5})", "$1 $2 $3", ["[1-35]"]]], 0, 0, 0, 0, 0, 0, [0, ["342\\d{4}|(?:337|49)\\d{6}|(?:3(?:2|47|7\\d{3})|50\\d{3})\\d{7}", [7, 8, 9, 10, 12]], 0, 0, 0, 0, 0, 0, ["1(?:3(?:0[0347]|[13][0139]|2[035]|4[013568]|6[0459]|7[06]|8[15-8]|9[0689])\\d{4}|6\\d{5,10})|(?:345\\d|9[89])\\d{6}|(?:10|2(?:3|85\\d)|3(?:[15]|[69]\\d\\d)|4[15-8]|51)\\d{8}"]]], 883: ["883", 0, "(?:[1-4]\\d|51)\\d{6,10}", [8, 9, 10, 11, 12], [["(\\d{3})(\\d{3})(\\d{2,8})", "$1 $2 $3", ["[14]|2[24-689]|3[02-689]|51[24-9]"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["510"]], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["21"]], ["(\\d{4})(\\d{4})(\\d{4})", "$1 $2 $3", ["51[13]"]], ["(\\d{3})(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["[235]"]]], 0, 0, 0, 0, 0, 0, [0, 0, 0, 0, 0, 0, 0, 0, ["(?:2(?:00\\d\\d|10)|(?:370[1-9]|51\\d0)\\d)\\d{7}|51(?:00\\d{5}|[24-9]0\\d{4,7})|(?:1[0-79]|2[24-689]|3[02-689]|4[0-4])0\\d{5,9}"]]], 888: ["888", 0, "\\d{11}", [11], [["(\\d{3})(\\d{3})(\\d{5})", "$1 $2 $3"]], 0, 0, 0, 0, 0, 0, [0, 0, 0, 0, 0, 0, ["\\d{11}"]]], 979: ["979", 0, "[1359]\\d{8}", [9], [["(\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["[1359]"]]], 0, 0, 0, 0, 0, 0, [0, 0, 0, ["[1359]\\d{8}"]]] } };
-function Bd(e, o) {
+}, {}), _t = {
+  options: { ...Ed }
+}, Rd = { version: 4, country_calling_codes: { 1: ["US", "AG", "AI", "AS", "BB", "BM", "BS", "CA", "DM", "DO", "GD", "GU", "JM", "KN", "KY", "LC", "MP", "MS", "PR", "SX", "TC", "TT", "VC", "VG", "VI"], 7: ["RU", "KZ"], 20: ["EG"], 27: ["ZA"], 30: ["GR"], 31: ["NL"], 32: ["BE"], 33: ["FR"], 34: ["ES"], 36: ["HU"], 39: ["IT", "VA"], 40: ["RO"], 41: ["CH"], 43: ["AT"], 44: ["GB", "GG", "IM", "JE"], 45: ["DK"], 46: ["SE"], 47: ["NO", "SJ"], 48: ["PL"], 49: ["DE"], 51: ["PE"], 52: ["MX"], 53: ["CU"], 54: ["AR"], 55: ["BR"], 56: ["CL"], 57: ["CO"], 58: ["VE"], 60: ["MY"], 61: ["AU", "CC", "CX"], 62: ["ID"], 63: ["PH"], 64: ["NZ"], 65: ["SG"], 66: ["TH"], 81: ["JP"], 82: ["KR"], 84: ["VN"], 86: ["CN"], 90: ["TR"], 91: ["IN"], 92: ["PK"], 93: ["AF"], 94: ["LK"], 95: ["MM"], 98: ["IR"], 211: ["SS"], 212: ["MA", "EH"], 213: ["DZ"], 216: ["TN"], 218: ["LY"], 220: ["GM"], 221: ["SN"], 222: ["MR"], 223: ["ML"], 224: ["GN"], 225: ["CI"], 226: ["BF"], 227: ["NE"], 228: ["TG"], 229: ["BJ"], 230: ["MU"], 231: ["LR"], 232: ["SL"], 233: ["GH"], 234: ["NG"], 235: ["TD"], 236: ["CF"], 237: ["CM"], 238: ["CV"], 239: ["ST"], 240: ["GQ"], 241: ["GA"], 242: ["CG"], 243: ["CD"], 244: ["AO"], 245: ["GW"], 246: ["IO"], 247: ["AC"], 248: ["SC"], 249: ["SD"], 250: ["RW"], 251: ["ET"], 252: ["SO"], 253: ["DJ"], 254: ["KE"], 255: ["TZ"], 256: ["UG"], 257: ["BI"], 258: ["MZ"], 260: ["ZM"], 261: ["MG"], 262: ["RE", "YT"], 263: ["ZW"], 264: ["NA"], 265: ["MW"], 266: ["LS"], 267: ["BW"], 268: ["SZ"], 269: ["KM"], 290: ["SH", "TA"], 291: ["ER"], 297: ["AW"], 298: ["FO"], 299: ["GL"], 350: ["GI"], 351: ["PT"], 352: ["LU"], 353: ["IE"], 354: ["IS"], 355: ["AL"], 356: ["MT"], 357: ["CY"], 358: ["FI", "AX"], 359: ["BG"], 370: ["LT"], 371: ["LV"], 372: ["EE"], 373: ["MD"], 374: ["AM"], 375: ["BY"], 376: ["AD"], 377: ["MC"], 378: ["SM"], 380: ["UA"], 381: ["RS"], 382: ["ME"], 383: ["XK"], 385: ["HR"], 386: ["SI"], 387: ["BA"], 389: ["MK"], 420: ["CZ"], 421: ["SK"], 423: ["LI"], 500: ["FK"], 501: ["BZ"], 502: ["GT"], 503: ["SV"], 504: ["HN"], 505: ["NI"], 506: ["CR"], 507: ["PA"], 508: ["PM"], 509: ["HT"], 590: ["GP", "BL", "MF"], 591: ["BO"], 592: ["GY"], 593: ["EC"], 594: ["GF"], 595: ["PY"], 596: ["MQ"], 597: ["SR"], 598: ["UY"], 599: ["CW", "BQ"], 670: ["TL"], 672: ["NF"], 673: ["BN"], 674: ["NR"], 675: ["PG"], 676: ["TO"], 677: ["SB"], 678: ["VU"], 679: ["FJ"], 680: ["PW"], 681: ["WF"], 682: ["CK"], 683: ["NU"], 685: ["WS"], 686: ["KI"], 687: ["NC"], 688: ["TV"], 689: ["PF"], 690: ["TK"], 691: ["FM"], 692: ["MH"], 850: ["KP"], 852: ["HK"], 853: ["MO"], 855: ["KH"], 856: ["LA"], 880: ["BD"], 886: ["TW"], 960: ["MV"], 961: ["LB"], 962: ["JO"], 963: ["SY"], 964: ["IQ"], 965: ["KW"], 966: ["SA"], 967: ["YE"], 968: ["OM"], 970: ["PS"], 971: ["AE"], 972: ["IL"], 973: ["BH"], 974: ["QA"], 975: ["BT"], 976: ["MN"], 977: ["NP"], 992: ["TJ"], 993: ["TM"], 994: ["AZ"], 995: ["GE"], 996: ["KG"], 998: ["UZ"] }, countries: { AC: ["247", "00", "(?:[01589]\\d|[46])\\d{4}", [5, 6]], AD: ["376", "00", "(?:1|6\\d)\\d{7}|[135-9]\\d{5}", [6, 8, 9], [["(\\d{3})(\\d{3})", "$1 $2", ["[135-9]"]], ["(\\d{4})(\\d{4})", "$1 $2", ["1"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["6"]]]], AE: ["971", "00", "(?:[4-7]\\d|9[0-689])\\d{7}|800\\d{2,9}|[2-4679]\\d{7}", [5, 6, 7, 8, 9, 10, 11, 12], [["(\\d{3})(\\d{2,9})", "$1 $2", ["60|8"]], ["(\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["[236]|[479][2-8]"], "0$1"], ["(\\d{3})(\\d)(\\d{5})", "$1 $2 $3", ["[479]"]], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["5"], "0$1"]], "0"], AF: ["93", "00", "[2-7]\\d{8}", [9], [["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[2-7]"], "0$1"]], "0"], AG: ["1", "011", "(?:268|[58]\\d\\d|900)\\d{7}", [10], 0, "1", 0, "([457]\\d{6})$|1", "268$1", 0, "268"], AI: ["1", "011", "(?:264|[58]\\d\\d|900)\\d{7}", [10], 0, "1", 0, "([2457]\\d{6})$|1", "264$1", 0, "264"], AL: ["355", "00", "(?:700\\d\\d|900)\\d{3}|8\\d{5,7}|(?:[2-5]|6\\d)\\d{7}", [6, 7, 8, 9], [["(\\d{3})(\\d{3,4})", "$1 $2", ["80|9"], "0$1"], ["(\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["4[2-6]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[2358][2-5]|4"], "0$1"], ["(\\d{3})(\\d{5})", "$1 $2", ["[23578]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["6"], "0$1"]], "0"], AM: ["374", "00", "(?:[1-489]\\d|55|60|77)\\d{6}", [8], [["(\\d{3})(\\d{2})(\\d{3})", "$1 $2 $3", ["[89]0"], "0 $1"], ["(\\d{3})(\\d{5})", "$1 $2", ["2|3[12]"], "(0$1)"], ["(\\d{2})(\\d{6})", "$1 $2", ["1|47"], "(0$1)"], ["(\\d{2})(\\d{6})", "$1 $2", ["[3-9]"], "0$1"]], "0"], AO: ["244", "00", "[29]\\d{8}", [9], [["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[29]"]]]], AR: ["54", "00", "(?:11|[89]\\d\\d)\\d{8}|[2368]\\d{9}", [10, 11], [["(\\d{4})(\\d{2})(\\d{4})", "$1 $2-$3", ["2(?:2[024-9]|3[0-59]|47|6[245]|9[02-8])|3(?:3[28]|4[03-9]|5[2-46-8]|7[1-578]|8[2-9])", "2(?:[23]02|6(?:[25]|4[6-8])|9(?:[02356]|4[02568]|72|8[23]))|3(?:3[28]|4(?:[04679]|3[5-8]|5[4-68]|8[2379])|5(?:[2467]|3[237]|8[2-5])|7[1-578]|8(?:[2469]|3[2578]|5[4-8]|7[36-8]|8[5-8]))|2(?:2[24-9]|3[1-59]|47)", "2(?:[23]02|6(?:[25]|4(?:64|[78]))|9(?:[02356]|4(?:[0268]|5[2-6])|72|8[23]))|3(?:3[28]|4(?:[04679]|3[78]|5(?:4[46]|8)|8[2379])|5(?:[2467]|3[237]|8[23])|7[1-578]|8(?:[2469]|3[278]|5[56][46]|86[3-6]))|2(?:2[24-9]|3[1-59]|47)|38(?:[58][78]|7[378])|3(?:4[35][56]|58[45]|8(?:[38]5|54|76))[4-6]", "2(?:[23]02|6(?:[25]|4(?:64|[78]))|9(?:[02356]|4(?:[0268]|5[2-6])|72|8[23]))|3(?:3[28]|4(?:[04679]|3(?:5(?:4[0-25689]|[56])|[78])|58|8[2379])|5(?:[2467]|3[237]|8(?:[23]|4(?:[45]|60)|5(?:4[0-39]|5|64)))|7[1-578]|8(?:[2469]|3[278]|54(?:4|5[13-7]|6[89])|86[3-6]))|2(?:2[24-9]|3[1-59]|47)|38(?:[58][78]|7[378])|3(?:454|85[56])[46]|3(?:4(?:36|5[56])|8(?:[38]5|76))[4-6]"], "0$1", 1], ["(\\d{2})(\\d{4})(\\d{4})", "$1 $2-$3", ["1"], "0$1", 1], ["(\\d{3})(\\d{3})(\\d{4})", "$1-$2-$3", ["[68]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2-$3", ["[23]"], "0$1", 1], ["(\\d)(\\d{4})(\\d{2})(\\d{4})", "$2 15-$3-$4", ["9(?:2[2-469]|3[3-578])", "9(?:2(?:2[024-9]|3[0-59]|47|6[245]|9[02-8])|3(?:3[28]|4[03-9]|5[2-46-8]|7[1-578]|8[2-9]))", "9(?:2(?:[23]02|6(?:[25]|4[6-8])|9(?:[02356]|4[02568]|72|8[23]))|3(?:3[28]|4(?:[04679]|3[5-8]|5[4-68]|8[2379])|5(?:[2467]|3[237]|8[2-5])|7[1-578]|8(?:[2469]|3[2578]|5[4-8]|7[36-8]|8[5-8])))|92(?:2[24-9]|3[1-59]|47)", "9(?:2(?:[23]02|6(?:[25]|4(?:64|[78]))|9(?:[02356]|4(?:[0268]|5[2-6])|72|8[23]))|3(?:3[28]|4(?:[04679]|3[78]|5(?:4[46]|8)|8[2379])|5(?:[2467]|3[237]|8[23])|7[1-578]|8(?:[2469]|3[278]|5(?:[56][46]|[78])|7[378]|8(?:6[3-6]|[78]))))|92(?:2[24-9]|3[1-59]|47)|93(?:4[35][56]|58[45]|8(?:[38]5|54|76))[4-6]", "9(?:2(?:[23]02|6(?:[25]|4(?:64|[78]))|9(?:[02356]|4(?:[0268]|5[2-6])|72|8[23]))|3(?:3[28]|4(?:[04679]|3(?:5(?:4[0-25689]|[56])|[78])|5(?:4[46]|8)|8[2379])|5(?:[2467]|3[237]|8(?:[23]|4(?:[45]|60)|5(?:4[0-39]|5|64)))|7[1-578]|8(?:[2469]|3[278]|5(?:4(?:4|5[13-7]|6[89])|[56][46]|[78])|7[378]|8(?:6[3-6]|[78]))))|92(?:2[24-9]|3[1-59]|47)|93(?:4(?:36|5[56])|8(?:[38]5|76))[4-6]"], "0$1", 0, "$1 $2 $3-$4"], ["(\\d)(\\d{2})(\\d{4})(\\d{4})", "$2 15-$3-$4", ["91"], "0$1", 0, "$1 $2 $3-$4"], ["(\\d{3})(\\d{3})(\\d{5})", "$1-$2-$3", ["8"], "0$1"], ["(\\d)(\\d{3})(\\d{3})(\\d{4})", "$2 15-$3-$4", ["9"], "0$1", 0, "$1 $2 $3-$4"]], "0", 0, "0?(?:(11|2(?:2(?:02?|[13]|2[13-79]|4[1-6]|5[2457]|6[124-8]|7[1-4]|8[13-6]|9[1267])|3(?:02?|1[467]|2[03-6]|3[13-8]|[49][2-6]|5[2-8]|[67])|4(?:7[3-578]|9)|6(?:[0136]|2[24-6]|4[6-8]?|5[15-8])|80|9(?:0[1-3]|[19]|2\\d|3[1-6]|4[02568]?|5[2-4]|6[2-46]|72?|8[23]?))|3(?:3(?:2[79]|6|8[2578])|4(?:0[0-24-9]|[12]|3[5-8]?|4[24-7]|5[4-68]?|6[02-9]|7[126]|8[2379]?|9[1-36-8])|5(?:1|2[1245]|3[237]?|4[1-46-9]|6[2-4]|7[1-6]|8[2-5]?)|6[24]|7(?:[069]|1[1568]|2[15]|3[145]|4[13]|5[14-8]|7[2-57]|8[126])|8(?:[01]|2[15-7]|3[2578]?|4[13-6]|5[4-8]?|6[1-357-9]|7[36-8]?|8[5-8]?|9[124])))15)?", "9$1"], AS: ["1", "011", "(?:[58]\\d\\d|684|900)\\d{7}", [10], 0, "1", 0, "([267]\\d{6})$|1", "684$1", 0, "684"], AT: ["43", "00", "1\\d{3,12}|2\\d{6,12}|43(?:(?:0\\d|5[02-9])\\d{3,9}|2\\d{4,5}|[3467]\\d{4}|8\\d{4,6}|9\\d{4,7})|5\\d{4,12}|8\\d{7,12}|9\\d{8,12}|(?:[367]\\d|4[0-24-9])\\d{4,11}", [4, 5, 6, 7, 8, 9, 10, 11, 12, 13], [["(\\d)(\\d{3,12})", "$1 $2", ["1(?:11|[2-9])"], "0$1"], ["(\\d{3})(\\d{2})", "$1 $2", ["517"], "0$1"], ["(\\d{2})(\\d{3,5})", "$1 $2", ["5[079]"], "0$1"], ["(\\d{3})(\\d{3,10})", "$1 $2", ["(?:31|4)6|51|6(?:5[0-3579]|[6-9])|7(?:20|32|8)|[89]"], "0$1"], ["(\\d{4})(\\d{3,9})", "$1 $2", ["[2-467]|5[2-6]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["5"], "0$1"], ["(\\d{2})(\\d{4})(\\d{4,7})", "$1 $2 $3", ["5"], "0$1"]], "0"], AU: ["61", "001[14-689]|14(?:1[14]|34|4[17]|[56]6|7[47]|88)0011", "1(?:[0-79]\\d{7}(?:\\d(?:\\d{2})?)?|8[0-24-9]\\d{7})|[2-478]\\d{8}|1\\d{4,7}", [5, 6, 7, 8, 9, 10, 12], [["(\\d{2})(\\d{3,4})", "$1 $2", ["16"], "0$1"], ["(\\d{2})(\\d{3})(\\d{2,4})", "$1 $2 $3", ["16"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["14|4"], "0$1"], ["(\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["[2378]"], "(0$1)"], ["(\\d{4})(\\d{3})(\\d{3})", "$1 $2 $3", ["1(?:30|[89])"]]], "0", 0, "(183[12])|0", 0, 0, 0, [["(?:(?:2(?:[0-26-9]\\d|3[0-8]|4[02-9]|5[0135-9])|3(?:[0-3589]\\d|4[0-578]|6[1-9]|7[0-35-9])|7(?:[013-57-9]\\d|2[0-8]))\\d{3}|8(?:51(?:0(?:0[03-9]|[12479]\\d|3[2-9]|5[0-8]|6[1-9]|8[0-7])|1(?:[0235689]\\d|1[0-69]|4[0-589]|7[0-47-9])|2(?:0[0-79]|[18][13579]|2[14-9]|3[0-46-9]|[4-6]\\d|7[89]|9[0-4]))|(?:6[0-8]|[78]\\d)\\d{3}|9(?:[02-9]\\d{3}|1(?:(?:[0-58]\\d|6[0135-9])\\d|7(?:0[0-24-9]|[1-9]\\d)|9(?:[0-46-9]\\d|5[0-79])))))\\d{3}", [9]], ["4(?:(?:79|94)[01]|83[0-389])\\d{5}|4(?:[0-3]\\d|4[047-9]|5[0-25-9]|6[0-26-9]|7[02-8]|8[0-24-9]|9[0-37-9])\\d{6}", [9]], ["180(?:0\\d{3}|2)\\d{3}", [7, 10]], ["190[0-26]\\d{6}", [10]], 0, 0, 0, ["163\\d{2,6}", [5, 6, 7, 8, 9]], ["14(?:5(?:1[0458]|[23][458])|71\\d)\\d{4}", [9]], ["13(?:00\\d{6}(?:\\d{2})?|45[0-4]\\d{3})|13\\d{4}", [6, 8, 10, 12]]], "0011"], AW: ["297", "00", "(?:[25-79]\\d\\d|800)\\d{4}", [7], [["(\\d{3})(\\d{4})", "$1 $2", ["[25-9]"]]]], AX: ["358", "00|99(?:[01469]|5(?:[14]1|3[23]|5[59]|77|88|9[09]))", "2\\d{4,9}|35\\d{4,5}|(?:60\\d\\d|800)\\d{4,6}|7\\d{5,11}|(?:[14]\\d|3[0-46-9]|50)\\d{4,8}", [5, 6, 7, 8, 9, 10, 11, 12], 0, "0", 0, 0, 0, 0, "18", 0, "00"], AZ: ["994", "00", "365\\d{6}|(?:[124579]\\d|60|88)\\d{7}", [9], [["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["90"], "0$1"], ["(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["1[28]|2|365|46", "1[28]|2|365[45]|46", "1[28]|2|365(?:4|5[02])|46"], "(0$1)"], ["(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[13-9]"], "0$1"]], "0"], BA: ["387", "00", "6\\d{8}|(?:[35689]\\d|49|70)\\d{6}", [8, 9], [["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["6[1-3]|[7-9]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3})", "$1 $2-$3", ["[3-5]|6[56]"], "0$1"], ["(\\d{2})(\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3 $4", ["6"], "0$1"]], "0"], BB: ["1", "011", "(?:246|[58]\\d\\d|900)\\d{7}", [10], 0, "1", 0, "([2-9]\\d{6})$|1", "246$1", 0, "246"], BD: ["880", "00", "[1-469]\\d{9}|8[0-79]\\d{7,8}|[2-79]\\d{8}|[2-9]\\d{7}|[3-9]\\d{6}|[57-9]\\d{5}", [6, 7, 8, 9, 10], [["(\\d{2})(\\d{4,6})", "$1-$2", ["31[5-8]|[459]1"], "0$1"], ["(\\d{3})(\\d{3,7})", "$1-$2", ["3(?:[67]|8[013-9])|4(?:6[168]|7|[89][18])|5(?:6[128]|9)|6(?:[15]|28|4[14])|7[2-589]|8(?:0[014-9]|[12])|9[358]|(?:3[2-5]|4[235]|5[2-578]|6[0389]|76|8[3-7]|9[24])1|(?:44|66)[01346-9]"], "0$1"], ["(\\d{4})(\\d{3,6})", "$1-$2", ["[13-9]|22"], "0$1"], ["(\\d)(\\d{7,8})", "$1-$2", ["2"], "0$1"]], "0"], BE: ["32", "00", "4\\d{8}|[1-9]\\d{7}", [8, 9], [["(\\d{3})(\\d{2})(\\d{3})", "$1 $2 $3", ["(?:80|9)0"], "0$1"], ["(\\d)(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[239]|4[23]"], "0$1"], ["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[15-8]"], "0$1"], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["4"], "0$1"]], "0"], BF: ["226", "00", "[025-7]\\d{7}", [8], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[025-7]"]]]], BG: ["359", "00", "00800\\d{7}|[2-7]\\d{6,7}|[89]\\d{6,8}|2\\d{5}", [6, 7, 8, 9, 12], [["(\\d)(\\d)(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["2"], "0$1"], ["(\\d{3})(\\d{4})", "$1 $2", ["43[1-6]|70[1-9]"], "0$1"], ["(\\d)(\\d{3})(\\d{3,4})", "$1 $2 $3", ["2"], "0$1"], ["(\\d{2})(\\d{3})(\\d{2,3})", "$1 $2 $3", ["[356]|4[124-7]|7[1-9]|8[1-6]|9[1-7]"], "0$1"], ["(\\d{3})(\\d{2})(\\d{3})", "$1 $2 $3", ["(?:70|8)0"], "0$1"], ["(\\d{3})(\\d{3})(\\d{2})", "$1 $2 $3", ["43[1-7]|7"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[48]|9[08]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["9"], "0$1"]], "0"], BH: ["973", "00", "[136-9]\\d{7}", [8], [["(\\d{4})(\\d{4})", "$1 $2", ["[13679]|8[02-4679]"]]]], BI: ["257", "00", "(?:[267]\\d|31)\\d{6}", [8], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[2367]"]]]], BJ: ["229", "00", "[24-689]\\d{7}", [8], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[24-689]"]]]], BL: ["590", "00", "590\\d{6}|(?:69|80|9\\d)\\d{7}", [9], 0, "0", 0, 0, 0, 0, 0, [["590(?:2[7-9]|3[3-7]|5[12]|87)\\d{4}"], ["69(?:0\\d\\d|1(?:2[2-9]|3[0-5]))\\d{4}"], ["80[0-5]\\d{6}"], 0, 0, 0, 0, 0, ["9(?:(?:395|76[018])\\d|475[0-5])\\d{4}"]]], BM: ["1", "011", "(?:441|[58]\\d\\d|900)\\d{7}", [10], 0, "1", 0, "([2-9]\\d{6})$|1", "441$1", 0, "441"], BN: ["673", "00", "[2-578]\\d{6}", [7], [["(\\d{3})(\\d{4})", "$1 $2", ["[2-578]"]]]], BO: ["591", "00(?:1\\d)?", "(?:[2-467]\\d\\d|8001)\\d{5}", [8, 9], [["(\\d)(\\d{7})", "$1 $2", ["[23]|4[46]"]], ["(\\d{8})", "$1", ["[67]"]], ["(\\d{3})(\\d{2})(\\d{4})", "$1 $2 $3", ["8"]]], "0", 0, "0(1\\d)?"], BQ: ["599", "00", "(?:[34]1|7\\d)\\d{5}", [7], 0, 0, 0, 0, 0, 0, "[347]"], BR: ["55", "00(?:1[245]|2[1-35]|31|4[13]|[56]5|99)", "(?:[1-46-9]\\d\\d|5(?:[0-46-9]\\d|5[0-46-9]))\\d{8}|[1-9]\\d{9}|[3589]\\d{8}|[34]\\d{7}", [8, 9, 10, 11], [["(\\d{4})(\\d{4})", "$1-$2", ["300|4(?:0[02]|37)", "4(?:02|37)0|[34]00"]], ["(\\d{3})(\\d{2,3})(\\d{4})", "$1 $2 $3", ["(?:[358]|90)0"], "0$1"], ["(\\d{2})(\\d{4})(\\d{4})", "$1 $2-$3", ["(?:[14689][1-9]|2[12478]|3[1-578]|5[13-5]|7[13-579])[2-57]"], "($1)"], ["(\\d{2})(\\d{5})(\\d{4})", "$1 $2-$3", ["[16][1-9]|[2-57-9]"], "($1)"]], "0", 0, "(?:0|90)(?:(1[245]|2[1-35]|31|4[13]|[56]5|99)(\\d{10,11}))?", "$2"], BS: ["1", "011", "(?:242|[58]\\d\\d|900)\\d{7}", [10], 0, "1", 0, "([3-8]\\d{6})$|1", "242$1", 0, "242"], BT: ["975", "00", "[17]\\d{7}|[2-8]\\d{6}", [7, 8], [["(\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["[2-68]|7[246]"]], ["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["1[67]|7"]]]], BW: ["267", "00", "(?:0800|(?:[37]|800)\\d)\\d{6}|(?:[2-6]\\d|90)\\d{5}", [7, 8, 10], [["(\\d{2})(\\d{5})", "$1 $2", ["90"]], ["(\\d{3})(\\d{4})", "$1 $2", ["[24-6]|3[15-9]"]], ["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[37]"]], ["(\\d{4})(\\d{3})(\\d{3})", "$1 $2 $3", ["0"]], ["(\\d{3})(\\d{4})(\\d{3})", "$1 $2 $3", ["8"]]]], BY: ["375", "810", "(?:[12]\\d|33|44|902)\\d{7}|8(?:0[0-79]\\d{5,7}|[1-7]\\d{9})|8(?:1[0-489]|[5-79]\\d)\\d{7}|8[1-79]\\d{6,7}|8[0-79]\\d{5}|8\\d{5}", [6, 7, 8, 9, 10, 11], [["(\\d{3})(\\d{3})", "$1 $2", ["800"], "8 $1"], ["(\\d{3})(\\d{2})(\\d{2,4})", "$1 $2 $3", ["800"], "8 $1"], ["(\\d{4})(\\d{2})(\\d{3})", "$1 $2-$3", ["1(?:5[169]|6[3-5]|7[179])|2(?:1[35]|2[34]|3[3-5])", "1(?:5[169]|6(?:3[1-3]|4|5[125])|7(?:1[3-9]|7[0-24-6]|9[2-7]))|2(?:1[35]|2[34]|3[3-5])"], "8 0$1"], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2-$3-$4", ["1(?:[56]|7[467])|2[1-3]"], "8 0$1"], ["(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2-$3-$4", ["[1-4]"], "8 0$1"], ["(\\d{3})(\\d{3,4})(\\d{4})", "$1 $2 $3", ["[89]"], "8 $1"]], "8", 0, "0|80?", 0, 0, 0, 0, "8~10"], BZ: ["501", "00", "(?:0800\\d|[2-8])\\d{6}", [7, 11], [["(\\d{3})(\\d{4})", "$1-$2", ["[2-8]"]], ["(\\d)(\\d{3})(\\d{4})(\\d{3})", "$1-$2-$3-$4", ["0"]]]], CA: ["1", "011", "(?:[2-8]\\d|90)\\d{8}|3\\d{6}", [7, 10], 0, "1", 0, 0, 0, 0, 0, [["(?:2(?:04|[23]6|[48]9|50|63)|3(?:06|43|54|6[578]|82)|4(?:03|1[68]|[26]8|3[178]|50|74)|5(?:06|1[49]|48|79|8[147])|6(?:04|[18]3|39|47|72)|7(?:0[59]|42|53|78|8[02])|8(?:[06]7|19|25|73)|90[25])[2-9]\\d{6}", [10]], ["", [10]], ["8(?:00|33|44|55|66|77|88)[2-9]\\d{6}", [10]], ["900[2-9]\\d{6}", [10]], ["52(?:3(?:[2-46-9][02-9]\\d|5(?:[02-46-9]\\d|5[0-46-9]))|4(?:[2-478][02-9]\\d|5(?:[034]\\d|2[024-9]|5[0-46-9])|6(?:0[1-9]|[2-9]\\d)|9(?:[05-9]\\d|2[0-5]|49)))\\d{4}|52[34][2-9]1[02-9]\\d{4}|(?:5(?:00|2[125-9]|33|44|66|77|88)|622)[2-9]\\d{6}", [10]], 0, ["310\\d{4}", [7]], 0, ["600[2-9]\\d{6}", [10]]]], CC: ["61", "001[14-689]|14(?:1[14]|34|4[17]|[56]6|7[47]|88)0011", "1(?:[0-79]\\d{8}(?:\\d{2})?|8[0-24-9]\\d{7})|[148]\\d{8}|1\\d{5,7}", [6, 7, 8, 9, 10, 12], 0, "0", 0, "([59]\\d{7})$|0", "8$1", 0, 0, [["8(?:51(?:0(?:02|31|60|89)|1(?:18|76)|223)|91(?:0(?:1[0-2]|29)|1(?:[28]2|50|79)|2(?:10|64)|3(?:[06]8|22)|4[29]8|62\\d|70[23]|959))\\d{3}", [9]], ["4(?:(?:79|94)[01]|83[0-389])\\d{5}|4(?:[0-3]\\d|4[047-9]|5[0-25-9]|6[0-26-9]|7[02-8]|8[0-24-9]|9[0-37-9])\\d{6}", [9]], ["180(?:0\\d{3}|2)\\d{3}", [7, 10]], ["190[0-26]\\d{6}", [10]], 0, 0, 0, 0, ["14(?:5(?:1[0458]|[23][458])|71\\d)\\d{4}", [9]], ["13(?:00\\d{6}(?:\\d{2})?|45[0-4]\\d{3})|13\\d{4}", [6, 8, 10, 12]]], "0011"], CD: ["243", "00", "[189]\\d{8}|[1-68]\\d{6}", [7, 9], [["(\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3", ["88"], "0$1"], ["(\\d{2})(\\d{5})", "$1 $2", ["[1-6]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["1"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[89]"], "0$1"]], "0"], CF: ["236", "00", "(?:[27]\\d{3}|8776)\\d{4}", [8], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[278]"]]]], CG: ["242", "00", "222\\d{6}|(?:0\\d|80)\\d{7}", [9], [["(\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["8"]], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[02]"]]]], CH: ["41", "00", "8\\d{11}|[2-9]\\d{8}", [9], [["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["8[047]|90"], "0$1"], ["(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[2-79]|81"], "0$1"], ["(\\d{3})(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4 $5", ["8"], "0$1"]], "0"], CI: ["225", "00", "[02]\\d{9}", [10], [["(\\d{2})(\\d{2})(\\d)(\\d{5})", "$1 $2 $3 $4", ["2"]], ["(\\d{2})(\\d{2})(\\d{2})(\\d{4})", "$1 $2 $3 $4", ["0"]]]], CK: ["682", "00", "[2-578]\\d{4}", [5], [["(\\d{2})(\\d{3})", "$1 $2", ["[2-578]"]]]], CL: ["56", "(?:0|1(?:1[0-69]|2[02-5]|5[13-58]|69|7[0167]|8[018]))0", "12300\\d{6}|6\\d{9,10}|[2-9]\\d{8}", [9, 10, 11], [["(\\d{5})(\\d{4})", "$1 $2", ["219", "2196"], "($1)"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["44"]], ["(\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["2[1-36]"], "($1)"], ["(\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["9[2-9]"]], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["3[2-5]|[47]|5[1-3578]|6[13-57]|8(?:0[1-9]|[1-9])"], "($1)"], ["(\\d{3})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["60|8"]], ["(\\d{4})(\\d{3})(\\d{4})", "$1 $2 $3", ["1"]], ["(\\d{3})(\\d{3})(\\d{2})(\\d{3})", "$1 $2 $3 $4", ["60"]]]], CM: ["237", "00", "[26]\\d{8}|88\\d{6,7}", [8, 9], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["88"]], ["(\\d)(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4 $5", ["[26]|88"]]]], CN: ["86", "00|1(?:[12]\\d|79)\\d\\d00", "1[127]\\d{8,9}|2\\d{9}(?:\\d{2})?|[12]\\d{6,7}|86\\d{6}|(?:1[03-689]\\d|6)\\d{7,9}|(?:[3-579]\\d|8[0-57-9])\\d{6,9}", [7, 8, 9, 10, 11, 12], [["(\\d{2})(\\d{5,6})", "$1 $2", ["(?:10|2[0-57-9])[19]", "(?:10|2[0-57-9])(?:10|9[56])", "10(?:10|9[56])|2[0-57-9](?:100|9[56])"], "0$1"], ["(\\d{3})(\\d{5,6})", "$1 $2", ["3(?:[157]|35|49|9[1-68])|4(?:[17]|2[179]|6[47-9]|8[23])|5(?:[1357]|2[37]|4[36]|6[1-46]|80)|6(?:3[1-5]|6[0238]|9[12])|7(?:01|[1579]|2[248]|3[014-9]|4[3-6]|6[023689])|8(?:1[236-8]|2[5-7]|[37]|8[36-8]|9[1-8])|9(?:0[1-3689]|1[1-79]|[379]|4[13]|5[1-5])|(?:4[35]|59|85)[1-9]", "(?:3(?:[157]\\d|35|49|9[1-68])|4(?:[17]\\d|2[179]|[35][1-9]|6[47-9]|8[23])|5(?:[1357]\\d|2[37]|4[36]|6[1-46]|80|9[1-9])|6(?:3[1-5]|6[0238]|9[12])|7(?:01|[1579]\\d|2[248]|3[014-9]|4[3-6]|6[023689])|8(?:1[236-8]|2[5-7]|[37]\\d|5[1-9]|8[36-8]|9[1-8])|9(?:0[1-3689]|1[1-79]|[379]\\d|4[13]|5[1-5]))[19]", "85[23](?:10|95)|(?:3(?:[157]\\d|35|49|9[1-68])|4(?:[17]\\d|2[179]|[35][1-9]|6[47-9]|8[23])|5(?:[1357]\\d|2[37]|4[36]|6[1-46]|80|9[1-9])|6(?:3[1-5]|6[0238]|9[12])|7(?:01|[1579]\\d|2[248]|3[014-9]|4[3-6]|6[023689])|8(?:1[236-8]|2[5-7]|[37]\\d|5[14-9]|8[36-8]|9[1-8])|9(?:0[1-3689]|1[1-79]|[379]\\d|4[13]|5[1-5]))(?:10|9[56])", "85[23](?:100|95)|(?:3(?:[157]\\d|35|49|9[1-68])|4(?:[17]\\d|2[179]|[35][1-9]|6[47-9]|8[23])|5(?:[1357]\\d|2[37]|4[36]|6[1-46]|80|9[1-9])|6(?:3[1-5]|6[0238]|9[12])|7(?:01|[1579]\\d|2[248]|3[014-9]|4[3-6]|6[023689])|8(?:1[236-8]|2[5-7]|[37]\\d|5[14-9]|8[36-8]|9[1-8])|9(?:0[1-3689]|1[1-79]|[379]\\d|4[13]|5[1-5]))(?:100|9[56])"], "0$1"], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["(?:4|80)0"]], ["(\\d{2})(\\d{4})(\\d{4})", "$1 $2 $3", ["10|2(?:[02-57-9]|1[1-9])", "10|2(?:[02-57-9]|1[1-9])", "10[0-79]|2(?:[02-57-9]|1[1-79])|(?:10|21)8(?:0[1-9]|[1-9])"], "0$1", 1], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["3(?:[3-59]|7[02-68])|4(?:[26-8]|3[3-9]|5[2-9])|5(?:3[03-9]|[468]|7[028]|9[2-46-9])|6|7(?:[0-247]|3[04-9]|5[0-4689]|6[2368])|8(?:[1-358]|9[1-7])|9(?:[013479]|5[1-5])|(?:[34]1|55|79|87)[02-9]"], "0$1", 1], ["(\\d{3})(\\d{7,8})", "$1 $2", ["9"]], ["(\\d{4})(\\d{3})(\\d{4})", "$1 $2 $3", ["80"], "0$1", 1], ["(\\d{3})(\\d{4})(\\d{4})", "$1 $2 $3", ["[3-578]"], "0$1", 1], ["(\\d{3})(\\d{4})(\\d{4})", "$1 $2 $3", ["1[3-9]"]], ["(\\d{2})(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3 $4", ["[12]"], "0$1", 1]], "0", 0, "(1(?:[12]\\d|79)\\d\\d)|0", 0, 0, 0, 0, "00"], CO: ["57", "00(?:4(?:[14]4|56)|[579])", "(?:60\\d\\d|9101)\\d{6}|(?:1\\d|3)\\d{9}", [10, 11], [["(\\d{3})(\\d{7})", "$1 $2", ["6"], "($1)"], ["(\\d{3})(\\d{7})", "$1 $2", ["3[0-357]|91"]], ["(\\d)(\\d{3})(\\d{7})", "$1-$2-$3", ["1"], "0$1", 0, "$1 $2 $3"]], "0", 0, "0([3579]|4(?:[14]4|56))?"], CR: ["506", "00", "(?:8\\d|90)\\d{8}|(?:[24-8]\\d{3}|3005)\\d{4}", [8, 10], [["(\\d{4})(\\d{4})", "$1 $2", ["[2-7]|8[3-9]"]], ["(\\d{3})(\\d{3})(\\d{4})", "$1-$2-$3", ["[89]"]]], 0, 0, "(19(?:0[0-2468]|1[09]|20|66|77|99))"], CU: ["53", "119", "[27]\\d{6,7}|[34]\\d{5,7}|63\\d{6}|(?:5|8\\d\\d)\\d{7}", [6, 7, 8, 10], [["(\\d{2})(\\d{4,6})", "$1 $2", ["2[1-4]|[34]"], "(0$1)"], ["(\\d)(\\d{6,7})", "$1 $2", ["7"], "(0$1)"], ["(\\d)(\\d{7})", "$1 $2", ["[56]"], "0$1"], ["(\\d{3})(\\d{7})", "$1 $2", ["8"], "0$1"]], "0"], CV: ["238", "0", "(?:[2-59]\\d\\d|800)\\d{4}", [7], [["(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3", ["[2-589]"]]]], CW: ["599", "00", "(?:[34]1|60|(?:7|9\\d)\\d)\\d{5}", [7, 8], [["(\\d{3})(\\d{4})", "$1 $2", ["[3467]"]], ["(\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["9[4-8]"]]], 0, 0, 0, 0, 0, "[69]"], CX: ["61", "001[14-689]|14(?:1[14]|34|4[17]|[56]6|7[47]|88)0011", "1(?:[0-79]\\d{8}(?:\\d{2})?|8[0-24-9]\\d{7})|[148]\\d{8}|1\\d{5,7}", [6, 7, 8, 9, 10, 12], 0, "0", 0, "([59]\\d{7})$|0", "8$1", 0, 0, [["8(?:51(?:0(?:01|30|59|88)|1(?:17|46|75)|2(?:22|35))|91(?:00[6-9]|1(?:[28]1|49|78)|2(?:09|63)|3(?:12|26|75)|4(?:56|97)|64\\d|7(?:0[01]|1[0-2])|958))\\d{3}", [9]], ["4(?:(?:79|94)[01]|83[0-389])\\d{5}|4(?:[0-3]\\d|4[047-9]|5[0-25-9]|6[0-26-9]|7[02-8]|8[0-24-9]|9[0-37-9])\\d{6}", [9]], ["180(?:0\\d{3}|2)\\d{3}", [7, 10]], ["190[0-26]\\d{6}", [10]], 0, 0, 0, 0, ["14(?:5(?:1[0458]|[23][458])|71\\d)\\d{4}", [9]], ["13(?:00\\d{6}(?:\\d{2})?|45[0-4]\\d{3})|13\\d{4}", [6, 8, 10, 12]]], "0011"], CY: ["357", "00", "(?:[279]\\d|[58]0)\\d{6}", [8], [["(\\d{2})(\\d{6})", "$1 $2", ["[257-9]"]]]], CZ: ["420", "00", "(?:[2-578]\\d|60)\\d{7}|9\\d{8,11}", [9], [["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[2-8]|9[015-7]"]], ["(\\d{2})(\\d{3})(\\d{3})(\\d{2})", "$1 $2 $3 $4", ["96"]], ["(\\d{2})(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["9"]], ["(\\d{3})(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["9"]]]], DE: ["49", "00", "[2579]\\d{5,14}|49(?:[34]0|69|8\\d)\\d\\d?|49(?:37|49|60|7[089]|9\\d)\\d{1,3}|49(?:2[024-9]|3[2-689]|7[1-7])\\d{1,8}|(?:1|[368]\\d|4[0-8])\\d{3,13}|49(?:[015]\\d|2[13]|31|[46][1-8])\\d{1,9}", [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], [["(\\d{2})(\\d{3,13})", "$1 $2", ["3[02]|40|[68]9"], "0$1"], ["(\\d{3})(\\d{3,12})", "$1 $2", ["2(?:0[1-389]|1[124]|2[18]|3[14])|3(?:[35-9][15]|4[015])|906|(?:2[4-9]|4[2-9]|[579][1-9]|[68][1-8])1", "2(?:0[1-389]|12[0-8])|3(?:[35-9][15]|4[015])|906|2(?:[13][14]|2[18])|(?:2[4-9]|4[2-9]|[579][1-9]|[68][1-8])1"], "0$1"], ["(\\d{4})(\\d{2,11})", "$1 $2", ["[24-6]|3(?:[3569][02-46-9]|4[2-4679]|7[2-467]|8[2-46-8])|70[2-8]|8(?:0[2-9]|[1-8])|90[7-9]|[79][1-9]", "[24-6]|3(?:3(?:0[1-467]|2[127-9]|3[124578]|7[1257-9]|8[1256]|9[145])|4(?:2[135]|4[13578]|9[1346])|5(?:0[14]|2[1-3589]|6[1-4]|7[13468]|8[13568])|6(?:2[1-489]|3[124-6]|6[13]|7[12579]|8[1-356]|9[135])|7(?:2[1-7]|4[145]|6[1-5]|7[1-4])|8(?:21|3[1468]|6|7[1467]|8[136])|9(?:0[12479]|2[1358]|4[134679]|6[1-9]|7[136]|8[147]|9[1468]))|70[2-8]|8(?:0[2-9]|[1-8])|90[7-9]|[79][1-9]|3[68]4[1347]|3(?:47|60)[1356]|3(?:3[46]|46|5[49])[1246]|3[4579]3[1357]"], "0$1"], ["(\\d{3})(\\d{4})", "$1 $2", ["138"], "0$1"], ["(\\d{5})(\\d{2,10})", "$1 $2", ["3"], "0$1"], ["(\\d{3})(\\d{5,11})", "$1 $2", ["181"], "0$1"], ["(\\d{3})(\\d)(\\d{4,10})", "$1 $2 $3", ["1(?:3|80)|9"], "0$1"], ["(\\d{3})(\\d{7,8})", "$1 $2", ["1[67]"], "0$1"], ["(\\d{3})(\\d{7,12})", "$1 $2", ["8"], "0$1"], ["(\\d{5})(\\d{6})", "$1 $2", ["185", "1850", "18500"], "0$1"], ["(\\d{3})(\\d{4})(\\d{4})", "$1 $2 $3", ["7"], "0$1"], ["(\\d{4})(\\d{7})", "$1 $2", ["18[68]"], "0$1"], ["(\\d{5})(\\d{6})", "$1 $2", ["15[0568]"], "0$1"], ["(\\d{4})(\\d{7})", "$1 $2", ["15[1279]"], "0$1"], ["(\\d{3})(\\d{8})", "$1 $2", ["18"], "0$1"], ["(\\d{3})(\\d{2})(\\d{7,8})", "$1 $2 $3", ["1(?:6[023]|7)"], "0$1"], ["(\\d{4})(\\d{2})(\\d{7})", "$1 $2 $3", ["15[279]"], "0$1"], ["(\\d{3})(\\d{2})(\\d{8})", "$1 $2 $3", ["15"], "0$1"]], "0"], DJ: ["253", "00", "(?:2\\d|77)\\d{6}", [8], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[27]"]]]], DK: ["45", "00", "[2-9]\\d{7}", [8], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[2-9]"]]]], DM: ["1", "011", "(?:[58]\\d\\d|767|900)\\d{7}", [10], 0, "1", 0, "([2-7]\\d{6})$|1", "767$1", 0, "767"], DO: ["1", "011", "(?:[58]\\d\\d|900)\\d{7}", [10], 0, "1", 0, 0, 0, 0, "8001|8[024]9"], DZ: ["213", "00", "(?:[1-4]|[5-79]\\d|80)\\d{7}", [8, 9], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[1-4]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["9"], "0$1"], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[5-8]"], "0$1"]], "0"], EC: ["593", "00", "1\\d{9,10}|(?:[2-7]|9\\d)\\d{7}", [8, 9, 10, 11], [["(\\d)(\\d{3})(\\d{4})", "$1 $2-$3", ["[2-7]"], "(0$1)", 0, "$1-$2-$3"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["9"], "0$1"], ["(\\d{4})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["1"]]], "0"], EE: ["372", "00", "8\\d{9}|[4578]\\d{7}|(?:[3-8]\\d|90)\\d{5}", [7, 8, 10], [["(\\d{3})(\\d{4})", "$1 $2", ["[369]|4[3-8]|5(?:[0-2]|5[0-478]|6[45])|7[1-9]|88", "[369]|4[3-8]|5(?:[02]|1(?:[0-8]|95)|5[0-478]|6(?:4[0-4]|5[1-589]))|7[1-9]|88"]], ["(\\d{4})(\\d{3,4})", "$1 $2", ["[45]|8(?:00|[1-49])", "[45]|8(?:00[1-9]|[1-49])"]], ["(\\d{2})(\\d{2})(\\d{4})", "$1 $2 $3", ["7"]], ["(\\d{4})(\\d{3})(\\d{3})", "$1 $2 $3", ["8"]]]], EG: ["20", "00", "[189]\\d{8,9}|[24-6]\\d{8}|[135]\\d{7}", [8, 9, 10], [["(\\d)(\\d{7,8})", "$1 $2", ["[23]"], "0$1"], ["(\\d{2})(\\d{6,7})", "$1 $2", ["1[35]|[4-6]|8[2468]|9[235-7]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["[89]"], "0$1"], ["(\\d{2})(\\d{8})", "$1 $2", ["1"], "0$1"]], "0"], EH: ["212", "00", "[5-8]\\d{8}", [9], 0, "0", 0, 0, 0, 0, "528[89]"], ER: ["291", "00", "[178]\\d{6}", [7], [["(\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["[178]"], "0$1"]], "0"], ES: ["34", "00", "[5-9]\\d{8}", [9], [["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[89]00"]], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[5-9]"]]]], ET: ["251", "00", "(?:11|[2-579]\\d)\\d{7}", [9], [["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[1-579]"], "0$1"]], "0"], FI: ["358", "00|99(?:[01469]|5(?:[14]1|3[23]|5[59]|77|88|9[09]))", "[1-35689]\\d{4}|7\\d{10,11}|(?:[124-7]\\d|3[0-46-9])\\d{8}|[1-9]\\d{5,8}", [5, 6, 7, 8, 9, 10, 11, 12], [["(\\d)(\\d{4,9})", "$1 $2", ["[2568][1-8]|3(?:0[1-9]|[1-9])|9"], "0$1"], ["(\\d{3})(\\d{3,7})", "$1 $2", ["[12]00|[368]|70[07-9]"], "0$1"], ["(\\d{2})(\\d{4,8})", "$1 $2", ["[1245]|7[135]"], "0$1"], ["(\\d{2})(\\d{6,10})", "$1 $2", ["7"], "0$1"]], "0", 0, 0, 0, 0, "1[03-79]|[2-9]", 0, "00"], FJ: ["679", "0(?:0|52)", "45\\d{5}|(?:0800\\d|[235-9])\\d{6}", [7, 11], [["(\\d{3})(\\d{4})", "$1 $2", ["[235-9]|45"]], ["(\\d{4})(\\d{3})(\\d{4})", "$1 $2 $3", ["0"]]], 0, 0, 0, 0, 0, 0, 0, "00"], FK: ["500", "00", "[2-7]\\d{4}", [5]], FM: ["691", "00", "(?:[39]\\d\\d|820)\\d{4}", [7], [["(\\d{3})(\\d{4})", "$1 $2", ["[389]"]]]], FO: ["298", "00", "[2-9]\\d{5}", [6], [["(\\d{6})", "$1", ["[2-9]"]]], 0, 0, "(10(?:01|[12]0|88))"], FR: ["33", "00", "[1-9]\\d{8}", [9], [["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["8"], "0 $1"], ["(\\d)(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4 $5", ["[1-79]"], "0$1"]], "0"], GA: ["241", "00", "(?:[067]\\d|11)\\d{6}|[2-7]\\d{6}", [7, 8], [["(\\d)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[2-7]"], "0$1"], ["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["0"]], ["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["11|[67]"], "0$1"]], 0, 0, "0(11\\d{6}|60\\d{6}|61\\d{6}|6[256]\\d{6}|7[467]\\d{6})", "$1"], GB: ["44", "00", "[1-357-9]\\d{9}|[18]\\d{8}|8\\d{6}", [7, 9, 10], [["(\\d{3})(\\d{4})", "$1 $2", ["800", "8001", "80011", "800111", "8001111"], "0$1"], ["(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3", ["845", "8454", "84546", "845464"], "0$1"], ["(\\d{3})(\\d{6})", "$1 $2", ["800"], "0$1"], ["(\\d{5})(\\d{4,5})", "$1 $2", ["1(?:38|5[23]|69|76|94)", "1(?:(?:38|69)7|5(?:24|39)|768|946)", "1(?:3873|5(?:242|39[4-6])|(?:697|768)[347]|9467)"], "0$1"], ["(\\d{4})(\\d{5,6})", "$1 $2", ["1(?:[2-69][02-9]|[78])"], "0$1"], ["(\\d{2})(\\d{4})(\\d{4})", "$1 $2 $3", ["[25]|7(?:0|6[02-9])", "[25]|7(?:0|6(?:[03-9]|2[356]))"], "0$1"], ["(\\d{4})(\\d{6})", "$1 $2", ["7"], "0$1"], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["[1389]"], "0$1"]], "0", 0, 0, 0, 0, 0, [["(?:1(?:1(?:3(?:[0-58]\\d\\d|73[0235])|4(?:[0-5]\\d\\d|69[7-9]|70[0-79])|(?:(?:5[0-26-9]|[78][0-49])\\d|6(?:[0-4]\\d|50))\\d)|(?:2(?:(?:0[024-9]|2[3-9]|3[3-79]|4[1-689]|[58][02-9]|6[0-47-9]|7[013-9]|9\\d)\\d|1(?:[0-7]\\d|8[0-2]))|(?:3(?:0\\d|1[0-8]|[25][02-9]|3[02-579]|[468][0-46-9]|7[1-35-79]|9[2-578])|4(?:0[03-9]|[137]\\d|[28][02-57-9]|4[02-69]|5[0-8]|[69][0-79])|5(?:0[1-35-9]|[16]\\d|2[024-9]|3[015689]|4[02-9]|5[03-9]|7[0-35-9]|8[0-468]|9[0-57-9])|6(?:0[034689]|1\\d|2[0-35689]|[38][013-9]|4[1-467]|5[0-69]|6[13-9]|7[0-8]|9[0-24578])|7(?:0[0246-9]|2\\d|3[0236-8]|4[03-9]|5[0-46-9]|6[013-9]|7[0-35-9]|8[024-9]|9[02-9])|8(?:0[35-9]|2[1-57-9]|3[02-578]|4[0-578]|5[124-9]|6[2-69]|7\\d|8[02-9]|9[02569])|9(?:0[02-589]|[18]\\d|2[02-689]|3[1-57-9]|4[2-9]|5[0-579]|6[2-47-9]|7[0-24578]|9[2-57]))\\d)\\d)|2(?:0[013478]|3[0189]|4[017]|8[0-46-9]|9[0-2])\\d{3})\\d{4}|1(?:2(?:0(?:46[1-4]|87[2-9])|545[1-79]|76(?:2\\d|3[1-8]|6[1-6])|9(?:7(?:2[0-4]|3[2-5])|8(?:2[2-8]|7[0-47-9]|8[3-5])))|3(?:6(?:38[2-5]|47[23])|8(?:47[04-9]|64[0157-9]))|4(?:044[1-7]|20(?:2[23]|8\\d)|6(?:0(?:30|5[2-57]|6[1-8]|7[2-8])|140)|8(?:052|87[1-3]))|5(?:2(?:4(?:3[2-79]|6\\d)|76\\d)|6(?:26[06-9]|686))|6(?:06(?:4\\d|7[4-79])|295[5-7]|35[34]\\d|47(?:24|61)|59(?:5[08]|6[67]|74)|9(?:55[0-4]|77[23]))|7(?:26(?:6[13-9]|7[0-7])|(?:442|688)\\d|50(?:2[0-3]|[3-68]2|76))|8(?:27[56]\\d|37(?:5[2-5]|8[239])|843[2-58])|9(?:0(?:0(?:6[1-8]|85)|52\\d)|3583|4(?:66[1-8]|9(?:2[01]|81))|63(?:23|3[1-4])|9561))\\d{3}", [9, 10]], ["7(?:457[0-57-9]|700[01]|911[028])\\d{5}|7(?:[1-3]\\d\\d|4(?:[0-46-9]\\d|5[0-689])|5(?:0[0-8]|[13-9]\\d|2[0-35-9])|7(?:0[1-9]|[1-7]\\d|8[02-9]|9[0-689])|8(?:[014-9]\\d|[23][0-8])|9(?:[024-9]\\d|1[02-9]|3[0-689]))\\d{6}", [10]], ["80[08]\\d{7}|800\\d{6}|8001111"], ["(?:8(?:4[2-5]|7[0-3])|9(?:[01]\\d|8[2-49]))\\d{7}|845464\\d", [7, 10]], ["70\\d{8}", [10]], 0, ["(?:3[0347]|55)\\d{8}", [10]], ["76(?:464|652)\\d{5}|76(?:0[0-28]|2[356]|34|4[01347]|5[49]|6[0-369]|77|8[14]|9[139])\\d{6}", [10]], ["56\\d{8}", [10]]], 0, " x"], GD: ["1", "011", "(?:473|[58]\\d\\d|900)\\d{7}", [10], 0, "1", 0, "([2-9]\\d{6})$|1", "473$1", 0, "473"], GE: ["995", "00", "(?:[3-57]\\d\\d|800)\\d{6}", [9], [["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["70"], "0$1"], ["(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["32"], "0$1"], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[57]"]], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[348]"], "0$1"]], "0"], GF: ["594", "00", "[56]94\\d{6}|(?:80|9\\d)\\d{7}", [9], [["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[56]|9[47]"], "0$1"], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[89]"], "0$1"]], "0"], GG: ["44", "00", "(?:1481|[357-9]\\d{3})\\d{6}|8\\d{6}(?:\\d{2})?", [7, 9, 10], 0, "0", 0, "([25-9]\\d{5})$|0", "1481$1", 0, 0, [["1481[25-9]\\d{5}", [10]], ["7(?:(?:781|839)\\d|911[17])\\d{5}", [10]], ["80[08]\\d{7}|800\\d{6}|8001111"], ["(?:8(?:4[2-5]|7[0-3])|9(?:[01]\\d|8[0-3]))\\d{7}|845464\\d", [7, 10]], ["70\\d{8}", [10]], 0, ["(?:3[0347]|55)\\d{8}", [10]], ["76(?:464|652)\\d{5}|76(?:0[0-28]|2[356]|34|4[01347]|5[49]|6[0-369]|77|8[14]|9[139])\\d{6}", [10]], ["56\\d{8}", [10]]]], GH: ["233", "00", "(?:[235]\\d{3}|800)\\d{5}", [8, 9], [["(\\d{3})(\\d{5})", "$1 $2", ["8"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[235]"], "0$1"]], "0"], GI: ["350", "00", "(?:[25]\\d|60)\\d{6}", [8], [["(\\d{3})(\\d{5})", "$1 $2", ["2"]]]], GL: ["299", "00", "(?:19|[2-689]\\d|70)\\d{4}", [6], [["(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3", ["19|[2-9]"]]]], GM: ["220", "00", "[2-9]\\d{6}", [7], [["(\\d{3})(\\d{4})", "$1 $2", ["[2-9]"]]]], GN: ["224", "00", "722\\d{6}|(?:3|6\\d)\\d{7}", [8, 9], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["3"]], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[67]"]]]], GP: ["590", "00", "590\\d{6}|(?:69|80|9\\d)\\d{7}", [9], [["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[569]"], "0$1"], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["8"], "0$1"]], "0", 0, 0, 0, 0, 0, [["590(?:0[1-68]|[14][0-24-9]|2[0-68]|3[1-9]|5[3-579]|[68][0-689]|7[08]|9\\d)\\d{4}"], ["69(?:0\\d\\d|1(?:2[2-9]|3[0-5]))\\d{4}"], ["80[0-5]\\d{6}"], 0, 0, 0, 0, 0, ["9(?:(?:395|76[018])\\d|475[0-5])\\d{4}"]]], GQ: ["240", "00", "222\\d{6}|(?:3\\d|55|[89]0)\\d{7}", [9], [["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[235]"]], ["(\\d{3})(\\d{6})", "$1 $2", ["[89]"]]]], GR: ["30", "00", "5005000\\d{3}|8\\d{9,11}|(?:[269]\\d|70)\\d{8}", [10, 11, 12], [["(\\d{2})(\\d{4})(\\d{4})", "$1 $2 $3", ["21|7"]], ["(\\d{4})(\\d{6})", "$1 $2", ["2(?:2|3[2-57-9]|4[2-469]|5[2-59]|6[2-9]|7[2-69]|8[2-49])|5"]], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["[2689]"]], ["(\\d{3})(\\d{3,4})(\\d{5})", "$1 $2 $3", ["8"]]]], GT: ["502", "00", "80\\d{6}|(?:1\\d{3}|[2-7])\\d{7}", [8, 11], [["(\\d{4})(\\d{4})", "$1 $2", ["[2-8]"]], ["(\\d{4})(\\d{3})(\\d{4})", "$1 $2 $3", ["1"]]]], GU: ["1", "011", "(?:[58]\\d\\d|671|900)\\d{7}", [10], 0, "1", 0, "([2-9]\\d{6})$|1", "671$1", 0, "671"], GW: ["245", "00", "[49]\\d{8}|4\\d{6}", [7, 9], [["(\\d{3})(\\d{4})", "$1 $2", ["40"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[49]"]]]], GY: ["592", "001", "(?:[2-8]\\d{3}|9008)\\d{3}", [7], [["(\\d{3})(\\d{4})", "$1 $2", ["[2-9]"]]]], HK: ["852", "00(?:30|5[09]|[126-9]?)", "8[0-46-9]\\d{6,7}|9\\d{4,7}|(?:[2-7]|9\\d{3})\\d{7}", [5, 6, 7, 8, 9, 11], [["(\\d{3})(\\d{2,5})", "$1 $2", ["900", "9003"]], ["(\\d{4})(\\d{4})", "$1 $2", ["[2-7]|8[1-4]|9(?:0[1-9]|[1-8])"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["8"]], ["(\\d{3})(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["9"]]], 0, 0, 0, 0, 0, 0, 0, "00"], HN: ["504", "00", "8\\d{10}|[237-9]\\d{7}", [8, 11], [["(\\d{4})(\\d{4})", "$1-$2", ["[237-9]"]]]], HR: ["385", "00", "(?:[24-69]\\d|3[0-79])\\d{7}|80\\d{5,7}|[1-79]\\d{7}|6\\d{5,6}", [6, 7, 8, 9], [["(\\d{2})(\\d{2})(\\d{2,3})", "$1 $2 $3", ["6[01]"], "0$1"], ["(\\d{3})(\\d{2})(\\d{2,3})", "$1 $2 $3", ["8"], "0$1"], ["(\\d)(\\d{4})(\\d{3})", "$1 $2 $3", ["1"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[67]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["9"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[2-5]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["8"], "0$1"]], "0"], HT: ["509", "00", "(?:[2-489]\\d|55)\\d{6}", [8], [["(\\d{2})(\\d{2})(\\d{4})", "$1 $2 $3", ["[2-589]"]]]], HU: ["36", "00", "[235-7]\\d{8}|[1-9]\\d{7}", [8, 9], [["(\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["1"], "(06 $1)"], ["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[27][2-9]|3[2-7]|4[24-9]|5[2-79]|6|8[2-57-9]|9[2-69]"], "(06 $1)"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[2-9]"], "06 $1"]], "06"], ID: ["62", "00[89]", "(?:(?:00[1-9]|8\\d)\\d{4}|[1-36])\\d{6}|00\\d{10}|[1-9]\\d{8,10}|[2-9]\\d{7}", [7, 8, 9, 10, 11, 12, 13], [["(\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["15"]], ["(\\d{2})(\\d{5,9})", "$1 $2", ["2[124]|[36]1"], "(0$1)"], ["(\\d{3})(\\d{5,7})", "$1 $2", ["800"], "0$1"], ["(\\d{3})(\\d{5,8})", "$1 $2", ["[2-79]"], "(0$1)"], ["(\\d{3})(\\d{3,4})(\\d{3})", "$1-$2-$3", ["8[1-35-9]"], "0$1"], ["(\\d{3})(\\d{6,8})", "$1 $2", ["1"], "0$1"], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["804"], "0$1"], ["(\\d{3})(\\d)(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["80"], "0$1"], ["(\\d{3})(\\d{4})(\\d{4,5})", "$1-$2-$3", ["8"], "0$1"]], "0"], IE: ["353", "00", "(?:1\\d|[2569])\\d{6,8}|4\\d{6,9}|7\\d{8}|8\\d{8,9}", [7, 8, 9, 10], [["(\\d{2})(\\d{5})", "$1 $2", ["2[24-9]|47|58|6[237-9]|9[35-9]"], "(0$1)"], ["(\\d{3})(\\d{5})", "$1 $2", ["[45]0"], "(0$1)"], ["(\\d)(\\d{3,4})(\\d{4})", "$1 $2 $3", ["1"], "(0$1)"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[2569]|4[1-69]|7[14]"], "(0$1)"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["70"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["81"], "(0$1)"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[78]"], "0$1"], ["(\\d{4})(\\d{3})(\\d{3})", "$1 $2 $3", ["1"]], ["(\\d{2})(\\d{4})(\\d{4})", "$1 $2 $3", ["4"], "(0$1)"], ["(\\d{2})(\\d)(\\d{3})(\\d{4})", "$1 $2 $3 $4", ["8"], "0$1"]], "0"], IL: ["972", "0(?:0|1[2-9])", "1\\d{6}(?:\\d{3,5})?|[57]\\d{8}|[1-489]\\d{7}", [7, 8, 9, 10, 11, 12], [["(\\d{4})(\\d{3})", "$1-$2", ["125"]], ["(\\d{4})(\\d{2})(\\d{2})", "$1-$2-$3", ["121"]], ["(\\d)(\\d{3})(\\d{4})", "$1-$2-$3", ["[2-489]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1-$2-$3", ["[57]"], "0$1"], ["(\\d{4})(\\d{3})(\\d{3})", "$1-$2-$3", ["12"]], ["(\\d{4})(\\d{6})", "$1-$2", ["159"]], ["(\\d)(\\d{3})(\\d{3})(\\d{3})", "$1-$2-$3-$4", ["1[7-9]"]], ["(\\d{3})(\\d{1,2})(\\d{3})(\\d{4})", "$1-$2 $3-$4", ["15"]]], "0"], IM: ["44", "00", "1624\\d{6}|(?:[3578]\\d|90)\\d{8}", [10], 0, "0", 0, "([25-8]\\d{5})$|0", "1624$1", 0, "74576|(?:16|7[56])24"], IN: ["91", "00", "(?:000800|[2-9]\\d\\d)\\d{7}|1\\d{7,12}", [8, 9, 10, 11, 12, 13], [["(\\d{8})", "$1", ["5(?:0|2[23]|3[03]|[67]1|88)", "5(?:0|2(?:21|3)|3(?:0|3[23])|616|717|888)", "5(?:0|2(?:21|3)|3(?:0|3[23])|616|717|8888)"], 0, 1], ["(\\d{4})(\\d{4,5})", "$1 $2", ["180", "1800"], 0, 1], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["140"], 0, 1], ["(\\d{2})(\\d{4})(\\d{4})", "$1 $2 $3", ["11|2[02]|33|4[04]|79[1-7]|80[2-46]", "11|2[02]|33|4[04]|79(?:[1-6]|7[19])|80(?:[2-4]|6[0-589])", "11|2[02]|33|4[04]|79(?:[124-6]|3(?:[02-9]|1[0-24-9])|7(?:1|9[1-6]))|80(?:[2-4]|6[0-589])"], "0$1", 1], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["1(?:2[0-249]|3[0-25]|4[145]|[68]|7[1257])|2(?:1[257]|3[013]|4[01]|5[0137]|6[0158]|78|8[1568])|3(?:26|4[1-3]|5[34]|6[01489]|7[02-46]|8[159])|4(?:1[36]|2[1-47]|5[12]|6[0-26-9]|7[0-24-9]|8[013-57]|9[014-7])|5(?:1[025]|22|[36][25]|4[28]|5[12]|[78]1)|6(?:12|[2-4]1|5[17]|6[13]|80)|7(?:12|3[134]|4[47]|61|88)|8(?:16|2[014]|3[126]|6[136]|7[078]|8[34]|91)|(?:43|59|75)[15]|(?:1[59]|29|67|72)[14]", "1(?:2[0-24]|3[0-25]|4[145]|[59][14]|6[1-9]|7[1257]|8[1-57-9])|2(?:1[257]|3[013]|4[01]|5[0137]|6[058]|78|8[1568]|9[14])|3(?:26|4[1-3]|5[34]|6[01489]|7[02-46]|8[159])|4(?:1[36]|2[1-47]|3[15]|5[12]|6[0-26-9]|7[0-24-9]|8[013-57]|9[014-7])|5(?:1[025]|22|[36][25]|4[28]|[578]1|9[15])|674|7(?:(?:2[14]|3[34]|5[15])[2-6]|61[346]|88[0-8])|8(?:70[2-6]|84[235-7]|91[3-7])|(?:1(?:29|60|8[06])|261|552|6(?:12|[2-47]1|5[17]|6[13]|80)|7(?:12|31|4[47])|8(?:16|2[014]|3[126]|6[136]|7[78]|83))[2-7]", "1(?:2[0-24]|3[0-25]|4[145]|[59][14]|6[1-9]|7[1257]|8[1-57-9])|2(?:1[257]|3[013]|4[01]|5[0137]|6[058]|78|8[1568]|9[14])|3(?:26|4[1-3]|5[34]|6[01489]|7[02-46]|8[159])|4(?:1[36]|2[1-47]|3[15]|5[12]|6[0-26-9]|7[0-24-9]|8[013-57]|9[014-7])|5(?:1[025]|22|[36][25]|4[28]|[578]1|9[15])|6(?:12(?:[2-6]|7[0-8])|74[2-7])|7(?:(?:2[14]|5[15])[2-6]|3171|61[346]|88(?:[2-7]|82))|8(?:70[2-6]|84(?:[2356]|7[19])|91(?:[3-6]|7[19]))|73[134][2-6]|(?:74[47]|8(?:16|2[014]|3[126]|6[136]|7[78]|83))(?:[2-6]|7[19])|(?:1(?:29|60|8[06])|261|552|6(?:[2-4]1|5[17]|6[13]|7(?:1|4[0189])|80)|7(?:12|88[01]))[2-7]"], "0$1", 1], ["(\\d{4})(\\d{3})(\\d{3})", "$1 $2 $3", ["1(?:[2-479]|5[0235-9])|[2-5]|6(?:1[1358]|2[2457-9]|3[2-5]|4[235-7]|5[2-689]|6[24578]|7[235689]|8[1-6])|7(?:1[013-9]|28|3[129]|4[1-35689]|5[29]|6[02-5]|70)|807", "1(?:[2-479]|5[0235-9])|[2-5]|6(?:1[1358]|2(?:[2457]|84|95)|3(?:[2-4]|55)|4[235-7]|5[2-689]|6[24578]|7[235689]|8[1-6])|7(?:1(?:[013-8]|9[6-9])|28[6-8]|3(?:17|2[0-49]|9[2-57])|4(?:1[2-4]|[29][0-7]|3[0-8]|[56]|8[0-24-7])|5(?:2[1-3]|9[0-6])|6(?:0[5689]|2[5-9]|3[02-8]|4|5[0-367])|70[13-7])|807[19]", "1(?:[2-479]|5(?:[0236-9]|5[013-9]))|[2-5]|6(?:2(?:84|95)|355|83)|73179|807(?:1|9[1-3])|(?:1552|6(?:1[1358]|2[2457]|3[2-4]|4[235-7]|5[2-689]|6[24578]|7[235689]|8[124-6])\\d|7(?:1(?:[013-8]\\d|9[6-9])|28[6-8]|3(?:2[0-49]|9[2-57])|4(?:1[2-4]|[29][0-7]|3[0-8]|[56]\\d|8[0-24-7])|5(?:2[1-3]|9[0-6])|6(?:0[5689]|2[5-9]|3[02-8]|4\\d|5[0-367])|70[13-7]))[2-7]"], "0$1", 1], ["(\\d{5})(\\d{5})", "$1 $2", ["[6-9]"], "0$1", 1], ["(\\d{4})(\\d{2,4})(\\d{4})", "$1 $2 $3", ["1(?:6|8[06])", "1(?:6|8[06]0)"], 0, 1], ["(\\d{4})(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["18"], 0, 1]], "0"], IO: ["246", "00", "3\\d{6}", [7], [["(\\d{3})(\\d{4})", "$1 $2", ["3"]]]], IQ: ["964", "00", "(?:1|7\\d\\d)\\d{7}|[2-6]\\d{7,8}", [8, 9, 10], [["(\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["1"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[2-6]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["7"], "0$1"]], "0"], IR: ["98", "00", "[1-9]\\d{9}|(?:[1-8]\\d\\d|9)\\d{3,4}", [4, 5, 6, 7, 10], [["(\\d{4,5})", "$1", ["96"], "0$1"], ["(\\d{2})(\\d{4,5})", "$1 $2", ["(?:1[137]|2[13-68]|3[1458]|4[145]|5[1468]|6[16]|7[1467]|8[13467])[12689]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["9"], "0$1"], ["(\\d{2})(\\d{4})(\\d{4})", "$1 $2 $3", ["[1-8]"], "0$1"]], "0"], IS: ["354", "00|1(?:0(?:01|[12]0)|100)", "(?:38\\d|[4-9])\\d{6}", [7, 9], [["(\\d{3})(\\d{4})", "$1 $2", ["[4-9]"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["3"]]], 0, 0, 0, 0, 0, 0, 0, "00"], IT: ["39", "00", "0\\d{5,10}|1\\d{8,10}|3(?:[0-8]\\d{7,10}|9\\d{7,8})|(?:55|70)\\d{8}|8\\d{5}(?:\\d{2,4})?", [6, 7, 8, 9, 10, 11], [["(\\d{2})(\\d{4,6})", "$1 $2", ["0[26]"]], ["(\\d{3})(\\d{3,6})", "$1 $2", ["0[13-57-9][0159]|8(?:03|4[17]|9[2-5])", "0[13-57-9][0159]|8(?:03|4[17]|9(?:2|3[04]|[45][0-4]))"]], ["(\\d{4})(\\d{2,6})", "$1 $2", ["0(?:[13-579][2-46-8]|8[236-8])"]], ["(\\d{4})(\\d{4})", "$1 $2", ["894"]], ["(\\d{2})(\\d{3,4})(\\d{4})", "$1 $2 $3", ["0[26]|5"]], ["(\\d{3})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["1(?:44|[679])|[378]"]], ["(\\d{3})(\\d{3,4})(\\d{4})", "$1 $2 $3", ["0[13-57-9][0159]|14"]], ["(\\d{2})(\\d{4})(\\d{5})", "$1 $2 $3", ["0[26]"]], ["(\\d{4})(\\d{3})(\\d{4})", "$1 $2 $3", ["0"]], ["(\\d{3})(\\d{4})(\\d{4,5})", "$1 $2 $3", ["3"]]], 0, 0, 0, 0, 0, 0, [["0669[0-79]\\d{1,6}|0(?:1(?:[0159]\\d|[27][1-5]|31|4[1-4]|6[1356]|8[2-57])|2\\d\\d|3(?:[0159]\\d|2[1-4]|3[12]|[48][1-6]|6[2-59]|7[1-7])|4(?:[0159]\\d|[23][1-9]|4[245]|6[1-5]|7[1-4]|81)|5(?:[0159]\\d|2[1-5]|3[2-6]|4[1-79]|6[4-6]|7[1-578]|8[3-8])|6(?:[0-57-9]\\d|6[0-8])|7(?:[0159]\\d|2[12]|3[1-7]|4[2-46]|6[13569]|7[13-6]|8[1-59])|8(?:[0159]\\d|2[3-578]|3[1-356]|[6-8][1-5])|9(?:[0159]\\d|[238][1-5]|4[12]|6[1-8]|7[1-6]))\\d{2,7}"], ["3[1-9]\\d{8}|3[2-9]\\d{7}", [9, 10]], ["80(?:0\\d{3}|3)\\d{3}", [6, 9]], ["(?:0878\\d{3}|89(?:2\\d|3[04]|4(?:[0-4]|[5-9]\\d\\d)|5[0-4]))\\d\\d|(?:1(?:44|6[346])|89(?:38|5[5-9]|9))\\d{6}", [6, 8, 9, 10]], ["1(?:78\\d|99)\\d{6}", [9, 10]], 0, 0, 0, ["55\\d{8}", [10]], ["84(?:[08]\\d{3}|[17])\\d{3}", [6, 9]]]], JE: ["44", "00", "1534\\d{6}|(?:[3578]\\d|90)\\d{8}", [10], 0, "0", 0, "([0-24-8]\\d{5})$|0", "1534$1", 0, 0, [["1534[0-24-8]\\d{5}"], ["7(?:(?:(?:50|82)9|937)\\d|7(?:00[378]|97[7-9]))\\d{5}"], ["80(?:07(?:35|81)|8901)\\d{4}"], ["(?:8(?:4(?:4(?:4(?:05|42|69)|703)|5(?:041|800))|7(?:0002|1206))|90(?:066[59]|1810|71(?:07|55)))\\d{4}"], ["701511\\d{4}"], 0, ["(?:3(?:0(?:07(?:35|81)|8901)|3\\d{4}|4(?:4(?:4(?:05|42|69)|703)|5(?:041|800))|7(?:0002|1206))|55\\d{4})\\d{4}"], ["76(?:464|652)\\d{5}|76(?:0[0-28]|2[356]|34|4[01347]|5[49]|6[0-369]|77|8[14]|9[139])\\d{6}"], ["56\\d{8}"]]], JM: ["1", "011", "(?:[58]\\d\\d|658|900)\\d{7}", [10], 0, "1", 0, 0, 0, 0, "658|876"], JO: ["962", "00", "(?:(?:[2689]|7\\d)\\d|32|53)\\d{6}", [8, 9], [["(\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["[2356]|87"], "(0$1)"], ["(\\d{3})(\\d{5,6})", "$1 $2", ["[89]"], "0$1"], ["(\\d{2})(\\d{7})", "$1 $2", ["70"], "0$1"], ["(\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["7"], "0$1"]], "0"], JP: ["81", "010", "00[1-9]\\d{6,14}|[257-9]\\d{9}|(?:00|[1-9]\\d\\d)\\d{6}", [8, 9, 10, 11, 12, 13, 14, 15, 16, 17], [["(\\d{3})(\\d{3})(\\d{3})", "$1-$2-$3", ["(?:12|57|99)0"], "0$1"], ["(\\d{4})(\\d)(\\d{4})", "$1-$2-$3", ["1(?:26|3[79]|4[56]|5[4-68]|6[3-5])|499|5(?:76|97)|746|8(?:3[89]|47|51)|9(?:80|9[16])", "1(?:267|3(?:7[247]|9[278])|466|5(?:47|58|64)|6(?:3[245]|48|5[4-68]))|499[2468]|5(?:76|97)9|7468|8(?:3(?:8[7-9]|96)|477|51[2-9])|9(?:802|9(?:1[23]|69))|1(?:45|58)[67]", "1(?:267|3(?:7[247]|9[278])|466|5(?:47|58|64)|6(?:3[245]|48|5[4-68]))|499[2468]|5(?:769|979[2-69])|7468|8(?:3(?:8[7-9]|96[2457-9])|477|51[2-9])|9(?:802|9(?:1[23]|69))|1(?:45|58)[67]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1-$2-$3", ["60"], "0$1"], ["(\\d)(\\d{4})(\\d{4})", "$1-$2-$3", ["[36]|4(?:2[09]|7[01])", "[36]|4(?:2(?:0|9[02-69])|7(?:0[019]|1))"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1-$2-$3", ["1(?:1|5[45]|77|88|9[69])|2(?:2[1-37]|3[0-269]|4[59]|5|6[24]|7[1-358]|8[1369]|9[0-38])|4(?:[28][1-9]|3[0-57]|[45]|6[248]|7[2-579]|9[29])|5(?:2|3[0459]|4[0-369]|5[29]|8[02389]|9[0-389])|7(?:2[02-46-9]|34|[58]|6[0249]|7[57]|9[2-6])|8(?:2[124589]|3[26-9]|49|51|6|7[0-468]|8[68]|9[019])|9(?:[23][1-9]|4[15]|5[138]|6[1-3]|7[156]|8[189]|9[1-489])", "1(?:1|5(?:4[018]|5[017])|77|88|9[69])|2(?:2(?:[127]|3[014-9])|3[0-269]|4[59]|5(?:[1-3]|5[0-69]|9[19])|62|7(?:[1-35]|8[0189])|8(?:[16]|3[0134]|9[0-5])|9(?:[028]|17))|4(?:2(?:[13-79]|8[014-6])|3[0-57]|[45]|6[248]|7[2-47]|8[1-9]|9[29])|5(?:2|3(?:[045]|9[0-8])|4[0-369]|5[29]|8[02389]|9[0-3])|7(?:2[02-46-9]|34|[58]|6[0249]|7[57]|9(?:[23]|4[0-59]|5[01569]|6[0167]))|8(?:2(?:[1258]|4[0-39]|9[0-2469])|3(?:[29]|60)|49|51|6(?:[0-24]|36|5[0-3589]|7[23]|9[01459])|7[0-468]|8[68])|9(?:[23][1-9]|4[15]|5[138]|6[1-3]|7[156]|8[189]|9(?:[1289]|3[34]|4[0178]))|(?:264|837)[016-9]|2(?:57|93)[015-9]|(?:25[0468]|422|838)[01]|(?:47[59]|59[89]|8(?:6[68]|9))[019]", "1(?:1|5(?:4[018]|5[017])|77|88|9[69])|2(?:2[127]|3[0-269]|4[59]|5(?:[1-3]|5[0-69]|9(?:17|99))|6(?:2|4[016-9])|7(?:[1-35]|8[0189])|8(?:[16]|3[0134]|9[0-5])|9(?:[028]|17))|4(?:2(?:[13-79]|8[014-6])|3[0-57]|[45]|6[248]|7[2-47]|9[29])|5(?:2|3(?:[045]|9(?:[0-58]|6[4-9]|7[0-35689]))|4[0-369]|5[29]|8[02389]|9[0-3])|7(?:2[02-46-9]|34|[58]|6[0249]|7[57]|9(?:[23]|4[0-59]|5[01569]|6[0167]))|8(?:2(?:[1258]|4[0-39]|9[0169])|3(?:[29]|60|7(?:[017-9]|6[6-8]))|49|51|6(?:[0-24]|36[2-57-9]|5(?:[0-389]|5[23])|6(?:[01]|9[178])|7(?:2[2-468]|3[78])|9[0145])|7[0-468]|8[68])|9(?:4[15]|5[138]|7[156]|8[189]|9(?:[1289]|3(?:31|4[357])|4[0178]))|(?:8294|96)[1-3]|2(?:57|93)[015-9]|(?:223|8699)[014-9]|(?:25[0468]|422|838)[01]|(?:48|8292|9[23])[1-9]|(?:47[59]|59[89]|8(?:68|9))[019]"], "0$1"], ["(\\d{3})(\\d{2})(\\d{4})", "$1-$2-$3", ["[14]|[289][2-9]|5[3-9]|7[2-4679]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{4})", "$1-$2-$3", ["800"], "0$1"], ["(\\d{2})(\\d{4})(\\d{4})", "$1-$2-$3", ["[257-9]"], "0$1"]], "0", 0, "(000[259]\\d{6})$|(?:(?:003768)0?)|0", "$1"], KE: ["254", "000", "(?:[17]\\d\\d|900)\\d{6}|(?:2|80)0\\d{6,7}|[4-6]\\d{6,8}", [7, 8, 9, 10], [["(\\d{2})(\\d{5,7})", "$1 $2", ["[24-6]"], "0$1"], ["(\\d{3})(\\d{6})", "$1 $2", ["[17]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[89]"], "0$1"]], "0"], KG: ["996", "00", "8\\d{9}|[235-9]\\d{8}", [9, 10], [["(\\d{4})(\\d{5})", "$1 $2", ["3(?:1[346]|[24-79])"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[235-79]|88"], "0$1"], ["(\\d{3})(\\d{3})(\\d)(\\d{2,3})", "$1 $2 $3 $4", ["8"], "0$1"]], "0"], KH: ["855", "00[14-9]", "1\\d{9}|[1-9]\\d{7,8}", [8, 9, 10], [["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[1-9]"], "0$1"], ["(\\d{4})(\\d{3})(\\d{3})", "$1 $2 $3", ["1"]]], "0"], KI: ["686", "00", "(?:[37]\\d|6[0-79])\\d{6}|(?:[2-48]\\d|50)\\d{3}", [5, 8], 0, "0"], KM: ["269", "00", "[3478]\\d{6}", [7], [["(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3", ["[3478]"]]]], KN: ["1", "011", "(?:[58]\\d\\d|900)\\d{7}", [10], 0, "1", 0, "([2-7]\\d{6})$|1", "869$1", 0, "869"], KP: ["850", "00|99", "85\\d{6}|(?:19\\d|[2-7])\\d{7}", [8, 10], [["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["8"], "0$1"], ["(\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["[2-7]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["1"], "0$1"]], "0"], KR: ["82", "00(?:[125689]|3(?:[46]5|91)|7(?:00|27|3|55|6[126]))", "00[1-9]\\d{8,11}|(?:[12]|5\\d{3})\\d{7}|[13-6]\\d{9}|(?:[1-6]\\d|80)\\d{7}|[3-6]\\d{4,5}|(?:00|7)0\\d{8}", [5, 6, 8, 9, 10, 11, 12, 13, 14], [["(\\d{2})(\\d{3,4})", "$1-$2", ["(?:3[1-3]|[46][1-4]|5[1-5])1"], "0$1"], ["(\\d{4})(\\d{4})", "$1-$2", ["1"]], ["(\\d)(\\d{3,4})(\\d{4})", "$1-$2-$3", ["2"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1-$2-$3", ["60|8"], "0$1"], ["(\\d{2})(\\d{3,4})(\\d{4})", "$1-$2-$3", ["[1346]|5[1-5]"], "0$1"], ["(\\d{2})(\\d{4})(\\d{4})", "$1-$2-$3", ["[57]"], "0$1"], ["(\\d{2})(\\d{5})(\\d{4})", "$1-$2-$3", ["5"], "0$1"]], "0", 0, "0(8(?:[1-46-8]|5\\d\\d))?"], KW: ["965", "00", "18\\d{5}|(?:[2569]\\d|41)\\d{6}", [7, 8], [["(\\d{4})(\\d{3,4})", "$1 $2", ["[169]|2(?:[235]|4[1-35-9])|52"]], ["(\\d{3})(\\d{5})", "$1 $2", ["[245]"]]]], KY: ["1", "011", "(?:345|[58]\\d\\d|900)\\d{7}", [10], 0, "1", 0, "([2-9]\\d{6})$|1", "345$1", 0, "345"], KZ: ["7", "810", "(?:33622|8\\d{8})\\d{5}|[78]\\d{9}", [10, 14], 0, "8", 0, 0, 0, 0, "33|7", 0, "8~10"], LA: ["856", "00", "[23]\\d{9}|3\\d{8}|(?:[235-8]\\d|41)\\d{6}", [8, 9, 10], [["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["2[13]|3[14]|[4-8]"], "0$1"], ["(\\d{2})(\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3 $4", ["30[013-9]"], "0$1"], ["(\\d{2})(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["[23]"], "0$1"]], "0"], LB: ["961", "00", "[27-9]\\d{7}|[13-9]\\d{6}", [7, 8], [["(\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["[13-69]|7(?:[2-57]|62|8[0-7]|9[04-9])|8[02-9]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[27-9]"]]], "0"], LC: ["1", "011", "(?:[58]\\d\\d|758|900)\\d{7}", [10], 0, "1", 0, "([2-8]\\d{6})$|1", "758$1", 0, "758"], LI: ["423", "00", "[68]\\d{8}|(?:[2378]\\d|90)\\d{5}", [7, 9], [["(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3", ["[2379]|8(?:0[09]|7)", "[2379]|8(?:0(?:02|9)|7)"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["8"]], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["69"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["6"]]], "0", 0, "(1001)|0"], LK: ["94", "00", "[1-9]\\d{8}", [9], [["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["7"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[1-689]"], "0$1"]], "0"], LR: ["231", "00", "(?:[25]\\d|33|77|88)\\d{7}|(?:2\\d|[4-6])\\d{6}", [7, 8, 9], [["(\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["[4-6]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["2"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[23578]"], "0$1"]], "0"], LS: ["266", "00", "(?:[256]\\d\\d|800)\\d{5}", [8], [["(\\d{4})(\\d{4})", "$1 $2", ["[2568]"]]]], LT: ["370", "00", "(?:[3469]\\d|52|[78]0)\\d{6}", [8], [["(\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["52[0-7]"], "(8-$1)", 1], ["(\\d{3})(\\d{2})(\\d{3})", "$1 $2 $3", ["[7-9]"], "8 $1", 1], ["(\\d{2})(\\d{6})", "$1 $2", ["37|4(?:[15]|6[1-8])"], "(8-$1)", 1], ["(\\d{3})(\\d{5})", "$1 $2", ["[3-6]"], "(8-$1)", 1]], "8", 0, "[08]"], LU: ["352", "00", "35[013-9]\\d{4,8}|6\\d{8}|35\\d{2,4}|(?:[2457-9]\\d|3[0-46-9])\\d{2,9}", [4, 5, 6, 7, 8, 9, 10, 11], [["(\\d{2})(\\d{3})", "$1 $2", ["2(?:0[2-689]|[2-9])|[3-57]|8(?:0[2-9]|[13-9])|9(?:0[89]|[2-579])"]], ["(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3", ["2(?:0[2-689]|[2-9])|[3-57]|8(?:0[2-9]|[13-9])|9(?:0[89]|[2-579])"]], ["(\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3", ["20[2-689]"]], ["(\\d{2})(\\d{2})(\\d{2})(\\d{1,2})", "$1 $2 $3 $4", ["2(?:[0367]|4[3-8])"]], ["(\\d{3})(\\d{2})(\\d{3})", "$1 $2 $3", ["80[01]|90[015]"]], ["(\\d{2})(\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3 $4", ["20"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["6"]], ["(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{1,2})", "$1 $2 $3 $4 $5", ["2(?:[0367]|4[3-8])"]], ["(\\d{2})(\\d{2})(\\d{2})(\\d{1,5})", "$1 $2 $3 $4", ["[3-57]|8[13-9]|9(?:0[89]|[2-579])|(?:2|80)[2-9]"]]], 0, 0, "(15(?:0[06]|1[12]|[35]5|4[04]|6[26]|77|88|99)\\d)"], LV: ["371", "00", "(?:[268]\\d|90)\\d{6}", [8], [["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[269]|8[01]"]]]], LY: ["218", "00", "[2-9]\\d{8}", [9], [["(\\d{2})(\\d{7})", "$1-$2", ["[2-9]"], "0$1"]], "0"], MA: ["212", "00", "[5-8]\\d{8}", [9], [["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["5[45]"], "0$1"], ["(\\d{4})(\\d{5})", "$1-$2", ["5(?:2[2-489]|3[5-9]|9)|8(?:0[89]|92)", "5(?:2(?:[2-49]|8[235-9])|3[5-9]|9)|8(?:0[89]|92)"], "0$1"], ["(\\d{2})(\\d{7})", "$1-$2", ["8"], "0$1"], ["(\\d{3})(\\d{6})", "$1-$2", ["[5-7]"], "0$1"]], "0", 0, 0, 0, 0, 0, [["5(?:2(?:[0-25-79]\\d|3[1-578]|4[02-46-8]|8[0235-7])|3(?:[0-47]\\d|5[02-9]|6[02-8]|8[014-9]|9[3-9])|(?:4[067]|5[03])\\d)\\d{5}"], ["(?:6(?:[0-79]\\d|8[0-247-9])|7(?:[0167]\\d|2[0-2]|5[01]|8[0-3]))\\d{6}"], ["80[0-7]\\d{6}"], ["89\\d{7}"], 0, 0, 0, 0, ["(?:592(?:4[0-2]|93)|80[89]\\d\\d)\\d{4}"]]], MC: ["377", "00", "(?:[3489]|6\\d)\\d{7}", [8, 9], [["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["4"], "0$1"], ["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[389]"]], ["(\\d)(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4 $5", ["6"], "0$1"]], "0"], MD: ["373", "00", "(?:[235-7]\\d|[89]0)\\d{6}", [8], [["(\\d{3})(\\d{5})", "$1 $2", ["[89]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["22|3"], "0$1"], ["(\\d{3})(\\d{2})(\\d{3})", "$1 $2 $3", ["[25-7]"], "0$1"]], "0"], ME: ["382", "00", "(?:20|[3-79]\\d)\\d{6}|80\\d{6,7}", [8, 9], [["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[2-9]"], "0$1"]], "0"], MF: ["590", "00", "590\\d{6}|(?:69|80|9\\d)\\d{7}", [9], 0, "0", 0, 0, 0, 0, 0, [["590(?:0[079]|[14]3|[27][79]|3[03-7]|5[0-268]|87)\\d{4}"], ["69(?:0\\d\\d|1(?:2[2-9]|3[0-5]))\\d{4}"], ["80[0-5]\\d{6}"], 0, 0, 0, 0, 0, ["9(?:(?:395|76[018])\\d|475[0-5])\\d{4}"]]], MG: ["261", "00", "[23]\\d{8}", [9], [["(\\d{2})(\\d{2})(\\d{3})(\\d{2})", "$1 $2 $3 $4", ["[23]"], "0$1"]], "0", 0, "([24-9]\\d{6})$|0", "20$1"], MH: ["692", "011", "329\\d{4}|(?:[256]\\d|45)\\d{5}", [7], [["(\\d{3})(\\d{4})", "$1-$2", ["[2-6]"]]], "1"], MK: ["389", "00", "[2-578]\\d{7}", [8], [["(\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["2|34[47]|4(?:[37]7|5[47]|64)"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[347]"], "0$1"], ["(\\d{3})(\\d)(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[58]"], "0$1"]], "0"], ML: ["223", "00", "[24-9]\\d{7}", [8], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[24-9]"]]]], MM: ["95", "00", "1\\d{5,7}|95\\d{6}|(?:[4-7]|9[0-46-9])\\d{6,8}|(?:2|8\\d)\\d{5,8}", [6, 7, 8, 9, 10], [["(\\d)(\\d{2})(\\d{3})", "$1 $2 $3", ["16|2"], "0$1"], ["(\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3", ["[45]|6(?:0[23]|[1-689]|7[235-7])|7(?:[0-4]|5[2-7])|8[1-6]"], "0$1"], ["(\\d)(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[12]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[4-7]|8[1-35]"], "0$1"], ["(\\d)(\\d{3})(\\d{4,6})", "$1 $2 $3", ["9(?:2[0-4]|[35-9]|4[137-9])"], "0$1"], ["(\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["2"], "0$1"], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["8"], "0$1"], ["(\\d)(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["92"], "0$1"], ["(\\d)(\\d{5})(\\d{4})", "$1 $2 $3", ["9"], "0$1"]], "0"], MN: ["976", "001", "[12]\\d{7,9}|[5-9]\\d{7}", [8, 9, 10], [["(\\d{2})(\\d{2})(\\d{4})", "$1 $2 $3", ["[12]1"], "0$1"], ["(\\d{4})(\\d{4})", "$1 $2", ["[5-9]"]], ["(\\d{3})(\\d{5,6})", "$1 $2", ["[12]2[1-3]"], "0$1"], ["(\\d{4})(\\d{5,6})", "$1 $2", ["[12](?:27|3[2-8]|4[2-68]|5[1-4689])", "[12](?:27|3[2-8]|4[2-68]|5[1-4689])[0-3]"], "0$1"], ["(\\d{5})(\\d{4,5})", "$1 $2", ["[12]"], "0$1"]], "0"], MO: ["853", "00", "0800\\d{3}|(?:28|[68]\\d)\\d{6}", [7, 8], [["(\\d{4})(\\d{3})", "$1 $2", ["0"]], ["(\\d{4})(\\d{4})", "$1 $2", ["[268]"]]]], MP: ["1", "011", "[58]\\d{9}|(?:67|90)0\\d{7}", [10], 0, "1", 0, "([2-9]\\d{6})$|1", "670$1", 0, "670"], MQ: ["596", "00", "596\\d{6}|(?:69|80|9\\d)\\d{7}", [9], [["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[569]"], "0$1"], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["8"], "0$1"]], "0"], MR: ["222", "00", "(?:[2-4]\\d\\d|800)\\d{5}", [8], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[2-48]"]]]], MS: ["1", "011", "(?:[58]\\d\\d|664|900)\\d{7}", [10], 0, "1", 0, "([34]\\d{6})$|1", "664$1", 0, "664"], MT: ["356", "00", "3550\\d{4}|(?:[2579]\\d\\d|800)\\d{5}", [8], [["(\\d{4})(\\d{4})", "$1 $2", ["[2357-9]"]]]], MU: ["230", "0(?:0|[24-7]0|3[03])", "(?:[57]|8\\d\\d)\\d{7}|[2-468]\\d{6}", [7, 8, 10], [["(\\d{3})(\\d{4})", "$1 $2", ["[2-46]|8[013]"]], ["(\\d{4})(\\d{4})", "$1 $2", ["[57]"]], ["(\\d{5})(\\d{5})", "$1 $2", ["8"]]], 0, 0, 0, 0, 0, 0, 0, "020"], MV: ["960", "0(?:0|19)", "(?:800|9[0-57-9]\\d)\\d{7}|[34679]\\d{6}", [7, 10], [["(\\d{3})(\\d{4})", "$1-$2", ["[34679]"]], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["[89]"]]], 0, 0, 0, 0, 0, 0, 0, "00"], MW: ["265", "00", "(?:[1289]\\d|31|77)\\d{7}|1\\d{6}", [7, 9], [["(\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["1[2-9]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["2"], "0$1"], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[137-9]"], "0$1"]], "0"], MX: ["52", "0[09]", "1(?:(?:[27]2|44|87|99)[1-9]|65[0-689])\\d{7}|(?:1(?:[01]\\d|2[13-9]|[35][1-9]|4[0-35-9]|6[0-46-9]|7[013-9]|8[1-69]|9[1-8])|[2-9]\\d)\\d{8}", [10, 11], [["(\\d{2})(\\d{4})(\\d{4})", "$1 $2 $3", ["33|5[56]|81"], 0, 1], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["[2-9]"], 0, 1], ["(\\d)(\\d{2})(\\d{4})(\\d{4})", "$2 $3 $4", ["1(?:33|5[56]|81)"], 0, 1], ["(\\d)(\\d{3})(\\d{3})(\\d{4})", "$2 $3 $4", ["1"], 0, 1]], "01", 0, "0(?:[12]|4[45])|1", 0, 0, 0, 0, "00"], MY: ["60", "00", "1\\d{8,9}|(?:3\\d|[4-9])\\d{7}", [8, 9, 10], [["(\\d)(\\d{3})(\\d{4})", "$1-$2 $3", ["[4-79]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1-$2 $3", ["1(?:[02469]|[378][1-9]|53)|8", "1(?:[02469]|[37][1-9]|53|8(?:[1-46-9]|5[7-9]))|8"], "0$1"], ["(\\d)(\\d{4})(\\d{4})", "$1-$2 $3", ["3"], "0$1"], ["(\\d)(\\d{3})(\\d{2})(\\d{4})", "$1-$2-$3-$4", ["1(?:[367]|80)"]], ["(\\d{3})(\\d{3})(\\d{4})", "$1-$2 $3", ["15"], "0$1"], ["(\\d{2})(\\d{4})(\\d{4})", "$1-$2 $3", ["1"], "0$1"]], "0"], MZ: ["258", "00", "(?:2|8\\d)\\d{7}", [8, 9], [["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["2|8[2-79]"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["8"]]]], NA: ["264", "00", "[68]\\d{7,8}", [8, 9], [["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["88"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["6"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["87"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["8"], "0$1"]], "0"], NC: ["687", "00", "(?:050|[2-57-9]\\d\\d)\\d{3}", [6], [["(\\d{2})(\\d{2})(\\d{2})", "$1.$2.$3", ["[02-57-9]"]]]], NE: ["227", "00", "[027-9]\\d{7}", [8], [["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["08"]], ["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[089]|2[013]|7[047]"]]]], NF: ["672", "00", "[13]\\d{5}", [6], [["(\\d{2})(\\d{4})", "$1 $2", ["1[0-3]"]], ["(\\d)(\\d{5})", "$1 $2", ["[13]"]]], 0, 0, "([0-258]\\d{4})$", "3$1"], NG: ["234", "009", "(?:[124-7]|9\\d{3})\\d{6}|[1-9]\\d{7}|[78]\\d{9,13}", [7, 8, 10, 11, 12, 13, 14], [["(\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3", ["78"], "0$1"], ["(\\d)(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[12]|9(?:0[3-9]|[1-9])"], "0$1"], ["(\\d{2})(\\d{3})(\\d{2,3})", "$1 $2 $3", ["[3-7]|8[2-9]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[7-9]"], "0$1"], ["(\\d{3})(\\d{4})(\\d{4,5})", "$1 $2 $3", ["[78]"], "0$1"], ["(\\d{3})(\\d{5})(\\d{5,6})", "$1 $2 $3", ["[78]"], "0$1"]], "0"], NI: ["505", "00", "(?:1800|[25-8]\\d{3})\\d{4}", [8], [["(\\d{4})(\\d{4})", "$1 $2", ["[125-8]"]]]], NL: ["31", "00", "(?:[124-7]\\d\\d|3(?:[02-9]\\d|1[0-8]))\\d{6}|8\\d{6,9}|9\\d{6,10}|1\\d{4,5}", [5, 6, 7, 8, 9, 10, 11], [["(\\d{3})(\\d{4,7})", "$1 $2", ["[89]0"], "0$1"], ["(\\d{2})(\\d{7})", "$1 $2", ["66"], "0$1"], ["(\\d)(\\d{8})", "$1 $2", ["6"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["1[16-8]|2[259]|3[124]|4[17-9]|5[124679]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[1-578]|91"], "0$1"], ["(\\d{3})(\\d{3})(\\d{5})", "$1 $2 $3", ["9"], "0$1"]], "0"], NO: ["47", "00", "(?:0|[2-9]\\d{3})\\d{4}", [5, 8], [["(\\d{3})(\\d{2})(\\d{3})", "$1 $2 $3", ["8"]], ["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[2-79]"]]], 0, 0, 0, 0, 0, "[02-689]|7[0-8]"], NP: ["977", "00", "(?:1\\d|9)\\d{9}|[1-9]\\d{7}", [8, 10, 11], [["(\\d)(\\d{7})", "$1-$2", ["1[2-6]"], "0$1"], ["(\\d{2})(\\d{6})", "$1-$2", ["1[01]|[2-8]|9(?:[1-59]|[67][2-6])"], "0$1"], ["(\\d{3})(\\d{7})", "$1-$2", ["9"]]], "0"], NR: ["674", "00", "(?:444|(?:55|8\\d)\\d|666)\\d{4}", [7], [["(\\d{3})(\\d{4})", "$1 $2", ["[4-68]"]]]], NU: ["683", "00", "(?:[4-7]|888\\d)\\d{3}", [4, 7], [["(\\d{3})(\\d{4})", "$1 $2", ["8"]]]], NZ: ["64", "0(?:0|161)", "[1289]\\d{9}|50\\d{5}(?:\\d{2,3})?|[27-9]\\d{7,8}|(?:[34]\\d|6[0-35-9])\\d{6}|8\\d{4,6}", [5, 6, 7, 8, 9, 10], [["(\\d{2})(\\d{3,8})", "$1 $2", ["8[1-79]"], "0$1"], ["(\\d{3})(\\d{2})(\\d{2,3})", "$1 $2 $3", ["50[036-8]|8|90", "50(?:[0367]|88)|8|90"], "0$1"], ["(\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["24|[346]|7[2-57-9]|9[2-9]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["2(?:10|74)|[589]"], "0$1"], ["(\\d{2})(\\d{3,4})(\\d{4})", "$1 $2 $3", ["1|2[028]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3,5})", "$1 $2 $3", ["2(?:[169]|7[0-35-9])|7"], "0$1"]], "0", 0, 0, 0, 0, 0, 0, "00"], OM: ["968", "00", "(?:1505|[279]\\d{3}|500)\\d{4}|800\\d{5,6}", [7, 8, 9], [["(\\d{3})(\\d{4,6})", "$1 $2", ["[58]"]], ["(\\d{2})(\\d{6})", "$1 $2", ["2"]], ["(\\d{4})(\\d{4})", "$1 $2", ["[179]"]]]], PA: ["507", "00", "(?:00800|8\\d{3})\\d{6}|[68]\\d{7}|[1-57-9]\\d{6}", [7, 8, 10, 11], [["(\\d{3})(\\d{4})", "$1-$2", ["[1-57-9]"]], ["(\\d{4})(\\d{4})", "$1-$2", ["[68]"]], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["8"]]]], PE: ["51", "00|19(?:1[124]|77|90)00", "(?:[14-8]|9\\d)\\d{7}", [8, 9], [["(\\d{3})(\\d{5})", "$1 $2", ["80"], "(0$1)"], ["(\\d)(\\d{7})", "$1 $2", ["1"], "(0$1)"], ["(\\d{2})(\\d{6})", "$1 $2", ["[4-8]"], "(0$1)"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["9"]]], "0", 0, 0, 0, 0, 0, 0, "00", " Anexo "], PF: ["689", "00", "4\\d{5}(?:\\d{2})?|8\\d{7,8}", [6, 8, 9], [["(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3", ["44"]], ["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["4|8[7-9]"]], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["8"]]]], PG: ["675", "00|140[1-3]", "(?:180|[78]\\d{3})\\d{4}|(?:[2-589]\\d|64)\\d{5}", [7, 8], [["(\\d{3})(\\d{4})", "$1 $2", ["18|[2-69]|85"]], ["(\\d{4})(\\d{4})", "$1 $2", ["[78]"]]], 0, 0, 0, 0, 0, 0, 0, "00"], PH: ["63", "00", "(?:[2-7]|9\\d)\\d{8}|2\\d{5}|(?:1800|8)\\d{7,9}", [6, 8, 9, 10, 11, 12, 13], [["(\\d)(\\d{5})", "$1 $2", ["2"], "(0$1)"], ["(\\d{4})(\\d{4,6})", "$1 $2", ["3(?:23|39|46)|4(?:2[3-6]|[35]9|4[26]|76)|544|88[245]|(?:52|64|86)2", "3(?:230|397|461)|4(?:2(?:35|[46]4|51)|396|4(?:22|63)|59[347]|76[15])|5(?:221|446)|642[23]|8(?:622|8(?:[24]2|5[13]))"], "(0$1)"], ["(\\d{5})(\\d{4})", "$1 $2", ["346|4(?:27|9[35])|883", "3469|4(?:279|9(?:30|56))|8834"], "(0$1)"], ["(\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["2"], "(0$1)"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[3-7]|8[2-8]"], "(0$1)"], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["[89]"], "0$1"], ["(\\d{4})(\\d{3})(\\d{4})", "$1 $2 $3", ["1"]], ["(\\d{4})(\\d{1,2})(\\d{3})(\\d{4})", "$1 $2 $3 $4", ["1"]]], "0"], PK: ["92", "00", "122\\d{6}|[24-8]\\d{10,11}|9(?:[013-9]\\d{8,10}|2(?:[01]\\d\\d|2(?:[06-8]\\d|1[01]))\\d{7})|(?:[2-8]\\d{3}|92(?:[0-7]\\d|8[1-9]))\\d{6}|[24-9]\\d{8}|[89]\\d{7}", [8, 9, 10, 11, 12], [["(\\d{3})(\\d{3})(\\d{2,7})", "$1 $2 $3", ["[89]0"], "0$1"], ["(\\d{4})(\\d{5})", "$1 $2", ["1"]], ["(\\d{3})(\\d{6,7})", "$1 $2", ["2(?:3[2358]|4[2-4]|9[2-8])|45[3479]|54[2-467]|60[468]|72[236]|8(?:2[2-689]|3[23578]|4[3478]|5[2356])|9(?:2[2-8]|3[27-9]|4[2-6]|6[3569]|9[25-8])", "9(?:2[3-8]|98)|(?:2(?:3[2358]|4[2-4]|9[2-8])|45[3479]|54[2-467]|60[468]|72[236]|8(?:2[2-689]|3[23578]|4[3478]|5[2356])|9(?:22|3[27-9]|4[2-6]|6[3569]|9[25-7]))[2-9]"], "(0$1)"], ["(\\d{2})(\\d{7,8})", "$1 $2", ["(?:2[125]|4[0-246-9]|5[1-35-7]|6[1-8]|7[14]|8[16]|91)[2-9]"], "(0$1)"], ["(\\d{5})(\\d{5})", "$1 $2", ["58"], "(0$1)"], ["(\\d{3})(\\d{7})", "$1 $2", ["3"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["2[125]|4[0-246-9]|5[1-35-7]|6[1-8]|7[14]|8[16]|91"], "(0$1)"], ["(\\d{3})(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["[24-9]"], "(0$1)"]], "0"], PL: ["48", "00", "(?:6|8\\d\\d)\\d{7}|[1-9]\\d{6}(?:\\d{2})?|[26]\\d{5}", [6, 7, 8, 9, 10], [["(\\d{5})", "$1", ["19"]], ["(\\d{3})(\\d{3})", "$1 $2", ["11|20|64"]], ["(\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3", ["(?:1[2-8]|2[2-69]|3[2-4]|4[1-468]|5[24-689]|6[1-3578]|7[14-7]|8[1-79]|9[145])1", "(?:1[2-8]|2[2-69]|3[2-4]|4[1-468]|5[24-689]|6[1-3578]|7[14-7]|8[1-79]|9[145])19"]], ["(\\d{3})(\\d{2})(\\d{2,3})", "$1 $2 $3", ["64"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["21|39|45|5[0137]|6[0469]|7[02389]|8(?:0[14]|8)"]], ["(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["1[2-8]|[2-7]|8[1-79]|9[145]"]], ["(\\d{3})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["8"]]]], PM: ["508", "00", "[45]\\d{5}|(?:708|80\\d)\\d{6}", [6, 9], [["(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3", ["[45]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["7"]], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["8"], "0$1"]], "0"], PR: ["1", "011", "(?:[589]\\d\\d|787)\\d{7}", [10], 0, "1", 0, 0, 0, 0, "787|939"], PS: ["970", "00", "[2489]2\\d{6}|(?:1\\d|5)\\d{8}", [8, 9, 10], [["(\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["[2489]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["5"], "0$1"], ["(\\d{4})(\\d{3})(\\d{3})", "$1 $2 $3", ["1"]]], "0"], PT: ["351", "00", "1693\\d{5}|(?:[26-9]\\d|30)\\d{7}", [9], [["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["2[12]"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["16|[236-9]"]]]], PW: ["680", "01[12]", "(?:[24-8]\\d\\d|345|900)\\d{4}", [7], [["(\\d{3})(\\d{4})", "$1 $2", ["[2-9]"]]]], PY: ["595", "00", "59\\d{4,6}|9\\d{5,10}|(?:[2-46-8]\\d|5[0-8])\\d{4,7}", [6, 7, 8, 9, 10, 11], [["(\\d{3})(\\d{3,6})", "$1 $2", ["[2-9]0"], "0$1"], ["(\\d{2})(\\d{5})", "$1 $2", ["[26]1|3[289]|4[1246-8]|7[1-3]|8[1-36]"], "(0$1)"], ["(\\d{3})(\\d{4,5})", "$1 $2", ["2[279]|3[13-5]|4[359]|5|6(?:[34]|7[1-46-8])|7[46-8]|85"], "(0$1)"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["2[14-68]|3[26-9]|4[1246-8]|6(?:1|75)|7[1-35]|8[1-36]"], "(0$1)"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["87"]], ["(\\d{3})(\\d{6})", "$1 $2", ["9(?:[5-79]|8[1-6])"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[2-8]"], "0$1"], ["(\\d{4})(\\d{3})(\\d{4})", "$1 $2 $3", ["9"]]], "0"], QA: ["974", "00", "800\\d{4}|(?:2|800)\\d{6}|(?:0080|[3-7])\\d{7}", [7, 8, 9, 11], [["(\\d{3})(\\d{4})", "$1 $2", ["2[16]|8"]], ["(\\d{4})(\\d{4})", "$1 $2", ["[3-7]"]]]], RE: ["262", "00", "(?:26|[689]\\d)\\d{7}", [9], [["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[2689]"], "0$1"]], "0", 0, 0, 0, 0, 0, [["26(?:2\\d\\d|3(?:0\\d|1[0-6]))\\d{4}"], ["69(?:2\\d\\d|3(?:[06][0-6]|1[013]|2[0-2]|3[0-39]|4\\d|5[0-5]|7[0-37]|8[0-8]|9[0-479]))\\d{4}"], ["80\\d{7}"], ["89[1-37-9]\\d{6}"], 0, 0, 0, 0, ["9(?:399[0-3]|479[0-5]|76(?:2[27]|3[0-37]))\\d{4}"], ["8(?:1[019]|2[0156]|84|90)\\d{6}"]]], RO: ["40", "00", "(?:[2378]\\d|62|90)\\d{7}|[23]\\d{5}", [6, 9], [["(\\d{3})(\\d{3})", "$1 $2", ["2[3-6]", "2[3-6]\\d9"], "0$1"], ["(\\d{2})(\\d{4})", "$1 $2", ["219|31"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[23]1"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[236-9]"], "0$1"]], "0", 0, 0, 0, 0, 0, 0, 0, " int "], RS: ["381", "00", "38[02-9]\\d{6,9}|6\\d{7,9}|90\\d{4,8}|38\\d{5,6}|(?:7\\d\\d|800)\\d{3,9}|(?:[12]\\d|3[0-79])\\d{5,10}", [6, 7, 8, 9, 10, 11, 12], [["(\\d{3})(\\d{3,9})", "$1 $2", ["(?:2[389]|39)0|[7-9]"], "0$1"], ["(\\d{2})(\\d{5,10})", "$1 $2", ["[1-36]"], "0$1"]], "0"], RU: ["7", "810", "8\\d{13}|[347-9]\\d{9}", [10, 14], [["(\\d{4})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["7(?:1[0-8]|2[1-9])", "7(?:1(?:[0-356]2|4[29]|7|8[27])|2(?:1[23]|[2-9]2))", "7(?:1(?:[0-356]2|4[29]|7|8[27])|2(?:13[03-69]|62[013-9]))|72[1-57-9]2"], "8 ($1)", 1], ["(\\d{5})(\\d)(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["7(?:1[0-68]|2[1-9])", "7(?:1(?:[06][3-6]|[18]|2[35]|[3-5][3-5])|2(?:[13][3-5]|[24-689]|7[457]))", "7(?:1(?:0(?:[356]|4[023])|[18]|2(?:3[013-9]|5)|3[45]|43[013-79]|5(?:3[1-8]|4[1-7]|5)|6(?:3[0-35-9]|[4-6]))|2(?:1(?:3[178]|[45])|[24-689]|3[35]|7[457]))|7(?:14|23)4[0-8]|71(?:33|45)[1-79]"], "8 ($1)", 1], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["7"], "8 ($1)", 1], ["(\\d{3})(\\d{3})(\\d{2})(\\d{2})", "$1 $2-$3-$4", ["[349]|8(?:[02-7]|1[1-8])"], "8 ($1)", 1], ["(\\d{4})(\\d{4})(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["8"], "8 ($1)"]], "8", 0, 0, 0, 0, "3[04-689]|[489]", 0, "8~10"], RW: ["250", "00", "(?:06|[27]\\d\\d|[89]00)\\d{6}", [8, 9], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["0"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["2"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[7-9]"], "0$1"]], "0"], SA: ["966", "00", "92\\d{7}|(?:[15]|8\\d)\\d{8}", [9, 10], [["(\\d{4})(\\d{5})", "$1 $2", ["9"]], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["1"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["5"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["81"], "0$1"], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["8"]]], "0"], SB: ["677", "0[01]", "(?:[1-6]|[7-9]\\d\\d)\\d{4}", [5, 7], [["(\\d{2})(\\d{5})", "$1 $2", ["7|8[4-9]|9(?:[1-8]|9[0-8])"]]]], SC: ["248", "010|0[0-2]", "800\\d{4}|(?:[249]\\d|64)\\d{5}", [7], [["(\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["[246]|9[57]"]]], 0, 0, 0, 0, 0, 0, 0, "00"], SD: ["249", "00", "[19]\\d{8}", [9], [["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[19]"], "0$1"]], "0"], SE: ["46", "00", "(?:[26]\\d\\d|9)\\d{9}|[1-9]\\d{8}|[1-689]\\d{7}|[1-4689]\\d{6}|2\\d{5}", [6, 7, 8, 9, 10], [["(\\d{2})(\\d{2,3})(\\d{2})", "$1-$2 $3", ["20"], "0$1", 0, "$1 $2 $3"], ["(\\d{3})(\\d{4})", "$1-$2", ["9(?:00|39|44|9)"], "0$1", 0, "$1 $2"], ["(\\d{2})(\\d{3})(\\d{2})", "$1-$2 $3", ["[12][136]|3[356]|4[0246]|6[03]|90[1-9]"], "0$1", 0, "$1 $2 $3"], ["(\\d)(\\d{2,3})(\\d{2})(\\d{2})", "$1-$2 $3 $4", ["8"], "0$1", 0, "$1 $2 $3 $4"], ["(\\d{3})(\\d{2,3})(\\d{2})", "$1-$2 $3", ["1[2457]|2(?:[247-9]|5[0138])|3[0247-9]|4[1357-9]|5[0-35-9]|6(?:[125689]|4[02-57]|7[0-2])|9(?:[125-8]|3[02-5]|4[0-3])"], "0$1", 0, "$1 $2 $3"], ["(\\d{3})(\\d{2,3})(\\d{3})", "$1-$2 $3", ["9(?:00|39|44)"], "0$1", 0, "$1 $2 $3"], ["(\\d{2})(\\d{2,3})(\\d{2})(\\d{2})", "$1-$2 $3 $4", ["1[13689]|2[0136]|3[1356]|4[0246]|54|6[03]|90[1-9]"], "0$1", 0, "$1 $2 $3 $4"], ["(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1-$2 $3 $4", ["10|7"], "0$1", 0, "$1 $2 $3 $4"], ["(\\d)(\\d{3})(\\d{3})(\\d{2})", "$1-$2 $3 $4", ["8"], "0$1", 0, "$1 $2 $3 $4"], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1-$2 $3 $4", ["[13-5]|2(?:[247-9]|5[0138])|6(?:[124-689]|7[0-2])|9(?:[125-8]|3[02-5]|4[0-3])"], "0$1", 0, "$1 $2 $3 $4"], ["(\\d{3})(\\d{2})(\\d{2})(\\d{3})", "$1-$2 $3 $4", ["9"], "0$1", 0, "$1 $2 $3 $4"], ["(\\d{3})(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1-$2 $3 $4 $5", ["[26]"], "0$1", 0, "$1 $2 $3 $4 $5"]], "0"], SG: ["65", "0[0-3]\\d", "(?:(?:1\\d|8)\\d\\d|7000)\\d{7}|[3689]\\d{7}", [8, 10, 11], [["(\\d{4})(\\d{4})", "$1 $2", ["[369]|8(?:0[1-8]|[1-9])"]], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["8"]], ["(\\d{4})(\\d{4})(\\d{3})", "$1 $2 $3", ["7"]], ["(\\d{4})(\\d{3})(\\d{4})", "$1 $2 $3", ["1"]]]], SH: ["290", "00", "(?:[256]\\d|8)\\d{3}", [4, 5], 0, 0, 0, 0, 0, 0, "[256]"], SI: ["386", "00|10(?:22|66|88|99)", "[1-7]\\d{7}|8\\d{4,7}|90\\d{4,6}", [5, 6, 7, 8], [["(\\d{2})(\\d{3,6})", "$1 $2", ["8[09]|9"], "0$1"], ["(\\d{3})(\\d{5})", "$1 $2", ["59|8"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[37][01]|4[0139]|51|6"], "0$1"], ["(\\d)(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[1-57]"], "(0$1)"]], "0", 0, 0, 0, 0, 0, 0, "00"], SJ: ["47", "00", "0\\d{4}|(?:[489]\\d|79)\\d{6}", [5, 8], 0, 0, 0, 0, 0, 0, "79"], SK: ["421", "00", "[2-689]\\d{8}|[2-59]\\d{6}|[2-5]\\d{5}", [6, 7, 9], [["(\\d)(\\d{2})(\\d{3,4})", "$1 $2 $3", ["21"], "0$1"], ["(\\d{2})(\\d{2})(\\d{2,3})", "$1 $2 $3", ["[3-5][1-8]1", "[3-5][1-8]1[67]"], "0$1"], ["(\\d)(\\d{3})(\\d{3})(\\d{2})", "$1/$2 $3 $4", ["2"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[689]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1/$2 $3 $4", ["[3-5]"], "0$1"]], "0"], SL: ["232", "00", "(?:[237-9]\\d|66)\\d{6}", [8], [["(\\d{2})(\\d{6})", "$1 $2", ["[236-9]"], "(0$1)"]], "0"], SM: ["378", "00", "(?:0549|[5-7]\\d)\\d{6}", [8, 10], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[5-7]"]], ["(\\d{4})(\\d{6})", "$1 $2", ["0"]]], 0, 0, "([89]\\d{5})$", "0549$1"], SN: ["221", "00", "(?:[378]\\d|93)\\d{7}", [9], [["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["8"]], ["(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[379]"]]]], SO: ["252", "00", "[346-9]\\d{8}|[12679]\\d{7}|[1-5]\\d{6}|[1348]\\d{5}", [6, 7, 8, 9], [["(\\d{2})(\\d{4})", "$1 $2", ["8[125]"]], ["(\\d{6})", "$1", ["[134]"]], ["(\\d)(\\d{6})", "$1 $2", ["[15]|2[0-79]|3[0-46-8]|4[0-7]"]], ["(\\d)(\\d{7})", "$1 $2", ["(?:2|90)4|[67]"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[348]|64|79|90"]], ["(\\d{2})(\\d{5,7})", "$1 $2", ["1|28|6[0-35-9]|77|9[2-9]"]]], "0"], SR: ["597", "00", "(?:[2-5]|68|[78]\\d)\\d{5}", [6, 7], [["(\\d{2})(\\d{2})(\\d{2})", "$1-$2-$3", ["56"]], ["(\\d{3})(\\d{3})", "$1-$2", ["[2-5]"]], ["(\\d{3})(\\d{4})", "$1-$2", ["[6-8]"]]]], SS: ["211", "00", "[19]\\d{8}", [9], [["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[19]"], "0$1"]], "0"], ST: ["239", "00", "(?:22|9\\d)\\d{5}", [7], [["(\\d{3})(\\d{4})", "$1 $2", ["[29]"]]]], SV: ["503", "00", "[267]\\d{7}|[89]00\\d{4}(?:\\d{4})?", [7, 8, 11], [["(\\d{3})(\\d{4})", "$1 $2", ["[89]"]], ["(\\d{4})(\\d{4})", "$1 $2", ["[267]"]], ["(\\d{3})(\\d{4})(\\d{4})", "$1 $2 $3", ["[89]"]]]], SX: ["1", "011", "7215\\d{6}|(?:[58]\\d\\d|900)\\d{7}", [10], 0, "1", 0, "(5\\d{6})$|1", "721$1", 0, "721"], SY: ["963", "00", "[1-39]\\d{8}|[1-5]\\d{7}", [8, 9], [["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[1-5]"], "0$1", 1], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["9"], "0$1", 1]], "0"], SZ: ["268", "00", "0800\\d{4}|(?:[237]\\d|900)\\d{6}", [8, 9], [["(\\d{4})(\\d{4})", "$1 $2", ["[0237]"]], ["(\\d{5})(\\d{4})", "$1 $2", ["9"]]]], TA: ["290", "00", "8\\d{3}", [4], 0, 0, 0, 0, 0, 0, "8"], TC: ["1", "011", "(?:[58]\\d\\d|649|900)\\d{7}", [10], 0, "1", 0, "([2-479]\\d{6})$|1", "649$1", 0, "649"], TD: ["235", "00|16", "(?:22|[69]\\d|77)\\d{6}", [8], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[2679]"]]], 0, 0, 0, 0, 0, 0, 0, "00"], TG: ["228", "00", "[279]\\d{7}", [8], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[279]"]]]], TH: ["66", "00[1-9]", "(?:001800|[2-57]|[689]\\d)\\d{7}|1\\d{7,9}", [8, 9, 10, 13], [["(\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["2"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[13-9]"], "0$1"], ["(\\d{4})(\\d{3})(\\d{3})", "$1 $2 $3", ["1"]]], "0"], TJ: ["992", "810", "[0-57-9]\\d{8}", [9], [["(\\d{6})(\\d)(\\d{2})", "$1 $2 $3", ["331", "3317"]], ["(\\d{3})(\\d{2})(\\d{4})", "$1 $2 $3", ["44[02-479]|[34]7"]], ["(\\d{4})(\\d)(\\d{4})", "$1 $2 $3", ["3[1-5]"]], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[0-57-9]"]]], 0, 0, 0, 0, 0, 0, 0, "8~10"], TK: ["690", "00", "[2-47]\\d{3,6}", [4, 5, 6, 7]], TL: ["670", "00", "7\\d{7}|(?:[2-47]\\d|[89]0)\\d{5}", [7, 8], [["(\\d{3})(\\d{4})", "$1 $2", ["[2-489]|70"]], ["(\\d{4})(\\d{4})", "$1 $2", ["7"]]]], TM: ["993", "810", "[1-6]\\d{7}", [8], [["(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2-$3-$4", ["12"], "(8 $1)"], ["(\\d{3})(\\d)(\\d{2})(\\d{2})", "$1 $2-$3-$4", ["[1-5]"], "(8 $1)"], ["(\\d{2})(\\d{6})", "$1 $2", ["6"], "8 $1"]], "8", 0, 0, 0, 0, 0, 0, "8~10"], TN: ["216", "00", "[2-57-9]\\d{7}", [8], [["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[2-57-9]"]]]], TO: ["676", "00", "(?:0800|(?:[5-8]\\d\\d|999)\\d)\\d{3}|[2-8]\\d{4}", [5, 7], [["(\\d{2})(\\d{3})", "$1-$2", ["[2-4]|50|6[09]|7[0-24-69]|8[05]"]], ["(\\d{4})(\\d{3})", "$1 $2", ["0"]], ["(\\d{3})(\\d{4})", "$1 $2", ["[5-9]"]]]], TR: ["90", "00", "4\\d{6}|8\\d{11,12}|(?:[2-58]\\d\\d|900)\\d{7}", [7, 10, 12, 13], [["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["512|8[01589]|90"], "0$1", 1], ["(\\d{3})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["5(?:[0-59]|61)", "5(?:[0-59]|61[06])", "5(?:[0-59]|61[06]1)"], "0$1", 1], ["(\\d{3})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[24][1-8]|3[1-9]"], "(0$1)", 1], ["(\\d{3})(\\d{3})(\\d{6,7})", "$1 $2 $3", ["80"], "0$1", 1]], "0"], TT: ["1", "011", "(?:[58]\\d\\d|900)\\d{7}", [10], 0, "1", 0, "([2-46-8]\\d{6})$|1", "868$1", 0, "868"], TV: ["688", "00", "(?:2|7\\d\\d|90)\\d{4}", [5, 6, 7], [["(\\d{2})(\\d{3})", "$1 $2", ["2"]], ["(\\d{2})(\\d{4})", "$1 $2", ["90"]], ["(\\d{2})(\\d{5})", "$1 $2", ["7"]]]], TW: ["886", "0(?:0[25-79]|19)", "[2-689]\\d{8}|7\\d{9,10}|[2-8]\\d{7}|2\\d{6}", [7, 8, 9, 10, 11], [["(\\d{2})(\\d)(\\d{4})", "$1 $2 $3", ["202"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[258]0"], "0$1"], ["(\\d)(\\d{3,4})(\\d{4})", "$1 $2 $3", ["[23568]|4(?:0[02-48]|[1-47-9])|7[1-9]", "[23568]|4(?:0[2-48]|[1-47-9])|(?:400|7)[1-9]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[49]"], "0$1"], ["(\\d{2})(\\d{4})(\\d{4,5})", "$1 $2 $3", ["7"], "0$1"]], "0", 0, 0, 0, 0, 0, 0, 0, "#"], TZ: ["255", "00[056]", "(?:[25-8]\\d|41|90)\\d{7}", [9], [["(\\d{3})(\\d{2})(\\d{4})", "$1 $2 $3", ["[89]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[24]"], "0$1"], ["(\\d{2})(\\d{7})", "$1 $2", ["5"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[67]"], "0$1"]], "0"], UA: ["380", "00", "[89]\\d{9}|[3-9]\\d{8}", [9, 10], [["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["6[12][29]|(?:3[1-8]|4[136-8]|5[12457]|6[49])2|(?:56|65)[24]", "6[12][29]|(?:35|4[1378]|5[12457]|6[49])2|(?:56|65)[24]|(?:3[1-46-8]|46)2[013-9]"], "0$1"], ["(\\d{4})(\\d{5})", "$1 $2", ["3[1-8]|4(?:[1367]|[45][6-9]|8[4-6])|5(?:[1-5]|6[0135689]|7[4-6])|6(?:[12][3-7]|[459])", "3[1-8]|4(?:[1367]|[45][6-9]|8[4-6])|5(?:[1-5]|6(?:[015689]|3[02389])|7[4-6])|6(?:[12][3-7]|[459])"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[3-7]|89|9[1-9]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[89]"], "0$1"]], "0", 0, 0, 0, 0, 0, 0, "0~0"], UG: ["256", "00[057]", "800\\d{6}|(?:[29]0|[347]\\d)\\d{7}", [9], [["(\\d{4})(\\d{5})", "$1 $2", ["202", "2024"], "0$1"], ["(\\d{3})(\\d{6})", "$1 $2", ["[27-9]|4(?:6[45]|[7-9])"], "0$1"], ["(\\d{2})(\\d{7})", "$1 $2", ["[34]"], "0$1"]], "0"], US: ["1", "011", "[2-9]\\d{9}|3\\d{6}", [10], [["(\\d{3})(\\d{4})", "$1-$2", ["310"], 0, 1], ["(\\d{3})(\\d{3})(\\d{4})", "($1) $2-$3", ["[2-9]"], 0, 1, "$1-$2-$3"]], "1", 0, 0, 0, 0, 0, [["(?:5056(?:[0-35-9]\\d|4[468])|73020\\d)\\d{4}|(?:4722|505[2-57-9]|983[289])\\d{6}|(?:2(?:0[1-35-9]|1[02-9]|2[03-57-9]|3[149]|4[08]|5[1-46]|6[0279]|7[0269]|8[13])|3(?:0[1-57-9]|1[02-9]|2[013569]|3[0-24679]|4[167]|5[0-2]|6[0149]|8[056])|4(?:0[124-9]|1[02-579]|2[3-5]|3[0245]|4[023578]|58|6[349]|7[0589]|8[04])|5(?:0[1-47-9]|1[0235-8]|20|3[0149]|4[01]|5[179]|6[1-47]|7[0-5]|8[0256])|6(?:0[1-35-9]|1[024-9]|2[03689]|[34][016]|5[01679]|6[0-279]|78|8[0-29])|7(?:0[1-46-8]|1[2-9]|2[04-7]|3[1247]|4[037]|5[47]|6[02359]|7[0-59]|8[156])|8(?:0[1-68]|1[02-8]|2[068]|3[0-2589]|4[03578]|5[046-9]|6[02-5]|7[028])|9(?:0[1346-9]|1[02-9]|2[0589]|3[0146-8]|4[01357-9]|5[12469]|7[0-389]|8[04-69]))[2-9]\\d{6}"], [""], ["8(?:00|33|44|55|66|77|88)[2-9]\\d{6}"], ["900[2-9]\\d{6}"], ["52(?:3(?:[2-46-9][02-9]\\d|5(?:[02-46-9]\\d|5[0-46-9]))|4(?:[2-478][02-9]\\d|5(?:[034]\\d|2[024-9]|5[0-46-9])|6(?:0[1-9]|[2-9]\\d)|9(?:[05-9]\\d|2[0-5]|49)))\\d{4}|52[34][2-9]1[02-9]\\d{4}|5(?:00|2[125-9]|33|44|66|77|88)[2-9]\\d{6}"]]], UY: ["598", "0(?:0|1[3-9]\\d)", "0004\\d{2,9}|[1249]\\d{7}|(?:[49]\\d|80)\\d{5}", [6, 7, 8, 9, 10, 11, 12, 13], [["(\\d{3})(\\d{3,4})", "$1 $2", ["0"]], ["(\\d{3})(\\d{4})", "$1 $2", ["[49]0|8"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["9"], "0$1"], ["(\\d{4})(\\d{4})", "$1 $2", ["[124]"]], ["(\\d{3})(\\d{3})(\\d{2,4})", "$1 $2 $3", ["0"]], ["(\\d{3})(\\d{3})(\\d{3})(\\d{2,4})", "$1 $2 $3 $4", ["0"]]], "0", 0, 0, 0, 0, 0, 0, "00", " int. "], UZ: ["998", "810", "(?:20|33|[5-79]\\d|88)\\d{7}", [9], [["(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[235-9]"], "8 $1"]], "8", 0, 0, 0, 0, 0, 0, "8~10"], VA: ["39", "00", "0\\d{5,10}|3[0-8]\\d{7,10}|55\\d{8}|8\\d{5}(?:\\d{2,4})?|(?:1\\d|39)\\d{7,8}", [6, 7, 8, 9, 10, 11], 0, 0, 0, 0, 0, 0, "06698"], VC: ["1", "011", "(?:[58]\\d\\d|784|900)\\d{7}", [10], 0, "1", 0, "([2-7]\\d{6})$|1", "784$1", 0, "784"], VE: ["58", "00", "[68]00\\d{7}|(?:[24]\\d|[59]0)\\d{8}", [10], [["(\\d{3})(\\d{7})", "$1-$2", ["[24-689]"], "0$1"]], "0"], VG: ["1", "011", "(?:284|[58]\\d\\d|900)\\d{7}", [10], 0, "1", 0, "([2-578]\\d{6})$|1", "284$1", 0, "284"], VI: ["1", "011", "[58]\\d{9}|(?:34|90)0\\d{7}", [10], 0, "1", 0, "([2-9]\\d{6})$|1", "340$1", 0, "340"], VN: ["84", "00", "[12]\\d{9}|[135-9]\\d{8}|[16]\\d{7}|[16-8]\\d{6}", [7, 8, 9, 10], [["(\\d{2})(\\d{5})", "$1 $2", ["80"], "0$1", 1], ["(\\d{4})(\\d{4,6})", "$1 $2", ["1"], 0, 1], ["(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["6"], "0$1", 1], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[357-9]"], "0$1", 1], ["(\\d{2})(\\d{4})(\\d{4})", "$1 $2 $3", ["2[48]"], "0$1", 1], ["(\\d{3})(\\d{4})(\\d{3})", "$1 $2 $3", ["2"], "0$1", 1]], "0"], VU: ["678", "00", "[57-9]\\d{6}|(?:[238]\\d|48)\\d{3}", [5, 7], [["(\\d{3})(\\d{4})", "$1 $2", ["[57-9]"]]]], WF: ["681", "00", "(?:40|72)\\d{4}|8\\d{5}(?:\\d{3})?", [6, 9], [["(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3", ["[478]"]], ["(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["8"]]]], WS: ["685", "0", "(?:[2-6]|8\\d{5})\\d{4}|[78]\\d{6}|[68]\\d{5}", [5, 6, 7, 10], [["(\\d{5})", "$1", ["[2-5]|6[1-9]"]], ["(\\d{3})(\\d{3,7})", "$1 $2", ["[68]"]], ["(\\d{2})(\\d{5})", "$1 $2", ["7"]]]], XK: ["383", "00", "[23]\\d{7,8}|(?:4\\d\\d|[89]00)\\d{5}", [8, 9], [["(\\d{3})(\\d{5})", "$1 $2", ["[89]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[2-4]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[23]"], "0$1"]], "0"], YE: ["967", "00", "(?:1|7\\d)\\d{7}|[1-7]\\d{6}", [7, 8, 9], [["(\\d)(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[1-6]|7(?:[24-6]|8[0-7])"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["7"], "0$1"]], "0"], YT: ["262", "00", "(?:80|9\\d)\\d{7}|(?:26|63)9\\d{6}", [9], 0, "0", 0, 0, 0, 0, 0, [["269(?:0[0-467]|5[0-4]|6\\d|[78]0)\\d{4}"], ["639(?:0[0-79]|1[019]|[267]\\d|3[09]|40|5[05-9]|9[04-79])\\d{4}"], ["80\\d{7}"], 0, 0, 0, 0, 0, ["9(?:(?:39|47)8[01]|769\\d)\\d{4}"]]], ZA: ["27", "00", "[1-79]\\d{8}|8\\d{4,9}", [5, 6, 7, 8, 9, 10], [["(\\d{2})(\\d{3,4})", "$1 $2", ["8[1-4]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{2,3})", "$1 $2 $3", ["8[1-4]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["860"], "0$1"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[1-9]"], "0$1"], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["8"], "0$1"]], "0"], ZM: ["260", "00", "800\\d{6}|(?:21|63|[79]\\d)\\d{7}", [9], [["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[28]"], "0$1"], ["(\\d{2})(\\d{7})", "$1 $2", ["[79]"], "0$1"]], "0"], ZW: ["263", "00", "2(?:[0-57-9]\\d{6,8}|6[0-24-9]\\d{6,7})|[38]\\d{9}|[35-8]\\d{8}|[3-6]\\d{7}|[1-689]\\d{6}|[1-3569]\\d{5}|[1356]\\d{4}", [5, 6, 7, 8, 9, 10], [["(\\d{3})(\\d{3,5})", "$1 $2", ["2(?:0[45]|2[278]|[49]8)|3(?:[09]8|17)|6(?:[29]8|37|75)|[23][78]|(?:33|5[15]|6[68])[78]"], "0$1"], ["(\\d)(\\d{3})(\\d{2,4})", "$1 $2 $3", ["[49]"], "0$1"], ["(\\d{3})(\\d{4})", "$1 $2", ["80"], "0$1"], ["(\\d{2})(\\d{7})", "$1 $2", ["24|8[13-59]|(?:2[05-79]|39|5[45]|6[15-8])2", "2(?:02[014]|4|[56]20|[79]2)|392|5(?:42|525)|6(?:[16-8]21|52[013])|8[13-59]"], "(0$1)"], ["(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["7"], "0$1"], ["(\\d{3})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["2(?:1[39]|2[0157]|[378]|[56][14])|3(?:12|29)", "2(?:1[39]|2[0157]|[378]|[56][14])|3(?:123|29)"], "0$1"], ["(\\d{4})(\\d{6})", "$1 $2", ["8"], "0$1"], ["(\\d{2})(\\d{3,5})", "$1 $2", ["1|2(?:0[0-36-9]|12|29|[56])|3(?:1[0-689]|[24-6])|5(?:[0236-9]|1[2-4])|6(?:[013-59]|7[0-46-9])|(?:33|55|6[68])[0-69]|(?:29|3[09]|62)[0-79]"], "0$1"], ["(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["29[013-9]|39|54"], "0$1"], ["(\\d{4})(\\d{3,5})", "$1 $2", ["(?:25|54)8", "258|5483"], "0$1"]], "0"] }, nonGeographic: { 800: ["800", 0, "(?:00|[1-9]\\d)\\d{6}", [8], [["(\\d{4})(\\d{4})", "$1 $2", ["\\d"]]], 0, 0, 0, 0, 0, 0, [0, 0, ["(?:00|[1-9]\\d)\\d{6}"]]], 808: ["808", 0, "[1-9]\\d{7}", [8], [["(\\d{4})(\\d{4})", "$1 $2", ["[1-9]"]]], 0, 0, 0, 0, 0, 0, [0, 0, 0, 0, 0, 0, 0, 0, 0, ["[1-9]\\d{7}"]]], 870: ["870", 0, "7\\d{11}|[35-7]\\d{8}", [9, 12], [["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[35-7]"]]], 0, 0, 0, 0, 0, 0, [0, ["(?:[356]|774[45])\\d{8}|7[6-8]\\d{7}"]]], 878: ["878", 0, "10\\d{10}", [12], [["(\\d{2})(\\d{5})(\\d{5})", "$1 $2 $3", ["1"]]], 0, 0, 0, 0, 0, 0, [0, 0, 0, 0, 0, 0, 0, 0, ["10\\d{10}"]]], 881: ["881", 0, "6\\d{9}|[0-36-9]\\d{8}", [9, 10], [["(\\d)(\\d{3})(\\d{5})", "$1 $2 $3", ["[0-37-9]"]], ["(\\d)(\\d{3})(\\d{5,6})", "$1 $2 $3", ["6"]]], 0, 0, 0, 0, 0, 0, [0, ["6\\d{9}|[0-36-9]\\d{8}"]]], 882: ["882", 0, "[13]\\d{6}(?:\\d{2,5})?|[19]\\d{7}|(?:[25]\\d\\d|4)\\d{7}(?:\\d{2})?", [7, 8, 9, 10, 11, 12], [["(\\d{2})(\\d{5})", "$1 $2", ["16|342"]], ["(\\d{2})(\\d{6})", "$1 $2", ["49"]], ["(\\d{2})(\\d{2})(\\d{4})", "$1 $2 $3", ["1[36]|9"]], ["(\\d{2})(\\d{4})(\\d{3})", "$1 $2 $3", ["3[23]"]], ["(\\d{2})(\\d{3,4})(\\d{4})", "$1 $2 $3", ["16"]], ["(\\d{2})(\\d{4})(\\d{4})", "$1 $2 $3", ["10|23|3(?:[15]|4[57])|4|51"]], ["(\\d{3})(\\d{4})(\\d{4})", "$1 $2 $3", ["34"]], ["(\\d{2})(\\d{4,5})(\\d{5})", "$1 $2 $3", ["[1-35]"]]], 0, 0, 0, 0, 0, 0, [0, ["342\\d{4}|(?:337|49)\\d{6}|(?:3(?:2|47|7\\d{3})|50\\d{3})\\d{7}", [7, 8, 9, 10, 12]], 0, 0, 0, 0, 0, 0, ["1(?:3(?:0[0347]|[13][0139]|2[035]|4[013568]|6[0459]|7[06]|8[15-8]|9[0689])\\d{4}|6\\d{5,10})|(?:345\\d|9[89])\\d{6}|(?:10|2(?:3|85\\d)|3(?:[15]|[69]\\d\\d)|4[15-8]|51)\\d{8}"]]], 883: ["883", 0, "(?:[1-4]\\d|51)\\d{6,10}", [8, 9, 10, 11, 12], [["(\\d{3})(\\d{3})(\\d{2,8})", "$1 $2 $3", ["[14]|2[24-689]|3[02-689]|51[24-9]"]], ["(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["510"]], ["(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["21"]], ["(\\d{4})(\\d{4})(\\d{4})", "$1 $2 $3", ["51[13]"]], ["(\\d{3})(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["[235]"]]], 0, 0, 0, 0, 0, 0, [0, 0, 0, 0, 0, 0, 0, 0, ["(?:2(?:00\\d\\d|10)|(?:370[1-9]|51\\d0)\\d)\\d{7}|51(?:00\\d{5}|[24-9]0\\d{4,7})|(?:1[0-79]|2[24-689]|3[02-689]|4[0-4])0\\d{5,9}"]]], 888: ["888", 0, "\\d{11}", [11], [["(\\d{3})(\\d{3})(\\d{5})", "$1 $2 $3"]], 0, 0, 0, 0, 0, 0, [0, 0, 0, 0, 0, 0, ["\\d{11}"]]], 979: ["979", 0, "[1359]\\d{8}", [9], [["(\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["[1359]"]]], 0, 0, 0, 0, 0, 0, [0, 0, 0, ["[1359]\\d{8}"]]] } };
+function Id(e, o) {
   var t = Array.prototype.slice.call(o);
-  return t.push(Pd), e.apply(this, t);
+  return t.push(Rd), e.apply(this, t);
 }
-function nt(e) {
+function rt(e) {
   "@babel/helpers - typeof";
-  return nt = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(o) {
+  return rt = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(o) {
     return typeof o;
   } : function(o) {
     return o && typeof Symbol == "function" && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
-  }, nt(e);
+  }, rt(e);
 }
-function Td(e, o, t) {
+function Kd(e, o, t) {
   return Object.defineProperty(e, "prototype", { writable: !1 }), e;
 }
-function Dd(e, o) {
+function Gd(e, o) {
   if (!(e instanceof o))
     throw new TypeError("Cannot call a class as a function");
 }
-function Ld(e, o) {
+function jd(e, o) {
   if (typeof o != "function" && o !== null)
     throw new TypeError("Super expression must either be null or a function");
   e.prototype = Object.create(o && o.prototype, { constructor: { value: e, writable: !0, configurable: !0 } }), Object.defineProperty(e, "prototype", { writable: !1 }), o && to(e, o);
 }
-function xd(e) {
-  var o = on();
+function Fd(e) {
+  var o = tn();
   return function() {
     var t = ao(e), a;
     if (o) {
@@ -4419,25 +4505,25 @@ function xd(e) {
       a = Reflect.construct(t, arguments, n);
     } else
       a = t.apply(this, arguments);
-    return Ed(this, a);
+    return Hd(this, a);
   };
 }
-function Ed(e, o) {
-  if (o && (nt(o) === "object" || typeof o == "function"))
+function Hd(e, o) {
+  if (o && (rt(o) === "object" || typeof o == "function"))
     return o;
   if (o !== void 0)
     throw new TypeError("Derived constructors may only return object or undefined");
-  return en(e);
+  return on(e);
 }
-function en(e) {
+function on(e) {
   if (e === void 0)
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
   return e;
 }
-function rt(e) {
+function st(e) {
   var o = typeof Map == "function" ? /* @__PURE__ */ new Map() : void 0;
-  return rt = function(t) {
-    if (t === null || !Rd(t))
+  return st = function(t) {
+    if (t === null || !Vd(t))
       return t;
     if (typeof t != "function")
       throw new TypeError("Super expression must either be null or a function");
@@ -4450,17 +4536,17 @@ function rt(e) {
       return vo(t, arguments, ao(this).constructor);
     }
     return a.prototype = Object.create(t.prototype, { constructor: { value: a, enumerable: !1, writable: !0, configurable: !0 } }), to(a, t);
-  }, rt(e);
+  }, st(e);
 }
 function vo(e, o, t) {
-  return on() ? vo = Reflect.construct : vo = function(a, n, r) {
+  return tn() ? vo = Reflect.construct : vo = function(a, n, r) {
     var s = [null];
     s.push.apply(s, n);
     var d = Function.bind.apply(a, s), l = new d();
     return r && to(l, r.prototype), l;
   }, vo.apply(null, arguments);
 }
-function on() {
+function tn() {
   if (typeof Reflect > "u" || !Reflect.construct || Reflect.construct.sham)
     return !1;
   if (typeof Proxy == "function")
@@ -4472,7 +4558,7 @@ function on() {
     return !1;
   }
 }
-function Rd(e) {
+function Vd(e) {
   return Function.toString.call(e).indexOf("[native code]") !== -1;
 }
 function to(e, o) {
@@ -4486,15 +4572,15 @@ function ao(e) {
   }, ao(e);
 }
 var pe = /* @__PURE__ */ (function(e) {
-  Ld(t, e);
-  var o = xd(t);
+  jd(t, e);
+  var o = Fd(t);
   function t(a) {
     var n;
-    return Dd(this, t), n = o.call(this, a), Object.setPrototypeOf(en(n), t.prototype), n.name = n.constructor.name, n;
+    return Gd(this, t), n = o.call(this, a), Object.setPrototypeOf(on(n), t.prototype), n.name = n.constructor.name, n;
   }
-  return Td(t);
-})(/* @__PURE__ */ rt(Error)), ft = 2, Id = 17, Kd = 3, ge = "0-9０-９٠-٩۰-۹", Gd = "-‐-―−ー－", jd = "／/", Fd = "．.", Hd = "  ­​⁠　", Vd = "()（）［］\\[\\]", Ud = "~⁓∼～", ko = "".concat(Gd).concat(jd).concat(Fd).concat(Hd).concat(Vd).concat(Ud), pt = "+＋";
-function Ut(e, o) {
+  return Kd(t);
+})(/* @__PURE__ */ st(Error)), yt = 2, Ud = 17, _d = 3, ge = "0-9０-９٠-٩۰-۹", zd = "-‐-―−ー－", Wd = "／/", Yd = "．.", qd = "  ­​⁠　", Zd = "()（）［］\\[\\]", Jd = "~⁓∼～", ko = "".concat(zd).concat(Wd).concat(Yd).concat(qd).concat(Zd).concat(Jd), vt = "+＋";
+function zt(e, o) {
   e = e.split("-"), o = o.split("-");
   for (var t = e[0].split("."), a = o[0].split("."), n = 0; n < 3; n++) {
     var r = Number(t[n]), s = Number(a[n]);
@@ -4509,34 +4595,34 @@ function Ut(e, o) {
   }
   return e[1] && o[1] ? e[1] > o[1] ? 1 : e[1] < o[1] ? -1 : 0 : !e[1] && o[1] ? 1 : e[1] && !o[1] ? -1 : 0;
 }
-var _d = {}.constructor;
+var Qd = {}.constructor;
 function bo(e) {
-  return e != null && e.constructor === _d;
+  return e != null && e.constructor === Qd;
 }
-function st(e) {
+function dt(e) {
   "@babel/helpers - typeof";
-  return st = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(o) {
+  return dt = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(o) {
     return typeof o;
   } : function(o) {
     return o && typeof Symbol == "function" && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
-  }, st(e);
+  }, dt(e);
 }
 function Bo(e, o) {
   if (!(e instanceof o))
     throw new TypeError("Cannot call a class as a function");
 }
-function zd(e, o) {
+function Xd(e, o) {
   for (var t = 0; t < o.length; t++) {
     var a = o[t];
     a.enumerable = a.enumerable || !1, a.configurable = !0, "value" in a && (a.writable = !0), Object.defineProperty(e, a.key, a);
   }
 }
 function To(e, o, t) {
-  return o && zd(e.prototype, o), Object.defineProperty(e, "prototype", { writable: !1 }), e;
+  return o && Xd(e.prototype, o), Object.defineProperty(e, "prototype", { writable: !1 }), e;
 }
-var Wd = "1.2.0", Yd = "1.7.35", _t = " ext. ", qd = /^\d+$/, ae = /* @__PURE__ */ (function() {
+var ei = "1.2.0", oi = "1.7.35", Wt = " ext. ", ti = /^\d+$/, ae = /* @__PURE__ */ (function() {
   function e(o) {
-    Bo(this, e), Xd(o), this.metadata = o, tn.call(this, o);
+    Bo(this, e), si(o), this.metadata = o, an.call(this, o);
   }
   return To(e, [{
     key: "getCountries",
@@ -4589,14 +4675,14 @@ var Wd = "1.2.0", Yd = "1.7.35", _t = " ext. ", qd = /^\d+$/, ae = /* @__PURE__ 
   }, {
     key: "selectNumberingPlan",
     value: function(o, t) {
-      if (o && qd.test(o) && (t = o, o = null), o && o !== "001") {
+      if (o && ti.test(o) && (t = o, o = null), o && o !== "001") {
         if (!this.hasCountry(o))
           throw new Error("Unknown country: ".concat(o));
-        this.numberingPlan = new zt(this.getCountryMetadata(o), this);
+        this.numberingPlan = new Yt(this.getCountryMetadata(o), this);
       } else if (t) {
         if (!this.hasCallingCode(t))
           throw new Error("Unknown calling code: ".concat(t));
-        this.numberingPlan = new zt(this.getNumberingPlanMetadata(t), this);
+        this.numberingPlan = new Yt(this.getNumberingPlanMetadata(t), this);
       } else
         this.numberingPlan = void 0;
       return this;
@@ -4720,9 +4806,9 @@ var Wd = "1.2.0", Yd = "1.7.35", _t = " ext. ", qd = /^\d+$/, ae = /* @__PURE__ 
       return this.numberingPlan !== void 0;
     }
   }]), e;
-})(), zt = /* @__PURE__ */ (function() {
+})(), Yt = /* @__PURE__ */ (function() {
   function e(o, t) {
-    Bo(this, e), this.globalMetadataObject = t, this.metadata = o, tn.call(this, t.metadata);
+    Bo(this, e), this.globalMetadataObject = t, this.metadata = o, an.call(this, t.metadata);
   }
   return To(e, [{
     key: "callingCode",
@@ -4779,7 +4865,7 @@ var Wd = "1.2.0", Yd = "1.7.35", _t = " ext. ", qd = /^\d+$/, ae = /* @__PURE__ 
     value: function() {
       var o = this, t = this._getFormats(this.metadata) || this._getFormats(this.getDefaultCountryMetadataForRegion()) || [];
       return t.map(function(a) {
-        return new Jd(a, o);
+        return new ai(a, o);
       });
     }
   }, {
@@ -4847,16 +4933,16 @@ var Wd = "1.2.0", Yd = "1.7.35", _t = " ext. ", qd = /^\d+$/, ae = /* @__PURE__ 
   }, {
     key: "type",
     value: function(o) {
-      if (this.hasTypes() && Wt(this.types(), o))
-        return new Qd(Wt(this.types(), o), this);
+      if (this.hasTypes() && qt(this.types(), o))
+        return new ri(qt(this.types(), o), this);
     }
   }, {
     key: "ext",
     value: function() {
-      return this.v1 || this.v2 ? _t : this.metadata[13] || _t;
+      return this.v1 || this.v2 ? Wt : this.metadata[13] || Wt;
     }
   }]), e;
-})(), Jd = /* @__PURE__ */ (function() {
+})(), ai = /* @__PURE__ */ (function() {
   function e(o, t) {
     Bo(this, e), this._format = o, this.metadata = t;
   }
@@ -4895,7 +4981,7 @@ var Wd = "1.2.0", Yd = "1.7.35", _t = " ext. ", qd = /^\d+$/, ae = /* @__PURE__ 
     key: "usesNationalPrefix",
     value: function() {
       return !!(this.nationalPrefixFormattingRule() && // Check that national prefix formatting rule is not a "dummy" one.
-      !Zd.test(this.nationalPrefixFormattingRule()));
+      !ni.test(this.nationalPrefixFormattingRule()));
     }
   }, {
     key: "internationalFormat",
@@ -4903,7 +4989,7 @@ var Wd = "1.2.0", Yd = "1.7.35", _t = " ext. ", qd = /^\d+$/, ae = /* @__PURE__ 
       return this._format[5] || this.format();
     }
   }]), e;
-})(), Zd = /^\(?\$1\)?$/, Qd = /* @__PURE__ */ (function() {
+})(), ni = /^\(?\$1\)?$/, ri = /* @__PURE__ */ (function() {
   function e(o, t) {
     Bo(this, e), this.type = o, this.metadata = t;
   }
@@ -4920,7 +5006,7 @@ var Wd = "1.2.0", Yd = "1.7.35", _t = " ext. ", qd = /^\d+$/, ae = /* @__PURE__ 
     }
   }]), e;
 })();
-function Wt(e, o) {
+function qt(e, o) {
   switch (o) {
     case "FIXED_LINE":
       return e[0];
@@ -4944,52 +5030,52 @@ function Wt(e, o) {
       return e[9];
   }
 }
-function Xd(e) {
+function si(e) {
   if (!e)
     throw new Error("[libphonenumber-js] `metadata` argument not passed. Check your arguments.");
   if (!bo(e) || !bo(e.countries))
-    throw new Error("[libphonenumber-js] `metadata` argument was passed but it's not a valid metadata. Must be an object having `.countries` child object property. Got ".concat(bo(e) ? "an object of shape: { " + Object.keys(e).join(", ") + " }" : "a " + ei(e) + ": " + e, "."));
+    throw new Error("[libphonenumber-js] `metadata` argument was passed but it's not a valid metadata. Must be an object having `.countries` child object property. Got ".concat(bo(e) ? "an object of shape: { " + Object.keys(e).join(", ") + " }" : "a " + di(e) + ": " + e, "."));
 }
-var ei = function(e) {
-  return st(e);
+var di = function(e) {
+  return dt(e);
 };
-function yt(e, o) {
+function bt(e, o) {
   if (o = new ae(o), o.hasCountry(e))
     return o.country(e).countryCallingCode();
   throw new Error("Unknown country: ".concat(e));
 }
-function oi(e, o) {
+function ii(e, o) {
   return o.countries.hasOwnProperty(e);
 }
-function tn(e) {
+function an(e) {
   var o = e.version;
-  typeof o == "number" ? (this.v1 = o === 1, this.v2 = o === 2, this.v3 = o === 3, this.v4 = o === 4) : o ? Ut(o, Wd) === -1 ? this.v2 = !0 : Ut(o, Yd) === -1 ? this.v3 = !0 : this.v4 = !0 : this.v1 = !0;
+  typeof o == "number" ? (this.v1 = o === 1, this.v2 = o === 2, this.v3 = o === 3, this.v4 = o === 4) : o ? zt(o, ei) === -1 ? this.v2 = !0 : zt(o, oi) === -1 ? this.v3 = !0 : this.v4 = !0 : this.v1 = !0;
 }
-var ti = ";ext=", Ee = function(e) {
+var li = ";ext=", Ee = function(e) {
   return "([".concat(ge, "]{1,").concat(e, "})");
 };
-function an(e) {
-  var o = "20", t = "15", a = "9", n = "6", r = "[  \\t,]*", s = "[:\\.．]?[  \\t,-]*", d = "#?", l = "(?:e?xt(?:ensi(?:ó?|ó))?n?|ｅ?ｘｔｎ?|доб|anexo)", i = "(?:[xｘ#＃~～]|int|ｉｎｔ)", u = "[- ]+", h = "[  \\t]*", g = "(?:,{2}|;)", f = ti + Ee(o), C = r + l + s + Ee(o) + d, $ = r + i + s + Ee(a) + d, b = u + Ee(n) + "#", w = h + g + s + Ee(t) + d, O = h + "(?:,)+" + s + Ee(a) + d;
-  return f + "|" + C + "|" + $ + "|" + b + "|" + w + "|" + O;
+function nn(e) {
+  var o = "20", t = "15", a = "9", n = "6", r = "[  \\t,]*", s = "[:\\.．]?[  \\t,-]*", d = "#?", l = "(?:e?xt(?:ensi(?:ó?|ó))?n?|ｅ?ｘｔｎ?|доб|anexo)", i = "(?:[xｘ#＃~～]|int|ｉｎｔ)", h = "[- ]+", u = "[  \\t]*", g = "(?:,{2}|;)", f = li + Ee(o), C = r + l + s + Ee(o) + d, $ = r + i + s + Ee(a) + d, b = h + Ee(n) + "#", M = u + g + s + Ee(t) + d, O = u + "(?:,)+" + s + Ee(a) + d;
+  return f + "|" + C + "|" + $ + "|" + b + "|" + M + "|" + O;
 }
-var ai = "[" + ge + "]{" + ft + "}", ni = "[" + pt + "]{0,1}(?:[" + ko + "]*[" + ge + "]){3,}[" + ko + ge + "]*", ri = new RegExp("^[" + pt + "]{0,1}(?:[" + ko + "]*[" + ge + "]){1,2}$", "i"), si = ni + // Phone number extensions
-"(?:" + an() + ")?", di = new RegExp(
+var hi = "[" + ge + "]{" + yt + "}", ui = "[" + vt + "]{0,1}(?:[" + ko + "]*[" + ge + "]){3,}[" + ko + ge + "]*", mi = new RegExp("^[" + vt + "]{0,1}(?:[" + ko + "]*[" + ge + "]){1,2}$", "i"), Ci = ui + // Phone number extensions
+"(?:" + nn() + ")?", ci = new RegExp(
   // Either a short two-digit-only phone number
-  "^" + ai + "$|^" + si + "$",
+  "^" + hi + "$|^" + Ci + "$",
   "i"
 );
-function ii(e) {
-  return e.length >= ft && di.test(e);
+function gi(e) {
+  return e.length >= yt && ci.test(e);
 }
-function li(e) {
-  return ri.test(e);
+function $i(e) {
+  return mi.test(e);
 }
-var Yt = new RegExp("(?:" + an() + ")$", "i");
-function hi(e) {
-  var o = e.search(Yt);
+var Zt = new RegExp("(?:" + nn() + ")$", "i");
+function fi(e) {
+  var o = e.search(Zt);
   if (o < 0)
     return {};
-  for (var t = e.slice(0, o), a = e.match(Yt), n = 1; n < a.length; ) {
+  for (var t = e.slice(0, o), a = e.match(Zt), n = 1; n < a.length; ) {
     if (a[n])
       return {
         number: t,
@@ -4998,7 +5084,7 @@ function hi(e) {
     n++;
   }
 }
-var ui = {
+var pi = {
   0: "0",
   1: "1",
   2: "2",
@@ -5070,14 +5156,14 @@ var ui = {
   "۹": "9"
   // Eastern-Arabic digit 9
 };
-function mi(e) {
-  return ui[e];
+function yi(e) {
+  return pi[e];
 }
-function Ci(e, o) {
+function vi(e, o) {
   var t = typeof Symbol < "u" && e[Symbol.iterator] || e["@@iterator"];
   if (t)
     return (t = t.call(e)).next.bind(t);
-  if (Array.isArray(e) || (t = ci(e)) || o) {
+  if (Array.isArray(e) || (t = bi(e)) || o) {
     t && (e = t);
     var a = 0;
     return function() {
@@ -5087,44 +5173,44 @@ function Ci(e, o) {
   throw new TypeError(`Invalid attempt to iterate non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`);
 }
-function ci(e, o) {
+function bi(e, o) {
   if (e) {
     if (typeof e == "string")
-      return qt(e, o);
+      return Jt(e, o);
     var t = Object.prototype.toString.call(e).slice(8, -1);
     if (t === "Object" && e.constructor && (t = e.constructor.name), t === "Map" || t === "Set")
       return Array.from(e);
     if (t === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t))
-      return qt(e, o);
+      return Jt(e, o);
   }
 }
-function qt(e, o) {
+function Jt(e, o) {
   (o == null || o > e.length) && (o = e.length);
   for (var t = 0, a = new Array(o); t < o; t++)
     a[t] = e[t];
   return a;
 }
-function Jt(e) {
-  for (var o = "", t = Ci(e.split("")), a; !(a = t()).done; ) {
+function Qt(e) {
+  for (var o = "", t = vi(e.split("")), a; !(a = t()).done; ) {
     var n = a.value;
-    o += gi(n, o) || "";
+    o += Si(n, o) || "";
   }
   return o;
 }
-function gi(e, o) {
-  return e === "+" ? o ? void 0 : "+" : mi(e);
+function Si(e, o) {
+  return e === "+" ? o ? void 0 : "+" : yi(e);
 }
-function vt(e, o) {
-  return $i(e, void 0, o);
+function St(e, o) {
+  return Ai(e, void 0, o);
 }
-function $i(e, o, t) {
+function Ai(e, o, t) {
   var a = t.type(o), n = a && a.possibleLengths() || t.possibleLengths();
   if (!n)
     return "IS_POSSIBLE";
   var r = e.length, s = n[0];
   return s === r ? "IS_POSSIBLE" : s > r ? "TOO_SHORT" : n[n.length - 1] < r ? "TOO_LONG" : n.indexOf(r, 1) >= 0 ? "IS_POSSIBLE" : "INVALID_LENGTH";
 }
-function fi(e, o, t) {
+function Ni(e, o, t) {
   if (o === void 0 && (o = {}), t = new ae(t), o.v2) {
     if (!e.countryCallingCode)
       throw new Error("Invalid phone number object passed");
@@ -5143,13 +5229,13 @@ function fi(e, o, t) {
     }
   }
   if (t.possibleLengths())
-    return nn(e.phone || e.nationalNumber, t);
+    return rn(e.phone || e.nationalNumber, t);
   if (e.countryCallingCode && t.isNonGeographicCallingCode(e.countryCallingCode))
     return !0;
   throw new Error('Missing "possibleLengths" in metadata. Perhaps the metadata has been generated before v1.0.18.');
 }
-function nn(e, o) {
-  switch (vt(e, o)) {
+function rn(e, o) {
+  switch (St(e, o)) {
     case "IS_POSSIBLE":
       return !0;
     default:
@@ -5159,11 +5245,11 @@ function nn(e, o) {
 function ye(e, o) {
   return e = e || "", new RegExp("^(?:" + o + ")$").test(e);
 }
-function pi(e, o) {
+function ki(e, o) {
   var t = typeof Symbol < "u" && e[Symbol.iterator] || e["@@iterator"];
   if (t)
     return (t = t.call(e)).next.bind(t);
-  if (Array.isArray(e) || (t = yi(e)) || o) {
+  if (Array.isArray(e) || (t = wi(e)) || o) {
     t && (e = t);
     var a = 0;
     return function() {
@@ -5173,32 +5259,32 @@ function pi(e, o) {
   throw new TypeError(`Invalid attempt to iterate non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`);
 }
-function yi(e, o) {
+function wi(e, o) {
   if (e) {
     if (typeof e == "string")
-      return Zt(e, o);
+      return Xt(e, o);
     var t = Object.prototype.toString.call(e).slice(8, -1);
     if (t === "Object" && e.constructor && (t = e.constructor.name), t === "Map" || t === "Set")
       return Array.from(e);
     if (t === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t))
-      return Zt(e, o);
+      return Xt(e, o);
   }
 }
-function Zt(e, o) {
+function Xt(e, o) {
   (o == null || o > e.length) && (o = e.length);
   for (var t = 0, a = new Array(o); t < o; t++)
     a[t] = e[t];
   return a;
 }
-var vi = ["MOBILE", "PREMIUM_RATE", "TOLL_FREE", "SHARED_COST", "VOIP", "PERSONAL_NUMBER", "PAGER", "UAN", "VOICEMAIL"];
-function bt(e, o, t) {
+var Mi = ["MOBILE", "PREMIUM_RATE", "TOLL_FREE", "SHARED_COST", "VOIP", "PERSONAL_NUMBER", "PAGER", "UAN", "VOICEMAIL"];
+function At(e, o, t) {
   if (o = o || {}, !(!e.country && !e.countryCallingCode)) {
     t = new ae(t), t.selectNumberingPlan(e.country, e.countryCallingCode);
     var a = o.v2 ? e.nationalNumber : e.phone;
     if (ye(a, t.nationalNumberPattern())) {
       if (Fo(a, "FIXED_LINE", t))
         return t.type("MOBILE") && t.type("MOBILE").pattern() === "" || !t.type("MOBILE") || Fo(a, "MOBILE", t) ? "FIXED_LINE_OR_MOBILE" : "FIXED_LINE";
-      for (var n = pi(vi), r; !(r = n()).done; ) {
+      for (var n = ki(Mi), r; !(r = n()).done; ) {
         var s = r.value;
         if (Fo(a, s, t))
           return s;
@@ -5209,27 +5295,27 @@ function bt(e, o, t) {
 function Fo(e, o, t) {
   return o = t.type(o), !o || !o.pattern() || o.possibleLengths() && o.possibleLengths().indexOf(e.length) < 0 ? !1 : ye(e, o.pattern());
 }
-function bi(e, o, t) {
+function Oi(e, o, t) {
   if (o = o || {}, t = new ae(t), t.selectNumberingPlan(e.country, e.countryCallingCode), t.hasTypes())
-    return bt(e, o, t.metadata) !== void 0;
+    return At(e, o, t.metadata) !== void 0;
   var a = o.v2 ? e.nationalNumber : e.phone;
   return ye(a, t.nationalNumberPattern());
 }
-function Si(e, o, t) {
+function Pi(e, o, t) {
   var a = new ae(t), n = a.getCountryCodesForCallingCode(e);
   return n ? n.filter(function(r) {
-    return Ai(o, r, t);
+    return Bi(o, r, t);
   }) : [];
 }
-function Ai(e, o, t) {
+function Bi(e, o, t) {
   var a = new ae(t);
   return a.selectNumberingPlan(o), a.numberingPlan.possibleLengths().indexOf(e.length) >= 0;
 }
-function Ni(e) {
+function Ti(e) {
   return e.replace(new RegExp("[".concat(ko, "]+"), "g"), " ").trim();
 }
-var ki = /(\$\d)/;
-function wi(e, o, t) {
+var Di = /(\$\d)/;
+function Li(e, o, t) {
   var a = t.useInternationalFormat, n = t.withNationalPrefix, r = e.replace(new RegExp(o.pattern()), a ? o.internationalFormat() : (
     // This library doesn't use `domestic_carrier_code_formatting_rule`,
     // because that one is only used when formatting phone numbers
@@ -5244,19 +5330,19 @@ function wi(e, o, t) {
     // 			? format.format().replace(FIRST_GROUP_PATTERN, format.nationalPrefixFormattingRule())
     // 			: format.format()
     // 	)
-    n && o.nationalPrefixFormattingRule() ? o.format().replace(ki, o.nationalPrefixFormattingRule()) : o.format()
+    n && o.nationalPrefixFormattingRule() ? o.format().replace(Di, o.nationalPrefixFormattingRule()) : o.format()
   ));
-  return a ? Ni(r) : r;
+  return a ? Ti(r) : r;
 }
-var Mi = /^[\d]+(?:[~\u2053\u223C\uFF5E][\d]+)?$/;
-function Oi(e, o, t) {
+var xi = /^[\d]+(?:[~\u2053\u223C\uFF5E][\d]+)?$/;
+function Ei(e, o, t) {
   var a = new ae(t);
   if (a.selectNumberingPlan(e, o), a.defaultIDDPrefix())
     return a.defaultIDDPrefix();
-  if (Mi.test(a.IDDPrefix()))
+  if (xi.test(a.IDDPrefix()))
     return a.IDDPrefix();
 }
-function Pi(e) {
+function Ri(e) {
   var o = e.number, t = e.ext;
   if (!o)
     return "";
@@ -5264,11 +5350,11 @@ function Pi(e) {
     throw new Error('"formatRFC3966()" expects "number" to be in E.164 format.');
   return "tel:".concat(o).concat(t ? ";ext=" + t : "");
 }
-function Bi(e, o) {
+function Ii(e, o) {
   var t = typeof Symbol < "u" && e[Symbol.iterator] || e["@@iterator"];
   if (t)
     return (t = t.call(e)).next.bind(t);
-  if (Array.isArray(e) || (t = Ti(e)) || o) {
+  if (Array.isArray(e) || (t = Ki(e)) || o) {
     t && (e = t);
     var a = 0;
     return function() {
@@ -5278,24 +5364,24 @@ function Bi(e, o) {
   throw new TypeError(`Invalid attempt to iterate non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`);
 }
-function Ti(e, o) {
+function Ki(e, o) {
   if (e) {
     if (typeof e == "string")
-      return Qt(e, o);
+      return ea(e, o);
     var t = Object.prototype.toString.call(e).slice(8, -1);
     if (t === "Object" && e.constructor && (t = e.constructor.name), t === "Map" || t === "Set")
       return Array.from(e);
     if (t === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t))
-      return Qt(e, o);
+      return ea(e, o);
   }
 }
-function Qt(e, o) {
+function ea(e, o) {
   (o == null || o > e.length) && (o = e.length);
   for (var t = 0, a = new Array(o); t < o; t++)
     a[t] = e[t];
   return a;
 }
-function Xt(e, o) {
+function oa(e, o) {
   var t = Object.keys(e);
   if (Object.getOwnPropertySymbols) {
     var a = Object.getOwnPropertySymbols(e);
@@ -5305,27 +5391,27 @@ function Xt(e, o) {
   }
   return t;
 }
-function ea(e) {
+function ta(e) {
   for (var o = 1; o < arguments.length; o++) {
     var t = arguments[o] != null ? arguments[o] : {};
-    o % 2 ? Xt(Object(t), !0).forEach(function(a) {
-      Di(e, a, t[a]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : Xt(Object(t)).forEach(function(a) {
+    o % 2 ? oa(Object(t), !0).forEach(function(a) {
+      Gi(e, a, t[a]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : oa(Object(t)).forEach(function(a) {
       Object.defineProperty(e, a, Object.getOwnPropertyDescriptor(t, a));
     });
   }
   return e;
 }
-function Di(e, o, t) {
+function Gi(e, o, t) {
   return o in e ? Object.defineProperty(e, o, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[o] = t, e;
 }
-var oa = {
+var aa = {
   formatExtension: function(e, o, t) {
     return "".concat(e).concat(t.ext()).concat(o);
   }
 };
-function Li(e, o, t, a) {
-  if (t ? t = ea(ea({}, oa), t) : t = oa, a = new ae(a), e.country && e.country !== "001") {
+function ji(e, o, t, a) {
+  if (t ? t = ta(ta({}, aa), t) : t = aa, a = new ae(a), e.country && e.country !== "001") {
     if (!a.hasCountry(e.country))
       throw new Error("Unknown country: ".concat(e.country));
     a.country(e.country);
@@ -5342,28 +5428,28 @@ function Li(e, o, t, a) {
     case "E.164":
       return "+".concat(n).concat(r);
     case "RFC3966":
-      return Pi({
+      return Ri({
         number: "+".concat(n).concat(r),
         ext: e.ext
       });
     case "IDD":
       if (!t.fromCountry)
         return;
-      var d = Ei(r, e.carrierCode, n, t.fromCountry, a);
+      var d = Hi(r, e.carrierCode, n, t.fromCountry, a);
       return Ho(d, e.ext, a, t.formatExtension);
     default:
       throw new Error('Unknown "format" argument passed to "formatNumber()": "'.concat(o, '"'));
   }
 }
 function wo(e, o, t, a, n) {
-  var r = xi(a.formats(), e);
-  return r ? wi(e, r, {
+  var r = Fi(a.formats(), e);
+  return r ? Li(e, r, {
     useInternationalFormat: t === "INTERNATIONAL",
     withNationalPrefix: !(r.nationalPrefixIsOptionalWhenFormattingInNationalFormat() && n && n.nationalPrefix === !1)
   }) : e;
 }
-function xi(e, o) {
-  for (var t = Bi(e), a; !(a = t()).done; ) {
+function Fi(e, o) {
+  for (var t = Ii(e), a; !(a = t()).done; ) {
     var n = a.value;
     if (n.leadingDigitsPatterns().length > 0) {
       var r = n.leadingDigitsPatterns()[n.leadingDigitsPatterns().length - 1];
@@ -5377,17 +5463,17 @@ function xi(e, o) {
 function Ho(e, o, t, a) {
   return o ? a(e, o, t) : e;
 }
-function Ei(e, o, t, a, n) {
-  var r = yt(a, n.metadata);
+function Hi(e, o, t, a, n) {
+  var r = bt(a, n.metadata);
   if (r === t) {
     var s = wo(e, o, "NATIONAL", n);
     return t === "1" ? t + " " + s : s;
   }
-  var d = Oi(a, void 0, n.metadata);
+  var d = Ei(a, void 0, n.metadata);
   if (d)
     return "".concat(d, " ").concat(t, " ").concat(wo(e, null, "INTERNATIONAL", n));
 }
-function ta(e, o) {
+function na(e, o) {
   var t = Object.keys(e);
   if (Object.getOwnPropertySymbols) {
     var a = Object.getOwnPropertySymbols(e);
@@ -5397,47 +5483,47 @@ function ta(e, o) {
   }
   return t;
 }
-function aa(e) {
+function ra(e) {
   for (var o = 1; o < arguments.length; o++) {
     var t = arguments[o] != null ? arguments[o] : {};
-    o % 2 ? ta(Object(t), !0).forEach(function(a) {
-      Ri(e, a, t[a]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ta(Object(t)).forEach(function(a) {
+    o % 2 ? na(Object(t), !0).forEach(function(a) {
+      Vi(e, a, t[a]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : na(Object(t)).forEach(function(a) {
       Object.defineProperty(e, a, Object.getOwnPropertyDescriptor(t, a));
     });
   }
   return e;
 }
-function Ri(e, o, t) {
+function Vi(e, o, t) {
   return o in e ? Object.defineProperty(e, o, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[o] = t, e;
 }
-function Ii(e, o) {
+function Ui(e, o) {
   if (!(e instanceof o))
     throw new TypeError("Cannot call a class as a function");
 }
-function Ki(e, o) {
+function _i(e, o) {
   for (var t = 0; t < o.length; t++) {
     var a = o[t];
     a.enumerable = a.enumerable || !1, a.configurable = !0, "value" in a && (a.writable = !0), Object.defineProperty(e, a.key, a);
   }
 }
-function Gi(e, o, t) {
-  return o && Ki(e.prototype, o), Object.defineProperty(e, "prototype", { writable: !1 }), e;
+function zi(e, o, t) {
+  return o && _i(e.prototype, o), Object.defineProperty(e, "prototype", { writable: !1 }), e;
 }
-var ji = /* @__PURE__ */ (function() {
+var Wi = /* @__PURE__ */ (function() {
   function e(o, t, a) {
-    if (Ii(this, e), !o)
+    if (Ui(this, e), !o)
       throw new TypeError("`country` or `countryCallingCode` not passed");
     if (!t)
       throw new TypeError("`nationalNumber` not passed");
     if (!a)
       throw new TypeError("`metadata` not passed");
-    var n = Hi(o, a), r = n.country, s = n.countryCallingCode;
+    var n = qi(o, a), r = n.country, s = n.countryCallingCode;
     this.country = r, this.countryCallingCode = s, this.nationalNumber = t, this.number = "+" + this.countryCallingCode + this.nationalNumber, this.getMetadata = function() {
       return a;
     };
   }
-  return Gi(e, [{
+  return zi(e, [{
     key: "setExt",
     value: function(o) {
       this.ext = o;
@@ -5445,19 +5531,19 @@ var ji = /* @__PURE__ */ (function() {
   }, {
     key: "getPossibleCountries",
     value: function() {
-      return this.country ? [this.country] : Si(this.countryCallingCode, this.nationalNumber, this.getMetadata());
+      return this.country ? [this.country] : Pi(this.countryCallingCode, this.nationalNumber, this.getMetadata());
     }
   }, {
     key: "isPossible",
     value: function() {
-      return fi(this, {
+      return Ni(this, {
         v2: !0
       }, this.getMetadata());
     }
   }, {
     key: "isValid",
     value: function() {
-      return bi(this, {
+      return Oi(this, {
         v2: !0
       }, this.getMetadata());
     }
@@ -5489,14 +5575,14 @@ var ji = /* @__PURE__ */ (function() {
   }, {
     key: "getType",
     value: function() {
-      return bt(this, {
+      return At(this, {
         v2: !0
       }, this.getMetadata());
     }
   }, {
     key: "format",
     value: function(o, t) {
-      return Li(this, o, t ? aa(aa({}, t), {}, {
+      return ji(this, o, t ? ra(ra({}, t), {}, {
         v2: !0
       }) : {
         v2: !0
@@ -5518,31 +5604,31 @@ var ji = /* @__PURE__ */ (function() {
       return this.format("RFC3966", o);
     }
   }]), e;
-})(), Fi = function(e) {
+})(), Yi = function(e) {
   return /^[A-Z]{2}$/.test(e);
 };
-function Hi(e, o) {
+function qi(e, o) {
   var t, a, n = new ae(o);
-  return Fi(e) ? (t = e, n.selectNumberingPlan(t), a = n.countryCallingCode()) : a = e, {
+  return Yi(e) ? (t = e, n.selectNumberingPlan(t), a = n.countryCallingCode()) : a = e, {
     country: t,
     countryCallingCode: a
   };
 }
-var Vi = new RegExp("([" + ge + "])");
-function Ui(e, o, t, a) {
+var Zi = new RegExp("([" + ge + "])");
+function Ji(e, o, t, a) {
   if (o) {
     var n = new ae(a);
     n.selectNumberingPlan(o, t);
     var r = new RegExp(n.IDDPrefix());
     if (e.search(r) === 0) {
       e = e.slice(e.match(r)[0].length);
-      var s = e.match(Vi);
+      var s = e.match(Zi);
       if (!(s && s[1] != null && s[1].length > 0 && s[1] === "0"))
         return e;
     }
   }
 }
-function _i(e, o) {
+function Qi(e, o) {
   if (e && o.numberingPlan.nationalPrefixForParsing()) {
     var t = new RegExp("^(?:" + o.numberingPlan.nationalPrefixForParsing() + ")"), a = t.exec(e);
     if (a) {
@@ -5555,8 +5641,8 @@ function _i(e, o) {
       }
       var i;
       if (d) {
-        var u = e.indexOf(a[1]), h = e.slice(0, u);
-        h === o.numberingPlan.nationalPrefix() && (i = o.numberingPlan.nationalPrefix());
+        var h = e.indexOf(a[1]), u = e.slice(0, h);
+        u === o.numberingPlan.nationalPrefix() && (i = o.numberingPlan.nationalPrefix());
       } else
         i = a[0];
       return {
@@ -5570,14 +5656,14 @@ function _i(e, o) {
     nationalNumber: e
   };
 }
-function dt(e, o) {
-  var t = _i(e, o), a = t.carrierCode, n = t.nationalNumber;
+function it(e, o) {
+  var t = Qi(e, o), a = t.carrierCode, n = t.nationalNumber;
   if (n !== e) {
-    if (!zi(e, n, o))
+    if (!Xi(e, n, o))
       return {
         nationalNumber: e
       };
-    if (o.possibleLengths() && !Wi(n, o))
+    if (o.possibleLengths() && !el(n, o))
       return {
         nationalNumber: e
       };
@@ -5587,11 +5673,11 @@ function dt(e, o) {
     carrierCode: a
   };
 }
-function zi(e, o, t) {
+function Xi(e, o, t) {
   return !(ye(e, t.nationalNumberPattern()) && !ye(o, t.nationalNumberPattern()));
 }
-function Wi(e, o) {
-  switch (vt(e, o)) {
+function el(e, o) {
+  switch (St(e, o)) {
     case "TOO_SHORT":
     case "INVALID_LENGTH":
       return !1;
@@ -5599,12 +5685,12 @@ function Wi(e, o) {
       return !0;
   }
 }
-function Yi(e, o, t, a) {
-  var n = o ? yt(o, a) : t;
+function ol(e, o, t, a) {
+  var n = o ? bt(o, a) : t;
   if (e.indexOf(n) === 0) {
     a = new ae(a), a.selectNumberingPlan(o, t);
-    var r = e.slice(n.length), s = dt(r, a), d = s.nationalNumber, l = dt(e, a), i = l.nationalNumber;
-    if (!ye(i, a.nationalNumberPattern()) && ye(d, a.nationalNumberPattern()) || vt(i, a) === "TOO_LONG")
+    var r = e.slice(n.length), s = it(r, a), d = s.nationalNumber, l = it(e, a), i = l.nationalNumber;
+    if (!ye(i, a.nationalNumberPattern()) && ye(d, a.nationalNumberPattern()) || St(i, a) === "TOO_LONG")
       return {
         countryCallingCode: n,
         number: r
@@ -5614,17 +5700,17 @@ function Yi(e, o, t, a) {
     number: e
   };
 }
-function qi(e, o, t, a) {
+function tl(e, o, t, a) {
   if (!e)
     return {};
   var n;
   if (e[0] !== "+") {
-    var r = Ui(e, o, t, a);
+    var r = Ji(e, o, t, a);
     if (r && r !== e)
       n = !0, e = "+" + r;
     else {
       if (o || t) {
-        var s = Yi(e, o, t, a), d = s.countryCallingCode, l = s.number;
+        var s = ol(e, o, t, a), d = s.countryCallingCode, l = s.number;
         if (d)
           return {
             countryCallingCodeSource: "FROM_NUMBER_WITHOUT_PLUS_SIGN",
@@ -5642,23 +5728,23 @@ function qi(e, o, t, a) {
   if (e[1] === "0")
     return {};
   a = new ae(a);
-  for (var i = 2; i - 1 <= Kd && i <= e.length; ) {
-    var u = e.slice(1, i);
-    if (a.hasCallingCode(u))
-      return a.selectNumberingPlan(u), {
+  for (var i = 2; i - 1 <= _d && i <= e.length; ) {
+    var h = e.slice(1, i);
+    if (a.hasCallingCode(h))
+      return a.selectNumberingPlan(h), {
         countryCallingCodeSource: n ? "FROM_NUMBER_WITH_IDD" : "FROM_NUMBER_WITH_PLUS_SIGN",
-        countryCallingCode: u,
+        countryCallingCode: h,
         number: e.slice(i)
       };
     i++;
   }
   return {};
 }
-function Ji(e, o) {
+function al(e, o) {
   var t = typeof Symbol < "u" && e[Symbol.iterator] || e["@@iterator"];
   if (t)
     return (t = t.call(e)).next.bind(t);
-  if (Array.isArray(e) || (t = Zi(e)) || o) {
+  if (Array.isArray(e) || (t = nl(e)) || o) {
     t && (e = t);
     var a = 0;
     return function() {
@@ -5668,32 +5754,32 @@ function Ji(e, o) {
   throw new TypeError(`Invalid attempt to iterate non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`);
 }
-function Zi(e, o) {
+function nl(e, o) {
   if (e) {
     if (typeof e == "string")
-      return na(e, o);
+      return sa(e, o);
     var t = Object.prototype.toString.call(e).slice(8, -1);
     if (t === "Object" && e.constructor && (t = e.constructor.name), t === "Map" || t === "Set")
       return Array.from(e);
     if (t === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t))
-      return na(e, o);
+      return sa(e, o);
   }
 }
-function na(e, o) {
+function sa(e, o) {
   (o == null || o > e.length) && (o = e.length);
   for (var t = 0, a = new Array(o); t < o; t++)
     a[t] = e[t];
   return a;
 }
-function Qi(e, o) {
+function rl(e, o) {
   var t = o.countries, a = o.defaultCountry, n = o.metadata;
   n = new ae(n);
-  for (var r = [], s = Ji(t), d; !(d = s()).done; ) {
+  for (var r = [], s = al(t), d; !(d = s()).done; ) {
     var l = d.value;
     if (n.country(l), n.leadingDigits()) {
       if (e && e.search(n.leadingDigits()) === 0)
         return l;
-    } else if (bt({
+    } else if (At({
       phone: e,
       country: l
     }, void 0, n.metadata))
@@ -5707,132 +5793,132 @@ function Qi(e, o) {
   if (r.length > 0)
     return r[0];
 }
-function Xi(e, o) {
+function sl(e, o) {
   var t = o.nationalNumber, a = o.defaultCountry, n = o.metadata, r = n.getCountryCodesForCallingCode(e);
   if (r)
-    return r.length === 1 ? r[0] : Qi(t, {
+    return r.length === 1 ? r[0] : rl(t, {
       countries: r,
       defaultCountry: a,
       metadata: n.metadata
     });
 }
-var rn = "+", el = "[\\-\\.\\(\\)]?", ra = "([" + ge + "]|" + el + ")", ol = "^\\" + rn + ra + "*[" + ge + "]" + ra + "*$", tl = new RegExp(ol, "g"), it = ge, al = "[" + it + "]+((\\-)*[" + it + "])*", nl = "a-zA-Z", rl = "[" + nl + "]+((\\-)*[" + it + "])*", sl = "^(" + al + "\\.)*" + rl + "\\.?$", dl = new RegExp(sl, "g"), sa = "tel:", lt = ";phone-context=", il = ";isub=";
-function ll(e) {
-  var o = e.indexOf(lt);
+var sn = "+", dl = "[\\-\\.\\(\\)]?", da = "([" + ge + "]|" + dl + ")", il = "^\\" + sn + da + "*[" + ge + "]" + da + "*$", ll = new RegExp(il, "g"), lt = ge, hl = "[" + lt + "]+((\\-)*[" + lt + "])*", ul = "a-zA-Z", ml = "[" + ul + "]+((\\-)*[" + lt + "])*", Cl = "^(" + hl + "\\.)*" + ml + "\\.?$", cl = new RegExp(Cl, "g"), ia = "tel:", ht = ";phone-context=", gl = ";isub=";
+function $l(e) {
+  var o = e.indexOf(ht);
   if (o < 0)
     return null;
-  var t = o + lt.length;
+  var t = o + ht.length;
   if (t >= e.length)
     return "";
   var a = e.indexOf(";", t);
   return a >= 0 ? e.substring(t, a) : e.substring(t);
 }
-function hl(e) {
-  return e === null ? !0 : e.length === 0 ? !1 : tl.test(e) || dl.test(e);
+function fl(e) {
+  return e === null ? !0 : e.length === 0 ? !1 : ll.test(e) || cl.test(e);
 }
-function ul(e, o) {
-  var t = o.extractFormattedPhoneNumber, a = ll(e);
-  if (!hl(a))
+function pl(e, o) {
+  var t = o.extractFormattedPhoneNumber, a = $l(e);
+  if (!fl(a))
     throw new pe("NOT_A_NUMBER");
   var n;
   if (a === null)
     n = t(e) || "";
   else {
-    n = "", a.charAt(0) === rn && (n += a);
-    var r = e.indexOf(sa), s;
-    r >= 0 ? s = r + sa.length : s = 0;
-    var d = e.indexOf(lt);
+    n = "", a.charAt(0) === sn && (n += a);
+    var r = e.indexOf(ia), s;
+    r >= 0 ? s = r + ia.length : s = 0;
+    var d = e.indexOf(ht);
     n += e.substring(s, d);
   }
-  var l = n.indexOf(il);
+  var l = n.indexOf(gl);
   if (l > 0 && (n = n.substring(0, l)), n !== "")
     return n;
 }
-var ml = 250, Cl = new RegExp("[" + pt + ge + "]"), cl = new RegExp("[^" + ge + "#]+$");
-function gl(e, o, t) {
+var yl = 250, vl = new RegExp("[" + vt + ge + "]"), bl = new RegExp("[^" + ge + "#]+$");
+function Sl(e, o, t) {
   if (o = o || {}, t = new ae(t), o.defaultCountry && !t.hasCountry(o.defaultCountry))
     throw o.v2 ? new pe("INVALID_COUNTRY") : new Error("Unknown country: ".concat(o.defaultCountry));
-  var a = fl(e, o.v2, o.extract), n = a.number, r = a.ext, s = a.error;
+  var a = Nl(e, o.v2, o.extract), n = a.number, r = a.ext, s = a.error;
   if (!n) {
     if (o.v2)
       throw s === "TOO_SHORT" ? new pe("TOO_SHORT") : new pe("NOT_A_NUMBER");
     return {};
   }
-  var d = yl(n, o.defaultCountry, o.defaultCallingCode, t), l = d.country, i = d.nationalNumber, u = d.countryCallingCode, h = d.countryCallingCodeSource, g = d.carrierCode;
+  var d = wl(n, o.defaultCountry, o.defaultCallingCode, t), l = d.country, i = d.nationalNumber, h = d.countryCallingCode, u = d.countryCallingCodeSource, g = d.carrierCode;
   if (!t.hasSelectedNumberingPlan()) {
     if (o.v2)
       throw new pe("INVALID_COUNTRY");
     return {};
   }
-  if (!i || i.length < ft) {
+  if (!i || i.length < yt) {
     if (o.v2)
       throw new pe("TOO_SHORT");
     return {};
   }
-  if (i.length > Id) {
+  if (i.length > Ud) {
     if (o.v2)
       throw new pe("TOO_LONG");
     return {};
   }
   if (o.v2) {
-    var f = new ji(u, i, t.metadata);
-    return l && (f.country = l), g && (f.carrierCode = g), r && (f.ext = r), f.__countryCallingCodeSource = h, f;
+    var f = new Wi(h, i, t.metadata);
+    return l && (f.country = l), g && (f.carrierCode = g), r && (f.ext = r), f.__countryCallingCodeSource = u, f;
   }
   var C = (o.extended ? t.hasSelectedNumberingPlan() : l) ? ye(i, t.nationalNumberPattern()) : !1;
   return o.extended ? {
     country: l,
-    countryCallingCode: u,
+    countryCallingCode: h,
     carrierCode: g,
     valid: C,
-    possible: C ? !0 : !!(o.extended === !0 && t.possibleLengths() && nn(i, t)),
+    possible: C ? !0 : !!(o.extended === !0 && t.possibleLengths() && rn(i, t)),
     phone: i,
     ext: r
-  } : C ? pl(l, i, r) : {};
+  } : C ? kl(l, i, r) : {};
 }
-function $l(e, o, t) {
+function Al(e, o, t) {
   if (e) {
-    if (e.length > ml) {
+    if (e.length > yl) {
       if (t)
         throw new pe("TOO_LONG");
       return;
     }
     if (o === !1)
       return e;
-    var a = e.search(Cl);
+    var a = e.search(vl);
     if (!(a < 0))
-      return e.slice(a).replace(cl, "");
+      return e.slice(a).replace(bl, "");
   }
 }
-function fl(e, o, t) {
-  var a = ul(e, {
+function Nl(e, o, t) {
+  var a = pl(e, {
     extractFormattedPhoneNumber: function(r) {
-      return $l(r, t, o);
+      return Al(r, t, o);
     }
   });
   if (!a)
     return {};
-  if (!ii(a))
-    return li(a) ? {
+  if (!gi(a))
+    return $i(a) ? {
       error: "TOO_SHORT"
     } : {};
-  var n = hi(a);
+  var n = fi(a);
   return n.ext ? n : {
     number: a
   };
 }
-function pl(e, o, t) {
+function kl(e, o, t) {
   var a = {
     country: e,
     phone: o
   };
   return t && (a.ext = t), a;
 }
-function yl(e, o, t, a) {
-  var n = qi(Jt(e), o, t, a.metadata), r = n.countryCallingCodeSource, s = n.countryCallingCode, d = n.number, l;
+function wl(e, o, t, a) {
+  var n = tl(Qt(e), o, t, a.metadata), r = n.countryCallingCodeSource, s = n.countryCallingCode, d = n.number, l;
   if (s)
     a.selectNumberingPlan(s);
   else if (d && (o || t))
-    a.selectNumberingPlan(o, t), o && (l = o), s = t || yt(o, a.metadata);
+    a.selectNumberingPlan(o, t), o && (l = o), s = t || bt(o, a.metadata);
   else
     return {};
   if (!d)
@@ -5840,8 +5926,8 @@ function yl(e, o, t, a) {
       countryCallingCodeSource: r,
       countryCallingCode: s
     };
-  var i = dt(Jt(d), a), u = i.nationalNumber, h = i.carrierCode, g = Xi(s, {
-    nationalNumber: u,
+  var i = it(Qt(d), a), h = i.nationalNumber, u = i.carrierCode, g = sl(s, {
+    nationalNumber: h,
     defaultCountry: o,
     metadata: a
   });
@@ -5849,38 +5935,9 @@ function yl(e, o, t, a) {
     country: l,
     countryCallingCode: s,
     countryCallingCodeSource: r,
-    nationalNumber: u,
-    carrierCode: h
+    nationalNumber: h,
+    carrierCode: u
   };
-}
-function da(e, o) {
-  var t = Object.keys(e);
-  if (Object.getOwnPropertySymbols) {
-    var a = Object.getOwnPropertySymbols(e);
-    o && (a = a.filter(function(n) {
-      return Object.getOwnPropertyDescriptor(e, n).enumerable;
-    })), t.push.apply(t, a);
-  }
-  return t;
-}
-function ia(e) {
-  for (var o = 1; o < arguments.length; o++) {
-    var t = arguments[o] != null ? arguments[o] : {};
-    o % 2 ? da(Object(t), !0).forEach(function(a) {
-      vl(e, a, t[a]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : da(Object(t)).forEach(function(a) {
-      Object.defineProperty(e, a, Object.getOwnPropertyDescriptor(t, a));
-    });
-  }
-  return e;
-}
-function vl(e, o, t) {
-  return o in e ? Object.defineProperty(e, o, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[o] = t, e;
-}
-function bl(e, o, t) {
-  return gl(e, ia(ia({}, o), {}, {
-    v2: !0
-  }), t);
 }
 function la(e, o) {
   var t = Object.keys(e);
@@ -5892,45 +5949,74 @@ function la(e, o) {
   }
   return t;
 }
-function Sl(e) {
+function ha(e) {
   for (var o = 1; o < arguments.length; o++) {
     var t = arguments[o] != null ? arguments[o] : {};
     o % 2 ? la(Object(t), !0).forEach(function(a) {
-      Al(e, a, t[a]);
+      Ml(e, a, t[a]);
     }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : la(Object(t)).forEach(function(a) {
       Object.defineProperty(e, a, Object.getOwnPropertyDescriptor(t, a));
     });
   }
   return e;
 }
-function Al(e, o, t) {
+function Ml(e, o, t) {
   return o in e ? Object.defineProperty(e, o, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[o] = t, e;
 }
-function Nl(e, o) {
-  return Ol(e) || Ml(e, o) || wl(e, o) || kl();
+function Ol(e, o, t) {
+  return Sl(e, ha(ha({}, o), {}, {
+    v2: !0
+  }), t);
 }
-function kl() {
+function ua(e, o) {
+  var t = Object.keys(e);
+  if (Object.getOwnPropertySymbols) {
+    var a = Object.getOwnPropertySymbols(e);
+    o && (a = a.filter(function(n) {
+      return Object.getOwnPropertyDescriptor(e, n).enumerable;
+    })), t.push.apply(t, a);
+  }
+  return t;
+}
+function Pl(e) {
+  for (var o = 1; o < arguments.length; o++) {
+    var t = arguments[o] != null ? arguments[o] : {};
+    o % 2 ? ua(Object(t), !0).forEach(function(a) {
+      Bl(e, a, t[a]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ua(Object(t)).forEach(function(a) {
+      Object.defineProperty(e, a, Object.getOwnPropertyDescriptor(t, a));
+    });
+  }
+  return e;
+}
+function Bl(e, o, t) {
+  return o in e ? Object.defineProperty(e, o, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[o] = t, e;
+}
+function Tl(e, o) {
+  return El(e) || xl(e, o) || Ll(e, o) || Dl();
+}
+function Dl() {
   throw new TypeError(`Invalid attempt to destructure non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`);
 }
-function wl(e, o) {
+function Ll(e, o) {
   if (e) {
     if (typeof e == "string")
-      return ha(e, o);
+      return ma(e, o);
     var t = Object.prototype.toString.call(e).slice(8, -1);
     if (t === "Object" && e.constructor && (t = e.constructor.name), t === "Map" || t === "Set")
       return Array.from(e);
     if (t === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t))
-      return ha(e, o);
+      return ma(e, o);
   }
 }
-function ha(e, o) {
+function ma(e, o) {
   (o == null || o > e.length) && (o = e.length);
   for (var t = 0, a = new Array(o); t < o; t++)
     a[t] = e[t];
   return a;
 }
-function Ml(e, o) {
+function xl(e, o) {
   var t = e == null ? null : typeof Symbol < "u" && e[Symbol.iterator] || e["@@iterator"];
   if (t != null) {
     var a = [], n = !0, r = !1, s, d;
@@ -5950,18 +6036,18 @@ function Ml(e, o) {
     return a;
   }
 }
-function Ol(e) {
+function El(e) {
   if (Array.isArray(e))
     return e;
 }
-function Pl(e) {
-  var o = Array.prototype.slice.call(e), t = Nl(o, 4), a = t[0], n = t[1], r = t[2], s = t[3], d, l, i;
+function Rl(e) {
+  var o = Array.prototype.slice.call(e), t = Tl(o, 4), a = t[0], n = t[1], r = t[2], s = t[3], d, l, i;
   if (typeof a == "string")
     d = a;
   else
     throw new TypeError("A text for parsing must be a string.");
   if (!n || typeof n == "string")
-    s ? (l = r, i = s) : (l = void 0, i = r), n && (l = Sl({
+    s ? (l = r, i = s) : (l = void 0, i = r), n && (l = Pl({
       defaultCountry: n
     }, l));
   else if (bo(n))
@@ -5974,7 +6060,7 @@ function Pl(e) {
     metadata: i
   };
 }
-function ua(e, o) {
+function Ca(e, o) {
   var t = Object.keys(e);
   if (Object.getOwnPropertySymbols) {
     var a = Object.getOwnPropertySymbols(e);
@@ -5984,39 +6070,39 @@ function ua(e, o) {
   }
   return t;
 }
-function ma(e) {
+function ca(e) {
   for (var o = 1; o < arguments.length; o++) {
     var t = arguments[o] != null ? arguments[o] : {};
-    o % 2 ? ua(Object(t), !0).forEach(function(a) {
-      Bl(e, a, t[a]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ua(Object(t)).forEach(function(a) {
+    o % 2 ? Ca(Object(t), !0).forEach(function(a) {
+      Il(e, a, t[a]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : Ca(Object(t)).forEach(function(a) {
       Object.defineProperty(e, a, Object.getOwnPropertyDescriptor(t, a));
     });
   }
   return e;
 }
-function Bl(e, o, t) {
+function Il(e, o, t) {
   return o in e ? Object.defineProperty(e, o, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[o] = t, e;
 }
-function Tl(e, o, t) {
-  o && o.defaultCountry && !oi(o.defaultCountry, t) && (o = ma(ma({}, o), {}, {
+function Kl(e, o, t) {
+  o && o.defaultCountry && !ii(o.defaultCountry, t) && (o = ca(ca({}, o), {}, {
     defaultCountry: void 0
   }));
   try {
-    return bl(e, o, t);
+    return Ol(e, o, t);
   } catch (a) {
     if (!(a instanceof pe))
       throw a;
   }
 }
-function Dl() {
-  var e = Pl(arguments), o = e.text, t = e.options, a = e.metadata;
-  return Tl(o, t, a);
+function Gl() {
+  var e = Rl(arguments), o = e.text, t = e.options, a = e.metadata;
+  return Kl(o, t, a);
 }
 function Vo() {
-  return Bd(Dl, arguments);
+  return Id(Gl, arguments);
 }
-const Ll = {
+const jl = {
   beforeMount(e, o, t) {
     if (typeof o.value != "function") {
       const a = t.context.name;
@@ -6031,20 +6117,20 @@ const Ll = {
   unmounted(e) {
     document.body.removeEventListener("click", e.clickOutsideEvent);
   }
-}, xl = (e, o) => {
+}, Fl = (e, o) => {
   const t = e.__vccOpts || e;
   for (const [a, n] of o)
     t[a] = n;
   return t;
 };
 function ee(e) {
-  const o = Vt.options[e];
-  return typeof o > "u" ? Vt.options[e] : o;
+  const o = _t.options[e];
+  return typeof o > "u" ? _t.options[e] : o;
 }
-const El = {
+const Hl = {
   name: "VueTelInput",
   directives: {
-    clickOutside: Ll
+    clickOutside: jl
   },
   props: {
     modelValue: {
@@ -6233,7 +6319,7 @@ const El = {
           }
         }
         const t = this.preferredCountries[0] || this.filteredCountries[0];
-        this.autoDefaultCountry ? kd().then((a) => {
+        this.autoDefaultCountry ? Dd().then((a) => {
           this.choose(a || this.activeCountryCode);
         }).catch((a) => {
           console.warn(a), this.choose(t);
@@ -6308,7 +6394,7 @@ const El = {
       this.$emit("blur");
     },
     onFocus() {
-      wd(this.$refs.input, this.phone.length), this.$emit("focus");
+      Ld(this.$refs.input, this.phone.length), this.$emit("focus");
     },
     onEnter() {
       this.$emit("enter");
@@ -6355,21 +6441,21 @@ const El = {
       window.innerHeight - this.$el.getBoundingClientRect().bottom > 200 ? this.dropdownOpenDirection = "below" : this.dropdownOpenDirection = "above";
     }
   }
-}, Rl = ["aria-expanded", "tabindex"], Il = { class: "vti__selection" }, Kl = {
+}, Vl = ["aria-expanded", "tabindex"], Ul = { class: "vti__selection" }, _l = {
   key: 1,
   class: "vti__country-code"
-}, Gl = { class: "vti__dropdown-arrow" }, jl = ["placeholder"], Fl = ["onClick", "onMousemove", "aria-selected"], Hl = { key: 1 }, Vl = ["type", "autocomplete", "autofocus", "disabled", "id", "maxlength", "name", "placeholder", "readonly", "required", "tabindex", "value", "aria-describedby"];
-function Ul(e, o, t, a, n, r) {
-  const s = $n("click-outside");
+}, zl = { class: "vti__dropdown-arrow" }, Wl = ["placeholder"], Yl = ["onClick", "onMousemove", "aria-selected"], ql = { key: 1 }, Zl = ["type", "autocomplete", "autofocus", "disabled", "id", "maxlength", "name", "placeholder", "readonly", "required", "tabindex", "value", "aria-describedby"];
+function Jl(e, o, t, a, n, r) {
+  const s = fn("click-outside");
   return p(), y("div", {
-    class: T(["vue-tel-input", t.styleClasses, { disabled: t.disabled }])
+    class: B(["vue-tel-input", t.styleClasses, { disabled: t.disabled }])
   }, [
     Lo((p(), y("div", {
       "aria-label": "Country Code Selector",
       "aria-haspopup": "listbox",
       "aria-expanded": n.open,
       role: "button",
-      class: T(["vti__dropdown", { open: n.open, disabled: t.dropdownOptions.disabled }]),
+      class: B(["vti__dropdown", { open: n.open, disabled: t.dropdownOptions.disabled }]),
       tabindex: t.dropdownOptions.tabindex,
       onKeydown: [
         o[2] || (o[2] = (...d) => r.keyboardNav && r.keyboardNav(...d)),
@@ -6379,20 +6465,20 @@ function Ul(e, o, t, a, n, r) {
       ],
       onClick: o[3] || (o[3] = (...d) => r.toggleDropdown && r.toggleDropdown(...d))
     }, [
-      m("span", Il, [
+      m("span", Ul, [
         t.dropdownOptions.showFlags ? (p(), y("span", {
           key: 0,
-          class: T(["vti__flag", n.activeCountryCode.toLowerCase()])
+          class: B(["vti__flag", n.activeCountryCode.toLowerCase()])
         }, null, 2)) : P("", !0),
-        t.dropdownOptions.showDialCodeInSelection ? (p(), y("span", Kl, " +" + v(r.activeCountry && r.activeCountry.dialCode), 1)) : P("", !0),
+        t.dropdownOptions.showDialCodeInSelection ? (p(), y("span", _l, " +" + v(r.activeCountry && r.activeCountry.dialCode), 1)) : P("", !0),
         Re(e.$slots, "arrow-icon", { open: n.open }, () => [
-          m("span", Gl, v(n.open ? "▲" : "▼"), 1)
+          m("span", zl, v(n.open ? "▲" : "▼"), 1)
         ])
       ]),
       n.open ? (p(), y("ul", {
         key: 0,
         ref: "list",
-        class: T(["vti__dropdown-list", n.dropdownOpenDirection]),
+        class: B(["vti__dropdown-list", n.dropdownOpenDirection]),
         role: "listbox"
       }, [
         t.dropdownOptions.showSearchBox ? Lo((p(), y("input", {
@@ -6402,14 +6488,14 @@ function Ul(e, o, t, a, n, r) {
           placeholder: r.sortedCountries.length ? r.sortedCountries[0].name : "",
           type: "text",
           "onUpdate:modelValue": o[0] || (o[0] = (d) => n.searchQuery = d),
-          onClick: o[1] || (o[1] = fn(() => {
+          onClick: o[1] || (o[1] = pn(() => {
           }, ["stop"]))
-        }, null, 8, jl)), [
-          [pn, n.searchQuery]
+        }, null, 8, Wl)), [
+          [yn, n.searchQuery]
         ]) : P("", !0),
-        (p(!0), y(F, null, Q(r.sortedCountries, (d, l) => (p(), y("li", {
+        (p(!0), y(I, null, U(r.sortedCountries, (d, l) => (p(), y("li", {
           role: "option",
-          class: T(["vti__dropdown-item", r.getItemClass(l, d.iso2)]),
+          class: B(["vti__dropdown-item", r.getItemClass(l, d.iso2)]),
           key: d.iso2 + (d.preferred ? "-preferred" : ""),
           tabindex: "-1",
           onClick: (i) => r.choose(d),
@@ -6418,13 +6504,13 @@ function Ul(e, o, t, a, n, r) {
         }, [
           t.dropdownOptions.showFlags ? (p(), y("span", {
             key: 0,
-            class: T(["vti__flag", d.iso2.toLowerCase()])
+            class: B(["vti__flag", d.iso2.toLowerCase()])
           }, null, 2)) : P("", !0),
           m("strong", null, v(d.name), 1),
-          t.dropdownOptions.showDialCodeInList ? (p(), y("span", Hl, " +" + v(d.dialCode), 1)) : P("", !0)
-        ], 42, Fl))), 128))
+          t.dropdownOptions.showDialCodeInList ? (p(), y("span", ql, " +" + v(d.dialCode), 1)) : P("", !0)
+        ], 42, Yl))), 128))
       ], 2)) : P("", !0)
-    ], 42, Rl)), [
+    ], 42, Vl)), [
       [s, r.clickedOutside]
     ]),
     Lo(m("input", {
@@ -6433,7 +6519,7 @@ function Ul(e, o, t, a, n, r) {
       type: t.inputOptions.type,
       autocomplete: t.inputOptions.autocomplete,
       autofocus: t.inputOptions.autofocus,
-      class: T(["vti__input", t.inputOptions.styleClasses]),
+      class: B(["vti__input", t.inputOptions.styleClasses]),
       disabled: t.disabled,
       id: t.inputOptions.id,
       maxlength: t.inputOptions.maxlength,
@@ -6451,16 +6537,16 @@ function Ul(e, o, t, a, n, r) {
         o[11] || (o[11] = je((...d) => r.onEnter && r.onEnter(...d), ["enter"])),
         o[12] || (o[12] = je((...d) => r.onSpace && r.onSpace(...d), ["space"]))
       ]
-    }, null, 42, Vl), [
-      [yn, n.phone]
+    }, null, 42, Zl), [
+      [vn, n.phone]
     ]),
     Re(e.$slots, "icon-right")
   ], 2);
 }
-const _l = /* @__PURE__ */ xl(El, [["render", Ul]]), zl = { class: "v-vue-tel-input" }, Wl = { class: "label" }, Yl = {
+const Ql = /* @__PURE__ */ Fl(Hl, [["render", Jl]]), Xl = { class: "v-vue-tel-input" }, eh = { class: "label" }, oh = {
   key: 0,
   class: "px-3 text-sm text-red-500"
-}, ql = {
+}, th = {
   __name: "T-Vue-Tel-Input",
   props: {
     phone: {
@@ -6483,9 +6569,9 @@ const _l = /* @__PURE__ */ xl(El, [["render", Ul]]), zl = { class: "v-vue-tel-in
     function s(d) {
       a("update:phone", d);
     }
-    return (d, l) => (p(), y("div", zl, [
-      m("h2", Wl, v(d.$t("passengers.phone.label")), 1),
-      M(c(_l), {
+    return (d, l) => (p(), y("div", Xl, [
+      m("h2", eh, v(d.$t("passengers.phone.label")), 1),
+      w(c(Ql), {
         mode: "international",
         modelValue: n.value.phone,
         "onUpdate:modelValue": l[0] || (l[0] = (i) => n.value.phone = i),
@@ -6493,18 +6579,18 @@ const _l = /* @__PURE__ */ xl(El, [["render", Ul]]), zl = { class: "v-vue-tel-in
         inputOptions: { placeholder: d.$t("passengers.phone.placeholder") },
         onBlur: l[1] || (l[1] = (i) => c(r).phone.$touch()),
         onValidate: l[2] || (l[2] = (i) => s(i)),
-        class: T({ error: c(r).phone.$error })
+        class: B({ error: c(r).phone.$error })
       }, null, 8, ["modelValue", "inputOptions", "class"]),
-      c(r).$errors.length > 0 ? (p(), y("div", Yl, [
-        (p(!0), y(F, null, Q(c(r).$errors, (i) => (p(), y("p", {
+      c(r).$errors.length > 0 ? (p(), y("div", oh, [
+        (p(!0), y(I, null, U(c(r).$errors, (i) => (p(), y("p", {
           key: i.$uid
         }, v(d.$t("passengers.errors." + i.$property + "." + i.$validator)), 1))), 128))
       ])) : P("", !0)
     ]));
   }
-}, Jl = {
-  class: /* @__PURE__ */ T({ "px-3 text-sm text-neutral-500": !0, valid: !0 })
-}, Zl = { class: "grid grid-cols-3" }, Ql = { class: "relative mb-2" }, Xl = { class: "block truncate" }, eh = { class: "pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2" }, oh = { class: "relative mb-2" }, th = { class: "block truncate" }, ah = { class: "pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2" }, nh = { class: "relative mb-2" }, rh = { class: "block truncate" }, sh = { class: "pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2" }, dh = {
+}, ah = {
+  class: /* @__PURE__ */ B({ "px-3 text-sm text-neutral-500": !0, valid: !0 })
+}, nh = { class: "grid grid-cols-3" }, rh = { class: "relative mb-2" }, sh = { class: "block truncate" }, dh = { class: "pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2" }, ih = { class: "relative mb-2" }, lh = { class: "block truncate" }, hh = { class: "pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2" }, uh = { class: "relative mb-2" }, mh = { class: "block truncate" }, Ch = { class: "pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2" }, ch = {
   __name: "T-Birthday-Input.v2",
   props: {
     modelValue: {
@@ -6519,46 +6605,46 @@ const _l = /* @__PURE__ */ xl(El, [["render", Ul]]), zl = { class: "v-vue-tel-in
     const t = e, a = o, n = (/* @__PURE__ */ new Date()).getFullYear(), r = Array.from({ length: 120 }, (f, C) => n - C).map((f) => ({ id: f, name: f })), s = k(null), d = Array.from({ length: 12 }, (f, C) => {
       const $ = C + 1;
       return { id: $, name: $.toString().padStart(2, "0") };
-    }), l = k(null), i = N(() => !s.value || !l.value ? 31 : new Date(s.value.id, l.value.id, 0).getDate()), u = N(() => Array.from({ length: i.value }, (f, C) => {
+    }), l = k(null), i = N(() => !s.value || !l.value ? 31 : new Date(s.value.id, l.value.id, 0).getDate()), h = N(() => Array.from({ length: i.value }, (f, C) => {
       const $ = C + 1;
       return { id: $, name: $.toString().padStart(2, "0") };
-    })), h = k(null);
+    })), u = k(null);
     V(i, (f) => {
-      h.value && h.value.id > f && (h.value = u.value[f - 1]);
-    }), G(function() {
+      u.value && u.value.id > f && (u.value = h.value[f - 1]);
+    }), j(function() {
       const f = typeof t.modelValue == "string" ? /^(\d{4})-(\d{2})-(\d{2})$/.exec(t.modelValue) : null;
       if (!f)
         return;
       const [C, $, b] = [f[1], f[2], f[3]].map(Number);
-      s.value = r.find((w) => w.id === C) ?? null, l.value = d.find((w) => w.id === $) ?? null, h.value = u.value.find((w) => w.id === b) ?? null;
+      s.value = r.find((M) => M.id === C) ?? null, l.value = d.find((M) => M.id === $) ?? null, u.value = h.value.find((M) => M.id === b) ?? null;
     });
     function g() {
-      if (!s.value || !l.value || !h.value)
+      if (!s.value || !l.value || !u.value)
         return;
-      const f = s.value.id, C = l.value.id.toString().padStart(2, "0"), $ = h.value.id.toString().padStart(2, "0");
+      const f = s.value.id, C = l.value.id.toString().padStart(2, "0"), $ = u.value.id.toString().padStart(2, "0");
       a("update:modelValue", `${f}-${C}-${$}`);
     }
-    return V([s, l, h], g), (f, C) => (p(), y(F, null, [
-      m("h2", Jl, v(f.$t("passengers.birthday.label")), 1),
-      m("div", Zl, [
-        M(c(qe), {
+    return V([s, l, u], g), (f, C) => (p(), y(I, null, [
+      m("h2", ah, v(f.$t("passengers.birthday.label")), 1),
+      m("div", nh, [
+        w(c(qe), {
           as: "div",
-          modelValue: h.value,
-          "onUpdate:modelValue": C[0] || (C[0] = ($) => h.value = $)
+          modelValue: u.value,
+          "onUpdate:modelValue": C[0] || (C[0] = ($) => u.value = $)
         }, {
           default: x(() => [
-            M(c(Je), { class: "hidden" }, {
+            w(c(Ze), { class: "hidden" }, {
               default: x(() => [
-                ce(v(f.$t("passengers.birthday.day")), 1)
+                Ce(v(f.$t("passengers.birthday.day")), 1)
               ]),
               _: 1
             }),
-            m("div", Ql, [
-              M(c(Ze), { class: "relative w-full cursor-default rounded-l-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-blue sm:text-sm sm:leading-6" }, {
+            m("div", rh, [
+              w(c(Je), { class: "relative w-full cursor-default rounded-l-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-blue sm:text-sm sm:leading-6" }, {
                 default: x(() => [
-                  m("span", Xl, v(h.value ? h.value.name : f.$t("passengers.birthday.day")), 1),
-                  m("span", eh, [
-                    M(c(Ye), {
+                  m("span", sh, v(u.value ? u.value.name : f.$t("passengers.birthday.day")), 1),
+                  m("span", dh, [
+                    w(c(Ye), {
                       class: "h-5 w-5 text-gray-400",
                       "aria-hidden": "true"
                     })
@@ -6566,31 +6652,31 @@ const _l = /* @__PURE__ */ xl(El, [["render", Ul]]), zl = { class: "v-vue-tel-in
                 ]),
                 _: 1
               }),
-              M(_e, {
+              w(_e, {
                 "leave-active-class": "transition ease-in duration-100",
                 "leave-from-class": "opacity-100",
                 "leave-to-class": "opacity-0"
               }, {
                 default: x(() => [
-                  M(c(Qe), { class: "absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm" }, {
+                  w(c(Qe), { class: "absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm" }, {
                     default: x(() => [
-                      (p(!0), y(F, null, Q(u.value, ($) => (p(), J(c(Xe), {
+                      (p(!0), y(I, null, U(h.value, ($) => (p(), J(c(Xe), {
                         as: "template",
                         key: $.id,
                         value: $
                       }, {
-                        default: x(({ active: b, selected: w }) => [
+                        default: x(({ active: b, selected: M }) => [
                           m("li", {
-                            class: T([b ? "bg-taa-brand-blue text-white" : "text-gray-900", "relative cursor-default select-none py-2 pl-3 pr-9"])
+                            class: B([b ? "bg-taa-brand-blue text-white" : "text-gray-900", "relative cursor-default select-none py-2 pl-3 pr-9"])
                           }, [
                             m("span", {
-                              class: T([w ? "font-semibold" : "font-normal", "block truncate"])
+                              class: B([M ? "font-semibold" : "font-normal", "block truncate"])
                             }, v($.name), 3),
-                            w ? (p(), y("span", {
+                            M ? (p(), y("span", {
                               key: 0,
-                              class: T([b ? "text-white" : "text-brand-blue", "absolute inset-y-0 right-0 flex items-center pr-4"])
+                              class: B([b ? "text-white" : "text-brand-blue", "absolute inset-y-0 right-0 flex items-center pr-4"])
                             }, [
-                              M(c(We), {
+                              w(c(We), {
                                 class: "h-5 w-5",
                                 "aria-hidden": "true"
                               })
@@ -6609,24 +6695,24 @@ const _l = /* @__PURE__ */ xl(El, [["render", Ul]]), zl = { class: "v-vue-tel-in
           ]),
           _: 1
         }, 8, ["modelValue"]),
-        M(c(qe), {
+        w(c(qe), {
           as: "div",
           modelValue: l.value,
           "onUpdate:modelValue": C[1] || (C[1] = ($) => l.value = $)
         }, {
           default: x(() => [
-            M(c(Je), { class: "hidden" }, {
+            w(c(Ze), { class: "hidden" }, {
               default: x(() => [
-                ce(v(f.$t("passengers.birthday.month")), 1)
+                Ce(v(f.$t("passengers.birthday.month")), 1)
               ]),
               _: 1
             }),
-            m("div", oh, [
-              M(c(Ze), { class: "relative w-full cursor-default bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-blue sm:text-sm sm:leading-6" }, {
+            m("div", ih, [
+              w(c(Je), { class: "relative w-full cursor-default bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-blue sm:text-sm sm:leading-6" }, {
                 default: x(() => [
-                  m("span", th, v(l.value ? l.value.name : f.$t("passengers.birthday.month")), 1),
-                  m("span", ah, [
-                    M(c(Ye), {
+                  m("span", lh, v(l.value ? l.value.name : f.$t("passengers.birthday.month")), 1),
+                  m("span", hh, [
+                    w(c(Ye), {
                       class: "h-5 w-5 text-gray-400",
                       "aria-hidden": "true"
                     })
@@ -6634,31 +6720,31 @@ const _l = /* @__PURE__ */ xl(El, [["render", Ul]]), zl = { class: "v-vue-tel-in
                 ]),
                 _: 1
               }),
-              M(_e, {
+              w(_e, {
                 "leave-active-class": "transition ease-in duration-100",
                 "leave-from-class": "opacity-100",
                 "leave-to-class": "opacity-0"
               }, {
                 default: x(() => [
-                  M(c(Qe), { class: "absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm" }, {
+                  w(c(Qe), { class: "absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm" }, {
                     default: x(() => [
-                      (p(!0), y(F, null, Q(c(d), ($) => (p(), J(c(Xe), {
+                      (p(!0), y(I, null, U(c(d), ($) => (p(), J(c(Xe), {
                         as: "template",
                         key: $.id,
                         value: $
                       }, {
-                        default: x(({ active: b, selected: w }) => [
+                        default: x(({ active: b, selected: M }) => [
                           m("li", {
-                            class: T([b ? "bg-taa-brand-blue text-white" : "text-gray-900", "relative cursor-default select-none py-2 pl-3 pr-9"])
+                            class: B([b ? "bg-taa-brand-blue text-white" : "text-gray-900", "relative cursor-default select-none py-2 pl-3 pr-9"])
                           }, [
                             m("span", {
-                              class: T([w ? "font-semibold" : "font-normal", "block truncate"])
+                              class: B([M ? "font-semibold" : "font-normal", "block truncate"])
                             }, v($.name), 3),
-                            w ? (p(), y("span", {
+                            M ? (p(), y("span", {
                               key: 0,
-                              class: T([b ? "text-white" : "text-brand-blue", "absolute inset-y-0 right-0 flex items-center pr-4"])
+                              class: B([b ? "text-white" : "text-brand-blue", "absolute inset-y-0 right-0 flex items-center pr-4"])
                             }, [
-                              M(c(We), {
+                              w(c(We), {
                                 class: "h-5 w-5",
                                 "aria-hidden": "true"
                               })
@@ -6677,24 +6763,24 @@ const _l = /* @__PURE__ */ xl(El, [["render", Ul]]), zl = { class: "v-vue-tel-in
           ]),
           _: 1
         }, 8, ["modelValue"]),
-        M(c(qe), {
+        w(c(qe), {
           as: "div",
           modelValue: s.value,
           "onUpdate:modelValue": C[2] || (C[2] = ($) => s.value = $)
         }, {
           default: x(() => [
-            M(c(Je), { class: "hidden" }, {
+            w(c(Ze), { class: "hidden" }, {
               default: x(() => [
-                ce(v(f.$t("passengers.birthday.year")), 1)
+                Ce(v(f.$t("passengers.birthday.year")), 1)
               ]),
               _: 1
             }),
-            m("div", nh, [
-              M(c(Ze), { class: "relative w-full cursor-default rounded-r-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-blue sm:text-sm sm:leading-6" }, {
+            m("div", uh, [
+              w(c(Je), { class: "relative w-full cursor-default rounded-r-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-blue sm:text-sm sm:leading-6" }, {
                 default: x(() => [
-                  m("span", rh, v(s.value ? s.value.name : f.$t("passengers.birthday.year")), 1),
-                  m("span", sh, [
-                    M(c(Ye), {
+                  m("span", mh, v(s.value ? s.value.name : f.$t("passengers.birthday.year")), 1),
+                  m("span", Ch, [
+                    w(c(Ye), {
                       class: "h-5 w-5 text-gray-400",
                       "aria-hidden": "true"
                     })
@@ -6702,31 +6788,31 @@ const _l = /* @__PURE__ */ xl(El, [["render", Ul]]), zl = { class: "v-vue-tel-in
                 ]),
                 _: 1
               }),
-              M(_e, {
+              w(_e, {
                 "leave-active-class": "transition ease-in duration-100",
                 "leave-from-class": "opacity-100",
                 "leave-to-class": "opacity-0"
               }, {
                 default: x(() => [
-                  M(c(Qe), { class: "absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm" }, {
+                  w(c(Qe), { class: "absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm" }, {
                     default: x(() => [
-                      (p(!0), y(F, null, Q(c(r), ($) => (p(), J(c(Xe), {
+                      (p(!0), y(I, null, U(c(r), ($) => (p(), J(c(Xe), {
                         as: "template",
                         key: $.id,
                         value: $
                       }, {
-                        default: x(({ active: b, selected: w }) => [
+                        default: x(({ active: b, selected: M }) => [
                           m("li", {
-                            class: T([b ? "bg-taa-brand-blue text-white" : "text-gray-900", "relative cursor-default select-none py-2 pl-3 pr-9"])
+                            class: B([b ? "bg-taa-brand-blue text-white" : "text-gray-900", "relative cursor-default select-none py-2 pl-3 pr-9"])
                           }, [
                             m("span", {
-                              class: T([w ? "font-semibold" : "font-normal", "block truncate"])
+                              class: B([M ? "font-semibold" : "font-normal", "block truncate"])
                             }, v($.name), 3),
-                            w ? (p(), y("span", {
+                            M ? (p(), y("span", {
                               key: 0,
-                              class: T([b ? "text-white" : "text-brand-blue", "absolute inset-y-0 right-0 flex items-center pr-4"])
+                              class: B([b ? "text-white" : "text-brand-blue", "absolute inset-y-0 right-0 flex items-center pr-4"])
                             }, [
-                              M(c(We), {
+                              w(c(We), {
                                 class: "h-5 w-5",
                                 "aria-hidden": "true"
                               })
@@ -6750,10 +6836,10 @@ const _l = /* @__PURE__ */ xl(El, [["render", Ul]]), zl = { class: "v-vue-tel-in
   }
 };
 var H;
-let W = (H = class extends Date {
+let Y = (H = class extends Date {
   constructor(t = null, a = "YYYY-MM-DD", n = "en-US") {
     super(H.parseDateTime(t, a, n));
-    j(this, "lang");
+    F(this, "lang");
     this.lang = n;
   }
   static parseDateTime(t, a = "YYYY-MM-DD", n = "en-US") {
@@ -6768,19 +6854,19 @@ let W = (H = class extends Date {
       if (r.length) {
         const d = { year: null, month: null, shortMonth: null, longMonth: null, day: null, hour: 0, minute: 0, second: 0, ampm: null, value: "" };
         r[0].index > 0 && (d.value += ".*?");
-        for (const [i, u] of Object.entries(r)) {
-          const h = Number(i), { group: g, pattern: f } = H.formatPatterns(u[0], n);
-          d[g] = h + 1, d.value += f, d.value += ".*?";
+        for (const [i, h] of Object.entries(r)) {
+          const u = Number(i), { group: g, pattern: f } = H.formatPatterns(h[0], n);
+          d[g] = u + 1, d.value += f, d.value += ".*?";
         }
         const l = new RegExp(`^${d.value}$`);
         if (l.test(t)) {
-          const i = l.exec(t), u = Number(i[d.year]);
-          let h = null;
-          d.month ? h = Number(i[d.month]) - 1 : d.shortMonth ? h = H.shortMonths(n).indexOf(i[d.shortMonth]) : d.longMonth && (h = H.longMonths(n).indexOf(i[d.longMonth]));
+          const i = l.exec(t), h = Number(i[d.year]);
+          let u = null;
+          d.month ? u = Number(i[d.month]) - 1 : d.shortMonth ? u = H.shortMonths(n).indexOf(i[d.shortMonth]) : d.longMonth && (u = H.longMonths(n).indexOf(i[d.longMonth]));
           const g = Number(i[d.day]) || 1, f = Number(i[d.hour]);
           let C = Number.isNaN(f) ? 0 : f;
-          const $ = Number(i[d.minute]), b = Number.isNaN($) ? 0 : $, w = Number(i[d.second]), O = Number.isNaN(w) ? 0 : w, A = i[d.ampm];
-          return A && A === "PM" && (C += 12, C === 24 && (C = 0)), new Date(u, h, g, C, b, O, 0);
+          const $ = Number(i[d.minute]), b = Number.isNaN($) ? 0 : $, M = Number(i[d.second]), O = Number.isNaN(M) ? 0 : M, A = i[d.ampm];
+          return A && A === "PM" && (C += 12, C === 24 && (C = 0)), new Date(h, u, g, C, b, O, 0);
         }
       }
     }
@@ -7012,14 +7098,14 @@ let W = (H = class extends Date {
         return "";
     }
   }
-}, j(H, "regex", /(\\)?(Y{2,4}|M{1,4}|D{1,2}|H{1,2}|h{1,2}|m{1,2}|s{1,2}|A|a)/g), j(H, "MONTH_JS", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]), H);
-class ih {
+}, F(H, "regex", /(\\)?(Y{2,4}|M{1,4}|D{1,2}|H{1,2}|h{1,2}|m{1,2}|s{1,2}|A|a)/g), F(H, "MONTH_JS", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]), H);
+class gh {
   constructor(o) {
-    j(this, "picker");
+    F(this, "picker");
     this.picker = o;
   }
   render(o, t) {
-    o || (o = new W()), o.setDate(1), o.setHours(0, 0, 0, 0), typeof this[`get${t}View`] == "function" && this[`get${t}View`](o);
+    o || (o = new Y()), o.setDate(1), o.setHours(0, 0, 0, 0), typeof this[`get${t}View`] == "function" && this[`get${t}View`](o);
   }
   getContainerView(o) {
     this.picker.ui.container.innerHTML = "", this.picker.options.header && this.picker.trigger("render", { date: o.clone(), view: "Header" }), this.picker.trigger("render", { date: o.clone(), view: "Main" }), this.picker.options.autoApply || this.picker.trigger("render", { date: o.clone(), view: "Footer" });
@@ -7090,7 +7176,7 @@ class ih {
     return t;
   }
   getCalendarDayView(o) {
-    const t = this.picker.options.date ? new W(this.picker.options.date) : null, a = new W(), n = document.createElement("div");
+    const t = this.picker.options.date ? new Y(this.picker.options.date) : null, a = new Y(), n = document.createElement("div");
     return n.className = "day unit", n.innerHTML = o.format("D"), n.dataset.time = String(o.getTime()), o.isSame(a, "day") && n.classList.add("today"), [0, 6].includes(o.getDay()) && n.classList.add("weekend"), this.picker.datePicked.length ? this.picker.datePicked[0].isSame(o, "day") && n.classList.add("selected") : t && o.isSame(t, "day") && n.classList.add("selected"), this.picker.trigger("view", { date: o, view: "CalendarDay", target: n }), n;
   }
   getCalendarFooterView(o, t) {
@@ -7102,10 +7188,10 @@ class ih {
     return a < 0 && (a += 7), a;
   }
 }
-class lh {
+class $h {
   constructor(o) {
-    j(this, "picker");
-    j(this, "instances", {});
+    F(this, "picker");
+    F(this, "instances", {});
     this.picker = o;
   }
   initialize() {
@@ -7144,17 +7230,17 @@ class lh {
     return [...this.picker.options.plugins].filter(((t) => typeof t == "function" && new t().getName() === o)).shift();
   }
 }
-class hh {
+class fh {
   constructor(o) {
-    j(this, "Calendar", new ih(this));
-    j(this, "PluginManager", new lh(this));
-    j(this, "calendars", []);
-    j(this, "datePicked", []);
-    j(this, "cssLoaded", 0);
-    j(this, "binds", { hidePicker: this.hidePicker.bind(this), show: this.show.bind(this) });
-    j(this, "options", { doc: document, css: [], element: null, firstDay: 1, grid: 1, calendars: 1, lang: "en-US", date: null, format: "YYYY-MM-DD", readonly: !0, autoApply: !0, header: !1, inline: !1, scrollToDate: !0, locale: { nextMonth: '<svg width="11" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M2.748 16L0 13.333 5.333 8 0 2.667 2.748 0l7.919 8z" fill-rule="nonzero"/></svg>', previousMonth: '<svg width="11" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M7.919 0l2.748 2.667L5.333 8l5.334 5.333L7.919 16 0 8z" fill-rule="nonzero"/></svg>', cancel: "Cancel", apply: "Apply" }, documentClick: this.binds.hidePicker, plugins: [] });
-    j(this, "ui", { container: null, shadowRoot: null, wrapper: null });
-    j(this, "version", "1.2.1");
+    F(this, "Calendar", new gh(this));
+    F(this, "PluginManager", new $h(this));
+    F(this, "calendars", []);
+    F(this, "datePicked", []);
+    F(this, "cssLoaded", 0);
+    F(this, "binds", { hidePicker: this.hidePicker.bind(this), show: this.show.bind(this) });
+    F(this, "options", { doc: document, css: [], element: null, firstDay: 1, grid: 1, calendars: 1, lang: "en-US", date: null, format: "YYYY-MM-DD", readonly: !0, autoApply: !0, header: !1, inline: !1, scrollToDate: !0, locale: { nextMonth: '<svg width="11" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M2.748 16L0 13.333 5.333 8 0 2.667 2.748 0l7.919 8z" fill-rule="nonzero"/></svg>', previousMonth: '<svg width="11" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M7.919 0l2.748 2.667L5.333 8l5.334 5.333L7.919 16 0 8z" fill-rule="nonzero"/></svg>', cancel: "Cancel", apply: "Apply" }, documentClick: this.binds.hidePicker, plugins: [] });
+    F(this, "ui", { container: null, shadowRoot: null, wrapper: null });
+    F(this, "version", "1.2.1");
     const t = { ...this.options.locale, ...o.locale };
     this.options = { ...this.options, ...o }, this.options.locale = t, this.handleOptions(), this.ui.wrapper = document.createElement("span"), this.ui.wrapper.style.display = "none", this.ui.wrapper.style.position = "absolute", this.ui.wrapper.style.pointerEvents = "none", this.ui.wrapper.className = "easepick-wrapper", this.ui.wrapper.attachShadow({ mode: "open" }), this.ui.shadowRoot = this.ui.wrapper.shadowRoot, this.ui.container = document.createElement("div"), this.ui.container.className = "container", this.options.zIndex && (this.ui.container.style.zIndex = String(this.options.zIndex)), this.options.inline && (this.ui.wrapper.style.position = "relative", this.ui.container.classList.add("inline")), this.ui.shadowRoot.appendChild(this.ui.container), this.options.element.after(this.ui.wrapper), this.handleCSS(), this.options.element.addEventListener("click", this.binds.show), this.on("view", this.onView.bind(this)), this.on("render", this.onRender.bind(this)), this.PluginManager.initialize(), this.parseValues(), typeof this.options.setup == "function" && this.options.setup(this), this.on("click", this.onClick.bind(this));
     const a = this.options.scrollToDate ? this.getDate() : null;
@@ -7187,7 +7273,7 @@ class hh {
   }
   onClickCalendarDay(o) {
     if (this.isCalendarDay(o)) {
-      const t = new W(o.dataset.time);
+      const t = new Y(o.dataset.time);
       this.options.autoApply ? (this.setDate(t), this.trigger("select", { date: this.getDate() }), this.hide()) : (this.datePicked[0] = t, this.trigger("preselect", { date: this.getDate() }), this.renderAll());
     }
   }
@@ -7223,11 +7309,11 @@ class hh {
     this.ui.container.classList.remove("show"), this.datePicked.length = 0, this.renderAll(), this.trigger("hide");
   }
   setDate(o) {
-    const t = new W(o, this.options.format);
+    const t = new Y(o, this.options.format);
     this.options.date = t.clone(), this.updateValues(), this.calendars.length && this.renderAll();
   }
   getDate() {
-    return this.options.date instanceof W ? this.options.date.clone() : null;
+    return this.options.date instanceof Y ? this.options.date.clone() : null;
   }
   parseValues() {
     this.options.date ? this.setDate(this.options.date) : this.options.element instanceof HTMLInputElement && this.options.element.value.length && this.setDate(this.options.element.value), this.options.date instanceof Date || (this.options.date = null);
@@ -7256,14 +7342,14 @@ class hh {
     return o.classList.contains("cancel-button");
   }
   gotoDate(o) {
-    const t = new W(o, this.options.format);
+    const t = new Y(o, this.options.format);
     t.setDate(1), this.calendars[0] = t.clone(), this.renderAll();
   }
   clear() {
     this.options.date = null, this.datePicked.length = 0, this.updateValues(), this.renderAll(), this.trigger("clear");
   }
   handleOptions() {
-    this.options.element instanceof HTMLElement || (this.options.element = this.options.doc.querySelector(this.options.element)), typeof this.options.documentClick == "function" && document.addEventListener("click", this.options.documentClick, !0), this.options.element instanceof HTMLInputElement && (this.options.element.readOnly = this.options.readonly), this.options.date ? this.calendars[0] = new W(this.options.date, this.options.format) : this.calendars[0] = new W();
+    this.options.element instanceof HTMLElement || (this.options.element = this.options.doc.querySelector(this.options.element)), typeof this.options.documentClick == "function" && document.addEventListener("click", this.options.documentClick, !0), this.options.element instanceof HTMLInputElement && (this.options.element.readOnly = this.options.readonly), this.options.date ? this.calendars[0] = new Y(this.options.date, this.options.format) : this.calendars[0] = new Y();
   }
   handleCSS() {
     if (Array.isArray(this.options.css)) this.options.css.forEach(((o) => {
@@ -7288,12 +7374,12 @@ class hh {
     return typeof window < "u" && (window.innerHeight < r + n.height && r - n.height >= 0 && (r = t.top - a.top - n.height), window.innerWidth < s + n.width && t.right - n.width >= 0 && (s = t.right - a.right - n.width)), { left: s, top: r };
   }
 }
-class uh {
+class ph {
   constructor() {
-    j(this, "picker");
-    j(this, "options");
-    j(this, "priority", 0);
-    j(this, "dependencies", []);
+    F(this, "picker");
+    F(this, "options");
+    F(this, "priority", 0);
+    F(this, "dependencies", []);
   }
   attach(o) {
     const t = this.getName(), a = { ...this.options };
@@ -7323,18 +7409,18 @@ class uh {
     return o.replace(/([a-zA-Z])(?=[A-Z])/g, "$1-").toLowerCase();
   }
 }
-class mh extends uh {
+class yh extends ph {
   constructor() {
     super(...arguments);
-    j(this, "priority", 1);
-    j(this, "binds", { onView: this.onView.bind(this) });
-    j(this, "options", { minDate: null, maxDate: null, minDays: null, maxDays: null, selectForward: null, selectBackward: null, presets: !0, inseparable: !1, filter: null });
+    F(this, "priority", 1);
+    F(this, "binds", { onView: this.onView.bind(this) });
+    F(this, "options", { minDate: null, maxDate: null, minDays: null, maxDays: null, selectForward: null, selectBackward: null, presets: !0, inseparable: !1, filter: null });
   }
   getName() {
     return "LockPlugin";
   }
   onAttach() {
-    if (this.options.minDate && (this.options.minDate = new W(this.options.minDate, this.picker.options.format, this.picker.options.lang)), this.options.maxDate && (this.options.maxDate = new W(this.options.maxDate, this.picker.options.format, this.picker.options.lang), this.options.maxDate instanceof W && this.picker.options.calendars > 1 && this.picker.calendars[0].isSame(this.options.maxDate, "month"))) {
+    if (this.options.minDate && (this.options.minDate = new Y(this.options.minDate, this.picker.options.format, this.picker.options.lang)), this.options.maxDate && (this.options.maxDate = new Y(this.options.maxDate, this.picker.options.format, this.picker.options.lang), this.options.maxDate instanceof Y && this.picker.options.calendars > 1 && this.picker.calendars[0].isSame(this.options.maxDate, "month"))) {
       const t = this.picker.calendars[0].clone().subtract(1, "month");
       this.picker.gotoDate(t);
     }
@@ -7349,13 +7435,13 @@ class mh extends uh {
   }
   onView(t) {
     const { view: a, target: n, date: r } = t.detail;
-    if (a === "CalendarHeader" && (this.options.minDate instanceof W && r.isSameOrBefore(this.options.minDate, "month") && n.classList.add("no-previous-month"), this.options.maxDate instanceof W && r.isSameOrAfter(this.options.maxDate, "month") && n.classList.add("no-next-month")), a === "CalendarDay") {
+    if (a === "CalendarHeader" && (this.options.minDate instanceof Y && r.isSameOrBefore(this.options.minDate, "month") && n.classList.add("no-previous-month"), this.options.maxDate instanceof Y && r.isSameOrAfter(this.options.maxDate, "month") && n.classList.add("no-next-month")), a === "CalendarDay") {
       const s = this.picker.datePicked.length ? this.picker.datePicked[0] : null;
       if (this.testFilter(r)) return void n.classList.add("locked");
       if (this.options.inseparable) {
         if (this.options.minDays) {
           const d = r.clone().subtract(this.options.minDays - 1, "day"), l = r.clone().add(this.options.minDays - 1, "day");
-          let i = !1, u = !1;
+          let i = !1, h = !1;
           for (; d.isBefore(r, "day"); ) {
             if (this.testFilter(d)) {
               i = !0;
@@ -7365,20 +7451,20 @@ class mh extends uh {
           }
           for (; l.isAfter(r, "day"); ) {
             if (this.testFilter(l)) {
-              u = !0;
+              h = !0;
               break;
             }
             l.subtract(1, "day");
           }
-          i && u && n.classList.add("not-available");
+          i && h && n.classList.add("not-available");
         }
         this.rangeIsNotAvailable(r, s) && n.classList.add("not-available");
       }
       this.dateIsNotAvailable(r, s) && n.classList.add("not-available");
     }
     if (this.options.presets && a === "PresetPluginButton") {
-      const s = new W(Number(n.dataset.start)), d = new W(Number(n.dataset.end)), l = d.diff(s, "day"), i = this.options.minDays && l < this.options.minDays, u = this.options.maxDays && l > this.options.maxDays;
-      (i || u || this.lockMinDate(s) || this.lockMaxDate(s) || this.lockMinDate(d) || this.lockMaxDate(d) || this.rangeIsNotAvailable(s, d)) && n.setAttribute("disabled", "disabled");
+      const s = new Y(Number(n.dataset.start)), d = new Y(Number(n.dataset.end)), l = d.diff(s, "day"), i = this.options.minDays && l < this.options.minDays, h = this.options.maxDays && l > this.options.maxDays;
+      (i || h || this.lockMinDate(s) || this.lockMaxDate(s) || this.lockMinDate(d) || this.lockMaxDate(d) || this.rangeIsNotAvailable(s, d)) && n.setAttribute("disabled", "disabled");
     }
   }
   dateIsNotAvailable(t, a) {
@@ -7394,10 +7480,10 @@ class mh extends uh {
     return !1;
   }
   lockMinDate(t) {
-    return this.options.minDate instanceof W && t.isBefore(this.options.minDate, "day");
+    return this.options.minDate instanceof Y && t.isBefore(this.options.minDate, "day");
   }
   lockMaxDate(t) {
-    return this.options.maxDate instanceof W && t.isAfter(this.options.maxDate, "day");
+    return this.options.maxDate instanceof Y && t.isAfter(this.options.maxDate, "day");
   }
   lockMinDays(t, a) {
     if (this.options.minDays && a) {
@@ -7431,7 +7517,7 @@ class mh extends uh {
     return typeof this.options.filter == "function" && this.options.filter(t, this.picker.datePicked);
   }
 }
-const Ch = { class: "relative lg:flex-1" }, ch = { class: "flex justify-end items-center relative" }, gh = { class: "absolute left-2 w-6 z-20" }, $h = ["id", "value", "disabled", "placeholder"], Ca = {
+const vh = { class: "relative lg:flex-1" }, bh = { class: "flex justify-end items-center relative" }, Sh = { class: "absolute left-2 w-6 z-20" }, Ah = ["id", "value", "disabled", "placeholder"], ga = {
   __name: "Date-Selector",
   props: {
     modelValue: {
@@ -7448,12 +7534,12 @@ const Ch = { class: "relative lg:flex-1" }, ch = { class: "flex justify-end item
   emits: ["update:modelValue"],
   setup(e, { emit: o }) {
     const t = e, a = o, n = N(() => (Math.random() + 1).toString(36).substring(7));
-    return G(() => {
-      const r = new hh({
+    return j(() => {
+      const r = new fh({
         element: document.getElementById("departure-date-" + n.value),
         format: "DD-MM-YYYY",
         plugins: [
-          mh
+          yh
         ],
         LockPlugin: {
           minDate: /* @__PURE__ */ new Date(),
@@ -7474,15 +7560,15 @@ const Ch = { class: "relative lg:flex-1" }, ch = { class: "flex justify-end item
         a("update:modelValue", document.getElementById("departure-date-" + n.value).value);
       });
     }), (r, s) => {
-      const d = vn("calender-icon");
-      return p(), y("div", Ch, [
+      const d = bn("calender-icon");
+      return p(), y("div", vh, [
         s[0] || (s[0] = m("label", {
           for: "expiryDate",
           class: "pl-3 text-neutral-500"
         }, " Date of Issue ", -1)),
-        m("div", ch, [
-          m("div", gh, [
-            M(d, { class: "stroke-neutral-400 text-neutral-400" })
+        m("div", bh, [
+          m("div", Sh, [
+            w(d, { class: "stroke-neutral-400 text-neutral-400" })
           ]),
           m("input", {
             id: "departure-date-" + n.value,
@@ -7491,12 +7577,12 @@ const Ch = { class: "relative lg:flex-1" }, ch = { class: "flex justify-end item
             value: e.modelValue,
             disabled: e.disabled,
             placeholder: r.$t("labels.departurePlaceholder")
-          }, null, 8, $h)
+          }, null, 8, Ah)
         ])
       ]);
     };
   }
-}, fh = [
+}, Nh = [
   {
     countryName: "Afghanistan",
     countryShortCode: "AF",
@@ -26172,7 +26258,7 @@ const Ch = { class: "relative lg:flex-1" }, ch = { class: "flex justify-end item
       }
     ]
   }
-], ph = { class: "relative mb-2" }, yh = { class: "block truncate" }, vh = { class: "pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2" }, bh = {
+], kh = { class: "relative mb-2" }, wh = { class: "block truncate" }, Mh = { class: "pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2" }, Oh = {
   __name: "Country-Selector",
   props: {
     modelValue: {
@@ -26210,7 +26296,7 @@ const Ch = { class: "relative lg:flex-1" }, ch = { class: "flex justify-end item
   setup(e, { emit: o }) {
     const { t } = xe({ useScope: "global" }), a = e, n = N({
       get: function() {
-        let s = fh.filter((d) => a.countryName ? d.countryName !== a.firstCountry : d.countryShortCode !== a.firstCountry);
+        let s = Nh.filter((d) => a.countryName ? d.countryName !== a.firstCountry : d.countryShortCode !== a.firstCountry);
         return a.$i18n && a.usei18n && (s = s.map((d) => {
           let l = Object.assign({}, d);
           return l.countryName = t(d.countryName), l;
@@ -26219,7 +26305,7 @@ const Ch = { class: "relative lg:flex-1" }, ch = { class: "flex justify-end item
       set: function() {
       }
     }), r = k(n.value[12]);
-    return G(function() {
+    return j(function() {
     }), V(r, async (s) => {
     }), (s, d) => (p(), J(c(qe), {
       as: "div",
@@ -26227,13 +26313,13 @@ const Ch = { class: "relative lg:flex-1" }, ch = { class: "flex justify-end item
       "onUpdate:modelValue": d[0] || (d[0] = (l) => r.value = l)
     }, {
       default: x(() => [
-        M(c(Je), { class: "hidden" }),
-        m("div", ph, [
-          M(c(Ze), { class: "relative w-full cursor-default rounded-md bg-white py-2 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-blue sm:text-sm sm:leading-6" }, {
+        w(c(Ze), { class: "hidden" }),
+        m("div", kh, [
+          w(c(Je), { class: "relative w-full cursor-default rounded-md bg-white py-2 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-blue sm:text-sm sm:leading-6" }, {
             default: x(() => [
-              m("span", yh, v(r.value.countryName), 1),
-              m("span", vh, [
-                M(c(Ye), {
+              m("span", wh, v(r.value.countryName), 1),
+              m("span", Mh, [
+                w(c(Ye), {
                   class: "h-5 w-5 text-gray-400",
                   "aria-hidden": "true"
                 })
@@ -26241,31 +26327,31 @@ const Ch = { class: "relative lg:flex-1" }, ch = { class: "flex justify-end item
             ]),
             _: 1
           }),
-          M(_e, {
+          w(_e, {
             "leave-active-class": "transition ease-in duration-100",
             "leave-from-class": "opacity-100",
             "leave-to-class": "opacity-0"
           }, {
             default: x(() => [
-              M(c(Qe), { class: "absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm" }, {
+              w(c(Qe), { class: "absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm" }, {
                 default: x(() => [
-                  (p(!0), y(F, null, Q(n.value, (l) => (p(), J(c(Xe), {
+                  (p(!0), y(I, null, U(n.value, (l) => (p(), J(c(Xe), {
                     as: "template",
                     key: l.countryShortCode,
                     value: l
                   }, {
-                    default: x(({ active: i, selected: u }) => [
+                    default: x(({ active: i, selected: h }) => [
                       m("li", {
-                        class: T([i ? "bg-taa-brand-blue text-white" : "text-gray-900", "relative cursor-default select-none py-2 pl-3 pr-9"])
+                        class: B([i ? "bg-taa-brand-blue text-white" : "text-gray-900", "relative cursor-default select-none py-2 pl-3 pr-9"])
                       }, [
                         m("span", {
-                          class: T([u ? "font-semibold" : "font-normal", "block truncate"])
+                          class: B([h ? "font-semibold" : "font-normal", "block truncate"])
                         }, v(l.countryName), 3),
-                        u ? (p(), y("span", {
+                        h ? (p(), y("span", {
                           key: 0,
-                          class: T([i ? "text-white" : "text-brand-blue", "absolute inset-y-0 right-0 flex items-center pr-4"])
+                          class: B([i ? "text-white" : "text-brand-blue", "absolute inset-y-0 right-0 flex items-center pr-4"])
                         }, [
-                          M(c(We), {
+                          w(c(We), {
                             class: "h-5 w-5",
                             "aria-hidden": "true"
                           })
@@ -26285,13 +26371,13 @@ const Ch = { class: "relative lg:flex-1" }, ch = { class: "flex justify-end item
       _: 1
     }, 8, ["modelValue"]));
   }
-}, Sh = { class: "mb-3" }, Ah = { class: "px-3 text-sm text-neutral-500 mb-1" }, Nh = { class: "flex flex-col gap-2" }, kh = { class: "flex flex-col" }, wh = {
+}, Ph = { class: "mb-3" }, Bh = { class: "px-3 text-sm text-neutral-500 mb-1" }, Th = { class: "flex flex-col gap-2" }, Dh = { class: "flex flex-col" }, Lh = {
   for: "passportNumber",
   class: "px-3 text-sm font-medium text-neutral-500"
-}, Mh = ["placeholder", "value"], Oh = { class: "grid grid-cols-2 gap-2" }, Ph = { class: "flex flex-col" }, Bh = { class: "px-3 text-sm font-medium text-neutral-500" }, Th = { class: "flex flex-col" }, Dh = { class: "px-3 text-sm font-medium text-neutral-500" }, Lh = { class: "flex flex-col" }, xh = { class: "px-3 text-sm font-medium text-neutral-500" }, Eh = { class: "flex flex-col" }, Rh = {
+}, xh = ["placeholder", "value"], Eh = { class: "grid grid-cols-2 gap-2" }, Rh = { class: "flex flex-col" }, Ih = { class: "px-3 text-sm font-medium text-neutral-500" }, Kh = { class: "flex flex-col" }, Gh = { class: "px-3 text-sm font-medium text-neutral-500" }, jh = { class: "flex flex-col" }, Fh = { class: "px-3 text-sm font-medium text-neutral-500" }, Hh = { class: "flex flex-col" }, Vh = {
   for: "issuanceLocation",
   class: "px-3 text-sm font-medium text-neutral-500"
-}, Ih = ["placeholder", "value"], Kh = {
+}, Uh = ["placeholder", "value"], _h = {
   __name: "T-Passport-Input",
   props: {
     modelValue: {
@@ -26314,11 +26400,11 @@ const Ch = { class: "relative lg:flex-1" }, ch = { class: "flex justify-end item
     function n(r, s) {
       a("update:modelValue", { ...t.modelValue, [r]: s });
     }
-    return (r, s) => (p(), y("div", Sh, [
-      m("h2", Ah, v(r.$t("passengers.document.title")), 1),
-      m("div", Nh, [
-        m("div", kh, [
-          m("label", wh, v(r.$t("passengers.document.number")), 1),
+    return (r, s) => (p(), y("div", Ph, [
+      m("h2", Bh, v(r.$t("passengers.document.title")), 1),
+      m("div", Th, [
+        m("div", Dh, [
+          m("label", Lh, v(r.$t("passengers.document.number")), 1),
           m("input", {
             id: "passportNumber",
             type: "text",
@@ -26327,34 +26413,34 @@ const Ch = { class: "relative lg:flex-1" }, ch = { class: "flex justify-end item
             value: e.modelValue.number,
             onInput: s[0] || (s[0] = (d) => n("number", d.target.value)),
             class: "w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-blue sm:text-sm sm:leading-6"
-          }, null, 40, Mh)
+          }, null, 40, xh)
         ]),
-        m("div", Oh, [
-          m("div", Ph, [
-            m("label", Bh, v(r.$t("passengers.document.issuanceDate")), 1),
-            M(Ca, {
+        m("div", Eh, [
+          m("div", Rh, [
+            m("label", Ih, v(r.$t("passengers.document.issuanceDate")), 1),
+            w(ga, {
               "model-value": e.modelValue.issuanceDate,
               "onUpdate:modelValue": s[1] || (s[1] = (d) => n("issuanceDate", d))
             }, null, 8, ["model-value"])
           ]),
-          m("div", Th, [
-            m("label", Dh, v(r.$t("passengers.document.expiryDate")), 1),
-            M(Ca, {
+          m("div", Kh, [
+            m("label", Gh, v(r.$t("passengers.document.expiryDate")), 1),
+            w(ga, {
               "model-value": e.modelValue.expiryDate,
               "onUpdate:modelValue": s[2] || (s[2] = (d) => n("expiryDate", d))
             }, null, 8, ["model-value"])
           ])
         ]),
-        m("div", Lh, [
-          m("label", xh, v(r.$t("passengers.document.issuanceCountry")), 1),
-          M(bh, {
+        m("div", jh, [
+          m("label", Fh, v(r.$t("passengers.document.issuanceCountry")), 1),
+          w(Oh, {
             "model-value": e.modelValue.issuanceCountry,
             "onUpdate:modelValue": s[3] || (s[3] = (d) => n("issuanceCountry", d)),
             "class-name": "border-neutral-300 rounded-md w-full"
           }, null, 8, ["model-value"])
         ]),
-        m("div", Eh, [
-          m("label", Rh, v(r.$t("passengers.document.issuanceLocation")), 1),
+        m("div", Hh, [
+          m("label", Vh, v(r.$t("passengers.document.issuanceLocation")), 1),
           m("input", {
             id: "issuanceLocation",
             type: "text",
@@ -26363,24 +26449,24 @@ const Ch = { class: "relative lg:flex-1" }, ch = { class: "flex justify-end item
             value: e.modelValue.issuanceLocation,
             onInput: s[4] || (s[4] = (d) => n("issuanceLocation", d.target.value)),
             class: "w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-blue sm:text-sm sm:leading-6"
-          }, null, 40, Ih)
+          }, null, 40, Uh)
         ])
       ])
     ]));
   }
-}, Gh = { class: "t-passenger" }, jh = { class: "grow flex items-center pr-4" }, Fh = ["src"], Hh = { class: "grow text-neutral-600" }, Vh = {
+}, zh = { class: "t-passenger" }, Wh = { class: "grow flex items-center pr-4" }, Yh = ["src"], qh = { class: "grow text-neutral-600" }, Zh = {
   key: 0,
   class: "w-8"
-}, Uh = { class: "flex gap-2" }, _h = { class: "hidden sm:block uppercase group-hover:text-brand-blue pl-1 text-xs group-focus:text-brand-blue" }, zh = { class: "hidden sm:block uppercase group-hover:text-brand-blue pl-1 text-xs group-focus:text-brand-blue" }, Wh = {
+}, Jh = { class: "flex gap-2" }, Qh = { class: "hidden sm:block uppercase group-hover:text-brand-blue pl-1 text-xs group-focus:text-brand-blue" }, Xh = { class: "hidden sm:block uppercase group-hover:text-brand-blue pl-1 text-xs group-focus:text-brand-blue" }, eu = {
   key: 0,
   class: "content-input"
-}, Yh = { key: 5 }, qh = { key: 6 }, Jh = { key: 7 }, Zh = {
+}, ou = { key: 5 }, tu = { key: 6 }, au = { key: 7 }, nu = {
   key: 1,
   class: "content-select-passenger grid grid-cols-1 gap-3"
-}, Qh = ["onClick"], Xh = ["src"], eu = {
+}, ru = ["onClick"], su = ["src"], du = {
   key: 0,
   class: "text-red-500 text-xs"
-}, fo = "input", Uo = "select", ou = {
+}, fo = "input", Uo = "select", iu = {
   __name: "T-Passenger",
   props: {
     traveler: {
@@ -26429,7 +26515,7 @@ const Ch = { class: "relative lg:flex-1" }, ch = { class: "flex justify-end item
     "update"
   ],
   setup(e, { emit: o }) {
-    const { t } = xe({ useScope: "global" }), a = e, n = o, r = k(fo), s = k(!0), d = no($t.fromTraveler(a.traveler)), l = N({
+    const { t } = xe({ useScope: "global" }), a = e, n = o, r = k(fo), s = k(!0), d = no(pt.fromTraveler(a.traveler)), l = N({
       get: () => {
         let O = {
           name: {
@@ -26448,7 +26534,7 @@ const Ch = { class: "relative lg:flex-1" }, ch = { class: "flex justify-end item
         };
         return a.requirements.emailAddressRequired && (O.contact.emailAddress = {
           required: re,
-          email: Ma
+          email: Oa
         }), a.requirements.mobilePhoneNumberRequired && (O.contact.phones = {
           required: re,
           minLength: ze(1)
@@ -26457,7 +26543,7 @@ const Ch = { class: "relative lg:flex-1" }, ch = { class: "flex justify-end item
         }), a.requirements.genderRequired && (O.gender = {
           required: re
         }), a.requirements.documentRequired && (O.documents = {
-          hasDocument: Br.withMessage(
+          hasDocument: Tr.withMessage(
             "Document with number is required",
             (A) => {
               var S;
@@ -26468,10 +26554,10 @@ const Ch = { class: "relative lg:flex-1" }, ch = { class: "flex justify-end item
       }
     });
     let i = ro(l, d);
-    function u() {
+    function h() {
       return i.value.$anyDirty === !0 && i.value.$invalid === !1;
     }
-    async function h(O) {
+    async function u(O) {
       f(), d.name = O.name, d.contact.emailAddress = O.contact.emailAddress, d.contact.phones = O.contact.phones, i.value.$touch(), i.value.$invalid || (s.value = !1);
     }
     function g(O) {
@@ -26498,37 +26584,37 @@ const Ch = { class: "relative lg:flex-1" }, ch = { class: "flex justify-end item
     function b(O) {
       d.dateOfBirth = O;
     }
-    function w(O) {
+    function M(O) {
       d.documents = [O], i.value.$touch();
     }
     return V(i, () => {
-      d && (d.valid = u(), u() && n("update", d));
+      d && (d.valid = h(), h() && n("update", d));
     }), V(() => a.requirements, (O) => {
       f();
-    }), (O, A) => (p(), y("div", Gh, [
+    }), (O, A) => (p(), y("div", zh, [
       m("div", {
-        class: T({ header: !0, "pb-4": s.value })
+        class: B({ header: !0, "pb-4": s.value })
       }, [
-        m("div", jh, [
+        m("div", Wh, [
           m("img", {
             class: "h-8 w-8 rounded-full mr-3 bg-neutral-300 border-0",
             src: "https://ui-avatars.com/api/?name=" + (d.name.firstName.length > 0 ? d.name.firstName[0] : "p") + "&color=828282&background=D3F8F0",
             alt: ""
-          }, null, 8, Fh),
-          m("h1", Hh, v(d.name.firstName.length !== 0 ? d.name.firstName : c(t)("passengers.placeholder", Number(d.travelerId) + 1)) + " " + v(d.name.lastName.length !== 0 ? d.name.lastName : ""), 1),
-          u() ? (p(), y("div", Vh, [
-            M(c(Dt), { class: "text-success-900" })
+          }, null, 8, Yh),
+          m("h1", qh, v(d.name.firstName.length !== 0 ? d.name.firstName : c(t)("passengers.placeholder", Number(d.travelerId) + 1)) + " " + v(d.name.lastName.length !== 0 ? d.name.lastName : ""), 1),
+          h() ? (p(), y("div", Zh, [
+            w(c(xt), { class: "text-success-900" })
           ])) : P("", !0)
         ]),
-        m("div", Uh, [
+        m("div", Jh, [
           Uo === r.value ? (p(), y("button", {
             key: 0,
             type: "button",
             onClick: A[0] || (A[0] = (S) => g(fo)),
             class: "border hover:border-taa-brand-blue px-2 border-neutral-300 focus:border-taa-brand-blue rounded-xl group outline-none flex items-center"
           }, [
-            M(c(Lt), { class: "w-6 group-hover:stroke-brand-blue group-hover:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue" }),
-            m("span", _h, v(c(t)("passengers.passengerDetails")), 1)
+            w(c(Et), { class: "w-6 group-hover:stroke-brand-blue group-hover:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue" }),
+            m("span", Qh, v(c(t)("passengers.passengerDetails")), 1)
           ])) : P("", !0),
           fo === r.value ? (p(), y("button", {
             key: 1,
@@ -26536,8 +26622,8 @@ const Ch = { class: "relative lg:flex-1" }, ch = { class: "flex justify-end item
             onClick: A[1] || (A[1] = (S) => g(Uo)),
             class: "border px-2 hover:border-taa-brand-blue border-neutral-300 focus:border-taa-brand-blue rounded-xl group outline-none flex items-center"
           }, [
-            M(c(Lt), { class: "w-6 group-hover:stroke-brand-blue group-hover:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue" }),
-            m("span", zh, v(c(t)("passengers.selectPassenger")), 1)
+            w(c(Et), { class: "w-6 group-hover:stroke-brand-blue group-hover:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue" }),
+            m("span", Xh, v(c(t)("passengers.selectPassenger")), 1)
           ])) : P("", !0),
           s.value ? P("", !0) : (p(), y("button", {
             key: 2,
@@ -26545,7 +26631,7 @@ const Ch = { class: "relative lg:flex-1" }, ch = { class: "flex justify-end item
             class: "group outline-none",
             onClick: A[2] || (A[2] = () => s.value = !s.value)
           }, [
-            M(c(qr), { class: "w-8 group-hover:text-brand-blue group-hover:stroke-brand-blue group-focus:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue" })
+            w(c(Zr), { class: "w-8 group-hover:text-brand-blue group-hover:stroke-brand-blue group-focus:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue" })
           ])),
           s.value ? (p(), y("button", {
             key: 3,
@@ -26553,81 +26639,81 @@ const Ch = { class: "relative lg:flex-1" }, ch = { class: "flex justify-end item
             class: "group outline-none",
             onClick: A[3] || (A[3] = () => s.value = !s.value)
           }, [
-            M(c(Jr), { class: "w-8 group-hover:text-brand-blue group-hover:stroke-brand-blue group-focus:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue" })
+            w(c(Jr), { class: "w-8 group-hover:text-brand-blue group-hover:stroke-brand-blue group-focus:text-brand-blue stroke-neutral-400 text-neutral-400 group-focus-visible:text-brand-blue group-focus-visible:stroke-brand-blue" })
           ])) : P("", !0)
         ])
       ], 2),
-      fo === r.value && s.value ? (p(), y("div", Wh, [
-        M(Sd, {
+      fo === r.value && s.value ? (p(), y("div", eu, [
+        w(Pd, {
           "first-name": d.name.firstName,
           "onUpdate:firstName": A[4] || (A[4] = (S) => d.name.firstName = S),
           "last-name": d.name.lastName,
           "onUpdate:lastName": A[5] || (A[5] = (S) => d.name.lastName = S)
         }, null, 8, ["first-name", "last-name"]),
-        e.requirements.dateOfBirthRequired ? (p(), J(dh, {
+        e.requirements.dateOfBirthRequired ? (p(), J(ch, {
           key: 0,
           "model-value": d.dateOfBirth,
           "onUpdate:modelValue": b
         }, null, 8, ["model-value"])) : P("", !0),
-        e.requirements.genderRequired ? (p(), J(cd, {
+        e.requirements.genderRequired ? (p(), J(gd, {
           key: 1,
           gender: d.gender,
           "onUpdate:gender": A[6] || (A[6] = (S) => $(S))
         }, null, 8, ["gender"])) : P("", !0),
-        e.requirements.documentRequired ? (p(), J(Kh, {
+        e.requirements.documentRequired ? (p(), J(_h, {
           key: 2,
           "model-value": d.documents[0] ?? {},
-          "onUpdate:modelValue": w
+          "onUpdate:modelValue": M
         }, null, 8, ["model-value"])) : P("", !0),
-        e.requirements.emailAddressRequired ? (p(), J(as, {
+        e.requirements.emailAddressRequired ? (p(), J(ns, {
           key: 3,
           email: d.contact.emailAddress,
           "onUpdate:email": A[7] || (A[7] = (S) => d.contact.emailAddress = S)
         }, null, 8, ["email"])) : P("", !0),
-        e.requirements.mobilePhoneNumberRequired ? (p(), J(ql, {
+        e.requirements.mobilePhoneNumberRequired ? (p(), J(th, {
           key: 4,
           phone: d.contact.phones[0] ? d.contact.phones[0].number : d.contact.phones[0],
           "onUpdate:phone": A[8] || (A[8] = (S) => C(S))
         }, null, 8, ["phone"])) : P("", !0),
-        e.requirements.documentIssuanceCityRequired ? (p(), y("div", Yh, " The issuance city of the document is required for the concerned traveler for the creation of the flight-order ")) : P("", !0),
-        e.requirements.redressRequiredIfAny ? (p(), y("div", qh, " The redress is required if any for the concerned traveler for the creation of the flight-order ")) : P("", !0),
-        e.requirements.residenceRequired ? (p(), y("div", Jh, " The address is required for the concerned traveler for the creation of the flight-order ")) : P("", !0)
+        e.requirements.documentIssuanceCityRequired ? (p(), y("div", ou, " The issuance city of the document is required for the concerned traveler for the creation of the flight-order ")) : P("", !0),
+        e.requirements.redressRequiredIfAny ? (p(), y("div", tu, " The redress is required if any for the concerned traveler for the creation of the flight-order ")) : P("", !0),
+        e.requirements.residenceRequired ? (p(), y("div", au, " The address is required for the concerned traveler for the creation of the flight-order ")) : P("", !0)
       ])) : P("", !0),
-      Uo === r.value && s.value ? (p(), y("div", Zh, [
-        (p(!0), y(F, null, Q(e.employees, (S, B) => (p(), y("button", {
-          key: B,
-          class: T([{ "border-green-300": !c(i).$error && d.contact.emailAddress === S.contact.emailAddress, "border-neutral-300": d.contact.emailAddress !== S.contact.emailAddress, "border-red-500": c(i).$error && d.contact.emailAddress === S.contact.emailAddress }, "border rounded-xl px-4 py-3 flex outline-none items-center"]),
-          onClick: () => h(S)
+      Uo === r.value && s.value ? (p(), y("div", nu, [
+        (p(!0), y(I, null, U(e.employees, (S, T) => (p(), y("button", {
+          key: T,
+          class: B([{ "border-green-300": !c(i).$error && d.contact.emailAddress === S.contact.emailAddress, "border-neutral-300": d.contact.emailAddress !== S.contact.emailAddress, "border-red-500": c(i).$error && d.contact.emailAddress === S.contact.emailAddress }, "border rounded-xl px-4 py-3 flex outline-none items-center"]),
+          onClick: () => u(S)
         }, [
-          !c(i).$error && d.contact.emailAddress === S.contact.emailAddress ? (p(), J(c(Dt), {
+          !c(i).$error && d.contact.emailAddress === S.contact.emailAddress ? (p(), J(c(xt), {
             key: 0,
             class: "w-8 stroke-green-500 text-green-500"
-          })) : c(i).$error && d.contact.emailAddress === S.contact.emailAddress ? (p(), J(c(Qr), {
+          })) : c(i).$error && d.contact.emailAddress === S.contact.emailAddress ? (p(), J(c(Xr), {
             key: 1,
             class: "w-8 stroke-red-500 text-red-500"
           })) : (p(), y("img", {
             key: 2,
-            class: T([{ "bg-green-500": !c(i).$error && d.contact.emailAddress === S.contact.emailAddress, "bg-neutral-300": d.contact.emailAddress !== S.contact.emailAddress, "bg-red-500": c(i).$error && d.contact.emailAddress === S.contact.emailAddress }, "h-8 w-8 rounded-full mr-3"]),
+            class: B([{ "bg-green-500": !c(i).$error && d.contact.emailAddress === S.contact.emailAddress, "bg-neutral-300": d.contact.emailAddress !== S.contact.emailAddress, "bg-red-500": c(i).$error && d.contact.emailAddress === S.contact.emailAddress }, "h-8 w-8 rounded-full mr-3"]),
             src: S.profilePhoto ? S.profilePhoto : "https://ui-avatars.com/api/?name=" + (S.name.firstName.length > 0 ? S.name.firstName[0] : "p") + "&color=828282&background=D3F8F0",
             alt: ""
-          }, null, 10, Xh)),
+          }, null, 10, su)),
           m("span", {
-            class: T([{ "text-green-500": !c(i).$error && S.contact.emailAddress === d.contact.emailAddress, "text-red-500": c(i).$error && d.contact.emailAddress === S.contact.emailAddress }, "grow text-neutral-600 flex flex-col"])
+            class: B([{ "text-green-500": !c(i).$error && S.contact.emailAddress === d.contact.emailAddress, "text-red-500": c(i).$error && d.contact.emailAddress === S.contact.emailAddress }, "grow text-neutral-600 flex flex-col"])
           }, [
-            ce(v(S.name.firstName.length !== 0 ? S.name.firstName : "Passenger " + (Number(S.id) + 1)) + " " + v(S.name.lastName && S.name.lastName.length !== 0 ? S.name.lastName : "") + " ", 1),
-            S.contact.emailAddress === d.contact.emailAddress && c(i).$error ? (p(), y("span", eu, [
-              ce(v(c(t)("passengers.errors.generic")) + " ", 1),
-              (p(!0), y(F, null, Q(c(i).$errors, (D) => (p(), y("span", {
+            Ce(v(S.name.firstName.length !== 0 ? S.name.firstName : "Passenger " + (Number(S.id) + 1)) + " " + v(S.name.lastName && S.name.lastName.length !== 0 ? S.name.lastName : "") + " ", 1),
+            S.contact.emailAddress === d.contact.emailAddress && c(i).$error ? (p(), y("span", du, [
+              Ce(v(c(t)("passengers.errors.generic")) + " ", 1),
+              (p(!0), y(I, null, U(c(i).$errors, (D) => (p(), y("span", {
                 class: "flex flex-col uppercase",
                 key: D.$uid
               }, v(c(t)("passengers.errors." + D.$property + "." + D.$validator)), 1))), 128))
             ])) : P("", !0)
           ], 2)
-        ], 10, Qh))), 128))
+        ], 10, ru))), 128))
       ])) : P("", !0)
     ]));
   }
-}, tu = { class: "t-passengers-list" }, Mm = {
+}, lu = { class: "t-passengers-list" }, oC = {
   __name: "T-Passengers-List",
   props: {
     passengers: {
@@ -26651,14 +26737,14 @@ const Ch = { class: "relative lg:flex-1" }, ch = { class: "flex justify-end item
     }, { immediate: !0 });
     function r(d, l) {
       let i = [];
-      for (let u = 0; u < d.length; u++) {
-        let h = d[u], g = {};
+      for (let h = 0; h < d.length; h++) {
+        let u = d[h], g = {};
         if (g.emailAddressRequired = l.emailAddressRequired ?? !1, g.mobilePhoneNumberRequired = l.mobilePhoneNumberRequired ?? !1, g.genderRequired = !1, l.travelerRequirements) {
           const f = l.travelerRequirements;
           let C;
-          Array.isArray(f) ? C = f.find(($) => $.travelerId === h.travelerId) : C = f[h.travelerId], C && (g.genderRequired = C.genderRequired ?? g.genderRequired, g.documentRequired = C.documentRequired ?? !1, g.dateOfBirthRequired = C.dateOfBirthRequired ?? !1, g.residenceRequired = C.residenceRequired ?? !1, g.redressRequiredIfAny = C.redressRequiredIfAny ?? !1);
+          Array.isArray(f) ? C = f.find(($) => $.travelerId === u.travelerId) : C = f[u.travelerId], C && (g.genderRequired = C.genderRequired ?? g.genderRequired, g.documentRequired = C.documentRequired ?? !1, g.dateOfBirthRequired = C.dateOfBirthRequired ?? !1, g.residenceRequired = C.residenceRequired ?? !1, g.redressRequiredIfAny = C.redressRequiredIfAny ?? !1);
         }
-        i[h.travelerId] = g;
+        i[u.travelerId] = g;
       }
       return i;
     }
@@ -26668,14 +26754,179 @@ const Ch = { class: "relative lg:flex-1" }, ch = { class: "flex justify-end item
       );
       n("update", l);
     }
-    return (d, l) => (p(), y("div", tu, [
-      (p(!0), y(F, null, Q(e.passengers, (i, u) => (p(), J(ou, {
-        key: u,
+    return (d, l) => (p(), y("div", lu, [
+      (p(!0), y(I, null, U(e.passengers, (i, h) => (p(), J(iu, {
+        key: h,
         traveler: i,
         employees: e.employees,
         requirements: a.value[i.travelerId],
         onUpdate: s
       }, null, 8, ["traveler", "employees", "requirements"]))), 128))
+    ]));
+  }
+}, hu = {}, uu = {
+  viewBox: "0 0 22 19",
+  fill: "none",
+  "stroke-width": "1.5",
+  stroke: "currentColor",
+  xmlns: "http://www.w3.org/2000/svg"
+};
+function mu(e, o) {
+  return p(), y("svg", uu, [...o[0] || (o[0] = [
+    m("path", {
+      d: "M16.059 12.521C16.5268 12.2015 17.0755 12.0211 17.6415 12.0004C18.2076 11.9798 18.768 12.1199 19.2578 12.4044C19.7476 12.689 20.1468 13.1064 20.4093 13.6084C20.6718 14.1104 20.7868 14.6764 20.741 15.241C19.5412 15.6603 18.2668 15.8235 17 15.72C16.9961 14.5866 16.6697 13.4768 16.059 12.522C15.5169 11.6718 14.7691 10.972 13.8848 10.4875C13.0005 10.003 12.0083 9.74932 11 9.75C9.99182 9.74948 8.99981 10.0032 8.11571 10.4877C7.23162 10.9723 6.48399 11.6719 5.94199 12.522M16.999 15.719L17 15.75C17 15.975 16.988 16.197 16.963 16.416C15.1483 17.4571 13.0921 18.0033 11 18C8.82998 18 6.79299 17.424 5.03699 16.416C5.01128 16.1846 4.99892 15.9519 4.99999 15.719M4.99999 15.719C3.73361 15.8263 2.45989 15.6637 1.26099 15.242C1.21534 14.6776 1.33038 14.1117 1.59281 13.6099C1.85525 13.1081 2.25435 12.6908 2.74399 12.4063C3.23362 12.1218 3.79378 11.9817 4.3597 12.0021C4.92563 12.0226 5.4742 12.2028 5.94199 12.522M4.99999 15.719C5.00358 14.5857 5.33161 13.4769 5.94199 12.522M14 3.75C14 4.54565 13.6839 5.30871 13.1213 5.87132C12.5587 6.43393 11.7956 6.75 11 6.75C10.2043 6.75 9.44127 6.43393 8.87866 5.87132C8.31606 5.30871 7.99999 4.54565 7.99999 3.75C7.99999 2.95435 8.31606 2.19129 8.87866 1.62868C9.44127 1.06607 10.2043 0.75 11 0.75C11.7956 0.75 12.5587 1.06607 13.1213 1.62868C13.6839 2.19129 14 2.95435 14 3.75ZM20 6.75C20 7.04547 19.9418 7.33806 19.8287 7.61104C19.7156 7.88402 19.5499 8.13206 19.341 8.34099C19.132 8.54992 18.884 8.71566 18.611 8.82873C18.338 8.9418 18.0455 9 17.75 9C17.4545 9 17.1619 8.9418 16.8889 8.82873C16.616 8.71566 16.3679 8.54992 16.159 8.34099C15.9501 8.13206 15.7843 7.88402 15.6713 7.61104C15.5582 7.33806 15.5 7.04547 15.5 6.75C15.5 6.15326 15.737 5.58097 16.159 5.15901C16.581 4.73705 17.1532 4.5 17.75 4.5C18.3467 4.5 18.919 4.73705 19.341 5.15901C19.7629 5.58097 20 6.15326 20 6.75ZM6.49999 6.75C6.49999 7.04547 6.44179 7.33806 6.32871 7.61104C6.21564 7.88402 6.04991 8.13206 5.84098 8.34099C5.63204 8.54992 5.38401 8.71566 5.11102 8.82873C4.83804 8.9418 4.54546 9 4.24999 9C3.95451 9 3.66193 8.9418 3.38895 8.82873C3.11596 8.71566 2.86793 8.54992 2.65899 8.34099C2.45006 8.13206 2.28433 7.88402 2.17126 7.61104C2.05818 7.33806 1.99999 7.04547 1.99999 6.75C1.99999 6.15326 2.23704 5.58097 2.65899 5.15901C3.08095 4.73705 3.65325 4.5 4.24999 4.5C4.84672 4.5 5.41902 4.73705 5.84098 5.15901C6.26293 5.58097 6.49999 6.15326 6.49999 6.75Z",
+      "stroke-width": "1.5",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round"
+    }, null, -1)
+  ])]);
+}
+const Cu = /* @__PURE__ */ ut(hu, [["render", mu]]), cu = { class: "rounded-xl px-3 bg-white" }, gu = { class: "px-2 py-0.5 flex text-brand-blue text-sm items-center" }, $u = {
+  __name: "Travellers-Menu",
+  props: {
+    numberOfTravellers: {
+      default: 0,
+      type: Number
+    }
+  },
+  setup(e) {
+    return (o, t) => (p(), y("button", cu, [
+      m("span", gu, [
+        w(Cu, { class: "h-4 w-4 stroke-brand-blue mr-3" }),
+        Ce(" " + v(e.numberOfTravellers), 1)
+      ])
+    ]));
+  }
+}, fu = { class: "grid grid-cols-3 gap-1 items-center" }, pu = ["disabled"], yu = { class: "text-center" }, vu = ["disabled"], _o = {
+  __name: "Travellers-Counter",
+  props: {
+    min: {
+      type: Number,
+      default: 0
+    },
+    max: {
+      type: Number,
+      default: -1
+    },
+    current: {
+      type: Number,
+      default: 0
+    },
+    availability: {
+      type: Number,
+      default: -1
+    }
+  },
+  emits: ["update"],
+  setup(e, { emit: o }) {
+    const t = e, a = o, n = () => {
+      t.max === -1 && t.availability > 0 && a("update", t.current + 1), t.availability > 0 && a("update", t.current + 1);
+    }, r = () => {
+      t.current !== t.min && a("update", t.current - 1);
+    };
+    return (s, d) => (p(), y("div", fu, [
+      m("button", {
+        class: "rounded-full border-black border w-8 h-8 hover:border-taa-brand-blue hover:text-brand-blue disabled:border-neutral-300 disabled:text-neutral-300",
+        disabled: t.current === e.min,
+        onClick: r
+      }, " - ", 8, pu),
+      m("span", yu, v(t.current), 1),
+      m("button", {
+        class: "rounded-full border-black border w-8 h-8 hover:border-taa-brand-blue hover:text-brand-blue disabled:border-neutral-300 disabled:text-neutral-300",
+        disabled: e.current === e.max || e.availability === 0,
+        onClick: n
+      }, " + ", 8, vu)
+    ]));
+  }
+}, bu = {
+  id: "travelers-holder",
+  class: "relative inline-block text-left"
+}, Su = {
+  key: 0,
+  class: "absolute z-50 right-0 mt-2 w-[20rem] origin-top-right rounded-xl bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none",
+  role: "menu",
+  "aria-orientation": "vertical",
+  "aria-labelledby": "menu-button",
+  tabindex: "-1"
+}, Au = {
+  class: "py-2 px-3 grid grid-cols-1 gap-3",
+  role: "none"
+}, Nu = { class: "flex items-center" }, ku = { class: "grow" }, wu = { class: "flex items-center" }, Mu = { class: "grow" }, Ou = { class: "flex items-center" }, Pu = { class: "grow" }, tC = {
+  __name: "T-Travellers",
+  props: {
+    adults: {
+      type: Number,
+      default: 0
+    },
+    children: {
+      type: Number,
+      default: 0
+    },
+    infants: {
+      type: Number,
+      default: 0
+    },
+    disabled: {
+      type: Boolean,
+      default: !1
+    }
+  },
+  emits: ["update"],
+  setup(e, { emit: o }) {
+    const t = e, a = o, n = k(!1), r = (h) => {
+      h < t.infants ? a("update", { adults: h, children: t.children, infants: h }) : a("update", { adults: h, children: t.children, infants: t.infants });
+    }, s = (h) => {
+      a("update", { adults: t.adults, children: h, infants: t.infants });
+    }, d = (h) => {
+      a("update", { adults: t.adults, children: t.children, infants: h });
+    };
+    function l(h) {
+      let u = h.target, g = document.getElementById("travelers-holder");
+      u !== g && !g.contains(u) && i();
+    }
+    function i() {
+      t.disabled || (n.value && document.removeEventListener("click", l), n.value || document.addEventListener("click", l), n.value = !n.value);
+    }
+    return (h, u) => (p(), y("div", bu, [
+      w($u, {
+        numberOfTravellers: e.adults + e.children + e.infants,
+        onClick: i
+      }, null, 8, ["numberOfTravellers"]),
+      n.value ? (p(), y("div", Su, [
+        m("div", Au, [
+          m("h3", null, v(h.$t("travellers.travellers")), 1),
+          m("div", Nu, [
+            m("p", ku, v(h.$t("travellers.adults")), 1),
+            w(_o, {
+              min: 1,
+              max: 9,
+              current: e.adults,
+              availability: 9 - (e.adults + e.children + e.infants),
+              onUpdate: r
+            }, null, 8, ["current", "availability"])
+          ]),
+          m("div", wu, [
+            m("p", Mu, v(h.$t("travellers.children")), 1),
+            w(_o, {
+              min: 0,
+              max: 9,
+              current: e.children,
+              availability: 9 - (e.adults + e.children + e.infants),
+              onUpdate: s
+            }, null, 8, ["current", "availability"])
+          ]),
+          m("div", Ou, [
+            m("p", Pu, v(h.$t("travellers.infants")), 1),
+            w(_o, {
+              min: 0,
+              max: 9,
+              current: e.infants,
+              availability: e.adults - e.infants && 9 - (e.adults + e.children + e.infants),
+              onUpdate: d
+            }, null, 8, ["current", "availability"])
+          ])
+        ])
+      ])) : P("", !0)
     ]));
   }
 };
@@ -26696,7 +26947,7 @@ function Ve(e, o) {
     })
   ]);
 }
-function au(e, o) {
+function Bu(e, o) {
   return p(), y("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     fill: "none",
@@ -26713,7 +26964,7 @@ function au(e, o) {
     })
   ]);
 }
-function ca(e, o) {
+function $a(e, o) {
   return p(), y("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     fill: "none",
@@ -26730,119 +26981,119 @@ function ca(e, o) {
     })
   ]);
 }
-const nu = { class: "snap-center rounded-2xl py-4 px-4 bg-white mx-auto w-96 shadow border mb-3" }, ru = { class: "w-full h-full inline-flex flex-col" }, su = { class: "font-bold text-xl text-taa-brand-dark-blue pb-3" }, du = { class: "text-sm pt-2 pb-3" }, iu = {
+const Tu = { class: "snap-center rounded-2xl py-4 px-4 bg-white mx-auto w-96 shadow border mb-3" }, Du = { class: "w-full h-full inline-flex flex-col" }, Lu = { class: "font-bold text-xl text-taa-brand-dark-blue pb-3" }, xu = { class: "text-sm pt-2 pb-3" }, Eu = {
   key: 0,
   class: "pb-3"
-}, lu = { class: "pb-2 uppercase font-light" }, hu = {
+}, Ru = { class: "pb-2 uppercase font-light" }, Iu = {
   key: 0,
   class: "flex flex-col"
-}, uu = { class: "flex" }, mu = { class: "pl-2 text-xs content-center" }, Cu = { key: 1 }, cu = { class: "flex" }, gu = { class: "pl-2 text-xs content-center" }, $u = {
+}, Ku = { class: "flex" }, Gu = { class: "pl-2 text-xs content-center" }, ju = { key: 1 }, Fu = { class: "flex" }, Hu = { class: "pl-2 text-xs content-center" }, Vu = {
   key: 2,
   class: "flex flex-col"
-}, fu = { class: "flex" }, pu = { class: "pl-2 text-xs content-center" }, yu = { key: 3 }, vu = { class: "flex" }, bu = { class: "pl-2 text-xs content-center" }, Su = {
+}, Uu = { class: "flex" }, _u = { class: "pl-2 text-xs content-center" }, zu = { key: 3 }, Wu = { class: "flex" }, Yu = { class: "pl-2 text-xs content-center" }, qu = {
   key: 4,
   class: "flex flex-col"
-}, Au = { class: "flex" }, Nu = { class: "pl-2 text-xs content-center" }, ku = { key: 5 }, wu = { class: "flex" }, Mu = { class: "pl-2 text-xs content-center" }, Ou = {
+}, Zu = { class: "flex" }, Ju = { class: "pl-2 text-xs content-center" }, Qu = { key: 5 }, Xu = { class: "flex" }, em = { class: "pl-2 text-xs content-center" }, om = {
   key: 1,
   class: "pb-2 uppercase font-light"
-}, Pu = {
+}, tm = {
   key: 2,
   class: "pb-3"
-}, Bu = { class: "flex flex-col" }, Tu = { class: "flex" }, Du = { class: "pl-2 text-xs" }, Lu = {
+}, am = { class: "flex flex-col" }, nm = { class: "flex" }, rm = { class: "pl-2 text-xs" }, sm = {
   key: 3,
   class: "pb-2 uppercase font-light"
-}, xu = {
+}, dm = {
   key: 4,
   class: "pb-3"
-}, Eu = { class: "flex flex-col" }, Ru = { class: "flex" }, Iu = { class: "pl-2 text-xs" }, Om = {
+}, im = { class: "flex flex-col" }, lm = { class: "flex" }, hm = { class: "pl-2 text-xs" }, aC = {
   __name: "T-Upsell-Offer",
   props: {
     offer: Object,
     onSelect: Function
   },
   setup(e) {
-    const o = e, { t } = xe({ useScope: "global" }), a = o.offer.travelerPricings, n = a[0].fareDetailsBySegment[0].cabin, r = a[0].fareDetailsBySegment[0].includedCheckedBags ?? 0, s = a[0].fareDetailsBySegment[0].amenities ?? [], d = s.filter((f) => f.isChargeable === !1), l = s.filter((f) => f.isChargeable === !0), i = o.offer.price.grandTotal, u = o.offer.price.currency, h = k({
+    const o = e, { t } = xe({ useScope: "global" }), a = o.offer.travelerPricings, n = a[0].fareDetailsBySegment[0].cabin, r = a[0].fareDetailsBySegment[0].includedCheckedBags ?? 0, s = a[0].fareDetailsBySegment[0].amenities ?? [], d = s.filter((f) => f.isChargeable === !1), l = s.filter((f) => f.isChargeable === !0), i = o.offer.price.grandTotal, h = o.offer.price.currency, u = k({
       active: !1,
       amount: 0
     }), g = k({
       active: !1,
       amount: 0
     });
-    if (o.offer.pricingOptions.refundableFare && (h.value.active = !0), o.offer.fareRules) {
+    if (o.offer.pricingOptions.refundableFare && (u.value.active = !0), o.offer.fareRules) {
       let f = o.offer.fareRules.rules.find(($) => $.category === "EXCHANGE");
       f != null && (!f.notApplicable || f.hasOwnProperty("maxPenaltyAmount")) && (g.value.active = !0, g.value.amount = f.maxPenaltyAmount);
       let C = o.offer.fareRules.rules.find(($) => $.category === "REFUND");
-      C != null && (!C.notApplicable || C.hasOwnProperty("maxPenaltyAmount")) && (h.value.active = !0, h.value.amount = C.maxPenaltyAmount);
+      C != null && (!C.notApplicable || C.hasOwnProperty("maxPenaltyAmount")) && (u.value.active = !0, u.value.amount = C.maxPenaltyAmount);
     }
-    return (f, C) => (p(), y("div", nu, [
-      m("div", ru, [
+    return (f, C) => (p(), y("div", Tu, [
+      m("div", Du, [
         m("h1", null, [
-          m("span", su, v(c(i)), 1),
-          ce(" " + v(c(u)), 1)
+          m("span", Lu, v(c(i)), 1),
+          Ce(" " + v(c(h)), 1)
         ]),
-        m("p", du, v(c(t)("flightOfferExtended.cabin")) + ": " + v(c(n)), 1),
-        c(d).length > 0 ? P("", !0) : (p(), y("ul", iu, [
-          m("h2", lu, v(c(t)("flightOfferExtended.description")), 1),
-          g.value.active ? (p(), y("li", hu, [
-            m("div", uu, [
-              M(c(Ve), { class: "h-5 w-5 text-gray-900" }),
-              m("p", mu, v(c(t)("flightOfferExtended.exchangeable", g.value.amount)), 1)
+        m("p", xu, v(c(t)("flightOfferExtended.cabin")) + ": " + v(c(n)), 1),
+        c(d).length > 0 ? P("", !0) : (p(), y("ul", Eu, [
+          m("h2", Ru, v(c(t)("flightOfferExtended.description")), 1),
+          g.value.active ? (p(), y("li", Iu, [
+            m("div", Ku, [
+              w(c(Ve), { class: "h-5 w-5 text-gray-900" }),
+              m("p", Gu, v(c(t)("flightOfferExtended.exchangeable", g.value.amount)), 1)
             ])
           ])) : P("", !0),
-          g.value.active ? P("", !0) : (p(), y("li", Cu, [
-            m("div", cu, [
-              M(c(ca), { class: "h-5 w-5 text-gray-900" }),
-              m("p", gu, v(c(t)("flightOfferExtended.noExchange")), 1)
+          g.value.active ? P("", !0) : (p(), y("li", ju, [
+            m("div", Fu, [
+              w(c($a), { class: "h-5 w-5 text-gray-900" }),
+              m("p", Hu, v(c(t)("flightOfferExtended.noExchange")), 1)
             ])
           ])),
-          h.value.active ? (p(), y("li", $u, [
-            m("div", fu, [
-              M(c(Ve), { class: "h-5 w-5 text-gray-900" }),
-              m("p", pu, v(c(t)("flightOfferExtended.refundable", h.value.amount)), 1)
+          u.value.active ? (p(), y("li", Vu, [
+            m("div", Uu, [
+              w(c(Ve), { class: "h-5 w-5 text-gray-900" }),
+              m("p", _u, v(c(t)("flightOfferExtended.refundable", u.value.amount)), 1)
             ])
           ])) : P("", !0),
-          h.value.active ? P("", !0) : (p(), y("li", yu, [
-            m("div", vu, [
-              M(c(ca), { class: "h-5 w-5 text-gray-900" }),
-              m("p", bu, v(c(t)("flightOfferExtended.noRefund")), 1)
+          u.value.active ? P("", !0) : (p(), y("li", zu, [
+            m("div", Wu, [
+              w(c($a), { class: "h-5 w-5 text-gray-900" }),
+              m("p", Yu, v(c(t)("flightOfferExtended.noRefund")), 1)
             ])
           ])),
-          c(r).quantity ? (p(), y("li", Su, [
-            m("div", Au, [
-              M(c(Ve), { class: "h-5 w-5 text-gray-900" }),
-              m("p", Nu, v(c(t)("flightOfferExtended.includedBaggage", c(r).quantity)), 1)
+          c(r).quantity ? (p(), y("li", qu, [
+            m("div", Zu, [
+              w(c(Ve), { class: "h-5 w-5 text-gray-900" }),
+              m("p", Ju, v(c(t)("flightOfferExtended.includedBaggage", c(r).quantity)), 1)
             ])
           ])) : P("", !0),
-          c(r).weight ? (p(), y("li", ku, [
-            m("div", wu, [
-              M(c(Ve), { class: "h-5 w-5 text-gray-900" }),
-              m("p", Mu, v(c(t)("flightOfferExtended.includedBaggageWeight", {
+          c(r).weight ? (p(), y("li", Qu, [
+            m("div", Xu, [
+              w(c(Ve), { class: "h-5 w-5 text-gray-900" }),
+              m("p", em, v(c(t)("flightOfferExtended.includedBaggageWeight", {
                 weight: c(r).weight,
                 unit: c(r).weightUnit
               })), 1)
             ])
           ])) : P("", !0)
         ])),
-        c(d).length > 0 ? (p(), y("h2", Ou, v(c(t)("flightOfferExtended.included")), 1)) : P("", !0),
-        c(d).length > 0 ? (p(), y("ul", Pu, [
-          (p(!0), y(F, null, Q(c(d), ($) => (p(), y("li", Bu, [
-            m("div", Tu, [
-              M(c(Ve), { class: "h-5 w-5 text-gray-900" }),
-              m("p", Du, v($.description), 1)
+        c(d).length > 0 ? (p(), y("h2", om, v(c(t)("flightOfferExtended.included")), 1)) : P("", !0),
+        c(d).length > 0 ? (p(), y("ul", tm, [
+          (p(!0), y(I, null, U(c(d), ($) => (p(), y("li", am, [
+            m("div", nm, [
+              w(c(Ve), { class: "h-5 w-5 text-gray-900" }),
+              m("p", rm, v($.description), 1)
             ])
           ]))), 256))
         ])) : P("", !0),
-        c(l).length > 0 ? (p(), y("h2", Lu, v(c(t)("flightOfferExtended.purchase")), 1)) : P("", !0),
-        c(l).length > 0 ? (p(), y("ul", xu, [
-          (p(!0), y(F, null, Q(c(l), ($) => (p(), y("li", Eu, [
-            m("div", Ru, [
-              M(c(au), { class: "h-5 w-5 text-gray-900" }),
-              m("p", Iu, v($.description), 1)
+        c(l).length > 0 ? (p(), y("h2", sm, v(c(t)("flightOfferExtended.purchase")), 1)) : P("", !0),
+        c(l).length > 0 ? (p(), y("ul", dm, [
+          (p(!0), y(I, null, U(c(l), ($) => (p(), y("li", im, [
+            m("div", lm, [
+              w(c(Bu), { class: "h-5 w-5 text-gray-900" }),
+              m("p", hm, v($.description), 1)
             ])
           ]))), 256))
         ])) : P("", !0),
         C[1] || (C[1] = m("div", { class: "grow" }, null, -1)),
-        M(Yo, {
+        w(qo, {
           title: c(t)("flightOfferExtended.select"),
           onClick: C[0] || (C[0] = ($) => o.onSelect(o.offer)),
           class: "w-full"
@@ -26850,13 +27101,13 @@ const nu = { class: "snap-center rounded-2xl py-4 px-4 bg-white mx-auto w-96 sha
       ])
     ]));
   }
-}, Ku = {}, Gu = { class: "snap-mandatory snap-x w-full grid grid-flow-col gap-4 overflow-x-scroll overflow-hidden pb-4" };
-function ju(e, o) {
-  return p(), y("div", Gu, [
+}, um = {}, mm = { class: "snap-mandatory snap-x w-full grid grid-flow-col gap-4 overflow-x-scroll overflow-hidden pb-4" };
+function Cm(e, o) {
+  return p(), y("div", mm, [
     Re(e.$slots, "default")
   ]);
 }
-const Pm = /* @__PURE__ */ ya(Ku, [["render", ju]]), Fu = { class: "t-days-selector" }, Hu = { class: "bg-white items" }, Vu = ["onClick"], Uu = { class: "label" }, Bm = {
+const nC = /* @__PURE__ */ ut(um, [["render", Cm]]), cm = { class: "t-days-selector" }, gm = { class: "bg-white items" }, $m = ["onClick"], fm = { class: "label" }, rC = {
   __name: "T-Days-Selector",
   props: {
     options: Array,
@@ -26871,39 +27122,39 @@ const Pm = /* @__PURE__ */ ya(Ku, [["render", ju]]), Fu = { class: "t-days-selec
       const r = Math.min(...o.options.map((s) => s.value.split(" ")[1]));
       return parseInt(n.split(" ")[1]) === r;
     }
-    return (n, r) => (p(), y("ul", Fu, [
-      (p(!0), y(F, null, Q(e.options, (s, d) => (p(), y("li", Hu, [
+    return (n, r) => (p(), y("ul", cm, [
+      (p(!0), y(I, null, U(e.options, (s, d) => (p(), y("li", gm, [
         m("button", {
-          class: T([{ "outline outline-2 outline-neutral-400": t(d), "text-green-700": a(s.value), "text-taa-brand-dark-blue": !a(s.value) }, "button"]),
+          class: B([{ "outline outline-2 outline-neutral-400": t(d), "text-green-700": a(s.value), "text-taa-brand-dark-blue": !a(s.value) }, "button"]),
           onClick: () => e.onChoose(s.label)
         }, [
-          m("span", Uu, v(s.label), 1),
-          ce(" " + v(s.value), 1)
-        ], 10, Vu)
+          m("span", fm, v(s.label), 1),
+          Ce(" " + v(s.value), 1)
+        ], 10, $m)
       ]))), 256))
     ]));
   }
-}, _u = {
+}, pm = {
   __name: "T-Fullscreen-Container",
   props: {
     show: Boolean
   },
   setup(e) {
-    return G(() => {
+    return j(() => {
       document.body.classList.add("overflow-hidden");
     }), ie(() => {
       document.body.classList.remove("overflow-hidden");
-    }), (o, t) => (p(), J(c(Xa), {
+    }), (o, t) => (p(), J(c(en), {
       show: e.show,
       as: "template"
     }, {
       default: x(() => [
-        M(c(Ys), {
+        w(c(qs), {
           as: "div",
           class: "relative z-50"
         }, {
           default: x(() => [
-            M(c(gt), {
+            w(c(ft), {
               as: "template",
               enter: "ease-out duration-300",
               "enter-from": "opacity-0",
@@ -26925,7 +27176,7 @@ const Pm = /* @__PURE__ */ ya(Ku, [["render", ju]]), Fu = { class: "t-days-selec
       _: 3
     }, 8, ["show"]));
   }
-}, zu = { class: "t-contact" }, Wu = ["src"], Yu = {
+}, ym = { class: "t-contact" }, vm = ["src"], bm = {
   __name: "T-Contact",
   props: {
     contact: {
@@ -26945,9 +27196,9 @@ const Pm = /* @__PURE__ */ ya(Ku, [["render", ju]]), Fu = { class: "t-days-selec
   emits: ["click"],
   setup(e, { emit: o }) {
     const t = o;
-    return (a, n) => (p(), y("li", zu, [
+    return (a, n) => (p(), y("li", ym, [
       m("button", {
-        class: T([{ active: e.manager && e.manager.id === e.contact.id }, "t-button"]),
+        class: B([{ active: e.manager && e.manager.id === e.contact.id }, "t-button"]),
         "aria-setsize": "4",
         onClick: n[0] || (n[0] = () => t("click", e.contact))
       }, [
@@ -26955,15 +27206,15 @@ const Pm = /* @__PURE__ */ ya(Ku, [["render", ju]]), Fu = { class: "t-days-selec
           class: "image",
           src: "https://ui-avatars.com/api/?name=" + (e.contact.name.firstName.length > 0 ? e.contact.name.firstName[0] : "p") + "&color=828282&background=D3F8F0",
           alt: ""
-        }, null, 8, Wu),
+        }, null, 8, vm),
         m("span", {
-          class: T(["name", { "text-white": e.manager && e.manager.id === e.contact.id }])
+          class: B(["name", { "text-white": e.manager && e.manager.id === e.contact.id }])
         }, v(e.contact.name.firstName.length !== 0 ? e.contact.name.firstName : "") + " " + v(e.contact.name.lastName.length !== 0 ? e.contact.name.lastName : ""), 3)
       ], 2)
     ]));
   }
 };
-function ga(e, o) {
+function fa(e, o) {
   return p(), y("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     viewBox: "0 0 16 16",
@@ -26978,7 +27229,7 @@ function ga(e, o) {
     })
   ]);
 }
-function $a(e, o) {
+function pa(e, o) {
   return p(), y("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     viewBox: "0 0 16 16",
@@ -26993,17 +27244,17 @@ function $a(e, o) {
     })
   ]);
 }
-const qu = {
+const Sm = {
   key: 0,
   class: "t-pagination"
-}, Ju = {
+}, Am = {
   key: 0,
   class: "small"
-}, Zu = ["disabled"], Qu = { class: "sr-only" }, Xu = ["disabled"], em = { class: "sr-only" }, om = { class: "hidden sm:flex sm:flex-1 sm:items-center sm:justify-between" }, tm = {
+}, Nm = ["disabled"], km = { class: "sr-only" }, wm = ["disabled"], Mm = { class: "sr-only" }, Om = { class: "hidden sm:flex sm:flex-1 sm:items-center sm:justify-between" }, Pm = {
   key: 0,
   class: "isolate inline-flex -space-x-px rounded-md shadow-sm",
   "aria-label": "Pagination"
-}, am = ["disabled"], nm = { class: "sr-only" }, rm = ["onClick"], sm = ["disabled"], dm = { class: "sr-only" }, im = { key: 1 }, lm = {
+}, Bm = ["disabled"], Tm = { class: "sr-only" }, Dm = ["onClick"], Lm = ["disabled"], xm = { class: "sr-only" }, Em = { key: 1 }, Rm = {
   __name: "T-Pagination",
   props: {
     currentPage: {
@@ -27034,8 +27285,8 @@ const qu = {
   emits: ["confirmEvent"],
   setup(e) {
     const { t: o } = xe({ useScope: "global" });
-    return (t, a) => 0 < e.paginatedContacts.length ? (p(), y("div", qu, [
-      e.paginatedContacts.length > 4 ? (p(), y("div", Ju, [
+    return (t, a) => 0 < e.paginatedContacts.length ? (p(), y("div", Sm, [
+      e.paginatedContacts.length > 4 ? (p(), y("div", Am, [
         m("div", null, [
           m("button", {
             onClick: a[0] || (a[0] = (n) => e.goToPage(e.currentPage - 1)),
@@ -27043,63 +27294,63 @@ const qu = {
             class: "button back",
             "aria-label": "Pagination"
           }, [
-            m("span", Qu, v(c(o)("approve.previous")), 1),
-            M(c(ga), {
+            m("span", km, v(c(o)("approve.previous")), 1),
+            w(c(fa), {
               class: "h-5 w-5",
               "aria-hidden": "true"
             })
-          ], 8, Zu),
+          ], 8, Nm),
           m("button", {
             onClick: a[1] || (a[1] = (n) => e.goToPage(e.currentPage + 1)),
             disabled: e.currentPage === e.totalPages,
             class: "button next"
           }, [
-            m("span", em, v(c(o)("approve.next")), 1),
-            M(c($a), {
+            m("span", Mm, v(c(o)("approve.next")), 1),
+            w(c(pa), {
               class: "h-5 w-5",
               "aria-hidden": "true"
             })
-          ], 8, Xu)
+          ], 8, wm)
         ]),
         m("div", null, [
-          M(Yo, {
+          w(qo, {
             title: e.name(),
             disabled: !e.manager
           }, null, 8, ["title", "disabled"])
         ])
       ])) : P("", !0),
-      m("div", om, [
-        e.paginatedContacts.length > 4 ? (p(), y("nav", tm, [
+      m("div", Om, [
+        e.paginatedContacts.length > 4 ? (p(), y("nav", Pm, [
           m("button", {
             onClick: a[2] || (a[2] = (n) => e.goToPage(e.currentPage - 1)),
             disabled: e.currentPage === 1,
-            class: T([{ "hover:bg-gray-50 text-gray-400": e.currentPage === 1 }, "relative inline-flex items-center rounded-l-md px-2 py-2 ring-1 ring-inset ring-gray-300 focus:z-20 focus:outline-offset-0"])
+            class: B([{ "hover:bg-gray-50 text-gray-400": e.currentPage === 1 }, "relative inline-flex items-center rounded-l-md px-2 py-2 ring-1 ring-inset ring-gray-300 focus:z-20 focus:outline-offset-0"])
           }, [
-            m("span", nm, v(c(o)("approve.previous")), 1),
-            M(c(ga), {
-              class: T([{ "fill-gray-400": e.currentPage === 1 }, "h-5 w-5"]),
+            m("span", Tm, v(c(o)("approve.previous")), 1),
+            w(c(fa), {
+              class: B([{ "fill-gray-400": e.currentPage === 1 }, "h-5 w-5"]),
               "aria-hidden": "true"
             }, null, 8, ["class"])
-          ], 10, am),
-          (p(!0), y(F, null, Q(e.totalPages, (n) => (p(), y("button", {
+          ], 10, Bm),
+          (p(!0), y(I, null, U(e.totalPages, (n) => (p(), y("button", {
             key: n,
             onClick: (r) => e.goToPage(n),
-            class: T([{ "z-10 bg-white text-taa-brand-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600": n === e.currentPage }, "relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"])
-          }, v(n), 11, rm))), 128)),
+            class: B([{ "z-10 bg-white text-taa-brand-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600": n === e.currentPage }, "relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"])
+          }, v(n), 11, Dm))), 128)),
           m("button", {
             onClick: a[3] || (a[3] = (n) => e.goToPage(e.currentPage + 1)),
             disabled: e.currentPage === e.totalPages,
-            class: T([{ "hover:bg-gray-50": e.currentPage !== e.totalPages }, "relative inline-flex items-center rounded-r-md px-2 py-2 ring-1 ring-inset ring-gray-300 focus:z-20 focus:outline-offset-0"])
+            class: B([{ "hover:bg-gray-50": e.currentPage !== e.totalPages }, "relative inline-flex items-center rounded-r-md px-2 py-2 ring-1 ring-inset ring-gray-300 focus:z-20 focus:outline-offset-0"])
           }, [
-            m("span", dm, v(c(o)("approve.next")), 1),
-            M(c($a), {
-              class: T([{ "fill-gray-400": e.currentPage === e.totalPages }, "h-5 w-5"]),
+            m("span", xm, v(c(o)("approve.next")), 1),
+            w(c(pa), {
+              class: B([{ "fill-gray-400": e.currentPage === e.totalPages }, "h-5 w-5"]),
               "aria-hidden": "true"
             }, null, 8, ["class"])
-          ], 10, sm)
-        ])) : (p(), y("div", im)),
+          ], 10, Lm)
+        ])) : (p(), y("div", Em)),
         m("div", null, [
-          M(Yo, {
+          w(qo, {
             title: e.name(),
             disabled: !e.manager,
             onClick: a[4] || (a[4] = () => t.$emit("confirmEvent", e.manager))
@@ -27108,10 +27359,10 @@ const qu = {
       ])
     ])) : P("", !0);
   }
-}, hm = { class: "t-search" }, um = {
+}, Im = { class: "t-search" }, Km = {
   for: "search",
   class: "t-search-label"
-}, mm = { class: "t-search-input" }, Cm = ["value", "placeholder"], cm = {
+}, Gm = { class: "t-search-input" }, jm = ["value", "placeholder"], Fm = {
   __name: "T-Search",
   props: {
     modelValue: {
@@ -27125,9 +27376,9 @@ const qu = {
     function n(r) {
       t("update:modelValue", r.target.value);
     }
-    return (r, s) => (p(), y("div", hm, [
-      m("label", um, v(c(a)("approve.title")), 1),
-      m("div", mm, [
+    return (r, s) => (p(), y("div", Im, [
+      m("label", Km, v(c(a)("approve.title")), 1),
+      m("div", Gm, [
         m("input", {
           id: "search",
           type: "text",
@@ -27136,18 +27387,18 @@ const qu = {
           onInput: n,
           placeholder: c(a)("approve.searchPlaceholder"),
           class: "t-input shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6"
-        }, null, 40, Cm)
+        }, null, 40, jm)
       ])
     ]));
   }
-}, gm = { class: "t-contact-list" }, $m = {
+}, Hm = { class: "t-contact-list" }, Vm = {
   __name: "T-Contact-List",
   setup(e) {
-    return (o, t) => (p(), y("ul", gm, [
+    return (o, t) => (p(), y("ul", Hm, [
       Re(o.$slots, "default")
     ]));
   }
-}, fm = { class: "t-holder" }, pm = { class: "t-content transform scale-100" }, ym = { class: "t-approve transform shadow-xl" }, _o = 5, Tm = {
+}, Um = { class: "t-holder" }, _m = { class: "t-content transform scale-100" }, zm = { class: "t-approve transform shadow-xl" }, zo = 5, sC = {
   __name: "T-Approve",
   props: {
     contacts: {
@@ -27161,11 +27412,11 @@ const qu = {
     const t = o, a = e, { t: n } = xe({ useScope: "global" }), r = k(""), s = k(1), d = k(null), l = N(() => a.contacts.filter(
       ($) => $.name.firstName.toLowerCase().includes(r.value.toLowerCase()) || $.name.lastName.toLowerCase().includes(r.value.toLowerCase())
     )), i = N(() => {
-      const $ = (s.value - 1) * _o, b = $ + _o;
+      const $ = (s.value - 1) * zo, b = $ + zo;
       return l.value.slice($, b);
-    }), u = N(() => Math.ceil(l.value.length / _o));
-    function h($) {
-      $ >= 1 && $ <= u.value && (s.value = $);
+    }), h = N(() => Math.ceil(l.value.length / zo));
+    function u($) {
+      $ >= 1 && $ <= h.value && (s.value = $);
     }
     function g($) {
       d.value = $;
@@ -27178,11 +27429,11 @@ const qu = {
     }
     return V(r, () => {
       s.value = 1, d.value = null;
-    }), ($, b) => (p(), J(_u, { show: !0 }, {
+    }), ($, b) => (p(), J(pm, { show: !0 }, {
       default: x(() => [
-        m("div", fm, [
-          m("div", pm, [
-            M(c(gt), {
+        m("div", Um, [
+          m("div", _m, [
+            w(c(ft), {
               as: "template",
               enter: "ease-out duration-300",
               "enter-from": "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95",
@@ -27192,31 +27443,31 @@ const qu = {
               "leave-to": "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             }, {
               default: x(() => [
-                M(c(qs), null, {
+                w(c(Zs), null, {
                   default: x(() => [
-                    m("div", ym, [
-                      M(cm, {
+                    m("div", zm, [
+                      w(Fm, {
                         modelValue: r.value,
-                        "onUpdate:modelValue": b[0] || (b[0] = (w) => r.value = w)
+                        "onUpdate:modelValue": b[0] || (b[0] = (M) => r.value = M)
                       }, null, 8, ["modelValue"]),
-                      M($m, null, {
+                      w(Vm, null, {
                         default: x(() => [
-                          (p(!0), y(F, null, Q(i.value, (w, O) => (p(), J(Yu, {
+                          (p(!0), y(I, null, U(i.value, (M, O) => (p(), J(bm, {
                             key: O,
-                            contact: w,
+                            contact: M,
                             manager: d.value,
                             onClick: g
                           }, null, 8, ["contact", "manager"]))), 128))
                         ]),
                         _: 1
                       }),
-                      M(lm, {
+                      w(Rm, {
                         currentPage: s.value,
-                        totalPages: u.value,
-                        goToPage: h,
+                        totalPages: h.value,
+                        goToPage: u,
                         manager: d.value,
                         name: f,
-                        onConfirmEvent: b[1] || (b[1] = (w) => C(w)),
+                        onConfirmEvent: b[1] || (b[1] = (M) => C(M)),
                         paginatedContacts: i.value
                       }, null, 8, ["currentPage", "totalPages", "manager", "paginatedContacts"])
                     ])
@@ -27233,14 +27484,14 @@ const qu = {
     }));
   }
 };
-function Dm(e, o, t) {
+function dC(e, o, t) {
   let a = t.t, n = t.locale.value, r = [];
   for (let s = 0; s < e.length; s++) {
     let l = e[s].segments.map((i) => {
-      let u = i.departure.at, h = new Date(u);
+      let h = i.departure.at, u = new Date(h);
       return {
-        date: ("0" + h.getDate()).slice(-2) + "-" + ("0" + (h.getMonth() + 1)).slice(-2) + "-" + h.getFullYear(),
-        day: h.toLocaleDateString(n, { weekday: "long" })
+        date: ("0" + u.getDate()).slice(-2) + "-" + ("0" + (u.getMonth() + 1)).slice(-2) + "-" + u.getFullYear(),
+        day: u.toLocaleDateString(n, { weekday: "long" })
       };
     });
     r = r.concat(l);
@@ -27250,27 +27501,27 @@ function Dm(e, o, t) {
   ), r.map((s) => {
     let d = [];
     for (let l = 0; l < e.length; l++) {
-      let u = e[l].segments.filter((h) => {
-        let g = h.departure.at, f = new Date(g);
+      let h = e[l].segments.filter((u) => {
+        let g = u.departure.at, f = new Date(g);
         return s.date === ("0" + f.getDate()).slice(-2) + "-" + ("0" + (f.getMonth() + 1)).slice(-2) + "-" + f.getFullYear();
-      }).map((h) => {
-        let g = pa.parse(h.duration), f = "";
+      }).map((u) => {
+        let g = va.parse(u.duration), f = "";
         return g.days > 0 && (f += g.days + " " + a("time.days") + " "), g.hours > 0 && (f += g.hours + " " + a("time.hours") + " "), g.minutes > 0 && (f += g.minutes + " " + a("time.minutes") + " "), {
-          departureTime: ("0" + new Date(h.departure.at).getHours()).slice(-2) + ":" + ("0" + new Date(h.departure.at).getMinutes()).slice(-2),
-          departureAirport: o.locations[h.departure.iataCode][n].name,
-          departureCity: o.locations[h.departure.iataCode][n].city,
-          departureCode: h.departure.iataCode,
-          arrivalTime: new Date(h.arrival.at).getHours() + ":" + new Date(h.arrival.at).getMinutes(),
-          arrivalAirport: o.locations[h.arrival.iataCode][n].name,
-          arrivalCity: o.locations[h.arrival.iataCode][n].city,
-          arrivalCode: h.arrival.iataCode,
+          departureTime: ("0" + new Date(u.departure.at).getHours()).slice(-2) + ":" + ("0" + new Date(u.departure.at).getMinutes()).slice(-2),
+          departureAirport: o.locations[u.departure.iataCode][n].name,
+          departureCity: o.locations[u.departure.iataCode][n].city,
+          departureCode: u.departure.iataCode,
+          arrivalTime: new Date(u.arrival.at).getHours() + ":" + new Date(u.arrival.at).getMinutes(),
+          arrivalAirport: o.locations[u.arrival.iataCode][n].name,
+          arrivalCity: o.locations[u.arrival.iataCode][n].city,
+          arrivalCode: u.arrival.iataCode,
           duration: f,
-          airline: o.carriers[h.carrierCode],
-          flightNumber: h.carrierCode + "-" + h.number,
-          aircraft: o.aircraft[h.aircraft.code]
+          airline: o.carriers[u.carrierCode],
+          flightNumber: u.carrierCode + "-" + u.number,
+          aircraft: o.aircraft[u.aircraft.code]
         };
       });
-      d = d.concat(u);
+      d = d.concat(h);
     }
     return {
       date: s.date,
@@ -27281,20 +27532,23 @@ function Dm(e, o, t) {
   });
 }
 export {
-  Tm as TApprove,
-  km as TBirthdayInput,
-  Yo as TButton,
-  Bm as TDaysSelector,
-  as as TEmailInput,
-  Nm as TFlightOffer,
-  Am as TFlightOfferList,
-  cd as TGenderInput,
-  Sd as TNameInput,
-  ou as TPassenger,
-  Mm as TPassengersList,
-  Om as TUpsellOffer,
-  Pm as TUpsellOfferList,
-  ql as TVueTelInput,
-  Dm as mapSegmentsToItinerariesDays
+  sC as TApprove,
+  Qm as TBirthdayInput,
+  qo as TButton,
+  rC as TDaysSelector,
+  ns as TEmailInput,
+  Jm as TFlightOffer,
+  Zm as TFlightOfferList,
+  pm as TFullscreenContainer,
+  gd as TGenderInput,
+  eC as TJourneyType,
+  Pd as TNameInput,
+  iu as TPassenger,
+  oC as TPassengersList,
+  tC as TTravellers,
+  aC as TUpsellOffer,
+  nC as TUpsellOfferList,
+  th as TVueTelInput,
+  dC as mapSegmentsToItinerariesDays
 };
 //# sourceMappingURL=taavani-components.esm.js.map
