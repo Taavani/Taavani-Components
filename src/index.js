@@ -18,6 +18,7 @@ import TFullscreenContainer from "./components/T-Fullscreen-Container/T-Fullscre
 import TLargeButtonGroup from "./components/T-Large-Button-Group/T-Large-Button-Group.vue";
 import TItineraryDay from "./components/T-Itinerary-Day/T-Itinerary-Day.vue";
 import TItineraryFlight from "./components/T-Itinerary-Day/T-Itinerary-Flight.vue";
+import TUpsellLoading from "./components/T-Upsell-Loading/T-Upsell-Loading.vue";
 import {mapSegmentsToItinerariesDays} from "./components/T-Itinerary-Day/Map-Utility.js";
 
 export {
@@ -41,5 +42,6 @@ export {
     TLargeButtonGroup,
     TItineraryDay,
     TItineraryFlight,
+    TUpsellLoading,
     mapSegmentsToItinerariesDays
 }
