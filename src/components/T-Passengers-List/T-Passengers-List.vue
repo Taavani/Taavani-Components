@@ -1,5 +1,5 @@
 <script setup>
-import {isProxy, onMounted, ref, toRaw, watch} from "vue";
+import {ref, toRaw, watch} from "vue";
 import './T-Passengers-List.css'
 import TPassenger from "../T-Passenger/T-Passenger.vue";
 
@@ -26,18 +26,10 @@ const props = defineProps({
 const passengerRequirements = ref([]);
 const emits = defineEmits(['update'])
 
-onMounted(function () {
-  const { requirements, passengers } = props
+// Map requirements to passengers, recomputing whenever either changes.
+watch(() => [props.passengers, props.requirements], ([passengers, requirements]) => {
   passengerRequirements.value = mapRequirementsToPassengers(toRaw(passengers), toRaw(requirements))
-})
-
-// Map requirements to passengers.
-watch(() => props.requirements, (requirements) => {
-  if (isProxy(requirements)) {
-    const { passengers } = props
-    passengerRequirements.value = mapRequirementsToPassengers(toRaw(passengers), toRaw(requirements))
-  }
-});
+}, { immediate: true });
 
 function mapRequirementsToPassengers (passengers, requirements) {
   let passengerRequirements = [];
@@ -47,7 +39,7 @@ function mapRequirementsToPassengers (passengers, requirements) {
 
     passReq.emailAddressRequired = requirements.emailAddressRequired ?? false;
     passReq.mobilePhoneNumberRequired = requirements.mobilePhoneNumberRequired ?? false;
-    passReq.genderRequired = requirements.travelerRequirements?.genderRequired ?? false;
+    passReq.genderRequired = false;
 
     if (requirements.travelerRequirements) {
       const travelerReqs = requirements.travelerRequirements;
