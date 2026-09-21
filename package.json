@@ -3,7 +3,7 @@
   "type": "module",
   "module": "dist/taavani-components.esm.js",
   "main": "dist/taavani-components.cjs.js",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "This is a component library for the JS components for Taavani.",
   "files": [
     "dist"

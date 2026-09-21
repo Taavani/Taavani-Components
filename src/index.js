@@ -15,6 +15,9 @@ import TUpsellOfferList from "./components/T-Upsell-Offer-List/T-Upsell-Offer-Li
 import TDaysSelector from "./components/T-Days-Selector/T-Days-Selector.vue";
 import TApprove from "./stages/T-Approve/T-Approve.vue";
 import TFullscreenContainer from "./components/T-Fullscreen-Container/T-Fullscreen-Container.vue";
+import TLargeButtonGroup from "./components/T-Large-Button-Group/T-Large-Button-Group.vue";
+import TItineraryDay from "./components/T-Itinerary-Day/T-Itinerary-Day.vue";
+import TItineraryFlight from "./components/T-Itinerary-Day/T-Itinerary-Flight.vue";
 import {mapSegmentsToItinerariesDays} from "./components/T-Itinerary-Day/Map-Utility.js";
 
 export {
@@ -35,5 +38,8 @@ export {
     TVueTelInput,
     TApprove,
     TFullscreenContainer,
+    TLargeButtonGroup,
+    TItineraryDay,
+    TItineraryFlight,
     mapSegmentsToItinerariesDays
 }
