@@ -1,6 +1,5 @@
 <script setup>
 import {ref} from "vue";
-import "./T-Travellers.css";
 
 import TravellersMenu from "./Travellers-Menu.vue";
 import TravellersCounter from "./Travellers-Counter.vue";

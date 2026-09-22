@@ -1,6 +1,5 @@
 <script setup>
 import {ref} from "vue";
-import "./T-Journey-Type.css"
 
 const props = defineProps({
   disabled: {
