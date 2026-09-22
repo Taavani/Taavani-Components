@@ -26,13 +26,19 @@ const props = defineProps({
 const passengerRequirements = ref([]);
 const emits = defineEmits(['update'])
 
-// Map requirements to passengers, recomputing whenever either changes.
-watch(() => [props.passengers, props.requirements], ([passengers, requirements]) => {
-  passengerRequirements.value = mapRequirementsToPassengers(toRaw(passengers), toRaw(requirements))
-}, { immediate: true });
+// Recompute only when requirements change, or when the set of traveler IDs
+// changes (e.g. a traveler added/removed) — NOT when passenger field values
+// change, since editing a name/email has no bearing on requirements.
+watch(
+    () => [props.requirements, props.passengers.map(p => p.travelerId).join(',')],
+    () => {
+      passengerRequirements.value = mapRequirementsToPassengers(toRaw(props.passengers), toRaw(props.requirements))
+    },
+    { immediate: true }
+);
 
-function mapRequirementsToPassengers (passengers, requirements) {
-  let passengerRequirements = [];
+function mapRequirementsToPassengers(passengers, requirements) {
+  let passengerRequirements = {};
   for (let i = 0; i < passengers.length; i++) {
     let passenger = passengers[i]
     let passReq = {};
@@ -48,7 +54,6 @@ function mapRequirementsToPassengers (passengers, requirements) {
       if (Array.isArray(travelerReqs)) {
         travelerReq = travelerReqs.find(req => req.travelerId === passenger.travelerId)
       } else {
-        // travelerRequirements is an object keyed by travelerId string
         travelerReq = travelerReqs[passenger.travelerId]
       }
 
