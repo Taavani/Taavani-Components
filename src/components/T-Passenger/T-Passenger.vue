@@ -278,9 +278,39 @@ watch(v$, () => {
   }
 })
 
-watch(() => props.requirements, (requirements) => {
-  resetPassenger()
-});
+watch(
+    () => props.requirements,
+    (newRequirements, oldRequirements) => {
+      if (haveRequiredFieldsChanged(oldRequirements, newRequirements)) {
+        resetPassenger()
+      }
+    },
+    { deep: false }
+)
+
+/**
+ * Compares only the boolean "required" flags that actually affect which
+ * fields are shown/validated. Ignores object identity — only a genuine
+ * change in which fields are required should trigger a reset.
+ */
+function haveRequiredFieldsChanged(oldReq, newReq) {
+  if (!oldReq || !newReq) {
+    return oldReq !== newReq
+  }
+
+  const keys = [
+    'emailAddressRequired',
+    'mobilePhoneNumberRequired',
+    'genderRequired',
+    'documentRequired',
+    'dateOfBirthRequired',
+    'residenceRequired',
+    'redressRequiredIfAny',
+    'documentIssuanceCityRequired',
+  ]
+
+  return keys.some(key => Boolean(oldReq[key]) !== Boolean(newReq[key]))
+}
 
 </script>
 
