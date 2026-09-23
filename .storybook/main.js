@@ -1,6 +1,10 @@
 /** @type { import('@storybook/vue3-vite').StorybookConfig } */
 const config = {
-  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+  stories: ["../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+
+  features: {
+    experimentalDocgenServer: true
+  },
 
   addons: [
     "@storybook/addon-links",
