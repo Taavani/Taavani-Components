@@ -1,0 +1,51 @@
+{
+  "stages": {
+    "bookingOptions": {
+      "backButtonText": "Back to search",
+      "backButton": "Back",
+      "title": "Booking Options",
+      "description": "Select the best option for your trip, and continue to the next step.",
+      "pricingOption": "Pricing option",
+      "flexibilityOption": "Flexibility",
+      "serviceOption": "Service",
+      "invoiceProjectNumber": "Project number",
+      "invoicePlaceholder": "Enter project number",
+      "invoiceCostCenter": "Cost center",
+      "next": "Next",
+      "pricingOptions": {
+        "budget": "Budget",
+        "economy": "Economy",
+        "premium": "Premium",
+        "business": "Business"
+      },
+      "flexibilityOptions": {
+        "standard": "Standard",
+        "changeable": "Changeable",
+        "refundable": "Refundable"
+      }
+    }
+  },
+  "approve": {
+    "title": "Select manager to approve your booking",
+    "searchPlaceholder": "Search for manager",
+    "selectApprove": "Select person to approve",
+    "sendRequestToApprove": "Send to {name} for approval",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "confirmOffer": {
+    "bookingReference": "Booking reference",
+    "passengers": "Passengers",
+    "travelDetails": "Travel details",
+    "price": "Price",
+    "baseCost": "Base cost",
+    "taavani": "Taavani",
+    "taxes": "Taxes",
+    "totalPrice": "Total price",
+    "taavaniPlusConfirm": "I wish to purchase <a href='https://taavani.gl/en/terms-and-conditions' target='_blank' class='text-brand-blue'>Taavani Plus</a> for this trip.",
+    "additionalServices": "Additional services",
+    "additionalServicesDescription": "Add your additional remarks, such as hotel or other services.",
+    "termsAndConditionsDescription": "I accept the <a href='https://taavani.gl/en/terms-and-conditions' target='_blank' class='text-brand-blue'>Terms and Conditions</a>.",
+    "cancelOffer": "Cancel offer"
+  }
+}

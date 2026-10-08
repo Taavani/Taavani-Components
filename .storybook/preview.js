@@ -9,16 +9,20 @@ import "../src/css/main.css"
 import {createI18n} from 'vue-i18n';
 import {setup} from "@storybook/vue3-vite";
 
-setup(async (app) => {
-    const {en} = await import('./translations.json')
+// Merge every ./locales/<locale>/*.json file into one message object per locale.
+const localeFiles = import.meta.glob('./locales/*/*.json', {eager: true, import: 'default'})
+const messages = {}
+for (const [path, content] of Object.entries(localeFiles)) {
+    const locale = path.split('/')[2]
+    messages[locale] = {...messages[locale], ...content}
+}
 
+setup(async (app) => {
     const i18n = createI18n({
         legacy: false,
         locale: 'en',
         fallbackLocale: 'en',
-        messages: {
-            en: en
-        },
+        messages,
         runtimeOnly: false,
     });
 

@@ -41,13 +41,13 @@ CSS is handled by Vite's built-in PostCSS support (`cssCodeSplit: false` merges 
 ### Component conventions
 
 - `<script setup>` with `defineProps`/`defineEmits`; props typically use `update:propName` emits for v-model-style two-way binding.
-- Translations via `vue-i18n`'s `useI18n({ useScope: 'global' })` and `t('namespace.key')` — translation strings live in `.storybook/translations.json` for Storybook/dev purposes; consuming apps supply their own i18n messages at runtime (`vue-i18n` is a peer dependency, not bundled).
+- Translations via `vue-i18n`'s `useI18n({ useScope: 'global' })` and `t('namespace.key')` — translation strings live in `.storybook/locales/<locale>/*.json` (split by feature: `common`, `passengers`, `flights`, `booking`) for Storybook/dev purposes; consuming apps supply their own i18n messages at runtime (`vue-i18n` is a peer dependency, not bundled).
 - `pinia` and `vue-i18n` are peer dependencies (along with `vue`) — components assume the host app provides these, they are never bundled into the library output.
 - Headless UI (`@headlessui/vue`) + Heroicons are the primary UI primitives; Tailwind utility classes plus a component-scoped `.css` file for custom styling.
 
 ### Storybook setup
 
-`.storybook/preview.js` installs `vue-i18n` globally for all stories (loading `en` messages from `.storybook/translations.json`) and imports the global stylesheet `src/css/main.css`. Story files live under `src/stories/`, one `.stories.js` file per component/stage, separate from the component's own folder.
+`.storybook/preview.js` installs `vue-i18n` globally for all stories (merging every `.storybook/locales/<locale>/*.json` file via `import.meta.glob`) and imports the global stylesheet `src/css/main.css`. Story files live under `src/stories/`, one `.stories.js` file per component/stage, separate from the component's own folder.
 
 ## Known issues
 

@@ -1,0 +1,51 @@
+{
+  "flightOffers": {
+    "filters": "Filter by",
+    "filterCabin": "Choose cabin type",
+    "filterStopovers": "Choose number of stopovers",
+    "direct": "Direct",
+    "oneStop": "1 stop",
+    "twoStops": "2 stops",
+    "stopover": "stopover",
+    "seats": "There is only {count} seat left | There are only {count} seats left",
+    "change": "or change",
+    "priceFrom": "Price from",
+    "totalPrice": "Total price",
+    "sameDay": "Same day",
+    "notSameDay": "+ 1 day",
+    "noOffers": "Unable to find any offers",
+    "selectOutbound": "Select departure flight",
+    "selectHomebound": "Select return flight",
+    "noOffersDescription": "We were unable to find any offers matching your search criteria.",
+    "refund": "Refundable",
+    "exchange": "Exchangeable",
+    "layover": "{days}d {hours}h {minutes}m layover"
+  },
+  "flightOfferExtended": {
+    "departureDate": "Departure date",
+    "cabin": "Cabin class",
+    "included": "Included",
+    "purchase": "Purchase",
+    "select": "Select Option",
+    "totalPrice": "Total price"
+  },
+  "additionalServices": {
+    "seats": {
+      "title": "Select seats",
+      "attentionText": "Coming soon",
+      "description": "Do you want a window or an aisle seat?",
+      "buttonText": "Select seats"
+    },
+    "baggage": {
+      "title": "Select baggage",
+      "attentionText": "Coming soon",
+      "description": "Do you want to purchase baggage?",
+      "buttonText": "Purchase baggage"
+    }
+  },
+  "journeyType": {
+    "single": "One way",
+    "return": "Round trip",
+    "multiStop": "Multi-city"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "passengers": {
+    "title": "Passenger details",
+    "description": "Please provide the details of the passengers traveling on this booking.",
+    "passengerDetails": "Provide passenger details",
+    "selectPassenger": "Select passenger",
+    "placeholder": "Passenger {count}",
+    "name": {
+      "title": "Names",
+      "firstNameLabel": "First name",
+      "lastNameLabel": "Last name"
+    },
+    "birthday": {
+      "label": "Birthday (DD-MM-YYYY)",
+      "day": "Day",
+      "month": "Month",
+      "year": "Year"
+    },
+    "gender": {
+      "label": "Specify gender",
+      "options": {
+        "placeholder": "Please select",
+        "undisclosed": "Undisclosed",
+        "male": "Male",
+        "female": "Female",
+        "unspecified": "Unspecified"
+      }
+    },
+    "email": {
+      "label": "Email address",
+      "placeholder": "your mail"
+    },
+    "phone": {
+      "label": "Phone number",
+      "placeholder": "Enter a phone number"
+    },
+    "errors": {
+      "generic": "The given record is invalid:",
+      "firstName": {
+        "required": "First name is required",
+        "minLength": "First name must be at least 2 characters"
+      },
+      "lastName": {
+        "required": "Last name is required",
+        "minLength": "Last name must be at least 2 characters"
+      },
+      "email": {
+        "required": "Email address is required",
+        "emailValidator": "Email address is invalid"
+      },
+      "phone": {
+        "required": "Phone number is required",
+        "minLength": "Your phone number is too short"
+      },
+      "phones": {
+        "required": "Phone number is required",
+        "minLength": "Your phone number is too short"
+      }
+    }
+  }
+}
